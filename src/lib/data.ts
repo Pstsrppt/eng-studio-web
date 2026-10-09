@@ -1,4 +1,5 @@
 import "server-only";
+import { connection } from "next/server";
 import { cache } from "react";
 import { hasSupabase } from "./supabase/env";
 import { createClient } from "./supabase/server";
@@ -10,6 +11,8 @@ export type CardMap = Record<string, CardState>;
 /** The signed-in learner, or null. Reads the session cookie, so call it inside <Suspense>. */
 export const getUser = cache(async (): Promise<User | null> => {
   if (!hasSupabase) return null;
+  // getClaims checks the token's expiry against Date.now(), which Next only allows at request time.
+  await connection();
   const supabase = await createClient();
   const { data } = await supabase.auth.getClaims();
   const claims = data?.claims;
