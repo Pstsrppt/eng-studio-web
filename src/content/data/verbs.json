@@ -1,0 +1,642 @@
+[
+  {
+    "id": "vb-work",
+    "v1": "work",
+    "v2": "worked",
+    "v3": "worked",
+    "th": "ทำงาน",
+    "g": "REG"
+  },
+  {
+    "id": "vb-check",
+    "v1": "check",
+    "v2": "checked",
+    "v3": "checked",
+    "th": "ตรวจสอบ",
+    "g": "REG"
+  },
+  {
+    "id": "vb-call",
+    "v1": "call",
+    "v2": "called",
+    "v3": "called",
+    "th": "โทร, เรียก",
+    "g": "REG"
+  },
+  {
+    "id": "vb-deliver",
+    "v1": "deliver",
+    "v2": "delivered",
+    "v3": "delivered",
+    "th": "ส่งถึง",
+    "g": "REG"
+  },
+  {
+    "id": "vb-need",
+    "v1": "need",
+    "v2": "needed",
+    "v3": "needed",
+    "th": "ต้องการ",
+    "g": "REG"
+  },
+  {
+    "id": "vb-want",
+    "v1": "want",
+    "v2": "wanted",
+    "v3": "wanted",
+    "th": "อยากได้",
+    "g": "REG"
+  },
+  {
+    "id": "vb-update",
+    "v1": "update",
+    "v2": "updated",
+    "v3": "updated",
+    "th": "อัปเดต",
+    "g": "REG"
+  },
+  {
+    "id": "vb-finish",
+    "v1": "finish",
+    "v2": "finished",
+    "v3": "finished",
+    "th": "ทำเสร็จ",
+    "g": "REG"
+  },
+  {
+    "id": "vb-arrive",
+    "v1": "arrive",
+    "v2": "arrived",
+    "v3": "arrived",
+    "th": "มาถึง",
+    "g": "REG"
+  },
+  {
+    "id": "vb-try",
+    "v1": "try",
+    "v2": "tried",
+    "v3": "tried",
+    "th": "พยายาม, ลอง",
+    "g": "REG"
+  },
+  {
+    "id": "vb-stop",
+    "v1": "stop",
+    "v2": "stopped",
+    "v3": "stopped",
+    "th": "หยุด",
+    "g": "REG"
+  },
+  {
+    "id": "vb-plan",
+    "v1": "plan",
+    "v2": "planned",
+    "v3": "planned",
+    "th": "วางแผน",
+    "g": "REG"
+  },
+  {
+    "id": "vb-cut",
+    "v1": "cut",
+    "v2": "cut",
+    "v3": "cut",
+    "th": "ตัด",
+    "g": "AAA"
+  },
+  {
+    "id": "vb-put",
+    "v1": "put",
+    "v2": "put",
+    "v3": "put",
+    "th": "วาง",
+    "g": "AAA"
+  },
+  {
+    "id": "vb-set",
+    "v1": "set",
+    "v2": "set",
+    "v3": "set",
+    "th": "ตั้ง",
+    "g": "AAA"
+  },
+  {
+    "id": "vb-let",
+    "v1": "let",
+    "v2": "let",
+    "v3": "let",
+    "th": "ปล่อยให้",
+    "g": "AAA"
+  },
+  {
+    "id": "vb-hit",
+    "v1": "hit",
+    "v2": "hit",
+    "v3": "hit",
+    "th": "ตี, ชน",
+    "g": "AAA"
+  },
+  {
+    "id": "vb-cost",
+    "v1": "cost",
+    "v2": "cost",
+    "v3": "cost",
+    "th": "มีราคา",
+    "g": "AAA"
+  },
+  {
+    "id": "vb-shut",
+    "v1": "shut",
+    "v2": "shut",
+    "v3": "shut",
+    "th": "ปิด",
+    "g": "AAA"
+  },
+  {
+    "id": "vb-hurt",
+    "v1": "hurt",
+    "v2": "hurt",
+    "v3": "hurt",
+    "th": "ทำให้เจ็บ",
+    "g": "AAA"
+  },
+  {
+    "id": "vb-read",
+    "v1": "read",
+    "v2": "read",
+    "v3": "read",
+    "th": "อ่าน (V2/V3 อ่านว่า เร็ด)",
+    "g": "AAA"
+  },
+  {
+    "id": "vb-quit",
+    "v1": "quit",
+    "v2": "quit",
+    "v3": "quit",
+    "th": "ลาออก, เลิก",
+    "g": "AAA"
+  },
+  {
+    "id": "vb-send",
+    "v1": "send",
+    "v2": "sent",
+    "v3": "sent",
+    "th": "ส่ง",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-spend",
+    "v1": "spend",
+    "v2": "spent",
+    "v3": "spent",
+    "th": "ใช้จ่าย, ใช้เวลา",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-build",
+    "v1": "build",
+    "v2": "built",
+    "v3": "built",
+    "th": "สร้าง",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-lend",
+    "v1": "lend",
+    "v2": "lent",
+    "v3": "lent",
+    "th": "ให้ยืม",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-buy",
+    "v1": "buy",
+    "v2": "bought",
+    "v3": "bought",
+    "th": "ซื้อ",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-bring",
+    "v1": "bring",
+    "v2": "brought",
+    "v3": "brought",
+    "th": "นำมา",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-think",
+    "v1": "think",
+    "v2": "thought",
+    "v3": "thought",
+    "th": "คิด",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-teach",
+    "v1": "teach",
+    "v2": "taught",
+    "v3": "taught",
+    "th": "สอน",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-catch",
+    "v1": "catch",
+    "v2": "caught",
+    "v3": "caught",
+    "th": "จับ, ทัน",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-make",
+    "v1": "make",
+    "v2": "made",
+    "v3": "made",
+    "th": "ทำ, สร้าง",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-have",
+    "v1": "have",
+    "v2": "had",
+    "v3": "had",
+    "th": "มี",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-hear",
+    "v1": "hear",
+    "v2": "heard",
+    "v3": "heard",
+    "th": "ได้ยิน",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-keep",
+    "v1": "keep",
+    "v2": "kept",
+    "v3": "kept",
+    "th": "เก็บไว้",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-sleep",
+    "v1": "sleep",
+    "v2": "slept",
+    "v3": "slept",
+    "th": "นอน",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-feel",
+    "v1": "feel",
+    "v2": "felt",
+    "v3": "felt",
+    "th": "รู้สึก",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-leave",
+    "v1": "leave",
+    "v2": "left",
+    "v3": "left",
+    "th": "ออกไป, ทิ้งไว้",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-meet",
+    "v1": "meet",
+    "v2": "met",
+    "v3": "met",
+    "th": "พบ",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-pay",
+    "v1": "pay",
+    "v2": "paid",
+    "v3": "paid",
+    "th": "จ่าย",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-say",
+    "v1": "say",
+    "v2": "said",
+    "v3": "said",
+    "th": "พูด",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-sell",
+    "v1": "sell",
+    "v2": "sold",
+    "v3": "sold",
+    "th": "ขาย",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-tell",
+    "v1": "tell",
+    "v2": "told",
+    "v3": "told",
+    "th": "บอก",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-find",
+    "v1": "find",
+    "v2": "found",
+    "v3": "found",
+    "th": "หาเจอ",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-hold",
+    "v1": "hold",
+    "v2": "held",
+    "v3": "held",
+    "th": "ถือ, จัด (ประชุม)",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-stand",
+    "v1": "stand",
+    "v2": "stood",
+    "v3": "stood",
+    "th": "ยืน",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-understand",
+    "v1": "understand",
+    "v2": "understood",
+    "v3": "understood",
+    "th": "เข้าใจ",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-lose",
+    "v1": "lose",
+    "v2": "lost",
+    "v3": "lost",
+    "th": "ทำหาย, แพ้",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-win",
+    "v1": "win",
+    "v2": "won",
+    "v3": "won",
+    "th": "ชนะ",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-sit",
+    "v1": "sit",
+    "v2": "sat",
+    "v3": "sat",
+    "th": "นั่ง",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-get",
+    "v1": "get",
+    "v2": "got",
+    "v3": "got",
+    "th": "ได้รับ (US: V3 = gotten)",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-lead",
+    "v1": "lead",
+    "v2": "led",
+    "v3": "led",
+    "th": "นำ",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-mean",
+    "v1": "mean",
+    "v2": "meant",
+    "v3": "meant",
+    "th": "หมายถึง",
+    "g": "ABB"
+  },
+  {
+    "id": "vb-go",
+    "v1": "go",
+    "v2": "went",
+    "v3": "gone",
+    "th": "ไป",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-do",
+    "v1": "do",
+    "v2": "did",
+    "v3": "done",
+    "th": "ทำ",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-be",
+    "v1": "be",
+    "v2": "was/were",
+    "v3": "been",
+    "th": "เป็น, อยู่",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-see",
+    "v1": "see",
+    "v2": "saw",
+    "v3": "seen",
+    "th": "เห็น",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-take",
+    "v1": "take",
+    "v2": "took",
+    "v3": "taken",
+    "th": "เอาไป, ใช้เวลา",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-give",
+    "v1": "give",
+    "v2": "gave",
+    "v3": "given",
+    "th": "ให้",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-write",
+    "v1": "write",
+    "v2": "wrote",
+    "v3": "written",
+    "th": "เขียน",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-eat",
+    "v1": "eat",
+    "v2": "ate",
+    "v3": "eaten",
+    "th": "กิน",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-drive",
+    "v1": "drive",
+    "v2": "drove",
+    "v3": "driven",
+    "th": "ขับรถ",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-speak",
+    "v1": "speak",
+    "v2": "spoke",
+    "v3": "spoken",
+    "th": "พูด",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-break",
+    "v1": "break",
+    "v2": "broke",
+    "v3": "broken",
+    "th": "ทำแตก, พัง",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-choose",
+    "v1": "choose",
+    "v2": "chose",
+    "v3": "chosen",
+    "th": "เลือก",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-forget",
+    "v1": "forget",
+    "v2": "forgot",
+    "v3": "forgotten",
+    "th": "ลืม",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-know",
+    "v1": "know",
+    "v2": "knew",
+    "v3": "known",
+    "th": "รู้",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-grow",
+    "v1": "grow",
+    "v2": "grew",
+    "v3": "grown",
+    "th": "เติบโต",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-fly",
+    "v1": "fly",
+    "v2": "flew",
+    "v3": "flown",
+    "th": "บิน",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-show",
+    "v1": "show",
+    "v2": "showed",
+    "v3": "shown",
+    "th": "แสดง",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-begin",
+    "v1": "begin",
+    "v2": "began",
+    "v3": "begun",
+    "th": "เริ่ม",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-drink",
+    "v1": "drink",
+    "v2": "drank",
+    "v3": "drunk",
+    "th": "ดื่ม",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-wear",
+    "v1": "wear",
+    "v2": "wore",
+    "v3": "worn",
+    "th": "สวมใส่",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-fall",
+    "v1": "fall",
+    "v2": "fell",
+    "v3": "fallen",
+    "th": "ตก, ล้ม",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-wake",
+    "v1": "wake",
+    "v2": "woke",
+    "v3": "woken",
+    "th": "ตื่น",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-steal",
+    "v1": "steal",
+    "v2": "stole",
+    "v3": "stolen",
+    "th": "ขโมย",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-ring",
+    "v1": "ring",
+    "v2": "rang",
+    "v3": "rung",
+    "th": "(โทรศัพท์) ดัง",
+    "g": "ABC"
+  },
+  {
+    "id": "vb-come",
+    "v1": "come",
+    "v2": "came",
+    "v3": "come",
+    "th": "มา",
+    "g": "ABA"
+  },
+  {
+    "id": "vb-become",
+    "v1": "become",
+    "v2": "became",
+    "v3": "become",
+    "th": "กลายเป็น",
+    "g": "ABA"
+  },
+  {
+    "id": "vb-run",
+    "v1": "run",
+    "v2": "ran",
+    "v3": "run",
+    "th": "วิ่ง, ดำเนินการ",
+    "g": "ABA"
+  }
+]

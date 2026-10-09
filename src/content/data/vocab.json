@@ -1,0 +1,410 @@
+[
+  {
+    "id": "v1",
+    "en": "need",
+    "th": "ต้องการ",
+    "ex": "We need more time."
+  },
+  {
+    "id": "v2",
+    "en": "send",
+    "th": "ส่ง",
+    "ex": "Please send me the file."
+  },
+  {
+    "id": "v3",
+    "en": "check",
+    "th": "ตรวจสอบ",
+    "ex": "I check email every morning."
+  },
+  {
+    "id": "v4",
+    "en": "make",
+    "th": "ทำ, สร้าง",
+    "ex": "She made a new plan."
+  },
+  {
+    "id": "v5",
+    "en": "get",
+    "th": "ได้รับ",
+    "ex": "Did you get my message?"
+  },
+  {
+    "id": "v6",
+    "en": "take",
+    "th": "ใช้ (เวลา), เอาไป",
+    "ex": "It takes two days."
+  },
+  {
+    "id": "v7",
+    "en": "give",
+    "th": "ให้",
+    "ex": "Give me five minutes."
+  },
+  {
+    "id": "v8",
+    "en": "know",
+    "th": "รู้",
+    "ex": "I don't know yet."
+  },
+  {
+    "id": "v9",
+    "en": "think",
+    "th": "คิด",
+    "ex": "I think it is correct."
+  },
+  {
+    "id": "v10",
+    "en": "want",
+    "th": "อยากได้",
+    "ex": "They want a cheaper price."
+  },
+  {
+    "id": "v11",
+    "en": "use",
+    "th": "ใช้",
+    "ex": "We use React for the website."
+  },
+  {
+    "id": "v12",
+    "en": "find",
+    "th": "หาเจอ",
+    "ex": "I can't find the invoice."
+  },
+  {
+    "id": "v13",
+    "en": "tell",
+    "th": "บอก (คน)",
+    "ex": "Tell me when it arrives."
+  },
+  {
+    "id": "v14",
+    "en": "ask",
+    "th": "ถาม, ขอ",
+    "ex": "Can I ask a question?"
+  },
+  {
+    "id": "v15",
+    "en": "work",
+    "th": "ทำงาน",
+    "ex": "He works in the warehouse."
+  },
+  {
+    "id": "v16",
+    "en": "try",
+    "th": "พยายาม, ลอง",
+    "ex": "Let me try again."
+  },
+  {
+    "id": "v17",
+    "en": "leave",
+    "th": "ออกไป",
+    "ex": "The truck leaves at 8."
+  },
+  {
+    "id": "v18",
+    "en": "call",
+    "th": "โทร, เรียก",
+    "ex": "I'll call you back."
+  },
+  {
+    "id": "v19",
+    "en": "keep",
+    "th": "เก็บไว้",
+    "ex": "Keep the receipt."
+  },
+  {
+    "id": "v20",
+    "en": "start",
+    "th": "เริ่ม",
+    "ex": "We start at nine."
+  },
+  {
+    "id": "v21",
+    "en": "show",
+    "th": "แสดง, ให้ดู",
+    "ex": "Can you show me how?"
+  },
+  {
+    "id": "v22",
+    "en": "help",
+    "th": "ช่วย",
+    "ex": "Could you help me?"
+  },
+  {
+    "id": "v23",
+    "en": "arrive",
+    "th": "มาถึง",
+    "ex": "The ship arrives tomorrow."
+  },
+  {
+    "id": "v24",
+    "en": "deliver",
+    "th": "ส่งถึง",
+    "ex": "We deliver on time."
+  },
+  {
+    "id": "v25",
+    "en": "update",
+    "th": "อัปเดต",
+    "ex": "I'll update the status."
+  },
+  {
+    "id": "v26",
+    "en": "fix",
+    "th": "แก้ (ปัญหา)",
+    "ex": "I fixed the bug."
+  },
+  {
+    "id": "v27",
+    "en": "confirm",
+    "th": "ยืนยัน",
+    "ex": "Please confirm the booking."
+  },
+  {
+    "id": "v28",
+    "en": "explain",
+    "th": "อธิบาย",
+    "ex": "Can you explain it again?"
+  },
+  {
+    "id": "v29",
+    "en": "understand",
+    "th": "เข้าใจ",
+    "ex": "I understand the problem."
+  },
+  {
+    "id": "v30",
+    "en": "finish",
+    "th": "ทำเสร็จ",
+    "ex": "I finished the report."
+  },
+  {
+    "id": "n1",
+    "en": "time",
+    "th": "เวลา",
+    "ex": "We don't have much time."
+  },
+  {
+    "id": "n2",
+    "en": "problem",
+    "th": "ปัญหา",
+    "ex": "There is a problem with the order."
+  },
+  {
+    "id": "n3",
+    "en": "information",
+    "th": "ข้อมูล",
+    "ex": "I need more information."
+  },
+  {
+    "id": "n4",
+    "en": "company",
+    "th": "บริษัท",
+    "ex": "Our company ships to Japan."
+  },
+  {
+    "id": "n5",
+    "en": "customer",
+    "th": "ลูกค้า",
+    "ex": "The customer is waiting."
+  },
+  {
+    "id": "n6",
+    "en": "price",
+    "th": "ราคา",
+    "ex": "The price is too high."
+  },
+  {
+    "id": "n7",
+    "en": "order",
+    "th": "คำสั่งซื้อ",
+    "ex": "The order is ready."
+  },
+  {
+    "id": "n8",
+    "en": "date",
+    "th": "วันที่",
+    "ex": "What is the delivery date?"
+  },
+  {
+    "id": "n9",
+    "en": "team",
+    "th": "ทีม",
+    "ex": "Our team has five people."
+  },
+  {
+    "id": "n10",
+    "en": "meeting",
+    "th": "การประชุม",
+    "ex": "The meeting starts at 2 pm."
+  },
+  {
+    "id": "n11",
+    "en": "week",
+    "th": "สัปดาห์",
+    "ex": "See you next week."
+  },
+  {
+    "id": "n12",
+    "en": "question",
+    "th": "คำถาม",
+    "ex": "I have a question."
+  },
+  {
+    "id": "a1",
+    "en": "late",
+    "th": "สาย, ล่าช้า",
+    "ex": "The truck is late."
+  },
+  {
+    "id": "a2",
+    "en": "ready",
+    "th": "พร้อม",
+    "ex": "Are you ready?"
+  },
+  {
+    "id": "a3",
+    "en": "important",
+    "th": "สำคัญ",
+    "ex": "This is an important customer."
+  },
+  {
+    "id": "a4",
+    "en": "available",
+    "th": "ว่าง, มีให้ใช้",
+    "ex": "Are you available on Friday?"
+  },
+  {
+    "id": "a5",
+    "en": "urgent",
+    "th": "ด่วน",
+    "ex": "This order is urgent."
+  },
+  {
+    "id": "a6",
+    "en": "correct",
+    "th": "ถูกต้อง",
+    "ex": "Is this address correct?"
+  },
+  {
+    "id": "i1",
+    "en": "bug",
+    "th": "ข้อผิดพลาดในโปรแกรม",
+    "ex": "I found a bug in the login page."
+  },
+  {
+    "id": "i2",
+    "en": "deploy",
+    "th": "นำระบบขึ้นใช้งานจริง",
+    "ex": "We deploy every Friday."
+  },
+  {
+    "id": "i3",
+    "en": "requirement",
+    "th": "ความต้องการของระบบ",
+    "ex": "What are the requirements?"
+  },
+  {
+    "id": "i4",
+    "en": "feature",
+    "th": "ความสามารถของระบบ",
+    "ex": "We added a new feature."
+  },
+  {
+    "id": "i5",
+    "en": "database",
+    "th": "ฐานข้อมูล",
+    "ex": "The data is in the database."
+  },
+  {
+    "id": "i6",
+    "en": "deadline",
+    "th": "กำหนดส่ง",
+    "ex": "The deadline is Monday."
+  },
+  {
+    "id": "i7",
+    "en": "test",
+    "th": "ทดสอบ",
+    "ex": "Did you test the code?"
+  },
+  {
+    "id": "i8",
+    "en": "release",
+    "th": "ปล่อยเวอร์ชันใหม่",
+    "ex": "The next release is in May."
+  },
+  {
+    "id": "l1",
+    "en": "shipment",
+    "th": "การขนส่ง, ของที่ส่ง",
+    "ex": "The shipment left Bangkok."
+  },
+  {
+    "id": "l2",
+    "en": "container",
+    "th": "ตู้คอนเทนเนอร์",
+    "ex": "We need a 40-foot container."
+  },
+  {
+    "id": "l3",
+    "en": "warehouse",
+    "th": "คลังสินค้า",
+    "ex": "The goods are in the warehouse."
+  },
+  {
+    "id": "l4",
+    "en": "freight",
+    "th": "ค่าขนส่ง, สินค้าขนส่ง",
+    "ex": "Air freight is fast but expensive."
+  },
+  {
+    "id": "l5",
+    "en": "customs",
+    "th": "ศุลกากร",
+    "ex": "The goods are at customs."
+  },
+  {
+    "id": "l6",
+    "en": "invoice",
+    "th": "ใบแจ้งหนี้",
+    "ex": "Please send the invoice."
+  },
+  {
+    "id": "l7",
+    "en": "ETA",
+    "th": "เวลาที่คาดว่าจะถึง",
+    "ex": "What is the ETA?"
+  },
+  {
+    "id": "l8",
+    "en": "port",
+    "th": "ท่าเรือ",
+    "ex": "The ship is at the port."
+  },
+  {
+    "id": "l9",
+    "en": "carrier",
+    "th": "บริษัทขนส่ง (สายเรือ/สายการบิน)",
+    "ex": "Which carrier do you use?"
+  },
+  {
+    "id": "l10",
+    "en": "booking",
+    "th": "การจอง",
+    "ex": "The booking is confirmed."
+  },
+  {
+    "id": "l11",
+    "en": "delay",
+    "th": "ความล่าช้า",
+    "ex": "Sorry for the delay."
+  },
+  {
+    "id": "l12",
+    "en": "tracking number",
+    "th": "เลขติดตามพัสดุ",
+    "ex": "Here is the tracking number."
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "REG": {
+    "name": "ปกติ (-ed)",
+    "tip": "เติม -ed ทั้ง V2 และ V3 · ลงท้าย y หลังพยัญชนะ เปลี่ยนเป็น -ied (try → tried) · สระเดียว+พยัญชนะเดียว เบิ้ลตัวท้าย (stop → stopped)"
+  },
+  "AAA": {
+    "name": "AAA เหมือนกันหมด",
+    "tip": "V1 = V2 = V3 ส่วนใหญ่สั้นและลงท้ายด้วย t หรือ d"
+  },
+  "ABB": {
+    "name": "ABB  V2 = V3",
+    "tip": "กลุ่มใหญ่ที่สุด จำแค่ 2 รูป · มีกลุ่มย่อย -ought/-aught (bought, thought, taught) และ -t (sent, spent, kept)"
+  },
+  "ABC": {
+    "name": "ABC ต่างกันหมด",
+    "tip": "V3 มักลงท้าย -en / -n (taken, written, known) หรือเปลี่ยนสระ i-a-u (begin, began, begun)"
+  },
+  "ABA": {
+    "name": "ABA  V1 = V3",
+    "tip": "มีไม่กี่คำ: come, become, run"
+  }
+}
