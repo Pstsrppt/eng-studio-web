@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { LessonView } from "@/components/lesson-view";
 import { LESSONS, PASS_MARK, getLesson, nextLesson } from "@/content";
 
@@ -15,7 +16,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title: lesson?.title ?? "Grammar" };
 }
 
-export default async function LessonPage({ params }: Props) {
+export default function LessonPage({ params }: Props) {
+  // Reading params suspends on client navigation, so the lesson streams in behind a boundary.
+  return (
+    <Suspense fallback={<div className="h-40 animate-pulse rounded-xl bg-ink/5" />}>
+      <Lesson params={params} />
+    </Suspense>
+  );
+}
+
+async function Lesson({ params }: Props) {
   const lesson = getLesson((await params).id);
   if (!lesson) notFound();
   const next = nextLesson(lesson.id);
