@@ -5,7 +5,7 @@
     "title": "โครงประโยค: ประธาน + กริยา + กรรม",
     "why": "ทุกประโยคต้องมีโครงนี้ ถ้าวางถูก คนฟังเข้าใจแม้ศัพท์ยังน้อย",
     "formula": "ใคร + ทำ + อะไร + ที่ไหน + เมื่อไร",
-    "theory": "<p>ภาษาอังกฤษเรียงเหมือนภาษาไทยเกือบทั้งหมด: <b>ใคร + ทำอะไร + กับอะไร</b></p>\n<h4>3 จุดที่ต่างจากภาษาไทย</h4>\n<ol><li><b>คำขยายมาก่อนคำนาม:</b> \"ไฟล์ใหม่\" = <b>new file</b> ไม่ใช่ file new</li>\n<li><b>ต้องมีประธานเสมอ:</b> ไทยพูด \"ส่งแล้ว\" ได้ แต่อังกฤษต้องพูด <b>I sent it.</b></li>\n<li><b>เวลาไว้ท้ายประโยค</b> (หรือต้นประโยค) ไม่ไว้กลาง: I check email <b>every morning</b>.</li></ol>",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาอังกฤษบอกว่า <b>ใครทำ</b> และ <b>ใครถูกทำ</b> ด้วย <b>ตำแหน่งของคำ</b> เหมือนภาษาไทย (\"หมากัดแมว\" กับ \"แมวกัดหมา\" ความหมายตรงข้ามกัน) ถ้าสลับที่ ความหมายก็เปลี่ยน</p><div class=\"ex\">The customer called <b>the driver</b>.<div class=\"th\">ลูกค้าโทรหาคนขับ</div></div><div class=\"ex\">The driver called <b>the customer</b>.<div class=\"th\">คนขับโทรหาลูกค้า (คำเดิม แต่คนละความหมาย)</div></div><h4>วิธีสร้าง</h4><div class=\"scroll\"><table><tr><th>ใคร (ประธาน)</th><th>ทำ (กริยา)</th><th>อะไร (กรรม)</th><th>ที่ไหน</th><th>เมื่อไร</th></tr><tr><td>I</td><td>check</td><td>the shipments</td><td>at the port</td><td>every Monday.</td></tr><tr><td>She</td><td>writes</td><td>a short report</td><td>-</td><td>every Friday.</td></tr><tr><td>The truck</td><td>arrived</td><td>-</td><td>at the warehouse</td><td>at 8 am.</td></tr></table></div><p>ไม่ใช่ทุกกริยาต้องมีกรรม: <b>The truck arrived.</b> ครบแล้ว (arrive ไม่ต้องบอกว่า \"มาถึงอะไร\") แต่ send, open, need ต้องมีกรรมเสมอ: <s>I sent.</s> → <b>I sent it.</b></p><h4>3 จุดที่ต่างจากภาษาไทย</h4><p><b>1. ต้องมีประธานทุกประโยค</b><br>ภาษาไทยละประธานได้เพราะผู้ฟังเดาจากบริบท (\"ส่งแล้ว\" \"ช้ามาก\") แต่ภาษาอังกฤษไม่ละ ถ้าไม่มีใครเป็นคนทำจริง ๆ ก็ใช้ <b>it</b> เป็นประธานแทน</p><div class=\"ex\"><s>Is very slow.</s> → <b>It</b> is very slow.<div class=\"th\">ช้ามาก</div></div><div class=\"ex\"><b>It</b> is 5 pm. <b>It</b> is raining.<div class=\"th\">5 โมงเย็นแล้ว · ฝนกำลังตก (ใช้ it กับเวลาและอากาศ)</div></div><p><b>2. คำขยายวางหน้าคำนาม (คำหลักอยู่ท้าย)</b><br>ภาษาไทยวางคำหลักก่อนแล้วค่อยขยาย (ไฟล์<u>ใหม่</u>, ข้อมูล<u>ลูกค้า</u>) ภาษาอังกฤษกลับกัน วางคำขยายก่อน แล้วคำหลักไว้ท้ายสุด</p><div class=\"scroll\"><table><tr><th>ภาษาไทย</th><th>ภาษาอังกฤษ</th><th>คำหลัก</th></tr><tr><td>ไฟล์ใหม่</td><td>a <b>new</b> file</td><td>file</td></tr><tr><td>ข้อมูลลูกค้า</td><td><b>customer</b> data</td><td>data</td></tr><tr><td>ค่าขนส่ง</td><td><b>shipping</b> cost</td><td>cost</td></tr><tr><td>ระบบติดตามสินค้าใหม่</td><td>the <b>new tracking</b> system</td><td>system</td></tr></table></div><p><b>3. ที่ไหนมาก่อน เมื่อไรไว้ท้ายสุด</b><br>เวลาวางท้ายประโยค (หรือต้นประโยคถ้าอยากเน้น) ไม่วางแทรกระหว่างประธานกับกริยา</p><div class=\"ex\">I meet the team <b>at the office</b> <b>on Monday</b>.<div class=\"th\">ฉันเจอทีมที่ออฟฟิศวันจันทร์</div></div><div class=\"ex\"><b>Every morning</b>, I check email.<div class=\"th\">ทุกเช้าฉันเช็กอีเมล (ย้ายไปต้นประโยคได้ แต่ห้ามวางกลาง: <s>I every morning check email.</s>)</div></div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>หาว่า <b>ใครทำ</b> → เป็นประธาน (ถ้าไม่มีใคร ใช้ <b>it</b>)</li><li>หาว่า <b>ทำอะไร</b> → วางกริยาต่อจากประธานทันที</li><li>ทำ <b>กับอะไร</b> → วางกรรม ถ้ามีคำขยาย ให้คำขยายมาก่อนและคำหลักไว้ท้าย</li><li>เติม <b>ที่ไหน</b> แล้วค่อย <b>เมื่อไร</b> ไว้ท้ายสุด</li></ol></div>",
     "examples": [
       [
         "I check the shipments at the port every Monday.",
@@ -18,6 +18,10 @@
       [
         "We need a new database.",
         "เราต้องการฐานข้อมูลใหม่"
+      ],
+      [
+        "The new tracking system is very fast.",
+        "ระบบติดตามสินค้าใหม่เร็วมาก"
       ]
     ],
     "mistakes": [
@@ -86,29 +90,29 @@
         "q": "ข้อใดถูก",
         "o": [
           "I every day check email.",
-          "I check email every day.",
-          "Every I day check email."
+          "Every I day check email.",
+          "I check email every day."
         ],
-        "a": 1,
+        "a": 2,
         "why": "เวลาอยู่ท้ายประโยค"
       },
       {
         "q": "\"ส่งแล้ว\" (ฉันส่งไฟล์แล้ว)",
         "o": [
+          "Already send.",
           "Sent already.",
-          "I sent it.",
-          "Already send."
+          "I sent it."
         ],
-        "a": 1,
+        "a": 2,
         "why": "ต้องมีประธานและกรรม"
       },
       {
         "q": "ข้อใดเรียงถูก",
         "o": [
-          "I meet the team at the office on Monday.",
-          "I at the office meet the team on Monday."
+          "I at the office meet the team on Monday.",
+          "I meet the team at the office on Monday."
         ],
-        "a": 0,
+        "a": 1,
         "why": "ใคร-ทำ-อะไร-ที่ไหน-เมื่อไร"
       },
       {
@@ -123,11 +127,20 @@
       {
         "q": "ข้อใดถูก",
         "o": [
-          "Is very good.",
-          "It is very good."
+          "It is very good.",
+          "Is very good."
         ],
-        "a": 1,
+        "a": 0,
         "why": "ต้องมีประธาน"
+      },
+      {
+        "q": "\"ค่าขนส่ง\"",
+        "o": [
+          "shipping cost",
+          "cost shipping"
+        ],
+        "a": 0,
+        "why": "คำหลัก (cost) อยู่ท้าย"
       }
     ],
     "homework": "เขียน 3 ประโยคเรื่องสิ่งที่ทำทุกวัน ตามลำดับ ใคร-ทำ-อะไร-ที่ไหน-เมื่อไร"
@@ -138,7 +151,7 @@
     "title": "ตัว s ท้ายคำ 3 แบบ",
     "why": "ตัว s เห็นบ่อยที่สุดและทำให้งงที่สุด ถ้าแยกได้ จะอ่านประโยคออกทันที",
     "formula": "นาม+s = หลายอัน · กริยา+s = ประธานเอกพจน์ · 's = ของ",
-    "theory": "<table><tr><th>แบบ</th><th>อยู่หลัง</th><th>แปลว่า</th><th>ตัวอย่าง</th></tr>\n<tr><td>1. s</td><td>คำนาม</td><td>มากกว่าหนึ่ง</td><td>name → names</td></tr>\n<tr><td>2. s</td><td>กริยา</td><td>ประธานเป็น he/she/it หรือ 1 สิ่ง ในปัจจุบัน</td><td>I work → He works</td></tr>\n<tr><td>3. 's</td><td>คำนาม (มีขีด)</td><td>ของ</td><td>John's file</td></tr></table>\n<div class=\"tip\"><b>ในโค้ดก็ใช้แบบนี้:</b> <code>name</code> เก็บชื่อเดียว <code>names</code> เป็น list หลายชื่อ<br><b>ระวัง:</b> it's = it is ส่วน \"ของมัน\" เขียน its ไม่มีขีด</div>",
+    "theory": "<h4>หลักคิด</h4><p>ตัว s ตัวเดียวทำได้ 3 หน้าที่ ทริคคือ <b>ดูว่ามันติดอยู่กับคำชนิดไหน</b> แล้วจะรู้ทันทีว่าแปลว่าอะไร</p><div class=\"scroll\"><table><tr><th>แบบ</th><th>อยู่หลัง</th><th>บอกว่า</th><th>ตัวอย่าง</th></tr><tr><td>1. s</td><td>คำนาม</td><td>มากกว่าหนึ่ง</td><td>file → files</td></tr><tr><td>2. s</td><td>กริยา</td><td>ประธานเป็นคน/สิ่งเดียว (he/she/it) และเป็นปัจจุบัน</td><td>I work → He works</td></tr><tr><td>3. 's</td><td>คำนาม (มีขีด ')</td><td>ของ</td><td>John's laptop</td></tr></table></div><h4>แบบที่ 1: คำนาม + s = หลายอัน</h4><p>ภาษาไทยบอกจำนวนด้วยตัวเลขแต่คำนามเหมือนเดิม (\"ไฟล์ 3 ไฟล์\") ภาษาอังกฤษต้อง <b>เปลี่ยนรูปคำนามด้วย</b> ถึงจะมีตัวเลขบอกอยู่แล้วก็ตาม: <s>three file</s> → <b>three files</b></p><div class=\"scroll\"><table><tr><th>ลงท้าย</th><th>วิธีเติม</th><th>ตัวอย่าง</th></tr><tr><td>ทั่วไป</td><td>+s</td><td>truck → trucks, user → users</td></tr><tr><td>s, x, ch, sh</td><td>+es</td><td>box → boxes, address → addresses, batch → batches</td></tr><tr><td>พยัญชนะ + y</td><td>y → ies</td><td>company → companies (แต่ day → days)</td></tr><tr><td>ไม่ปกติ</td><td>ต้องจำ</td><td>person → people, child → children</td></tr></table></div><h4>แบบที่ 2: กริยา + s = ประธานเดียว ในปัจจุบัน</h4><p>ใน present simple ถ้าประธานเป็น <b>he / she / it หรือสิ่งเดียว</b> ต้องเติม s ที่กริยา ประธานอื่น (I, you, we, they, หลายสิ่ง) ไม่เติม</p><div class=\"ex\">The driver <b>works</b> at night. · The drivers <b>work</b> at night.<div class=\"th\">สังเกต: s มักมีอยู่ที่เดียว ประธานเดียวไม่มี s กริยาเลยเติม s · ประธานมี s แล้ว กริยาไม่เติม</div></div><p>วิธีเติมเหมือนคำนาม: go → <b>goes</b>, watch → <b>watches</b>, try → <b>tries</b> และ have → <b>has</b> (ไม่ปกติ)</p><h4>แบบที่ 3: 's = ของ</h4><div class=\"ex\">the <b>company's</b> system · <b>Mr. Lee's</b> email<div class=\"th\">ระบบของบริษัท · อีเมลของคุณลี</div></div><div class=\"ex\">the <b>drivers'</b> phones<div class=\"th\">โทรศัพท์ของคนขับหลายคน (คำนามมี s อยู่แล้ว ใส่แค่ ')</div></div><div class=\"tip\"><b>ระวัง:</b> 's บางทีเป็นคำย่อ ไม่ใช่ \"ของ\": <b>it's</b> = it is, <b>he's</b> = he is · ส่วน \"ของมัน\" เขียน <b>its</b> ไม่มีขีด<br><b>ในโค้ดก็ใช้แบบนี้:</b> <code>name</code> เก็บชื่อเดียว <code>names</code> เป็น list หลายชื่อ</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>เจอ s ให้ดูก่อนว่าติดกับ <b>คำนาม</b> หรือ <b>กริยา</b></li><li>คำนาม + s → แปลว่าหลายอัน</li><li>กริยา + s → ประธานเป็นคน/สิ่งเดียว ประโยคเป็นปัจจุบัน</li><li>มีขีด ' → แปลว่า \"ของ\" หรือเป็นคำย่อ (it's, he's)</li><li>ตอนเขียน: ประธานเดียว + ปัจจุบัน → อย่าลืม s ที่กริยา</li></ol></div>",
     "examples": [
       [
         "She checks the shipments.",
@@ -151,6 +164,10 @@
       [
         "Our customers need two invoices.",
         "ลูกค้าของเรา (หลายคน) ต้องการใบแจ้งหนี้ 2 ใบ"
+      ],
+      [
+        "The company's drivers check the boxes every morning.",
+        "คนขับของบริษัทตรวจกล่องทุกเช้า"
       ]
     ],
     "mistakes": [
@@ -228,29 +245,39 @@
       {
         "q": "\"They ___ emails.\"",
         "o": [
-          "sends",
-          "send"
+          "send",
+          "sends"
         ],
-        "a": 1,
+        "a": 0,
         "why": "They พหูพจน์"
       },
       {
         "q": "\"___ a big file.\"",
         "o": [
-          "Its",
-          "It's"
+          "It's",
+          "Its"
         ],
-        "a": 1,
+        "a": 0,
         "why": "It's = It is"
       },
       {
         "q": "\"The driver's phone\" แปลว่า",
         "o": [
-          "โทรศัพท์ของคนขับ",
-          "คนขับหลายคน"
+          "คนขับหลายคน",
+          "โทรศัพท์ของคนขับ"
         ],
-        "a": 0,
+        "a": 1,
         "why": "'s = ของ"
+      },
+      {
+        "q": "พหูพจน์ของ company",
+        "o": [
+          "companyes",
+          "companies",
+          "companys"
+        ],
+        "a": 1,
+        "why": "พยัญชนะ + y → ies"
       }
     ],
     "homework": "หาประโยคอังกฤษ 3 ประโยคจากเว็บที่อ่านบ่อย แล้วบอกว่า s แต่ละตัวเป็นแบบไหน"
@@ -261,7 +288,7 @@
     "title": "Verb to be: am / is / are",
     "why": "กริยาที่ใช้มากที่สุด ใช้บอกว่าใครเป็นอะไร อยู่ที่ไหน รู้สึกอย่างไร",
     "formula": "I am · he/she/it is · you/we/they are",
-    "theory": "<table><tr><th>ประธาน</th><th>to be</th><th>ตัวอย่าง</th></tr>\n<tr><td>I</td><td>am</td><td>I am a student. (I'm)</td></tr>\n<tr><td>He / She / It / 1 สิ่ง</td><td>is</td><td>The ship is late. (It's)</td></tr>\n<tr><td>You / We / They / หลายสิ่ง</td><td>are</td><td>The files are ready. (We're)</td></tr></table>\n<p>be ตามด้วย <b>คำนาม</b> (a developer), <b>คำคุณศัพท์</b> (slow), หรือ <b>สถานที่</b> (at the port)</p>\n<p>ปฏิเสธ: เติม not → isn't, aren't · คำถาม: ย้าย be ขึ้นหน้า → Is the ship late?</p>",
+    "theory": "<h4>หลักคิด</h4><p>ประโยคภาษาอังกฤษ <b>ต้องมีกริยาเสมอ</b> แต่ภาษาไทยหลายประโยคไม่มีกริยาเลย เช่น \"ระบบช้า\" \"ฉันหิว\" \"เขาอยู่ที่ท่าเรือ\" คำว่า \"ช้า\" \"หิว\" เป็นคำบอกลักษณะ ไม่ใช่การกระทำ ภาษาอังกฤษจึงใช้ <b>be</b> มาเป็นตัวเชื่อมระหว่างประธานกับสิ่งที่ตามมา</p><div class=\"ex\">The system <b>is</b> slow.<div class=\"th\">ระบบช้า (is ไม่ต้องแปล แต่ต้องมี)</div></div><p>be แปลได้ว่า <b>เป็น / คือ / อยู่</b> หรือไม่ต้องแปลเลย ขึ้นกับว่าอะไรตามหลัง</p><div class=\"scroll\"><table><tr><th>be +</th><th>แปลว่า</th><th>ตัวอย่าง</th></tr><tr><td>คำนาม</td><td>เป็น / คือ</td><td>I am <b>a developer</b>.</td></tr><tr><td>คำคุณศัพท์</td><td>(ไม่แปล)</td><td>The ship is <b>late</b>.</td></tr><tr><td>สถานที่</td><td>อยู่</td><td>The files are <b>on the server</b>.</td></tr></table></div><h4>วิธีสร้าง</h4><div class=\"scroll\"><table><tr><th>ประธาน</th><th>บอกเล่า</th><th>ปฏิเสธ</th><th>คำถาม</th></tr><tr><td>I</td><td>I <b>am</b> (I'm)</td><td>I'm not</td><td><b>Am</b> I...?</td></tr><tr><td>he / she / it / 1 สิ่ง</td><td>it <b>is</b> (it's)</td><td>it isn't</td><td><b>Is</b> it...?</td></tr><tr><td>you / we / they / หลายสิ่ง</td><td>they <b>are</b> (they're)</td><td>they aren't</td><td><b>Are</b> they...?</td></tr></table></div><p><b>ปฏิเสธ:</b> วาง not หลัง be · <b>คำถาม:</b> ย้าย be ขึ้นไปหน้าประธาน</p><div class=\"ex\">The ship is late. → <b>Is</b> the ship late? → Yes, it <b>is</b>. / No, it <b>isn't</b>.<div class=\"th\">เรือมาช้าไหม · ตอบสั้นด้วย be ตัวเดิม (ตอบ Yes ห้ามย่อ: <s>Yes, it's.</s>)</div></div><h4>จุดที่คนไทยพลาดบ่อยที่สุด</h4><p>be <b>ไม่ใช้คู่กับกริยาการกระทำ</b> ในประโยคปัจจุบันธรรมดา เพราะประโยคมีกริยาอยู่แล้ว ไม่ต้องมีตัวเชื่อมอีก</p><div class=\"ex\"><s>I am work at a bank.</s> → I <b>work</b> at a bank.<div class=\"th\">ฉันทำงานที่ธนาคาร (work เป็นกริยาแล้ว)</div></div><div class=\"ex\"><s>She is agree.</s> → She <b>agrees</b>.<div class=\"th\">เธอเห็นด้วย</div></div><div class=\"tip\">ข้อยกเว้นที่จะเจอในบทหลัง: be + กริยา <b>-ing</b> แปลว่า \"กำลัง\" เช่น I <b>am working</b>. (ฉันกำลังทำงาน)</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>ประโยคมีคำแสดง <b>การกระทำ</b> ไหม (ทำงาน ส่ง เปิด เช็ก)?</li><li>มี → ใช้กริยานั้นเลย <b>ไม่ใส่ be</b></li><li>ไม่มี (เป็นอะไร / เป็นแบบไหน / อยู่ที่ไหน) → ต้องใส่ be</li><li>เลือก be ตามประธาน: I → am · คน/สิ่งเดียว → is · หลายคน/สิ่ง หรือ you → are</li></ol></div>",
     "examples": [
       [
         "I am ready. The report is on your desk.",
@@ -270,6 +297,14 @@
       [
         "Are the containers at the port?",
         "ตู้คอนเทนเนอร์อยู่ที่ท่าเรือไหม"
+      ],
+      [
+        "Is the ship late? No, it isn't.",
+        "เรือมาช้าไหม ไม่ช้า"
+      ],
+      [
+        "The files are on the server.",
+        "ไฟล์อยู่บนเซิร์ฟเวอร์"
       ]
     ],
     "mistakes": [
@@ -325,41 +360,60 @@
       {
         "q": "\"We ___ students.\"",
         "o": [
+          "are",
           "am",
-          "is",
-          "are"
+          "is"
         ],
-        "a": 2,
+        "a": 0,
         "why": "We ใช้ are"
       },
       {
         "q": "ข้อใดถูก",
         "o": [
-          "I am work here.",
-          "I work here."
+          "I work here.",
+          "I am work here."
         ],
-        "a": 1,
+        "a": 0,
         "why": "มีกริยาแล้ว"
       },
       {
         "q": "ปฏิเสธ \"It is late.\"",
         "o": [
-          "It not late.",
           "It isn't late.",
+          "It not late.",
           "It doesn't late."
         ],
-        "a": 1,
+        "a": 0,
         "why": "be + not"
       },
       {
         "q": "\"___ you ready?\"",
         "o": [
-          "Is",
           "Are",
-          "Do"
+          "Do",
+          "Is"
+        ],
+        "a": 0,
+        "why": "you ใช้ are"
+      },
+      {
+        "q": "\"ระบบช้า\"",
+        "o": [
+          "The system slow.",
+          "The system does slow.",
+          "The system is slow."
+        ],
+        "a": 2,
+        "why": "ไม่มีกริยาการกระทำ ต้องมี be"
+      },
+      {
+        "q": "\"Is it ready?\" ตอบว่าใช่",
+        "o": [
+          "Yes, it's.",
+          "Yes, it is."
         ],
         "a": 1,
-        "why": "you ใช้ are"
+        "why": "ตอบสั้นห้ามย่อ"
       }
     ],
     "homework": "เขียนแนะนำตัว 4 ประโยคด้วย am/is/are"
@@ -370,7 +424,7 @@
     "title": "There is / There are",
     "why": "ใช้บอกว่า \"มี\" อะไรอยู่ที่ไหน ซึ่งคนไทยมักแปลผิดเป็น have",
     "formula": "There is + 1 สิ่ง · There are + หลายสิ่ง",
-    "theory": "<p>\"มี\" ในภาษาไทยแปลได้ 2 แบบ</p>\n<table><tr><th>ความหมาย</th><th>ใช้</th><th>ตัวอย่าง</th></tr>\n<tr><td>มีอยู่ (บอกการมีอยู่ของสิ่งของ)</td><td>there is / there are</td><td>There is a problem. (มีปัญหา)</td></tr>\n<tr><td>เป็นเจ้าของ</td><td>have / has</td><td>I have a laptop. (ฉันมีแล็ปท็อป)</td></tr></table>\n<p>ปฏิเสธ: There isn't / There aren't · คำถาม: Is there...? Are there...?</p>",
+    "theory": "<h4>หลักคิด</h4><p>คำว่า \"มี\" ในภาษาไทยมีสองความหมาย ภาษาอังกฤษแยกเป็นสองโครงสร้าง ต้องถามว่า <b>มีใครเป็นเจ้าของไหม</b></p><div class=\"scroll\"><table><tr><th>ความหมายของ \"มี\"</th><th>ใช้</th><th>ตัวอย่าง</th></tr><tr><td>มีเจ้าของ (ใครมีอะไร)</td><td>have / has</td><td>I <b>have</b> a question. (ฉันมีคำถาม)</td></tr><tr><td>มีอยู่ (บอกว่ามีสิ่งนี้อยู่ตรงนั้น)</td><td>there is / there are</td><td><b>There is</b> a problem. (มีปัญหา)</td></tr></table></div><p>ประโยคไทย \"มีรถบรรทุกอยู่ข้างนอก\" ไม่มีใครเป็นเจ้าของ ถ้าแปลเป็น <s>Have a truck outside.</s> จะผิด เพราะ have ต้องมีประธานเป็นคนมี (และจากบทแรก ประโยคต้องมีประธาน) ภาษาอังกฤษเลยใช้ <b>there</b> เป็นประธานแทน ในโครงนี้ there <b>ไม่ได้แปลว่า \"ที่นั่น\"</b> มันแค่จองที่ประธานไว้</p><h4>วิธีสร้าง</h4><p>เลือก is หรือ are จาก <b>คำนามที่ตามหลัง</b></p><div class=\"scroll\"><table><tr><th></th><th>1 สิ่ง / นับไม่ได้</th><th>หลายสิ่ง</th></tr><tr><td>บอกเล่า</td><td>There <b>is</b> a bug in the code.</td><td>There <b>are</b> two meetings today.</td></tr><tr><td>ปฏิเสธ</td><td>There <b>isn't</b> a printer here.</td><td>There <b>aren't</b> any trucks.</td></tr><tr><td>คำถาม</td><td><b>Is there</b> a printer?</td><td><b>Are there</b> any questions?</td></tr><tr><td>ตอบสั้น</td><td>Yes, there is. / No, there isn't.</td><td>Yes, there are. / No, there aren't.</td></tr></table></div><p>ปฏิเสธอีกแบบ: <b>There are no</b> emails today. = There aren't any emails today. (วันนี้ไม่มีอีเมล)</p><p>ลำดับในประโยค: <b>There is/are + อะไร + ที่ไหน/เมื่อไร</b></p><div class=\"ex\">There are many people <b>in the office</b>.<div class=\"th\">มีคนเยอะในออฟฟิศ</div></div><div class=\"ex\">There was a delay <b>yesterday</b>.<div class=\"th\">เมื่อวานมีความล่าช้า (อดีตใช้ there was / there were)</div></div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>ในประโยคไทย มี <b>คน</b> ที่เป็นเจ้าของไหม (ฉันมี, บริษัทมี)?</li><li>มี → ใช้ <b>have / has</b></li><li>ไม่มี แค่บอกว่ามีสิ่งนี้อยู่ → ใช้ <b>there is / there are</b></li><li>ดูคำนามที่ตามมา: 1 สิ่งหรือนับไม่ได้ → is · หลายสิ่ง → are</li><li>คำถาม: สลับเป็น Is there / Are there</li></ol></div>",
     "examples": [
       [
         "There is a problem with the order.",
@@ -383,6 +437,10 @@
       [
         "Are there any questions?",
         "มีคำถามไหมครับ"
+      ],
+      [
+        "Are there any questions? Yes, there are.",
+        "มีคำถามไหม มีครับ"
       ]
     ],
     "mistakes": [
@@ -466,11 +524,29 @@
       {
         "q": "คำถามของ \"There is a printer.\"",
         "o": [
-          "Is there a printer?",
-          "There is a printer?"
+          "There is a printer?",
+          "Is there a printer?"
+        ],
+        "a": 1,
+        "why": "ย้าย is ขึ้นหน้า"
+      },
+      {
+        "q": "\"There ___ a lot of traffic today.\"",
+        "o": [
+          "is",
+          "are"
         ],
         "a": 0,
-        "why": "ย้าย is ขึ้นหน้า"
+        "why": "traffic นับไม่ได้ ใช้ is"
+      },
+      {
+        "q": "\"บริษัทเรามีรถบรรทุก 5 คัน\"",
+        "o": [
+          "There are five trucks our company.",
+          "Our company has five trucks."
+        ],
+        "a": 1,
+        "why": "มีเจ้าของ (บริษัท) ใช้ have/has"
       }
     ],
     "homework": "บรรยายห้องหรือที่ทำงานของคุณ 4 ประโยคด้วย there is / there are"
@@ -481,7 +557,7 @@
     "title": "do / does: ปฏิเสธและคำถาม",
     "why": "ประโยคที่มีกริยาทั่วไป ต้องใช้ do/does ช่วยเมื่อปฏิเสธหรือถาม",
     "formula": "don't/doesn't + กริยาไม่เติม s · Do/Does + ประธาน + กริยาไม่เติม s",
-    "theory": "<table><tr><th></th><th>I / you / we / they</th><th>he / she / it</th></tr>\n<tr><td>บอกเล่า</td><td>They work.</td><td>She works.</td></tr>\n<tr><td>ปฏิเสธ</td><td>They <b>don't</b> work.</td><td>She <b>doesn't</b> work.</td></tr>\n<tr><td>คำถาม</td><td><b>Do</b> they work?</td><td><b>Does</b> she work?</td></tr></table>\n<div class=\"tip\"><b>กฎทอง:</b> s ย้ายไปอยู่ที่ does แล้ว กริยาหลักจึงไม่เติม s อีก · ใช้ be เมื่อไม่มีกริยาอื่น ใช้ do/does เมื่อมีกริยาอื่น</div>",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาไทยทำประโยคปฏิเสธด้วยการใส่ \"ไม่\" หน้ากริยา และทำคำถามด้วยการเติม \"ไหม\" ท้ายประโยค ภาษาอังกฤษใช้ <b>คำช่วย</b>: not ต้องเกาะกับคำช่วย และคำถามต้องย้ายคำช่วยขึ้นไปหน้าประธาน</p><p>บทที่แล้ว be เป็นคำช่วยในตัว (isn't / Is it...?) แต่กริยาทั่วไปอย่าง work, need, like <b>ไม่มีคำช่วย</b> จึงต้องเรียก <b>do / does</b> มาทำหน้าที่นี้แทน</p><div class=\"scroll\"><table><tr><th></th><th>มี be</th><th>กริยาทั่วไป → เรียก do/does</th></tr><tr><td>บอกเล่า</td><td>The system <b>is</b> slow.</td><td>The system <b>works</b>.</td></tr><tr><td>ปฏิเสธ</td><td>The system <b>isn't</b> slow.</td><td>The system <b>doesn't work</b>.</td></tr><tr><td>คำถาม</td><td><b>Is</b> the system slow?</td><td><b>Does</b> the system <b>work</b>?</td></tr></table></div><h4>วิธีสร้าง</h4><div class=\"scroll\"><table><tr><th></th><th>I / you / we / they</th><th>he / she / it / 1 สิ่ง</th></tr><tr><td>บอกเล่า</td><td>They work.</td><td>She work<b>s</b>.</td></tr><tr><td>ปฏิเสธ</td><td>They <b>don't</b> work.</td><td>She <b>doesn't</b> work.</td></tr><tr><td>คำถาม</td><td><b>Do</b> they work?</td><td><b>Does</b> she work?</td></tr><tr><td>ตอบสั้น</td><td>Yes, they do. / No, they don't.</td><td>Yes, she does. / No, she doesn't.</td></tr></table></div><h4>กฎทอง: s ย้ายไปอยู่ที่ does</h4><p>does = do + s อยู่แล้ว เมื่อ s ไปอยู่ที่ does กริยาหลักจึง <b>กลับเป็นรูปปกติ ไม่เติม s</b></p><div class=\"ex\">She works. → She does<b>n't</b> work. → Does she work?<div class=\"th\"><s>She doesn't works.</s> <s>Does she works?</s> ผิดทั้งคู่</div></div><p>do เป็นกริยาหลักได้ด้วย (แปลว่า \"ทำ\") ก็ใช้กฎเดียวกัน: I <b>don't do</b> overtime. · What <b>do</b> you <b>do</b>? (คุณทำงานอะไร)</p><div class=\"tip\"><b>be หรือ do?</b> ดูว่าประโยคเดิมมีกริยาการกระทำไหม · \"เขาไม่ว่าง\" ไม่มีการกระทำ → He <b>isn't</b> busy. · \"เขาไม่ทำงาน\" มี → He <b>doesn't</b> work.</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>ประโยคเดิมมี be (am/is/are) ไหม? มี → ใช้ be ทำปฏิเสธ/คำถามเลย ไม่ต้องใช้ do</li><li>ไม่มี → เรียก do/does มาช่วย</li><li>ประธานเป็น he/she/it หรือสิ่งเดียว → <b>does / doesn't</b> · อื่น ๆ → <b>do / don't</b></li><li>กริยาหลักกลับเป็นรูปปกติ <b>ไม่เติม s</b> เสมอ</li></ol></div>",
     "examples": [
       [
         "Does the system send an email?",
@@ -490,6 +566,14 @@
       [
         "We don't ship on Sundays.",
         "เราไม่ส่งของวันอาทิตย์"
+      ],
+      [
+        "She doesn't work on Sundays.",
+        "เธอไม่ทำงานวันอาทิตย์"
+      ],
+      [
+        "Does the system work? Yes, it does.",
+        "ระบบใช้งานได้ไหม ได้"
       ]
     ],
     "mistakes": [
@@ -563,19 +647,19 @@
       {
         "q": "\"They ___ use Java.\"",
         "o": [
-          "doesn't",
-          "don't"
+          "don't",
+          "doesn't"
         ],
-        "a": 1,
+        "a": 0,
         "why": "They ใช้ don't"
       },
       {
         "q": "ข้อใดถูก",
         "o": [
-          "Do the driver know?",
-          "Does the driver know?"
+          "Does the driver know?",
+          "Do the driver know?"
         ],
-        "a": 1,
+        "a": 0,
         "why": "driver 1 คน"
       },
       {
@@ -595,6 +679,16 @@
         ],
         "a": 1,
         "why": "busy ไม่ใช่กริยา ใช้ be"
+      },
+      {
+        "q": "\"___ he have a car?\"",
+        "o": [
+          "Is",
+          "Does",
+          "Do"
+        ],
+        "a": 1,
+        "why": "he + กริยาทั่วไป ใช้ Does"
       }
     ],
     "homework": "เขียนคำถาม 3 ข้อที่จะถามรุ่นพี่ที่ฝึกงาน เช่น Do you use React?"
@@ -605,7 +699,7 @@
     "title": "a / an / the",
     "why": "คำนามนับได้เอกพจน์ต้องมีคำนำหน้าเสมอ คนไทยลืมบ่อยที่สุดเพราะภาษาไทยไม่มี",
     "formula": "a/an = อันไหนก็ได้ 1 อัน · the = อันที่รู้กัน",
-    "theory": "<table><tr><th>คำ</th><th>ใช้เมื่อ</th><th>ตัวอย่าง</th></tr>\n<tr><td>a</td><td>1 อันที่ยังไม่ระบุ หน้า<b>เสียง</b>พยัญชนะ</td><td>a truck, a user</td></tr>\n<tr><td>an</td><td>เหมือน a แต่หน้า<b>เสียง</b>สระ</td><td>an email, an hour</td></tr>\n<tr><td>the</td><td>รู้กันว่าอันไหน: พูดถึงแล้ว มีอันเดียว หรือชี้เจาะจง</td><td>the file I sent you</td></tr>\n<tr><td>(ไม่ใส่)</td><td>พหูพจน์หรือนามนับไม่ได้ที่พูดทั่วไป</td><td>Trucks are expensive.</td></tr></table>\n<div class=\"tip\"><b>ดูที่เสียง ไม่ใช่ตัวอักษร:</b> an hour (h ไม่ออกเสียง), a university (ยู) · ครั้งแรกใช้ a ครั้งต่อไปใช้ the</div>",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาไทยพูด \"ส่งไฟล์ให้หน่อย\" ได้โดยไม่ต้องบอกว่าไฟล์ไหน ภาษาอังกฤษ <b>บังคับให้บอกทุกครั้ง</b> ว่าคำนามนั้น ผู้ฟังรู้แล้วหรือยังว่าเป็นอันไหน ก่อนวางคำนาม ให้ถามตัวเอง 2 ข้อ</p><ol><li><b>นับได้ไหม และมีกี่อัน?</b></li><li><b>ผู้ฟังรู้ไหมว่าอันไหน?</b></li></ol><div class=\"scroll\"><table><tr><th>สถานการณ์</th><th>ใช้</th><th>ตัวอย่าง</th></tr><tr><td>นับได้ 1 อัน ผู้ฟังยังไม่รู้ว่าอันไหน</td><td>a / an</td><td>I ordered <b>a</b> laptop.</td></tr><tr><td>ผู้ฟังรู้ว่าอันไหน (เอกพจน์ พหูพจน์ นับไม่ได้ ได้หมด)</td><td>the</td><td><b>The</b> laptop arrived today.</td></tr><tr><td>พหูพจน์ หรือนับไม่ได้ พูดแบบทั่วไป</td><td>(ไม่ใส่)</td><td>Laptops are expensive.</td></tr></table></div><div class=\"ex\">I ordered <b>a</b> laptop. <b>The</b> laptop arrived today.<div class=\"th\">ครั้งแรก ผู้ฟังยังไม่รู้จัก → a · ครั้งที่สอง รู้แล้วว่าเครื่องไหน → the</div></div><h4>a หรือ an: ฟังที่เสียง ไม่ใช่ตัวอักษร</h4><p><b>a</b> หน้าเสียงพยัญชนะ · <b>an</b> หน้าเสียงสระ (อ, เอ, อิ, โอ, อา)</p><div class=\"scroll\"><table><tr><th></th><th>ตัวอย่าง</th><th>ทำไม</th></tr><tr><td>a</td><td>a truck, a user, a university</td><td>user/university ออกเสียง \"ยู\" (เสียงพยัญชนะ y)</td></tr><tr><td>an</td><td>an email, an hour, an MRT station</td><td>hour: h ไม่ออกเสียง · MRT อ่านว่า \"เอ็ม\"</td></tr></table></div><h4>เมื่อไรใช้ the</h4><ol><li><b>พูดถึงไปแล้ว:</b> I have a file. <b>The</b> file is big.</li><li><b>มีอันเดียวในบริบทนั้น:</b> <b>the</b> manager (หัวหน้าของเรา), <b>the</b> server, <b>the</b> internet</li><li><b>มีคำระบุต่อท้าย:</b> <b>the</b> file I sent you, <b>the</b> truck at gate 3</li><li><b>ขั้นสุด / ลำดับ:</b> <b>the</b> best price, <b>the</b> first step</li></ol><h4>ข้อควรจำ</h4><p><b>อาชีพต้องมี a/an:</b> <s>I am developer.</s> → I am <b>a</b> developer.<br><b>ถ้ามี my / your / this / that แล้ว ไม่ใส่ a/the ซ้อน:</b> <s>the my laptop</s> → <b>my</b> laptop</p><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>คำนามนี้นับได้ไหม? เป็นเอกพจน์หรือพหูพจน์?</li><li>ผู้ฟังรู้แล้วว่าอันไหน (พูดไปแล้ว / มีอันเดียว / มีคำระบุตาม) → <b>the</b></li><li>ยังไม่รู้ + นับได้ 1 อัน → <b>a / an</b> (ฟังเสียงแรกของคำถัดไป)</li><li>ยังไม่รู้ + พหูพจน์หรือนับไม่ได้ → <b>ไม่ใส่</b></li><li>มี my / your / this อยู่แล้ว → ไม่ต้องใส่อะไรเพิ่ม</li></ol></div>",
     "examples": [
       [
         "I got an email. The email was from a customer.",
@@ -614,6 +708,14 @@
       [
         "It takes an hour to get to the airport.",
         "ใช้เวลาหนึ่งชั่วโมงไปสนามบิน"
+      ],
+      [
+        "I ordered a laptop. The laptop arrived today.",
+        "ฉันสั่งแล็ปท็อปเครื่องหนึ่ง เครื่องนั้นมาถึงวันนี้"
+      ],
+      [
+        "She is an engineer at the port.",
+        "เธอเป็นวิศวกรที่ท่าเรือ"
       ]
     ],
     "mistakes": [
@@ -687,10 +789,10 @@
       {
         "q": "\"Please close ___ door.\" (ประตูที่รู้กัน)",
         "o": [
-          "a",
-          "the"
+          "the",
+          "a"
         ],
-        "a": 1,
+        "a": 0,
         "why": "เจาะจง"
       },
       {
@@ -701,6 +803,24 @@
         ],
         "a": 1,
         "why": "พหูพจน์แบบทั่วไป"
+      },
+      {
+        "q": "___ hour",
+        "o": [
+          "a",
+          "an"
+        ],
+        "a": 1,
+        "why": "h ไม่ออกเสียง ขึ้นต้นด้วยเสียงสระ"
+      },
+      {
+        "q": "ข้อใดถูก",
+        "o": [
+          "This is the my laptop.",
+          "This is my laptop."
+        ],
+        "a": 1,
+        "why": "มี my แล้ว ไม่ใส่ the"
       }
     ],
     "homework": "เล่าเรื่องสั้น 3 ประโยค ประโยคแรกใช้ a/an ประโยคต่อไปใช้ the กับสิ่งเดียวกัน"
@@ -711,7 +831,7 @@
     "title": "I / me / my / mine",
     "why": "คำแทนคนมี 4 รูปตามหน้าที่ ถ้าใช้ผิดรูป ประโยคจะฟังแปลกทันที",
     "formula": "ประธาน · กรรม · ของ (+นาม) · ของ (ลอย ๆ)",
-    "theory": "<table><tr><th>ประธาน</th><th>กรรม</th><th>ของ + นาม</th><th>ของ (ไม่มีนามตาม)</th></tr>\n<tr><td>I</td><td>me</td><td>my</td><td>mine</td></tr><tr><td>you</td><td>you</td><td>your</td><td>yours</td></tr>\n<tr><td>he</td><td>him</td><td>his</td><td>his</td></tr><tr><td>she</td><td>her</td><td>her</td><td>hers</td></tr>\n<tr><td>it</td><td>it</td><td>its</td><td>-</td></tr><tr><td>we</td><td>us</td><td>our</td><td>ours</td></tr>\n<tr><td>they</td><td>them</td><td>their</td><td>theirs</td></tr></table>\n<p><b>ประธาน</b> อยู่หน้ากริยา: <b>She</b> sent it. · <b>กรรม</b> อยู่หลังกริยาหรือบุพบท: Send it to <b>her</b>. · <b>my</b> + นาม: <b>my</b> laptop · <b>mine</b> ยืนเดี่ยว: This laptop is <b>mine</b>.</p>",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาไทยใช้ \"ฉัน\" คำเดียวได้ทุกตำแหน่ง: <u>ฉัน</u>ส่ง · ส่งให้<u>ฉัน</u> · ของ<u>ฉัน</u> ภาษาอังกฤษ <b>เปลี่ยนรูปตามหน้าที่ในประโยค</b> ก่อนเลือกคำ ให้ดูว่ามันอยู่ตรงไหนของประโยค</p><div class=\"scroll\"><table><tr><th>ประธาน</th><th>กรรม</th><th>ของ + นาม</th><th>ของ (ไม่มีนามตาม)</th></tr><tr><td>I</td><td>me</td><td>my</td><td>mine</td></tr><tr><td>you</td><td>you</td><td>your</td><td>yours</td></tr><tr><td>he</td><td>him</td><td>his</td><td>his</td></tr><tr><td>she</td><td>her</td><td>her</td><td>hers</td></tr><tr><td>it</td><td>it</td><td>its</td><td>-</td></tr><tr><td>we</td><td>us</td><td>our</td><td>ours</td></tr><tr><td>they</td><td>them</td><td>their</td><td>theirs</td></tr></table></div><h4>4 หน้าที่</h4><p><b>1. ประธาน</b> อยู่หน้ากริยา เป็นคนทำ</p><div class=\"ex\"><b>She</b> sent the invoice. · <b>We</b> need help.<div class=\"th\">เธอส่งใบแจ้งหนี้ · เราต้องการความช่วยเหลือ</div></div><p><b>2. กรรม</b> อยู่หลังกริยา หรือหลังบุพบท (to, for, with, at, from)</p><div class=\"ex\">Please call <b>me</b>. · Send it to <b>them</b>. · Can you help <b>us</b>?<div class=\"th\">โทรหาฉันด้วย · ส่งให้พวกเขา · ช่วยเราได้ไหม</div></div><p><b>3. my, your, his... + คำนาม</b> ต้องมีคำนามตามเสมอ</p><div class=\"ex\">This is <b>our</b> laptop. · <b>Their</b> office is in Bangkok.<div class=\"th\">นี่คือแล็ปท็อปของเรา · ออฟฟิศของพวกเขาอยู่กรุงเทพ</div></div><p><b>4. mine, yours, hers... ยืนเดี่ยว</b> ใช้แทน \"my + คำนาม\" เมื่อไม่อยากพูดคำนามซ้ำ</p><div class=\"ex\">Is this your pen? Yes, it's <b>mine</b>. (= my pen)<div class=\"th\">นี่ปากกาคุณไหม ใช่ ของฉัน</div></div><div class=\"tip\"><b>ระวัง:</b> <b>its</b> = ของมัน · <b>it's</b> = it is<br><b>ไม่รู้เพศ</b> หรือไม่อยากระบุ ใช้ <b>they / them / their</b> กับคนเดียวได้: A customer called. <b>They</b> want a refund.</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>คำนี้อยู่ <b>หน้ากริยา</b> (เป็นคนทำ)? → I, he, she, we, they</li><li>อยู่ <b>หลังกริยา</b> หรือหลัง to / for / with? → me, him, her, us, them</li><li>หมายถึง \"ของ\" และ <b>มีคำนามตาม</b>? → my, his, her, our, their</li><li>หมายถึง \"ของ\" แต่ <b>ไม่มีคำนามตาม</b>? → mine, his, hers, ours, theirs</li></ol></div>",
     "examples": [
       [
         "Please send me the file. I need it for my report.",
@@ -720,6 +840,14 @@
       [
         "Is this phone yours? No, it's his.",
         "โทรศัพท์นี้ของคุณไหม ไม่ใช่ ของเขา"
+      ],
+      [
+        "Is this your pen? Yes, it's mine.",
+        "นี่ปากกาคุณไหม ใช่ ของฉัน"
+      ],
+      [
+        "Please send it to them.",
+        "ช่วยส่งให้พวกเขาด้วย"
       ]
     ],
     "mistakes": [
@@ -779,21 +907,21 @@
       {
         "q": "\"___ is my manager.\" (เขา)",
         "o": [
-          "Him",
           "He",
+          "Him",
           "His"
         ],
-        "a": 1,
+        "a": 0,
         "why": "ประธาน"
       },
       {
         "q": "\"Can you help ___?\" (เรา)",
         "o": [
+          "our",
           "we",
-          "us",
-          "our"
+          "us"
         ],
-        "a": 1,
+        "a": 2,
         "why": "กรรม"
       },
       {
@@ -813,6 +941,25 @@
         ],
         "a": 1,
         "why": "ไม่มีนามตาม"
+      },
+      {
+        "q": "\"Send the report to ___.\" (เธอ)",
+        "o": [
+          "her",
+          "she",
+          "hers"
+        ],
+        "a": 0,
+        "why": "หลัง to ใช้รูปกรรม"
+      },
+      {
+        "q": "\"The company changed ___ logo.\" (ของมัน)",
+        "o": [
+          "its",
+          "it's"
+        ],
+        "a": 0,
+        "why": "its = ของมัน · it's = it is"
       }
     ],
     "homework": "เขียน 4 ประโยคเกี่ยวกับครอบครัวหรือเพื่อน ใช้ให้ครบทั้ง 4 รูป"
@@ -823,7 +970,7 @@
     "title": "can / can't",
     "why": "ใช้บอกความสามารถ และขอร้องอย่างสุภาพ ใช้ในการสัมภาษณ์งานแน่นอน",
     "formula": "can + กริยารูปปกติ (ไม่เติม s ไม่เติม to)",
-    "theory": "<p><b>ความสามารถ:</b> I <b>can</b> use Python. · She <b>can't</b> (cannot) drive.</p>\n<p><b>ขออนุญาต / ขอร้อง:</b> <b>Can</b> I ask a question? · <b>Can</b> you send me the file? (สุภาพขึ้น: <b>Could</b> you...?)</p>\n<div class=\"tip\"><b>สำคัญ:</b> หลัง can ใช้กริยารูปปกติเสมอ ไม่ว่าประธานเป็นใคร: He can <b>speak</b> (ไม่ใช่ speaks, ไม่ใช่ to speak)<br>ออกเสียง: can ในประโยคบอกเล่ามักพูดเบา \"เคิน\" ส่วน can't ออกเสียงเต็ม \"แคนท์\" ฟังเสียงท้าย t ให้ดี</div>",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาไทยวาง \"ได้\" ไว้ <b>ท้าย</b>: ฉันพูดญี่ปุ่น<u>ได้</u> ภาษาอังกฤษวาง can ไว้ <b>หน้ากริยา</b>: I <b>can</b> speak Japanese.</p><p>can เป็น <b>กริยาช่วย</b> (modal) มีหน้าที่เติมความหมาย \"ได้\" ให้กริยาหลัก และมีกฎของกริยาช่วยที่ต้องจำ 3 ข้อ</p><ol><li><b>ไม่เปลี่ยนรูปตามประธาน:</b> He can (ไม่มี <s>cans</s>)</li><li><b>กริยาหลังเป็นรูปปกติ</b> ไม่เติม s ไม่มี to: He can <b>drive</b>. (<s>can drives</s>, <s>can to drive</s>)</li><li><b>ปฏิเสธและคำถามใช้ can เอง</b> ไม่ต้องเรียก do: <s>I don't can</s> → I <b>can't</b></li></ol><h4>วิธีสร้าง</h4><div class=\"scroll\"><table><tr><th></th><th>ตัวอย่าง</th></tr><tr><td>บอกเล่า</td><td>She <b>can</b> use Excel.</td></tr><tr><td>ปฏิเสธ</td><td>She <b>can't</b> (cannot) use Excel.</td></tr><tr><td>คำถาม</td><td><b>Can</b> she use Excel?</td></tr><tr><td>ตอบสั้น</td><td>Yes, she can. / No, she can't.</td></tr></table></div><h4>3 ความหมาย</h4><p><b>1. ความสามารถ</b> (ทำได้ / ทำไม่ได้)</p><div class=\"ex\">I <b>can</b> use Python. · He <b>can't</b> drive a truck.<div class=\"th\">ฉันใช้ Python ได้ · เขาขับรถบรรทุกไม่เป็น</div></div><p><b>2. ขออนุญาต</b> (Can I...?)</p><div class=\"ex\"><b>Can I</b> ask a question? · <b>Can I</b> leave early today?<div class=\"th\">ขอถามหน่อยได้ไหม · วันนี้ขอกลับก่อนได้ไหม</div></div><p><b>3. ขอร้อง</b> (Can you...? / Could you...?)</p><div class=\"scroll\"><table><tr><th>ความสุภาพ</th><th>ประโยค</th></tr><tr><td>คำสั่ง (ห้วน)</td><td>Send me the file.</td></tr><tr><td>สุภาพ</td><td><b>Can you</b> send me the file?</td></tr><tr><td>สุภาพที่สุด (ใช้กับหัวหน้า ลูกค้า)</td><td><b>Could you</b> send me the file, <b>please</b>?</td></tr></table></div><div class=\"tip\"><b>อดีตของ can คือ could:</b> I <b>couldn't</b> open the file yesterday. (เมื่อวานเปิดไฟล์ไม่ได้)<br><b>ออกเสียง:</b> can ในประโยคบอกเล่ามักพูดเบา \"เคิน\" ส่วน can't ออกเสียงเต็ม \"แคนท์\" ฟังเสียงท้าย t ให้ดี</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>ประโยคไทยมี \"ได้ / ไม่ได้ / ได้ไหม\" ไหม? → ใช้ can</li><li>วาง can <b>หน้ากริยา</b> (ไม่ใช่ท้ายประโยคแบบภาษาไทย)</li><li>กริยาหลัง can ใช้รูปปกติ ไม่เติม s ไม่มี to</li><li>ปฏิเสธ → can't · คำถาม → Can + ประธาน + กริยา (ไม่ใช้ do)</li><li>ขอร้องคนที่ต้องสุภาพด้วย → Could you..., please?</li></ol></div>",
     "examples": [
       [
         "I can build a website with React.",
@@ -832,6 +979,14 @@
       [
         "Could you explain it again, please?",
         "ช่วยอธิบายอีกครั้งได้ไหมครับ"
+      ],
+      [
+        "I can use Python, but I can't use Java.",
+        "ฉันใช้ Python ได้ แต่ใช้ Java ไม่ได้"
+      ],
+      [
+        "Could you send me the file, please?",
+        "ช่วยส่งไฟล์ให้หน่อยได้ไหม"
       ]
     ],
     "mistakes": [
@@ -890,20 +1045,20 @@
       {
         "q": "\"I ___ use Excel.\" (ได้)",
         "o": [
-          "can",
           "cans",
-          "can to"
+          "can to",
+          "can"
         ],
-        "a": 0,
+        "a": 2,
         "why": ""
       },
       {
         "q": "ข้อใดถูก",
         "o": [
-          "She can sings.",
-          "She can sing."
+          "She can sing.",
+          "She can sings."
         ],
-        "a": 1,
+        "a": 0,
         "why": "หลัง can ไม่เติม s"
       },
       {
@@ -923,6 +1078,25 @@
         ],
         "a": 1,
         "why": "can + not"
+      },
+      {
+        "q": "\"Can he ___ English?\"",
+        "o": [
+          "speak",
+          "to speak",
+          "speaks"
+        ],
+        "a": 0,
+        "why": "หลัง can ใช้กริยารูปปกติ"
+      },
+      {
+        "q": "\"เมื่อวานฉันเปิดไฟล์ไม่ได้\"",
+        "o": [
+          "I couldn't open the file yesterday.",
+          "I can't open the file yesterday."
+        ],
+        "a": 0,
+        "why": "อดีตของ can คือ could"
       }
     ],
     "homework": "เขียน 3 สิ่งที่คุณทำได้ และ 2 สิ่งที่ยังทำไม่ได้ (เอาไว้ใช้ตอบสัมภาษณ์)"
@@ -933,7 +1107,7 @@
     "title": "in / on / at",
     "why": "บุพบทบอกเวลาและสถานที่ ใช้ในทุกอีเมลนัดหมายและการบอกสถานะ shipment",
     "formula": "in (ใหญ่) → on (วัน/พื้นผิว) → at (จุด)",
-    "theory": "<table><tr><th></th><th>เวลา</th><th>สถานที่</th></tr>\n<tr><td><b>at</b> จุดเจาะจง</td><td>at 9 am, at noon, at night</td><td>at the port, at the office</td></tr>\n<tr><td><b>on</b> วัน / พื้นผิว</td><td>on Monday, on 9 October</td><td>on the desk, on the website</td></tr>\n<tr><td><b>in</b> ช่วงใหญ่ / ข้างใน</td><td>in October, in 2026, in the morning</td><td>in the warehouse, in Bangkok</td></tr></table>",
+    "theory": "<h4>หลักคิด</h4><p>ให้นึกเป็น <b>ขนาด</b> จากใหญ่ไปเล็ก ทั้งเวลาและสถานที่ใช้หลักเดียวกัน</p><div class=\"scroll\"><table><tr><th></th><th>ภาพในหัว</th><th>เวลา</th><th>สถานที่</th></tr><tr><td><b>in</b></td><td>พื้นที่หรือช่วงใหญ่ที่มีขอบล้อม (อยู่ข้างใน)</td><td>เดือน ปี ช่วงของวัน</td><td>ข้างในห้อง อาคาร เมือง ประเทศ</td></tr><tr><td><b>on</b></td><td>พื้นผิวหรือหนึ่งวันเต็ม</td><td>วัน วันที่</td><td>บนพื้นผิว หน้าจอ ชั้น</td></tr><tr><td><b>at</b></td><td>จุดเล็ก ๆ จุดเดียว</td><td>เวลานาฬิกา</td><td>จุดหมาย ที่ที่ไปทำกิจกรรม</td></tr></table></div><h4>เวลา</h4><div class=\"scroll\"><table><tr><th></th><th>ตัวอย่าง</th></tr><tr><td>at</td><td>at 9 am, at 5:30, at noon, at night, at lunchtime</td></tr><tr><td>on</td><td>on Monday, on 9 October, on Monday morning, on my birthday</td></tr><tr><td>in</td><td>in October, in 2026, in the morning, in the afternoon, in two weeks</td></tr></table></div><p><b>ไม่ใส่บุพบท</b> เมื่อมี next / last / this / every / tomorrow / yesterday อยู่ข้างหน้า: <s>on next Monday</s> → <b>next Monday</b> · <s>in this week</s> → <b>this week</b></p><h4>สถานที่</h4><div class=\"scroll\"><table><tr><th></th><th>ตัวอย่าง</th></tr><tr><td>at</td><td>at the port, at the office, at work, at home, at gate 3</td></tr><tr><td>on</td><td>on the desk, on the website, on the screen, on page 3, on the 5th floor</td></tr><tr><td>in</td><td>in the warehouse, in the container, in Bangkok, in the email, in the report</td></tr></table></div><div class=\"ex\">I'm <b>at</b> the office. · The printer is <b>in</b> the office.<div class=\"th\">at = บอกว่าอยู่ที่ทำงาน (จุดหมาย) · in = อยู่ข้างในห้องหรืออาคาร</div></div><div class=\"tip\"><b>คำที่ต้องจำเป็นพิเศษ:</b> in the morning / in the afternoon / in the evening แต่ <b>at night</b> · on Monday แต่ on Monday <b>morning</b> (มีชื่อวันนำ ใช้ on)</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>มี next / last / this / every นำหน้าไหม? มี → <b>ไม่ใส่บุพบท</b></li><li>เวลา: เป็นเวลานาฬิกา → <b>at</b> · มีชื่อวันหรือวันที่ → <b>on</b> · เดือน ปี ช่วงยาว → <b>in</b></li><li>สถานที่: อยู่ข้างในอะไร → <b>in</b> · อยู่บนพื้นผิว/หน้าจอ → <b>on</b> · บอกจุดหรือที่ที่ไปทำกิจกรรม → <b>at</b></li></ol></div>",
     "examples": [
       [
         "The ship arrives at 6 am on Monday in November.",
@@ -942,6 +1116,14 @@
       [
         "The goods are in the warehouse at Laem Chabang.",
         "สินค้าอยู่ในโกดังที่แหลมฉบัง"
+      ],
+      [
+        "The truck leaves at 8 am on Monday.",
+        "รถออกตอน 8 โมงเช้าวันจันทร์"
+      ],
+      [
+        "The boxes are in the warehouse.",
+        "กล่องอยู่ในคลังสินค้า"
       ]
     ],
     "mistakes": [
@@ -994,11 +1176,11 @@
       {
         "q": "___ Friday",
         "o": [
-          "in",
           "on",
-          "at"
+          "at",
+          "in"
         ],
-        "a": 1,
+        "a": 0,
         "why": "วัน"
       },
       {
@@ -1014,22 +1196,42 @@
       {
         "q": "___ noon",
         "o": [
+          "at",
           "in",
-          "on",
-          "at"
+          "on"
         ],
-        "a": 2,
+        "a": 0,
         "why": "จุดเวลา"
       },
       {
         "q": "\"The boxes are ___ the container.\"",
         "o": [
           "in",
-          "on",
-          "at"
+          "at",
+          "on"
         ],
         "a": 0,
         "why": "ข้างใน"
+      },
+      {
+        "q": "\"See you ___ next Monday.\"",
+        "o": [
+          "(ไม่ใส่)",
+          "at",
+          "on"
+        ],
+        "a": 0,
+        "why": "มี next ไม่ใส่บุพบท"
+      },
+      {
+        "q": "___ night",
+        "o": [
+          "at",
+          "in",
+          "on"
+        ],
+        "a": 0,
+        "why": "ข้อยกเว้น: at night"
       }
     ],
     "homework": "เขียนอีเมลนัดประชุม 2 ประโยค มีวัน เวลา และสถานที่"
@@ -1040,7 +1242,7 @@
     "title": "คำถาม Wh-",
     "why": "ใช้ถามข้อมูลในที่ทำงานทุกวัน",
     "formula": "Wh- + ตัวช่วย (is/are/do/does/did/will) + ประธาน + กริยา",
-    "theory": "<table><tr><th>คำ</th><th>ถามเรื่อง</th><th>ตัวอย่าง</th></tr>\n<tr><td>What</td><td>อะไร</td><td>What do you need?</td></tr><tr><td>Where</td><td>ที่ไหน</td><td>Where is the shipment now?</td></tr>\n<tr><td>When</td><td>เมื่อไร</td><td>When did you send it?</td></tr><tr><td>Who</td><td>ใคร</td><td>Who is the customer?</td></tr>\n<tr><td>Why</td><td>ทำไม</td><td>Why is the truck late?</td></tr><tr><td>How</td><td>อย่างไร</td><td>How does it work?</td></tr>\n<tr><td>How long / How much</td><td>นานเท่าไร / ราคาเท่าไร</td><td>How much is it?</td></tr></table>\n<div class=\"tip\"><b>เลือกตัวช่วย:</b> มี be → is/are · กริยาอื่นตอนนี้ → do/does · จบแล้ว → did · อนาคต → will</div>",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาไทยวางคำถามไว้ตรงตำแหน่งของข้อมูลที่ถาม (\"คุณต้องการ<u>อะไร</u>\" → อะไรอยู่ท้าย) ภาษาอังกฤษ <b>ย้ายคำถามขึ้นไปหน้าสุดเสมอ</b> แล้วตามด้วยคำถามแบบ Yes/No ที่เรียนไปแล้ว</p><p>สูตรคือ <b>Wh- + คำถาม Yes/No</b> ถ้าทำคำถาม Yes/No เป็น ก็แค่เติม Wh- ไว้ข้างหน้า</p><div class=\"scroll\"><table><tr><th>ขั้น</th><th>ตัวอย่าง</th></tr><tr><td>1. ประโยคบอกเล่า</td><td>You need a report.</td></tr><tr><td>2. ทำเป็นคำถาม Yes/No</td><td><b>Do</b> you need a report?</td></tr><tr><td>3. เอาข้อมูลที่อยากรู้ออก แล้วใส่ Wh- ไว้หน้า</td><td><b>What do</b> you need?</td></tr></table></div><div class=\"ex\">The shipment is at the port. → Is the shipment at the port? → <b>Where is</b> the shipment?<div class=\"th\">ใช้หลักเดียวกันกับ be</div></div><h4>คำถามที่ใช้บ่อย</h4><div class=\"scroll\"><table><tr><th>คำ</th><th>ถามเรื่อง</th><th>ตัวอย่าง</th></tr><tr><td>What</td><td>อะไร</td><td>What do you need?</td></tr><tr><td>Where</td><td>ที่ไหน</td><td>Where is the shipment now?</td></tr><tr><td>When</td><td>เมื่อไร</td><td>When did you send it?</td></tr><tr><td>Who</td><td>ใคร</td><td>Who is the customer?</td></tr><tr><td>Why</td><td>ทำไม</td><td>Why is the truck late?</td></tr><tr><td>How</td><td>อย่างไร</td><td>How does it work?</td></tr><tr><td>How much</td><td>ราคา / ปริมาณ (นับไม่ได้)</td><td>How much is it?</td></tr><tr><td>How many</td><td>จำนวน (นับได้)</td><td>How many boxes are there?</td></tr><tr><td>How long</td><td>นานเท่าไร</td><td>How long does it take?</td></tr></table></div><div class=\"tip\"><b>เลือกคำช่วย:</b> มี be → is / are · กริยาอื่นในปัจจุบัน → do / does · เรื่องที่จบแล้ว → did · อนาคต → will</div><h4>ข้อยกเว้น: ถามหาคนทำ (ประธาน)</h4><p>ถ้า Who / What คือ <b>คนหรือสิ่งที่ทำการกระทำ</b> เอง ไม่ต้องใช้ do/does/did เพราะ Who อยู่ตำแหน่งประธานอยู่แล้ว</p><div class=\"ex\">Somebody wrote this report. → <b>Who wrote</b> this report?<div class=\"th\">ใครเขียนรายงานนี้ (<s>Who did write...</s>)</div></div><div class=\"ex\"><b>What happened</b>?<div class=\"th\">เกิดอะไรขึ้น (<s>What did happen?</s>)</div></div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>เขียนประโยคบอกเล่าในหัวก่อน</li><li>ทำเป็นคำถาม Yes/No (ย้าย be / ใส่ do, does, did / ย้าย can, will)</li><li>เลือก Wh- ตามข้อมูลที่อยากรู้ แล้ววางไว้หน้าสุด</li><li>ถ้าถามหา <b>ใครทำ / อะไรเกิดขึ้น</b> → Who / What + กริยาเลย ไม่ใช้ do</li></ol></div>",
     "examples": [
       [
         "When will the container arrive?",
@@ -1049,6 +1251,14 @@
       [
         "How long does customs clearance take?",
         "ผ่านพิธีการศุลกากรใช้เวลานานเท่าไร"
+      ],
+      [
+        "What do you need?",
+        "คุณต้องการอะไร"
+      ],
+      [
+        "Who wrote this report?",
+        "ใครเขียนรายงานนี้"
       ]
     ],
     "mistakes": [
@@ -1106,39 +1316,57 @@
       {
         "q": "ถามราคา",
         "o": [
-          "How long is it?",
-          "How much is it?"
+          "How much is it?",
+          "How long is it?"
         ],
-        "a": 1,
+        "a": 0,
         "why": ""
       },
       {
         "q": "\"Why ___ the trucks late?\"",
         "o": [
-          "is",
           "are",
+          "is",
           "do"
         ],
-        "a": 1,
+        "a": 0,
         "why": "trucks หลายคัน"
       },
       {
         "q": "\"Who ___ this report?\" (เขียนไปแล้ว)",
         "o": [
-          "wrote",
-          "did wrote"
+          "did wrote",
+          "wrote"
         ],
-        "a": 0,
+        "a": 1,
         "why": "Who เป็นประธานเอง ไม่ต้องใช้ did"
       },
       {
         "q": "\"What time ___ the meeting start?\"",
         "o": [
-          "is",
-          "does"
+          "does",
+          "is"
         ],
-        "a": 1,
+        "a": 0,
         "why": "มีกริยา start"
+      },
+      {
+        "q": "\"How ___ boxes are there?\"",
+        "o": [
+          "many",
+          "much"
+        ],
+        "a": 0,
+        "why": "box นับได้ ใช้ many"
+      },
+      {
+        "q": "\"เกิดอะไรขึ้น\"",
+        "o": [
+          "What happened?",
+          "What did happen?"
+        ],
+        "a": 0,
+        "why": "ถามหาสิ่งที่เกิดขึ้น (ประธาน) ไม่ใช้ did"
       }
     ],
     "homework": "เขียนคำถาม Wh- 5 ข้อที่จะใช้ตอนสัมภาษณ์ฝึกงาน"
@@ -1149,7 +1377,7 @@
     "title": "Present simple กับ Present continuous",
     "why": "สองตัวนี้พูดถึงปัจจุบัน แต่ความหมายต่างกัน: นิสัย/ความจริง กับ กำลังทำอยู่",
     "formula": "นิสัย: I work · ตอนนี้: I am working",
-    "theory": "<table><tr><th></th><th>Present simple</th><th>Present continuous</th></tr>\n<tr><td>รูป</td><td>I work / He works</td><td>I am working / He is working</td></tr>\n<tr><td>ใช้เมื่อ</td><td>ทำประจำ ความจริง ตารางเวลา</td><td>กำลังทำตอนนี้ หรือช่วงนี้ชั่วคราว</td></tr>\n<tr><td>คำบอกเวลา</td><td>every day, usually, always</td><td>now, at the moment, this week</td></tr></table>\n<div class=\"tip\"><b>ระวัง:</b> กริยาความรู้สึก/ความคิด (know, like, want, need, understand) มักไม่ใช้ -ing</div>",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาไทยใช้ \"ทำงาน\" แบบเดียว แล้วค่อยใส่ \"กำลัง\" ถ้าอยากเน้น ภาษาอังกฤษ <b>ต้องเลือกทุกครั้ง</b> ว่ากำลังพูดถึงภาพแบบไหน</p><div class=\"scroll\"><table><tr><th></th><th>Present simple</th><th>Present continuous</th></tr><tr><td>ภาพในหัว</td><td>ภาพรวม: ปกติเป็นแบบนี้</td><td>ภาพสด: ตอนนี้กำลังเกิด ยังไม่จบ</td></tr><tr><td>รูป</td><td>I work / He works</td><td>I am working / He is working</td></tr><tr><td>ปฏิเสธ</td><td>I don't work / He doesn't work</td><td>I'm not working / He isn't working</td></tr><tr><td>คำถาม</td><td>Do you work? / Does he work?</td><td>Are you working? / Is he working?</td></tr></table></div><div class=\"ex\">I <b>work</b> in Bangkok. · I'<b>m working</b> in Chiang Mai this month.<div class=\"th\">ฉันทำงานที่กรุงเทพ (ประจำ) · เดือนนี้ฉันทำงานที่เชียงใหม่ (ชั่วคราว)</div></div><h4>ใช้ Present simple เมื่อ</h4><ol><li><b>ทำเป็นประจำ / นิสัย:</b> I check email every morning.</li><li><b>ความจริงทั่วไป:</b> Water boils at 100°C. · Sea freight takes about 3 weeks.</li><li><b>ตารางเวลา:</b> The ship leaves at 6 pm.</li></ol><h4>ใช้ Present continuous เมื่อ</h4><ol><li><b>กำลังทำอยู่ตอนพูด:</b> I'm driving now. Call me later.</li><li><b>ช่วงนี้ชั่วคราว:</b> She is working on a new project this month.</li><li><b>นัดหรือแผนที่ตกลงแล้ว:</b> I'm meeting the client tomorrow.</li></ol><h4>วิธีเติม -ing</h4><p>ส่วนใหญ่ +ing (check → checking) · ลงท้าย e ตัด e (write → writing) · สระเดียว + พยัญชนะเดียว ซ้ำตัวท้าย (run → running, stop → stopping)</p><h4>คำที่มักไม่ใช้ -ing</h4><p>กริยาที่บอก <b>ความคิด ความรู้สึก หรือการมี</b> ไม่ใช่การกระทำ จึงไม่ \"กำลัง\": know, understand, like, want, need, believe, mean, have (= เป็นเจ้าของ)</p><div class=\"ex\"><s>I am knowing the answer.</s> → I <b>know</b> the answer.<div class=\"th\">ฉันรู้คำตอบ</div></div><div class=\"tip\"><b>คำบอกเวลาช่วยได้:</b> every day, usually, always, on Mondays → simple · now, right now, at the moment, this week, Look! → continuous</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>พูดถึงสิ่งที่ <b>ทำเป็นประจำ / ความจริง / ตารางเวลา</b>? → present simple (อย่าลืม s กับประธานเดียว)</li><li>พูดถึงสิ่งที่ <b>กำลังเกิดตอนนี้ หรือช่วงนี้ชั่วคราว</b>? → am / is / are + V-ing</li><li>กริยาเป็นความคิด/ความรู้สึก (know, want, need)? → ใช้ simple แม้จะหมายถึงตอนนี้</li></ol></div>",
     "examples": [
       [
         "The ship usually arrives on Tuesday, but this week it is arriving on Friday.",
@@ -1158,6 +1386,14 @@
       [
         "What are you doing? I'm testing the API.",
         "กำลังทำอะไรอยู่ ผมกำลังทดสอบ API"
+      ],
+      [
+        "I work in Bangkok, but this month I'm working in Chiang Mai.",
+        "ฉันทำงานที่กรุงเทพ แต่เดือนนี้ทำที่เชียงใหม่"
+      ],
+      [
+        "The ship leaves at 6 pm.",
+        "เรือออก 6 โมงเย็น"
       ]
     ],
     "mistakes": [
@@ -1213,19 +1449,19 @@
       {
         "q": "\"Water ___ at 100°C.\"",
         "o": [
-          "boils",
-          "is boiling"
+          "is boiling",
+          "boils"
         ],
-        "a": 0,
+        "a": 1,
         "why": "ความจริง"
       },
       {
         "q": "\"I ___ now, call me later.\"",
         "o": [
-          "drive",
-          "am driving"
+          "am driving",
+          "drive"
         ],
-        "a": 1,
+        "a": 0,
         "why": "กำลังทำ"
       },
       {
@@ -1240,11 +1476,29 @@
       {
         "q": "\"He usually ___ by train.\"",
         "o": [
-          "goes",
-          "is going"
+          "is going",
+          "goes"
+        ],
+        "a": 1,
+        "why": "usually = ประจำ"
+      },
+      {
+        "q": "\"Please be quiet. The manager ___ on the phone.\"",
+        "o": [
+          "is talking",
+          "talks"
         ],
         "a": 0,
-        "why": "usually = ประจำ"
+        "why": "กำลังเกิดตอนนี้"
+      },
+      {
+        "q": "\"เธอไม่ชอบกาแฟ\"",
+        "o": [
+          "She doesn't like coffee.",
+          "She isn't liking coffee."
+        ],
+        "a": 0,
+        "why": "like เป็นความรู้สึก ไม่ใช้ -ing"
       }
     ],
     "homework": "เขียน 2 ประโยคเรื่องที่ทำทุกวัน และ 2 ประโยคเรื่องที่กำลังทำช่วงนี้"
@@ -1255,7 +1509,7 @@
     "title": "Past simple: เรื่องที่จบแล้ว",
     "why": "ใช้เล่างานที่ทำไปแล้ว ต้องใช้ตอนสัมภาษณ์และรายงานงานทุกวัน",
     "formula": "บอกเล่า: V2 · ปฏิเสธ: didn't + V1 · คำถาม: Did + ประธาน + V1",
-    "theory": "<p><b>กริยาปกติ:</b> เติม -ed → worked, checked · <b>กริยาไม่ปกติ:</b> ต้องจำ V2 (ไปฝึกที่โมดูล V1-V2-V3)</p>\n<table><tr><th></th><th>ตัวอย่าง</th></tr><tr><td>บอกเล่า</td><td>I <b>sent</b> the file yesterday.</td></tr>\n<tr><td>ปฏิเสธ</td><td>I <b>didn't send</b> it.</td></tr><tr><td>คำถาม</td><td><b>Did</b> you <b>send</b> it?</td></tr>\n<tr><td>be</td><td>I/he/she/it <b>was</b> · you/we/they <b>were</b></td></tr></table>\n<p>คำบอกเวลา: yesterday, last week, two days ago, in 2024</p>",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาไทยบอกอดีตด้วยคำบอกเวลา (\"<u>เมื่อวาน</u>ฉันส่ง\") หรือคำว่า \"แล้ว\" ส่วนกริยาเหมือนเดิม ภาษาอังกฤษ <b>ต้องเปลี่ยนรูปกริยาทุกครั้ง</b> แม้จะมี yesterday บอกอยู่แล้ว</p><div class=\"ex\"><s>Yesterday I send the email.</s> → Yesterday I <b>sent</b> the email.<div class=\"th\">เมื่อวานฉันส่งอีเมล</div></div><p>Past simple ใช้กับเรื่องที่ <b>เกิดและจบไปแล้ว</b> ณ เวลาหนึ่งในอดีต (ผู้ฟังรู้ว่าเมื่อไร แม้จะไม่ได้พูด)</p><h4>รูปอดีต (V2)</h4><div class=\"scroll\"><table><tr><th>ชนิด</th><th>วิธี</th><th>ตัวอย่าง</th></tr><tr><td>กริยาปกติ</td><td>+ed</td><td>work → worked, check → checked</td></tr><tr><td>ลงท้าย e</td><td>+d</td><td>arrive → arrived, update → updated</td></tr><tr><td>พยัญชนะ + y</td><td>y → ied</td><td>try → tried, carry → carried</td></tr><tr><td>สระเดียว + พยัญชนะเดียว</td><td>ซ้ำตัวท้าย +ed</td><td>stop → stopped, plan → planned</td></tr><tr><td>กริยาไม่ปกติ</td><td>ต้องจำ</td><td>send → sent, go → went, buy → bought, think → thought</td></tr></table></div><p>อดีต <b>ไม่เปลี่ยนตามประธาน</b> (ไม่มี s): I worked · She worked · They worked</p><h4>ปฏิเสธและคำถาม: อดีตย้ายไปอยู่ที่ did</h4><p>เหมือน s ย้ายไปอยู่ที่ does ในบท do/does: ตอนนี้ <b>ความเป็นอดีตย้ายไปอยู่ที่ did</b> กริยาหลักจึงกลับเป็น V1</p><div class=\"scroll\"><table><tr><th></th><th>ตัวอย่าง</th></tr><tr><td>บอกเล่า</td><td>I <b>sent</b> the file yesterday.</td></tr><tr><td>ปฏิเสธ</td><td>I <b>didn't send</b> it. (<s>didn't sent</s>)</td></tr><tr><td>คำถาม</td><td><b>Did</b> you <b>send</b> it? (<s>Did you sent</s>)</td></tr><tr><td>ตอบสั้น</td><td>Yes, I did. / No, I didn't.</td></tr></table></div><h4>be ในอดีต: was / were</h4><div class=\"scroll\"><table><tr><th>ประธาน</th><th>บอกเล่า</th><th>ปฏิเสธ</th><th>คำถาม</th></tr><tr><td>I / he / she / it</td><td>was</td><td>wasn't</td><td>Was he...?</td></tr><tr><td>you / we / they</td><td>were</td><td>weren't</td><td>Were they...?</td></tr></table></div><p>be ไม่ใช้กับ did: <s>Did you were late?</s> → <b>Were</b> you late?</p><div class=\"tip\"><b>คำบอกเวลาอดีต:</b> yesterday, last week, last year, two days ago, in 2024, this morning (ถ้าเช้านี้ผ่านไปแล้ว)</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>เรื่องนี้ <b>จบไปแล้ว</b> ในอดีตไหม? → past simple</li><li>บอกเล่า: ใช้ V2 (+ed หรือรูปที่ต้องจำ) ทุกประธาน</li><li>ปฏิเสธ/คำถาม: ใช้ didn't / Did + <b>V1</b></li><li>เป็นประโยค be (เป็น อยู่ ช้า ว่าง)? → was / were ไม่ใช้ did</li></ol></div>",
     "examples": [
       [
         "Yesterday I fixed two bugs and wrote a report.",
@@ -1264,6 +1518,14 @@
       [
         "Did the shipment arrive? No, it didn't.",
         "shipment มาถึงไหม ยังไม่มา"
+      ],
+      [
+        "I didn't send the file yesterday.",
+        "เมื่อวานฉันไม่ได้ส่งไฟล์"
+      ],
+      [
+        "Were you at the office last night?",
+        "เมื่อคืนคุณอยู่ที่ออฟฟิศไหม"
       ]
     ],
     "mistakes": [
@@ -1334,10 +1596,10 @@
       {
         "q": "\"I didn't ___ the file.\"",
         "o": [
-          "send",
-          "sent"
+          "sent",
+          "send"
         ],
-        "a": 0,
+        "a": 1,
         "why": "หลัง didn't ใช้ V1"
       },
       {
@@ -1361,11 +1623,20 @@
       {
         "q": "\"Last week we ___ a new feature.\"",
         "o": [
-          "release",
-          "released"
+          "released",
+          "release"
+        ],
+        "a": 0,
+        "why": "อดีต"
+      },
+      {
+        "q": "ข้อใดถูก",
+        "o": [
+          "Did you were late?",
+          "Were you late?"
         ],
         "a": 1,
-        "why": "อดีต"
+        "why": "be ไม่ใช้กับ did"
       }
     ],
     "homework": "เขียน 4 ประโยคเล่าว่าเมื่อวานทำอะไร ใช้กริยาไม่ปกติอย่างน้อย 2 คำ"
@@ -1376,7 +1647,7 @@
     "title": "Past continuous: กำลังทำอยู่ในอดีต",
     "why": "ใช้เล่าว่าตอนที่มีเรื่องเกิดขึ้น เรากำลังทำอะไรอยู่",
     "formula": "was/were + V-ing · มักใช้คู่กับ when + past simple",
-    "theory": "<p>ใช้บอกการกระทำที่<b>กำลังดำเนินอยู่</b> ณ จุดหนึ่งในอดีต</p>\n<div class=\"ex\">I <b>was testing</b> the code <b>when</b> the server <b>crashed</b>.<div class=\"th\">ผมกำลังทดสอบโค้ดอยู่ ตอนที่เซิร์ฟเวอร์ล่ม</div></div>\n<p>เรื่องยาวที่กำลังเกิด → past continuous · เรื่องสั้นที่แทรกเข้ามา → past simple</p>\n<p>I/he/she/it <b>was</b> working · you/we/they <b>were</b> working</p>",
+    "theory": "<h4>หลักคิด</h4><p>คือ present continuous ที่ย้ายไปอยู่ในอดีต: am / is → <b>was</b> · are → <b>were</b> ใช้วาด <b>ฉากหลัง</b>: ณ จุดหนึ่งในอดีต มีอะไรกำลังเกิดอยู่ และยังไม่จบ</p><div class=\"scroll\"><table><tr><th></th><th>ปัจจุบัน</th><th>อดีต</th></tr><tr><td>กำลังทำ</td><td>I <b>am</b> testing the code.</td><td>I <b>was</b> testing the code.</td></tr><tr><td></td><td>They <b>are</b> waiting.</td><td>They <b>were</b> waiting.</td></tr></table></div><h4>วิธีสร้าง</h4><div class=\"scroll\"><table><tr><th></th><th>I / he / she / it</th><th>you / we / they</th></tr><tr><td>บอกเล่า</td><td>was working</td><td>were working</td></tr><tr><td>ปฏิเสธ</td><td>wasn't working</td><td>weren't working</td></tr><tr><td>คำถาม</td><td>Was he working?</td><td>Were they working?</td></tr></table></div><h4>3 แบบที่ใช้บ่อย</h4><p><b>1. กำลังทำ ณ เวลาหนึ่งในอดีต</b></p><div class=\"ex\">At 9 pm last night, I <b>was writing</b> a report.<div class=\"th\">เมื่อคืนตอน 3 ทุ่ม ฉันกำลังเขียนรายงานอยู่</div></div><p><b>2. เรื่องยาวถูกเรื่องสั้นแทรก</b> (ใช้คู่กับ when + past simple)</p><div class=\"ex\">I <b>was testing</b> the code <b>when</b> the server <b>crashed</b>.<div class=\"th\">ผมกำลังทดสอบโค้ดอยู่ (เรื่องยาว) ตอนที่เซิร์ฟเวอร์ล่ม (เรื่องสั้นที่แทรกเข้ามา)</div></div><p><b>3. สองเรื่องกำลังเกิดพร้อมกัน</b> (ใช้ while)</p><div class=\"ex\"><b>While</b> I <b>was checking</b> the documents, my manager <b>was calling</b> the customer.<div class=\"th\">ระหว่างที่ฉันกำลังตรวจเอกสาร หัวหน้ากำลังโทรหาลูกค้า</div></div><h4>ความหมายเปลี่ยนตามรูป</h4><div class=\"scroll\"><table><tr><th>ประโยค</th><th>แปลว่า</th></tr><tr><td>When the manager arrived, we <b>were having</b> a meeting.</td><td>หัวหน้ามาตอนที่เราประชุมกันอยู่แล้ว</td></tr><tr><td>When the manager arrived, we <b>had</b> a meeting.</td><td>หัวหน้ามาถึง แล้วเราจึงเริ่มประชุม</td></tr></table></div><div class=\"tip\"><b>when</b> มักตามด้วยเรื่องสั้น (past simple) · <b>while</b> มักตามด้วยเรื่องยาว (past continuous)<br>กริยาความคิด/ความรู้สึก (know, want, need) ไม่ใช้ -ing เหมือนบท present continuous</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>เรื่องนี้ <b>กำลังดำเนินอยู่</b> ณ จุดหนึ่งในอดีตไหม (ยังไม่จบตอนนั้น)? → was / were + V-ing</li><li>เป็นเรื่องสั้นที่เกิดขึ้นแล้วจบ หรือแทรกเข้ามา? → past simple</li><li>ประธาน I / he / she / it → was · you / we / they → were</li></ol></div>",
     "examples": [
       [
         "At 9 pm last night, I was studying English.",
@@ -1385,6 +1656,14 @@
       [
         "The driver was waiting when the boss called.",
         "คนขับกำลังรออยู่ ตอนที่หัวหน้าโทรมา"
+      ],
+      [
+        "At 9 pm last night, I was writing a report.",
+        "เมื่อคืนตอน 3 ทุ่ม ฉันกำลังเขียนรายงาน"
+      ],
+      [
+        "While I was checking the documents, my manager was calling the customer.",
+        "ระหว่างที่ฉันตรวจเอกสาร หัวหน้ากำลังโทรหาลูกค้า"
       ]
     ],
     "mistakes": [
@@ -1457,11 +1736,38 @@
       {
         "q": "ข้อใดถูก",
         "o": [
-          "I was study.",
-          "I was studying."
+          "I was studying.",
+          "I was study."
+        ],
+        "a": 0,
+        "why": "was + V-ing"
+      },
+      {
+        "q": "\"___ I was driving, my phone rang.\"",
+        "o": [
+          "While",
+          "During"
+        ],
+        "a": 0,
+        "why": "while + ประโยค (เรื่องยาว) · during + คำนาม"
+      },
+      {
+        "q": "\"They ___ at the port at 6 am.\" (กำลังรออยู่)",
+        "o": [
+          "was waiting",
+          "were waiting"
         ],
         "a": 1,
-        "why": "was + V-ing"
+        "why": "they ใช้ were"
+      },
+      {
+        "q": "\"When the manager arrived, we ___ a meeting.\" (ประชุมกันอยู่แล้ว)",
+        "o": [
+          "had",
+          "were having"
+        ],
+        "a": 1,
+        "why": "เรื่องที่กำลังเกิดอยู่ก่อนแล้ว"
       }
     ],
     "homework": "เขียน 3 ประโยค: เมื่อวานตอน 8 โมง เที่ยง และ 2 ทุ่ม คุณกำลังทำอะไรอยู่"
@@ -1472,7 +1778,7 @@
     "title": "อนาคต: will กับ be going to",
     "why": "ใช้ตอบรับงาน สัญญา และเล่าแผน ซึ่งเจอทุกวันในที่ทำงาน",
     "formula": "will + V1 (ตัดสินใจตอนพูด) · be going to + V1 (แผนที่วางไว้)",
-    "theory": "<table><tr><th></th><th>will</th><th>be going to</th></tr>\n<tr><td>ใช้เมื่อ</td><td>ตัดสินใจตอนพูด สัญญา คาดการณ์</td><td>แผนที่ตั้งใจไว้ก่อน</td></tr>\n<tr><td>ตัวอย่าง</td><td>I'll check it now.</td><td>I'm going to apply for an internship.</td></tr>\n<tr><td>ปฏิเสธ</td><td>I won't be late.</td><td>I'm not going to buy it.</td></tr></table>\n<div class=\"tip\">ประโยคทำงานที่ใช้บ่อย: <b>I'll get back to you.</b> (เดี๋ยวติดต่อกลับ) · <b>I'll send it by 5 pm.</b></div>",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาไทยใช้ \"จะ\" คำเดียว ภาษาอังกฤษแยกตามว่า <b>ตัดสินใจเมื่อไร</b></p><div class=\"scroll\"><table><tr><th></th><th>will</th><th>be going to</th></tr><tr><td>ตัดสินใจ</td><td>ตอนที่พูดนั้นเลย</td><td>ไว้ก่อนแล้ว มีแผน</td></tr><tr><td>คาดการณ์</td><td>จากความคิดหรือความเชื่อ</td><td>จากหลักฐานที่เห็นตรงหน้า</td></tr><tr><td>ตัวอย่าง</td><td>I'll check it now.</td><td>I'm going to apply for an internship.</td></tr></table></div><div class=\"ex\">A: The printer is broken.<br>B: OK, I'<b>ll</b> call IT.<div class=\"th\">B เพิ่งรู้และตัดสินใจตอนพูด → will</div></div><div class=\"ex\">A: Why do you have that phone number?<br>B: I'<b>m going to</b> call IT after lunch.<div class=\"th\">B วางแผนไว้แล้ว → going to</div></div><div class=\"ex\">I think it <b>will</b> rain. · Look at those clouds! It's <b>going to</b> rain.<div class=\"th\">คิดว่าฝนจะตก (ความเห็น) · ดูเมฆสิ ฝนจะตกแน่ (มีหลักฐาน)</div></div><h4>วิธีสร้าง</h4><div class=\"scroll\"><table><tr><th></th><th>will</th><th>be going to</th></tr><tr><td>บอกเล่า</td><td>He <b>will</b> call you. (He'll)</td><td>He <b>is going to</b> call you.</td></tr><tr><td>ปฏิเสธ</td><td>He <b>won't</b> call you.</td><td>He <b>isn't going to</b> call you.</td></tr><tr><td>คำถาม</td><td><b>Will</b> he call you?</td><td><b>Is</b> he <b>going to</b> call you?</td></tr></table></div><p>will เป็นกริยาช่วยเหมือน can: <b>ไม่เปลี่ยนตามประธาน</b> และตามด้วย V1 ไม่มี to (<s>will calls</s>, <s>will to call</s>) · ส่วน going to ต้องมี am / is / are นำหน้าเสมอ</p><h4>will ใช้ทำอะไรได้อีก</h4><ul><li><b>รับปาก / สัญญา:</b> I'll send it by 5 pm. · I won't be late.</li><li><b>เสนอช่วย:</b> I'll carry that for you.</li><li><b>ขอร้อง:</b> Will you check this for me?</li></ul><div class=\"tip\">ประโยคทำงานที่ใช้บ่อย: <b>I'll get back to you.</b> (เดี๋ยวติดต่อกลับ) · <b>I'll look into it.</b> (เดี๋ยวดูให้) · <b>I'll let you know.</b> (เดี๋ยวแจ้งให้ทราบ)</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>ตัดสินใจ <b>ตอนพูดนี้เลย</b> / รับปาก / เสนอช่วย? → will + V1</li><li>มี <b>แผนหรือความตั้งใจไว้ก่อน</b> (ซื้อตั๋วแล้ว คิดไว้แล้ว)? → am / is / are going to + V1</li><li>คาดการณ์: เป็นความเห็น → will · เห็นหลักฐานตรงหน้า → going to</li></ol></div>",
     "examples": [
       [
         "The phone is ringing. I'll answer it.",
@@ -1481,6 +1787,14 @@
       [
         "We are going to launch the new website next month.",
         "เราจะเปิดเว็บใหม่เดือนหน้า"
+      ],
+      [
+        "The printer is broken? OK, I'll call IT.",
+        "เครื่องพิมพ์เสียเหรอ โอเค เดี๋ยวผมโทรหาไอทีเอง"
+      ],
+      [
+        "Look at those clouds! It's going to rain.",
+        "ดูเมฆสิ ฝนจะตกแน่"
       ]
     ],
     "mistakes": [
@@ -1541,29 +1855,56 @@
       {
         "q": "\"I ___ study in Japan. I already bought the ticket.\"",
         "o": [
-          "will",
-          "am going to"
+          "am going to",
+          "will"
         ],
-        "a": 1,
+        "a": 0,
         "why": "แผนไว้แล้ว"
       },
       {
         "q": "\"won't\" =",
         "o": [
-          "want not",
-          "will not"
+          "will not",
+          "want not"
         ],
-        "a": 1,
+        "a": 0,
         "why": ""
       },
       {
         "q": "ข้อใดถูก",
         "o": [
-          "They will to come.",
-          "They will come."
+          "They will come.",
+          "They will to come."
         ],
-        "a": 1,
+        "a": 0,
         "why": "ไม่มี to"
+      },
+      {
+        "q": "หัวหน้าบอกว่าเครื่องพิมพ์เสีย คุณตอบทันที",
+        "o": [
+          "I'll call IT.",
+          "I'm going to call IT."
+        ],
+        "a": 0,
+        "why": "ตัดสินใจตอนพูด ใช้ will"
+      },
+      {
+        "q": "\"Look at the clouds! It ___ rain.\"",
+        "o": [
+          "is going to",
+          "will"
+        ],
+        "a": 0,
+        "why": "มีหลักฐานตรงหน้า ใช้ going to"
+      },
+      {
+        "q": "คำถามของ \"She is going to apply.\"",
+        "o": [
+          "Is she going to apply?",
+          "Does she going to apply?"
+        ],
+        "a": 0,
+        "why": "ย้าย is ขึ้นหน้า"
       }
     ],
     "homework": "เขียน 3 ประโยคเรื่องแผนของตัวเองปีหน้าด้วย going to"
@@ -1574,7 +1915,7 @@
     "title": "เปรียบเทียบ: -er / more / -est / most",
     "why": "ใช้เทียบราคา ความเร็ว ตัวเลือก ซึ่งเป็นเรื่องปกติในงานขนส่ง",
     "formula": "คำสั้น: fast → faster → the fastest · คำยาว: expensive → more expensive → the most expensive",
-    "theory": "<table><tr><th>ชนิดคำ</th><th>ขั้นกว่า (than)</th><th>ขั้นสุด (the)</th></tr>\n<tr><td>1 พยางค์</td><td>cheap → cheaper</td><td>the cheapest</td></tr>\n<tr><td>ลงท้าย y</td><td>easy → easier</td><td>the easiest</td></tr>\n<tr><td>2 พยางค์ขึ้นไป</td><td>expensive → more expensive</td><td>the most expensive</td></tr>\n<tr><td>ไม่ปกติ</td><td>good → better · bad → worse</td><td>the best · the worst</td></tr></table>\n<p>เทียบ 2 สิ่ง ใช้ <b>than</b>: Air freight is <b>faster than</b> sea freight.</p>",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาไทยเติม \"กว่า\" หรือ \"ที่สุด\" ไว้ท้ายทุกคำ ภาษาอังกฤษเลือกวิธีตาม <b>ความยาวของคำ</b>: คำสั้นเติมท้าย (-er, -est) คำยาวใส่ more / most ข้างหน้า <b>ใช้อย่างใดอย่างหนึ่งเท่านั้น</b> ห้ามใช้ซ้อน</p><div class=\"ex\"><s>more cheaper</s> → <b>cheaper</b> · <s>expensiver</s> → <b>more expensive</b></div><h4>วิธีสร้าง</h4><div class=\"scroll\"><table><tr><th>ชนิดคำ</th><th>ขั้นกว่า (+ than)</th><th>ขั้นสุด (the ...)</th></tr><tr><td>1 พยางค์</td><td>cheap → cheaper</td><td>the cheapest</td></tr><tr><td>ลงท้าย e</td><td>large → larger</td><td>the largest</td></tr><tr><td>สระเดียว + พยัญชนะเดียว</td><td>big → bigger, hot → hotter</td><td>the biggest</td></tr><tr><td>ลงท้าย y</td><td>easy → easier, busy → busier</td><td>the easiest</td></tr><tr><td>2 พยางค์ขึ้นไป</td><td>expensive → more expensive</td><td>the most expensive</td></tr><tr><td>ไม่ปกติ</td><td>good → better · bad → worse · far → farther</td><td>the best · the worst · the farthest</td></tr></table></div><h4>ขั้นกว่า: เทียบ 2 สิ่ง ใช้ than</h4><div class=\"ex\">Air freight is <b>faster than</b> sea freight.<div class=\"th\">ขนส่งทางอากาศเร็วกว่าทางเรือ</div></div><div class=\"ex\">This route is <b>more expensive than</b> the old one.<div class=\"th\">เส้นทางนี้แพงกว่าเส้นทางเดิม</div></div><h4>ขั้นสุด: เทียบตั้งแต่ 3 สิ่งขึ้นไป ต้องมี the</h4><div class=\"ex\">This is <b>the cheapest</b> option <b>in</b> the list.<div class=\"th\">นี่คือตัวเลือกที่ถูกที่สุดในรายการ</div></div><div class=\"ex\">Monday is <b>the busiest</b> day <b>of</b> the week.<div class=\"th\">วันจันทร์ยุ่งที่สุดในสัปดาห์</div></div><h4>เท่ากัน / ไม่เท่า</h4><div class=\"ex\">Sea freight is <b>not as fast as</b> air freight.<div class=\"th\">ทางเรือไม่เร็วเท่าทางอากาศ (as + คำคุณศัพท์รูปปกติ + as)</div></div><div class=\"tip\"><b>พูดให้นุ่มลง:</b> ใช้ <b>less</b> แทน: This option is <b>less expensive</b>. (ตัวเลือกนี้ราคาย่อมเยากว่า) ฟังสุภาพกว่าบอกว่า cheaper</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>เทียบ 2 สิ่ง → ขั้นกว่า + <b>than</b> · เทียบ 3 สิ่งขึ้นไป → <b>the</b> + ขั้นสุด</li><li>คำ 1 พยางค์ (หรือ 2 พยางค์ลงท้าย y) → เติม -er / -est</li><li>คำยาวกว่านั้น → more / most</li><li>good, bad, far → ต้องจำรูปพิเศษ</li><li>ตรวจว่าไม่ได้ใช้ more กับ -er พร้อมกัน</li></ol></div>",
     "examples": [
       [
         "Air freight is faster but more expensive than sea freight.",
@@ -1583,6 +1924,14 @@
       [
         "This is the cheapest option.",
         "นี่คือตัวเลือกที่ถูกที่สุด"
+      ],
+      [
+        "Monday is the busiest day of the week.",
+        "วันจันทร์ยุ่งที่สุดในสัปดาห์"
+      ],
+      [
+        "Sea freight is not as fast as air freight.",
+        "ทางเรือไม่เร็วเท่าทางอากาศ"
       ]
     ],
     "mistakes": [
@@ -1640,9 +1989,9 @@
       {
         "q": "ขั้นกว่าของ easy",
         "o": [
-          "easyer",
+          "more easy",
           "easier",
-          "more easy"
+          "easyer"
         ],
         "a": 1,
         "why": "y → ier"
@@ -1668,11 +2017,30 @@
       {
         "q": "\"the ___ important customer\"",
         "o": [
-          "most",
-          "more"
+          "more",
+          "most"
+        ],
+        "a": 1,
+        "why": "ขั้นสุด"
+      },
+      {
+        "q": "ขั้นกว่าของ big",
+        "o": [
+          "bigger",
+          "more big",
+          "biger"
         ],
         "a": 0,
-        "why": "ขั้นสุด"
+        "why": "สระเดียว + พยัญชนะเดียว ซ้ำตัวท้าย"
+      },
+      {
+        "q": "\"Sea freight is not as ___ as air freight.\"",
+        "o": [
+          "fast",
+          "faster"
+        ],
+        "a": 0,
+        "why": "as...as ใช้รูปปกติ"
       }
     ],
     "homework": "เปรียบเทียบการขนส่ง 3 แบบ (อากาศ เรือ รถ) ใน 4 ประโยค"
@@ -1683,7 +2051,7 @@
     "title": "นับได้ / นับไม่ได้: some, any, much, many",
     "why": "คำอย่าง information, equipment นับไม่ได้ในภาษาอังกฤษ คนไทยเติม s ผิดบ่อยมาก",
     "formula": "many + นับได้พหูพจน์ · much + นับไม่ได้ · some (บอกเล่า) · any (ปฏิเสธ/คำถาม)",
-    "theory": "<p><b>นับได้:</b> box, truck, file → a box, two boxes · <b>นับไม่ได้:</b> water, money, time, <b>information, equipment, furniture, advice, feedback</b> → ไม่มี a และไม่เติม s</p>\n<table><tr><th></th><th>นับได้</th><th>นับไม่ได้</th></tr>\n<tr><td>เยอะ</td><td>many trucks</td><td>much time</td></tr>\n<tr><td>น้อย</td><td>a few trucks</td><td>a little time</td></tr>\n<tr><td>บางส่วน (บอกเล่า)</td><td>some trucks</td><td>some time</td></tr>\n<tr><td>ปฏิเสธ/คำถาม</td><td>any trucks</td><td>any time</td></tr></table>\n<div class=\"tip\">ถามจำนวน: <b>How many</b> boxes? · ถามปริมาณ/ราคา: <b>How much</b> money? · ในประโยคบอกเล่าทั่วไป ใช้ <b>a lot of</b> ได้ทั้งสองแบบ</div>",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาอังกฤษแบ่งคำนามเป็นสองกลุ่มตาม <b>มุมมองของภาษา</b> ว่านับเป็นชิ้นได้ไหม ไม่ใช่ตามความจริง เช่น information ในภาษาอังกฤษถูกมองเป็นก้อนรวม ไม่ใช่ชิ้น ๆ จึงเติม s ไม่ได้ ถ้าอยากนับ ต้องใช้คำบอกหน่วย</p><div class=\"ex\"><s>two informations</s> → two <b>pieces of</b> information<div class=\"th\">ข้อมูล 2 ชิ้น</div></div><div class=\"ex\">a <b>bottle of</b> water · three <b>pallets of</b> rice<div class=\"th\">น้ำ 1 ขวด · ข้าว 3 พาเลท</div></div><h4>กฎของแต่ละกลุ่ม</h4><div class=\"scroll\"><table><tr><th></th><th>นับได้ (box, truck, file)</th><th>นับไม่ได้ (water, money, time)</th></tr><tr><td>a / an</td><td>a box</td><td>ใช้ไม่ได้</td></tr><tr><td>เติม s</td><td>two boxes</td><td>ไม่เติม</td></tr><tr><td>กริยา</td><td>The boxes <b>are</b> ready.</td><td>The information <b>is</b> correct.</td></tr><tr><td>ถามจำนวน</td><td><b>How many</b> boxes?</td><td><b>How much</b> time?</td></tr></table></div><h4>คำที่คนไทยมักคิดว่านับได้ แต่นับไม่ได้</h4><p><b>information, equipment, furniture, advice, feedback, luggage, software, homework, research, traffic, news</b> (news ลงท้าย s แต่ใช้กริยาเอกพจน์: The news <b>is</b> good.)</p><h4>คำบอกปริมาณ</h4><div class=\"scroll\"><table><tr><th></th><th>นับได้</th><th>นับไม่ได้</th></tr><tr><td>เยอะ (ปฏิเสธ/คำถาม)</td><td>many trucks</td><td>much time</td></tr><tr><td>เยอะ (บอกเล่า)</td><td>a lot of trucks</td><td>a lot of time</td></tr><tr><td>นิดหน่อย</td><td>a few trucks</td><td>a little time</td></tr><tr><td>บางส่วน (บอกเล่า)</td><td>some trucks</td><td>some time</td></tr><tr><td>เลย (ปฏิเสธ/คำถาม)</td><td>any trucks</td><td>any time</td></tr></table></div><p><b>some กับ any:</b> some ใช้ในประโยคบอกเล่า · any ใช้ในปฏิเสธและคำถาม <b>ยกเว้น</b> คำถามที่เสนอหรือขอของ ใช้ some ได้: Would you like <b>some</b> coffee? · Can I have <b>some</b> water?</p><div class=\"tip\">much ในประโยคบอกเล่าฟังเป็นทางการเกินไป: <s>We have much time.</s> → We have <b>a lot of</b> time.</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>คำนามนี้นับได้ไหม? (ระวังคำในรายการด้านบน)</li><li>นับได้ → a/an, เติม s, many, a few, How many</li><li>นับไม่ได้ → ไม่มี a, ไม่เติม s, กริยาเอกพจน์, much, a little, How much</li><li>ประโยคบอกเล่า → some · ปฏิเสธหรือคำถาม → any (ยกเว้นตอนเสนอหรือขอ)</li></ol></div>",
     "examples": [
       [
         "We need some information about the shipment.",
@@ -1696,6 +2064,10 @@
       [
         "We don't have much time.",
         "เรามีเวลาไม่มาก"
+      ],
+      [
+        "Can I have some water, please?",
+        "ขอน้ำหน่อยได้ไหม"
       ]
     ],
     "mistakes": [
@@ -1755,20 +2127,20 @@
       {
         "q": "คำไหนนับไม่ได้",
         "o": [
-          "truck",
           "equipment",
+          "truck",
           "file"
         ],
-        "a": 1,
+        "a": 0,
         "why": ""
       },
       {
         "q": "\"How ___ does it cost?\"",
         "o": [
-          "many",
-          "much"
+          "much",
+          "many"
         ],
-        "a": 1,
+        "a": 0,
         "why": "ราคา"
       },
       {
@@ -1788,6 +2160,24 @@
         ],
         "a": 1,
         "why": "นับไม่ได้"
+      },
+      {
+        "q": "\"The news ___ good.\"",
+        "o": [
+          "are",
+          "is"
+        ],
+        "a": 1,
+        "why": "news นับไม่ได้ ใช้กริยาเอกพจน์"
+      },
+      {
+        "q": "\"เรามีเวลาเยอะ\"",
+        "o": [
+          "We have much time.",
+          "We have a lot of time."
+        ],
+        "a": 1,
+        "why": "ประโยคบอกเล่าใช้ a lot of"
       }
     ],
     "homework": "เขียน 4 ประโยคเกี่ยวกับของในตู้เย็นหรือในออฟฟิศ ใช้ some, any, much, many"
@@ -1798,7 +2188,7 @@
     "title": "always, usually, sometimes, never",
     "why": "บอกความถี่ของงานหรือนิสัย และตำแหน่งในประโยคที่คนไทยวางผิดบ่อย",
     "formula": "วางหน้ากริยาหลัก แต่หลัง be",
-    "theory": "<table><tr><th>คำ</th><th>ความถี่</th></tr><tr><td>always</td><td>100%</td></tr><tr><td>usually</td><td>~80%</td></tr>\n<tr><td>often</td><td>~60%</td></tr><tr><td>sometimes</td><td>~40%</td></tr><tr><td>rarely</td><td>~10%</td></tr><tr><td>never</td><td>0%</td></tr></table>\n<p><b>ตำแหน่ง:</b> หน้ากริยาหลัก → I <b>usually</b> start at 9. · หลัง be → The truck is <b>always</b> late.</p>\n<p>ถาม: <b>How often</b> do you...? ตอบ: every day, twice a week, once a month</p>",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาไทยวางคำบอกความถี่หลังกริยาหรือท้ายประโยค (\"ฉันไปท่าเรือ<u>บ่อย</u>\") ภาษาอังกฤษวางคำสั้น ๆ พวกนี้ <b>ติดกับกริยา</b>: หน้ากริยาหลัก แต่หลัง be และหลังกริยาช่วย</p><div class=\"scroll\"><table><tr><th>คำ</th><th>ความถี่</th><th>แปล</th></tr><tr><td>always</td><td>100%</td><td>เสมอ</td></tr><tr><td>usually</td><td>~80%</td><td>ปกติ / มักจะ</td></tr><tr><td>often</td><td>~60%</td><td>บ่อย</td></tr><tr><td>sometimes</td><td>~40%</td><td>บางครั้ง</td></tr><tr><td>rarely</td><td>~10%</td><td>แทบไม่</td></tr><tr><td>never</td><td>0%</td><td>ไม่เคย / ไม่เลย</td></tr></table></div><h4>ตำแหน่งในประโยค</h4><div class=\"scroll\"><table><tr><th>ประโยคมี</th><th>วางตรงไหน</th><th>ตัวอย่าง</th></tr><tr><td>กริยาทั่วไป</td><td>หน้ากริยา</td><td>I <b>usually</b> start at 9. · She <b>always</b> checks the invoice.</td></tr><tr><td>be</td><td>หลัง be</td><td>The truck is <b>always</b> late.</td></tr><tr><td>กริยาช่วย (can, will, should)</td><td>หลังกริยาช่วย</td><td>You should <b>always</b> check the address.</td></tr><tr><td>ปฏิเสธ</td><td>หลัง don't / doesn't</td><td>I don't <b>usually</b> work on Sundays.</td></tr><tr><td>คำถาม</td><td>หลังประธาน</td><td>Do you <b>often</b> work late?</td></tr></table></div><div class=\"ex\"><s>We go sometimes to the port.</s> → We <b>sometimes go</b> to the port.<div class=\"th\">บางครั้งเราไปท่าเรือ</div></div><div class=\"ex\"><s>She never is late.</s> → She <b>is never</b> late.<div class=\"th\">เธอไม่เคยมาสาย</div></div><h4>ข้อควรจำ</h4><ul><li><b>never เป็นปฏิเสธในตัวแล้ว</b> ห้ามใส่ not ซ้อน: <s>I don't never drink coffee.</s> → I <b>never</b> drink coffee.</li><li>sometimes และ usually ย้ายไปต้นประโยคได้ (Sometimes we work late.) แต่ always กับ never ไม่วางต้นประโยค</li><li>มักใช้กับ present simple อย่าลืม s: She always <b>checks</b>.</li></ul><h4>ถาม-ตอบเรื่องความถี่</h4><div class=\"ex\"><b>How often</b> do you visit the port? — <b>Twice a week.</b><div class=\"th\">คุณไปท่าเรือบ่อยแค่ไหน · สัปดาห์ละ 2 ครั้ง (วลียาวแบบ every day, once a month วางท้ายประโยค)</div></div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>ประโยคมี be (am/is/are/was/were)? → วางคำบอกความถี่ <b>หลัง be</b></li><li>มีกริยาช่วย (can, will, should, don't) → วาง <b>หลังกริยาช่วย</b></li><li>มีแต่กริยาทั่วไป → วาง <b>หน้ากริยา</b></li><li>เป็นวลียาว (every day, twice a week) → วาง <b>ท้ายประโยค</b></li></ol></div>",
     "examples": [
       [
         "I usually check email before lunch.",
@@ -1807,6 +2197,14 @@
       [
         "The ship is never on time.",
         "เรือลำนี้ไม่เคยตรงเวลา"
+      ],
+      [
+        "You should always check the address.",
+        "คุณควรตรวจที่อยู่ทุกครั้ง"
+      ],
+      [
+        "How often do you visit the port? Twice a week.",
+        "คุณไปท่าเรือบ่อยแค่ไหน สัปดาห์ละ 2 ครั้ง"
       ]
     ],
     "mistakes": [
@@ -1875,10 +2273,10 @@
       {
         "q": "never =",
         "o": [
-          "บ่อย",
-          "ไม่เคย"
+          "ไม่เคย",
+          "บ่อย"
         ],
-        "a": 1,
+        "a": 0,
         "why": ""
       },
       {
@@ -1889,6 +2287,34 @@
         ],
         "a": 0,
         "why": "หน้ากริยาหลัก"
+      },
+      {
+        "q": "ข้อใดถูก",
+        "o": [
+          "I never drink coffee.",
+          "I don't never drink coffee."
+        ],
+        "a": 0,
+        "why": "never เป็นปฏิเสธในตัว"
+      },
+      {
+        "q": "\"You should ___ the address.\"",
+        "o": [
+          "check always",
+          "always check"
+        ],
+        "a": 1,
+        "why": "วางหลังกริยาช่วย หน้ากริยาหลัก"
+      },
+      {
+        "q": "\"She ___ the invoice.\" (เสมอ)",
+        "o": [
+          "checks always",
+          "always check",
+          "always checks"
+        ],
+        "a": 2,
+        "why": "วางหน้ากริยา และประธานเดียวเติม s"
       }
     ],
     "homework": "เขียน 5 ประโยคเรื่องกิจวัตรของคุณ ใช้คำบอกความถี่ต่างกันทุกประโยค"
@@ -1899,7 +2325,7 @@
     "title": "must, have to, should",
     "why": "ใช้บอกกฎ ข้อบังคับ และคำแนะนำในงาน เช่น เอกสารที่ต้องมี",
     "formula": "must / have to = ต้อง · should = ควร · don't have to = ไม่จำเป็น · mustn't = ห้าม",
-    "theory": "<table><tr><th>คำ</th><th>ความหมาย</th><th>ตัวอย่าง</th></tr>\n<tr><td>must</td><td>ต้อง (ผู้พูดเห็นว่าจำเป็น)</td><td>I must finish this today.</td></tr>\n<tr><td>have to / has to</td><td>ต้อง (กฎหรือคนอื่นบังคับ)</td><td>We have to show the invoice at customs.</td></tr>\n<tr><td>should</td><td>ควร (คำแนะนำ)</td><td>You should check the address.</td></tr>\n<tr><td>mustn't</td><td>ห้าม</td><td>You mustn't share your password.</td></tr>\n<tr><td>don't have to</td><td>ไม่จำเป็นต้อง</td><td>You don't have to come early.</td></tr></table>\n<div class=\"tip\"><b>ระวัง:</b> mustn't (ห้าม) กับ don't have to (ไม่ต้องก็ได้) ความหมายต่างกันมาก · หลัง must/should ใช้ V1 ไม่มี to</div>",
+    "theory": "<h4>หลักคิด</h4><p>ทั้งหมดนี้บอก <b>ระดับความจำเป็น</b> เรียงจากแรงไปเบา</p><div class=\"scroll\"><table><tr><th>คำ</th><th>ความหมาย</th><th>ตัวอย่าง</th></tr><tr><td>must</td><td>ต้อง (ผู้พูดเห็นว่าจำเป็น / ป้ายประกาศ)</td><td>I must finish this today.</td></tr><tr><td>have to / has to</td><td>ต้อง (กฎหรือคนอื่นบังคับ)</td><td>We have to show the invoice at customs.</td></tr><tr><td>should</td><td>ควร (คำแนะนำ ไม่บังคับ)</td><td>You should check the address.</td></tr><tr><td>don't have to</td><td>ไม่จำเป็นต้อง (จะทำก็ได้)</td><td>You don't have to come early.</td></tr><tr><td>mustn't</td><td>ห้าม</td><td>You mustn't share your password.</td></tr></table></div><p>ในบทสนทนาทั่วไป <b>have to</b> ใช้บ่อยกว่า must · must มักเจอในกฎ ป้าย และเอกสาร</p><h4>ไวยากรณ์ต่างกัน</h4><p><b>must และ should</b> เป็นกริยาช่วยเหมือน can: ไม่เปลี่ยนตามประธาน ตามด้วย V1 ไม่มี to ปฏิเสธด้วย mustn't / shouldn't</p><p><b>have to</b> เป็นกริยาธรรมดา: เปลี่ยนเป็น has to กับ he/she/it ปฏิเสธและคำถามใช้ do/does</p><div class=\"scroll\"><table><tr><th></th><th>should</th><th>have to</th></tr><tr><td>บอกเล่า</td><td>He <b>should</b> rest.</td><td>He <b>has to</b> work on Saturday.</td></tr><tr><td>ปฏิเสธ</td><td>He <b>shouldn't</b> drive.</td><td>He <b>doesn't have to</b> work on Saturday.</td></tr><tr><td>คำถาม</td><td><b>Should</b> I call him?</td><td><b>Does</b> he <b>have to</b> work?</td></tr><tr><td>อดีต</td><td>-</td><td>He <b>had to</b> work. (must ไม่มีรูปอดีต ใช้ had to แทน)</td></tr></table></div><h4>ระวังที่สุด: mustn't ≠ don't have to</h4><div class=\"ex\">You <b>mustn't</b> smoke in the warehouse.<div class=\"th\">ห้ามสูบบุหรี่ในคลังสินค้า (ทำไม่ได้)</div></div><div class=\"ex\">You <b>don't have to</b> pay. It's free.<div class=\"th\">ไม่ต้องจ่าย ฟรี (ไม่บังคับ จะทำก็ได้)</div></div><div class=\"tip\"><b>ให้คำแนะนำแบบสุภาพ:</b> I think you <b>should</b>... · Maybe you <b>should</b>... · You <b>shouldn't</b>... (ไม่ควร)</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>บังคับไหม? บังคับ → must / have to (ถ้าเป็นกฎของบริษัทหรือคนอื่น ใช้ have to)</li><li>แค่แนะนำ → should</li><li>ไม่บังคับ ทำหรือไม่ทำก็ได้ → don't have to · ห้ามทำ → mustn't</li><li>หลัง must / should ใช้ V1 ไม่มี to · have to เปลี่ยนเป็น has to กับประธานเดียว</li></ol></div>",
     "examples": [
       [
         "You should back up your files every day.",
@@ -1908,6 +2334,14 @@
       [
         "Importers have to pay import duty.",
         "ผู้นำเข้าต้องจ่ายอากรขาเข้า"
+      ],
+      [
+        "You mustn't share your password.",
+        "ห้ามบอกรหัสผ่านให้ใคร"
+      ],
+      [
+        "Does he have to work on Saturday?",
+        "เขาต้องทำงานวันเสาร์ไหม"
       ]
     ],
     "mistakes": [
@@ -1967,29 +2401,57 @@
       {
         "q": "\"You don't have to come.\" แปลว่า",
         "o": [
-          "ห้ามมา",
-          "ไม่ต้องมาก็ได้"
-        ],
-        "a": 1,
-        "why": ""
-      },
-      {
-        "q": "ให้คำแนะนำ",
-        "o": [
-          "You should see a doctor.",
-          "You must to see a doctor."
+          "ไม่ต้องมาก็ได้",
+          "ห้ามมา"
         ],
         "a": 0,
         "why": ""
       },
       {
-        "q": "\"He ___ wear a uniform.\" (กฎบริษัท)",
+        "q": "ให้คำแนะนำ",
         "o": [
-          "have to",
-          "has to"
+          "You must to see a doctor.",
+          "You should see a doctor."
         ],
         "a": 1,
+        "why": ""
+      },
+      {
+        "q": "\"He ___ wear a uniform.\" (กฎบริษัท)",
+        "o": [
+          "has to",
+          "have to"
+        ],
+        "a": 0,
         "why": "He"
+      },
+      {
+        "q": "\"ห้ามบอกรหัสผ่าน\"",
+        "o": [
+          "You don't have to share your password.",
+          "You mustn't share your password."
+        ],
+        "a": 1,
+        "why": "ห้าม = mustn't"
+      },
+      {
+        "q": "\"เมื่อวานฉันต้องทำงานดึก\"",
+        "o": [
+          "I had to work late yesterday.",
+          "I must work late yesterday."
+        ],
+        "a": 0,
+        "why": "must ไม่มีรูปอดีต ใช้ had to"
+      },
+      {
+        "q": "\"___ she have to come?\"",
+        "o": [
+          "Does",
+          "Do",
+          "Must"
+        ],
+        "a": 0,
+        "why": "have to ใช้ do/does ทำคำถาม"
       }
     ],
     "homework": "เขียนกฎ 4 ข้อของหอพักหรือที่ทำงาน ใช้ must, mustn't, have to, should"
@@ -2000,7 +2462,7 @@
     "title": "Present perfect เบื้องต้น",
     "why": "ใช้บ่อยมากในงาน เช่น \"ส่งแล้ว\" \"ยังไม่ได้รับ\" และเป็นที่ใช้ V3",
     "formula": "have/has + V3",
-    "theory": "<p>ใช้กับเรื่องที่<b>เกิดแล้ว และผลยังเกี่ยวกับตอนนี้</b> โดยไม่บอกเวลาที่แน่นอน</p>\n<div class=\"ex\">อดีต ——●——→ ตอนนี้ (ผลยังอยู่)<div class=\"th\">I have sent the invoice. = ส่งแล้ว (ตอนนี้ลูกค้ามีใบแจ้งหนี้แล้ว)</div></div>\n<table><tr><th>คำที่มักใช้คู่</th><th>ตัวอย่าง</th></tr>\n<tr><td>already (แล้ว)</td><td>I have already paid.</td></tr>\n<tr><td>yet (ยัง ในปฏิเสธ/คำถาม)</td><td>Has the ship arrived yet? It hasn't arrived yet.</td></tr>\n<tr><td>just (เพิ่ง)</td><td>She has just left.</td></tr>\n<tr><td>ever / never (เคย/ไม่เคย)</td><td>Have you ever been to Japan?</td></tr></table>\n<div class=\"tip\"><b>ต่างจาก past simple:</b> ถ้าบอกเวลาแน่นอน (yesterday, last week) ใช้ past simple: I <b>sent</b> it yesterday. ไม่ใช่ I have sent it yesterday.</div>",
+    "theory": "<h4>หลักคิด</h4><p>Present perfect เชื่อม <b>อดีตกับตอนนี้</b>: เรื่องเกิดไปแล้ว แต่ผู้พูดสนใจ <b>ผลที่มีตอนนี้</b> ไม่ได้สนใจว่าเกิดเมื่อไร คล้ายคำว่า \"แล้ว\" ในภาษาไทย (\"ส่งแล้ว\" = ตอนนี้ลูกค้ามีของแล้ว)</p><div class=\"ex\">อดีต ——●——→ ตอนนี้ (ผลยังอยู่)<div class=\"th\">I have sent the invoice. = ส่งแล้ว (ตอนนี้ลูกค้ามีใบแจ้งหนี้แล้ว)</div></div><div class=\"scroll\"><table><tr><th></th><th>Past simple</th><th>Present perfect</th></tr><tr><td>สนใจ</td><td>เกิดเมื่อไร (เวลาจบไปแล้ว)</td><td>ผลตอนนี้ (ไม่บอกเวลา)</td></tr><tr><td>ตัวอย่าง</td><td>I <b>sent</b> it yesterday.</td><td>I <b>have sent</b> it.</td></tr><tr><td>แปล</td><td>ฉันส่งไปเมื่อวาน</td><td>ฉันส่งแล้ว</td></tr></table></div><h4>วิธีสร้าง: have / has + V3</h4><div class=\"scroll\"><table><tr><th></th><th>I / you / we / they</th><th>he / she / it</th></tr><tr><td>บอกเล่า</td><td>I <b>have</b> finished. (I've)</td><td>She <b>has</b> finished. (She's)</td></tr><tr><td>ปฏิเสธ</td><td>I <b>haven't</b> finished.</td><td>She <b>hasn't</b> finished.</td></tr><tr><td>คำถาม</td><td><b>Have</b> you finished?</td><td><b>Has</b> she finished?</td></tr></table></div><p><b>V3:</b> กริยาปกติเหมือน V2 (finish → finished) · กริยาไม่ปกติต้องจำ: go → <b>gone</b>, write → <b>written</b>, see → <b>seen</b>, be → <b>been</b>, send → <b>sent</b> (ฝึกได้ที่โมดูล V1-V2-V3)</p><h4>ใช้เมื่อ</h4><div class=\"scroll\"><table><tr><th>ใช้เมื่อ</th><th>คำที่มักใช้คู่</th><th>ตัวอย่าง</th></tr><tr><td>ทำเสร็จแล้ว / ยังไม่เสร็จ</td><td>already, yet</td><td>I have <b>already</b> paid. · Has the ship arrived <b>yet</b>?</td></tr><tr><td>เพิ่งเกิด</td><td>just</td><td>She has <b>just</b> left.</td></tr><tr><td>ประสบการณ์ (เคย / ไม่เคย)</td><td>ever, never</td><td>Have you <b>ever</b> been to Japan?</td></tr><tr><td>เริ่มในอดีต ยังทำอยู่ถึงตอนนี้</td><td>for, since</td><td>I have worked here <b>for</b> two years / <b>since</b> 2024.</td></tr></table></div><p><b>already</b> ใช้ในประโยคบอกเล่า · <b>yet</b> ใช้ในปฏิเสธและคำถาม วางท้ายประโยค: It hasn't arrived <b>yet</b>.</p><div class=\"tip\"><b>มีเวลาที่จบแล้ว ใช้ past simple เท่านั้น:</b> <s>I have sent it yesterday.</s> → I <b>sent</b> it yesterday. คำถาม When... ก็ใช้ past simple: When <b>did</b> you send it?<br><b>been กับ gone:</b> He has <b>been</b> to Japan. (เคยไป กลับมาแล้ว) · He has <b>gone</b> to Japan. (ไปแล้ว ตอนนี้ยังอยู่ที่นั่น)</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>ประโยคมีเวลาในอดีตที่จบแล้ว (yesterday, last week, in 2024) หรือถาม When? → <b>past simple</b></li><li>สนใจผลตอนนี้ / ประสบการณ์ / ยังทำอยู่ถึงตอนนี้ → <b>have / has + V3</b></li><li>ประธาน he / she / it → has · อื่น ๆ → have</li><li>บอกเล่าใช้ already · ปฏิเสธและคำถามใช้ yet</li></ol></div>",
     "examples": [
       [
         "I have just sent you the tracking number.",
@@ -2009,6 +2471,14 @@
       [
         "We haven't received the payment yet.",
         "เรายังไม่ได้รับเงิน"
+      ],
+      [
+        "Has the ship arrived yet? No, it hasn't arrived yet.",
+        "เรือมาถึงหรือยัง ยังไม่มา"
+      ],
+      [
+        "I have worked here for two years.",
+        "ฉันทำงานที่นี่มา 2 ปีแล้ว"
       ]
     ],
     "mistakes": [
@@ -2078,30 +2548,48 @@
       {
         "q": "V3 ของ go",
         "o": [
-          "went",
-          "gone"
+          "gone",
+          "went"
         ],
-        "a": 1,
+        "a": 0,
         "why": ""
       },
       {
         "q": "\"He ___ just left.\"",
         "o": [
-          "have",
-          "has"
+          "has",
+          "have"
         ],
-        "a": 1,
+        "a": 0,
         "why": ""
       },
       {
         "q": "\"Have you ever ___ to Japan?\"",
         "o": [
-          "been",
           "be",
-          "was"
+          "was",
+          "been"
+        ],
+        "a": 2,
+        "why": "V3 ของ be"
+      },
+      {
+        "q": "\"I ___ it yesterday.\"",
+        "o": [
+          "have sent",
+          "sent"
+        ],
+        "a": 1,
+        "why": "มีเวลาที่จบแล้ว ใช้ past simple"
+      },
+      {
+        "q": "\"I have worked here ___ 2024.\"",
+        "o": [
+          "since",
+          "for"
         ],
         "a": 0,
-        "why": "V3 ของ be"
+        "why": "since + จุดเริ่มต้น · for + ระยะเวลา"
       }
     ],
     "homework": "เขียน 3 สิ่งที่คุณเคยทำ และ 2 สิ่งที่ยังไม่เคยทำ ใช้ have/has + V3"
@@ -2112,7 +2600,7 @@
     "title": "If แบบที่ 1: ถ้า...จะ...",
     "why": "ใช้บอกเงื่อนไขที่เป็นไปได้จริง เช่น ถ้าเรือมาช้าจะเกิดอะไร",
     "formula": "If + present simple, will + V1",
-    "theory": "<div class=\"ex\">If the ship <b>is</b> late, we <b>will pay</b> extra fees.<div class=\"th\">ถ้าเรือมาช้า เราจะต้องจ่ายค่าธรรมเนียมเพิ่ม</div></div>\n<p>ส่วน if ใช้ <b>present simple</b> (ไม่ใช้ will) ถึงแม้ความหมายเป็นอนาคต</p>\n<p>สลับข้างได้: We will pay extra fees <b>if</b> the ship is late. (ถ้าขึ้นต้นด้วย If ให้ใส่ comma)</p>\n<p><b>unless</b> = ถ้าไม่: Unless you hurry, you'll miss the bus.</p>",
+    "theory": "<h4>หลักคิด</h4><p>ประโยคนี้มีสองส่วน: <b>เงื่อนไข</b> (ถ้า...) กับ <b>ผล</b> (...จะ...) ใช้กับสิ่งที่ <b>เป็นไปได้จริง</b> ในอนาคต ภาษาไทยใส่ \"จะ\" ได้ทั้งสองส่วน (\"ถ้าเรือ<u>จะ</u>มาช้า...\") แต่ภาษาอังกฤษใส่ will <b>เฉพาะส่วนผล</b> ส่วน if ใช้ present simple แม้ความหมายเป็นอนาคต</p><div class=\"scroll\"><table><tr><th>ส่วนเงื่อนไข</th><th>ส่วนผล</th></tr><tr><td>If + present simple</td><td>will + V1</td></tr><tr><td>If the ship <b>is</b> late,</td><td>we <b>will pay</b> extra fees.</td></tr><tr><td>If it <b>rains</b>,</td><td>the truck <b>will be</b> late.</td></tr></table></div><div class=\"ex\"><s>If the customer will call, ...</s> → If the customer <b>calls</b>, ...<div class=\"th\">ระวัง s ด้วย: ประธานเดียวในส่วน if ต้องเติม s</div></div><h4>สลับข้างได้</h4><div class=\"ex\"><b>If</b> I'm late<b>,</b> I'll call you. = I'll call you <b>if</b> I'm late.<div class=\"th\">ถ้าขึ้นต้นด้วย If ใส่ comma คั่นกลาง · ถ้า if อยู่กลางประโยค ไม่ต้องมี comma</div></div><h4>ส่วนผลไม่จำเป็นต้องเป็น will</h4><div class=\"scroll\"><table><tr><th>ส่วนผล</th><th>ตัวอย่าง</th></tr><tr><td>คำสั่ง / ขอร้อง</td><td>If the customer calls, <b>tell</b> me.</td></tr><tr><td>can (ทำได้)</td><td>If you finish early, you <b>can</b> go home.</td></tr><tr><td>should (ควร)</td><td>If you feel sick, you <b>should</b> rest.</td></tr></table></div><h4>unless = ถ้าไม่</h4><div class=\"ex\"><b>Unless</b> you hurry, you'll miss the bus. = <b>If</b> you <b>don't</b> hurry, you'll miss the bus.<div class=\"th\">ถ้าไม่รีบ จะตกรถ (unless มีความหมายปฏิเสธในตัว ไม่ต้องใส่ not ซ้อน)</div></div><h4>if กับ when</h4><div class=\"ex\"><b>When</b> the ship arrives, I'll call you. · <b>If</b> the ship arrives today, I'll call you.<div class=\"th\">when = แน่ใจว่าจะเกิด แค่รอเวลา · if = อาจเกิดหรือไม่ก็ได้ (ทั้งสองแบบ ส่วนเงื่อนไขใช้ present simple)</div></div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>แยกประโยคเป็นสองส่วน: เงื่อนไข (ถ้า...) กับ ผล (...จะ...)</li><li>ส่วน if → present simple (ไม่ใช้ will, อย่าลืม s)</li><li>ส่วนผล → will + V1 หรือคำสั่ง / can / should</li><li>\"ถ้าไม่\" → unless หรือ if ... don't</li><li>ขึ้นต้นด้วย If → ใส่ comma ก่อนส่วนผล</li></ol></div>",
     "examples": [
       [
         "If you send the documents today, we will clear customs tomorrow.",
@@ -2121,6 +2609,14 @@
       [
         "I'll call you if there is a problem.",
         "ผมจะโทรหาคุณถ้ามีปัญหา"
+      ],
+      [
+        "If the customer calls, tell me.",
+        "ถ้าลูกค้าโทรมา บอกผมด้วย"
+      ],
+      [
+        "Unless you hurry, you'll miss the bus.",
+        "ถ้าไม่รีบ จะตกรถ"
       ]
     ],
     "mistakes": [
@@ -2202,6 +2698,34 @@
         ],
         "a": 0,
         "why": ""
+      },
+      {
+        "q": "\"If it ___, the truck will be late.\"",
+        "o": [
+          "rain",
+          "rains",
+          "will rain"
+        ],
+        "a": 1,
+        "why": "ส่วน if ใช้ present simple และเติม s"
+      },
+      {
+        "q": "\"If you finish early, you ___ go home.\"",
+        "o": [
+          "can",
+          "will can"
+        ],
+        "a": 0,
+        "why": "ส่วนผลใช้ can ได้"
+      },
+      {
+        "q": "แน่ใจว่าเรือจะมา แค่ไม่รู้เวลา",
+        "o": [
+          "When the ship arrives, I'll call you.",
+          "If the ship arrives, I'll call you."
+        ],
+        "a": 0,
+        "why": "แน่ใจว่าจะเกิด ใช้ when"
       }
     ],
     "homework": "เขียน 3 ประโยค if เรื่องแผนฝึกงานของคุณ เช่น If I get the internship, I will..."

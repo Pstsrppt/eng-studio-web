@@ -50,6 +50,15 @@
   .prose-lesson table { @apply my-3 w-full border-collapse text-sm; }
   .prose-lesson th { @apply border-b border-line px-2 py-1.5 text-left font-semibold; }
   .prose-lesson td { @apply border-b border-line px-2 py-1.5 align-top; }
+  .prose-lesson h4:first-child { @apply mt-0; }
+  .prose-lesson .scroll { @apply -mx-1 overflow-x-auto px-1; }
+  .prose-lesson .ex { @apply my-3 rounded-r-lg border-l-[3px] border-brand bg-brand-soft px-3 py-2; }
+  .prose-lesson .ex .th { @apply text-sm leading-6 text-muted; }
+  .prose-lesson .tip { @apply my-4 rounded-lg bg-[#fbf3cf] px-3.5 py-3 text-sm leading-6; }
+  .prose-lesson .steps { @apply my-4 rounded-lg border border-line px-3.5 py-3 text-sm leading-6; }
+  .prose-lesson .steps ol { @apply mb-0; }
+  .prose-lesson code { @apply rounded bg-[#eef2ef] px-1 font-mono text-[13px]; }
+  .prose-lesson s { @apply text-bad decoration-[1.5px]; }
   .tabular { font-variant-numeric: tabular-nums; }
 }
 
