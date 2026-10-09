@@ -99,6 +99,14 @@ begin
   end loop;
 end $$;
 
+-- Data API access. Needed when "Automatically expose new tables" is off,
+-- harmless when it is on. Signed-out visitors (anon) get nothing.
+revoke all on public.lesson_attempts, public.cards, public.reviews, public.mistakes,
+              public.lesson_best, public.activity_days from anon;
+grant select, insert, update, delete on public.lesson_attempts, public.cards,
+      public.reviews, public.mistakes to authenticated;
+grant select on public.lesson_best, public.activity_days to authenticated;
+
 -- Record one review and move the card to its next box in a single call.
 -- Intervals in days per box: 0,1,3,7,14,30.
 create or replace function public.record_review(
@@ -135,3 +143,6 @@ begin
 
   return result;
 end $$;
+
+revoke execute on function public.record_review(text, text, boolean, text, integer) from public, anon;
+grant execute on function public.record_review(text, text, boolean, text, integer) to authenticated;
