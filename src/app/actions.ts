@@ -8,31 +8,56 @@ import { createClient } from "@/lib/supabase/server";
 
 export type AuthState = { error?: string; info?: string };
 
-export async function signIn(_: AuthState, form: FormData): Promise<AuthState> {
-  if (!hasSupabase) return { error: "ยังไม่ได้ตั้งค่า Supabase ในไฟล์ .env.local" };
-  const supabase = await createClient();
-  const { error } = await supabase.auth.signInWithPassword({
-    email: String(form.get("email")),
-    password: String(form.get("password")),
-  });
-  if (error) return { error: "อีเมลหรือรหัสผ่านไม่ถูกต้อง หรือยังไม่ได้ยืนยันอีเมล" };
-  redirect("/");
+const NOT_CONFIGURED = "ยังไม่ได้ตั้งค่า Supabase ในไฟล์ .env.local";
+
+async function origin() {
+  return (await headers()).get("origin") ?? "";
 }
 
-export async function signUp(_: AuthState, form: FormData): Promise<AuthState> {
-  if (!hasSupabase) return { error: "ยังไม่ได้ตั้งค่า Supabase ในไฟล์ .env.local" };
+/**
+ * One button for both cases: signs in if the account exists, otherwise creates it.
+ */
+export async function continueWithEmail(_: AuthState, form: FormData): Promise<AuthState> {
+  if (!hasSupabase) return { error: NOT_CONFIGURED };
+  const email = String(form.get("email")).trim();
   const password = String(form.get("password"));
   if (password.length < 8) return { error: "รหัสผ่านต้องยาวอย่างน้อย 8 ตัวอักษร" };
-  const origin = (await headers()).get("origin") ?? "";
+
   const supabase = await createClient();
-  const { data, error } = await supabase.auth.signUp({
-    email: String(form.get("email")),
+  const signIn = await supabase.auth.signInWithPassword({ email, password });
+  if (!signIn.error) redirect("/");
+  if (signIn.error.code === "email_not_confirmed") {
+    return { info: "บัญชีนี้ยังไม่ได้ยืนยันอีเมล เปิดอีเมลแล้วกดลิงก์ยืนยันก่อน" };
+  }
+  if (signIn.error.code !== "invalid_credentials") return { error: signIn.error.message };
+
+  // No account with this email and password yet: try to create one.
+  const signUp = await supabase.auth.signUp({
+    email,
     password,
-    options: { emailRedirectTo: `${origin}/auth/callback` },
+    options: { emailRedirectTo: `${await origin()}/auth/callback` },
   });
-  if (error) return { error: error.message };
-  if (data.session) redirect("/");
-  return { info: "ส่งลิงก์ยืนยันไปที่อีเมลแล้ว กดลิงก์นั้นแล้วกลับมาเข้าสู่ระบบ" };
+  if (signUp.error) {
+    if (signUp.error.code === "user_already_exists") return { error: "รหัสผ่านไม่ถูกต้อง" };
+    if (signUp.error.code === "weak_password") return { error: "รหัสผ่านง่ายเกินไป ลองผสมตัวอักษรกับตัวเลข" };
+    return { error: signUp.error.message };
+  }
+  if (signUp.data.session) redirect("/");
+  // With email confirmation on, an existing email comes back with no identities.
+  if (signUp.data.user && signUp.data.user.identities?.length === 0) return { error: "รหัสผ่านไม่ถูกต้อง" };
+  return { info: `สร้างบัญชีแล้ว ส่งลิงก์ยืนยันไปที่ ${email} กดลิงก์นั้นแล้วจะเข้าใช้งานได้ทันที` };
+}
+
+/** Sends the learner to Google's sign-in page, which returns to /auth/callback. */
+export async function continueWithGoogle(): Promise<AuthState> {
+  if (!hasSupabase) return { error: NOT_CONFIGURED };
+  const supabase = await createClient();
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: { redirectTo: `${await origin()}/auth/callback` },
+  });
+  if (error || !data.url) return { error: "เปิดหน้า Google ไม่สำเร็จ ตรวจว่าเปิด Google ใน Supabase แล้ว" };
+  redirect(data.url);
 }
 
 export async function signOut() {
