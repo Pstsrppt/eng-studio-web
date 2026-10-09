@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 export const NAV = [
   { href: "/", label: "วันนี้", code: "01" },
   { href: "/grammar", label: "Grammar", code: "Gr" },
+  { href: "/sounds", label: "ออกเสียง", code: "Sd" },
   { href: "/verbs", label: "V1-V2-V3", code: "V3" },
   { href: "/vocab", label: "คำศัพท์", code: "Wd" },
 ] as const;
@@ -44,7 +45,7 @@ export function TabBar() {
   return (
     <nav
       aria-label="เมนูหลัก"
-      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-line bg-surface pt-2 pb-[calc(0.75rem+env(safe-area-inset-bottom))] lg:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-line bg-surface pt-2 pb-[calc(0.75rem+env(safe-area-inset-bottom))] lg:hidden"
     >
       {NAV.map((item) => {
         const on = isActive(pathname, item.href);

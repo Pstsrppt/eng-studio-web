@@ -14,7 +14,7 @@ const TABS = [
 ] as const;
 type Tab = (typeof TABS)[number]["id"];
 
-export function LessonView({ lesson, next, passMark }: { lesson: Lesson; next?: { id: string; title: string }; passMark: number }) {
+export function LessonView({ lesson, next, passMark }: { lesson: Lesson; next?: { href: string; title: string }; passMark: number }) {
   const [tab, setTab] = useState<Tab>("theory");
   const go = (t: Tab) => {
     setTab(t);
@@ -200,7 +200,7 @@ function PracticeCard({ n, item }: { n: number; item: PracticeItem }) {
   );
 }
 
-function Quiz({ lesson, next, passMark }: { lesson: Lesson; next?: { id: string; title: string }; passMark: number }) {
+function Quiz({ lesson, next, passMark }: { lesson: Lesson; next?: { href: string; title: string }; passMark: number }) {
   const [answers, setAnswers] = useState<(number | null)[]>(() => lesson.quiz.map(() => null));
   const [done, setDone] = useState<{ score: number; saved: boolean } | null>(null);
   const [error, setError] = useState(false);
@@ -241,7 +241,7 @@ function Quiz({ lesson, next, passMark }: { lesson: Lesson; next?: { id: string;
             </p>
           </div>
           {passed && next ? (
-            <Link href={`/grammar/${next.id}`} className="btn">บทถัดไป: {next.title} →</Link>
+            <Link href={next.href} className="btn">บทถัดไป: {next.title} →</Link>
           ) : (
             <button type="button" className="btn-ghost" onClick={() => { setAnswers(lesson.quiz.map(() => null)); setDone(null); }}>ทำใหม่</button>
           )}

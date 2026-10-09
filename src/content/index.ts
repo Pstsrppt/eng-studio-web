@@ -4,6 +4,7 @@ import verbGroupsData from "./data/verb-groups.json";
 import vocabData from "./data/vocab.json";
 import decksData from "./data/decks.json";
 import levelsData from "./data/levels.json";
+import soundsData from "./data/sounds.json";
 
 export type Level = "A1" | "A2" | "B1" | "B2";
 
@@ -36,6 +37,8 @@ export type Word = { id: string; en: string; th: string; ex?: string };
 export type Deck = { id: string; name: string; pre: string };
 
 export const LESSONS = grammarData as unknown as Lesson[];
+/** Pronunciation lessons. Same shape as grammar lessons, shown under /sounds. */
+export const SOUNDS = soundsData as unknown as Lesson[];
 export const VERBS = verbsData as Verb[];
 export const VERB_GROUPS = verbGroupsData as Record<VerbGroup, { name: string; tip: string }>;
 export const WORDS = vocabData as Word[];
@@ -48,9 +51,13 @@ export function getLesson(id: string) {
   return LESSONS.find((l) => l.id === id);
 }
 
-export function nextLesson(id: string) {
-  const i = LESSONS.findIndex((l) => l.id === id);
-  return i >= 0 ? LESSONS[i + 1] : undefined;
+export function getSound(id: string) {
+  return SOUNDS.find((l) => l.id === id);
+}
+
+export function nextLesson(id: string, list: Lesson[] = LESSONS) {
+  const i = list.findIndex((l) => l.id === id);
+  return i >= 0 ? list[i + 1] : undefined;
 }
 
 export function deckOf(word: Word) {

@@ -2729,5 +2729,1402 @@
       }
     ],
     "homework": "เขียน 3 ประโยค if เรื่องแผนฝึกงานของคุณ เช่น If I get the internship, I will..."
+  },
+  {
+    "id": "b1-1",
+    "level": "B1",
+    "title": "Passive voice: ถูกทำ (be + V3)",
+    "why": "งานขนส่งและเอกสารเทคนิคใช้ passive ตลอด เช่น The goods were shipped. เพราะสนใจสิ่งของมากกว่าคนทำ",
+    "formula": "สิ่งที่ถูกทำ + be + V3 (+ by คนทำ)",
+    "theory": "<h4>หลักคิด</h4><p>ประโยคปกติ (active) เอา <b>คนทำ</b> ขึ้นเป็นประธาน ส่วน passive เอา <b>สิ่งที่ถูกทำ</b> ขึ้นเป็นประธาน ใช้เมื่อคนทำไม่สำคัญ ไม่รู้ว่าใครทำ หรือรู้กันอยู่แล้ว</p><div class=\"ex\">Active: The driver <b>delivered</b> the goods.<br>Passive: The goods <b>were delivered</b> (by the driver).<div class=\"th\">ลูกค้าสนใจว่าสินค้ามาถึงไหม ไม่ได้สนใจว่าคนขับชื่ออะไร</div></div><p>ภาษาไทยใช้ \"ถูก\" กับเรื่องไม่ดี (ถูกตี ถูกขโมย) คนไทยจึงไม่ค่อยใช้ passive แต่ในภาษาอังกฤษ passive <b>เป็นกลาง</b> ใช้กับเรื่องดีได้ปกติ: Your order <b>has been confirmed</b>. แปลเป็นไทยว่า \"คำสั่งซื้อได้รับการยืนยันแล้ว\" หรือ \"ยืนยันคำสั่งซื้อแล้ว\"</p><h4>วิธีสร้าง: เปลี่ยนแค่ be ตาม tense ส่วน V3 อยู่เหมือนเดิม</h4><div class=\"scroll\"><table><tr><th>Tense</th><th>รูป</th><th>ตัวอย่าง</th></tr><tr><td>ปัจจุบัน</td><td>is / are + V3</td><td>The boxes <b>are checked</b> every day.</td></tr><tr><td>อดีต</td><td>was / were + V3</td><td>The container <b>was loaded</b> yesterday.</td></tr><tr><td>Present perfect</td><td>has / have been + V3</td><td>Your order <b>has been shipped</b>.</td></tr><tr><td>อนาคต</td><td>will be + V3</td><td>The meeting <b>will be held</b> on Monday.</td></tr><tr><td>กับ can / must</td><td>can / must be + V3</td><td>The form <b>must be signed</b>.</td></tr></table></div><p><b>ปฏิเสธ:</b> ใส่ not หลัง be → The goods <b>weren't</b> delivered. · <b>คำถาม:</b> ย้าย be ขึ้นหน้า → <b>Were</b> the goods delivered?</p><h4>ใส่ by เมื่อไร</h4><p>ใส่ <b>by + คนทำ</b> เฉพาะตอนที่ข้อมูลนั้นสำคัญ: The system was developed <b>by our IT team</b>. ถ้าไม่สำคัญ ไม่ต้องใส่: <s>The goods were shipped by someone.</s></p><div class=\"tip\"><b>ในอีเมลงานใช้บ่อยมาก:</b> The invoice <b>is attached</b>. (แนบใบแจ้งหนี้มาแล้ว) · Payment <b>has been received</b>. (ได้รับเงินแล้ว) · The shipment <b>was delayed</b> due to bad weather. (สินค้าล่าช้าเพราะสภาพอากาศ)</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>สิ่งที่อยากเน้นคือ <b>สิ่งของ / งาน</b> ไม่ใช่คนทำ? → ใช้ passive</li><li>เอาสิ่งนั้นขึ้นเป็นประธาน</li><li>เลือก be ตาม tense และประธาน (is/are, was/were, has/have been, will be)</li><li>ตามด้วย <b>V3</b> เสมอ</li><li>ใส่ by + คนทำ เฉพาะเมื่อสำคัญ</li></ol></div>",
+    "examples": [
+      [
+        "The goods were shipped yesterday.",
+        "สินค้าส่งออกไปแล้วเมื่อวาน"
+      ],
+      [
+        "The invoice is attached.",
+        "แนบใบแจ้งหนี้มาด้วย"
+      ],
+      [
+        "The system was developed by our IT team.",
+        "ระบบนี้พัฒนาโดยทีมไอทีของเรา"
+      ],
+      [
+        "Your order has been confirmed.",
+        "คำสั่งซื้อของคุณได้รับการยืนยันแล้ว"
+      ]
+    ],
+    "mistakes": [
+      [
+        "The goods was shipped.",
+        "The goods were shipped.",
+        "goods เป็นพหูพจน์ ใช้ were"
+      ],
+      [
+        "The order is confirm.",
+        "The order is confirmed.",
+        "passive ต้องใช้ V3"
+      ],
+      [
+        "The email sent yesterday.",
+        "The email was sent yesterday.",
+        "ต้องมี be"
+      ]
+    ],
+    "practice": [
+      {
+        "t": "fill",
+        "q": "The containers ___ (load) yesterday.",
+        "a": [
+          "were loaded"
+        ],
+        "th": "ตู้คอนเทนเนอร์ถูกขนขึ้นเมื่อวาน"
+      },
+      {
+        "t": "fill",
+        "q": "English ___ (speak) in many countries.",
+        "a": [
+          "is spoken"
+        ],
+        "th": "ภาษาอังกฤษใช้พูดในหลายประเทศ"
+      },
+      {
+        "t": "fix",
+        "q": "The report was write by Anna.",
+        "a": [
+          "The report was written by Anna."
+        ],
+        "th": "รายงานเขียนโดยแอนนา"
+      },
+      {
+        "t": "order",
+        "w": [
+          "been",
+          "has",
+          "order",
+          "your",
+          "shipped"
+        ],
+        "a": "Your order has been shipped.",
+        "th": "คำสั่งซื้อของคุณจัดส่งแล้ว"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "\"The truck ___ yesterday.\" (ถูกซ่อม)",
+        "o": [
+          "is repairing",
+          "repaired",
+          "was repaired"
+        ],
+        "a": 2,
+        "why": "อดีต passive: was + V3"
+      },
+      {
+        "q": "Passive ของ \"They check the boxes.\"",
+        "o": [
+          "The boxes are check.",
+          "The boxes checked.",
+          "The boxes are checked."
+        ],
+        "a": 2,
+        "why": "are + V3"
+      },
+      {
+        "q": "\"Your order ___ shipped.\" (ส่งแล้ว)",
+        "o": [
+          "has been",
+          "is been",
+          "have been"
+        ],
+        "a": 0,
+        "why": "order เอกพจน์ + has been + V3"
+      },
+      {
+        "q": "ควรใช้ passive เมื่อไร",
+        "o": [
+          "อยากเน้นคนทำ",
+          "อยากเน้นสิ่งที่ถูกทำ หรือไม่รู้ว่าใครทำ"
+        ],
+        "a": 1,
+        "why": "passive เน้นสิ่งที่ถูกทำ"
+      },
+      {
+        "q": "\"The meeting ___ next week.\" (จะถูกจัด)",
+        "o": [
+          "will be held",
+          "will held"
+        ],
+        "a": 0,
+        "why": "will be + V3"
+      },
+      {
+        "q": "ข้อใดถูก",
+        "o": [
+          "The goods didn't delivered.",
+          "The goods weren't delivered."
+        ],
+        "a": 1,
+        "why": "ปฏิเสธ passive ใช้ be + not"
+      }
+    ],
+    "homework": "เขียน 3 ประโยค passive เกี่ยวกับงาน เช่น สินค้า เอกสาร หรือระบบ (is / was / has been + V3)"
+  },
+  {
+    "id": "b1-2",
+    "level": "B1",
+    "title": "Present perfect continuous: ทำมาตลอดจนถึงตอนนี้",
+    "why": "ใช้บอกว่าทำอะไรมานานแค่ไหนแล้ว เจอแน่ในการสัมภาษณ์งาน เช่น How long have you been learning English?",
+    "formula": "have / has + been + V-ing (+ for / since)",
+    "theory": "<h4>หลักคิด</h4><p>เรื่องที่ <b>เริ่มในอดีตและยังทำอยู่ถึงตอนนี้</b> ภาษาไทยพูดว่า \"ฉันเรียนภาษาอังกฤษ<u>มา</u> 2 ปี<u>แล้ว</u>\" คนไทยมักแปลเป็น <s>I learn English for two years.</s> ซึ่งผิด เพราะ present simple บอกนิสัย ไม่ได้บอกว่าเริ่มเมื่อไรและยังทำอยู่</p><div class=\"ex\">2 ปีก่อน ●━━━━━━━━━▶ ตอนนี้ (ยังเรียนอยู่)<div class=\"th\">I have been learning English for two years.</div></div><h4>วิธีสร้าง</h4><div class=\"scroll\"><table><tr><th></th><th>I / you / we / they</th><th>he / she / it</th></tr><tr><td>บอกเล่า</td><td>I <b>have been working</b>. (I've been)</td><td>She <b>has been working</b>. (She's been)</td></tr><tr><td>ปฏิเสธ</td><td>I <b>haven't been</b> sleeping well.</td><td>He <b>hasn't been</b> feeling well.</td></tr><tr><td>คำถาม</td><td><b>Have</b> you <b>been waiting</b> long?</td><td><b>Has</b> it <b>been raining</b>?</td></tr></table></div><h4>for หรือ since</h4><div class=\"scroll\"><table><tr><th></th><th>ตามด้วย</th><th>ตัวอย่าง</th></tr><tr><td><b>for</b></td><td>ระยะเวลา (นานเท่าไร)</td><td>for two hours, for three years, for a long time</td></tr><tr><td><b>since</b></td><td>จุดเริ่มต้น (ตั้งแต่เมื่อไร)</td><td>since 9 am, since Monday, since 2024, since I joined</td></tr></table></div><p>ถาม: <b>How long have you been</b> working here? → ตอบ: For two years. / Since 2024.</p><h4>ต่างจาก present perfect ธรรมดาอย่างไร</h4><div class=\"scroll\"><table><tr><th></th><th>have been + V-ing</th><th>have + V3</th></tr><tr><td>เน้น</td><td>ระยะเวลา ความต่อเนื่อง</td><td>ผลที่เสร็จ จำนวนที่นับได้</td></tr><tr><td>ตัวอย่าง</td><td>I've <b>been writing</b> emails all morning.</td><td>I've <b>written</b> 20 emails.</td></tr><tr><td>แปล</td><td>เขียนอีเมลมาทั้งเช้า</td><td>เขียนไปแล้ว 20 ฉบับ</td></tr></table></div><p>ใช้ได้กับเรื่องที่เพิ่งหยุด แต่ยังเห็นผล: You look tired. — I've <b>been working</b> all night.</p><div class=\"tip\"><b>กริยาความคิด/ความรู้สึก/การมี</b> (know, like, want, have = เป็นเจ้าของ) ไม่ใช้ -ing ให้ใช้ have + V3 แทน: <s>I have been knowing him for years.</s> → I <b>have known</b> him for years.</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>เรื่องนี้เริ่มในอดีตและ <b>ยังทำอยู่ถึงตอนนี้</b>ไหม? → have / has been + V-ing</li><li>บอกระยะเวลา → <b>for</b> · บอกจุดเริ่ม → <b>since</b></li><li>อยากเน้นจำนวนที่เสร็จแล้ว (20 ฉบับ, 3 ครั้ง) → have + V3 แทน</li><li>กริยาเป็น know, like, want → ใช้ have + V3</li></ol></div>",
+    "examples": [
+      [
+        "I have been learning English for two years.",
+        "ฉันเรียนภาษาอังกฤษมา 2 ปีแล้ว"
+      ],
+      [
+        "She has been working here since 2024.",
+        "เธอทำงานที่นี่ตั้งแต่ปี 2024"
+      ],
+      [
+        "How long have you been waiting?",
+        "คุณรอมานานแค่ไหนแล้ว"
+      ],
+      [
+        "I've been writing emails all morning, and I've written 20.",
+        "ฉันเขียนอีเมลมาทั้งเช้า เขียนไปแล้ว 20 ฉบับ"
+      ]
+    ],
+    "mistakes": [
+      [
+        "I learn English for two years.",
+        "I have been learning English for two years.",
+        "ทำมาถึงตอนนี้ใช้ have been + V-ing"
+      ],
+      [
+        "I have been working here since two years.",
+        "I have been working here for two years.",
+        "ระยะเวลาใช้ for"
+      ],
+      [
+        "I have been knowing him for years.",
+        "I have known him for years.",
+        "know ไม่ใช้ -ing"
+      ]
+    ],
+    "practice": [
+      {
+        "t": "fill",
+        "q": "I have been ___ (wait) for an hour.",
+        "a": [
+          "waiting"
+        ],
+        "th": "ฉันรอมาชั่วโมงหนึ่งแล้ว"
+      },
+      {
+        "t": "fill",
+        "q": "She has been working here ___ March.",
+        "a": [
+          "since"
+        ],
+        "th": "เธอทำงานที่นี่ตั้งแต่เดือนมีนาคม"
+      },
+      {
+        "t": "fix",
+        "q": "He have been driving all day.",
+        "a": [
+          "He has been driving all day.",
+          "He's been driving all day."
+        ],
+        "th": "เขาขับรถมาทั้งวัน"
+      },
+      {
+        "t": "order",
+        "w": [
+          "long",
+          "have",
+          "been",
+          "how",
+          "you",
+          "waiting",
+          "?"
+        ],
+        "a": "How long have you been waiting?",
+        "th": "คุณรอมานานแค่ไหนแล้ว"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "\"I have been working here ___ three years.\"",
+        "o": [
+          "since",
+          "for"
+        ],
+        "a": 1,
+        "why": "ระยะเวลาใช้ for"
+      },
+      {
+        "q": "\"We have been waiting ___ 8 am.\"",
+        "o": [
+          "since",
+          "for"
+        ],
+        "a": 0,
+        "why": "จุดเริ่มต้นใช้ since"
+      },
+      {
+        "q": "\"She ___ been studying all night.\"",
+        "o": [
+          "has",
+          "have"
+        ],
+        "a": 0,
+        "why": "she ใช้ has"
+      },
+      {
+        "q": "ข้อใดถูก",
+        "o": [
+          "I have known her for years.",
+          "I have been knowing her for years."
+        ],
+        "a": 0,
+        "why": "know ไม่ใช้ -ing"
+      },
+      {
+        "q": "\"ฉันเขียนรายงานไปแล้ว 3 ฉบับ\"",
+        "o": [
+          "I have written three reports.",
+          "I have been writing three reports."
+        ],
+        "a": 0,
+        "why": "นับผลที่เสร็จ ใช้ have + V3"
+      },
+      {
+        "q": "\"How long ___ you been learning English?\"",
+        "o": [
+          "have",
+          "are",
+          "do"
+        ],
+        "a": 0,
+        "why": "have + been + V-ing"
+      }
+    ],
+    "homework": "ตอบคำถาม How long have you been...? 3 ข้อ เกี่ยวกับการเรียน งาน และงานอดิเรกของคุณ"
+  },
+  {
+    "id": "b1-3",
+    "level": "B1",
+    "title": "If แบบที่ 2: สมมติสิ่งที่ไม่จริงตอนนี้",
+    "why": "ใช้พูดสมมติและให้คำแนะนำอย่างสุภาพ เช่น If I were you, I would...",
+    "formula": "If + past simple, would + V1",
+    "theory": "<h4>หลักคิด</h4><p>If แบบที่ 2 ใช้รูป <b>อดีต</b> แต่ไม่ได้พูดถึงอดีต รูปอดีตในที่นี้บอกว่า <b>\"ไกลจากความจริง\"</b>: ตอนนี้ไม่เป็นแบบนั้น หรือโอกาสเกิดน้อยมาก</p><div class=\"scroll\"><table><tr><th></th><th>If แบบที่ 1</th><th>If แบบที่ 2</th></tr><tr><td>ความหมาย</td><td>เป็นไปได้จริง</td><td>สมมติ ไม่จริงตอนนี้</td></tr><tr><td>ตัวอย่าง</td><td>If I <b>have</b> time, I <b>will</b> help.</td><td>If I <b>had</b> time, I <b>would</b> help.</td></tr><tr><td>แปล</td><td>ถ้ามีเวลา จะช่วย (อาจมีเวลาจริง)</td><td>ถ้ามีเวลาก็จะช่วย (แต่ตอนนี้ไม่มี)</td></tr></table></div><h4>วิธีสร้าง</h4><div class=\"scroll\"><table><tr><th>ส่วนเงื่อนไข</th><th>ส่วนผล</th></tr><tr><td>If + V2 (past simple)</td><td>would + V1 (I'd, she'd)</td></tr><tr><td>If we <b>had</b> more trucks,</td><td>we <b>would deliver</b> faster.</td></tr><tr><td>If I <b>didn't</b> have this job,</td><td>I <b>would</b> travel more.</td></tr></table></div><p><b>be ใช้ were ได้กับทุกประธาน:</b> If I <b>were</b> you... · If it <b>were</b> cheaper... (พูดกันเองใช้ was ได้ แต่ในงานเขียนใช้ were)</p><h4>ใช้ทำอะไรได้บ้าง</h4><p><b>1. สมมติสิ่งที่ไม่จริงตอนนี้</b></p><div class=\"ex\">If I <b>had</b> a car, I <b>would drive</b> to work.<div class=\"th\">ถ้ามีรถ จะขับไปทำงาน (แต่ไม่มีรถ)</div></div><p><b>2. ให้คำแนะนำแบบสุภาพ</b></p><div class=\"ex\">If I <b>were</b> you, I<b>'d call</b> the customer first.<div class=\"th\">ถ้าฉันเป็นคุณ ฉันจะโทรหาลูกค้าก่อน</div></div><p><b>3. ถามความเห็นในสถานการณ์สมมติ</b> (เจอบ่อยตอนสัมภาษณ์งาน)</p><div class=\"ex\">What <b>would</b> you <b>do</b> if the system <b>stopped</b> working?<div class=\"th\">คุณจะทำอย่างไรถ้าระบบหยุดทำงาน</div></div><div class=\"tip\">ส่วนผลใช้ <b>could</b> (= would be able to) หรือ <b>might</b> (อาจจะ) แทน would ได้: If we had more staff, we <b>could</b> finish faster.</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>เรื่องนี้ <b>เป็นไปได้จริง</b> → If แบบที่ 1 (present + will)</li><li>เป็น <b>เรื่องสมมติ</b> ไม่จริงตอนนี้ หรือโอกาสน้อย → If แบบที่ 2</li><li>ส่วน if → V2 (be ใช้ were) · ห้ามใส่ would ในส่วน if</li><li>ส่วนผล → would / could / might + V1</li></ol></div>",
+    "examples": [
+      [
+        "If I had more time, I would learn Japanese.",
+        "ถ้ามีเวลามากกว่านี้ ฉันจะเรียนภาษาญี่ปุ่น (แต่ตอนนี้ไม่มี)"
+      ],
+      [
+        "If I were you, I would call the customer first.",
+        "ถ้าฉันเป็นคุณ ฉันจะโทรหาลูกค้าก่อน"
+      ],
+      [
+        "If we had more trucks, we could deliver faster.",
+        "ถ้าเรามีรถบรรทุกมากกว่านี้ เราจะส่งของได้เร็วกว่านี้"
+      ],
+      [
+        "What would you do if the system stopped working?",
+        "คุณจะทำอย่างไรถ้าระบบหยุดทำงาน"
+      ]
+    ],
+    "mistakes": [
+      [
+        "If I would have time, I would help.",
+        "If I had time, I would help.",
+        "ส่วน if ไม่ใช้ would"
+      ],
+      [
+        "If I am you, I would ask.",
+        "If I were you, I would ask.",
+        "สมมติใช้ were"
+      ],
+      [
+        "If I had money, I will buy it.",
+        "If I had money, I would buy it.",
+        "คู่กับ past ใช้ would"
+      ]
+    ],
+    "practice": [
+      {
+        "t": "fill",
+        "q": "If I ___ (have) a car, I would drive to work.",
+        "a": [
+          "had"
+        ],
+        "th": "ถ้ามีรถ ฉันจะขับไปทำงาน"
+      },
+      {
+        "t": "fill",
+        "q": "If I were you, I ___ (call) him.",
+        "a": [
+          "would call",
+          "'d call"
+        ],
+        "th": "ถ้าฉันเป็นคุณ ฉันจะโทรหาเขา"
+      },
+      {
+        "t": "fix",
+        "q": "If I would know the answer, I would tell you.",
+        "a": [
+          "If I knew the answer, I would tell you.",
+          "If I knew the answer, I'd tell you."
+        ],
+        "th": "ถ้ารู้คำตอบ จะบอกคุณ"
+      },
+      {
+        "t": "pick",
+        "q": "ตอนนี้ไม่มีเงิน (สมมติ)",
+        "o": [
+          "If I have money, I will buy it.",
+          "If I had money, I would buy it."
+        ],
+        "a": 1,
+        "th": "ไม่จริงตอนนี้ ใช้แบบที่ 2"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "\"If I ___ you, I would take the job.\"",
+        "o": [
+          "will be",
+          "were",
+          "am"
+        ],
+        "a": 1,
+        "why": "If I were you ใช้ให้คำแนะนำ"
+      },
+      {
+        "q": "\"If she had time, she ___ help us.\"",
+        "o": [
+          "will",
+          "would"
+        ],
+        "a": 1,
+        "why": "คู่กับ past ใช้ would"
+      },
+      {
+        "q": "\"If I had a car...\" หมายความว่า",
+        "o": [
+          "ฉันไม่มีรถ (สมมติ)",
+          "ฉันมีรถ"
+        ],
+        "a": 0,
+        "why": "รูปอดีตบอกว่าไม่จริงตอนนี้"
+      },
+      {
+        "q": "ข้อใดถูก",
+        "o": [
+          "If I would win, I would travel.",
+          "If I won, I would travel."
+        ],
+        "a": 1,
+        "why": "ส่วน if ใช้ past simple"
+      },
+      {
+        "q": "\"If we had more staff, we ___ finish faster.\"",
+        "o": [
+          "could",
+          "can"
+        ],
+        "a": 0,
+        "why": "could = would be able to"
+      },
+      {
+        "q": "ข้อไหนเป็นไปได้จริงในอนาคต",
+        "o": [
+          "If it rained, I'd stay home.",
+          "If it rains, I'll stay home."
+        ],
+        "a": 1,
+        "why": "เป็นไปได้จริงใช้แบบที่ 1"
+      }
+    ],
+    "homework": "เขียน 3 ประโยค If I were... / If I had... เกี่ยวกับงานในฝัน และ 1 ประโยคให้คำแนะนำเพื่อนด้วย If I were you"
+  },
+  {
+    "id": "b1-4",
+    "level": "B1",
+    "title": "who / which / that: ขยายคำนามด้วยประโยค",
+    "why": "ใช้รวมสองประโยคเป็นหนึ่ง บอกให้ชัดว่าลูกค้าคนไหน ไฟล์อันไหน อีเมลจะสั้นและชัดขึ้น",
+    "formula": "คำนาม + who (คน) / which (สิ่งของ) / that (ทั้งคู่) + ส่วนขยาย",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาไทยใช้ \"ที่\" ขยายคำนาม: ลูกค้า<u>ที่โทรมาเมื่อเช้า</u> ภาษาอังกฤษก็วางส่วนขยาย <b>หลังคำนาม</b> เหมือนกัน แค่ต้องเลือกคำว่า \"ที่\" ให้ตรงกับชนิดของคำนาม</p><div class=\"scroll\"><table><tr><th>คำ</th><th>ใช้กับ</th><th>ตัวอย่าง</th></tr><tr><td><b>who</b></td><td>คน</td><td>the customer <b>who</b> called</td></tr><tr><td><b>which</b></td><td>สิ่งของ สัตว์</td><td>the truck <b>which</b> broke down</td></tr><tr><td><b>that</b></td><td>ได้ทั้งคนและสิ่งของ (ใช้บ่อยในภาษาพูด)</td><td>the file <b>that</b> I sent</td></tr><tr><td><b>whose</b></td><td>ของคนนั้น / ของสิ่งนั้น</td><td>the driver <b>whose</b> phone was broken</td></tr></table></div><h4>รวมสองประโยคเป็นหนึ่ง</h4><div class=\"ex\">The customer called. <b>She</b> wants a refund.<br>→ The customer <b>who called</b> wants a refund.<div class=\"th\">who แทนคำว่า She จึงไม่ต้องมี She ซ้ำ</div></div><div class=\"ex\">I sent you a file. <b>The file</b> is big.<br>→ The file <b>(that) I sent you</b> is big.<div class=\"th\">that แทน the file ที่เป็นกรรมของ sent จึงไม่ต้องมี it ซ้ำ</div></div><h4>กฎสำคัญ</h4><ul><li><b>ไม่ใส่คำแทนซ้ำ:</b> <s>The file that I sent <u>it</u> yesterday</s> · <s>The man who <u>he</u> called</s></li><li><b>ละ that / which / who ได้</b> เมื่อมีประธานตามหลังทันที: The file <b>I sent you</b> is big. (ละไม่ได้ถ้า who/that เป็นคนทำเอง: The man <b>who works</b> here)</li><li><b>มี comma คั่น</b> = แค่ให้ข้อมูลเพิ่ม ใช้ which / who ได้ แต่ห้ามใช้ that: Our office<b>, which</b> is in Bangkok<b>,</b> opens at 8.</li></ul><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>คำนามที่จะขยายเป็นคนหรือสิ่งของ? คน → who · สิ่งของ → which · ไม่แน่ใจ → that</li><li>หมายถึง \"ของ...\" → whose</li><li>วางส่วนขยายต่อหลังคำนามทันที</li><li>ลบคำแทนที่ซ้ำออก (he, she, it, them)</li></ol></div>",
+    "examples": [
+      [
+        "The customer who called this morning wants a refund.",
+        "ลูกค้าที่โทรมาเมื่อเช้าต้องการเงินคืน"
+      ],
+      [
+        "This is the file that I sent you.",
+        "นี่คือไฟล์ที่ฉันส่งให้คุณ"
+      ],
+      [
+        "We need a truck which can carry 10 tons.",
+        "เราต้องการรถบรรทุกที่บรรทุกได้ 10 ตัน"
+      ],
+      [
+        "The driver whose phone was broken called from the office.",
+        "คนขับที่โทรศัพท์เสียโทรมาจากออฟฟิศ"
+      ]
+    ],
+    "mistakes": [
+      [
+        "The man which called me.",
+        "The man who called me.",
+        "คนใช้ who"
+      ],
+      [
+        "The file that I sent it yesterday.",
+        "The file that I sent yesterday.",
+        "ไม่ต้องมี it ซ้ำ"
+      ],
+      [
+        "The customer who he called is angry.",
+        "The customer who called is angry.",
+        "who เป็นประธานแล้ว ไม่ต้องมี he"
+      ]
+    ],
+    "practice": [
+      {
+        "t": "fill",
+        "q": "The driver ___ works at night is Tom.",
+        "a": [
+          "who",
+          "that"
+        ],
+        "th": "คนขับที่ทำงานกลางคืนชื่อทอม"
+      },
+      {
+        "t": "fill",
+        "q": "This is the box ___ arrived today.",
+        "a": [
+          "which",
+          "that"
+        ],
+        "th": "นี่คือกล่องที่มาถึงวันนี้"
+      },
+      {
+        "t": "fix",
+        "q": "The report which I wrote it is ready.",
+        "a": [
+          "The report which I wrote is ready.",
+          "The report that I wrote is ready.",
+          "The report I wrote is ready."
+        ],
+        "th": "รายงานที่ฉันเขียนเสร็จแล้ว"
+      },
+      {
+        "t": "order",
+        "w": [
+          "who",
+          "the",
+          "called",
+          "customer",
+          "is",
+          "angry"
+        ],
+        "a": "The customer who called is angry.",
+        "th": "ลูกค้าที่โทรมากำลังโกรธ"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "\"The engineer ___ fixed the server is new.\"",
+        "o": [
+          "which",
+          "who"
+        ],
+        "a": 1,
+        "why": "คนใช้ who"
+      },
+      {
+        "q": "\"The laptop ___ I bought is fast.\"",
+        "o": [
+          "which",
+          "who"
+        ],
+        "a": 0,
+        "why": "สิ่งของใช้ which"
+      },
+      {
+        "q": "คำไหนใช้ได้ทั้งคนและสิ่งของ",
+        "o": [
+          "that",
+          "whose",
+          "which"
+        ],
+        "a": 0,
+        "why": "that ใช้ได้ทั้งสองแบบ"
+      },
+      {
+        "q": "ข้อใดถูก",
+        "o": [
+          "This is the file that I sent.",
+          "This is the file that I sent it."
+        ],
+        "a": 0,
+        "why": "ไม่ใส่ it ซ้ำ"
+      },
+      {
+        "q": "\"The driver ___ truck broke down called me.\"",
+        "o": [
+          "whose",
+          "who",
+          "which"
+        ],
+        "a": 0,
+        "why": "whose = ของคนนั้น"
+      },
+      {
+        "q": "ข้อไหนละ that ได้",
+        "o": [
+          "The file that I sent you is big.",
+          "The man that works here is kind."
+        ],
+        "a": 0,
+        "why": "ละได้เมื่อมีประธานตามหลัง (I)"
+      }
+    ],
+    "homework": "เขียน 3 ประโยคแนะนำเพื่อนร่วมงานหรือเครื่องมือที่ใช้ทำงาน ใช้ who, which และ that อย่างละ 1 ประโยค"
+  },
+  {
+    "id": "b1-5",
+    "level": "B1",
+    "title": "-ing หรือ to + V1: กริยาที่ตามหลังกริยา",
+    "why": "เมื่อกริยาสองตัวมาต่อกัน ตัวที่สองต้องเป็น -ing หรือ to + V1 ขึ้นกับกริยาตัวแรก คนไทยมักเดาผิด",
+    "formula": "enjoy / finish / avoid + V-ing · want / need / plan + to V1 · บุพบท + V-ing",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาไทยเอากริยามาต่อกันได้เลย (อยาก<u>ไป</u> ชอบ<u>ทำ</u> เลิก<u>สูบ</u>) ภาษาอังกฤษต้องเปลี่ยนรูปกริยาตัวที่สอง เป็น <b>-ing</b> หรือ <b>to + V1</b> ซึ่งขึ้นกับกริยาตัวแรก</p><p><b>ตัวช่วยจำ (ใช้ได้เกือบทุกคำ):</b> <b>to + V1</b> มองไปข้างหน้า สิ่งที่ยังไม่เกิด (อยาก วางแผน ตัดสินใจ สัญญา) · <b>-ing</b> มองกิจกรรมทั้งก้อน ที่ทำอยู่หรือทำแล้ว (ชอบ เลิก ทำเสร็จ หลีกเลี่ยง)</p><div class=\"scroll\"><table><tr><th>ตามด้วย -ing</th><th>ตามด้วย to + V1</th><th>ได้ทั้งสองแบบ</th></tr><tr><td>enjoy, finish, avoid, mind, suggest, keep, consider</td><td>want, need, plan, decide, hope, agree, promise, would like</td><td>like, love, start, begin</td></tr></table></div><div class=\"ex\">I enjoy <b>working</b> with data. · We decided <b>to use</b> a new system.<div class=\"th\">ฉันชอบทำงานกับข้อมูล · เราตัดสินใจใช้ระบบใหม่</div></div><h4>หลังบุพบท ใช้ -ing เสมอ</h4><p>บุพบท (in, at, for, about, of, without) ตามด้วยคำนาม และ -ing ทำหน้าที่เป็นคำนามได้</p><div class=\"ex\">I'm interested <b>in learning</b> Python. · Thank you <b>for waiting</b>.<div class=\"th\">ฉันสนใจเรียน Python · ขอบคุณที่รอ</div></div><div class=\"ex\">I look forward <b>to hearing</b> from you.<div class=\"th\">หวังว่าจะได้รับการติดต่อกลับ · to ในวลีนี้เป็นบุพบท จึงตามด้วย -ing (<s>to hear</s>)</div></div><h4>-ing เป็นประธานได้</h4><div class=\"ex\"><b>Learning</b> English takes time.<div class=\"th\">การเรียนภาษาอังกฤษต้องใช้เวลา</div></div><div class=\"tip\"><b>stop เปลี่ยนความหมาย:</b> He stopped <b>smoking</b>. (เลิกสูบ) · He stopped <b>to smoke</b>. (หยุดสิ่งที่ทำอยู่ เพื่อไปสูบ)</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>กริยาตัวที่สองอยู่หลัง <b>บุพบท</b> (in, for, about, look forward to)? → -ing</li><li>กริยาตัวแรกอยู่ในกลุ่ม enjoy / finish / avoid? → -ing</li><li>กริยาตัวแรกอยู่ในกลุ่ม want / need / plan / decide? → to + V1</li><li>ไม่แน่ใจ → ถามว่าเป็น \"สิ่งที่ยังไม่เกิด\" (to) หรือ \"กิจกรรมทั้งก้อน\" (-ing)</li></ol></div>",
+    "examples": [
+      [
+        "I enjoy working with data.",
+        "ฉันชอบทำงานกับข้อมูล"
+      ],
+      [
+        "We decided to use a new system.",
+        "เราตัดสินใจใช้ระบบใหม่"
+      ],
+      [
+        "Thank you for waiting.",
+        "ขอบคุณที่รอ"
+      ],
+      [
+        "I look forward to hearing from you.",
+        "หวังว่าจะได้รับการติดต่อกลับ"
+      ]
+    ],
+    "mistakes": [
+      [
+        "I enjoy to work here.",
+        "I enjoy working here.",
+        "enjoy + -ing"
+      ],
+      [
+        "I want going home.",
+        "I want to go home.",
+        "want + to V1"
+      ],
+      [
+        "I look forward to hear from you.",
+        "I look forward to hearing from you.",
+        "to ในวลีนี้เป็นบุพบท ตามด้วย -ing"
+      ]
+    ],
+    "practice": [
+      {
+        "t": "fill",
+        "q": "Have you finished ___ (write) the report?",
+        "a": [
+          "writing"
+        ],
+        "th": "คุณเขียนรายงานเสร็จหรือยัง"
+      },
+      {
+        "t": "fill",
+        "q": "We plan ___ (open) a new office.",
+        "a": [
+          "to open"
+        ],
+        "th": "เราวางแผนจะเปิดออฟฟิศใหม่"
+      },
+      {
+        "t": "fix",
+        "q": "I'm interested in learn Python.",
+        "a": [
+          "I'm interested in learning Python.",
+          "I am interested in learning Python."
+        ],
+        "th": "ฉันสนใจเรียน Python"
+      },
+      {
+        "t": "pick",
+        "q": "\"เขาเลิกสูบบุหรี่แล้ว\"",
+        "o": [
+          "He stopped smoking.",
+          "He stopped to smoke."
+        ],
+        "a": 0,
+        "th": "stop + -ing = เลิก"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "\"I want ___ a new laptop.\"",
+        "o": [
+          "buying",
+          "to buy"
+        ],
+        "a": 1,
+        "why": "want + to V1"
+      },
+      {
+        "q": "\"She avoids ___ at night.\"",
+        "o": [
+          "driving",
+          "to drive"
+        ],
+        "a": 0,
+        "why": "avoid + -ing"
+      },
+      {
+        "q": "\"Thank you for ___ me.\"",
+        "o": [
+          "help",
+          "helping",
+          "to help"
+        ],
+        "a": 1,
+        "why": "หลังบุพบท for ใช้ -ing"
+      },
+      {
+        "q": "\"I look forward to ___ you.\"",
+        "o": [
+          "meeting",
+          "meet"
+        ],
+        "a": 0,
+        "why": "to ในวลีนี้เป็นบุพบท"
+      },
+      {
+        "q": "\"They decided ___ the meeting.\"",
+        "o": [
+          "cancelling",
+          "to cancel"
+        ],
+        "a": 1,
+        "why": "decide + to V1"
+      },
+      {
+        "q": "\"___ English every day helps a lot.\"",
+        "o": [
+          "Reading",
+          "Read"
+        ],
+        "a": 0,
+        "why": "กริยาที่เป็นประธานใช้ -ing"
+      }
+    ],
+    "homework": "เขียนอีเมลสั้น 3 ประโยคถึงหัวหน้า ใช้ I would like to..., Thank you for -ing และ I look forward to -ing"
+  },
+  {
+    "id": "b1-6",
+    "level": "B1",
+    "title": "Reported speech: เล่าว่าคนอื่นพูดอะไร",
+    "why": "ในงานต้องเล่าต่อบ่อย เช่น ลูกค้าบอกว่า... หัวหน้าถามว่า... ทั้งในที่ประชุมและในอีเมล",
+    "formula": "said (that) + ถอย tense · asked if / wh- + ประธาน + กริยา · told / asked + คน + to V1",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาไทยเล่าต่อโดยไม่เปลี่ยนอะไร (\"เขาบอกว่าเขายุ่ง\") ภาษาอังกฤษ เมื่อเล่าด้วย said / asked (อดีต) มัก <b>ถอย tense ลงหนึ่งขั้น</b> เพราะคำพูดนั้นเกิดในอดีตแล้ว</p><div class=\"ex\">\"I <b>am</b> busy.\" → He said (that) he <b>was</b> busy.<div class=\"th\">เขาบอกว่าเขายุ่ง</div></div><h4>ถอย tense</h4><div class=\"scroll\"><table><tr><th>คำพูดจริง</th><th>เล่าต่อ</th></tr><tr><td>am / is → are</td><td>was → were</td></tr><tr><td>V1 (I work)</td><td>V2 (he worked)</td></tr><tr><td>V2 / have + V3 (I sent / I have sent)</td><td>had + V3 (he had sent)</td></tr><tr><td>will</td><td>would</td></tr><tr><td>can</td><td>could</td></tr></table></div><p>เปลี่ยนคำแทนตัวให้ตรงด้วย: I → he/she · my → his/her · และถ้าเล่าในวันอื่น: today → that day, tomorrow → the next day</p><p><b>ถ้ายังจริงอยู่ตอนนี้ ไม่ต้องถอยก็ได้:</b> He said the office <b>opens</b> at 8.</p><h4>say กับ tell</h4><div class=\"scroll\"><table><tr><th></th><th>รูป</th><th>ตัวอย่าง</th></tr><tr><td>say</td><td>said (that) ...</td><td>She <b>said</b> (that) the price was too high.</td></tr><tr><td>tell</td><td>told + <b>คน</b> (that) ...</td><td>She <b>told me</b> (that) the price was too high.</td></tr></table></div><h4>เล่าคำถาม: ใช้ลำดับประโยคบอกเล่า ไม่ใช่ลำดับคำถาม</h4><div class=\"scroll\"><table><tr><th>คำพูดจริง</th><th>เล่าต่อ</th></tr><tr><td>\"Are you free?\"</td><td>He asked <b>if</b> I <b>was</b> free.</td></tr><tr><td>\"Where is the truck?\"</td><td>She asked where <b>the truck was</b>. (<s>where was the truck</s>)</td></tr></table></div><h4>เล่าคำขอร้อง / คำสั่ง</h4><div class=\"ex\">\"Please send the report.\" → My manager <b>asked me to send</b> the report.<div class=\"th\">หัวหน้าขอให้ฉันส่งรายงาน (told me to = สั่งให้)</div></div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>เป็นคำพูดบอกเล่า → said (that) / told + คน + (that)</li><li>เป็นคำถาม Yes/No → asked if · คำถาม Wh- → asked + wh- + ประธาน + กริยา</li><li>เป็นคำขอหรือคำสั่ง → asked / told + คน + to V1</li><li>ถอย tense ลงหนึ่งขั้น และเปลี่ยนคำแทนตัว (I → he/she)</li></ol></div>",
+    "examples": [
+      [
+        "The customer said that the goods were damaged.",
+        "ลูกค้าบอกว่าสินค้าเสียหาย"
+      ],
+      [
+        "My manager told me to send the report by Friday.",
+        "หัวหน้าบอกให้ฉันส่งรายงานภายในวันศุกร์"
+      ],
+      [
+        "She asked if the truck had arrived.",
+        "เธอถามว่ารถบรรทุกมาถึงแล้วหรือยัง"
+      ],
+      [
+        "He asked where the invoice was.",
+        "เขาถามว่าใบแจ้งหนี้อยู่ที่ไหน"
+      ]
+    ],
+    "mistakes": [
+      [
+        "He said me that he was busy.",
+        "He told me that he was busy.",
+        "บอก + คน ใช้ tell"
+      ],
+      [
+        "She asked where was the truck.",
+        "She asked where the truck was.",
+        "ไม่ใช้ลำดับคำถาม"
+      ],
+      [
+        "He asked me send it.",
+        "He asked me to send it.",
+        "ขอให้ทำ ใช้ asked + คน + to V1"
+      ]
+    ],
+    "practice": [
+      {
+        "t": "fill",
+        "q": "\"I am tired.\" → She said that she ___ tired.",
+        "a": [
+          "was"
+        ],
+        "th": "เธอบอกว่าเธอเหนื่อย"
+      },
+      {
+        "t": "fill",
+        "q": "\"I will call you.\" → He said he ___ call me.",
+        "a": [
+          "would"
+        ],
+        "th": "เขาบอกว่าจะโทรหาฉัน"
+      },
+      {
+        "t": "fix",
+        "q": "He asked me where do I live.",
+        "a": [
+          "He asked me where I lived.",
+          "He asked me where I live."
+        ],
+        "th": "เขาถามว่าฉันอยู่ที่ไหน"
+      },
+      {
+        "t": "order",
+        "w": [
+          "me",
+          "to",
+          "asked",
+          "he",
+          "wait"
+        ],
+        "a": "He asked me to wait.",
+        "th": "เขาขอให้ฉันรอ"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "\"I can help.\" → She said she ___ help.",
+        "o": [
+          "can",
+          "could"
+        ],
+        "a": 1,
+        "why": "can → could"
+      },
+      {
+        "q": "\"Are you ready?\" → He asked ___ I was ready.",
+        "o": [
+          "that",
+          "if"
+        ],
+        "a": 1,
+        "why": "คำถาม Yes/No ใช้ if"
+      },
+      {
+        "q": "ข้อใดถูก",
+        "o": [
+          "She told me the price.",
+          "She said me the price."
+        ],
+        "a": 0,
+        "why": "บอก + คน ใช้ tell"
+      },
+      {
+        "q": "\"Where is the file?\" → He asked where ___.",
+        "o": [
+          "the file was",
+          "is the file"
+        ],
+        "a": 0,
+        "why": "ไม่ใช้ลำดับคำถาม และถอย tense"
+      },
+      {
+        "q": "\"Please close the door.\" → She asked me ___ the door.",
+        "o": [
+          "closing",
+          "to close",
+          "close"
+        ],
+        "a": 1,
+        "why": "asked + คน + to V1"
+      },
+      {
+        "q": "\"We shipped it.\" → They said they ___ it.",
+        "o": [
+          "have shipped",
+          "had shipped"
+        ],
+        "a": 1,
+        "why": "V2 → had + V3"
+      }
+    ],
+    "homework": "นึกถึงบทสนทนาในงานเมื่อวาน แล้วเขียนเล่าต่อ 3 ประโยค: said that..., asked if..., told me to..."
+  },
+  {
+    "id": "b2-1",
+    "level": "B2",
+    "title": "Past perfect: เกิดก่อนอีกเรื่องในอดีต",
+    "why": "ใช้เรียงลำดับเหตุการณ์ในรายงานปัญหา เช่น ตอนเราไปถึง เรือออกไปแล้ว",
+    "formula": "had + V3 (เรื่องที่เกิดก่อน) · past simple (เรื่องที่เกิดทีหลัง)",
+    "theory": "<h4>หลักคิด</h4><p>เมื่อเล่าเรื่องในอดีต แล้วต้อง <b>ย้อนไปพูดถึงเรื่องที่เกิดก่อนหน้านั้นอีก</b> ให้ใช้ had + V3 กับเรื่องที่เกิดก่อน ภาษาไทยใช้คำว่า \"แล้ว\" หรือ \"ก่อนหน้านั้น\" ช่วย</p><div class=\"ex\">เรือออก (had left) ──●──── เราไปถึง (arrived) ──●──── ตอนนี้<div class=\"th\">When we arrived at the port, the ship had already left.</div></div><h4>ความหมายเปลี่ยนตามรูป</h4><div class=\"scroll\"><table><tr><th>ประโยค</th><th>ลำดับเหตุการณ์</th></tr><tr><td>When we arrived, the truck <b>left</b>.</td><td>เราไปถึงก่อน แล้วรถค่อยออก</td></tr><tr><td>When we arrived, the truck <b>had left</b>.</td><td>รถออกไปก่อน เราไปถึงทีหลัง (ไม่ทัน)</td></tr></table></div><h4>วิธีสร้าง</h4><div class=\"scroll\"><table><tr><th></th><th>ทุกประธาน</th></tr><tr><td>บอกเล่า</td><td>She <b>had sent</b> the email. (She'd sent)</td></tr><tr><td>ปฏิเสธ</td><td>I <b>hadn't seen</b> the message.</td></tr><tr><td>คำถาม</td><td><b>Had</b> you <b>finished</b> before the meeting?</td></tr></table></div><p><b>คำที่มักใช้คู่:</b> already, before, after, by the time, never ... before, when</p><div class=\"ex\"><b>By the time</b> the customer called, we <b>had fixed</b> the problem.<div class=\"th\">กว่าลูกค้าจะโทรมา เราก็แก้ปัญหาเสร็จแล้ว</div></div><div class=\"ex\">I <b>had never used</b> SAP <b>before</b> I joined this company.<div class=\"th\">ก่อนเข้าบริษัทนี้ ฉันไม่เคยใช้ SAP</div></div><div class=\"tip\"><b>ไม่ต้องใช้ทุกครั้ง:</b> ถ้า before / after บอกลำดับชัดแล้ว ใช้ past simple ทั้งคู่ได้: After I <b>finished</b> the report, I <b>went</b> home. ใช้ had + V3 เมื่อต้องการความชัดว่าอะไรเกิดก่อน · และอย่าใช้ has / have กับเรื่องที่เล่าในอดีต</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>กำลังเล่าเรื่องในอดีต (past simple) อยู่ใช่ไหม?</li><li>มีเรื่องที่เกิด <b>ก่อน</b> จุดนั้นอีกไหม? → เรื่องนั้นใช้ had + V3</li><li>เรื่องที่เกิดทีหลังใช้ past simple ตามปกติ</li><li>had ใช้กับทุกประธาน ตามด้วย <b>V3</b> (gone, written, left)</li></ol></div>",
+    "examples": [
+      [
+        "When we arrived at the port, the ship had already left.",
+        "ตอนเราไปถึงท่าเรือ เรือออกไปแล้ว"
+      ],
+      [
+        "I had never used SAP before I joined this company.",
+        "ก่อนเข้าบริษัทนี้ ฉันไม่เคยใช้ SAP"
+      ],
+      [
+        "By the time the customer called, we had fixed the problem.",
+        "กว่าลูกค้าจะโทรมา เราก็แก้ปัญหาเสร็จแล้ว"
+      ],
+      [
+        "She was tired because she had worked all night.",
+        "เธอเหนื่อยเพราะทำงานมาทั้งคืน"
+      ]
+    ],
+    "mistakes": [
+      [
+        "When I arrived, the meeting already started.",
+        "When I arrived, the meeting had already started.",
+        "เกิดก่อนอีกเรื่องใช้ had + V3"
+      ],
+      [
+        "I had went there before.",
+        "I had gone there before.",
+        "had + V3 (gone)"
+      ],
+      [
+        "She has left when I called.",
+        "She had left when I called.",
+        "เล่าอดีตใช้ had ไม่ใช่ has"
+      ]
+    ],
+    "practice": [
+      {
+        "t": "fill",
+        "q": "When I got to the office, everyone ___ (go) home.",
+        "a": [
+          "had gone"
+        ],
+        "th": "ตอนฉันไปถึงออฟฟิศ ทุกคนกลับบ้านไปแล้ว"
+      },
+      {
+        "t": "fill",
+        "q": "The ship ___ (leave) before we arrived.",
+        "a": [
+          "had left"
+        ],
+        "th": "เรือออกไปก่อนที่เราจะไปถึง"
+      },
+      {
+        "t": "fix",
+        "q": "By the time we came, they finished the work.",
+        "a": [
+          "By the time we came, they had finished the work."
+        ],
+        "th": "กว่าเราจะมา พวกเขาทำงานเสร็จแล้ว"
+      },
+      {
+        "t": "pick",
+        "q": "รถออกไปก่อนเราไปถึง",
+        "o": [
+          "When we arrived, the truck left.",
+          "When we arrived, the truck had left."
+        ],
+        "a": 1,
+        "th": "เกิดก่อนใช้ had + V3"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "\"When I arrived, the train ___.\" (ออกไปก่อนแล้ว)",
+        "o": [
+          "had left",
+          "left"
+        ],
+        "a": 0,
+        "why": "เรื่องที่เกิดก่อนใช้ had + V3"
+      },
+      {
+        "q": "\"I ___ never seen snow before I went to Japan.\"",
+        "o": [
+          "had",
+          "have"
+        ],
+        "a": 0,
+        "why": "เกิดก่อนอีกเรื่องในอดีต"
+      },
+      {
+        "q": "V3 ของ write",
+        "o": [
+          "written",
+          "wrote"
+        ],
+        "a": 0,
+        "why": "had written"
+      },
+      {
+        "q": "\"By the time we called, the shop ___.\"",
+        "o": [
+          "had closed",
+          "has closed"
+        ],
+        "a": 0,
+        "why": "by the time + อดีต → had + V3"
+      },
+      {
+        "q": "\"When the manager arrived, we started the meeting.\" หมายความว่า",
+        "o": [
+          "ประชุมเริ่มไปก่อนแล้ว",
+          "ผู้จัดการมาก่อน แล้วจึงเริ่มประชุม"
+        ],
+        "a": 1,
+        "why": "past simple ทั้งคู่ = เกิดตามลำดับ"
+      },
+      {
+        "q": "ข้อใดถูก",
+        "o": [
+          "She had sent the email before lunch.",
+          "She had send the email before lunch."
+        ],
+        "a": 0,
+        "why": "had + V3"
+      }
+    ],
+    "homework": "เขียนรายงานปัญหาสั้น 3 ประโยค เล่าว่าเกิดอะไรขึ้น ใช้ had + V3 อย่างน้อย 2 ครั้ง"
+  },
+  {
+    "id": "b2-2",
+    "level": "B2",
+    "title": "If แบบที่ 3 และ should have: ถ้าตอนนั้น...",
+    "why": "ใช้ทบทวนสิ่งที่ผ่านไปแล้ว เช่น สรุปบทเรียนหลังจบโปรเจกต์ หรืออธิบายปัญหากับลูกค้า",
+    "formula": "If + had V3, would have + V3 · should have + V3",
+    "theory": "<h4>หลักคิด</h4><p>If แบบที่ 3 สมมติเรื่องใน <b>อดีตที่ไม่ได้เกิดขึ้นจริง</b> และเปลี่ยนไม่ได้แล้ว ภาษาไทย: \"ถ้าตอนนั้น...ก็คง...\"</p><div class=\"scroll\"><table><tr><th>แบบ</th><th>รูป</th><th>ความหมาย</th></tr><tr><td>1</td><td>If it <b>rains</b>, we <b>will</b> stay.</td><td>เป็นไปได้จริงในอนาคต</td></tr><tr><td>2</td><td>If it <b>rained</b>, we <b>would</b> stay.</td><td>สมมติ ไม่จริงตอนนี้</td></tr><tr><td>3</td><td>If it <b>had rained</b>, we <b>would have stayed</b>.</td><td>สมมติอดีต (ความจริงคือฝนไม่ตก)</td></tr></table></div><h4>วิธีสร้าง</h4><div class=\"scroll\"><table><tr><th>ส่วนเงื่อนไข</th><th>ส่วนผล</th></tr><tr><td>If + had + V3</td><td>would have + V3 (would've)</td></tr><tr><td>If we <b>had checked</b> the address,</td><td>the goods <b>would have arrived</b> on time.</td></tr><tr><td>If I <b>hadn't missed</b> the bus,</td><td>I <b>wouldn't have been</b> late.</td></tr></table></div><div class=\"ex\">ความจริง: We <b>didn't check</b> the address, so the goods <b>were</b> late.<div class=\"th\">เราไม่ได้ตรวจที่อยู่ สินค้าจึงมาช้า</div></div><p>ส่วนผลใช้ <b>could have</b> (ทำได้) หรือ <b>might have</b> (อาจจะ) แทนได้: If we had left earlier, we <b>could have caught</b> the ship.</p><h4>should have / could have: เสียดาย หรือ ติ</h4><div class=\"scroll\"><table><tr><th>รูป</th><th>ความหมาย</th><th>ตัวอย่าง</th></tr><tr><td>should have + V3</td><td>ควรทำ (แต่ไม่ได้ทำ)</td><td>We <b>should have tested</b> it before the release.</td></tr><tr><td>shouldn't have + V3</td><td>ไม่ควรทำ (แต่ทำไปแล้ว)</td><td>I <b>shouldn't have sent</b> that email.</td></tr><tr><td>could have + V3</td><td>ทำได้ (แต่ไม่ได้ทำ)</td><td>You <b>could have asked</b> me for help.</td></tr></table></div><div class=\"tip\"><b>ในงาน:</b> ใช้ should have ตอนสรุปบทเรียนหลังโปรเจกต์ (lessons learned): \"We should have booked the trucks earlier.\" ฟังเป็นมืออาชีพกว่าการโทษคน</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>เป็นเรื่องในอดีตที่ <b>ไม่ได้เกิดขึ้นจริง</b>? → If แบบที่ 3</li><li>ส่วน if → had + V3 (ห้ามใส่ would)</li><li>ส่วนผล → would / could / might + have + V3</li><li>อยากบอกว่าควรทำแต่ไม่ได้ทำ → should have + V3</li></ol></div>",
+    "examples": [
+      [
+        "If we had checked the address, the goods would have arrived on time.",
+        "ถ้าตอนนั้นเราตรวจที่อยู่ สินค้าคงมาถึงตรงเวลา"
+      ],
+      [
+        "If I had known about the meeting, I would have come.",
+        "ถ้ารู้เรื่องประชุม ฉันคงมาแล้ว"
+      ],
+      [
+        "We should have tested the system before the release.",
+        "เราควรทดสอบระบบก่อนปล่อยใช้งาน (แต่ไม่ได้ทำ)"
+      ],
+      [
+        "You could have asked me for help.",
+        "คุณขอให้ฉันช่วยก็ได้นะ (แต่ไม่ได้ขอ)"
+      ]
+    ],
+    "mistakes": [
+      [
+        "If I would have known, I would have come.",
+        "If I had known, I would have come.",
+        "ส่วน if ใช้ had + V3"
+      ],
+      [
+        "I should have call you.",
+        "I should have called you.",
+        "should have + V3"
+      ],
+      [
+        "If we had left earlier, we would arrive on time.",
+        "If we had left earlier, we would have arrived on time.",
+        "ผลในอดีตใช้ would have + V3"
+      ]
+    ],
+    "practice": [
+      {
+        "t": "fill",
+        "q": "If I had seen the email, I would have ___ (reply).",
+        "a": [
+          "replied"
+        ],
+        "th": "ถ้าเห็นอีเมล ฉันคงตอบไปแล้ว"
+      },
+      {
+        "t": "fill",
+        "q": "If she ___ (study), she would have passed.",
+        "a": [
+          "had studied"
+        ],
+        "th": "ถ้าเธออ่านหนังสือ เธอคงสอบผ่าน"
+      },
+      {
+        "t": "fix",
+        "q": "We should have book the truck earlier.",
+        "a": [
+          "We should have booked the truck earlier."
+        ],
+        "th": "เราควรจองรถบรรทุกให้เร็วกว่านี้"
+      },
+      {
+        "t": "pick",
+        "q": "ควรจะโทรหาลูกค้า (แต่ไม่ได้โทร)",
+        "o": [
+          "I should call the customer.",
+          "I should have called the customer."
+        ],
+        "a": 1,
+        "th": "should have = ควรทำแต่ไม่ได้ทำ"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "\"If we ___ earlier, we wouldn't have missed the ship.\"",
+        "o": [
+          "left",
+          "had left",
+          "would leave"
+        ],
+        "a": 1,
+        "why": "ส่วน if ใช้ had + V3"
+      },
+      {
+        "q": "\"If I had known, I ___ you.\"",
+        "o": [
+          "would tell",
+          "would have told"
+        ],
+        "a": 1,
+        "why": "ผลในอดีตใช้ would have + V3"
+      },
+      {
+        "q": "\"You should have asked.\" หมายความว่า",
+        "o": [
+          "คุณควรถาม แต่ไม่ได้ถาม",
+          "คุณควรถาม และได้ถามแล้ว"
+        ],
+        "a": 0,
+        "why": "should have = เสียดายหรือติ"
+      },
+      {
+        "q": "ข้อไหนพูดถึงอดีตที่ไม่ได้เกิดขึ้นจริง",
+        "o": [
+          "If it rains, we'll stay.",
+          "If it had rained, we would have stayed."
+        ],
+        "a": 1,
+        "why": "If แบบที่ 3"
+      },
+      {
+        "q": "\"We ___ tested it before the release.\" (ควร แต่ไม่ได้ทำ)",
+        "o": [
+          "should",
+          "should have"
+        ],
+        "a": 1,
+        "why": "should have + V3"
+      },
+      {
+        "q": "\"I didn't study, so I failed.\" เขียนเป็น If แบบที่ 3",
+        "o": [
+          "If I studied, I would pass.",
+          "If I had studied, I would have passed."
+        ],
+        "a": 1,
+        "why": "had + V3 / would have + V3"
+      }
+    ],
+    "homework": "นึกถึงปัญหาในงานหรือการเรียนที่ผ่านมา เขียน 2 ประโยค If ... had ..., ... would have ... และ 1 ประโยค We should have ..."
+  },
+  {
+    "id": "b2-3",
+    "level": "B2",
+    "title": "must be / might be / can't be: เดาอย่างมีเหตุผล",
+    "why": "ใช้คาดเดาจากหลักฐานในงาน เช่น ระบบล่ม ต้องเป็นเพราะ... ฟังเป็นมืออาชีพกว่าการพูดฟันธง",
+    "formula": "must (แน่ใจว่าใช่) · might / may / could (อาจจะ) · can't (แน่ใจว่าไม่ใช่) + V1",
+    "theory": "<h4>หลักคิด</h4><p>must, might, can't ไม่ได้ใช้แค่บอกหน้าที่หรือความสามารถ ยังใช้บอก <b>ระดับความมั่นใจ</b> เวลาเดาจากหลักฐาน ในความหมายนี้ must แปลว่า <b>\"คงจะ / ต้องเป็น...แน่ ๆ\"</b> ไม่ใช่ \"ต้อง (บังคับ)\"</p><div class=\"scroll\"><table><tr><th>ความมั่นใจ</th><th>ใช้</th><th>ตัวอย่าง</th></tr><tr><td>100% ใช่</td><td>is</td><td>He <b>is</b> in the office. (เห็นอยู่)</td></tr><tr><td>~90% ใช่</td><td>must be</td><td>He <b>must be</b> in the office. His bag is here.</td></tr><tr><td>~50%</td><td>might / may / could be</td><td>He <b>might be</b> in a meeting.</td></tr><tr><td>~90% ไม่ใช่</td><td>can't be</td><td>He <b>can't be</b> in the office. He's on holiday.</td></tr><tr><td>100% ไม่ใช่</td><td>isn't</td><td>He <b>isn't</b> in the office.</td></tr></table></div><h4>ตรงข้ามของ must be คือ can't be</h4><div class=\"ex\"><s>He mustn't be at home.</s> → He <b>can't be</b> at home. The lights are off.<div class=\"th\">mustn't แปลว่า \"ห้าม\" ไม่ได้แปลว่า \"คงไม่ใช่\"</div></div><h4>เดาเรื่องในอดีต: + have + V3</h4><div class=\"scroll\"><table><tr><th>รูป</th><th>ตัวอย่าง</th><th>แปล</th></tr><tr><td>must have + V3</td><td>He isn't answering. He <b>must have left</b>.</td><td>เขาคงออกไปแล้ว</td></tr><tr><td>might have + V3</td><td>The email <b>might have gone</b> to spam.</td><td>อีเมลอาจไปอยู่ในสแปม</td></tr><tr><td>can't have + V3</td><td>She <b>can't have seen</b> it. She was away.</td><td>เธอคงไม่ได้เห็นแน่ ๆ</td></tr></table></div><div class=\"tip\"><b>ในงาน:</b> ใช้ might / could เมื่อยังไม่แน่ใจ จะฟังสุภาพและไม่ฟันธงผิด: The delay <b>might be</b> caused by customs. · หลัง must / might / can't ใช้ V1 ไม่มี to</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>มั่นใจแค่ไหน? แน่ใจว่าใช่ → must · ไม่แน่ใจ → might / may / could · แน่ใจว่าไม่ใช่ → can't</li><li>เดาเรื่องตอนนี้ → + V1 (be, know, work)</li><li>เดาเรื่องที่เกิดไปแล้ว → + have + V3</li><li>ห้ามใช้ mustn't เพื่อบอกว่า \"คงไม่ใช่\"</li></ol></div>",
+    "examples": [
+      [
+        "The server is very slow. There must be a problem.",
+        "เซิร์ฟเวอร์ช้ามาก ต้องมีปัญหาแน่ ๆ"
+      ],
+      [
+        "The truck might be stuck in traffic.",
+        "รถบรรทุกอาจติดอยู่ในรถติด"
+      ],
+      [
+        "That can't be right. We checked it twice.",
+        "ไม่น่าใช่ เราตรวจไปสองรอบแล้ว"
+      ],
+      [
+        "He isn't answering. He must have left the office.",
+        "เขาไม่รับสาย คงออกจากออฟฟิศไปแล้ว"
+      ]
+    ],
+    "mistakes": [
+      [
+        "He mustn't be at home. The lights are off.",
+        "He can't be at home. The lights are off.",
+        "แน่ใจว่าไม่ใช่ ใช้ can't"
+      ],
+      [
+        "She must to be tired.",
+        "She must be tired.",
+        "หลัง must ไม่มี to"
+      ],
+      [
+        "He must left already.",
+        "He must have left already.",
+        "เดาเรื่องอดีตใช้ must have + V3"
+      ]
+    ],
+    "practice": [
+      {
+        "t": "fill",
+        "q": "He has worked 12 hours. He ___ be tired. (แน่ใจ)",
+        "a": [
+          "must"
+        ],
+        "th": "เขาทำงานมา 12 ชั่วโมง คงเหนื่อยแน่"
+      },
+      {
+        "t": "fill",
+        "q": "I'm not sure where she is. She ___ be in a meeting.",
+        "a": [
+          "might",
+          "may",
+          "could"
+        ],
+        "th": "ไม่แน่ใจว่าเธออยู่ไหน อาจประชุมอยู่"
+      },
+      {
+        "t": "fix",
+        "q": "That mustn't be true.",
+        "a": [
+          "That can't be true.",
+          "That cannot be true."
+        ],
+        "th": "ไม่น่าจะจริง"
+      },
+      {
+        "t": "pick",
+        "q": "ไฟปิดหมด เขาคงกลับไปแล้ว",
+        "o": [
+          "He must leave.",
+          "He must have left."
+        ],
+        "a": 1,
+        "th": "เดาเรื่องอดีต must have + V3"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "มั่นใจประมาณ 90% ว่าใช่",
+        "o": [
+          "can't be",
+          "must be",
+          "might be"
+        ],
+        "a": 1,
+        "why": "must be = คงใช่แน่ ๆ"
+      },
+      {
+        "q": "ตรงข้ามของ must be (แน่ใจว่าไม่ใช่)",
+        "o": [
+          "mustn't be",
+          "can't be"
+        ],
+        "a": 1,
+        "why": "mustn't = ห้าม"
+      },
+      {
+        "q": "\"The package ___ be in the warehouse. I'm not sure.\"",
+        "o": [
+          "might",
+          "must"
+        ],
+        "a": 0,
+        "why": "ไม่แน่ใจใช้ might"
+      },
+      {
+        "q": "\"The lights are off. They ___ gone home.\"",
+        "o": [
+          "must",
+          "must have"
+        ],
+        "a": 1,
+        "why": "เดาอดีต must have + V3"
+      },
+      {
+        "q": "\"must\" ในประโยค \"You must be hungry.\" หมายถึง",
+        "o": [
+          "คงจะ (เดา)",
+          "ต้อง (บังคับ)"
+        ],
+        "a": 0,
+        "why": "ใช้เดาจากหลักฐาน"
+      },
+      {
+        "q": "\"She can't have seen the email.\" หมายความว่า",
+        "o": [
+          "เธอคงไม่ได้เห็นอีเมลแน่ ๆ",
+          "เธอห้ามเห็นอีเมล"
+        ],
+        "a": 0,
+        "why": "can't have + V3 = แน่ใจว่าไม่ได้เกิด"
+      }
+    ],
+    "homework": "เลือกสถานการณ์ในงาน 3 อย่าง (เช่น ลูกค้าไม่ตอบ ระบบช้า) แล้วเดาเหตุผลด้วย must, might, can't อย่างละ 1 ประโยค"
+  },
+  {
+    "id": "b2-4",
+    "level": "B2",
+    "title": "although, however, therefore: เชื่อมเหตุผลในอีเมล",
+    "why": "คำเชื่อมทำให้อีเมลและรายงานลื่นไหล แสดงเหตุผลชัด และอ่านแล้วเป็นมืออาชีพ",
+    "formula": "although + ประโยค · despite + คำนาม / -ing · However, / Therefore, + ประโยคใหม่",
+    "theory": "<h4>หลักคิด</h4><p>คำเชื่อมแต่ละคำมี <b>ความหมาย</b> และ <b>ตำแหน่งในประโยค</b> ของมันเอง คำที่แปลเหมือนกันอาจใช้คนละแบบ เช่น although กับ despite แปลว่า \"แม้ว่า\" ทั้งคู่ แต่ although ตามด้วยประโยค ส่วน despite ตามด้วยคำนาม</p><div class=\"scroll\"><table><tr><th>ความหมาย</th><th>เชื่อมในประโยคเดียว (+ ประโยค)</th><th>ขึ้นประโยคใหม่</th><th>+ คำนาม / -ing</th></tr><tr><td>แม้ว่า / แต่</td><td>although, even though, but</td><td>However,</td><td>despite, in spite of</td></tr><tr><td>เพราะ</td><td>because, since</td><td>-</td><td>because of, due to</td></tr><tr><td>ดังนั้น</td><td>so</td><td>Therefore, / As a result,</td><td>-</td></tr><tr><td>นอกจากนี้</td><td>and</td><td>In addition, / Moreover,</td><td>-</td></tr></table></div><h4>although กับ despite</h4><div class=\"ex\"><b>Although</b> the ship was late, the goods arrived in good condition.<div class=\"th\">although + ประธาน + กริยา</div></div><div class=\"ex\"><b>Despite</b> the delay, the goods arrived in good condition. · <b>Despite having</b> little time, we finished.<div class=\"th\">despite + คำนาม หรือ -ing</div></div><h4>However และ Therefore ขึ้นประโยคใหม่</h4><div class=\"ex\">The price is higher. <b>However,</b> the delivery is much faster.<div class=\"th\">จบประโยคแรกด้วยจุด แล้วขึ้นต้นประโยคใหม่ด้วย However ตามด้วย comma</div></div><div class=\"ex\">The system is old. <b>Therefore,</b> we need to upgrade it.<div class=\"th\">ดังนั้นเราต้องอัปเกรด</div></div><p><s>The price is high, however the quality is good.</s> ผิด เพราะใช้ comma เชื่อมสองประโยคเข้าด้วยกัน</p><div class=\"tip\"><b>กับดักของคนไทย:</b> \"แม้ว่า...<u>แต่</u>...\" ภาษาไทยใช้คู่กัน แต่ภาษาอังกฤษ <b>ห้ามใช้ although กับ but ในประโยคเดียวกัน</b> เลือกอย่างใดอย่างหนึ่ง: <s>Although it rained, but we went.</s> → Although it rained, we went. / It rained, but we went.</div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>ต้องการความหมายอะไร: ขัดแย้ง / เหตุผล / ผล / เพิ่มเติม</li><li>ส่วนที่ตามมาเป็นประโยค (มีประธาน + กริยา) → although / because / so</li><li>ตามด้วยคำนามหรือ -ing → despite / because of / due to</li><li>อยากขึ้นประโยคใหม่ → However, / Therefore, / In addition, (มี comma ตาม)</li><li>ตรวจว่าไม่ได้ใช้ although คู่กับ but</li></ol></div>",
+    "examples": [
+      [
+        "Although the ship was late, the goods arrived in good condition.",
+        "แม้เรือจะมาช้า แต่สินค้ามาถึงในสภาพดี"
+      ],
+      [
+        "The price is higher. However, the delivery is much faster.",
+        "ราคาสูงกว่า อย่างไรก็ตาม ส่งได้เร็วกว่ามาก"
+      ],
+      [
+        "The flight was cancelled due to bad weather.",
+        "เที่ยวบินถูกยกเลิกเนื่องจากสภาพอากาศไม่ดี"
+      ],
+      [
+        "The system is old. Therefore, we need to upgrade it.",
+        "ระบบเก่าแล้ว ดังนั้นเราต้องอัปเกรด"
+      ]
+    ],
+    "mistakes": [
+      [
+        "Although it rained, but we went out.",
+        "Although it rained, we went out.",
+        "although กับ but ไม่ใช้คู่กัน"
+      ],
+      [
+        "Despite it was late, we continued.",
+        "Although it was late, we continued.",
+        "despite ตามด้วยคำนามหรือ -ing ไม่ใช่ประโยค"
+      ],
+      [
+        "The price is high, however the quality is good.",
+        "The price is high. However, the quality is good.",
+        "However ขึ้นประโยคใหม่ ตามด้วย comma"
+      ]
+    ],
+    "practice": [
+      {
+        "t": "fill",
+        "q": "___ the traffic, we arrived on time.",
+        "a": [
+          "despite",
+          "in spite of"
+        ],
+        "th": "ถึงรถจะติด เราก็มาถึงตรงเวลา"
+      },
+      {
+        "t": "fill",
+        "q": "We missed the deadline ___ the server problem.",
+        "a": [
+          "because of",
+          "due to"
+        ],
+        "th": "เราส่งงานไม่ทันเพราะปัญหาเซิร์ฟเวอร์"
+      },
+      {
+        "t": "fix",
+        "q": "Although he was tired, but he finished the report.",
+        "a": [
+          "Although he was tired, he finished the report.",
+          "He was tired, but he finished the report."
+        ],
+        "th": "แม้จะเหนื่อย เขาก็ทำรายงานเสร็จ"
+      },
+      {
+        "t": "pick",
+        "q": "The cost is high. ___, the quality is excellent.",
+        "o": [
+          "Although",
+          "However"
+        ],
+        "a": 1,
+        "th": "ขึ้นประโยคใหม่ใช้ However,"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "\"___ it was expensive, we bought it.\"",
+        "o": [
+          "Although",
+          "Despite"
+        ],
+        "a": 0,
+        "why": "although + ประโยค"
+      },
+      {
+        "q": "\"___ the rain, the truck left on time.\"",
+        "o": [
+          "Although",
+          "Despite"
+        ],
+        "a": 1,
+        "why": "despite + คำนาม"
+      },
+      {
+        "q": "\"The server was down. ___, we couldn't send the files.\"",
+        "o": [
+          "However",
+          "Therefore"
+        ],
+        "a": 1,
+        "why": "บอกผล ใช้ Therefore"
+      },
+      {
+        "q": "\"The flight was delayed ___ bad weather.\"",
+        "o": [
+          "due to",
+          "because"
+        ],
+        "a": 0,
+        "why": "due to + คำนาม"
+      },
+      {
+        "q": "ข้อใดถูก",
+        "o": [
+          "Although it was late, but we continued.",
+          "Although it was late, we continued."
+        ],
+        "a": 1,
+        "why": "although ไม่ใช้คู่กับ but"
+      },
+      {
+        "q": "\"The plan is good. ___, it is too expensive.\"",
+        "o": [
+          "However",
+          "Therefore"
+        ],
+        "a": 0,
+        "why": "ขัดแย้ง ใช้ However"
+      }
+    ],
+    "homework": "เขียนอีเมลสั้น 4 ประโยคเสนอทางเลือกการขนส่งให้หัวหน้า ใช้ although, however, therefore และ due to อย่างละ 1 ครั้ง"
   }
 ]

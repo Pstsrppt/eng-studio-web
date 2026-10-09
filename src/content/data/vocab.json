@@ -406,5 +406,1295 @@
     "en": "tracking number",
     "th": "เลขติดตามพัสดุ",
     "ex": "Here is the tracking number."
+  },
+  {
+    "id": "v31",
+    "en": "provide",
+    "th": "จัดหาให้, ให้",
+    "ex": "We provide 24-hour support."
+  },
+  {
+    "id": "v32",
+    "en": "receive",
+    "th": "ได้รับ",
+    "ex": "Did you receive my email?"
+  },
+  {
+    "id": "v33",
+    "en": "prepare",
+    "th": "เตรียม",
+    "ex": "I will prepare the documents today."
+  },
+  {
+    "id": "v34",
+    "en": "include",
+    "th": "รวมอยู่ด้วย",
+    "ex": "The price includes delivery."
+  },
+  {
+    "id": "v35",
+    "en": "contact",
+    "th": "ติดต่อ",
+    "ex": "Please contact the supplier."
+  },
+  {
+    "id": "v36",
+    "en": "reply",
+    "th": "ตอบกลับ",
+    "ex": "She replied to the customer quickly."
+  },
+  {
+    "id": "v37",
+    "en": "discuss",
+    "th": "หารือ, คุยกัน",
+    "ex": "Let's discuss the plan tomorrow."
+  },
+  {
+    "id": "v38",
+    "en": "agree",
+    "th": "เห็นด้วย, ตกลง",
+    "ex": "I agree with your idea."
+  },
+  {
+    "id": "v39",
+    "en": "decide",
+    "th": "ตัดสินใจ",
+    "ex": "We decided to change the route."
+  },
+  {
+    "id": "v40",
+    "en": "require",
+    "th": "ต้องการ (เป็นข้อกำหนด)",
+    "ex": "This job requires a driving license."
+  },
+  {
+    "id": "v41",
+    "en": "manage",
+    "th": "จัดการ, บริหาร",
+    "ex": "She manages a team of five people."
+  },
+  {
+    "id": "v42",
+    "en": "improve",
+    "th": "ปรับปรุง, ทำให้ดีขึ้น",
+    "ex": "We need to improve our service."
+  },
+  {
+    "id": "v43",
+    "en": "increase",
+    "th": "เพิ่มขึ้น",
+    "ex": "Fuel prices increased last month."
+  },
+  {
+    "id": "v44",
+    "en": "reduce",
+    "th": "ลดลง",
+    "ex": "The new system reduces costs."
+  },
+  {
+    "id": "v45",
+    "en": "change",
+    "th": "เปลี่ยน",
+    "ex": "Can we change the delivery date?"
+  },
+  {
+    "id": "v46",
+    "en": "follow",
+    "th": "ทำตาม, ติดตาม",
+    "ex": "Please follow the safety rules."
+  },
+  {
+    "id": "v47",
+    "en": "attach",
+    "th": "แนบ",
+    "ex": "I attached the invoice to this email."
+  },
+  {
+    "id": "v48",
+    "en": "cancel",
+    "th": "ยกเลิก",
+    "ex": "The customer cancelled the order."
+  },
+  {
+    "id": "v49",
+    "en": "arrange",
+    "th": "จัดเตรียม, นัดหมาย",
+    "ex": "I will arrange a meeting with the client."
+  },
+  {
+    "id": "v50",
+    "en": "request",
+    "th": "ขอ (อย่างเป็นทางการ)",
+    "ex": "We requested more information."
+  },
+  {
+    "id": "v51",
+    "en": "approve",
+    "th": "อนุมัติ",
+    "ex": "The manager approved the budget."
+  },
+  {
+    "id": "v52",
+    "en": "solve",
+    "th": "แก้ (ปัญหา)",
+    "ex": "We solved the problem in one day."
+  },
+  {
+    "id": "v53",
+    "en": "support",
+    "th": "สนับสนุน, ดูแลช่วยเหลือ",
+    "ex": "Our team supports users all over Asia."
+  },
+  {
+    "id": "v54",
+    "en": "compare",
+    "th": "เปรียบเทียบ",
+    "ex": "Let's compare the two quotations."
+  },
+  {
+    "id": "v55",
+    "en": "organize",
+    "th": "จัดระเบียบ, จัดงาน",
+    "ex": "She organized the files by date."
+  },
+  {
+    "id": "v56",
+    "en": "report",
+    "th": "รายงาน",
+    "ex": "Please report any damage immediately."
+  },
+  {
+    "id": "v57",
+    "en": "install",
+    "th": "ติดตั้ง",
+    "ex": "IT will install the software tomorrow."
+  },
+  {
+    "id": "v58",
+    "en": "complete",
+    "th": "ทำให้เสร็จ, กรอกให้ครบ",
+    "ex": "Please complete this form."
+  },
+  {
+    "id": "v59",
+    "en": "remind",
+    "th": "เตือนความจำ",
+    "ex": "Can you remind me about the meeting?"
+  },
+  {
+    "id": "v60",
+    "en": "recommend",
+    "th": "แนะนำ",
+    "ex": "I recommend sea freight for this order."
+  },
+  {
+    "id": "n13",
+    "en": "address",
+    "th": "ที่อยู่",
+    "ex": "Please check the delivery address."
+  },
+  {
+    "id": "n14",
+    "en": "document",
+    "th": "เอกสาร",
+    "ex": "Send me the documents before Friday."
+  },
+  {
+    "id": "n15",
+    "en": "summary",
+    "th": "บทสรุป",
+    "ex": "Here is a short summary of the meeting."
+  },
+  {
+    "id": "n16",
+    "en": "payment",
+    "th": "การชำระเงิน",
+    "ex": "We received your payment."
+  },
+  {
+    "id": "n17",
+    "en": "cost",
+    "th": "ค่าใช้จ่าย",
+    "ex": "The shipping cost is too high."
+  },
+  {
+    "id": "n18",
+    "en": "quantity",
+    "th": "จำนวน",
+    "ex": "Please confirm the quantity."
+  },
+  {
+    "id": "n19",
+    "en": "product",
+    "th": "สินค้า, ผลิตภัณฑ์",
+    "ex": "This product is very popular."
+  },
+  {
+    "id": "n20",
+    "en": "supplier",
+    "th": "ผู้จัดหาสินค้า, ซัพพลายเออร์",
+    "ex": "Our supplier is in China."
+  },
+  {
+    "id": "n21",
+    "en": "department",
+    "th": "แผนก",
+    "ex": "She works in the finance department."
+  },
+  {
+    "id": "n22",
+    "en": "manager",
+    "th": "ผู้จัดการ, หัวหน้า",
+    "ex": "I need to ask my manager."
+  },
+  {
+    "id": "n23",
+    "en": "colleague",
+    "th": "เพื่อนร่วมงาน",
+    "ex": "My colleague will help you."
+  },
+  {
+    "id": "n24",
+    "en": "budget",
+    "th": "งบประมาณ",
+    "ex": "The project is over budget."
+  },
+  {
+    "id": "n25",
+    "en": "contract",
+    "th": "สัญญา",
+    "ex": "Please sign the contract."
+  },
+  {
+    "id": "n26",
+    "en": "quality",
+    "th": "คุณภาพ",
+    "ex": "We check the quality of every box."
+  },
+  {
+    "id": "n27",
+    "en": "solution",
+    "th": "ทางแก้",
+    "ex": "We found a solution."
+  },
+  {
+    "id": "n28",
+    "en": "result",
+    "th": "ผลลัพธ์",
+    "ex": "The test results are good."
+  },
+  {
+    "id": "n29",
+    "en": "task",
+    "th": "งานที่ได้รับมอบหมาย",
+    "ex": "I have three tasks today."
+  },
+  {
+    "id": "n30",
+    "en": "message",
+    "th": "ข้อความ",
+    "ex": "I left a message for him."
+  },
+  {
+    "id": "n31",
+    "en": "detail",
+    "th": "รายละเอียด",
+    "ex": "Please send me more details."
+  },
+  {
+    "id": "n32",
+    "en": "decision",
+    "th": "การตัดสินใจ",
+    "ex": "We need a decision by Monday."
+  },
+  {
+    "id": "n33",
+    "en": "experience",
+    "th": "ประสบการณ์",
+    "ex": "Do you have any experience in logistics?"
+  },
+  {
+    "id": "n34",
+    "en": "skill",
+    "th": "ทักษะ",
+    "ex": "Communication is an important skill."
+  },
+  {
+    "id": "n35",
+    "en": "goal",
+    "th": "เป้าหมาย",
+    "ex": "Our goal is zero delays."
+  },
+  {
+    "id": "n36",
+    "en": "option",
+    "th": "ตัวเลือก",
+    "ex": "We have two options."
+  },
+  {
+    "id": "n37",
+    "en": "reason",
+    "th": "เหตุผล",
+    "ex": "What is the reason for the delay?"
+  },
+  {
+    "id": "n38",
+    "en": "process",
+    "th": "ขั้นตอน, กระบวนการ",
+    "ex": "The customs process takes two days."
+  },
+  {
+    "id": "n39",
+    "en": "policy",
+    "th": "นโยบาย",
+    "ex": "Please read the return policy."
+  },
+  {
+    "id": "n40",
+    "en": "office",
+    "th": "ออฟฟิศ, สำนักงาน",
+    "ex": "I work in the office on Mondays."
+  },
+  {
+    "id": "n41",
+    "en": "project",
+    "th": "โปรเจกต์, โครงการ",
+    "ex": "The project starts next month."
+  },
+  {
+    "id": "n42",
+    "en": "feedback",
+    "th": "ความเห็นติชม",
+    "ex": "Thank you for your feedback."
+  },
+  {
+    "id": "n43",
+    "en": "issue",
+    "th": "ปัญหา, ประเด็น",
+    "ex": "There is an issue with the login page."
+  },
+  {
+    "id": "n44",
+    "en": "account",
+    "th": "บัญชี",
+    "ex": "Please create an account first."
+  },
+  {
+    "id": "n45",
+    "en": "response",
+    "th": "การตอบกลับ",
+    "ex": "We are waiting for a response from the client."
+  },
+  {
+    "id": "n46",
+    "en": "agreement",
+    "th": "ข้อตกลง",
+    "ex": "Both sides signed the agreement."
+  },
+  {
+    "id": "n47",
+    "en": "discount",
+    "th": "ส่วนลด",
+    "ex": "Can you give us a discount?"
+  },
+  {
+    "id": "n48",
+    "en": "refund",
+    "th": "เงินคืน",
+    "ex": "The customer asked for a refund."
+  },
+  {
+    "id": "n49",
+    "en": "receipt",
+    "th": "ใบเสร็จ",
+    "ex": "Please keep the receipt."
+  },
+  {
+    "id": "n50",
+    "en": "application",
+    "th": "ใบสมัคร; แอปพลิเคชัน",
+    "ex": "I sent my job application yesterday."
+  },
+  {
+    "id": "n51",
+    "en": "interview",
+    "th": "การสัมภาษณ์",
+    "ex": "I have a job interview on Friday."
+  },
+  {
+    "id": "n52",
+    "en": "salary",
+    "th": "เงินเดือน",
+    "ex": "The salary is paid monthly."
+  },
+  {
+    "id": "a7",
+    "en": "busy",
+    "th": "ยุ่ง, ไม่ว่าง",
+    "ex": "I'm busy this afternoon."
+  },
+  {
+    "id": "a8",
+    "en": "free",
+    "th": "ว่าง; ฟรี",
+    "ex": "Are you free tomorrow morning?"
+  },
+  {
+    "id": "a9",
+    "en": "cheap",
+    "th": "ถูก (ราคา)",
+    "ex": "Sea freight is cheaper than air freight."
+  },
+  {
+    "id": "a10",
+    "en": "expensive",
+    "th": "แพง",
+    "ex": "This option is too expensive."
+  },
+  {
+    "id": "a11",
+    "en": "fast",
+    "th": "เร็ว",
+    "ex": "We need a fast solution."
+  },
+  {
+    "id": "a12",
+    "en": "slow",
+    "th": "ช้า",
+    "ex": "The internet is slow today."
+  },
+  {
+    "id": "a13",
+    "en": "safe",
+    "th": "ปลอดภัย",
+    "ex": "Keep your password safe."
+  },
+  {
+    "id": "a14",
+    "en": "careful",
+    "th": "ระมัดระวัง",
+    "ex": "Be careful with the glass boxes."
+  },
+  {
+    "id": "a15",
+    "en": "possible",
+    "th": "เป็นไปได้",
+    "ex": "Is it possible to deliver today?"
+  },
+  {
+    "id": "a16",
+    "en": "necessary",
+    "th": "จำเป็น",
+    "ex": "Is it necessary to sign this?"
+  },
+  {
+    "id": "a17",
+    "en": "clear",
+    "th": "ชัดเจน",
+    "ex": "Your explanation was very clear."
+  },
+  {
+    "id": "a18",
+    "en": "simple",
+    "th": "ง่าย, เรียบง่าย",
+    "ex": "The process is simple."
+  },
+  {
+    "id": "a19",
+    "en": "difficult",
+    "th": "ยาก",
+    "ex": "This bug is difficult to find."
+  },
+  {
+    "id": "a20",
+    "en": "responsible",
+    "th": "รับผิดชอบ",
+    "ex": "Who is responsible for this shipment?"
+  },
+  {
+    "id": "a21",
+    "en": "damaged",
+    "th": "เสียหาย",
+    "ex": "Two boxes arrived damaged."
+  },
+  {
+    "id": "a22",
+    "en": "full",
+    "th": "เต็ม",
+    "ex": "The container is full."
+  },
+  {
+    "id": "a23",
+    "en": "empty",
+    "th": "ว่างเปล่า",
+    "ex": "The warehouse is almost empty."
+  },
+  {
+    "id": "a24",
+    "en": "current",
+    "th": "ปัจจุบัน",
+    "ex": "What is the current status?"
+  },
+  {
+    "id": "a25",
+    "en": "final",
+    "th": "สุดท้าย",
+    "ex": "This is the final version."
+  },
+  {
+    "id": "a26",
+    "en": "previous",
+    "th": "ก่อนหน้า",
+    "ex": "Please see my previous email."
+  },
+  {
+    "id": "a27",
+    "en": "detailed",
+    "th": "ละเอียด",
+    "ex": "We need a detailed report."
+  },
+  {
+    "id": "a28",
+    "en": "reliable",
+    "th": "เชื่อถือได้",
+    "ex": "They are a reliable carrier."
+  },
+  {
+    "id": "a29",
+    "en": "flexible",
+    "th": "ยืดหยุ่น",
+    "ex": "Our working hours are flexible."
+  },
+  {
+    "id": "a30",
+    "en": "accurate",
+    "th": "แม่นยำ",
+    "ex": "The data must be accurate."
+  },
+  {
+    "id": "a31",
+    "en": "efficient",
+    "th": "มีประสิทธิภาพ",
+    "ex": "The new route is more efficient."
+  },
+  {
+    "id": "a32",
+    "en": "confident",
+    "th": "มั่นใจ",
+    "ex": "I'm confident we can finish on time."
+  },
+  {
+    "id": "a33",
+    "en": "polite",
+    "th": "สุภาพ",
+    "ex": "Always be polite to customers."
+  },
+  {
+    "id": "a34",
+    "en": "temporary",
+    "th": "ชั่วคราว",
+    "ex": "This is a temporary solution."
+  },
+  {
+    "id": "a35",
+    "en": "international",
+    "th": "ระหว่างประเทศ",
+    "ex": "We handle international shipments."
+  },
+  {
+    "id": "a36",
+    "en": "local",
+    "th": "ในท้องถิ่น, ในประเทศ",
+    "ex": "We use a local supplier."
+  },
+  {
+    "id": "i9",
+    "en": "server",
+    "th": "เซิร์ฟเวอร์",
+    "ex": "The server is down."
+  },
+  {
+    "id": "i10",
+    "en": "network",
+    "th": "เครือข่าย",
+    "ex": "Check your network connection."
+  },
+  {
+    "id": "i11",
+    "en": "password",
+    "th": "รหัสผ่าน",
+    "ex": "Never share your password."
+  },
+  {
+    "id": "i12",
+    "en": "login",
+    "th": "การเข้าสู่ระบบ",
+    "ex": "The login page is not working."
+  },
+  {
+    "id": "i13",
+    "en": "backup",
+    "th": "ข้อมูลสำรอง",
+    "ex": "We make a backup every night."
+  },
+  {
+    "id": "i14",
+    "en": "user",
+    "th": "ผู้ใช้",
+    "ex": "The user cannot see the button."
+  },
+  {
+    "id": "i15",
+    "en": "interface",
+    "th": "หน้าจอที่ผู้ใช้ใช้งาน",
+    "ex": "The new interface is easier to use."
+  },
+  {
+    "id": "i16",
+    "en": "API",
+    "th": "ช่องทางให้ระบบคุยกัน",
+    "ex": "Our app gets the data from an API."
+  },
+  {
+    "id": "i17",
+    "en": "framework",
+    "th": "เฟรมเวิร์ก, โครงสำเร็จรูปสำหรับเขียนโปรแกรม",
+    "ex": "We use a JavaScript framework."
+  },
+  {
+    "id": "i18",
+    "en": "version",
+    "th": "เวอร์ชัน",
+    "ex": "Please update to the latest version."
+  },
+  {
+    "id": "i19",
+    "en": "code",
+    "th": "โค้ด",
+    "ex": "Can you review my code?"
+  },
+  {
+    "id": "i20",
+    "en": "script",
+    "th": "สคริปต์ (โปรแกรมสั้น ๆ)",
+    "ex": "I wrote a script to import the data."
+  },
+  {
+    "id": "i21",
+    "en": "function",
+    "th": "ฟังก์ชัน; หน้าที่",
+    "ex": "This function returns the total price."
+  },
+  {
+    "id": "i22",
+    "en": "variable",
+    "th": "ตัวแปร",
+    "ex": "Give the variable a clear name."
+  },
+  {
+    "id": "i23",
+    "en": "error",
+    "th": "ข้อผิดพลาด",
+    "ex": "I got an error when I saved the file."
+  },
+  {
+    "id": "i24",
+    "en": "crash",
+    "th": "ล่ม, ค้างจนปิดไป",
+    "ex": "The app crashed twice today."
+  },
+  {
+    "id": "i25",
+    "en": "debug",
+    "th": "หาและแก้บั๊ก",
+    "ex": "I spent an hour debugging this."
+  },
+  {
+    "id": "i26",
+    "en": "repository",
+    "th": "ที่เก็บโค้ด (repo)",
+    "ex": "The code is in our Git repository."
+  },
+  {
+    "id": "i27",
+    "en": "branch",
+    "th": "สาขา; branch ใน Git",
+    "ex": "Create a new branch for this feature."
+  },
+  {
+    "id": "i28",
+    "en": "commit",
+    "th": "บันทึกการเปลี่ยนแปลงโค้ด",
+    "ex": "Please commit your changes."
+  },
+  {
+    "id": "i29",
+    "en": "merge",
+    "th": "รวม (โค้ด)",
+    "ex": "I merged the branch into main."
+  },
+  {
+    "id": "i30",
+    "en": "pull request",
+    "th": "คำขอรวมโค้ด (PR)",
+    "ex": "I opened a pull request for review."
+  },
+  {
+    "id": "i31",
+    "en": "code review",
+    "th": "การตรวจโค้ด",
+    "ex": "The code review found two bugs."
+  },
+  {
+    "id": "i32",
+    "en": "developer",
+    "th": "นักพัฒนา",
+    "ex": "She is a backend developer."
+  },
+  {
+    "id": "i33",
+    "en": "frontend",
+    "th": "ส่วนหน้าที่ผู้ใช้เห็น",
+    "ex": "I work on the frontend."
+  },
+  {
+    "id": "i34",
+    "en": "backend",
+    "th": "ส่วนหลังบ้าน (server, database)",
+    "ex": "The backend handles the payments."
+  },
+  {
+    "id": "i35",
+    "en": "cloud",
+    "th": "คลาวด์",
+    "ex": "Our data is stored in the cloud."
+  },
+  {
+    "id": "i36",
+    "en": "security",
+    "th": "ความปลอดภัย",
+    "ex": "Security is our top priority."
+  },
+  {
+    "id": "i37",
+    "en": "permission",
+    "th": "สิทธิ์การใช้งาน",
+    "ex": "You don't have permission to edit this file."
+  },
+  {
+    "id": "i38",
+    "en": "access",
+    "th": "สิทธิ์เข้าถึง",
+    "ex": "Can you give me access to the database?"
+  },
+  {
+    "id": "i39",
+    "en": "browser",
+    "th": "เบราว์เซอร์",
+    "ex": "Please clear your browser cache."
+  },
+  {
+    "id": "i40",
+    "en": "download",
+    "th": "ดาวน์โหลด",
+    "ex": "You can download the report here."
+  },
+  {
+    "id": "i41",
+    "en": "upload",
+    "th": "อัปโหลด",
+    "ex": "Upload the file to the shared folder."
+  },
+  {
+    "id": "i42",
+    "en": "installation",
+    "th": "การติดตั้ง",
+    "ex": "The installation takes ten minutes."
+  },
+  {
+    "id": "i43",
+    "en": "configuration",
+    "th": "การตั้งค่า",
+    "ex": "Check the server configuration."
+  },
+  {
+    "id": "i44",
+    "en": "environment",
+    "th": "สภาพแวดล้อม (dev / test / production)",
+    "ex": "This bug only happens in the test environment."
+  },
+  {
+    "id": "i45",
+    "en": "log",
+    "th": "บันทึกการทำงานของระบบ (log)",
+    "ex": "Check the error log first."
+  },
+  {
+    "id": "i46",
+    "en": "performance",
+    "th": "ประสิทธิภาพ, ความเร็ว",
+    "ex": "We improved the page performance."
+  },
+  {
+    "id": "i47",
+    "en": "query",
+    "th": "คำสั่งดึงข้อมูล",
+    "ex": "This database query is too slow."
+  },
+  {
+    "id": "i48",
+    "en": "sprint",
+    "th": "รอบการทำงาน (มักเป็น 2 สัปดาห์)",
+    "ex": "We will finish it in this sprint."
+  },
+  {
+    "id": "i49",
+    "en": "ticket",
+    "th": "รายการงานหรือปัญหาในระบบติดตามงาน",
+    "ex": "Please create a ticket for this bug."
+  },
+  {
+    "id": "i50",
+    "en": "stakeholder",
+    "th": "ผู้มีส่วนได้ส่วนเสีย",
+    "ex": "We will show the demo to the stakeholders."
+  },
+  {
+    "id": "i51",
+    "en": "prototype",
+    "th": "ต้นแบบ",
+    "ex": "We built a prototype in one week."
+  },
+  {
+    "id": "i52",
+    "en": "documentation",
+    "th": "เอกสารประกอบ",
+    "ex": "Please read the documentation first."
+  },
+  {
+    "id": "i53",
+    "en": "maintenance",
+    "th": "การบำรุงรักษา",
+    "ex": "The system is down for maintenance."
+  },
+  {
+    "id": "l13",
+    "en": "cargo",
+    "th": "สินค้าที่ขนส่ง",
+    "ex": "The cargo is on the ship."
+  },
+  {
+    "id": "l14",
+    "en": "pallet",
+    "th": "พาเลท",
+    "ex": "We need ten pallets for this order."
+  },
+  {
+    "id": "l15",
+    "en": "forklift",
+    "th": "รถยก",
+    "ex": "Only trained staff can drive the forklift."
+  },
+  {
+    "id": "l16",
+    "en": "truck",
+    "th": "รถบรรทุก",
+    "ex": "The truck leaves at 8 am."
+  },
+  {
+    "id": "l17",
+    "en": "trailer",
+    "th": "รถพ่วง",
+    "ex": "The trailer is full."
+  },
+  {
+    "id": "l18",
+    "en": "vessel",
+    "th": "เรือ (เรือสินค้า)",
+    "ex": "The vessel will arrive on Monday."
+  },
+  {
+    "id": "l19",
+    "en": "route",
+    "th": "เส้นทาง",
+    "ex": "This route is faster."
+  },
+  {
+    "id": "l20",
+    "en": "destination",
+    "th": "ปลายทาง",
+    "ex": "What is the final destination?"
+  },
+  {
+    "id": "l21",
+    "en": "origin",
+    "th": "ต้นทาง",
+    "ex": "The port of origin is Shanghai."
+  },
+  {
+    "id": "l22",
+    "en": "consignee",
+    "th": "ผู้รับสินค้า",
+    "ex": "Please check the consignee's name."
+  },
+  {
+    "id": "l23",
+    "en": "shipper",
+    "th": "ผู้ส่งสินค้า",
+    "ex": "The shipper sent the documents."
+  },
+  {
+    "id": "l24",
+    "en": "bill of lading",
+    "th": "ใบตราส่งสินค้าทางเรือ (B/L)",
+    "ex": "We need the original bill of lading."
+  },
+  {
+    "id": "l25",
+    "en": "packing list",
+    "th": "ใบรายการบรรจุสินค้า",
+    "ex": "The packing list shows 20 boxes."
+  },
+  {
+    "id": "l26",
+    "en": "purchase order",
+    "th": "ใบสั่งซื้อ (PO)",
+    "ex": "Please send us a purchase order."
+  },
+  {
+    "id": "l27",
+    "en": "quotation",
+    "th": "ใบเสนอราคา",
+    "ex": "We received three quotations."
+  },
+  {
+    "id": "l28",
+    "en": "stock",
+    "th": "สินค้าในคลัง",
+    "ex": "This item is out of stock."
+  },
+  {
+    "id": "l29",
+    "en": "inventory",
+    "th": "สินค้าคงคลัง, รายการสต็อก",
+    "ex": "We count the inventory every month."
+  },
+  {
+    "id": "l30",
+    "en": "supply chain",
+    "th": "ห่วงโซ่อุปทาน",
+    "ex": "The supply chain was affected by the storm."
+  },
+  {
+    "id": "l31",
+    "en": "lead time",
+    "th": "ระยะเวลาตั้งแต่สั่งจนได้ของ",
+    "ex": "The lead time is four weeks."
+  },
+  {
+    "id": "l32",
+    "en": "pickup",
+    "th": "การมารับสินค้า",
+    "ex": "The pickup is at 2 pm."
+  },
+  {
+    "id": "l33",
+    "en": "delivery",
+    "th": "การจัดส่ง",
+    "ex": "Delivery takes three days."
+  },
+  {
+    "id": "l34",
+    "en": "dispatch",
+    "th": "ส่งออกไป (จากคลัง)",
+    "ex": "We dispatched the goods this morning."
+  },
+  {
+    "id": "l35",
+    "en": "loading",
+    "th": "การขนขึ้น",
+    "ex": "Loading starts at 6 am."
+  },
+  {
+    "id": "l36",
+    "en": "unloading",
+    "th": "การขนลง",
+    "ex": "Unloading takes about an hour."
+  },
+  {
+    "id": "l37",
+    "en": "inspection",
+    "th": "การตรวจสอบ",
+    "ex": "Customs asked for an inspection."
+  },
+  {
+    "id": "l38",
+    "en": "customs clearance",
+    "th": "การผ่านพิธีการศุลกากร",
+    "ex": "Customs clearance takes two days."
+  },
+  {
+    "id": "l39",
+    "en": "import duty",
+    "th": "ภาษีนำเข้า",
+    "ex": "Who pays the import duty?"
+  },
+  {
+    "id": "l40",
+    "en": "tariff",
+    "th": "อัตราภาษีศุลกากร",
+    "ex": "The new tariff increased our costs."
+  },
+  {
+    "id": "l41",
+    "en": "declaration",
+    "th": "ใบขนสินค้า, การสำแดง",
+    "ex": "Please check the customs declaration."
+  },
+  {
+    "id": "l42",
+    "en": "certificate of origin",
+    "th": "ใบรับรองถิ่นกำเนิดสินค้า",
+    "ex": "The buyer needs a certificate of origin."
+  },
+  {
+    "id": "l43",
+    "en": "insurance",
+    "th": "ประกันภัย",
+    "ex": "Is insurance included in the price?"
+  },
+  {
+    "id": "l44",
+    "en": "damage",
+    "th": "ความเสียหาย",
+    "ex": "Please take photos of the damage."
+  },
+  {
+    "id": "l45",
+    "en": "claim",
+    "th": "การเคลม, เรียกร้องค่าเสียหาย",
+    "ex": "We made a claim with the insurance company."
+  },
+  {
+    "id": "l46",
+    "en": "weight",
+    "th": "น้ำหนัก",
+    "ex": "What is the total weight?"
+  },
+  {
+    "id": "l47",
+    "en": "volume",
+    "th": "ปริมาตร, ปริมาณ",
+    "ex": "The volume is 30 cubic meters."
+  },
+  {
+    "id": "l48",
+    "en": "label",
+    "th": "ฉลาก",
+    "ex": "Put a label on each box."
+  },
+  {
+    "id": "l49",
+    "en": "barcode",
+    "th": "บาร์โค้ด",
+    "ex": "Scan the barcode before loading."
+  },
+  {
+    "id": "l50",
+    "en": "seal",
+    "th": "ซีล (ตราปิดตู้)",
+    "ex": "Check the container seal number."
+  },
+  {
+    "id": "l51",
+    "en": "freight forwarder",
+    "th": "บริษัทตัวแทนจัดการขนส่ง (ฟอร์เวิร์ดเดอร์)",
+    "ex": "Our freight forwarder booked the space."
+  },
+  {
+    "id": "l52",
+    "en": "air freight",
+    "th": "การขนส่งทางอากาศ",
+    "ex": "Air freight is fast but expensive."
+  },
+  {
+    "id": "l53",
+    "en": "sea freight",
+    "th": "การขนส่งทางเรือ",
+    "ex": "Sea freight takes about three weeks."
+  },
+  {
+    "id": "l54",
+    "en": "transit",
+    "th": "ระหว่างการขนส่ง",
+    "ex": "The goods are in transit."
+  },
+  {
+    "id": "l55",
+    "en": "transshipment",
+    "th": "การถ่ายลำ (เปลี่ยนเรือกลางทาง)",
+    "ex": "There is a transshipment in Singapore."
+  },
+  {
+    "id": "l56",
+    "en": "demurrage",
+    "th": "ค่าเสียเวลาเก็บตู้เกินกำหนด",
+    "ex": "We paid demurrage because of the delay."
+  },
+  {
+    "id": "l57",
+    "en": "cut-off time",
+    "th": "เวลาปิดรับสินค้า",
+    "ex": "The cut-off time is Thursday at noon."
+  },
+  {
+    "id": "l58",
+    "en": "Incoterms",
+    "th": "เงื่อนไขการส่งมอบสินค้าสากล (FOB, CIF ฯลฯ)",
+    "ex": "Which Incoterms do you use?"
+  },
+  {
+    "id": "l59",
+    "en": "dock",
+    "th": "ท่าขนถ่ายสินค้า",
+    "ex": "The truck is waiting at dock 3."
+  },
+  {
+    "id": "l60",
+    "en": "courier",
+    "th": "บริการส่งด่วน",
+    "ex": "We sent the samples by courier."
+  },
+  {
+    "id": "l61",
+    "en": "proof of delivery",
+    "th": "หลักฐานการส่งมอบ (POD)",
+    "ex": "Please send me the proof of delivery."
+  },
+  {
+    "id": "l62",
+    "en": "packaging",
+    "th": "บรรจุภัณฑ์",
+    "ex": "The packaging was damaged."
+  },
+  {
+    "id": "e1",
+    "en": "Please find attached",
+    "th": "กรุณาดูไฟล์แนบ",
+    "ex": "Please find attached the invoice for May."
+  },
+  {
+    "id": "e2",
+    "en": "I look forward to hearing from you",
+    "th": "หวังว่าจะได้รับการติดต่อกลับ",
+    "ex": "I look forward to hearing from you."
+  },
+  {
+    "id": "e3",
+    "en": "as soon as possible",
+    "th": "โดยเร็วที่สุด (ASAP)",
+    "ex": "Please reply as soon as possible."
+  },
+  {
+    "id": "e4",
+    "en": "Could you please",
+    "th": "รบกวนช่วย...ได้ไหม",
+    "ex": "Could you please check the address?"
+  },
+  {
+    "id": "e5",
+    "en": "Sorry for the late reply",
+    "th": "ขอโทษที่ตอบช้า",
+    "ex": "Sorry for the late reply."
+  },
+  {
+    "id": "e6",
+    "en": "Please let me know",
+    "th": "กรุณาแจ้งให้ทราบ",
+    "ex": "Please let me know if you have any questions."
+  },
+  {
+    "id": "e7",
+    "en": "on behalf of",
+    "th": "ในนามของ",
+    "ex": "I'm writing on behalf of my manager."
+  },
+  {
+    "id": "e8",
+    "en": "in charge of",
+    "th": "รับผิดชอบ, ดูแล",
+    "ex": "Who is in charge of this project?"
+  },
+  {
+    "id": "e9",
+    "en": "follow up",
+    "th": "ติดตามเรื่อง",
+    "ex": "I'm following up on my previous email."
+  },
+  {
+    "id": "e10",
+    "en": "get back to",
+    "th": "ติดต่อกลับ",
+    "ex": "I'll get back to you tomorrow."
+  },
+  {
+    "id": "e11",
+    "en": "as discussed",
+    "th": "ตามที่ได้คุยกันไว้",
+    "ex": "As discussed, here is the new schedule."
+  },
+  {
+    "id": "e12",
+    "en": "for your reference",
+    "th": "เพื่อใช้อ้างอิง",
+    "ex": "I attached the old contract for your reference."
+  },
+  {
+    "id": "e13",
+    "en": "Best regards",
+    "th": "ขอแสดงความนับถือ (ลงท้ายอีเมล)",
+    "ex": "Best regards, Anna"
+  },
+  {
+    "id": "e14",
+    "en": "agenda",
+    "th": "วาระการประชุม",
+    "ex": "Here is the agenda for tomorrow."
+  },
+  {
+    "id": "e15",
+    "en": "meeting minutes",
+    "th": "บันทึกการประชุม",
+    "ex": "I'll send the meeting minutes after lunch."
+  },
+  {
+    "id": "e16",
+    "en": "action item",
+    "th": "งานที่ต้องทำต่อหลังประชุม",
+    "ex": "We have three action items."
+  },
+  {
+    "id": "e17",
+    "en": "Let's move on",
+    "th": "ไปหัวข้อต่อไปกัน",
+    "ex": "OK, let's move on to the next point."
+  },
+  {
+    "id": "e18",
+    "en": "Could you repeat that?",
+    "th": "ช่วยพูดอีกครั้งได้ไหม",
+    "ex": "Sorry, could you repeat that?"
+  },
+  {
+    "id": "e19",
+    "en": "I'm not sure I follow",
+    "th": "ไม่แน่ใจว่าเข้าใจ (ตามไม่ทัน)",
+    "ex": "Sorry, I'm not sure I follow."
+  },
+  {
+    "id": "e20",
+    "en": "to sum up",
+    "th": "สรุปคือ",
+    "ex": "To sum up, we need two more trucks."
   }
 ]

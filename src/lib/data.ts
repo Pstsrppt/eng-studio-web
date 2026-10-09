@@ -66,6 +66,7 @@ export async function getDashboard() {
       .from("lesson_attempts")
       .select("id", { count: "exact", head: true })
       .eq("passed", true)
+      .not("lesson_id", "like", "0-%") // pronunciation lessons don't count toward today's grammar goal
       .gte("created_at", startOfToday),
   ]);
 
