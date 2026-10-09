@@ -62,6 +62,16 @@ cp .env.example .env.local
 
 ห้ามใส่ `service_role` / secret key ลงในไฟล์นี้ เพราะตัวแปรที่ขึ้นต้นด้วย `NEXT_PUBLIC_` จะถูกส่งไปที่เบราว์เซอร์ ความปลอดภัยของข้อมูลมาจาก Row Level Security ใน `schema.sql`
 
+### (ไม่บังคับ) เปิดปุ่ม "เข้าใช้งานด้วย Google"
+
+1. ไปที่ https://console.cloud.google.com > สร้างโปรเจกต์ใหม่ > **APIs & Services** > **OAuth consent screen** ตั้งเป็น External ใส่ชื่อแอปและอีเมล
+2. **Credentials** > **Create credentials** > **OAuth client ID** > เลือก **Web application**
+3. ช่อง **Authorized redirect URIs** ใส่ `https://<project-ref>.supabase.co/auth/v1/callback` (ดูค่าที่ถูกต้องได้ใน Supabase หน้าเปิด Google provider)
+4. คัดลอก **Client ID** กับ **Client secret** ไปวางที่ Supabase > **Authentication** > **Sign In / Providers** > **Google** แล้วเปิดใช้งาน
+5. ใน `.env.local` ตั้ง `NEXT_PUBLIC_AUTH_GOOGLE=true` แล้วรัน `npm run dev` ใหม่
+
+ถ้าไม่เปิด Google หน้าเข้าใช้งานจะมีแค่อีเมลกับรหัสผ่าน ปุ่มเดียวใช้ได้ทั้งสมัครใหม่และเข้าสู่ระบบ
+
 ### 3. รัน
 
 ```bash
@@ -69,7 +79,7 @@ npm install
 npm run dev
 ```
 
-เปิด http://localhost:3000 แล้วกด **เข้าสู่ระบบ** > ใส่อีเมลและรหัสผ่าน (8 ตัวขึ้นไป) > **สมัครใหม่**
+เปิด http://localhost:3000 แล้วไปหน้า **เข้าใช้งาน** ใส่อีเมลและรหัสผ่าน (8 ตัวขึ้นไป) แล้วกด **เข้าใช้งาน** ถ้ายังไม่มีบัญชี ระบบจะสร้างให้อัตโนมัติ
 
 ถ้ายังไม่ได้ใส่ `.env.local` เว็บก็ยังเปิดได้ทุกหน้า แต่จะไม่บันทึกความคืบหน้า
 
@@ -77,7 +87,7 @@ npm run dev
 
 1. สร้าง repo บน GitHub แล้ว push โค้ดนี้ขึ้นไป
 2. ที่ https://vercel.com กด **Add New** > **Project** แล้วเลือก repo นั้น
-3. ใน **Environment Variables** ใส่ 2 ค่าเดียวกับ `.env.local` แล้วกด **Deploy**
+3. ใน **Environment Variables** ใส่ค่าเดียวกับ `.env.local` แล้วกด **Deploy**
 4. นำ URL ที่ได้ (เช่น `https://english-studio.vercel.app`) ไปใส่ที่ Supabase > **Authentication** > **URL Configuration** ทั้งช่อง **Site URL** และ **Redirect URLs** (`https://english-studio.vercel.app/auth/callback`)
 
 ## คำสั่งที่ใช้บ่อย
