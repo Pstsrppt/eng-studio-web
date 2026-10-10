@@ -56,6 +56,10 @@ function Theory({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
         <p className="eyebrow mb-2">ทำไมต้องรู้</p>
         <p className="mb-4 text-[15px] leading-7">{lesson.why}</p>
         <div className="prose-lesson" dangerouslySetInnerHTML={{ __html: lesson.theory }} />
+        <p className="mt-5 border-t border-line pt-4 text-sm text-muted">
+          เจอคำที่ไม่คุ้น เช่น กริยาช่วย บุพบท V3 นับไม่ได้?{" "}
+          <Link href="/guide" className="font-semibold text-brand underline underline-offset-2">เปิดคู่มือ</Link>
+        </p>
       </section>
 
       <div className="flex flex-col gap-5">

@@ -36,6 +36,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <aside className="sticky top-0 hidden h-dvh flex-col gap-6 bg-ink px-4 py-6 text-white lg:flex">
               <div className="px-2.5"><Brand /></div>
               <SideNav />
+              <Link href="/guide" className="mx-2.5 rounded-lg border border-[#2a3b34] px-3 py-2.5 text-xs leading-5 text-[#c9d4cf] transition hover:bg-ink-2/60">
+                <b className="block text-sm font-semibold text-white">คู่มือ</b>
+                n. v. adj. V3 กริยาช่วย คืออะไร
+              </Link>
               <div className="mt-auto flex flex-col gap-4 border-t border-[#2a3b34] px-2.5 pt-4">
                 <ThaiToggle dark />
                 <Suspense fallback={null}><Account /></Suspense>
@@ -45,7 +49,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="min-w-0">
               <header className="sticky top-0 z-30 flex items-center justify-between gap-3 bg-ink px-4 py-3 text-white lg:hidden">
                 <Brand />
-                <ThaiToggle dark />
+                <div className="flex items-center gap-2">
+                  <Link href="/guide" className="rounded-full border border-[#2c3f37] px-3 py-1.5 text-xs text-[#c9d4cf]">คู่มือ</Link>
+                  <ThaiToggle dark />
+                </div>
               </header>
               <main className="mx-auto w-full max-w-6xl px-4 pt-6 pb-28 sm:px-6 lg:px-10 lg:pt-9 lg:pb-12">{children}</main>
             </div>
