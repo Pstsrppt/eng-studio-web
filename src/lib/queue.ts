@@ -1,14 +1,19 @@
 import type { CardMap } from "./data";
 
-/** Up to `size` items for one practice round: cards due today first, then items never seen. */
-export function buildQueue<T extends { id: string }>(pool: T[], cards: CardMap, today: string, round: number, size = 10): T[] {
+const LEVEL_RANK: Record<string, number> = { A1: 0, A2: 1, B1: 2, B2: 3 };
+
+/**
+ * Up to `size` items for one practice round: cards due today first, then items never seen,
+ * easier levels before harder ones.
+ */
+export function buildQueue<T extends { id: string; level?: string }>(pool: T[], cards: CardMap, today: string, round: number, size = 10): T[] {
   if (!pool.length) return [];
   const due = pool.filter((item) => cards[item.id] && cards[item.id].due_on <= today);
-  // Shuffle new items with a seed per round, so the order is stable while the round is open.
+  // Shuffle new items within a level with a seed per round, so the order is stable while the round is open.
   const fresh = pool
     .filter((item) => !cards[item.id])
-    .map((item, i) => ({ item, k: Math.sin((i + 1) * (round + 7) * 99.13) }))
-    .sort((a, b) => a.k - b.k)
+    .map((item, i) => ({ item, rank: LEVEL_RANK[item.level ?? ""] ?? 0, k: Math.sin((i + 1) * (round + 7) * 99.13) }))
+    .sort((a, b) => a.rank - b.rank || a.k - b.k)
     .map((x) => x.item);
   const queue = [...due, ...fresh].slice(0, size);
   if (queue.length) return queue;

@@ -40,6 +40,7 @@ export type Word = {
   th: string;
   ex?: string;
   pos?: Pos;
+  level?: Level;
   /** Plural or countability for nouns, V2/V3 for verbs, comparative for adjectives. */
   forms?: string;
   /** A short tip about a common mistake or a related word. */

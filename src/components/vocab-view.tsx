@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Fragment, useState, useTransition } from "react";
 import { reviewCard } from "@/app/actions";
 import type { Deck, Word } from "@/content";
-import { POS_LABEL, type Pos } from "@/content/pos";
+import { POS_LABEL, WORD_LEVELS, type Pos, type WordLevel } from "@/content/pos";
 import type { CardMap } from "@/lib/data";
 import { buildQueue } from "@/lib/queue";
 import { Sentence } from "./sentence";
@@ -17,20 +17,28 @@ export function VocabView({ words, decks, cards: initialCards, signedIn, today }
   const [cards, setCards] = useState(initialCards);
   const [deck, setDeck] = useState(decks[0]?.id ?? "");
   const [round, setRound] = useState(0);
+  const [level, setLevel] = useState<WordLevel | "all">("all");
 
   // Words the learner added from the tap-a-word sheet.
   const mine: Word[] = Object.entries(cards)
     .filter(([id, c]) => id.startsWith("u-") && c.custom_en)
     .map(([id, c]) => ({ id, en: c.custom_en ?? "", th: c.custom_th ?? "" }));
 
-  const pool = deck === MINE ? mine : words.filter((w) => w.id.startsWith(decks.find((d) => d.id === deck)?.pre ?? "?"));
+  // Words the learner added have no level, so the level filter leaves them alone.
+  const atLevel = (list: Word[]) => (level === "all" ? list : list.filter((w) => !w.level || w.level === level));
+  const pool = atLevel(deck === MINE ? mine : words.filter((w) => w.id.startsWith(decks.find((d) => d.id === deck)?.pre ?? "?")));
   const knownIn = (list: Word[]) => list.filter((w) => (cards[w.id]?.box ?? 0) >= 3).length;
 
   return (
     <div className="flex flex-col gap-5">
+      <div className="flex flex-wrap items-center gap-3">
+        <span className="text-sm text-muted">ระดับ</span>
+        <Segmented label="ระดับคำศัพท์" options={LEVEL_OPTIONS} value={level} onChange={setLevel} />
+        <Link href="/guide#levels" className="text-xs text-brand underline underline-offset-2">A1–B2 คืออะไร</Link>
+      </div>
       <div className="flex flex-wrap gap-2">
         {[...decks, { id: MINE, name: "คำที่ฉันเพิ่มเอง", pre: "u-" }].map((d) => {
-          const list = d.id === MINE ? mine : words.filter((w) => w.id.startsWith(d.pre));
+          const list = atLevel(d.id === MINE ? mine : words.filter((w) => w.id.startsWith(d.pre)));
           const on = d.id === deck;
           return (
             <button key={d.id} type="button" aria-pressed={on} onClick={() => setDeck(d.id)}
@@ -46,11 +54,11 @@ export function VocabView({ words, decks, cards: initialCards, signedIn, today }
 
       {pool.length === 0 ? (
         <div className="card p-6 text-sm leading-6 text-muted">
-          ยังไม่มีคำในชุดนี้ ระหว่างเรียน Grammar ให้แตะคำในประโยคตัวอย่าง แล้วกด <b className="text-ink">เพิ่มลงการ์ดทวน</b> คำนั้นจะมาอยู่ที่นี่
+          {deck !== MINE ? `ชุดนี้ไม่มีคำระดับ ${level} ลองเลือกระดับอื่นหรือชุดอื่น` : <>ยังไม่มีคำในชุดนี้ ระหว่างเรียน Grammar ให้แตะคำในประโยคตัวอย่าง แล้วกด <b className="text-ink">เพิ่มลงการ์ดทวน</b> คำนั้นจะมาอยู่ที่นี่</>}
         </div>
       ) : (
         <Review
-          key={`${deck}-${round}`}
+          key={`${deck}-${level}-${round}`}
           today={today}
           pool={pool}
           cards={cards}
@@ -178,6 +186,8 @@ const HIDE_OPTIONS: { id: Hide; label: string }[] = [
   { id: "en", label: "ซ่อนภาษาอังกฤษ" },
 ];
 
+const LEVEL_OPTIONS: { id: WordLevel | "all"; label: string }[] = [{ id: "all", label: "ทั้งหมด" }, ...WORD_LEVELS.map((l) => ({ id: l, label: l }))];
+
 const SORT_OPTIONS: { id: Sort; label: string }[] = [
   { id: "az", label: "A–Z" },
   { id: "deck", label: "ตามชุด" },
@@ -187,6 +197,9 @@ const POS_TONE: Record<Pos, string> = {
   n: "bg-subj-bg text-subj",
   v: "bg-verb-bg text-verb",
   adj: "bg-obj-bg text-obj",
+  adv: "bg-[#f3e8fb] text-[#7a3fa6]",
+  prep: "bg-[#eef2ef] text-ink-2",
+  conj: "bg-[#eef2ef] text-ink-2",
   phrase: "bg-[#eef2ef] text-muted",
 };
 
@@ -198,6 +211,7 @@ type TableProps = { words: Word[]; mine: Word[]; decks: Deck[]; cards: CardMap; 
 function WordTable({ words, mine, decks, cards, signedIn }: TableProps) {
   const [deck, setDeck] = useState("all");
   const [pos, setPos] = useState<Pos | "all">("all");
+  const [level, setLevel] = useState<WordLevel | "all">("all");
   const [sort, setSort] = useState<Sort>("az");
   const [query, setQuery] = useState("");
   const [hide, setHide] = useState<Hide>("none");
@@ -207,7 +221,7 @@ function WordTable({ words, mine, decks, cards, signedIn }: TableProps) {
   const inDeck = deck === "all" ? all : deck === MINE ? mine : words.filter((w) => w.id.startsWith(decks.find((d) => d.id === deck)?.pre ?? "?"));
   const q = query.trim().toLowerCase();
   const filtered = inDeck.filter(
-    (w) => (pos === "all" || w.pos === pos) && (!q || w.en.toLowerCase().includes(q) || w.th.includes(q)),
+    (w) => (pos === "all" || w.pos === pos) && (level === "all" || w.level === level) && (!q || w.en.toLowerCase().includes(q) || w.th.includes(q)),
   );
   const rows = sort === "az" ? [...filtered].sort((a, b) => a.en.localeCompare(b.en, "en", { sensitivity: "base" })) : filtered;
 
@@ -233,7 +247,7 @@ function WordTable({ words, mine, decks, cards, signedIn }: TableProps) {
         <Segmented label="โหมดท่องศัพท์" options={HIDE_OPTIONS} value={hide} onChange={chooseHide} />
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-[repeat(2,minmax(0,12rem))_minmax(0,1fr)]">
+      <div className="grid gap-3 sm:grid-cols-[repeat(3,minmax(0,11rem))_minmax(0,1fr)]">
         <select value={deck} onChange={(e) => setDeck(e.target.value)} aria-label="เลือกชุดคำ" className="input">
           <option value="all">ทุกชุด ({all.length})</option>
           {decks.map((d) => (
@@ -245,6 +259,12 @@ function WordTable({ words, mine, decks, cards, signedIn }: TableProps) {
           <option value="all">ทุกชนิดคำ</option>
           {POS_KEYS.map((p) => (
             <option key={p} value={p}>{POS_LABEL[p].abbr} {POS_LABEL[p].th}</option>
+          ))}
+        </select>
+        <select value={level} onChange={(e) => setLevel(e.target.value as WordLevel | "all")} aria-label="เลือกระดับ" className="input">
+          <option value="all">ทุกระดับ</option>
+          {WORD_LEVELS.map((l) => (
+            <option key={l} value={l}>ระดับ {l} ({all.filter((w) => w.level === l).length})</option>
           ))}
         </select>
         <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="ค้นหาคำ ภาษาอังกฤษหรือไทย"
@@ -293,6 +313,7 @@ function WordTable({ words, mine, decks, cards, signedIn }: TableProps) {
                         <div className="min-w-0 pt-1">
                           {hidden(w.id, "en") ? <Cover onClick={() => reveal(w.id)} /> : <span className="font-semibold">{w.en}</span>}
                           {w.pos && <span className="ml-2 align-[1px]"><PosBadge pos={w.pos} /></span>}
+                          {w.level && <span className="ml-1.5 font-mono text-[11px] text-muted">{w.level}</span>}
                         </div>
                       </div>
                       {w.ex && !hidden(w.id, "en") && <p className="mt-1.5 text-[13px] text-muted md:hidden">{w.ex}</p>}

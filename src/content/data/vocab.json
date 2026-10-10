@@ -1,12 +1,3526 @@
 [
   {
+    "id": "c1",
+    "en": "always",
+    "th": "เสมอ",
+    "ex": "I always check my email first.",
+    "pos": "adv",
+    "level": "A1",
+    "note": "วางหน้ากริยาหลัก แต่หลัง be: He is always late."
+  },
+  {
+    "id": "c2",
+    "en": "usually",
+    "th": "ปกติ, มักจะ",
+    "ex": "I usually start work at 9.",
+    "pos": "adv",
+    "level": "A1"
+  },
+  {
+    "id": "c3",
+    "en": "often",
+    "th": "บ่อย",
+    "ex": "We often work late on Fridays.",
+    "pos": "adv",
+    "level": "A1",
+    "note": "ตัว t มักไม่ออกเสียง: ออฟ-เฟิน"
+  },
+  {
+    "id": "c4",
+    "en": "sometimes",
+    "th": "บางครั้ง",
+    "ex": "Sometimes the truck is late.",
+    "pos": "adv",
+    "level": "A1",
+    "note": "วางต้นประโยคได้ ต่างจาก always / never"
+  },
+  {
+    "id": "c5",
+    "en": "never",
+    "th": "ไม่เคย, ไม่เลย",
+    "ex": "I never share my password.",
+    "pos": "adv",
+    "level": "A1",
+    "note": "เป็นปฏิเสธในตัว ไม่ใส่ not ซ้อน"
+  },
+  {
+    "id": "c6",
+    "en": "rarely",
+    "th": "แทบไม่",
+    "ex": "The system rarely crashes.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c7",
+    "en": "already",
+    "th": "แล้ว",
+    "ex": "I have already sent it.",
+    "pos": "adv",
+    "level": "A2",
+    "note": "ใช้ในประโยคบอกเล่า · ปฏิเสธและคำถามใช้ yet"
+  },
+  {
+    "id": "c8",
+    "en": "yet",
+    "th": "ยัง (ในปฏิเสธและคำถาม)",
+    "ex": "Has the ship arrived yet?",
+    "pos": "adv",
+    "level": "A2",
+    "note": "วางท้ายประโยค"
+  },
+  {
+    "id": "c9",
+    "en": "still",
+    "th": "ยังคง",
+    "ex": "The order is still at the port.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c10",
+    "en": "just",
+    "th": "เพิ่ง; แค่",
+    "ex": "She has just left.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c11",
+    "en": "soon",
+    "th": "เร็ว ๆ นี้",
+    "ex": "The goods will arrive soon.",
+    "pos": "adv",
+    "level": "A1"
+  },
+  {
+    "id": "c12",
+    "en": "recently",
+    "th": "เมื่อเร็ว ๆ นี้",
+    "ex": "We recently changed our supplier.",
+    "pos": "adv",
+    "level": "B1"
+  },
+  {
+    "id": "c13",
+    "en": "again",
+    "th": "อีกครั้ง",
+    "ex": "Please try again.",
+    "pos": "adv",
+    "level": "A1"
+  },
+  {
+    "id": "c14",
+    "en": "also",
+    "th": "ด้วย, เช่นกัน",
+    "ex": "I also speak Japanese.",
+    "pos": "adv",
+    "level": "A1",
+    "note": "วางหน้ากริยาหลัก · too วางท้ายประโยค"
+  },
+  {
+    "id": "c15",
+    "en": "too",
+    "th": "เกินไป; ด้วย",
+    "ex": "It is too expensive.",
+    "pos": "adv",
+    "level": "A1",
+    "note": "too + คุณศัพท์ = มากเกินไป (ความหมายลบ) · very = มาก"
+  },
+  {
+    "id": "c16",
+    "en": "very",
+    "th": "มาก",
+    "ex": "Thank you very much.",
+    "pos": "adv",
+    "level": "A1"
+  },
+  {
+    "id": "c17",
+    "en": "really",
+    "th": "จริง ๆ, มาก",
+    "ex": "The service was really good.",
+    "pos": "adv",
+    "level": "A1"
+  },
+  {
+    "id": "c18",
+    "en": "quite",
+    "th": "ค่อนข้าง",
+    "ex": "The test was quite easy.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c19",
+    "en": "only",
+    "th": "เท่านั้น, แค่",
+    "ex": "We only have two trucks.",
+    "pos": "adv",
+    "level": "A1"
+  },
+  {
+    "id": "c20",
+    "en": "almost",
+    "th": "เกือบ",
+    "ex": "The container is almost full.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c21",
+    "en": "probably",
+    "th": "น่าจะ",
+    "ex": "The ship will probably be late.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c22",
+    "en": "maybe",
+    "th": "บางที",
+    "ex": "Maybe we can meet tomorrow.",
+    "pos": "adv",
+    "level": "A1"
+  },
+  {
+    "id": "c23",
+    "en": "perhaps",
+    "th": "บางที (ทางการกว่า maybe)",
+    "ex": "Perhaps we should call them first.",
+    "pos": "adv",
+    "level": "B1"
+  },
+  {
+    "id": "c24",
+    "en": "actually",
+    "th": "ที่จริงแล้ว",
+    "ex": "Actually, the meeting is at 3, not 2.",
+    "pos": "adv",
+    "level": "A2",
+    "note": "ไม่ได้แปลว่า \"ปัจจุบัน\" (ปัจจุบัน = currently)"
+  },
+  {
+    "id": "c25",
+    "en": "especially",
+    "th": "โดยเฉพาะ",
+    "ex": "Traffic is bad, especially on Fridays.",
+    "pos": "adv",
+    "level": "B1"
+  },
+  {
+    "id": "c26",
+    "en": "quickly",
+    "th": "อย่างรวดเร็ว",
+    "ex": "She replied quickly.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c27",
+    "en": "slowly",
+    "th": "อย่างช้า ๆ",
+    "ex": "Could you speak slowly, please?",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c28",
+    "en": "carefully",
+    "th": "อย่างระมัดระวัง",
+    "ex": "Please check the address carefully.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c29",
+    "en": "easily",
+    "th": "อย่างง่ายดาย",
+    "ex": "You can easily change the settings.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c30",
+    "en": "well",
+    "th": "ดี (ขยายกริยา)",
+    "ex": "You did the job well.",
+    "pos": "adv",
+    "level": "A1",
+    "note": "good ขยายคำนาม (a good job) · well ขยายกริยา (work well)"
+  },
+  {
+    "id": "c31",
+    "en": "together",
+    "th": "ด้วยกัน",
+    "ex": "Let's work on it together.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c32",
+    "en": "later",
+    "th": "ทีหลัง",
+    "ex": "I'll call you later.",
+    "pos": "adv",
+    "level": "A1"
+  },
+  {
+    "id": "c33",
+    "en": "early",
+    "th": "เช้า, ก่อนเวลา",
+    "ex": "Please come early tomorrow.",
+    "pos": "adv",
+    "level": "A1"
+  },
+  {
+    "id": "c34",
+    "en": "on time",
+    "th": "ตรงเวลา",
+    "ex": "The goods arrived on time.",
+    "pos": "adv",
+    "level": "A2",
+    "note": "on time = ตรงเวลาพอดี · in time = ทันเวลา"
+  },
+  {
+    "id": "c35",
+    "en": "abroad",
+    "th": "ต่างประเทศ",
+    "ex": "We ship goods abroad.",
+    "pos": "adv",
+    "level": "B1",
+    "note": "ไม่มี to: go abroad (ไม่ใช่ go to abroad)"
+  },
+  {
+    "id": "c36",
+    "en": "instead",
+    "th": "แทน",
+    "ex": "The flight was full, so we used sea freight instead.",
+    "pos": "adv",
+    "level": "B1"
+  },
+  {
+    "id": "c37",
+    "en": "finally",
+    "th": "ในที่สุด",
+    "ex": "We finally fixed the bug.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c38",
+    "en": "exactly",
+    "th": "ตรงเป๊ะ, แน่นอน",
+    "ex": "That's exactly what I need.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c39",
+    "en": "immediately",
+    "th": "ทันที",
+    "ex": "Please reply immediately.",
+    "pos": "adv",
+    "level": "B1"
+  },
+  {
+    "id": "c40",
+    "en": "currently",
+    "th": "ตอนนี้, ปัจจุบัน",
+    "ex": "We are currently hiring.",
+    "pos": "adv",
+    "level": "B1"
+  },
+  {
+    "id": "c41",
+    "en": "nearly",
+    "th": "เกือบ",
+    "ex": "It's nearly 5 o'clock.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c42",
+    "en": "everywhere",
+    "th": "ทุกที่",
+    "ex": "I looked everywhere for the file.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c43",
+    "en": "online",
+    "th": "ออนไลน์",
+    "ex": "You can pay online.",
+    "pos": "adv",
+    "level": "A2"
+  },
+  {
+    "id": "c44",
+    "en": "however",
+    "th": "อย่างไรก็ตาม",
+    "ex": "The price is high. However, the quality is good.",
+    "pos": "adv",
+    "level": "B1",
+    "note": "ขึ้นประโยคใหม่และตามด้วย comma"
+  },
+  {
+    "id": "c45",
+    "en": "therefore",
+    "th": "ดังนั้น",
+    "ex": "The system is old. Therefore, we need a new one.",
+    "pos": "adv",
+    "level": "B1"
+  },
+  {
+    "id": "c46",
+    "en": "because",
+    "th": "เพราะ",
+    "ex": "I'm late because the bus was full.",
+    "pos": "conj",
+    "level": "A1",
+    "note": "because + ประโยค · because of + คำนาม"
+  },
+  {
+    "id": "c47",
+    "en": "although",
+    "th": "แม้ว่า",
+    "ex": "Although it rained, the truck left on time.",
+    "pos": "conj",
+    "level": "B1",
+    "note": "ไม่ใช้คู่กับ but ในประโยคเดียวกัน"
+  },
+  {
+    "id": "c48",
+    "en": "unless",
+    "th": "ถ้าไม่, เว้นแต่",
+    "ex": "We can't ship it unless you pay first.",
+    "pos": "conj",
+    "level": "B1"
+  },
+  {
+    "id": "c49",
+    "en": "while",
+    "th": "ระหว่างที่, ขณะที่",
+    "ex": "I listen to music while I work.",
+    "pos": "conj",
+    "level": "A2"
+  },
+  {
+    "id": "c50",
+    "en": "until",
+    "th": "จนกระทั่ง, จนถึง",
+    "ex": "Please wait until 5 pm.",
+    "pos": "prep",
+    "level": "A2",
+    "note": "by = ไม่เกิน (ส่งภายใน) · until = ต่อเนื่องจนถึง"
+  },
+  {
+    "id": "c51",
+    "en": "during",
+    "th": "ระหว่าง (ช่วงเวลา)",
+    "ex": "Please turn off your phone during the meeting.",
+    "pos": "prep",
+    "level": "A2",
+    "note": "during + คำนาม · while + ประโยค"
+  },
+  {
+    "id": "c52",
+    "en": "between",
+    "th": "ระหว่าง (สองสิ่ง)",
+    "ex": "The truck runs between Bangkok and Laem Chabang.",
+    "pos": "prep",
+    "level": "A2"
+  },
+  {
+    "id": "c53",
+    "en": "without",
+    "th": "โดยไม่มี",
+    "ex": "We can't ship it without the documents.",
+    "pos": "prep",
+    "level": "A2",
+    "note": "ตามด้วย -ing ได้: without asking"
+  },
+  {
+    "id": "c54",
+    "en": "through",
+    "th": "ผ่าน",
+    "ex": "All goods must go through customs.",
+    "pos": "prep",
+    "level": "B1"
+  },
+  {
+    "id": "c55",
+    "en": "within",
+    "th": "ภายใน",
+    "ex": "We will reply within 24 hours.",
+    "pos": "prep",
+    "level": "B1"
+  },
+  {
+    "id": "c56",
+    "en": "according to",
+    "th": "ตามที่ (แหล่งข้อมูล) บอก",
+    "ex": "According to the report, sales went up.",
+    "pos": "prep",
+    "level": "B1"
+  },
+  {
+    "id": "c57",
+    "en": "instead of",
+    "th": "แทนที่จะ",
+    "ex": "Use email instead of the phone.",
+    "pos": "prep",
+    "level": "B1",
+    "note": "ตามด้วยคำนามหรือ -ing"
+  },
+  {
+    "id": "c58",
+    "en": "look",
+    "th": "มอง, ดู; ดูเหมือน",
+    "ex": "Look at this photo.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 looked",
+    "note": "look at = มอง · look for = หา · look like = ดูเหมือน"
+  },
+  {
+    "id": "c59",
+    "en": "wait",
+    "th": "รอ",
+    "ex": "Please wait for me.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 waited",
+    "note": "wait for + คน/สิ่ง (ไม่ใช่ wait me)"
+  },
+  {
+    "id": "c60",
+    "en": "talk",
+    "th": "คุย",
+    "ex": "Can I talk to you for a minute?",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 talked",
+    "note": "talk to + คน · talk about + เรื่อง"
+  },
+  {
+    "id": "c61",
+    "en": "listen",
+    "th": "ฟัง",
+    "ex": "Please listen to the instructions.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 listened",
+    "note": "listen to + สิ่งที่ฟัง · ตัว t ไม่ออกเสียง"
+  },
+  {
+    "id": "c62",
+    "en": "learn",
+    "th": "เรียนรู้",
+    "ex": "I want to learn Python.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 learned (แบบอังกฤษ learnt)"
+  },
+  {
+    "id": "c63",
+    "en": "answer",
+    "th": "ตอบ, รับสาย",
+    "ex": "Please answer the phone.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 answered",
+    "note": "ตัว w ไม่ออกเสียง: อาน-เซอร์"
+  },
+  {
+    "id": "c64",
+    "en": "move",
+    "th": "ย้าย, เคลื่อน",
+    "ex": "We moved to a new office.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 moved"
+  },
+  {
+    "id": "c65",
+    "en": "live",
+    "th": "อาศัยอยู่",
+    "ex": "I live in Bangkok.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 lived"
+  },
+  {
+    "id": "c66",
+    "en": "stay",
+    "th": "พัก, อยู่ต่อ",
+    "ex": "I stayed at the office until 8.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 stayed"
+  },
+  {
+    "id": "c67",
+    "en": "walk",
+    "th": "เดิน",
+    "ex": "I walk to the station every day.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 walked"
+  },
+  {
+    "id": "c68",
+    "en": "remember",
+    "th": "จำได้",
+    "ex": "I can't remember his name.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 remembered",
+    "note": "remember to + V1 = อย่าลืมทำ · remember + V-ing = จำได้ว่าเคยทำ"
+  },
+  {
+    "id": "c69",
+    "en": "hope",
+    "th": "หวัง",
+    "ex": "I hope you are well.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 hoped"
+  },
+  {
+    "id": "c70",
+    "en": "seem",
+    "th": "ดูเหมือน",
+    "ex": "The new system seems faster.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 seemed"
+  },
+  {
+    "id": "c71",
+    "en": "happen",
+    "th": "เกิดขึ้น",
+    "ex": "What happened to the truck?",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 happened",
+    "note": "ไม่ใช้ passive: What happened? (ไม่ใช่ What was happened?)"
+  },
+  {
+    "id": "c72",
+    "en": "allow",
+    "th": "อนุญาต",
+    "ex": "Smoking is not allowed here.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 allowed",
+    "note": "allow + คน + to V1"
+  },
+  {
+    "id": "c73",
+    "en": "expect",
+    "th": "คาดว่า",
+    "ex": "We expect the goods on Monday.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 expected"
+  },
+  {
+    "id": "c74",
+    "en": "offer",
+    "th": "เสนอ",
+    "ex": "They offered me the job.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 offered"
+  },
+  {
+    "id": "c75",
+    "en": "accept",
+    "th": "ยอมรับ, รับ",
+    "ex": "We accept credit cards.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 accepted",
+    "note": "except (คนละคำ) = ยกเว้น"
+  },
+  {
+    "id": "c76",
+    "en": "refuse",
+    "th": "ปฏิเสธ",
+    "ex": "The customer refused the delivery.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 refused"
+  },
+  {
+    "id": "c77",
+    "en": "open",
+    "th": "เปิด",
+    "ex": "Please open the attachment.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 opened"
+  },
+  {
+    "id": "c78",
+    "en": "close",
+    "th": "ปิด",
+    "ex": "The office closes at 6 pm.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 closed"
+  },
+  {
+    "id": "c79",
+    "en": "end",
+    "th": "จบ, สิ้นสุด",
+    "ex": "The meeting ended at noon.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 ended"
+  },
+  {
+    "id": "c80",
+    "en": "add",
+    "th": "เพิ่ม",
+    "ex": "Please add me to the group.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 added"
+  },
+  {
+    "id": "c81",
+    "en": "like",
+    "th": "ชอบ",
+    "ex": "I like my job.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 liked",
+    "note": "would like = อยากได้ (สุภาพ): I would like a coffee."
+  },
+  {
+    "id": "c82",
+    "en": "prefer",
+    "th": "ชอบมากกว่า",
+    "ex": "I prefer email to phone calls.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 preferred",
+    "note": "prefer A to B"
+  },
+  {
+    "id": "c83",
+    "en": "print",
+    "th": "พิมพ์ (ออกกระดาษ)",
+    "ex": "Can you print this document?",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 printed"
+  },
+  {
+    "id": "c84",
+    "en": "save",
+    "th": "บันทึก; ประหยัด",
+    "ex": "Don't forget to save the file.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 saved"
+  },
+  {
+    "id": "c85",
+    "en": "share",
+    "th": "แชร์, แบ่งปัน",
+    "ex": "Please share the link with the team.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 shared"
+  },
+  {
+    "id": "c86",
+    "en": "join",
+    "th": "เข้าร่วม",
+    "ex": "She joined the company last year.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 joined",
+    "note": "ไม่มี with: join the team (ไม่ใช่ join with the team)"
+  },
+  {
+    "id": "c87",
+    "en": "visit",
+    "th": "ไปเยี่ยม, ไปเที่ยว",
+    "ex": "We will visit the factory next week.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 visited"
+  },
+  {
+    "id": "c88",
+    "en": "travel",
+    "th": "เดินทาง",
+    "ex": "I travel for work twice a month.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 travelled (แบบอเมริกัน traveled)"
+  },
+  {
+    "id": "c89",
+    "en": "book",
+    "th": "จอง",
+    "ex": "Please book a meeting room.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 booked"
+  },
+  {
+    "id": "c90",
+    "en": "return",
+    "th": "คืน, กลับ",
+    "ex": "Please return the form by Friday.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 returned",
+    "note": "ไม่ต้องมี back: return the form (ไม่ใช่ return back)"
+  },
+  {
+    "id": "c91",
+    "en": "borrow",
+    "th": "ยืม (เอามา)",
+    "ex": "Can I borrow your pen?",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 borrowed",
+    "note": "borrow = ยืมจากคนอื่น · lend = ให้คนอื่นยืม"
+  },
+  {
+    "id": "c92",
+    "en": "rent",
+    "th": "เช่า",
+    "ex": "We rent a warehouse near the port.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 rented"
+  },
+  {
+    "id": "c93",
+    "en": "carry",
+    "th": "ถือ, ขน",
+    "ex": "The ship carries 2,000 containers.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 carried"
+  },
+  {
+    "id": "c94",
+    "en": "count",
+    "th": "นับ",
+    "ex": "Please count the boxes.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 counted"
+  },
+  {
+    "id": "c95",
+    "en": "measure",
+    "th": "วัด",
+    "ex": "We measure every box before loading.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 measured"
+  },
+  {
+    "id": "c96",
+    "en": "worry",
+    "th": "กังวล",
+    "ex": "Don't worry, I'll fix it.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 worried",
+    "note": "worry about + เรื่อง"
+  },
+  {
+    "id": "c97",
+    "en": "believe",
+    "th": "เชื่อ",
+    "ex": "I believe the price is fair.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 believed"
+  },
+  {
+    "id": "c98",
+    "en": "guess",
+    "th": "เดา",
+    "ex": "Can you guess the answer?",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 guessed"
+  },
+  {
+    "id": "c99",
+    "en": "continue",
+    "th": "ทำต่อ",
+    "ex": "Let's continue after lunch.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 continued"
+  },
+  {
+    "id": "c100",
+    "en": "describe",
+    "th": "บรรยาย, อธิบายลักษณะ",
+    "ex": "Can you describe the problem?",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 described"
+  },
+  {
+    "id": "c101",
+    "en": "mention",
+    "th": "พูดถึง",
+    "ex": "He mentioned the delay in his email.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 mentioned",
+    "note": "ไม่มี about: mention the delay"
+  },
+  {
+    "id": "c102",
+    "en": "suggest",
+    "th": "แนะนำ, เสนอ",
+    "ex": "I suggest using sea freight.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 suggested",
+    "note": "suggest + V-ing หรือ suggest that..."
+  },
+  {
+    "id": "c103",
+    "en": "apply",
+    "th": "สมัคร; ใช้ (กฎ)",
+    "ex": "I want to apply for this job.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 applied",
+    "note": "apply for + ตำแหน่ง"
+  },
+  {
+    "id": "c104",
+    "en": "hire",
+    "th": "จ้าง",
+    "ex": "We hired two new drivers.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 hired"
+  },
+  {
+    "id": "c105",
+    "en": "train",
+    "th": "ฝึกอบรม",
+    "ex": "We train all new staff.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 trained"
+  },
+  {
+    "id": "c106",
+    "en": "collect",
+    "th": "เก็บ, ไปรับ",
+    "ex": "The driver will collect the goods at 2 pm.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 collected"
+  },
+  {
+    "id": "c107",
+    "en": "store",
+    "th": "เก็บ (ไว้)",
+    "ex": "We store the data in the cloud.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 stored"
+  },
+  {
+    "id": "c108",
+    "en": "pack",
+    "th": "แพ็ก, บรรจุ",
+    "ex": "Please pack the items carefully.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 packed"
+  },
+  {
+    "id": "c109",
+    "en": "load",
+    "th": "ขนขึ้น, บรรทุก",
+    "ex": "They loaded the truck in one hour.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 loaded"
+  },
+  {
+    "id": "c110",
+    "en": "design",
+    "th": "ออกแบบ",
+    "ex": "She designed the new website.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 designed"
+  },
+  {
+    "id": "c111",
+    "en": "produce",
+    "th": "ผลิต",
+    "ex": "The factory produces 500 units a day.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 produced"
+  },
+  {
+    "id": "c112",
+    "en": "replace",
+    "th": "แทนที่, เปลี่ยนของใหม่",
+    "ex": "We need to replace the old printer.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 replaced"
+  },
+  {
+    "id": "c113",
+    "en": "repair",
+    "th": "ซ่อม",
+    "ex": "They repaired the truck in two days.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 repaired"
+  },
+  {
+    "id": "c114",
+    "en": "prevent",
+    "th": "ป้องกัน",
+    "ex": "Good packaging prevents damage.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 prevented"
+  },
+  {
+    "id": "c115",
+    "en": "avoid",
+    "th": "หลีกเลี่ยง",
+    "ex": "Try to avoid the morning traffic.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 avoided",
+    "note": "avoid + V-ing"
+  },
+  {
+    "id": "c116",
+    "en": "fill in",
+    "th": "กรอก (แบบฟอร์ม)",
+    "ex": "Please fill in this form.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 filled in",
+    "note": "กริยาวลี (phrasal verb)"
+  },
+  {
+    "id": "c117",
+    "en": "set up",
+    "th": "ติดตั้ง, ตั้งค่า, จัดตั้ง",
+    "ex": "IT will set up your laptop.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "ไม่ปกติ · V2 set up · V3 set up",
+    "note": "กริยาวลี · setup (คำนาม) เขียนติดกัน"
+  },
+  {
+    "id": "c118",
+    "en": "find out",
+    "th": "หาข้อมูลจนรู้",
+    "ex": "I'll find out why the ship is late.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "ไม่ปกติ · V2 found out · V3 found out",
+    "note": "กริยาวลี"
+  },
+  {
+    "id": "c119",
+    "en": "look for",
+    "th": "มองหา",
+    "ex": "I'm looking for the invoice.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 looked for",
+    "note": "กริยาวลี · find = หาเจอ"
+  },
+  {
+    "id": "c120",
+    "en": "turn off",
+    "th": "ปิด (เครื่อง, ไฟ)",
+    "ex": "Please turn off the lights.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 turned off",
+    "note": "กริยาวลี · ตรงข้ามคือ turn on"
+  },
+  {
+    "id": "c121",
+    "en": "pick up",
+    "th": "ไปรับ, หยิบ",
+    "ex": "I'll pick you up at the airport.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 picked up",
+    "note": "กริยาวลี · pickup (คำนาม) = การมารับ"
+  },
+  {
+    "id": "c122",
+    "en": "deal with",
+    "th": "จัดการ, รับมือ",
+    "ex": "She deals with customer complaints.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "ไม่ปกติ · V2 dealt with · V3 dealt with",
+    "note": "กริยาวลี"
+  },
+  {
+    "id": "c123",
+    "en": "person",
+    "th": "คน",
+    "ex": "One person called about the order.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ people (ไม่ปกติ)"
+  },
+  {
+    "id": "c124",
+    "en": "friend",
+    "th": "เพื่อน",
+    "ex": "She is my friend from university.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ friends"
+  },
+  {
+    "id": "c125",
+    "en": "family",
+    "th": "ครอบครัว",
+    "ex": "I live with my family.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ families"
+  },
+  {
+    "id": "c126",
+    "en": "child",
+    "th": "เด็ก, ลูก",
+    "ex": "He has two children.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ children (ไม่ปกติ)"
+  },
+  {
+    "id": "c127",
+    "en": "staff",
+    "th": "พนักงาน (รวมทั้งหมด)",
+    "ex": "All staff must wear a uniform.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "คำนามรวม ใช้แทนพนักงานทั้งกลุ่ม",
+    "note": "พนักงานหนึ่งคนใช้ a staff member หรือ an employee"
+  },
+  {
+    "id": "c128",
+    "en": "employee",
+    "th": "ลูกจ้าง, พนักงาน",
+    "ex": "The company has 200 employees.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ employees"
+  },
+  {
+    "id": "c129",
+    "en": "employer",
+    "th": "นายจ้าง",
+    "ex": "My employer pays for the training.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ employers"
+  },
+  {
+    "id": "c130",
+    "en": "guest",
+    "th": "แขก",
+    "ex": "We have two guests from Japan today.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ guests"
+  },
+  {
+    "id": "c131",
+    "en": "visitor",
+    "th": "ผู้มาเยือน",
+    "ex": "Visitors must sign in at reception.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ visitors"
+  },
+  {
+    "id": "c132",
+    "en": "partner",
+    "th": "พันธมิตร, หุ้นส่วน",
+    "ex": "They are our partner in Vietnam.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ partners"
+  },
+  {
+    "id": "c133",
+    "en": "owner",
+    "th": "เจ้าของ",
+    "ex": "He is the owner of the company.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ owners"
+  },
+  {
+    "id": "c134",
+    "en": "assistant",
+    "th": "ผู้ช่วย",
+    "ex": "My assistant will send you the details.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ assistants"
+  },
+  {
+    "id": "c135",
+    "en": "director",
+    "th": "ผู้อำนวยการ",
+    "ex": "The director approved the plan.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ directors"
+  },
+  {
+    "id": "c136",
+    "en": "accountant",
+    "th": "นักบัญชี",
+    "ex": "The accountant checked the invoices.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ accountants"
+  },
+  {
+    "id": "c137",
+    "en": "worker",
+    "th": "คนงาน",
+    "ex": "The workers start at 7 am.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ workers"
+  },
+  {
+    "id": "c138",
+    "en": "expert",
+    "th": "ผู้เชี่ยวชาญ",
+    "ex": "She is an expert in data security.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ experts"
+  },
+  {
+    "id": "c139",
+    "en": "team leader",
+    "th": "หัวหน้าทีม",
+    "ex": "Ask your team leader first.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ team leaders"
+  },
+  {
+    "id": "c140",
+    "en": "home",
+    "th": "บ้าน",
+    "ex": "I work from home on Fridays.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ homes",
+    "note": "go home / at home ไม่ใช้ to: go home (ไม่ใช่ go to home)"
+  },
+  {
+    "id": "c141",
+    "en": "city",
+    "th": "เมือง",
+    "ex": "Bangkok is a big city.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ cities"
+  },
+  {
+    "id": "c142",
+    "en": "country",
+    "th": "ประเทศ",
+    "ex": "We ship to ten countries.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ countries"
+  },
+  {
+    "id": "c143",
+    "en": "building",
+    "th": "อาคาร",
+    "ex": "Our office is in this building.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ buildings"
+  },
+  {
+    "id": "c144",
+    "en": "room",
+    "th": "ห้อง",
+    "ex": "The meeting room is on the 5th floor.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ rooms"
+  },
+  {
+    "id": "c145",
+    "en": "floor",
+    "th": "ชั้น; พื้น",
+    "ex": "The office is on the third floor.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ floors"
+  },
+  {
+    "id": "c146",
+    "en": "shop",
+    "th": "ร้าน",
+    "ex": "The shop opens at 10.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ shops"
+  },
+  {
+    "id": "c147",
+    "en": "bank",
+    "th": "ธนาคาร",
+    "ex": "I need to go to the bank.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ banks"
+  },
+  {
+    "id": "c148",
+    "en": "hospital",
+    "th": "โรงพยาบาล",
+    "ex": "He is in the hospital.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ hospitals"
+  },
+  {
+    "id": "c149",
+    "en": "hotel",
+    "th": "โรงแรม",
+    "ex": "We booked a hotel near the airport.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ hotels"
+  },
+  {
+    "id": "c150",
+    "en": "airport",
+    "th": "สนามบิน",
+    "ex": "The cargo is at the airport.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ airports"
+  },
+  {
+    "id": "c151",
+    "en": "station",
+    "th": "สถานี",
+    "ex": "The office is near the train station.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ stations"
+  },
+  {
+    "id": "c152",
+    "en": "street",
+    "th": "ถนน (ในเมือง)",
+    "ex": "The shop is on Silom Street.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ streets"
+  },
+  {
+    "id": "c153",
+    "en": "factory",
+    "th": "โรงงาน",
+    "ex": "The factory is in Rayong.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ factories"
+  },
+  {
+    "id": "c154",
+    "en": "market",
+    "th": "ตลาด",
+    "ex": "The Thai market is growing.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ markets"
+  },
+  {
+    "id": "c155",
+    "en": "area",
+    "th": "พื้นที่, บริเวณ",
+    "ex": "This area is for loading only.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ areas"
+  },
+  {
+    "id": "c156",
+    "en": "place",
+    "th": "สถานที่, ที่",
+    "ex": "This is a good place to work.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ places"
+  },
+  {
+    "id": "c157",
+    "en": "reception",
+    "th": "แผนกต้อนรับ",
+    "ex": "Please wait at reception.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ receptions"
+  },
+  {
+    "id": "c158",
+    "en": "day",
+    "th": "วัน",
+    "ex": "It takes two days.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ days"
+  },
+  {
+    "id": "c159",
+    "en": "hour",
+    "th": "ชั่วโมง",
+    "ex": "The meeting is one hour long.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ hours",
+    "note": "h ไม่ออกเสียง จึงใช้ an hour"
+  },
+  {
+    "id": "c160",
+    "en": "minute",
+    "th": "นาที",
+    "ex": "Give me five minutes.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ minutes"
+  },
+  {
+    "id": "c161",
+    "en": "month",
+    "th": "เดือน",
+    "ex": "We pay every month.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ months"
+  },
+  {
+    "id": "c162",
+    "en": "year",
+    "th": "ปี",
+    "ex": "I have worked here for two years.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ years"
+  },
+  {
+    "id": "c163",
+    "en": "weekend",
+    "th": "สุดสัปดาห์",
+    "ex": "The office is closed at the weekend.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ weekends",
+    "note": "at the weekend (แบบอังกฤษ) · on the weekend (แบบอเมริกัน)"
+  },
+  {
+    "id": "c164",
+    "en": "holiday",
+    "th": "วันหยุด, การพักร้อน",
+    "ex": "I'm on holiday next week.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ holidays"
+  },
+  {
+    "id": "c165",
+    "en": "moment",
+    "th": "ช่วงเวลา, ขณะ",
+    "ex": "He is busy at the moment.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ moments",
+    "note": "at the moment = ตอนนี้"
+  },
+  {
+    "id": "c166",
+    "en": "period",
+    "th": "ช่วงเวลา",
+    "ex": "The trial period is three months.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ periods"
+  },
+  {
+    "id": "c167",
+    "en": "calendar",
+    "th": "ปฏิทิน",
+    "ex": "I'll check my calendar.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ calendars"
+  },
+  {
+    "id": "c168",
+    "en": "appointment",
+    "th": "นัดหมาย",
+    "ex": "I have a doctor's appointment at 3.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ appointments",
+    "note": "appointment = นัด (หมอ ลูกค้า) · meeting = การประชุม"
+  },
+  {
+    "id": "c169",
+    "en": "job",
+    "th": "งาน, ตำแหน่งงาน",
+    "ex": "I'm looking for a new job.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ jobs",
+    "note": "job นับได้ (a job) · work นับไม่ได้ (some work)"
+  },
+  {
+    "id": "c170",
+    "en": "career",
+    "th": "อาชีพการงาน (ระยะยาว)",
+    "ex": "She wants a career in logistics.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ careers"
+  },
+  {
+    "id": "c171",
+    "en": "position",
+    "th": "ตำแหน่ง",
+    "ex": "I'm applying for the IT support position.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ positions"
+  },
+  {
+    "id": "c172",
+    "en": "role",
+    "th": "บทบาท, หน้าที่",
+    "ex": "What is your role in the team?",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ roles"
+  },
+  {
+    "id": "c173",
+    "en": "responsibility",
+    "th": "ความรับผิดชอบ",
+    "ex": "Safety is everyone's responsibility.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ responsibilities"
+  },
+  {
+    "id": "c174",
+    "en": "letter",
+    "th": "จดหมาย; ตัวอักษร",
+    "ex": "Please sign the letter.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ letters"
+  },
+  {
+    "id": "c175",
+    "en": "note",
+    "th": "บันทึก, โน้ต",
+    "ex": "I'll make a note of that.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ notes"
+  },
+  {
+    "id": "c176",
+    "en": "list",
+    "th": "รายการ",
+    "ex": "Here is the list of items.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ lists"
+  },
+  {
+    "id": "c177",
+    "en": "form",
+    "th": "แบบฟอร์ม",
+    "ex": "Please sign the form.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ forms"
+  },
+  {
+    "id": "c178",
+    "en": "file",
+    "th": "ไฟล์, แฟ้ม",
+    "ex": "I attached the file.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ files"
+  },
+  {
+    "id": "c179",
+    "en": "folder",
+    "th": "โฟลเดอร์, แฟ้ม",
+    "ex": "Save it in the shared folder.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ folders"
+  },
+  {
+    "id": "c180",
+    "en": "page",
+    "th": "หน้า",
+    "ex": "Please see page 3.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ pages"
+  },
+  {
+    "id": "c181",
+    "en": "copy",
+    "th": "สำเนา, ฉบับ",
+    "ex": "Can I have a copy of the invoice?",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ copies"
+  },
+  {
+    "id": "c182",
+    "en": "email",
+    "th": "อีเมล",
+    "ex": "I sent you an email this morning.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ emails"
+  },
+  {
+    "id": "c183",
+    "en": "computer",
+    "th": "คอมพิวเตอร์",
+    "ex": "My computer is very slow today.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ computers"
+  },
+  {
+    "id": "c184",
+    "en": "laptop",
+    "th": "แล็ปท็อป",
+    "ex": "Bring your laptop to the meeting.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ laptops"
+  },
+  {
+    "id": "c185",
+    "en": "printer",
+    "th": "เครื่องพิมพ์",
+    "ex": "The printer is out of paper.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ printers"
+  },
+  {
+    "id": "c186",
+    "en": "screen",
+    "th": "หน้าจอ",
+    "ex": "Look at the screen, please.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ screens"
+  },
+  {
+    "id": "c187",
+    "en": "internet",
+    "th": "อินเทอร์เน็ต",
+    "ex": "The internet is down.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "มักใช้ the internet"
+  },
+  {
+    "id": "c188",
+    "en": "website",
+    "th": "เว็บไซต์",
+    "ex": "You can find it on our website.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ websites"
+  },
+  {
+    "id": "c189",
+    "en": "link",
+    "th": "ลิงก์",
+    "ex": "Click the link in the email.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ links"
+  },
+  {
+    "id": "c190",
+    "en": "tool",
+    "th": "เครื่องมือ",
+    "ex": "Excel is a useful tool.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ tools"
+  },
+  {
+    "id": "c191",
+    "en": "machine",
+    "th": "เครื่องจักร",
+    "ex": "The machine is broken.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ machines"
+  },
+  {
+    "id": "c192",
+    "en": "equipment",
+    "th": "อุปกรณ์",
+    "ex": "We need new safety equipment.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "note": "นับไม่ได้: a piece of equipment"
+  },
+  {
+    "id": "c193",
+    "en": "material",
+    "th": "วัสดุ",
+    "ex": "We use recycled materials.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ materials"
+  },
+  {
+    "id": "c194",
+    "en": "item",
+    "th": "รายการ, ชิ้น",
+    "ex": "One item is missing.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ items"
+  },
+  {
+    "id": "c195",
+    "en": "box",
+    "th": "กล่อง",
+    "ex": "Put the box on the pallet.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ boxes"
+  },
+  {
+    "id": "c196",
+    "en": "bag",
+    "th": "กระเป๋า, ถุง",
+    "ex": "Is this your bag?",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ bags"
+  },
+  {
+    "id": "c197",
+    "en": "key",
+    "th": "กุญแจ; ปุ่ม",
+    "ex": "I lost my office key.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ keys"
+  },
+  {
+    "id": "c198",
+    "en": "card",
+    "th": "บัตร",
+    "ex": "Can I pay by card?",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ cards"
+  },
+  {
+    "id": "c199",
+    "en": "money",
+    "th": "เงิน",
+    "ex": "We need more money for the project.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+  },
+  {
+    "id": "c200",
+    "en": "cash",
+    "th": "เงินสด",
+    "ex": "Do you accept cash?",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+  },
+  {
+    "id": "c201",
+    "en": "tax",
+    "th": "ภาษี",
+    "ex": "The price includes tax.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ taxes"
+  },
+  {
+    "id": "c202",
+    "en": "fee",
+    "th": "ค่าธรรมเนียม",
+    "ex": "There is a small fee for late payment.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ fees"
+  },
+  {
+    "id": "c203",
+    "en": "profit",
+    "th": "กำไร",
+    "ex": "Our profit increased this year.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ profits"
+  },
+  {
+    "id": "c204",
+    "en": "sales",
+    "th": "ยอดขาย; ฝ่ายขาย",
+    "ex": "Sales went up 10% this month.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "ใช้รูปมี s ในความหมายยอดขาย"
+  },
+  {
+    "id": "c205",
+    "en": "business",
+    "th": "ธุรกิจ",
+    "ex": "Our business is growing.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ businesses"
+  },
+  {
+    "id": "c206",
+    "en": "industry",
+    "th": "อุตสาหกรรม",
+    "ex": "She works in the logistics industry.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ industries"
+  },
+  {
+    "id": "c207",
+    "en": "service",
+    "th": "บริการ",
+    "ex": "Thank you for your service.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ services"
+  },
+  {
+    "id": "c208",
+    "en": "idea",
+    "th": "ความคิด, ไอเดีย",
+    "ex": "That's a good idea.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ ideas"
+  },
+  {
+    "id": "c209",
+    "en": "mistake",
+    "th": "ข้อผิดพลาด",
+    "ex": "I made a mistake in the invoice.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ mistakes",
+    "note": "make a mistake (ไม่ใช่ do a mistake)"
+  },
+  {
+    "id": "c210",
+    "en": "difference",
+    "th": "ความแตกต่าง",
+    "ex": "What's the difference between them?",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ differences"
+  },
+  {
+    "id": "c211",
+    "en": "example",
+    "th": "ตัวอย่าง",
+    "ex": "Can you give me an example?",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ examples"
+  },
+  {
+    "id": "c212",
+    "en": "fact",
+    "th": "ข้อเท็จจริง",
+    "ex": "In fact, the price is lower.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ facts",
+    "note": "in fact = ที่จริงแล้ว"
+  },
+  {
+    "id": "c213",
+    "en": "situation",
+    "th": "สถานการณ์",
+    "ex": "The situation is under control.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ situations"
+  },
+  {
+    "id": "c214",
+    "en": "chance",
+    "th": "โอกาส",
+    "ex": "This is a good chance to learn.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ chances"
+  },
+  {
+    "id": "c215",
+    "en": "risk",
+    "th": "ความเสี่ยง",
+    "ex": "There is a risk of delay.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ risks"
+  },
+  {
+    "id": "c216",
+    "en": "advantage",
+    "th": "ข้อได้เปรียบ",
+    "ex": "The main advantage is speed.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ advantages",
+    "note": "ตรงข้ามคือ disadvantage"
+  },
+  {
+    "id": "c217",
+    "en": "step",
+    "th": "ขั้นตอน; ก้าว",
+    "ex": "The first step is to create an account.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ steps"
+  },
+  {
+    "id": "c218",
+    "en": "rule",
+    "th": "กฎ",
+    "ex": "Please follow the safety rules.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ rules"
+  },
+  {
+    "id": "c219",
+    "en": "safety",
+    "th": "ความปลอดภัย",
+    "ex": "Safety comes first.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+  },
+  {
+    "id": "c220",
+    "en": "health",
+    "th": "สุขภาพ",
+    "ex": "Health is more important than work.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+  },
+  {
+    "id": "c221",
+    "en": "weather",
+    "th": "สภาพอากาศ",
+    "ex": "The weather is bad today.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "note": "ไม่มี a: bad weather (ไม่ใช่ a bad weather)"
+  },
+  {
+    "id": "c222",
+    "en": "traffic",
+    "th": "การจราจร, รถติด",
+    "ex": "There was a lot of traffic this morning.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+  },
+  {
+    "id": "c223",
+    "en": "accident",
+    "th": "อุบัติเหตุ",
+    "ex": "There was an accident on the highway.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ accidents"
+  },
+  {
+    "id": "c224",
+    "en": "emergency",
+    "th": "เหตุฉุกเฉิน",
+    "ex": "Call this number in an emergency.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ emergencies"
+  },
+  {
+    "id": "c225",
+    "en": "news",
+    "th": "ข่าว",
+    "ex": "I have good news.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "note": "ลงท้าย s แต่ใช้กริยาเอกพจน์: The news is good."
+  },
+  {
+    "id": "c226",
+    "en": "word",
+    "th": "คำ",
+    "ex": "What does this word mean?",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ words"
+  },
+  {
+    "id": "c227",
+    "en": "language",
+    "th": "ภาษา",
+    "ex": "She speaks three languages.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ languages"
+  },
+  {
+    "id": "c228",
+    "en": "number",
+    "th": "หมายเลข, จำนวน",
+    "ex": "What's your phone number?",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ numbers"
+  },
+  {
+    "id": "c229",
+    "en": "amount",
+    "th": "ปริมาณ, จำนวนเงิน",
+    "ex": "Please check the amount on the invoice.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ amounts",
+    "note": "amount ใช้กับนับไม่ได้ · number ใช้กับนับได้"
+  },
+  {
+    "id": "c230",
+    "en": "size",
+    "th": "ขนาด",
+    "ex": "What size is the box?",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ sizes"
+  },
+  {
+    "id": "c231",
+    "en": "level",
+    "th": "ระดับ",
+    "ex": "My English level is A2.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ levels"
+  },
+  {
+    "id": "c232",
+    "en": "half",
+    "th": "ครึ่ง",
+    "ex": "Half of the boxes are damaged.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ halves (ไม่ปกติ)"
+  },
+  {
+    "id": "c233",
+    "en": "part",
+    "th": "ส่วน, ชิ้นส่วน",
+    "ex": "This is the most important part.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ parts"
+  },
+  {
+    "id": "c234",
+    "en": "way",
+    "th": "ทาง, วิธี",
+    "ex": "What's the best way to get there?",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ ways"
+  },
+  {
+    "id": "c235",
+    "en": "type",
+    "th": "ประเภท, ชนิด",
+    "ex": "What type of truck do you need?",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ types"
+  },
+  {
+    "id": "c236",
+    "en": "group",
+    "th": "กลุ่ม",
+    "ex": "I'll add you to the group chat.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ groups"
+  },
+  {
+    "id": "c237",
+    "en": "member",
+    "th": "สมาชิก",
+    "ex": "She is a new team member.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ members"
+  },
+  {
+    "id": "c238",
+    "en": "trip",
+    "th": "การเดินทาง (ไปกลับ)",
+    "ex": "I have a business trip to Japan.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ trips",
+    "note": "trip = ทริปที่ไปแล้วกลับ · travel (กริยา) = เดินทาง"
+  },
+  {
+    "id": "c239",
+    "en": "car",
+    "th": "รถยนต์",
+    "ex": "I go to work by car.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ cars"
+  },
+  {
+    "id": "c240",
+    "en": "plane",
+    "th": "เครื่องบิน",
+    "ex": "The parts came by plane.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ planes"
+  },
+  {
+    "id": "c241",
+    "en": "water",
+    "th": "น้ำ",
+    "ex": "Can I have some water?",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+  },
+  {
+    "id": "c242",
+    "en": "food",
+    "th": "อาหาร",
+    "ex": "The food here is good.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+  },
+  {
+    "id": "c243",
+    "en": "coffee",
+    "th": "กาแฟ",
+    "ex": "Would you like some coffee?",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "note": "สั่งในร้านพูดว่า a coffee / two coffees ได้ (หมายถึงแก้ว)"
+  },
+  {
+    "id": "c244",
+    "en": "paper",
+    "th": "กระดาษ",
+    "ex": "The printer needs more paper.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "note": "a paper (นับได้) = หนังสือพิมพ์ หรือเอกสาร"
+  },
+  {
+    "id": "c245",
+    "en": "advice",
+    "th": "คำแนะนำ",
+    "ex": "Can you give me some advice?",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "note": "ไม่มี advices · กริยาคือ advise"
+  },
+  {
+    "id": "c246",
+    "en": "knowledge",
+    "th": "ความรู้",
+    "ex": "She has good knowledge of customs rules.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+  },
+  {
+    "id": "c247",
+    "en": "instruction",
+    "th": "คำสั่ง, วิธีใช้",
+    "ex": "Please read the instructions first.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ instructions"
+  },
+  {
+    "id": "c248",
+    "en": "complaint",
+    "th": "คำร้องเรียน",
+    "ex": "We received a complaint about the delay.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ complaints",
+    "note": "กริยาคือ complain"
+  },
+  {
+    "id": "c249",
+    "en": "comment",
+    "th": "ความเห็น",
+    "ex": "Do you have any comments?",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ comments"
+  },
+  {
+    "id": "c250",
+    "en": "presentation",
+    "th": "การนำเสนอ",
+    "ex": "I have a presentation tomorrow.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ presentations",
+    "note": "give a presentation"
+  },
+  {
+    "id": "c251",
+    "en": "training",
+    "th": "การฝึกอบรม",
+    "ex": "New staff get two weeks of training.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+  },
+  {
+    "id": "c252",
+    "en": "uniform",
+    "th": "เครื่องแบบ",
+    "ex": "Drivers must wear a uniform.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ uniforms"
+  },
+  {
+    "id": "c253",
+    "en": "phone call",
+    "th": "การโทรศัพท์",
+    "ex": "I had a phone call with the client.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ phone calls"
+  },
+  {
+    "id": "c254",
+    "en": "good",
+    "th": "ดี",
+    "ex": "This is a good price.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: better · best (ไม่ปกติ)"
+  },
+  {
+    "id": "c255",
+    "en": "bad",
+    "th": "แย่",
+    "ex": "The weather was bad.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: worse · worst (ไม่ปกติ)"
+  },
+  {
+    "id": "c256",
+    "en": "big",
+    "th": "ใหญ่",
+    "ex": "It's a big order.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: bigger · biggest"
+  },
+  {
+    "id": "c257",
+    "en": "small",
+    "th": "เล็ก",
+    "ex": "We are a small team.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: smaller · smallest"
+  },
+  {
+    "id": "c258",
+    "en": "large",
+    "th": "ใหญ่ (ทางการกว่า big)",
+    "ex": "We need a large container.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: larger · largest"
+  },
+  {
+    "id": "c259",
+    "en": "long",
+    "th": "ยาว, นาน",
+    "ex": "It was a long meeting.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: longer · longest"
+  },
+  {
+    "id": "c260",
+    "en": "high",
+    "th": "สูง",
+    "ex": "Fuel prices are very high.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: higher · highest"
+  },
+  {
+    "id": "c261",
+    "en": "low",
+    "th": "ต่ำ",
+    "ex": "The price is low.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: lower · lowest"
+  },
+  {
+    "id": "c262",
+    "en": "new",
+    "th": "ใหม่",
+    "ex": "Welcome to the new office.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: newer · newest"
+  },
+  {
+    "id": "c263",
+    "en": "old",
+    "th": "เก่า; แก่",
+    "ex": "The system is too old.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: older · oldest"
+  },
+  {
+    "id": "c264",
+    "en": "easy",
+    "th": "ง่าย",
+    "ex": "The software is easy to use.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: easier · easiest"
+  },
+  {
+    "id": "c265",
+    "en": "hard",
+    "th": "ยาก; แข็ง; หนัก",
+    "ex": "This is a hard question.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: harder · hardest",
+    "note": "hardly (คนละความหมาย) = แทบจะไม่"
+  },
+  {
+    "id": "c266",
+    "en": "happy",
+    "th": "มีความสุข, พอใจ",
+    "ex": "The customer is happy with the service.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: happier · happiest"
+  },
+  {
+    "id": "c267",
+    "en": "wrong",
+    "th": "ผิด",
+    "ex": "This is the wrong address.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c268",
+    "en": "true",
+    "th": "จริง",
+    "ex": "Is it true?",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c269",
+    "en": "same",
+    "th": "เหมือนกัน",
+    "ex": "We have the same problem.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "note": "ใช้กับ the เสมอ: the same"
+  },
+  {
+    "id": "c270",
+    "en": "different",
+    "th": "ต่างกัน",
+    "ex": "This box is different from that one.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most different",
+    "note": "different from + สิ่งที่เทียบ"
+  },
+  {
+    "id": "c271",
+    "en": "similar",
+    "th": "คล้ายกัน",
+    "ex": "Their price is similar to ours.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most similar",
+    "note": "similar to"
+  },
+  {
+    "id": "c272",
+    "en": "special",
+    "th": "พิเศษ",
+    "ex": "We have a special offer this month.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c273",
+    "en": "normal",
+    "th": "ปกติ",
+    "ex": "It's normal to feel nervous.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c274",
+    "en": "usual",
+    "th": "ตามปกติ",
+    "ex": "The truck is later than usual.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "note": "as usual = ตามเคย"
+  },
+  {
+    "id": "c275",
+    "en": "common",
+    "th": "พบบ่อย, ทั่วไป",
+    "ex": "This is a common mistake.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most common"
+  },
+  {
+    "id": "c276",
+    "en": "modern",
+    "th": "ทันสมัย",
+    "ex": "The warehouse is very modern.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most modern"
+  },
+  {
+    "id": "c277",
+    "en": "public",
+    "th": "สาธารณะ",
+    "ex": "Don't use public Wi-Fi for work.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c278",
+    "en": "private",
+    "th": "ส่วนตัว, เอกชน",
+    "ex": "This is a private meeting.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c279",
+    "en": "personal",
+    "th": "ส่วนบุคคล",
+    "ex": "Don't use your personal email.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c280",
+    "en": "strong",
+    "th": "แข็งแรง, แข็ง",
+    "ex": "We need strong boxes.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: stronger · strongest"
+  },
+  {
+    "id": "c281",
+    "en": "heavy",
+    "th": "หนัก",
+    "ex": "This box is too heavy.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: heavier · heaviest"
+  },
+  {
+    "id": "c282",
+    "en": "light",
+    "th": "เบา; สว่าง",
+    "ex": "The package is light.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: lighter · lightest"
+  },
+  {
+    "id": "c283",
+    "en": "hot",
+    "th": "ร้อน",
+    "ex": "It's very hot in the warehouse.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: hotter · hottest"
+  },
+  {
+    "id": "c284",
+    "en": "cold",
+    "th": "เย็น, หนาว",
+    "ex": "Keep the medicine cold.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: colder · coldest"
+  },
+  {
+    "id": "c285",
+    "en": "warm",
+    "th": "อบอุ่น",
+    "ex": "Thank you for the warm welcome.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: warmer · warmest"
+  },
+  {
+    "id": "c286",
+    "en": "clean",
+    "th": "สะอาด",
+    "ex": "Keep the area clean.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: cleaner · cleanest"
+  },
+  {
+    "id": "c287",
+    "en": "dirty",
+    "th": "สกปรก",
+    "ex": "The truck is dirty.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: dirtier · dirtiest"
+  },
+  {
+    "id": "c288",
+    "en": "quiet",
+    "th": "เงียบ",
+    "ex": "Can we find a quiet room?",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: quieter · quietest"
+  },
+  {
+    "id": "c289",
+    "en": "near",
+    "th": "ใกล้",
+    "ex": "The hotel is near the airport.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: nearer · nearest"
+  },
+  {
+    "id": "c290",
+    "en": "far",
+    "th": "ไกล",
+    "ex": "The port is far from here.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: farther · farthest (หรือ further · furthest)"
+  },
+  {
+    "id": "c291",
+    "en": "quick",
+    "th": "เร็ว (ใช้เวลาไม่นาน)",
+    "ex": "Can I ask a quick question?",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: quicker · quickest"
+  },
+  {
+    "id": "c292",
+    "en": "nice",
+    "th": "ดี, น่ารัก",
+    "ex": "Nice to meet you.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: nicer · nicest"
+  },
+  {
+    "id": "c293",
+    "en": "great",
+    "th": "ยอดเยี่ยม",
+    "ex": "Great job, everyone!",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: greater · greatest"
+  },
+  {
+    "id": "c294",
+    "en": "excellent",
+    "th": "ดีเยี่ยม",
+    "ex": "Your English is excellent.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c295",
+    "en": "terrible",
+    "th": "แย่มาก",
+    "ex": "The traffic was terrible.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c296",
+    "en": "interesting",
+    "th": "น่าสนใจ",
+    "ex": "That's an interesting idea.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most interesting",
+    "note": "interesting = น่าสนใจ · interested = รู้สึกสนใจ (I'm interested in...)"
+  },
+  {
+    "id": "c297",
+    "en": "useful",
+    "th": "มีประโยชน์",
+    "ex": "This tool is very useful.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most useful"
+  },
+  {
+    "id": "c298",
+    "en": "helpful",
+    "th": "ช่วยได้มาก",
+    "ex": "Thank you, that was very helpful.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most helpful"
+  },
+  {
+    "id": "c299",
+    "en": "successful",
+    "th": "ประสบความสำเร็จ",
+    "ex": "The launch was successful.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most successful"
+  },
+  {
+    "id": "c300",
+    "en": "professional",
+    "th": "มืออาชีพ",
+    "ex": "Please keep your emails professional.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most professional"
+  },
+  {
+    "id": "c301",
+    "en": "friendly",
+    "th": "เป็นมิตร",
+    "ex": "The staff are very friendly.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: friendlier · friendliest"
+  },
+  {
+    "id": "c302",
+    "en": "serious",
+    "th": "ร้ายแรง; จริงจัง",
+    "ex": "This is a serious problem.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most serious"
+  },
+  {
+    "id": "c303",
+    "en": "major",
+    "th": "สำคัญ, ใหญ่",
+    "ex": "There is a major delay at the port.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c304",
+    "en": "minor",
+    "th": "เล็กน้อย",
+    "ex": "It's only a minor issue.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c305",
+    "en": "basic",
+    "th": "พื้นฐาน",
+    "ex": "I have basic Excel skills.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c306",
+    "en": "extra",
+    "th": "เพิ่มเติม",
+    "ex": "There is an extra fee for weekend delivery.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c307",
+    "en": "affordable",
+    "th": "ราคาไม่แพง, จ่ายไหว",
+    "ex": "We offer affordable shipping.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most affordable",
+    "note": "ฟังดีกว่า cheap ในงานขาย"
+  },
+  {
+    "id": "c308",
+    "en": "valuable",
+    "th": "มีค่า",
+    "ex": "Please insure valuable items.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most valuable"
+  },
+  {
+    "id": "c309",
+    "en": "average",
+    "th": "เฉลี่ย",
+    "ex": "The average delivery time is three days.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c310",
+    "en": "maximum",
+    "th": "สูงสุด",
+    "ex": "The maximum weight is 20 kg.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c311",
+    "en": "minimum",
+    "th": "ต่ำสุด",
+    "ex": "The minimum order is 100 units.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c312",
+    "en": "recent",
+    "th": "เมื่อเร็ว ๆ นี้",
+    "ex": "Please send me the most recent report.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most recent"
+  },
+  {
+    "id": "c313",
+    "en": "overdue",
+    "th": "เลยกำหนด",
+    "ex": "This invoice is overdue.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c314",
+    "en": "missing",
+    "th": "หายไป",
+    "ex": "Two boxes are missing.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c315",
+    "en": "broken",
+    "th": "เสีย, แตก",
+    "ex": "The printer is broken.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c316",
+    "en": "closed",
+    "th": "ปิด",
+    "ex": "The office is closed on Sunday.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c317",
+    "en": "sure",
+    "th": "แน่ใจ",
+    "ex": "Are you sure?",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c318",
+    "en": "drop",
+    "th": "ทำหล่น; ลดลง",
+    "ex": "Please don't drop the boxes.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 dropped"
+  },
+  {
+    "id": "c319",
+    "en": "fail",
+    "th": "ล้มเหลว, ไม่ผ่าน",
+    "ex": "The payment failed.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 failed"
+  },
+  {
+    "id": "c320",
+    "en": "pass",
+    "th": "ผ่าน; ส่งต่อ",
+    "ex": "Did you pass the test?",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 passed"
+  },
+  {
+    "id": "c321",
+    "en": "push",
+    "th": "ดัน, กด",
+    "ex": "Push the button to start.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 pushed"
+  },
+  {
+    "id": "c322",
+    "en": "pull",
+    "th": "ดึง",
+    "ex": "Pull the door to open it.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 pulled"
+  },
+  {
+    "id": "c323",
+    "en": "reach",
+    "th": "ไปถึง; ติดต่อได้",
+    "ex": "You can reach me by phone.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 reached"
+  },
+  {
+    "id": "c324",
+    "en": "study",
+    "th": "เรียน, ศึกษา",
+    "ex": "I study English every evening.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 studied"
+  },
+  {
+    "id": "c325",
+    "en": "watch",
+    "th": "ดู (สิ่งที่เคลื่อนไหว)",
+    "ex": "I watched a video about Excel.",
+    "pos": "v",
+    "level": "A1",
+    "forms": "V2 / V3 watched",
+    "note": "watch = ดูสิ่งที่เคลื่อนไหว (วิดีโอ) · look at = มองสิ่งที่อยู่นิ่ง · see = เห็น"
+  },
+  {
+    "id": "c326",
+    "en": "enter",
+    "th": "เข้า; ป้อน (ข้อมูล)",
+    "ex": "Please enter your password.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 entered",
+    "note": "ไม่มี into: enter the room"
+  },
+  {
+    "id": "c327",
+    "en": "lift",
+    "th": "ยก",
+    "ex": "Don't lift heavy boxes alone.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 lifted"
+  },
+  {
+    "id": "c328",
+    "en": "miss",
+    "th": "พลาด; คิดถึง",
+    "ex": "I missed the bus.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 missed"
+  },
+  {
+    "id": "c329",
+    "en": "notice",
+    "th": "สังเกตเห็น",
+    "ex": "Did you notice any damage?",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 noticed"
+  },
+  {
+    "id": "c330",
+    "en": "protect",
+    "th": "ปกป้อง",
+    "ex": "Packaging protects the goods.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 protected"
+  },
+  {
+    "id": "c331",
+    "en": "raise",
+    "th": "ยกขึ้น; ขึ้น (ราคา)",
+    "ex": "The supplier raised its prices.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 raised",
+    "note": "raise + กรรม (มีคนทำให้ขึ้น) · rise ไม่มีกรรม (ขึ้นเอง)"
+  },
+  {
+    "id": "c332",
+    "en": "realize",
+    "th": "ตระหนัก, รู้ตัว",
+    "ex": "I realized I sent the wrong file.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 realized",
+    "note": "แบบอังกฤษสะกด realise"
+  },
+  {
+    "id": "c333",
+    "en": "record",
+    "th": "บันทึก",
+    "ex": "Please record the temperature every hour.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 recorded",
+    "note": "กริยาเน้นพยางค์หลัง re-CORD · คำนามเน้นหน้า REC-ord"
+  },
+  {
+    "id": "c334",
+    "en": "respond",
+    "th": "ตอบกลับ",
+    "ex": "Please respond by Friday.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 responded",
+    "note": "respond to + อีเมล คน"
+  },
+  {
+    "id": "c335",
+    "en": "search",
+    "th": "ค้นหา",
+    "ex": "Search for the order number.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 searched",
+    "note": "search for + สิ่งที่หา"
+  },
+  {
+    "id": "c336",
+    "en": "select",
+    "th": "เลือก",
+    "ex": "Select a delivery date.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 selected"
+  },
+  {
+    "id": "c337",
+    "en": "sort",
+    "th": "คัดแยก, เรียงลำดับ",
+    "ex": "We sort the parcels by city.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 sorted"
+  },
+  {
+    "id": "c338",
+    "en": "succeed",
+    "th": "ประสบความสำเร็จ",
+    "ex": "I hope the project succeeds.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 succeeded",
+    "note": "คำนามคือ success · คุณศัพท์คือ successful"
+  },
+  {
+    "id": "c339",
+    "en": "trust",
+    "th": "ไว้ใจ",
+    "ex": "We trust this supplier.",
+    "pos": "v",
+    "level": "B1",
+    "forms": "V2 / V3 trusted"
+  },
+  {
+    "id": "c340",
+    "en": "introduce",
+    "th": "แนะนำ (ให้รู้จัก)",
+    "ex": "Let me introduce my colleague.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 introduced"
+  },
+  {
+    "id": "c341",
+    "en": "invite",
+    "th": "เชิญ",
+    "ex": "We invited the client to lunch.",
+    "pos": "v",
+    "level": "A2",
+    "forms": "V2 / V3 invited"
+  },
+  {
+    "id": "c342",
+    "en": "name",
+    "th": "ชื่อ",
+    "ex": "Can I have your name, please?",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ names"
+  },
+  {
+    "id": "c343",
+    "en": "age",
+    "th": "อายุ",
+    "ex": "What is the age of the vessel?",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ ages"
+  },
+  {
+    "id": "c344",
+    "en": "phone",
+    "th": "โทรศัพท์",
+    "ex": "My phone is on silent.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ phones"
+  },
+  {
+    "id": "c345",
+    "en": "morning",
+    "th": "ตอนเช้า",
+    "ex": "I'll send it in the morning.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ mornings"
+  },
+  {
+    "id": "c346",
+    "en": "afternoon",
+    "th": "ตอนบ่าย",
+    "ex": "The meeting is in the afternoon.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ afternoons"
+  },
+  {
+    "id": "c347",
+    "en": "evening",
+    "th": "ตอนเย็น",
+    "ex": "I study in the evening.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ evenings"
+  },
+  {
+    "id": "c348",
+    "en": "night",
+    "th": "กลางคืน",
+    "ex": "The trucks drive at night.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ nights",
+    "note": "at night (ไม่ใช่ in the night)"
+  },
+  {
+    "id": "c349",
+    "en": "lunch",
+    "th": "อาหารกลางวัน",
+    "ex": "Let's discuss it over lunch.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ lunches"
+  },
+  {
+    "id": "c350",
+    "en": "topic",
+    "th": "หัวข้อ",
+    "ex": "What's the next topic?",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ topics"
+  },
+  {
+    "id": "c351",
+    "en": "subject",
+    "th": "เรื่อง; หัวเรื่องอีเมล",
+    "ex": "Please write the order number in the subject line.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ subjects"
+  },
+  {
+    "id": "c352",
+    "en": "point",
+    "th": "ประเด็น, จุด",
+    "ex": "That's a good point.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ points"
+  },
+  {
+    "id": "c353",
+    "en": "photo",
+    "th": "รูปถ่าย",
+    "ex": "Please send a photo of the damage.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ photos"
+  },
+  {
+    "id": "c354",
+    "en": "video",
+    "th": "วิดีโอ",
+    "ex": "Watch the training video first.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ videos"
+  },
+  {
+    "id": "c355",
+    "en": "door",
+    "th": "ประตู",
+    "ex": "Please close the door.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ doors"
+  },
+  {
+    "id": "c356",
+    "en": "window",
+    "th": "หน้าต่าง",
+    "ex": "Can you open the window?",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ windows"
+  },
+  {
+    "id": "c357",
+    "en": "desk",
+    "th": "โต๊ะทำงาน",
+    "ex": "The report is on your desk.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ desks"
+  },
+  {
+    "id": "c358",
+    "en": "chair",
+    "th": "เก้าอี้",
+    "ex": "We need more chairs for the meeting.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ chairs"
+  },
+  {
+    "id": "c359",
+    "en": "table",
+    "th": "โต๊ะ; ตาราง",
+    "ex": "See the table on page 2.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ tables"
+  },
+  {
+    "id": "c360",
+    "en": "road",
+    "th": "ถนน",
+    "ex": "The road to the port is closed.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ roads"
+  },
+  {
+    "id": "c361",
+    "en": "map",
+    "th": "แผนที่",
+    "ex": "I'll send you a map.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ maps"
+  },
+  {
+    "id": "c362",
+    "en": "bus",
+    "th": "รถเมล์, รถบัส",
+    "ex": "I take the bus to work.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ buses"
+  },
+  {
+    "id": "c363",
+    "en": "ship",
+    "th": "เรือ",
+    "ex": "The ship arrives on Monday.",
+    "pos": "n",
+    "level": "A1",
+    "forms": "นับได้ · พหูพจน์ ships"
+  },
+  {
+    "id": "c364",
+    "en": "goods",
+    "th": "สินค้า",
+    "ex": "The goods are ready for pickup.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "ใช้รูปพหูพจน์เสมอ ไม่มี a good",
+    "note": "ใช้กริยาพหูพจน์: The goods are..."
+  },
+  {
+    "id": "c365",
+    "en": "unit",
+    "th": "หน่วย, ชิ้น",
+    "ex": "The price is 50 baht per unit.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ units"
+  },
+  {
+    "id": "c366",
+    "en": "piece",
+    "th": "ชิ้น",
+    "ex": "Two pieces are missing.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ pieces",
+    "note": "ใช้นับคำนามนับไม่ได้: a piece of information"
+  },
+  {
+    "id": "c367",
+    "en": "pair",
+    "th": "คู่",
+    "ex": "I need a pair of gloves.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ pairs"
+  },
+  {
+    "id": "c368",
+    "en": "schedule",
+    "th": "ตารางเวลา",
+    "ex": "Here is the delivery schedule.",
+    "pos": "n",
+    "level": "A2",
+    "forms": "นับได้ · พหูพจน์ schedules",
+    "note": "on schedule = ตามกำหนด · behind schedule = ช้ากว่ากำหนด"
+  },
+  {
+    "id": "c369",
+    "en": "bonus",
+    "th": "โบนัส",
+    "ex": "Staff get a bonus at the end of the year.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ bonuses"
+  },
+  {
+    "id": "c370",
+    "en": "overtime",
+    "th": "ค่าล่วงเวลา, โอที",
+    "ex": "I worked two hours of overtime.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+  },
+  {
+    "id": "c371",
+    "en": "shift",
+    "th": "กะ (การทำงาน)",
+    "ex": "I work the night shift this week.",
+    "pos": "n",
+    "level": "B1",
+    "forms": "นับได้ · พหูพจน์ shifts"
+  },
+  {
+    "id": "c372",
+    "en": "young",
+    "th": "อายุน้อย",
+    "ex": "Our team is young.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: younger · youngest"
+  },
+  {
+    "id": "c373",
+    "en": "short",
+    "th": "สั้น; เตี้ย",
+    "ex": "Please keep the email short.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: shorter · shortest"
+  },
+  {
+    "id": "c374",
+    "en": "tired",
+    "th": "เหนื่อย",
+    "ex": "I'm tired after the night shift.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most tired",
+    "note": "tired = รู้สึกเหนื่อย · tiring = ทำให้เหนื่อย"
+  },
+  {
+    "id": "c375",
+    "en": "sick",
+    "th": "ป่วย",
+    "ex": "She is sick today.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "note": "sick leave = ลาป่วย"
+  },
+  {
+    "id": "c376",
+    "en": "whole",
+    "th": "ทั้งหมด, ทั้ง",
+    "ex": "I worked the whole day.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c377",
+    "en": "real",
+    "th": "จริง",
+    "ex": "Is this a real order or a test?",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c378",
+    "en": "impossible",
+    "th": "เป็นไปไม่ได้",
+    "ex": "It's impossible to deliver today.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c379",
+    "en": "incorrect",
+    "th": "ไม่ถูกต้อง",
+    "ex": "The address is incorrect.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c380",
+    "en": "dangerous",
+    "th": "อันตราย",
+    "ex": "These chemicals are dangerous.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most dangerous"
+  },
+  {
+    "id": "c381",
+    "en": "fair",
+    "th": "ยุติธรรม, สมเหตุสมผล",
+    "ex": "I think the price is fair.",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ขั้นกว่า · ขั้นสุด: fairer · fairest"
+  },
+  {
+    "id": "c382",
+    "en": "angry",
+    "th": "โกรธ",
+    "ex": "The customer was angry about the delay.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: angrier · angriest"
+  },
+  {
+    "id": "c383",
+    "en": "sorry",
+    "th": "ขอโทษ; เสียใจ",
+    "ex": "I'm sorry for the delay.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "note": "sorry for + คำนาม / -ing"
+  },
+  {
+    "id": "c384",
+    "en": "glad",
+    "th": "ยินดี",
+    "ex": "I'm glad you like it.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c385",
+    "en": "certain",
+    "th": "แน่นอน, แน่ใจ",
+    "ex": "Are you certain about the date?",
+    "pos": "adj",
+    "level": "B1",
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most certain"
+  },
+  {
+    "id": "c386",
+    "en": "fine",
+    "th": "สบายดี; ได้",
+    "ex": "That's fine with me.",
+    "pos": "adj",
+    "level": "A1",
+    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+  },
+  {
+    "id": "c387",
+    "en": "wide",
+    "th": "กว้าง",
+    "ex": "The door is not wide enough for the pallet.",
+    "pos": "adj",
+    "level": "A2",
+    "forms": "ขั้นกว่า · ขั้นสุด: wider · widest"
+  },
+  {
     "id": "v1",
     "en": "need",
     "th": "ต้องการ",
     "ex": "We need more time.",
     "pos": "v",
     "forms": "V2 / V3 needed",
-    "note": "ตามด้วยคำนาม หรือ to + V1: need to check"
+    "note": "ตามด้วยคำนาม หรือ to + V1: need to check",
+    "level": "A1"
   },
   {
     "id": "v2",
@@ -15,7 +3529,8 @@
     "ex": "Please send me the file.",
     "pos": "v",
     "forms": "ไม่ปกติ · V2 sent · V3 sent",
-    "note": "send + คน + ของ: send me the file"
+    "note": "send + คน + ของ: send me the file",
+    "level": "A1"
   },
   {
     "id": "v3",
@@ -23,7 +3538,8 @@
     "th": "ตรวจสอบ",
     "ex": "I check email every morning.",
     "pos": "v",
-    "forms": "V2 / V3 checked"
+    "forms": "V2 / V3 checked",
+    "level": "A1"
   },
   {
     "id": "v4",
@@ -32,7 +3548,8 @@
     "ex": "She made a new plan.",
     "pos": "v",
     "forms": "ไม่ปกติ · V2 made · V3 made",
-    "note": "make = สร้าง ทำให้เกิด (make a plan) · do = ทำงาน ทำกิจกรรม (do homework)"
+    "note": "make = สร้าง ทำให้เกิด (make a plan) · do = ทำงาน ทำกิจกรรม (do homework)",
+    "level": "A1"
   },
   {
     "id": "v5",
@@ -41,7 +3558,8 @@
     "ex": "Did you get my message?",
     "pos": "v",
     "forms": "ไม่ปกติ · V2 got · V3 got",
-    "note": "ความหมายเยอะมาก: get an email (ได้รับ) · get to work (ไปถึง) · get better (ดีขึ้น)"
+    "note": "ความหมายเยอะมาก: get an email (ได้รับ) · get to work (ไปถึง) · get better (ดีขึ้น)",
+    "level": "A1"
   },
   {
     "id": "v6",
@@ -49,7 +3567,8 @@
     "th": "ใช้ (เวลา), เอาไป",
     "ex": "It takes two days.",
     "pos": "v",
-    "forms": "ไม่ปกติ · V2 took · V3 taken"
+    "forms": "ไม่ปกติ · V2 took · V3 taken",
+    "level": "A1"
   },
   {
     "id": "v7",
@@ -57,7 +3576,8 @@
     "th": "ให้",
     "ex": "Give me five minutes.",
     "pos": "v",
-    "forms": "ไม่ปกติ · V2 gave · V3 given"
+    "forms": "ไม่ปกติ · V2 gave · V3 given",
+    "level": "A1"
   },
   {
     "id": "v8",
@@ -66,7 +3586,8 @@
     "ex": "I don't know yet.",
     "pos": "v",
     "forms": "ไม่ปกติ · V2 knew · V3 known",
-    "note": "ไม่ใช้ -ing: I know (ไม่ใช่ I am knowing)"
+    "note": "ไม่ใช้ -ing: I know (ไม่ใช่ I am knowing)",
+    "level": "A1"
   },
   {
     "id": "v9",
@@ -74,7 +3595,8 @@
     "th": "คิด",
     "ex": "I think it is correct.",
     "pos": "v",
-    "forms": "ไม่ปกติ · V2 thought · V3 thought"
+    "forms": "ไม่ปกติ · V2 thought · V3 thought",
+    "level": "A1"
   },
   {
     "id": "v10",
@@ -82,7 +3604,8 @@
     "th": "อยากได้",
     "ex": "They want a cheaper price.",
     "pos": "v",
-    "forms": "V2 / V3 wanted"
+    "forms": "V2 / V3 wanted",
+    "level": "A1"
   },
   {
     "id": "v11",
@@ -90,7 +3613,8 @@
     "th": "ใช้",
     "ex": "We use React for the website.",
     "pos": "v",
-    "forms": "V2 / V3 used"
+    "forms": "V2 / V3 used",
+    "level": "A1"
   },
   {
     "id": "v12",
@@ -98,7 +3622,8 @@
     "th": "หาเจอ",
     "ex": "I can't find the invoice.",
     "pos": "v",
-    "forms": "ไม่ปกติ · V2 found · V3 found"
+    "forms": "ไม่ปกติ · V2 found · V3 found",
+    "level": "A1"
   },
   {
     "id": "v13",
@@ -107,7 +3632,8 @@
     "ex": "Tell me when it arrives.",
     "pos": "v",
     "forms": "ไม่ปกติ · V2 told · V3 told",
-    "note": "tell + คน: tell me · ส่วน say ไม่ตามด้วยคนทันที: say that..."
+    "note": "tell + คน: tell me · ส่วน say ไม่ตามด้วยคนทันที: say that...",
+    "level": "A1"
   },
   {
     "id": "v14",
@@ -116,7 +3642,8 @@
     "ex": "Can I ask a question?",
     "pos": "v",
     "forms": "V2 / V3 asked",
-    "note": "ask for + ของ = ขอ: ask for help"
+    "note": "ask for + ของ = ขอ: ask for help",
+    "level": "A1"
   },
   {
     "id": "v15",
@@ -124,7 +3651,8 @@
     "th": "ทำงาน",
     "ex": "He works in the warehouse.",
     "pos": "v",
-    "forms": "V2 / V3 worked"
+    "forms": "V2 / V3 worked",
+    "level": "A1"
   },
   {
     "id": "v16",
@@ -133,7 +3661,8 @@
     "ex": "Let me try again.",
     "pos": "v",
     "forms": "V2 / V3 tried",
-    "note": "try to + V1 = พยายาม · try + V-ing = ลองทำดู"
+    "note": "try to + V1 = พยายาม · try + V-ing = ลองทำดู",
+    "level": "A1"
   },
   {
     "id": "v17",
@@ -142,7 +3671,8 @@
     "ex": "The truck leaves at 8.",
     "pos": "v",
     "forms": "ไม่ปกติ · V2 left · V3 left",
-    "note": "leave + สถานที่ = ออกจาก ไม่ต้องมี from: leave the office"
+    "note": "leave + สถานที่ = ออกจาก ไม่ต้องมี from: leave the office",
+    "level": "A1"
   },
   {
     "id": "v18",
@@ -150,7 +3680,8 @@
     "th": "โทร, เรียก",
     "ex": "I'll call you back.",
     "pos": "v",
-    "forms": "V2 / V3 called"
+    "forms": "V2 / V3 called",
+    "level": "A1"
   },
   {
     "id": "v19",
@@ -158,7 +3689,8 @@
     "th": "เก็บไว้",
     "ex": "Keep the receipt.",
     "pos": "v",
-    "forms": "ไม่ปกติ · V2 kept · V3 kept"
+    "forms": "ไม่ปกติ · V2 kept · V3 kept",
+    "level": "A1"
   },
   {
     "id": "v20",
@@ -166,7 +3698,8 @@
     "th": "เริ่ม",
     "ex": "We start at nine.",
     "pos": "v",
-    "forms": "V2 / V3 started"
+    "forms": "V2 / V3 started",
+    "level": "A1"
   },
   {
     "id": "v21",
@@ -174,7 +3707,8 @@
     "th": "แสดง, ให้ดู",
     "ex": "Can you show me how?",
     "pos": "v",
-    "forms": "ไม่ปกติ · V2 showed · V3 shown"
+    "forms": "ไม่ปกติ · V2 showed · V3 shown",
+    "level": "A1"
   },
   {
     "id": "v22",
@@ -182,7 +3716,8 @@
     "th": "ช่วย",
     "ex": "Could you help me?",
     "pos": "v",
-    "forms": "V2 / V3 helped"
+    "forms": "V2 / V3 helped",
+    "level": "A1"
   },
   {
     "id": "v23",
@@ -191,7 +3726,8 @@
     "ex": "The ship arrives tomorrow.",
     "pos": "v",
     "forms": "V2 / V3 arrived",
-    "note": "arrive at (จุด อาคาร) · arrive in (เมือง ประเทศ) · ไม่ใช้ arrive to"
+    "note": "arrive at (จุด อาคาร) · arrive in (เมือง ประเทศ) · ไม่ใช้ arrive to",
+    "level": "A2"
   },
   {
     "id": "v24",
@@ -200,7 +3736,8 @@
     "ex": "We deliver on time.",
     "pos": "v",
     "forms": "V2 / V3 delivered",
-    "note": "คำนามคือ delivery"
+    "note": "คำนามคือ delivery",
+    "level": "A2"
   },
   {
     "id": "v25",
@@ -208,7 +3745,8 @@
     "th": "อัปเดต",
     "ex": "I'll update the status.",
     "pos": "v",
-    "forms": "V2 / V3 updated"
+    "forms": "V2 / V3 updated",
+    "level": "A2"
   },
   {
     "id": "v26",
@@ -216,7 +3754,8 @@
     "th": "แก้ (ปัญหา)",
     "ex": "I fixed the bug.",
     "pos": "v",
-    "forms": "V2 / V3 fixed"
+    "forms": "V2 / V3 fixed",
+    "level": "A2"
   },
   {
     "id": "v27",
@@ -224,7 +3763,8 @@
     "th": "ยืนยัน",
     "ex": "Please confirm the booking.",
     "pos": "v",
-    "forms": "V2 / V3 confirmed"
+    "forms": "V2 / V3 confirmed",
+    "level": "A2"
   },
   {
     "id": "v28",
@@ -232,7 +3772,8 @@
     "th": "อธิบาย",
     "ex": "Can you explain it again?",
     "pos": "v",
-    "forms": "V2 / V3 explained"
+    "forms": "V2 / V3 explained",
+    "level": "A2"
   },
   {
     "id": "v29",
@@ -241,7 +3782,8 @@
     "ex": "I understand the problem.",
     "pos": "v",
     "forms": "ไม่ปกติ · V2 understood · V3 understood",
-    "note": "ไม่ใช้ -ing: I understand (ไม่ใช่ I am understanding)"
+    "note": "ไม่ใช้ -ing: I understand (ไม่ใช่ I am understanding)",
+    "level": "A1"
   },
   {
     "id": "v30",
@@ -249,7 +3791,8 @@
     "th": "ทำเสร็จ",
     "ex": "I finished the report.",
     "pos": "v",
-    "forms": "V2 / V3 finished"
+    "forms": "V2 / V3 finished",
+    "level": "A2"
   },
   {
     "id": "n1",
@@ -258,7 +3801,8 @@
     "ex": "We don't have much time.",
     "pos": "n",
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
-    "note": "times (นับได้) แปลว่า \"ครั้ง\": three times"
+    "note": "times (นับได้) แปลว่า \"ครั้ง\": three times",
+    "level": "A1"
   },
   {
     "id": "n2",
@@ -266,7 +3810,8 @@
     "th": "ปัญหา",
     "ex": "There is a problem with the order.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ problems"
+    "forms": "นับได้ · พหูพจน์ problems",
+    "level": "A2"
   },
   {
     "id": "n3",
@@ -275,7 +3820,8 @@
     "ex": "I need more information.",
     "pos": "n",
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
-    "note": "อยากนับใช้ a piece of information · ไม่มีคำว่า informations"
+    "note": "อยากนับใช้ a piece of information · ไม่มีคำว่า informations",
+    "level": "A2"
   },
   {
     "id": "n4",
@@ -283,7 +3829,8 @@
     "th": "บริษัท",
     "ex": "Our company ships to Japan.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ companies"
+    "forms": "นับได้ · พหูพจน์ companies",
+    "level": "A2"
   },
   {
     "id": "n5",
@@ -291,7 +3838,8 @@
     "th": "ลูกค้า",
     "ex": "The customer is waiting.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ customers"
+    "forms": "นับได้ · พหูพจน์ customers",
+    "level": "A2"
   },
   {
     "id": "n6",
@@ -299,7 +3847,8 @@
     "th": "ราคา",
     "ex": "The price is too high.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ prices"
+    "forms": "นับได้ · พหูพจน์ prices",
+    "level": "A2"
   },
   {
     "id": "n7",
@@ -308,7 +3857,8 @@
     "ex": "The order is ready.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ orders",
-    "note": "เป็นกริยาได้: order goods (สั่งซื้อ) · in order to = เพื่อที่จะ"
+    "note": "เป็นกริยาได้: order goods (สั่งซื้อ) · in order to = เพื่อที่จะ",
+    "level": "A2"
   },
   {
     "id": "n8",
@@ -316,7 +3866,8 @@
     "th": "วันที่",
     "ex": "What is the delivery date?",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ dates"
+    "forms": "นับได้ · พหูพจน์ dates",
+    "level": "A1"
   },
   {
     "id": "n9",
@@ -324,7 +3875,8 @@
     "th": "ทีม",
     "ex": "Our team has five people.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ teams"
+    "forms": "นับได้ · พหูพจน์ teams",
+    "level": "A1"
   },
   {
     "id": "n10",
@@ -332,7 +3884,8 @@
     "th": "การประชุม",
     "ex": "The meeting starts at 2 pm.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ meetings"
+    "forms": "นับได้ · พหูพจน์ meetings",
+    "level": "A1"
   },
   {
     "id": "n11",
@@ -340,7 +3893,8 @@
     "th": "สัปดาห์",
     "ex": "See you next week.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ weeks"
+    "forms": "นับได้ · พหูพจน์ weeks",
+    "level": "A1"
   },
   {
     "id": "n12",
@@ -348,7 +3902,8 @@
     "th": "คำถาม",
     "ex": "I have a question.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ questions"
+    "forms": "นับได้ · พหูพจน์ questions",
+    "level": "A1"
   },
   {
     "id": "a1",
@@ -357,7 +3912,8 @@
     "ex": "The truck is late.",
     "pos": "adj",
     "forms": "ขั้นกว่า · ขั้นสุด: later · latest",
-    "note": "lately = ช่วงนี้ (ไม่ได้แปลว่า \"อย่างช้า\")"
+    "note": "lately = ช่วงนี้ (ไม่ได้แปลว่า \"อย่างช้า\")",
+    "level": "A1"
   },
   {
     "id": "a2",
@@ -365,7 +3921,8 @@
     "th": "พร้อม",
     "ex": "Are you ready?",
     "pos": "adj",
-    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "level": "A1"
   },
   {
     "id": "a3",
@@ -373,7 +3930,8 @@
     "th": "สำคัญ",
     "ex": "This is an important customer.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: more · most important"
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most important",
+    "level": "A1"
   },
   {
     "id": "a4",
@@ -382,7 +3940,8 @@
     "ex": "Are you available on Friday?",
     "pos": "adj",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "note": "ใช้กับคนแปลว่าว่าง: Are you available on Monday?"
+    "note": "ใช้กับคนแปลว่าว่าง: Are you available on Monday?",
+    "level": "B1"
   },
   {
     "id": "a5",
@@ -390,7 +3949,8 @@
     "th": "ด่วน",
     "ex": "This order is urgent.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: more · most urgent"
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most urgent",
+    "level": "B1"
   },
   {
     "id": "a6",
@@ -398,7 +3958,8 @@
     "th": "ถูกต้อง",
     "ex": "Is this address correct?",
     "pos": "adj",
-    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "level": "A2"
   },
   {
     "id": "i1",
@@ -406,7 +3967,8 @@
     "th": "ข้อผิดพลาดในโปรแกรม",
     "ex": "I found a bug in the login page.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ bugs"
+    "forms": "นับได้ · พหูพจน์ bugs",
+    "level": "A2"
   },
   {
     "id": "i2",
@@ -415,7 +3977,8 @@
     "ex": "We deploy every Friday.",
     "pos": "v",
     "forms": "V2 / V3 deployed",
-    "note": "คำนามคือ deployment"
+    "note": "คำนามคือ deployment",
+    "level": "B2"
   },
   {
     "id": "i3",
@@ -423,7 +3986,8 @@
     "th": "ความต้องการของระบบ",
     "ex": "What are the requirements?",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ requirements"
+    "forms": "นับได้ · พหูพจน์ requirements",
+    "level": "B2"
   },
   {
     "id": "i4",
@@ -431,7 +3995,8 @@
     "th": "ความสามารถของระบบ",
     "ex": "We added a new feature.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ features"
+    "forms": "นับได้ · พหูพจน์ features",
+    "level": "B1"
   },
   {
     "id": "i5",
@@ -439,7 +4004,8 @@
     "th": "ฐานข้อมูล",
     "ex": "The data is in the database.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ databases"
+    "forms": "นับได้ · พหูพจน์ databases",
+    "level": "A2"
   },
   {
     "id": "i6",
@@ -447,7 +4013,8 @@
     "th": "กำหนดส่ง",
     "ex": "The deadline is Monday.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ deadlines"
+    "forms": "นับได้ · พหูพจน์ deadlines",
+    "level": "B1"
   },
   {
     "id": "i7",
@@ -456,7 +4023,8 @@
     "ex": "Did you test the code?",
     "pos": "v",
     "forms": "V2 / V3 tested",
-    "note": "เป็นคำนามได้: run a test"
+    "note": "เป็นคำนามได้: run a test",
+    "level": "A2"
   },
   {
     "id": "i8",
@@ -465,7 +4033,8 @@
     "ex": "The next release is in May.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ releases",
-    "note": "เป็นกริยาด้วย: release a new version"
+    "note": "เป็นกริยาด้วย: release a new version",
+    "level": "B1"
   },
   {
     "id": "l1",
@@ -473,7 +4042,8 @@
     "th": "การขนส่ง, ของที่ส่ง",
     "ex": "The shipment left Bangkok.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ shipments"
+    "forms": "นับได้ · พหูพจน์ shipments",
+    "level": "B1"
   },
   {
     "id": "l2",
@@ -481,7 +4051,8 @@
     "th": "ตู้คอนเทนเนอร์",
     "ex": "We need a 40-foot container.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ containers"
+    "forms": "นับได้ · พหูพจน์ containers",
+    "level": "A2"
   },
   {
     "id": "l3",
@@ -489,7 +4060,8 @@
     "th": "คลังสินค้า",
     "ex": "The goods are in the warehouse.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ warehouses"
+    "forms": "นับได้ · พหูพจน์ warehouses",
+    "level": "A2"
   },
   {
     "id": "l4",
@@ -498,7 +4070,8 @@
     "ex": "Air freight is fast but expensive.",
     "pos": "n",
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
-    "note": "ใช้ได้ทั้งความหมาย \"ค่าขนส่ง\" และ \"สินค้าที่ขนส่ง\""
+    "note": "ใช้ได้ทั้งความหมาย \"ค่าขนส่ง\" และ \"สินค้าที่ขนส่ง\"",
+    "level": "B1"
   },
   {
     "id": "l5",
@@ -507,7 +4080,8 @@
     "ex": "The goods are at customs.",
     "pos": "n",
     "forms": "ใช้รูปมี s เสมอ",
-    "note": "custom (ไม่มี s) = ประเพณี คนละความหมาย"
+    "note": "custom (ไม่มี s) = ประเพณี คนละความหมาย",
+    "level": "B1"
   },
   {
     "id": "l6",
@@ -515,7 +4089,8 @@
     "th": "ใบแจ้งหนี้",
     "ex": "Please send the invoice.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ invoices"
+    "forms": "นับได้ · พหูพจน์ invoices",
+    "level": "B1"
   },
   {
     "id": "l7",
@@ -524,7 +4099,8 @@
     "ex": "What is the ETA?",
     "pos": "n",
     "forms": "พหูพจน์ ETAs",
-    "note": "ย่อมาจาก Estimated Time of Arrival · คู่กับ ETD (Estimated Time of Departure)"
+    "note": "ย่อมาจาก Estimated Time of Arrival · คู่กับ ETD (Estimated Time of Departure)",
+    "level": "B1"
   },
   {
     "id": "l8",
@@ -532,7 +4108,8 @@
     "th": "ท่าเรือ",
     "ex": "The ship is at the port.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ ports"
+    "forms": "นับได้ · พหูพจน์ ports",
+    "level": "A2"
   },
   {
     "id": "l9",
@@ -540,7 +4117,8 @@
     "th": "บริษัทขนส่ง (สายเรือ/สายการบิน)",
     "ex": "Which carrier do you use?",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ carriers"
+    "forms": "นับได้ · พหูพจน์ carriers",
+    "level": "B2"
   },
   {
     "id": "l10",
@@ -548,7 +4126,8 @@
     "th": "การจอง",
     "ex": "The booking is confirmed.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ bookings"
+    "forms": "นับได้ · พหูพจน์ bookings",
+    "level": "A2"
   },
   {
     "id": "l11",
@@ -556,7 +4135,8 @@
     "th": "ความล่าช้า",
     "ex": "Sorry for the delay.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ delays"
+    "forms": "นับได้ · พหูพจน์ delays",
+    "level": "A2"
   },
   {
     "id": "l12",
@@ -564,7 +4144,8 @@
     "th": "เลขติดตามพัสดุ",
     "ex": "Here is the tracking number.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ tracking numbers"
+    "forms": "นับได้ · พหูพจน์ tracking numbers",
+    "level": "A2"
   },
   {
     "id": "v31",
@@ -572,7 +4153,8 @@
     "th": "จัดหาให้, ให้",
     "ex": "We provide 24-hour support.",
     "pos": "v",
-    "forms": "V2 / V3 provided"
+    "forms": "V2 / V3 provided",
+    "level": "A2"
   },
   {
     "id": "v32",
@@ -580,7 +4162,8 @@
     "th": "ได้รับ",
     "ex": "Did you receive my email?",
     "pos": "v",
-    "forms": "V2 / V3 received"
+    "forms": "V2 / V3 received",
+    "level": "A2"
   },
   {
     "id": "v33",
@@ -588,7 +4171,8 @@
     "th": "เตรียม",
     "ex": "I will prepare the documents today.",
     "pos": "v",
-    "forms": "V2 / V3 prepared"
+    "forms": "V2 / V3 prepared",
+    "level": "A2"
   },
   {
     "id": "v34",
@@ -596,7 +4180,8 @@
     "th": "รวมอยู่ด้วย",
     "ex": "The price includes delivery.",
     "pos": "v",
-    "forms": "V2 / V3 included"
+    "forms": "V2 / V3 included",
+    "level": "A2"
   },
   {
     "id": "v35",
@@ -604,7 +4189,8 @@
     "th": "ติดต่อ",
     "ex": "Please contact the supplier.",
     "pos": "v",
-    "forms": "V2 / V3 contacted"
+    "forms": "V2 / V3 contacted",
+    "level": "A2"
   },
   {
     "id": "v36",
@@ -613,7 +4199,8 @@
     "ex": "She replied to the customer quickly.",
     "pos": "v",
     "forms": "V2 / V3 replied",
-    "note": "reply to + คน หรืออีเมล: reply to the customer"
+    "note": "reply to + คน หรืออีเมล: reply to the customer",
+    "level": "A2"
   },
   {
     "id": "v37",
@@ -622,7 +4209,8 @@
     "ex": "Let's discuss the plan tomorrow.",
     "pos": "v",
     "forms": "V2 / V3 discussed",
-    "note": "ไม่มี about: discuss the plan (ไม่ใช่ discuss about the plan)"
+    "note": "ไม่มี about: discuss the plan (ไม่ใช่ discuss about the plan)",
+    "level": "A2"
   },
   {
     "id": "v38",
@@ -631,7 +4219,8 @@
     "ex": "I agree with your idea.",
     "pos": "v",
     "forms": "V2 / V3 agreed",
-    "note": "agree with + คน · ไม่มี be: I agree (ไม่ใช่ I am agree)"
+    "note": "agree with + คน · ไม่มี be: I agree (ไม่ใช่ I am agree)",
+    "level": "A2"
   },
   {
     "id": "v39",
@@ -640,7 +4229,8 @@
     "ex": "We decided to change the route.",
     "pos": "v",
     "forms": "V2 / V3 decided",
-    "note": "คำนามคือ decision"
+    "note": "คำนามคือ decision",
+    "level": "A2"
   },
   {
     "id": "v40",
@@ -648,7 +4238,8 @@
     "th": "ต้องการ (เป็นข้อกำหนด)",
     "ex": "This job requires a driving license.",
     "pos": "v",
-    "forms": "V2 / V3 required"
+    "forms": "V2 / V3 required",
+    "level": "B1"
   },
   {
     "id": "v41",
@@ -656,7 +4247,8 @@
     "th": "จัดการ, บริหาร",
     "ex": "She manages a team of five people.",
     "pos": "v",
-    "forms": "V2 / V3 managed"
+    "forms": "V2 / V3 managed",
+    "level": "A2"
   },
   {
     "id": "v42",
@@ -664,7 +4256,8 @@
     "th": "ปรับปรุง, ทำให้ดีขึ้น",
     "ex": "We need to improve our service.",
     "pos": "v",
-    "forms": "V2 / V3 improved"
+    "forms": "V2 / V3 improved",
+    "level": "A2"
   },
   {
     "id": "v43",
@@ -673,7 +4266,8 @@
     "ex": "Fuel prices increased last month.",
     "pos": "v",
     "forms": "V2 / V3 increased",
-    "note": "เป็นคำนามได้: an increase in price (คำนามเน้นพยางค์แรก IN-crease)"
+    "note": "เป็นคำนามได้: an increase in price (คำนามเน้นพยางค์แรก IN-crease)",
+    "level": "B1"
   },
   {
     "id": "v44",
@@ -681,7 +4275,8 @@
     "th": "ลดลง",
     "ex": "The new system reduces costs.",
     "pos": "v",
-    "forms": "V2 / V3 reduced"
+    "forms": "V2 / V3 reduced",
+    "level": "B1"
   },
   {
     "id": "v45",
@@ -689,7 +4284,8 @@
     "th": "เปลี่ยน",
     "ex": "Can we change the delivery date?",
     "pos": "v",
-    "forms": "V2 / V3 changed"
+    "forms": "V2 / V3 changed",
+    "level": "A2"
   },
   {
     "id": "v46",
@@ -697,7 +4293,8 @@
     "th": "ทำตาม, ติดตาม",
     "ex": "Please follow the safety rules.",
     "pos": "v",
-    "forms": "V2 / V3 followed"
+    "forms": "V2 / V3 followed",
+    "level": "A2"
   },
   {
     "id": "v47",
@@ -706,7 +4303,8 @@
     "ex": "I attached the invoice to this email.",
     "pos": "v",
     "forms": "V2 / V3 attached",
-    "note": "คำนามคือ attachment (ไฟล์แนบ)"
+    "note": "คำนามคือ attachment (ไฟล์แนบ)",
+    "level": "A2"
   },
   {
     "id": "v48",
@@ -715,7 +4313,8 @@
     "ex": "The customer cancelled the order.",
     "pos": "v",
     "forms": "V2 / V3 cancelled",
-    "note": "แบบอังกฤษสะกด cancelled · แบบอเมริกัน canceled"
+    "note": "แบบอังกฤษสะกด cancelled · แบบอเมริกัน canceled",
+    "level": "A2"
   },
   {
     "id": "v49",
@@ -723,7 +4322,8 @@
     "th": "จัดเตรียม, นัดหมาย",
     "ex": "I will arrange a meeting with the client.",
     "pos": "v",
-    "forms": "V2 / V3 arranged"
+    "forms": "V2 / V3 arranged",
+    "level": "A2"
   },
   {
     "id": "v50",
@@ -731,7 +4331,8 @@
     "th": "ขอ (อย่างเป็นทางการ)",
     "ex": "We requested more information.",
     "pos": "v",
-    "forms": "V2 / V3 requested"
+    "forms": "V2 / V3 requested",
+    "level": "B1"
   },
   {
     "id": "v51",
@@ -739,7 +4340,8 @@
     "th": "อนุมัติ",
     "ex": "The manager approved the budget.",
     "pos": "v",
-    "forms": "V2 / V3 approved"
+    "forms": "V2 / V3 approved",
+    "level": "B1"
   },
   {
     "id": "v52",
@@ -747,7 +4349,8 @@
     "th": "แก้ (ปัญหา)",
     "ex": "We solved the problem in one day.",
     "pos": "v",
-    "forms": "V2 / V3 solved"
+    "forms": "V2 / V3 solved",
+    "level": "A2"
   },
   {
     "id": "v53",
@@ -755,7 +4358,8 @@
     "th": "สนับสนุน, ดูแลช่วยเหลือ",
     "ex": "Our team supports users all over Asia.",
     "pos": "v",
-    "forms": "V2 / V3 supported"
+    "forms": "V2 / V3 supported",
+    "level": "A2"
   },
   {
     "id": "v54",
@@ -764,7 +4368,8 @@
     "ex": "Let's compare the two quotations.",
     "pos": "v",
     "forms": "V2 / V3 compared",
-    "note": "compare A with B หรือ compare A to B"
+    "note": "compare A with B หรือ compare A to B",
+    "level": "A2"
   },
   {
     "id": "v55",
@@ -773,7 +4378,8 @@
     "ex": "She organized the files by date.",
     "pos": "v",
     "forms": "V2 / V3 organized",
-    "note": "แบบอังกฤษสะกด organise"
+    "note": "แบบอังกฤษสะกด organise",
+    "level": "B1"
   },
   {
     "id": "v56",
@@ -781,7 +4387,8 @@
     "th": "รายงาน",
     "ex": "Please report any damage immediately.",
     "pos": "v",
-    "forms": "V2 / V3 reported"
+    "forms": "V2 / V3 reported",
+    "level": "A2"
   },
   {
     "id": "v57",
@@ -789,7 +4396,8 @@
     "th": "ติดตั้ง",
     "ex": "IT will install the software tomorrow.",
     "pos": "v",
-    "forms": "V2 / V3 installed"
+    "forms": "V2 / V3 installed",
+    "level": "A2"
   },
   {
     "id": "v58",
@@ -797,7 +4405,8 @@
     "th": "ทำให้เสร็จ, กรอกให้ครบ",
     "ex": "Please complete this form.",
     "pos": "v",
-    "forms": "V2 / V3 completed"
+    "forms": "V2 / V3 completed",
+    "level": "A2"
   },
   {
     "id": "v59",
@@ -806,7 +4415,8 @@
     "ex": "Can you remind me about the meeting?",
     "pos": "v",
     "forms": "V2 / V3 reminded",
-    "note": "remind + คน + to V1: remind me to call"
+    "note": "remind + คน + to V1: remind me to call",
+    "level": "A2"
   },
   {
     "id": "v60",
@@ -814,7 +4424,8 @@
     "th": "แนะนำ",
     "ex": "I recommend sea freight for this order.",
     "pos": "v",
-    "forms": "V2 / V3 recommended"
+    "forms": "V2 / V3 recommended",
+    "level": "B1"
   },
   {
     "id": "n13",
@@ -822,7 +4433,8 @@
     "th": "ที่อยู่",
     "ex": "Please check the delivery address.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ addresses"
+    "forms": "นับได้ · พหูพจน์ addresses",
+    "level": "A2"
   },
   {
     "id": "n14",
@@ -830,7 +4442,8 @@
     "th": "เอกสาร",
     "ex": "Send me the documents before Friday.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ documents"
+    "forms": "นับได้ · พหูพจน์ documents",
+    "level": "A2"
   },
   {
     "id": "n15",
@@ -838,7 +4451,8 @@
     "th": "บทสรุป",
     "ex": "Here is a short summary of the meeting.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ summaries"
+    "forms": "นับได้ · พหูพจน์ summaries",
+    "level": "B1"
   },
   {
     "id": "n16",
@@ -846,7 +4460,8 @@
     "th": "การชำระเงิน",
     "ex": "We received your payment.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ payments"
+    "forms": "นับได้ · พหูพจน์ payments",
+    "level": "A2"
   },
   {
     "id": "n17",
@@ -855,7 +4470,8 @@
     "ex": "The shipping cost is too high.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ costs",
-    "note": "เป็นกริยาด้วย และไม่ปกติ: cost - cost - cost"
+    "note": "เป็นกริยาด้วย และไม่ปกติ: cost - cost - cost",
+    "level": "A2"
   },
   {
     "id": "n18",
@@ -863,7 +4479,8 @@
     "th": "จำนวน",
     "ex": "Please confirm the quantity.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ quantities"
+    "forms": "นับได้ · พหูพจน์ quantities",
+    "level": "B1"
   },
   {
     "id": "n19",
@@ -871,7 +4488,8 @@
     "th": "สินค้า, ผลิตภัณฑ์",
     "ex": "This product is very popular.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ products"
+    "forms": "นับได้ · พหูพจน์ products",
+    "level": "A2"
   },
   {
     "id": "n20",
@@ -879,7 +4497,8 @@
     "th": "ผู้จัดหาสินค้า, ซัพพลายเออร์",
     "ex": "Our supplier is in China.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ suppliers"
+    "forms": "นับได้ · พหูพจน์ suppliers",
+    "level": "B1"
   },
   {
     "id": "n21",
@@ -887,7 +4506,8 @@
     "th": "แผนก",
     "ex": "She works in the finance department.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ departments"
+    "forms": "นับได้ · พหูพจน์ departments",
+    "level": "B1"
   },
   {
     "id": "n22",
@@ -896,7 +4516,8 @@
     "ex": "I need to ask my manager.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ managers",
-    "note": "ออกเสียง แมน-นิ-เจอร์ เน้นพยางค์แรก"
+    "note": "ออกเสียง แมน-นิ-เจอร์ เน้นพยางค์แรก",
+    "level": "A2"
   },
   {
     "id": "n23",
@@ -905,7 +4526,8 @@
     "ex": "My colleague will help you.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ colleagues",
-    "note": "ออกเสียง คอล-ลีก"
+    "note": "ออกเสียง คอล-ลีก",
+    "level": "B1"
   },
   {
     "id": "n24",
@@ -913,7 +4535,8 @@
     "th": "งบประมาณ",
     "ex": "The project is over budget.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ budgets"
+    "forms": "นับได้ · พหูพจน์ budgets",
+    "level": "B1"
   },
   {
     "id": "n25",
@@ -921,7 +4544,8 @@
     "th": "สัญญา",
     "ex": "Please sign the contract.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ contracts"
+    "forms": "นับได้ · พหูพจน์ contracts",
+    "level": "B1"
   },
   {
     "id": "n26",
@@ -929,7 +4553,8 @@
     "th": "คุณภาพ",
     "ex": "We check the quality of every box.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B1"
   },
   {
     "id": "n27",
@@ -937,7 +4562,8 @@
     "th": "ทางแก้",
     "ex": "We found a solution.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ solutions"
+    "forms": "นับได้ · พหูพจน์ solutions",
+    "level": "B1"
   },
   {
     "id": "n28",
@@ -945,7 +4571,8 @@
     "th": "ผลลัพธ์",
     "ex": "The test results are good.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ results"
+    "forms": "นับได้ · พหูพจน์ results",
+    "level": "B1"
   },
   {
     "id": "n29",
@@ -953,7 +4580,8 @@
     "th": "งานที่ได้รับมอบหมาย",
     "ex": "I have three tasks today.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ tasks"
+    "forms": "นับได้ · พหูพจน์ tasks",
+    "level": "B1"
   },
   {
     "id": "n30",
@@ -961,7 +4589,8 @@
     "th": "ข้อความ",
     "ex": "I left a message for him.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ messages"
+    "forms": "นับได้ · พหูพจน์ messages",
+    "level": "A1"
   },
   {
     "id": "n31",
@@ -969,7 +4598,8 @@
     "th": "รายละเอียด",
     "ex": "Please send me more details.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ details"
+    "forms": "นับได้ · พหูพจน์ details",
+    "level": "B1"
   },
   {
     "id": "n32",
@@ -977,7 +4607,8 @@
     "th": "การตัดสินใจ",
     "ex": "We need a decision by Monday.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ decisions"
+    "forms": "นับได้ · พหูพจน์ decisions",
+    "level": "B1"
   },
   {
     "id": "n33",
@@ -986,7 +4617,8 @@
     "ex": "Do you have any experience in logistics?",
     "pos": "n",
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
-    "note": "an experience (นับได้) = เหตุการณ์ที่เคยเจอ"
+    "note": "an experience (นับได้) = เหตุการณ์ที่เคยเจอ",
+    "level": "B1"
   },
   {
     "id": "n34",
@@ -994,7 +4626,8 @@
     "th": "ทักษะ",
     "ex": "Communication is an important skill.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ skills"
+    "forms": "นับได้ · พหูพจน์ skills",
+    "level": "B1"
   },
   {
     "id": "n35",
@@ -1002,7 +4635,8 @@
     "th": "เป้าหมาย",
     "ex": "Our goal is zero delays.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ goals"
+    "forms": "นับได้ · พหูพจน์ goals",
+    "level": "B1"
   },
   {
     "id": "n36",
@@ -1010,7 +4644,8 @@
     "th": "ตัวเลือก",
     "ex": "We have two options.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ options"
+    "forms": "นับได้ · พหูพจน์ options",
+    "level": "B1"
   },
   {
     "id": "n37",
@@ -1019,7 +4654,8 @@
     "ex": "What is the reason for the delay?",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ reasons",
-    "note": "the reason for + คำนาม: the reason for the delay"
+    "note": "the reason for + คำนาม: the reason for the delay",
+    "level": "B1"
   },
   {
     "id": "n38",
@@ -1027,7 +4663,8 @@
     "th": "ขั้นตอน, กระบวนการ",
     "ex": "The customs process takes two days.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ processes"
+    "forms": "นับได้ · พหูพจน์ processes",
+    "level": "B1"
   },
   {
     "id": "n39",
@@ -1035,7 +4672,8 @@
     "th": "นโยบาย",
     "ex": "Please read the return policy.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ policies"
+    "forms": "นับได้ · พหูพจน์ policies",
+    "level": "B1"
   },
   {
     "id": "n40",
@@ -1044,7 +4682,8 @@
     "ex": "I work in the office on Mondays.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ offices",
-    "note": "at the office = อยู่ที่ทำงาน · in the office = อยู่ข้างในห้อง"
+    "note": "at the office = อยู่ที่ทำงาน · in the office = อยู่ข้างในห้อง",
+    "level": "A2"
   },
   {
     "id": "n41",
@@ -1052,7 +4691,8 @@
     "th": "โปรเจกต์, โครงการ",
     "ex": "The project starts next month.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ projects"
+    "forms": "นับได้ · พหูพจน์ projects",
+    "level": "A2"
   },
   {
     "id": "n42",
@@ -1061,7 +4701,8 @@
     "ex": "Thank you for your feedback.",
     "pos": "n",
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
-    "note": "some feedback (ไม่ใช่ a feedback)"
+    "note": "some feedback (ไม่ใช่ a feedback)",
+    "level": "B1"
   },
   {
     "id": "n43",
@@ -1070,7 +4711,8 @@
     "ex": "There is an issue with the login page.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ issues",
-    "note": "ในอีเมลงาน ฟังนุ่มกว่า problem"
+    "note": "ในอีเมลงาน ฟังนุ่มกว่า problem",
+    "level": "B1"
   },
   {
     "id": "n44",
@@ -1078,7 +4720,8 @@
     "th": "บัญชี",
     "ex": "Please create an account first.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ accounts"
+    "forms": "นับได้ · พหูพจน์ accounts",
+    "level": "A2"
   },
   {
     "id": "n45",
@@ -1086,7 +4729,8 @@
     "th": "การตอบกลับ",
     "ex": "We are waiting for a response from the client.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ responses"
+    "forms": "นับได้ · พหูพจน์ responses",
+    "level": "B1"
   },
   {
     "id": "n46",
@@ -1094,7 +4738,8 @@
     "th": "ข้อตกลง",
     "ex": "Both sides signed the agreement.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ agreements"
+    "forms": "นับได้ · พหูพจน์ agreements",
+    "level": "B1"
   },
   {
     "id": "n47",
@@ -1102,7 +4747,8 @@
     "th": "ส่วนลด",
     "ex": "Can you give us a discount?",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ discounts"
+    "forms": "นับได้ · พหูพจน์ discounts",
+    "level": "B1"
   },
   {
     "id": "n48",
@@ -1111,7 +4757,8 @@
     "ex": "The customer asked for a refund.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ refunds",
-    "note": "เป็นกริยาได้: refund the money"
+    "note": "เป็นกริยาได้: refund the money",
+    "level": "A2"
   },
   {
     "id": "n49",
@@ -1120,7 +4767,8 @@
     "ex": "Please keep the receipt.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ receipts",
-    "note": "ตัว p ไม่ออกเสียง: รี-ซีท"
+    "note": "ตัว p ไม่ออกเสียง: รี-ซีท",
+    "level": "A2"
   },
   {
     "id": "n50",
@@ -1128,7 +4776,8 @@
     "th": "ใบสมัคร; แอปพลิเคชัน",
     "ex": "I sent my job application yesterday.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ applications"
+    "forms": "นับได้ · พหูพจน์ applications",
+    "level": "B1"
   },
   {
     "id": "n51",
@@ -1136,7 +4785,8 @@
     "th": "การสัมภาษณ์",
     "ex": "I have a job interview on Friday.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ interviews"
+    "forms": "นับได้ · พหูพจน์ interviews",
+    "level": "A2"
   },
   {
     "id": "n52",
@@ -1145,7 +4795,8 @@
     "ex": "The salary is paid monthly.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ salaries",
-    "note": "salary = เงินเดือนประจำ · wage = ค่าแรงรายวันหรือรายชั่วโมง"
+    "note": "salary = เงินเดือนประจำ · wage = ค่าแรงรายวันหรือรายชั่วโมง",
+    "level": "A2"
   },
   {
     "id": "a7",
@@ -1153,7 +4804,8 @@
     "th": "ยุ่ง, ไม่ว่าง",
     "ex": "I'm busy this afternoon.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: busier · busiest"
+    "forms": "ขั้นกว่า · ขั้นสุด: busier · busiest",
+    "level": "A1"
   },
   {
     "id": "a8",
@@ -1161,7 +4813,8 @@
     "th": "ว่าง; ฟรี",
     "ex": "Are you free tomorrow morning?",
     "pos": "adj",
-    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "level": "A1"
   },
   {
     "id": "a9",
@@ -1170,7 +4823,8 @@
     "ex": "Sea freight is cheaper than air freight.",
     "pos": "adj",
     "forms": "ขั้นกว่า · ขั้นสุด: cheaper · cheapest",
-    "note": "อาจฟังว่าคุณภาพต่ำ ในงานใช้ low-cost หรือ affordable จะสุภาพกว่า"
+    "note": "อาจฟังว่าคุณภาพต่ำ ในงานใช้ low-cost หรือ affordable จะสุภาพกว่า",
+    "level": "A1"
   },
   {
     "id": "a10",
@@ -1178,7 +4832,8 @@
     "th": "แพง",
     "ex": "This option is too expensive.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: more · most expensive"
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most expensive",
+    "level": "A1"
   },
   {
     "id": "a11",
@@ -1187,7 +4842,8 @@
     "ex": "We need a fast solution.",
     "pos": "adj",
     "forms": "ขั้นกว่า · ขั้นสุด: faster · fastest",
-    "note": "ใช้เป็นคำวิเศษณ์ได้เลยโดยไม่เติม -ly: drive fast"
+    "note": "ใช้เป็นคำวิเศษณ์ได้เลยโดยไม่เติม -ly: drive fast",
+    "level": "A1"
   },
   {
     "id": "a12",
@@ -1195,7 +4851,8 @@
     "th": "ช้า",
     "ex": "The internet is slow today.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: slower · slowest"
+    "forms": "ขั้นกว่า · ขั้นสุด: slower · slowest",
+    "level": "A1"
   },
   {
     "id": "a13",
@@ -1204,7 +4861,8 @@
     "ex": "Keep your password safe.",
     "pos": "adj",
     "forms": "ขั้นกว่า · ขั้นสุด: safer · safest",
-    "note": "คำนามคือ safety"
+    "note": "คำนามคือ safety",
+    "level": "A2"
   },
   {
     "id": "a14",
@@ -1212,7 +4870,8 @@
     "th": "ระมัดระวัง",
     "ex": "Be careful with the glass boxes.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: more · most careful"
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most careful",
+    "level": "A2"
   },
   {
     "id": "a15",
@@ -1220,7 +4879,8 @@
     "th": "เป็นไปได้",
     "ex": "Is it possible to deliver today?",
     "pos": "adj",
-    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "level": "A2"
   },
   {
     "id": "a16",
@@ -1229,7 +4889,8 @@
     "ex": "Is it necessary to sign this?",
     "pos": "adj",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "note": "สะกดยาก: c ตัวเดียว s สองตัว"
+    "note": "สะกดยาก: c ตัวเดียว s สองตัว",
+    "level": "B1"
   },
   {
     "id": "a17",
@@ -1237,7 +4898,8 @@
     "th": "ชัดเจน",
     "ex": "Your explanation was very clear.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: clearer · clearest"
+    "forms": "ขั้นกว่า · ขั้นสุด: clearer · clearest",
+    "level": "A2"
   },
   {
     "id": "a18",
@@ -1245,7 +4907,8 @@
     "th": "ง่าย, เรียบง่าย",
     "ex": "The process is simple.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: simpler · simplest"
+    "forms": "ขั้นกว่า · ขั้นสุด: simpler · simplest",
+    "level": "A2"
   },
   {
     "id": "a19",
@@ -1253,7 +4916,8 @@
     "th": "ยาก",
     "ex": "This bug is difficult to find.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: more · most difficult"
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most difficult",
+    "level": "A1"
   },
   {
     "id": "a20",
@@ -1262,7 +4926,8 @@
     "ex": "Who is responsible for this shipment?",
     "pos": "adj",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "note": "responsible for + งาน: responsible for the shipment"
+    "note": "responsible for + งาน: responsible for the shipment",
+    "level": "B1"
   },
   {
     "id": "a21",
@@ -1271,7 +4936,8 @@
     "ex": "Two boxes arrived damaged.",
     "pos": "adj",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "note": "damaged = ถูกทำให้เสียหาย · damaging = ทำให้เสียหาย"
+    "note": "damaged = ถูกทำให้เสียหาย · damaging = ทำให้เสียหาย",
+    "level": "B1"
   },
   {
     "id": "a22",
@@ -1279,7 +4945,8 @@
     "th": "เต็ม",
     "ex": "The container is full.",
     "pos": "adj",
-    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "level": "A1"
   },
   {
     "id": "a23",
@@ -1287,7 +4954,8 @@
     "th": "ว่างเปล่า",
     "ex": "The warehouse is almost empty.",
     "pos": "adj",
-    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "level": "A1"
   },
   {
     "id": "a24",
@@ -1296,7 +4964,8 @@
     "ex": "What is the current status?",
     "pos": "adj",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "note": "currently = ตอนนี้"
+    "note": "currently = ตอนนี้",
+    "level": "B1"
   },
   {
     "id": "a25",
@@ -1304,7 +4973,8 @@
     "th": "สุดท้าย",
     "ex": "This is the final version.",
     "pos": "adj",
-    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "level": "A2"
   },
   {
     "id": "a26",
@@ -1312,7 +4982,8 @@
     "th": "ก่อนหน้า",
     "ex": "Please see my previous email.",
     "pos": "adj",
-    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "level": "B1"
   },
   {
     "id": "a27",
@@ -1320,7 +4991,8 @@
     "th": "ละเอียด",
     "ex": "We need a detailed report.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: more · most detailed"
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most detailed",
+    "level": "B1"
   },
   {
     "id": "a28",
@@ -1328,7 +5000,8 @@
     "th": "เชื่อถือได้",
     "ex": "They are a reliable carrier.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: more · most reliable"
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most reliable",
+    "level": "B1"
   },
   {
     "id": "a29",
@@ -1336,7 +5009,8 @@
     "th": "ยืดหยุ่น",
     "ex": "Our working hours are flexible.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: more · most flexible"
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most flexible",
+    "level": "B1"
   },
   {
     "id": "a30",
@@ -1344,7 +5018,8 @@
     "th": "แม่นยำ",
     "ex": "The data must be accurate.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: more · most accurate"
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most accurate",
+    "level": "B1"
   },
   {
     "id": "a31",
@@ -1352,7 +5027,8 @@
     "th": "มีประสิทธิภาพ",
     "ex": "The new route is more efficient.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: more · most efficient"
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most efficient",
+    "level": "B2"
   },
   {
     "id": "a32",
@@ -1361,7 +5037,8 @@
     "ex": "I'm confident we can finish on time.",
     "pos": "adj",
     "forms": "ขั้นกว่า · ขั้นสุด: more · most confident",
-    "note": "confidential (คนละคำ) = ลับ"
+    "note": "confidential (คนละคำ) = ลับ",
+    "level": "B1"
   },
   {
     "id": "a33",
@@ -1369,7 +5046,8 @@
     "th": "สุภาพ",
     "ex": "Always be polite to customers.",
     "pos": "adj",
-    "forms": "ขั้นกว่า · ขั้นสุด: more · most polite"
+    "forms": "ขั้นกว่า · ขั้นสุด: more · most polite",
+    "level": "A2"
   },
   {
     "id": "a34",
@@ -1377,7 +5055,8 @@
     "th": "ชั่วคราว",
     "ex": "This is a temporary solution.",
     "pos": "adj",
-    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "level": "B1"
   },
   {
     "id": "a35",
@@ -1385,7 +5064,8 @@
     "th": "ระหว่างประเทศ",
     "ex": "We handle international shipments.",
     "pos": "adj",
-    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "level": "B1"
   },
   {
     "id": "a36",
@@ -1393,7 +5073,8 @@
     "th": "ในท้องถิ่น, ในประเทศ",
     "ex": "We use a local supplier.",
     "pos": "adj",
-    "forms": "ไม่ค่อยใช้ขั้นกว่า"
+    "forms": "ไม่ค่อยใช้ขั้นกว่า",
+    "level": "A2"
   },
   {
     "id": "i9",
@@ -1401,7 +5082,8 @@
     "th": "เซิร์ฟเวอร์",
     "ex": "The server is down.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ servers"
+    "forms": "นับได้ · พหูพจน์ servers",
+    "level": "B1"
   },
   {
     "id": "i10",
@@ -1409,7 +5091,8 @@
     "th": "เครือข่าย",
     "ex": "Check your network connection.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ networks"
+    "forms": "นับได้ · พหูพจน์ networks",
+    "level": "B1"
   },
   {
     "id": "i11",
@@ -1417,7 +5100,8 @@
     "th": "รหัสผ่าน",
     "ex": "Never share your password.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ passwords"
+    "forms": "นับได้ · พหูพจน์ passwords",
+    "level": "A2"
   },
   {
     "id": "i12",
@@ -1426,7 +5110,8 @@
     "ex": "The login page is not working.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ logins",
-    "note": "เขียนติดกัน = คำนาม (the login page) · log in เว้นวรรค = กริยา (Please log in.)"
+    "note": "เขียนติดกัน = คำนาม (the login page) · log in เว้นวรรค = กริยา (Please log in.)",
+    "level": "A2"
   },
   {
     "id": "i13",
@@ -1435,7 +5120,8 @@
     "ex": "We make a backup every night.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ backups",
-    "note": "เขียนติดกัน = คำนาม · back up เว้นวรรค = กริยา (back up the files)"
+    "note": "เขียนติดกัน = คำนาม · back up เว้นวรรค = กริยา (back up the files)",
+    "level": "B1"
   },
   {
     "id": "i14",
@@ -1444,7 +5130,8 @@
     "ex": "The user cannot see the button.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ users",
-    "note": "a user (ไม่ใช่ an user) เพราะออกเสียงขึ้นต้นด้วย ยู"
+    "note": "a user (ไม่ใช่ an user) เพราะออกเสียงขึ้นต้นด้วย ยู",
+    "level": "A2"
   },
   {
     "id": "i15",
@@ -1452,7 +5139,8 @@
     "th": "หน้าจอที่ผู้ใช้ใช้งาน",
     "ex": "The new interface is easier to use.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ interfaces"
+    "forms": "นับได้ · พหูพจน์ interfaces",
+    "level": "B1"
   },
   {
     "id": "i16",
@@ -1461,7 +5149,8 @@
     "ex": "Our app gets the data from an API.",
     "pos": "n",
     "forms": "พหูพจน์ APIs",
-    "note": "ย่อมาจาก Application Programming Interface อ่านว่า เอ-พี-ไอ"
+    "note": "ย่อมาจาก Application Programming Interface อ่านว่า เอ-พี-ไอ",
+    "level": "B2"
   },
   {
     "id": "i17",
@@ -1469,7 +5158,8 @@
     "th": "เฟรมเวิร์ก, โครงสำเร็จรูปสำหรับเขียนโปรแกรม",
     "ex": "We use a JavaScript framework.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ frameworks"
+    "forms": "นับได้ · พหูพจน์ frameworks",
+    "level": "B2"
   },
   {
     "id": "i18",
@@ -1477,7 +5167,8 @@
     "th": "เวอร์ชัน",
     "ex": "Please update to the latest version.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ versions"
+    "forms": "นับได้ · พหูพจน์ versions",
+    "level": "A2"
   },
   {
     "id": "i19",
@@ -1486,7 +5177,8 @@
     "ex": "Can you review my code?",
     "pos": "n",
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
-    "note": "นับเป็นบรรทัด: a line of code"
+    "note": "นับเป็นบรรทัด: a line of code",
+    "level": "B1"
   },
   {
     "id": "i20",
@@ -1494,7 +5186,8 @@
     "th": "สคริปต์ (โปรแกรมสั้น ๆ)",
     "ex": "I wrote a script to import the data.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ scripts"
+    "forms": "นับได้ · พหูพจน์ scripts",
+    "level": "B1"
   },
   {
     "id": "i21",
@@ -1502,7 +5195,8 @@
     "th": "ฟังก์ชัน; หน้าที่",
     "ex": "This function returns the total price.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ functions"
+    "forms": "นับได้ · พหูพจน์ functions",
+    "level": "B1"
   },
   {
     "id": "i22",
@@ -1510,7 +5204,8 @@
     "th": "ตัวแปร",
     "ex": "Give the variable a clear name.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ variables"
+    "forms": "นับได้ · พหูพจน์ variables",
+    "level": "B1"
   },
   {
     "id": "i23",
@@ -1519,7 +5214,8 @@
     "ex": "I got an error when I saved the file.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ errors",
-    "note": "make an error (ไม่ใช่ do an error)"
+    "note": "make an error (ไม่ใช่ do an error)",
+    "level": "A2"
   },
   {
     "id": "i24",
@@ -1527,7 +5223,8 @@
     "th": "ล่ม, ค้างจนปิดไป",
     "ex": "The app crashed twice today.",
     "pos": "v",
-    "forms": "V2 / V3 crashed"
+    "forms": "V2 / V3 crashed",
+    "level": "B1"
   },
   {
     "id": "i25",
@@ -1535,7 +5232,8 @@
     "th": "หาและแก้บั๊ก",
     "ex": "I spent an hour debugging this.",
     "pos": "v",
-    "forms": "V2 / V3 debugged"
+    "forms": "V2 / V3 debugged",
+    "level": "B1"
   },
   {
     "id": "i26",
@@ -1543,7 +5241,8 @@
     "th": "ที่เก็บโค้ด (repo)",
     "ex": "The code is in our Git repository.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ repositories"
+    "forms": "นับได้ · พหูพจน์ repositories",
+    "level": "B2"
   },
   {
     "id": "i27",
@@ -1551,7 +5250,8 @@
     "th": "สาขา; branch ใน Git",
     "ex": "Create a new branch for this feature.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ branches"
+    "forms": "นับได้ · พหูพจน์ branches",
+    "level": "B1"
   },
   {
     "id": "i28",
@@ -1559,7 +5259,8 @@
     "th": "บันทึกการเปลี่ยนแปลงโค้ด",
     "ex": "Please commit your changes.",
     "pos": "v",
-    "forms": "V2 / V3 committed"
+    "forms": "V2 / V3 committed",
+    "level": "B1"
   },
   {
     "id": "i29",
@@ -1567,7 +5268,8 @@
     "th": "รวม (โค้ด)",
     "ex": "I merged the branch into main.",
     "pos": "v",
-    "forms": "V2 / V3 merged"
+    "forms": "V2 / V3 merged",
+    "level": "B1"
   },
   {
     "id": "i30",
@@ -1576,7 +5278,8 @@
     "ex": "I opened a pull request for review.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ pull requests",
-    "note": "มักย่อว่า PR"
+    "note": "มักย่อว่า PR",
+    "level": "B1"
   },
   {
     "id": "i31",
@@ -1584,7 +5287,8 @@
     "th": "การตรวจโค้ด",
     "ex": "The code review found two bugs.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ code reviews"
+    "forms": "นับได้ · พหูพจน์ code reviews",
+    "level": "B1"
   },
   {
     "id": "i32",
@@ -1592,7 +5296,8 @@
     "th": "นักพัฒนา",
     "ex": "She is a backend developer.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ developers"
+    "forms": "นับได้ · พหูพจน์ developers",
+    "level": "B1"
   },
   {
     "id": "i33",
@@ -1600,7 +5305,8 @@
     "th": "ส่วนหน้าที่ผู้ใช้เห็น",
     "ex": "I work on the frontend.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ frontends"
+    "forms": "นับได้ · พหูพจน์ frontends",
+    "level": "B1"
   },
   {
     "id": "i34",
@@ -1608,7 +5314,8 @@
     "th": "ส่วนหลังบ้าน (server, database)",
     "ex": "The backend handles the payments.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ backends"
+    "forms": "นับได้ · พหูพจน์ backends",
+    "level": "B1"
   },
   {
     "id": "i35",
@@ -1616,7 +5323,8 @@
     "th": "คลาวด์",
     "ex": "Our data is stored in the cloud.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ clouds"
+    "forms": "นับได้ · พหูพจน์ clouds",
+    "level": "B1"
   },
   {
     "id": "i36",
@@ -1624,7 +5332,8 @@
     "th": "ความปลอดภัย",
     "ex": "Security is our top priority.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B1"
   },
   {
     "id": "i37",
@@ -1632,7 +5341,8 @@
     "th": "สิทธิ์การใช้งาน",
     "ex": "You don't have permission to edit this file.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ permissions"
+    "forms": "นับได้ · พหูพจน์ permissions",
+    "level": "B1"
   },
   {
     "id": "i38",
@@ -1640,7 +5350,8 @@
     "th": "สิทธิ์เข้าถึง",
     "ex": "Can you give me access to the database?",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B1"
   },
   {
     "id": "i39",
@@ -1648,7 +5359,8 @@
     "th": "เบราว์เซอร์",
     "ex": "Please clear your browser cache.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ browsers"
+    "forms": "นับได้ · พหูพจน์ browsers",
+    "level": "A2"
   },
   {
     "id": "i40",
@@ -1656,7 +5368,8 @@
     "th": "ดาวน์โหลด",
     "ex": "You can download the report here.",
     "pos": "v",
-    "forms": "V2 / V3 downloaded"
+    "forms": "V2 / V3 downloaded",
+    "level": "A2"
   },
   {
     "id": "i41",
@@ -1664,7 +5377,8 @@
     "th": "อัปโหลด",
     "ex": "Upload the file to the shared folder.",
     "pos": "v",
-    "forms": "V2 / V3 uploaded"
+    "forms": "V2 / V3 uploaded",
+    "level": "A2"
   },
   {
     "id": "i42",
@@ -1672,7 +5386,8 @@
     "th": "การติดตั้ง",
     "ex": "The installation takes ten minutes.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ installations"
+    "forms": "นับได้ · พหูพจน์ installations",
+    "level": "B1"
   },
   {
     "id": "i43",
@@ -1680,7 +5395,8 @@
     "th": "การตั้งค่า",
     "ex": "Check the server configuration.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ configurations"
+    "forms": "นับได้ · พหูพจน์ configurations",
+    "level": "B2"
   },
   {
     "id": "i44",
@@ -1688,7 +5404,8 @@
     "th": "สภาพแวดล้อม (dev / test / production)",
     "ex": "This bug only happens in the test environment.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ environments"
+    "forms": "นับได้ · พหูพจน์ environments",
+    "level": "B2"
   },
   {
     "id": "i45",
@@ -1697,7 +5414,8 @@
     "ex": "Check the error log first.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ logs",
-    "note": "เป็นกริยาด้วย: log the error · log in = เข้าสู่ระบบ"
+    "note": "เป็นกริยาด้วย: log the error · log in = เข้าสู่ระบบ",
+    "level": "B1"
   },
   {
     "id": "i46",
@@ -1705,7 +5423,8 @@
     "th": "ประสิทธิภาพ, ความเร็ว",
     "ex": "We improved the page performance.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B1"
   },
   {
     "id": "i47",
@@ -1713,7 +5432,8 @@
     "th": "คำสั่งดึงข้อมูล",
     "ex": "This database query is too slow.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ queries"
+    "forms": "นับได้ · พหูพจน์ queries",
+    "level": "B2"
   },
   {
     "id": "i48",
@@ -1721,7 +5441,8 @@
     "th": "รอบการทำงาน (มักเป็น 2 สัปดาห์)",
     "ex": "We will finish it in this sprint.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ sprints"
+    "forms": "นับได้ · พหูพจน์ sprints",
+    "level": "B1"
   },
   {
     "id": "i49",
@@ -1729,7 +5450,8 @@
     "th": "รายการงานหรือปัญหาในระบบติดตามงาน",
     "ex": "Please create a ticket for this bug.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ tickets"
+    "forms": "นับได้ · พหูพจน์ tickets",
+    "level": "B1"
   },
   {
     "id": "i50",
@@ -1737,7 +5459,8 @@
     "th": "ผู้มีส่วนได้ส่วนเสีย",
     "ex": "We will show the demo to the stakeholders.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ stakeholders"
+    "forms": "นับได้ · พหูพจน์ stakeholders",
+    "level": "B2"
   },
   {
     "id": "i51",
@@ -1745,7 +5468,8 @@
     "th": "ต้นแบบ",
     "ex": "We built a prototype in one week.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ prototypes"
+    "forms": "นับได้ · พหูพจน์ prototypes",
+    "level": "B1"
   },
   {
     "id": "i52",
@@ -1753,7 +5477,8 @@
     "th": "เอกสารประกอบ",
     "ex": "Please read the documentation first.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B1"
   },
   {
     "id": "i53",
@@ -1761,7 +5486,8 @@
     "th": "การบำรุงรักษา",
     "ex": "The system is down for maintenance.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B2"
   },
   {
     "id": "l13",
@@ -1769,7 +5495,8 @@
     "th": "สินค้าที่ขนส่ง",
     "ex": "The cargo is on the ship.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B1"
   },
   {
     "id": "l14",
@@ -1777,7 +5504,8 @@
     "th": "พาเลท",
     "ex": "We need ten pallets for this order.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ pallets"
+    "forms": "นับได้ · พหูพจน์ pallets",
+    "level": "B1"
   },
   {
     "id": "l15",
@@ -1785,7 +5513,8 @@
     "th": "รถยก",
     "ex": "Only trained staff can drive the forklift.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ forklifts"
+    "forms": "นับได้ · พหูพจน์ forklifts",
+    "level": "B1"
   },
   {
     "id": "l16",
@@ -1794,7 +5523,8 @@
     "ex": "The truck leaves at 8 am.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ trucks",
-    "note": "แบบอังกฤษเรียก lorry"
+    "note": "แบบอังกฤษเรียก lorry",
+    "level": "A2"
   },
   {
     "id": "l17",
@@ -1802,7 +5532,8 @@
     "th": "รถพ่วง",
     "ex": "The trailer is full.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ trailers"
+    "forms": "นับได้ · พหูพจน์ trailers",
+    "level": "B1"
   },
   {
     "id": "l18",
@@ -1810,7 +5541,8 @@
     "th": "เรือ (เรือสินค้า)",
     "ex": "The vessel will arrive on Monday.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ vessels"
+    "forms": "นับได้ · พหูพจน์ vessels",
+    "level": "B2"
   },
   {
     "id": "l19",
@@ -1818,7 +5550,8 @@
     "th": "เส้นทาง",
     "ex": "This route is faster.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ routes"
+    "forms": "นับได้ · พหูพจน์ routes",
+    "level": "A2"
   },
   {
     "id": "l20",
@@ -1826,7 +5559,8 @@
     "th": "ปลายทาง",
     "ex": "What is the final destination?",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ destinations"
+    "forms": "นับได้ · พหูพจน์ destinations",
+    "level": "A2"
   },
   {
     "id": "l21",
@@ -1834,7 +5568,8 @@
     "th": "ต้นทาง",
     "ex": "The port of origin is Shanghai.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ origins"
+    "forms": "นับได้ · พหูพจน์ origins",
+    "level": "B2"
   },
   {
     "id": "l22",
@@ -1842,7 +5577,8 @@
     "th": "ผู้รับสินค้า",
     "ex": "Please check the consignee's name.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ consignees"
+    "forms": "นับได้ · พหูพจน์ consignees",
+    "level": "B2"
   },
   {
     "id": "l23",
@@ -1851,7 +5587,8 @@
     "ex": "The shipper sent the documents.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ shippers",
-    "note": "shipper = ผู้ส่งสินค้า ไม่ใช่บริษัทเรือ (บริษัทเรือคือ carrier)"
+    "note": "shipper = ผู้ส่งสินค้า ไม่ใช่บริษัทเรือ (บริษัทเรือคือ carrier)",
+    "level": "B1"
   },
   {
     "id": "l24",
@@ -1860,7 +5597,8 @@
     "ex": "We need the original bill of lading.",
     "pos": "n",
     "forms": "พหูพจน์ bills of lading",
-    "note": "ย่อว่า B/L · พหูพจน์เติม s ที่ bill"
+    "note": "ย่อว่า B/L · พหูพจน์เติม s ที่ bill",
+    "level": "B2"
   },
   {
     "id": "l25",
@@ -1868,7 +5606,8 @@
     "th": "ใบรายการบรรจุสินค้า",
     "ex": "The packing list shows 20 boxes.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ packing lists"
+    "forms": "นับได้ · พหูพจน์ packing lists",
+    "level": "B1"
   },
   {
     "id": "l26",
@@ -1877,7 +5616,8 @@
     "ex": "Please send us a purchase order.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ purchase orders",
-    "note": "ย่อว่า PO"
+    "note": "ย่อว่า PO",
+    "level": "B1"
   },
   {
     "id": "l27",
@@ -1885,7 +5625,8 @@
     "th": "ใบเสนอราคา",
     "ex": "We received three quotations.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ quotations"
+    "forms": "นับได้ · พหูพจน์ quotations",
+    "level": "B1"
   },
   {
     "id": "l28",
@@ -1894,7 +5635,8 @@
     "ex": "This item is out of stock.",
     "pos": "n",
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
-    "note": "in stock = มีของ · out of stock = ของหมด"
+    "note": "in stock = มีของ · out of stock = ของหมด",
+    "level": "A2"
   },
   {
     "id": "l29",
@@ -1902,7 +5644,8 @@
     "th": "สินค้าคงคลัง, รายการสต็อก",
     "ex": "We count the inventory every month.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B1"
   },
   {
     "id": "l30",
@@ -1910,7 +5653,8 @@
     "th": "ห่วงโซ่อุปทาน",
     "ex": "The supply chain was affected by the storm.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ supply chains"
+    "forms": "นับได้ · พหูพจน์ supply chains",
+    "level": "B2"
   },
   {
     "id": "l31",
@@ -1918,7 +5662,8 @@
     "th": "ระยะเวลาตั้งแต่สั่งจนได้ของ",
     "ex": "The lead time is four weeks.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ lead times"
+    "forms": "นับได้ · พหูพจน์ lead times",
+    "level": "B2"
   },
   {
     "id": "l32",
@@ -1926,7 +5671,8 @@
     "th": "การมารับสินค้า",
     "ex": "The pickup is at 2 pm.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ pickups"
+    "forms": "นับได้ · พหูพจน์ pickups",
+    "level": "A2"
   },
   {
     "id": "l33",
@@ -1935,7 +5681,8 @@
     "ex": "Delivery takes three days.",
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ deliveries",
-    "note": "กริยาคือ deliver"
+    "note": "กริยาคือ deliver",
+    "level": "A2"
   },
   {
     "id": "l34",
@@ -1943,7 +5690,8 @@
     "th": "ส่งออกไป (จากคลัง)",
     "ex": "We dispatched the goods this morning.",
     "pos": "v",
-    "forms": "V2 / V3 dispatched"
+    "forms": "V2 / V3 dispatched",
+    "level": "B1"
   },
   {
     "id": "l35",
@@ -1951,7 +5699,8 @@
     "th": "การขนขึ้น",
     "ex": "Loading starts at 6 am.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B1"
   },
   {
     "id": "l36",
@@ -1959,7 +5708,8 @@
     "th": "การขนลง",
     "ex": "Unloading takes about an hour.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B1"
   },
   {
     "id": "l37",
@@ -1967,7 +5717,8 @@
     "th": "การตรวจสอบ",
     "ex": "Customs asked for an inspection.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ inspections"
+    "forms": "นับได้ · พหูพจน์ inspections",
+    "level": "B1"
   },
   {
     "id": "l38",
@@ -1975,7 +5726,8 @@
     "th": "การผ่านพิธีการศุลกากร",
     "ex": "Customs clearance takes two days.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B2"
   },
   {
     "id": "l39",
@@ -1983,7 +5735,8 @@
     "th": "ภาษีนำเข้า",
     "ex": "Who pays the import duty?",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ import duties"
+    "forms": "นับได้ · พหูพจน์ import duties",
+    "level": "B2"
   },
   {
     "id": "l40",
@@ -1991,7 +5744,8 @@
     "th": "อัตราภาษีศุลกากร",
     "ex": "The new tariff increased our costs.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ tariffs"
+    "forms": "นับได้ · พหูพจน์ tariffs",
+    "level": "B2"
   },
   {
     "id": "l41",
@@ -1999,7 +5753,8 @@
     "th": "ใบขนสินค้า, การสำแดง",
     "ex": "Please check the customs declaration.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ declarations"
+    "forms": "นับได้ · พหูพจน์ declarations",
+    "level": "B2"
   },
   {
     "id": "l42",
@@ -2007,7 +5762,8 @@
     "th": "ใบรับรองถิ่นกำเนิดสินค้า",
     "ex": "The buyer needs a certificate of origin.",
     "pos": "n",
-    "forms": "พหูพจน์ certificates of origin"
+    "forms": "พหูพจน์ certificates of origin",
+    "level": "B2"
   },
   {
     "id": "l43",
@@ -2015,7 +5771,8 @@
     "th": "ประกันภัย",
     "ex": "Is insurance included in the price?",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "A2"
   },
   {
     "id": "l44",
@@ -2024,7 +5781,8 @@
     "ex": "Please take photos of the damage.",
     "pos": "n",
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
-    "note": "damages (มี s) = ค่าเสียหายตามกฎหมาย"
+    "note": "damages (มี s) = ค่าเสียหายตามกฎหมาย",
+    "level": "A2"
   },
   {
     "id": "l45",
@@ -2032,7 +5790,8 @@
     "th": "การเคลม, เรียกร้องค่าเสียหาย",
     "ex": "We made a claim with the insurance company.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ claims"
+    "forms": "นับได้ · พหูพจน์ claims",
+    "level": "B1"
   },
   {
     "id": "l46",
@@ -2040,7 +5799,8 @@
     "th": "น้ำหนัก",
     "ex": "What is the total weight?",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ weights"
+    "forms": "นับได้ · พหูพจน์ weights",
+    "level": "A2"
   },
   {
     "id": "l47",
@@ -2048,7 +5808,8 @@
     "th": "ปริมาตร, ปริมาณ",
     "ex": "The volume is 30 cubic meters.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ volumes"
+    "forms": "นับได้ · พหูพจน์ volumes",
+    "level": "B1"
   },
   {
     "id": "l48",
@@ -2056,7 +5817,8 @@
     "th": "ฉลาก",
     "ex": "Put a label on each box.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ labels"
+    "forms": "นับได้ · พหูพจน์ labels",
+    "level": "A2"
   },
   {
     "id": "l49",
@@ -2064,7 +5826,8 @@
     "th": "บาร์โค้ด",
     "ex": "Scan the barcode before loading.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ barcodes"
+    "forms": "นับได้ · พหูพจน์ barcodes",
+    "level": "B1"
   },
   {
     "id": "l50",
@@ -2072,7 +5835,8 @@
     "th": "ซีล (ตราปิดตู้)",
     "ex": "Check the container seal number.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ seals"
+    "forms": "นับได้ · พหูพจน์ seals",
+    "level": "B1"
   },
   {
     "id": "l51",
@@ -2080,7 +5844,8 @@
     "th": "บริษัทตัวแทนจัดการขนส่ง (ฟอร์เวิร์ดเดอร์)",
     "ex": "Our freight forwarder booked the space.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ freight forwarders"
+    "forms": "นับได้ · พหูพจน์ freight forwarders",
+    "level": "B2"
   },
   {
     "id": "l52",
@@ -2088,7 +5853,8 @@
     "th": "การขนส่งทางอากาศ",
     "ex": "Air freight is fast but expensive.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "A2"
   },
   {
     "id": "l53",
@@ -2096,7 +5862,8 @@
     "th": "การขนส่งทางเรือ",
     "ex": "Sea freight takes about three weeks.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "A2"
   },
   {
     "id": "l54",
@@ -2104,7 +5871,8 @@
     "th": "ระหว่างการขนส่ง",
     "ex": "The goods are in transit.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B1"
   },
   {
     "id": "l55",
@@ -2112,7 +5880,8 @@
     "th": "การถ่ายลำ (เปลี่ยนเรือกลางทาง)",
     "ex": "There is a transshipment in Singapore.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B2"
   },
   {
     "id": "l56",
@@ -2120,7 +5889,8 @@
     "th": "ค่าเสียเวลาเก็บตู้เกินกำหนด",
     "ex": "We paid demurrage because of the delay.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B2"
   },
   {
     "id": "l57",
@@ -2128,7 +5898,8 @@
     "th": "เวลาปิดรับสินค้า",
     "ex": "The cut-off time is Thursday at noon.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ cut-off times"
+    "forms": "นับได้ · พหูพจน์ cut-off times",
+    "level": "B1"
   },
   {
     "id": "l58",
@@ -2137,7 +5908,8 @@
     "ex": "Which Incoterms do you use?",
     "pos": "n",
     "forms": "ใช้รูปมี s (ชื่อชุดกฎ)",
-    "note": "เช่น FOB = ผู้ซื้อรับผิดชอบตั้งแต่สินค้าขึ้นเรือ · CIF = ผู้ขายจ่ายค่าเรือและค่าประกันให้"
+    "note": "เช่น FOB = ผู้ซื้อรับผิดชอบตั้งแต่สินค้าขึ้นเรือ · CIF = ผู้ขายจ่ายค่าเรือและค่าประกันให้",
+    "level": "B2"
   },
   {
     "id": "l59",
@@ -2145,7 +5917,8 @@
     "th": "ท่าขนถ่ายสินค้า",
     "ex": "The truck is waiting at dock 3.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ docks"
+    "forms": "นับได้ · พหูพจน์ docks",
+    "level": "B1"
   },
   {
     "id": "l60",
@@ -2153,7 +5926,8 @@
     "th": "บริการส่งด่วน",
     "ex": "We sent the samples by courier.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ couriers"
+    "forms": "นับได้ · พหูพจน์ couriers",
+    "level": "B1"
   },
   {
     "id": "l61",
@@ -2161,7 +5935,8 @@
     "th": "หลักฐานการส่งมอบ (POD)",
     "ex": "Please send me the proof of delivery.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B2"
   },
   {
     "id": "l62",
@@ -2169,7 +5944,8 @@
     "th": "บรรจุภัณฑ์",
     "ex": "The packaging was damaged.",
     "pos": "n",
-    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)"
+    "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
+    "level": "B1"
   },
   {
     "id": "e1",
@@ -2177,7 +5953,8 @@
     "th": "กรุณาดูไฟล์แนบ",
     "ex": "Please find attached the invoice for May.",
     "pos": "phrase",
-    "note": "ตามด้วยชื่อเอกสาร: Please find attached the invoice."
+    "note": "ตามด้วยชื่อเอกสาร: Please find attached the invoice.",
+    "level": "B1"
   },
   {
     "id": "e2",
@@ -2185,7 +5962,8 @@
     "th": "หวังว่าจะได้รับการติดต่อกลับ",
     "ex": "I look forward to hearing from you.",
     "pos": "phrase",
-    "note": "ใช้ปิดท้ายอีเมล · หลัง look forward to ใช้ V-ing"
+    "note": "ใช้ปิดท้ายอีเมล · หลัง look forward to ใช้ V-ing",
+    "level": "B1"
   },
   {
     "id": "e3",
@@ -2193,7 +5971,8 @@
     "th": "โดยเร็วที่สุด (ASAP)",
     "ex": "Please reply as soon as possible.",
     "pos": "phrase",
-    "note": "ย่อว่า ASAP ฟังเร่ง ใช้กับคนที่สนิทหรือเรื่องด่วนจริง"
+    "note": "ย่อว่า ASAP ฟังเร่ง ใช้กับคนที่สนิทหรือเรื่องด่วนจริง",
+    "level": "A2"
   },
   {
     "id": "e4",
@@ -2201,35 +5980,40 @@
     "th": "รบกวนช่วย...ได้ไหม",
     "ex": "Could you please check the address?",
     "pos": "phrase",
-    "note": "ตามด้วย V1: Could you please send it?"
+    "note": "ตามด้วย V1: Could you please send it?",
+    "level": "A2"
   },
   {
     "id": "e5",
     "en": "Sorry for the late reply",
     "th": "ขอโทษที่ตอบช้า",
     "ex": "Sorry for the late reply.",
-    "pos": "phrase"
+    "pos": "phrase",
+    "level": "A2"
   },
   {
     "id": "e6",
     "en": "Please let me know",
     "th": "กรุณาแจ้งให้ทราบ",
     "ex": "Please let me know if you have any questions.",
-    "pos": "phrase"
+    "pos": "phrase",
+    "level": "A2"
   },
   {
     "id": "e7",
     "en": "on behalf of",
     "th": "ในนามของ",
     "ex": "I'm writing on behalf of my manager.",
-    "pos": "phrase"
+    "pos": "phrase",
+    "level": "B1"
   },
   {
     "id": "e8",
     "en": "in charge of",
     "th": "รับผิดชอบ, ดูแล",
     "ex": "Who is in charge of this project?",
-    "pos": "phrase"
+    "pos": "phrase",
+    "level": "B1"
   },
   {
     "id": "e9",
@@ -2238,7 +6022,8 @@
     "ex": "I'm following up on my previous email.",
     "pos": "v",
     "forms": "V2 / V3 followed up",
-    "note": "กริยาวลี (phrasal verb) · follow up on + เรื่อง"
+    "note": "กริยาวลี (phrasal verb) · follow up on + เรื่อง",
+    "level": "B1"
   },
   {
     "id": "e10",
@@ -2247,21 +6032,24 @@
     "ex": "I'll get back to you tomorrow.",
     "pos": "v",
     "forms": "ไม่ปกติ · V2 got back to · V3 got back to",
-    "note": "กริยาวลี (phrasal verb) · get back to + คน"
+    "note": "กริยาวลี (phrasal verb) · get back to + คน",
+    "level": "B1"
   },
   {
     "id": "e11",
     "en": "as discussed",
     "th": "ตามที่ได้คุยกันไว้",
     "ex": "As discussed, here is the new schedule.",
-    "pos": "phrase"
+    "pos": "phrase",
+    "level": "B1"
   },
   {
     "id": "e12",
     "en": "for your reference",
     "th": "เพื่อใช้อ้างอิง",
     "ex": "I attached the old contract for your reference.",
-    "pos": "phrase"
+    "pos": "phrase",
+    "level": "B1"
   },
   {
     "id": "e13",
@@ -2269,7 +6057,8 @@
     "th": "ขอแสดงความนับถือ (ลงท้ายอีเมล)",
     "ex": "Best regards, Anna",
     "pos": "phrase",
-    "note": "ใช้บ่อยที่สุดในอีเมลงาน ทางการพอดี ๆ"
+    "note": "ใช้บ่อยที่สุดในอีเมลงาน ทางการพอดี ๆ",
+    "level": "A2"
   },
   {
     "id": "e14",
@@ -2277,7 +6066,8 @@
     "th": "วาระการประชุม",
     "ex": "Here is the agenda for tomorrow.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ agendas"
+    "forms": "นับได้ · พหูพจน์ agendas",
+    "level": "B1"
   },
   {
     "id": "e15",
@@ -2285,7 +6075,8 @@
     "th": "บันทึกการประชุม",
     "ex": "I'll send the meeting minutes after lunch.",
     "pos": "n",
-    "forms": "ใช้รูปมี s เสมอ"
+    "forms": "ใช้รูปมี s เสมอ",
+    "level": "B1"
   },
   {
     "id": "e16",
@@ -2293,34 +6084,39 @@
     "th": "งานที่ต้องทำต่อหลังประชุม",
     "ex": "We have three action items.",
     "pos": "n",
-    "forms": "นับได้ · พหูพจน์ action items"
+    "forms": "นับได้ · พหูพจน์ action items",
+    "level": "B1"
   },
   {
     "id": "e17",
     "en": "Let's move on",
     "th": "ไปหัวข้อต่อไปกัน",
     "ex": "OK, let's move on to the next point.",
-    "pos": "phrase"
+    "pos": "phrase",
+    "level": "B1"
   },
   {
     "id": "e18",
     "en": "Could you repeat that?",
     "th": "ช่วยพูดอีกครั้งได้ไหม",
     "ex": "Sorry, could you repeat that?",
-    "pos": "phrase"
+    "pos": "phrase",
+    "level": "A2"
   },
   {
     "id": "e19",
     "en": "I'm not sure I follow",
     "th": "ไม่แน่ใจว่าเข้าใจ (ตามไม่ทัน)",
     "ex": "Sorry, I'm not sure I follow.",
-    "pos": "phrase"
+    "pos": "phrase",
+    "level": "B1"
   },
   {
     "id": "e20",
     "en": "to sum up",
     "th": "สรุปคือ",
     "ex": "To sum up, we need two more trucks.",
-    "pos": "phrase"
+    "pos": "phrase",
+    "level": "B1"
   }
 ]
