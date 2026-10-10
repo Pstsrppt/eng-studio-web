@@ -36,10 +36,9 @@ export function lookup(raw: string): Gloss | undefined {
   return undefined;
 }
 
-/** True when a word has a stored meaning, so the UI can underline it. */
+/** True when tapping the word will show a meaning, so the UI can underline it. */
 export function isGlossed(raw: string) {
-  const w = raw.toLowerCase().replace(/[^a-z']/g, "");
-  return Boolean(GLOSS[w] || GLOSS[w.replace(/s$/, "")]);
+  return lookup(raw) !== undefined;
 }
 
 export function normalize(s: string) {

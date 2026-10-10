@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState } from "react";
 import { continueWithEmail, continueWithGoogle, type AuthState } from "@/app/actions";
 
@@ -32,7 +33,10 @@ export function LoginForm({ configured, google }: { configured: boolean; google:
           <input id="email" name="email" type="email" required autoComplete="email" className="input" placeholder="you@example.com" />
         </label>
         <label className="flex flex-col gap-1.5 text-sm font-medium">
-          รหัสผ่าน
+          <span className="flex items-baseline justify-between">
+            รหัสผ่าน
+            <Link href="/forgot-password" className="text-xs font-normal text-brand underline underline-offset-2">ลืมรหัสผ่าน?</Link>
+          </span>
           <input id="password" name="password" type="password" required minLength={8} autoComplete="current-password" className="input" placeholder="อย่างน้อย 8 ตัวอักษร" />
         </label>
         {state.error && <p className="text-sm text-bad" role="alert">{state.error}</p>}

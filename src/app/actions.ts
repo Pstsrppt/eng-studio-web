@@ -60,6 +60,33 @@ export async function continueWithGoogle(): Promise<AuthState> {
   redirect(data.url);
 }
 
+/** Emails a reset link. The link signs the learner in and lands on /reset-password. */
+export async function requestPasswordReset(_: AuthState, form: FormData): Promise<AuthState> {
+  if (!hasSupabase) return { error: NOT_CONFIGURED };
+  const email = String(form.get("email")).trim();
+  const supabase = await createClient();
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${await origin()}/auth/callback?next=/reset-password`,
+  });
+  if (error?.code === "over_email_send_rate_limit") return { error: "ขอลิงก์บ่อยเกินไป รอสักครู่แล้วลองใหม่" };
+  if (error) return { error: error.message };
+  // Same answer whether or not the account exists, so the form can't be used to find accounts.
+  return { info: `ถ้ามีบัญชีของ ${email} ระบบส่งลิงก์ตั้งรหัสผ่านใหม่ไปแล้ว เปิดอีเมลในเครื่องนี้แล้วกดลิงก์` };
+}
+
+export async function updatePassword(_: AuthState, form: FormData): Promise<AuthState> {
+  if (!hasSupabase) return { error: NOT_CONFIGURED };
+  const password = String(form.get("password"));
+  if (password.length < 8) return { error: "รหัสผ่านต้องยาวอย่างน้อย 8 ตัวอักษร" };
+  if (password !== String(form.get("confirm"))) return { error: "รหัสผ่านสองช่องไม่ตรงกัน" };
+  const supabase = await createClient();
+  const { error } = await supabase.auth.updateUser({ password });
+  if (error?.code === "same_password") return { error: "รหัสผ่านใหม่ต้องไม่ซ้ำกับรหัสเดิม" };
+  if (error?.code === "weak_password") return { error: "รหัสผ่านง่ายเกินไป ลองผสมตัวอักษรกับตัวเลข" };
+  if (error) return { error: "ลิงก์หมดอายุหรือใช้ไปแล้ว ขอลิงก์ใหม่อีกครั้ง" };
+  redirect("/");
+}
+
 export async function signOut() {
   if (hasSupabase) {
     const supabase = await createClient();
