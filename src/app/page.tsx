@@ -138,14 +138,14 @@ function Task(props: {
   const { tone, kind, title, meta, done, check, href, cta, external } = props;
   return (
     <div className={"flex min-h-40 flex-col gap-2.5 rounded-[10px] border p-4 " + (done ? "border-[#c6ddd2] bg-brand-soft" : "border-line bg-surface")}>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-2">
         {check ?? (
           <span aria-label={done ? "ทำแล้ว" : "ยังไม่ได้ทำ"}
-            className={"grid size-5 place-items-center rounded-[5px] border-[1.5px] text-[11px] text-white " + (done ? "border-brand bg-brand" : "border-[#b9c6c0]")}>
+            className={"grid size-5 shrink-0 place-items-center rounded-[5px] border-[1.5px] text-[11px] text-white " + (done ? "border-brand bg-brand" : "border-[#b9c6c0]")}>
             {done ? "✓" : ""}
           </span>
         )}
-        <span className={"font-mono text-[10.5px] tracking-[0.08em] " + tone}>{kind} · 15 นาที</span>
+        <span className={"truncate whitespace-nowrap font-mono text-[10.5px] tracking-[0.08em] " + tone} title="15 นาที">{kind}</span>
       </div>
       <h3 className="font-sans text-[14.5px] font-semibold leading-snug">{title}</h3>
       <p className="line-clamp-2 text-xs text-muted">{meta}</p>

@@ -59,6 +59,13 @@
   .prose-lesson .steps ol { @apply mb-0; }
   .prose-lesson code { @apply rounded bg-[#eef2ef] px-1 font-mono text-[13px]; }
   .prose-lesson s { @apply text-bad decoration-[1.5px]; }
+  /* English the learner can tap to hear (marked by PlayableProse). */
+  .prose-lesson .say { @apply cursor-pointer rounded-sm underline decoration-[#7fa394] decoration-dotted underline-offset-4 transition-colors hover:bg-brand-soft focus-visible:bg-brand-soft; }
+  .prose-lesson .ex.say { @apply relative pr-10 no-underline hover:bg-[#d5e8df]; }
+  .prose-lesson .ex.say::after {
+    content: ""; position: absolute; right: 0.75rem; top: 0.7rem; width: 1rem; height: 1rem; background: var(--color-brand); opacity: 0.7;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 6h3l4-3v10L5 10H2z'/%3E%3Cpath d='M11 5.5a3.5 3.5 0 0 1 0 5' stroke='black' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
   .tabular { font-variant-numeric: tabular-nums; }
 }
 

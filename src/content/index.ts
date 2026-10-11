@@ -33,18 +33,35 @@ export type Lesson = {
 };
 
 export type VerbGroup = "REG" | "AAA" | "ABB" | "ABC" | "ABA";
-export type Verb = { id: string; v1: string; v2: string; v3: string; th: string; g: VerbGroup };
+export type Verb = {
+  id: string;
+  v1: string;
+  v2: string;
+  v3: string;
+  th: string;
+  g: VerbGroup;
+  level?: Level;
+  /** Example sentences using V2 and V3, with Thai. */
+  ex2?: string;
+  ex2Th?: string;
+  ex3?: string;
+  ex3Th?: string;
+};
 export type Word = {
   id: string;
   en: string;
   th: string;
   ex?: string;
+  /** Thai translation of `ex`. */
+  exTh?: string;
   pos?: Pos;
   level?: Level;
   /** Plural or countability for nouns, V2/V3 for verbs, comparative for adjectives. */
   forms?: string;
   /** A short tip about a common mistake or a related word. */
   note?: string;
+  /** Lucide icon name for the word's meaning (see components/word-icons.ts). */
+  icon?: string;
 };
 
 export type Deck = { id: string; name: string; pre: string };

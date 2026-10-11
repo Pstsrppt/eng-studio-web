@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useState, useTransition } from "react";
 import { saveAttempt } from "@/app/actions";
-import type { Lesson, PracticeItem } from "@/content";
+import type { Lesson, PracticeItem, QuizItem } from "@/content";
 import { normalize } from "@/content/lookup";
+import { PlayableProse } from "./playable-prose";
 import { Sentence } from "./sentence";
 
 const TABS = [
@@ -55,7 +56,7 @@ function Theory({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
       <section className="card p-5 sm:p-6">
         <p className="eyebrow mb-2">ทำไมต้องรู้</p>
         <p className="mb-4 text-[15px] leading-7">{lesson.why}</p>
-        <div className="prose-lesson" dangerouslySetInnerHTML={{ __html: lesson.theory }} />
+        <PlayableProse html={lesson.theory} className="prose-lesson" />
         <p className="mt-5 border-t border-line pt-4 text-sm text-muted">
           เจอคำที่ไม่คุ้น เช่น กริยาช่วย บุพบท V3 นับไม่ได้?{" "}
           <Link href="/guide" className="font-semibold text-brand underline underline-offset-2">เปิดคู่มือ</Link>
@@ -205,6 +206,8 @@ function PracticeCard({ n, item }: { n: number; item: PracticeItem }) {
 }
 
 function Quiz({ lesson, next, passMark }: { lesson: Lesson; next?: { href: string; title: string }; passMark: number }) {
+  // Retakes reshuffle the questions and options, so the answers can't be learned by position.
+  const [quiz, setQuiz] = useState(lesson.quiz);
   const [answers, setAnswers] = useState<(number | null)[]>(() => lesson.quiz.map(() => null));
   const [done, setDone] = useState<{ score: number; saved: boolean } | null>(null);
   const [error, setError] = useState(false);
@@ -212,9 +215,9 @@ function Quiz({ lesson, next, passMark }: { lesson: Lesson; next?: { href: strin
   const allAnswered = answers.every((a) => a !== null);
 
   function submit() {
-    const right = lesson.quiz.filter((q, i) => answers[i] === q.a).length;
-    const score = Math.round((right / lesson.quiz.length) * 100);
-    const wrongs = lesson.quiz
+    const right = quiz.filter((q, i) => answers[i] === q.a).length;
+    const score = Math.round((right / quiz.length) * 100);
+    const wrongs = quiz
       .map((q, i) => ({ q, a: answers[i] }))
       .filter(({ q, a }) => a !== q.a)
       .map(({ q, a }) => ({ wrong: q.o[a ?? 0], correct: q.o[q.a], note: q.why }));
@@ -247,15 +250,15 @@ function Quiz({ lesson, next, passMark }: { lesson: Lesson; next?: { href: strin
           {passed && next ? (
             <Link href={next.href} className="btn">บทถัดไป: {next.title} →</Link>
           ) : (
-            <button type="button" className="btn-ghost" onClick={() => { setAnswers(lesson.quiz.map(() => null)); setDone(null); }}>ทำใหม่</button>
+            <button type="button" className="btn-ghost" onClick={() => { setQuiz(shuffleQuiz(lesson.quiz)); setAnswers(lesson.quiz.map(() => null)); setDone(null); }}>ทำใหม่</button>
           )}
         </div>
       )}
 
       <ol className="grid gap-4 lg:grid-cols-2">
-        {lesson.quiz.map((q, i) => (
+        {quiz.map((q, i) => (
           <li key={i} className="card flex flex-col gap-3 p-5">
-            <p className="eyebrow">ข้อ {i + 1} จาก {lesson.quiz.length}</p>
+            <p className="eyebrow">ข้อ {i + 1} จาก {quiz.length}</p>
             <p className="text-[15px] font-medium">{q.q}</p>
             <div className="flex flex-col gap-2" role="radiogroup" aria-label={`ข้อ ${i + 1}`}>
               {q.o.map((o, j) => {
@@ -278,9 +281,26 @@ function Quiz({ lesson, next, passMark }: { lesson: Lesson; next?: { href: strin
 
       {!done && (
         <button type="button" className="btn self-start" disabled={!allAnswered || pending} onClick={submit}>
-          {pending ? "กำลังตรวจ…" : allAnswered ? "ส่งคำตอบ" : `ตอบให้ครบก่อน (${answers.filter((a) => a !== null).length}/${lesson.quiz.length})`}
+          {pending ? "กำลังตรวจ…" : allAnswered ? "ส่งคำตอบ" : `ตอบให้ครบก่อน (${answers.filter((a) => a !== null).length}/${quiz.length})`}
         </button>
       )}
     </div>
   );
+}
+
+function shuffled<T>(list: T[]): T[] {
+  const out = [...list];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+/** New question order, and new option order inside each question (the answer index follows its option). */
+function shuffleQuiz(quiz: QuizItem[]): QuizItem[] {
+  return shuffled(quiz).map((q) => {
+    const order = shuffled(q.o.map((_, i) => i));
+    return { ...q, o: order.map((i) => q.o[i]), a: order.indexOf(q.a) };
+  });
 }

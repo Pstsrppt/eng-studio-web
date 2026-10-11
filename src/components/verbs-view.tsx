@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState, useTransition } from "react";
+import { Fragment, useRef, useState, useTransition } from "react";
 import { reviewCard } from "@/app/actions";
 import type { Verb, VerbGroup } from "@/content";
 import { verbFormOk } from "@/content/lookup";
 import type { CardMap } from "@/lib/data";
 import { buildQueue } from "@/lib/queue";
 import { speak } from "./speak";
+import { Sentence } from "./sentence";
 import { SpeakButton } from "./speak-button";
 
 type Groups = Record<VerbGroup, { name: string; tip: string }>;
@@ -78,33 +79,100 @@ function GroupButton({ on, onClick, title, sub }: { on: boolean; onClick: () => 
 }
 
 function VerbTable({ verbs, cards }: { verbs: Verb[]; cards: CardMap }) {
+  const [sort, setSort] = useState<"az" | "group">("az");
+  const [open, setOpen] = useState<Set<string>>(() => new Set());
+  const rows = sort === "az" ? [...verbs].sort((a, b) => a.v1.localeCompare(b.v1, "en")) : verbs;
+
+  function toggle(id: string) {
+    setOpen((o) => {
+      const next = new Set(o);
+      if (!next.delete(id)) next.add(id);
+      return next;
+    });
+  }
+
   return (
-    <div className="card overflow-x-auto">
-      <table className="w-full min-w-[520px] text-left text-[15px]">
-        <thead className="eyebrow">
-          <tr className="border-b border-line">
-            <th className="px-4 py-3 font-normal">V1</th>
-            <th className="px-4 py-3 font-normal">V2</th>
-            <th className="px-4 py-3 font-normal">V3</th>
-            <th className="px-4 py-3 font-normal">ความหมาย</th>
-            <th className="px-4 py-3 font-normal"><span className="sr-only">ฟัง</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          {verbs.map((v) => (
-            <tr key={v.id} className="border-b border-line last:border-0">
-              <td className="px-4 py-2.5 font-display font-medium">
-                {v.v1}
-                {(cards[v.id]?.box ?? 0) >= 3 && <span className="ml-2 text-xs text-obj" aria-label="จำได้แล้ว">✓</span>}
-              </td>
-              <td className="px-4 py-2.5 font-display text-verb">{v.v2}</td>
-              <td className="px-4 py-2.5 font-display text-obj">{v.v3}</td>
-              <td className="px-4 py-2.5 text-sm text-muted">{v.th}</td>
-              <td className="px-4 py-2.5"><SpeakButton text={`${v.v1}, ${v.v2.replace("/", ", ")}, ${v.v3}`} /></td>
-            </tr>
+    <div className="flex flex-col gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="text-sm text-muted">แตะ ⌄ เพื่อดูประโยคที่ใช้ V2 และ V3 จริง</p>
+        <div className="flex rounded-[10px] bg-[#e6ebe8] p-1 text-sm" role="radiogroup" aria-label="เรียงลำดับ">
+          {([["az", "A–Z"], ["group", "ตามกลุ่ม"]] as const).map(([id, label]) => (
+            <button key={id} type="button" role="radio" aria-checked={sort === id} onClick={() => setSort(id)}
+              className={"rounded-lg px-3 py-1.5 transition " + (sort === id ? "bg-surface font-semibold shadow-sm" : "text-muted hover:text-ink")}>
+              {label}
+            </button>
           ))}
-        </tbody>
-      </table>
+        </div>
+      </div>
+      <div className="card overflow-x-auto">
+        <table className="w-full min-w-[560px] text-left text-[15px]">
+          <thead className="eyebrow">
+            <tr className="border-b border-line">
+              <th className="px-4 py-3 font-normal">V1</th>
+              <th className="px-4 py-3 font-normal">V2</th>
+              <th className="px-4 py-3 font-normal">V3</th>
+              <th className="px-4 py-3 font-normal">ความหมาย</th>
+              <th className="px-4 py-3 font-normal"><span className="sr-only">ฟังและตัวอย่าง</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((v) => {
+              const isOpen = open.has(v.id);
+              return (
+                <Fragment key={v.id}>
+                  <tr className={"border-b border-line " + (isOpen ? "bg-paper/60" : "")}>
+                    <td className="px-4 py-2.5 font-display font-medium">
+                      {v.v1}
+                      {v.level && <span className="ml-2 font-mono text-[10px] text-muted">{v.level}</span>}
+                      {(cards[v.id]?.box ?? 0) >= 3 && <span className="ml-2 text-xs text-obj" aria-label="จำได้แล้ว">✓</span>}
+                    </td>
+                    <td className="px-4 py-2.5 font-display text-verb">{v.v2}</td>
+                    <td className="px-4 py-2.5 font-display text-obj">{v.v3}</td>
+                    <td className="px-4 py-2.5 text-sm text-muted">{v.th}</td>
+                    <td className="px-4 py-2.5">
+                      <div className="flex items-center justify-end gap-1.5">
+                        <SpeakButton text={`${v.v1}, ${v.v2.replace("/", ", ")}, ${v.v3}`} />
+                        {(v.ex2 || v.ex3) && (
+                          <button type="button" onClick={() => toggle(v.id)} aria-expanded={isOpen} aria-label={isOpen ? "ซ่อนตัวอย่าง" : "ดูตัวอย่าง"}
+                            className="grid size-8 place-items-center rounded-full text-muted hover:bg-paper hover:text-ink">
+                            <svg viewBox="0 0 16 16" className={"size-3.5 transition " + (isOpen ? "rotate-180" : "")} aria-hidden>
+                              <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </button>
+                        )}
+                      </div>
+                    </td>
+                  </tr>
+                  {isOpen && (
+                    <tr className="border-b border-line bg-paper/60">
+                      <td colSpan={5} className="px-4 pt-1 pb-4">
+                        <VerbExamples verb={v} />
+                      </td>
+                    </tr>
+                  )}
+                </Fragment>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+/** The verb used in two real sentences: once as V2, once as V3. */
+function VerbExamples({ verb }: { verb: Verb }) {
+  return (
+    <div className="grid gap-3 sm:grid-cols-2">
+      {([["V2", verb.ex2, verb.ex2Th, "bg-verb-bg text-verb"], ["V3", verb.ex3, verb.ex3Th, "bg-obj-bg text-obj"]] as const).map(
+        ([label, en, th, tone]) =>
+          en && (
+            <div key={label} className="rounded-lg border border-line bg-surface px-3 py-2.5">
+              <span className={"mb-1 inline-block rounded px-1.5 py-0.5 font-mono text-[11px] " + tone}>{label}</span>
+              <Sentence en={en} th={th} />
+            </div>
+          ),
+      )}
     </div>
   );
 }
@@ -224,6 +292,7 @@ function Drill({ pool, cards, today, groups, signedIn, round, onRestart, onRevie
             {!result && <span className="block text-xs">คำนี้จะกลับมาให้ลองอีกครั้งในรอบนี้</span>}
           </p>
         )}
+        {result !== null && <VerbExamples verb={verb} />}
 
         <button type="submit" className="btn self-start" disabled={result === null && (!v2.trim() || !v3.trim())}>
           {result === null ? "ตรวจ" : "ข้อต่อไป →"}
