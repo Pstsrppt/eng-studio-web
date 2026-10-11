@@ -53,8 +53,8 @@ export function LessonView({ lesson, next, passMark }: { lesson: Lesson; next?: 
 
 function Theory({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
   return (
-    <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-      <section className="card p-5 sm:p-6">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      <section className="card min-w-0 p-5 sm:p-6">
         <p className="eyebrow mb-2">ทำไมต้องรู้</p>
         <p className="mb-4 text-[15px] leading-7">{lesson.why}</p>
         <PlayableProse html={lesson.theory} className="prose-lesson" />
