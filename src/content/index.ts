@@ -30,7 +30,12 @@ export type Lesson = {
   practice: PracticeItem[];
   quiz: QuizItem[];
   homework: string;
+  /** Words to say aloud in the speaking drill (pronunciation lessons). */
+  speak?: SpeakItem[];
 };
+
+/** `accept`: other spellings of the same sound (right/write). `near`: words learners say by mistake. */
+export type SpeakItem = { say: string; accept?: string[]; near?: string[]; tip?: string };
 
 export type VerbGroup = "REG" | "AAA" | "ABB" | "ABC" | "ABA";
 export type Verb = {

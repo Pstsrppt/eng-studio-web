@@ -40,6 +40,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <b className="block text-sm font-semibold text-white">คู่มือ</b>
                 n. v. adj. V3 กริยาช่วย คืออะไร
               </Link>
+              <Link href="/mistakes" className="mx-2.5 -mt-3 rounded-lg border border-[#2a3b34] px-3 py-2.5 text-xs leading-5 text-[#c9d4cf] transition hover:bg-ink-2/60">
+                <b className="block text-sm font-semibold text-white">ทบทวนข้อผิด</b>
+                ทำข้อที่เคยตอบผิดซ้ำจนถูก
+              </Link>
               <div className="mt-auto flex flex-col gap-4 border-t border-[#2a3b34] px-2.5 pt-4">
                 <ThaiToggle dark />
                 <Suspense fallback={null}><Account /></Suspense>

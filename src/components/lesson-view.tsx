@@ -7,6 +7,7 @@ import type { Lesson, PracticeItem, QuizItem } from "@/content";
 import { normalize } from "@/content/lookup";
 import { PlayableProse } from "./playable-prose";
 import { Sentence } from "./sentence";
+import { SpeakingDrill } from "./speaking-drill";
 
 const TABS = [
   { id: "theory", label: "ทฤษฎี" },
@@ -103,12 +104,20 @@ const KIND_LABEL: Record<PracticeItem["t"], string> = {
 };
 
 function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
+  // Shuffling gives a fresh round: new order, and the cards forget their answers (the key changes).
+  const [round, setRound] = useState({ n: 0, items: lesson.practice });
+  const reshuffle = () => setRound((r) => ({ n: r.n + 1, items: shuffled(lesson.practice) }));
+
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-sm text-muted">ฝึกได้ไม่จำกัด ตอบผิดไม่เสียคะแนน และกดดูเฉลยได้ทุกข้อ</p>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="text-sm text-muted">ฝึกได้ไม่จำกัด ตอบผิดไม่เสียคะแนน และกดดูเฉลยได้ทุกข้อ</p>
+        <button type="button" className="btn-ghost py-2" onClick={reshuffle}>สลับลำดับข้อ ↻</button>
+      </div>
+      {lesson.speak && <SpeakingDrill items={lesson.speak} />}
       <div className="grid gap-4 lg:grid-cols-2">
-        {lesson.practice.map((item, i) => (
-          <PracticeCard key={i} n={i + 1} item={item} />
+        {round.items.map((item, i) => (
+          <PracticeCard key={`${round.n}-${i}`} n={i + 1} item={item} />
         ))}
       </div>
       <div className="card flex flex-wrap items-center justify-between gap-3 p-5">

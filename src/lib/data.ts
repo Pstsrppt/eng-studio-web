@@ -105,3 +105,43 @@ export async function getDashboard() {
     topMistakes: [...tally.values()].sort((a, b) => b.n - a.n).slice(0, 3),
   };
 }
+
+export type MistakeGroup = {
+  /** As stored, used to resolve the group. */
+  wrong: string;
+  correct: string;
+  /** How to show the wrong answer (verb answers are rebuilt as "go – goed – goed"). */
+  shown: string;
+  note: string | null;
+  source: string;
+  n: number;
+};
+
+/** Every mistake the learner still has, grouped by wrong→correct, most repeated first. */
+export async function getMistakes(): Promise<MistakeGroup[] | null> {
+  const user = await getUser();
+  if (!user) return null;
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("mistakes")
+    .select("wrong, correct, note, source")
+    .order("created_at", { ascending: false })
+    .limit(1000);
+
+  const groups = new Map<string, MistakeGroup>();
+  for (const m of data ?? []) {
+    const key = `${m.wrong}→${m.correct}`;
+    const g = groups.get(key);
+    if (g) {
+      g.n++;
+      continue;
+    }
+    let shown = m.wrong;
+    if (m.source.startsWith("verb:") && !m.wrong.includes("–")) {
+      const parts = m.wrong.trim().split(/\s+/);
+      if (parts.length === 2) shown = `${m.correct.split(" – ")[0]} – ${parts[0]} – ${parts[1]}`;
+    }
+    groups.set(key, { wrong: m.wrong, correct: m.correct, shown, note: m.note, source: m.source, n: 1 });
+  }
+  return [...groups.values()].sort((a, b) => b.n - a.n);
+}

@@ -83,6 +83,46 @@
         ],
         "a": 1,
         "th": "คำขยายมาก่อนคำนาม"
+      },
+      {
+        "t": "order",
+        "w": [
+          "sends",
+          "She",
+          "Friday",
+          "every",
+          "report",
+          "the"
+        ],
+        "a": "She sends the report every Friday.",
+        "th": "เธอส่งรายงานทุกวันศุกร์"
+      },
+      {
+        "t": "fix",
+        "q": "I at the port work.",
+        "a": [
+          "I work at the port."
+        ],
+        "th": "ฉันทำงานที่ท่าเรือ"
+      },
+      {
+        "t": "pick",
+        "q": "\"ข้อมูลลูกค้า\"",
+        "o": [
+          "data customer",
+          "customer data"
+        ],
+        "a": 1,
+        "th": "คำหลัก (data) อยู่ท้าย"
+      },
+      {
+        "t": "fix",
+        "q": "Is raining.",
+        "a": [
+          "It is raining.",
+          "It's raining."
+        ],
+        "th": "ฝนกำลังตก (ต้องมีประธาน)"
       }
     ],
     "quiz": [
@@ -221,6 +261,40 @@
         ],
         "a": 1,
         "th": "ของ ใช้ 's"
+      },
+      {
+        "t": "fill",
+        "q": "She ___ (watch) the news every night.",
+        "a": [
+          "watches"
+        ],
+        "th": "ลงท้าย ch เติม es"
+      },
+      {
+        "t": "fill",
+        "q": "We have two ___ (company) in Japan.",
+        "a": [
+          "companies"
+        ],
+        "th": "พยัญชนะ + y → ies"
+      },
+      {
+        "t": "fix",
+        "q": "The driver phone is broken.",
+        "a": [
+          "The driver's phone is broken."
+        ],
+        "th": "ของ ใช้ 's"
+      },
+      {
+        "t": "pick",
+        "q": "\"Its\" หรือ \"It's\": ___ a good idea.",
+        "o": [
+          "Its",
+          "It's"
+        ],
+        "a": 1,
+        "th": "It's = It is"
       }
     ],
     "quiz": [
@@ -354,6 +428,43 @@
         ],
         "a": "The system isn't slow.",
         "th": "ระบบไม่ช้า"
+      },
+      {
+        "t": "fill",
+        "q": "My manager ___ in a meeting.",
+        "a": [
+          "is"
+        ],
+        "th": "ผู้จัดการของฉันอยู่ในที่ประชุม"
+      },
+      {
+        "t": "fill",
+        "q": "___ you busy now?",
+        "a": [
+          "are"
+        ],
+        "th": "ตอนนี้คุณยุ่งไหม"
+      },
+      {
+        "t": "fix",
+        "q": "The boxes is heavy.",
+        "a": [
+          "The boxes are heavy."
+        ],
+        "th": "หลายกล่องใช้ are"
+      },
+      {
+        "t": "order",
+        "w": [
+          "the",
+          "Is",
+          "?",
+          "today",
+          "open",
+          "warehouse"
+        ],
+        "a": "Is the warehouse open today?",
+        "th": "วันนี้คลังสินค้าเปิดไหม"
       }
     ],
     "quiz": [
@@ -491,6 +602,45 @@
         ],
         "a": "Are there any questions?",
         "th": "มีคำถามไหม"
+      },
+      {
+        "t": "fill",
+        "q": "There ___ some water on the floor.",
+        "a": [
+          "is"
+        ],
+        "th": "water นับไม่ได้ ใช้ is"
+      },
+      {
+        "t": "fix",
+        "q": "Have two trucks outside.",
+        "a": [
+          "There are two trucks outside."
+        ],
+        "th": "มีรถบรรทุก 2 คันอยู่ข้างนอก"
+      },
+      {
+        "t": "pick",
+        "q": "\"ฉันมีรถ\"",
+        "o": [
+          "There is my car.",
+          "I have a car."
+        ],
+        "a": 1,
+        "th": "มีเจ้าของ ใช้ have"
+      },
+      {
+        "t": "order",
+        "w": [
+          "today",
+          "meeting",
+          "a",
+          "there",
+          "Is",
+          "?"
+        ],
+        "a": "Is there a meeting today?",
+        "th": "วันนี้มีประชุมไหม"
       }
     ],
     "quiz": [
@@ -632,6 +782,41 @@
         ],
         "a": "Do you work on weekends?",
         "th": "คุณทำงานวันหยุดไหม"
+      },
+      {
+        "t": "fill",
+        "q": "___ your team work on Saturdays?",
+        "a": [
+          "does"
+        ],
+        "th": "ทีมของคุณทำงานวันเสาร์ไหม"
+      },
+      {
+        "t": "fix",
+        "q": "He don't like coffee.",
+        "a": [
+          "He doesn't like coffee.",
+          "He does not like coffee."
+        ],
+        "th": "เขาไม่ชอบกาแฟ"
+      },
+      {
+        "t": "fix",
+        "q": "Does she works here?",
+        "a": [
+          "Does she work here?"
+        ],
+        "th": "หลัง does ไม่เติม s"
+      },
+      {
+        "t": "pick",
+        "q": "\"เธอไม่ว่าง\"",
+        "o": [
+          "She doesn't busy.",
+          "She isn't busy."
+        ],
+        "a": 1,
+        "th": "ไม่มีกริยาการกระทำ ใช้ be"
       }
     ],
     "quiz": [
@@ -765,6 +950,41 @@
         ],
         "a": 0,
         "th": "user ขึ้นต้นเสียง ยู"
+      },
+      {
+        "t": "fill",
+        "q": "I need ___ umbrella.",
+        "a": [
+          "an"
+        ],
+        "th": "umbrella ขึ้นต้นเสียงสระ"
+      },
+      {
+        "t": "fill",
+        "q": "Please close ___ window.",
+        "a": [
+          "the"
+        ],
+        "th": "หน้าต่างที่รู้กัน"
+      },
+      {
+        "t": "fix",
+        "q": "She is engineer.",
+        "a": [
+          "She is an engineer.",
+          "She's an engineer."
+        ],
+        "th": "อาชีพต้องมี a/an"
+      },
+      {
+        "t": "pick",
+        "q": "\"Containers are expensive.\" (พูดทั่วไป)",
+        "o": [
+          "The containers are expensive.",
+          "Containers are expensive."
+        ],
+        "a": 1,
+        "th": "พหูพจน์ทั่วไปไม่ใส่ the"
       }
     ],
     "quiz": [
@@ -901,6 +1121,40 @@
         ],
         "a": 1,
         "th": "ไม่มีนามตามใช้ hers"
+      },
+      {
+        "t": "fill",
+        "q": "This is ___ office. (ของเรา)",
+        "a": [
+          "our"
+        ],
+        "th": "นี่คือออฟฟิศของเรา"
+      },
+      {
+        "t": "fill",
+        "q": "Can you call ___? (เขา ผู้ชาย)",
+        "a": [
+          "him"
+        ],
+        "th": "หลังกริยาใช้รูปกรรม"
+      },
+      {
+        "t": "fix",
+        "q": "Me and Anna work here.",
+        "a": [
+          "Anna and I work here."
+        ],
+        "th": "ประธานใช้ I และวางตัวเองไว้ท้าย"
+      },
+      {
+        "t": "pick",
+        "q": "\"The laptop is ___.\" (ของฉัน)",
+        "o": [
+          "my",
+          "mine"
+        ],
+        "a": 1,
+        "th": "ไม่มีนามตามใช้ mine"
       }
     ],
     "quiz": [
@@ -1039,6 +1293,45 @@
         ],
         "a": 1,
         "th": "Could you...please? สุภาพที่สุด"
+      },
+      {
+        "t": "fill",
+        "q": "Can you ___ (send) me the file?",
+        "a": [
+          "send"
+        ],
+        "th": "หลัง can ใช้รูปปกติ"
+      },
+      {
+        "t": "fix",
+        "q": "I can to swim.",
+        "a": [
+          "I can swim."
+        ],
+        "th": "หลัง can ไม่มี to"
+      },
+      {
+        "t": "order",
+        "w": [
+          "me",
+          "help",
+          "you",
+          "Could",
+          "?",
+          "please"
+        ],
+        "a": "Could you help me, please?",
+        "th": "ช่วยฉันหน่อยได้ไหม"
+      },
+      {
+        "t": "pick",
+        "q": "ปฏิเสธของ \"She can drive.\"",
+        "o": [
+          "She doesn't can drive.",
+          "She can't drive."
+        ],
+        "a": 1,
+        "th": "ใช้ can't"
       }
     ],
     "quiz": [
@@ -1170,6 +1463,41 @@
           "See you on Monday."
         ],
         "th": "เจอกันวันจันทร์"
+      },
+      {
+        "t": "fill",
+        "q": "The meeting is ___ Monday.",
+        "a": [
+          "on"
+        ],
+        "th": "วันใช้ on"
+      },
+      {
+        "t": "fill",
+        "q": "I was born ___ 2004.",
+        "a": [
+          "in"
+        ],
+        "th": "ปีใช้ in"
+      },
+      {
+        "t": "fix",
+        "q": "I will call you at next week.",
+        "a": [
+          "I will call you next week.",
+          "I'll call you next week."
+        ],
+        "th": "มี next ไม่ใส่บุพบท"
+      },
+      {
+        "t": "pick",
+        "q": "\"The file is ___ the email.\"",
+        "o": [
+          "on",
+          "in"
+        ],
+        "a": 1,
+        "th": "ข้างในอีเมลใช้ in"
       }
     ],
     "quiz": [
@@ -1310,6 +1638,44 @@
           "What do you want?"
         ],
         "th": "คุณต้องการอะไร"
+      },
+      {
+        "t": "fill",
+        "q": "___ is the meeting? At 3 pm.",
+        "a": [
+          "when",
+          "what time"
+        ],
+        "th": "ถามเวลา"
+      },
+      {
+        "t": "fill",
+        "q": "How ___ boxes do you need?",
+        "a": [
+          "many"
+        ],
+        "th": "box นับได้"
+      },
+      {
+        "t": "fix",
+        "q": "Where you work?",
+        "a": [
+          "Where do you work?"
+        ],
+        "th": "ต้องมี do"
+      },
+      {
+        "t": "order",
+        "w": [
+          "is",
+          "Why",
+          "?",
+          "late",
+          "truck",
+          "the"
+        ],
+        "a": "Why is the truck late?",
+        "th": "ทำไมรถบรรทุกมาสาย"
       }
     ],
     "quiz": [
@@ -1443,6 +1809,41 @@
         ],
         "a": 1,
         "th": "ช่วงนี้ชั่วคราว"
+      },
+      {
+        "t": "fill",
+        "q": "She ___ (work) from home today.",
+        "a": [
+          "is working",
+          "'s working"
+        ],
+        "th": "วันนี้ (ชั่วคราว)"
+      },
+      {
+        "t": "fill",
+        "q": "The office ___ (open) at 8 every day.",
+        "a": [
+          "opens"
+        ],
+        "th": "ตารางประจำ"
+      },
+      {
+        "t": "fix",
+        "q": "I am needing help.",
+        "a": [
+          "I need help."
+        ],
+        "th": "need ไม่ใช้ -ing"
+      },
+      {
+        "t": "pick",
+        "q": "\"Listen! Someone ___.\"",
+        "o": [
+          "knocks",
+          "is knocking"
+        ],
+        "a": 1,
+        "th": "กำลังเกิดตอนนี้"
       }
     ],
     "quiz": [
@@ -1581,6 +1982,44 @@
         ],
         "a": "I didn't call the customer.",
         "th": "ฉันไม่ได้โทรหาลูกค้า"
+      },
+      {
+        "t": "fill",
+        "q": "They ___ (buy) a new truck last month.",
+        "a": [
+          "bought"
+        ],
+        "th": "buy ไม่ปกติ"
+      },
+      {
+        "t": "fill",
+        "q": "___ you see the email yesterday?",
+        "a": [
+          "did"
+        ],
+        "th": "คำถามอดีตใช้ Did"
+      },
+      {
+        "t": "fix",
+        "q": "I didn't went to work.",
+        "a": [
+          "I didn't go to work."
+        ],
+        "th": "หลัง didn't ใช้ V1"
+      },
+      {
+        "t": "order",
+        "w": [
+          "Where",
+          "?",
+          "keys",
+          "the",
+          "put",
+          "you",
+          "did"
+        ],
+        "a": "Where did you put the keys?",
+        "th": "คุณวางกุญแจไว้ที่ไหน"
       }
     ],
     "quiz": [
@@ -1712,6 +2151,40 @@
         ],
         "a": 0,
         "th": "เรื่องที่กำลังเกิดอยู่ก่อน"
+      },
+      {
+        "t": "fill",
+        "q": "What ___ you doing at 9 last night?",
+        "a": [
+          "were"
+        ],
+        "th": "you ใช้ were"
+      },
+      {
+        "t": "fill",
+        "q": "He ___ (sleep) when the phone rang.",
+        "a": [
+          "was sleeping"
+        ],
+        "th": "เรื่องยาวที่ถูกแทรก"
+      },
+      {
+        "t": "fix",
+        "q": "While I cooked, the phone rang.",
+        "a": [
+          "While I was cooking, the phone rang."
+        ],
+        "th": "while + เรื่องยาวใช้ continuous"
+      },
+      {
+        "t": "pick",
+        "q": "\"I ___ the report when the boss called.\"",
+        "o": [
+          "wrote",
+          "was writing"
+        ],
+        "a": 1,
+        "th": "กำลังเขียนอยู่ก่อน"
       }
     ],
     "quiz": [
@@ -1849,6 +2322,42 @@
         ],
         "a": "I'll get back to you.",
         "th": "เดี๋ยวผมติดต่อกลับ"
+      },
+      {
+        "t": "fill",
+        "q": "I think it ___ rain tomorrow.",
+        "a": [
+          "will"
+        ],
+        "th": "เดาจากความคิด"
+      },
+      {
+        "t": "fill",
+        "q": "We ___ going to open a new office.",
+        "a": [
+          "are",
+          "'re"
+        ],
+        "th": "แผนที่ตั้งใจไว้"
+      },
+      {
+        "t": "fix",
+        "q": "I will to send it.",
+        "a": [
+          "I will send it.",
+          "I'll send it."
+        ],
+        "th": "หลัง will ไม่มี to"
+      },
+      {
+        "t": "pick",
+        "q": "เพื่อนบอกว่าหิว คุณตอบทันที",
+        "o": [
+          "I'm going to make you a sandwich.",
+          "I'll make you a sandwich."
+        ],
+        "a": 1,
+        "th": "ตัดสินใจตอนพูด"
       }
     ],
     "quiz": [
@@ -1983,6 +2492,41 @@
           "more expensive"
         ],
         "th": "แพงกว่าปีที่แล้ว"
+      },
+      {
+        "t": "fill",
+        "q": "Japan is ___ (far) than Vietnam.",
+        "a": [
+          "farther",
+          "further"
+        ],
+        "th": "far ไม่ปกติ"
+      },
+      {
+        "t": "fill",
+        "q": "This is the ___ (busy) day of the year.",
+        "a": [
+          "busiest"
+        ],
+        "th": "y → iest"
+      },
+      {
+        "t": "fix",
+        "q": "She is more taller than me.",
+        "a": [
+          "She is taller than me."
+        ],
+        "th": "ห้ามใช้ more กับ -er"
+      },
+      {
+        "t": "pick",
+        "q": "\"Sea freight is not as fast ___ air freight.\"",
+        "o": [
+          "than",
+          "as"
+        ],
+        "a": 1,
+        "th": "as...as"
       }
     ],
     "quiz": [
@@ -2115,6 +2659,40 @@
       {
         "t": "pick",
         "q": "\"Do you have ___ questions?\"",
+        "o": [
+          "some",
+          "any"
+        ],
+        "a": 1,
+        "th": "คำถามใช้ any"
+      },
+      {
+        "t": "fill",
+        "q": "How ___ money do we have?",
+        "a": [
+          "much"
+        ],
+        "th": "money นับไม่ได้"
+      },
+      {
+        "t": "fill",
+        "q": "I have a ___ questions.",
+        "a": [
+          "few"
+        ],
+        "th": "นับได้ จำนวนน้อย"
+      },
+      {
+        "t": "fix",
+        "q": "We need more equipments.",
+        "a": [
+          "We need more equipment."
+        ],
+        "th": "equipment นับไม่ได้"
+      },
+      {
+        "t": "pick",
+        "q": "\"Is there ___ milk?\"",
         "o": [
           "some",
           "any"
@@ -2258,6 +2836,49 @@
           "often"
         ],
         "th": "คุณออกกำลังกายบ่อยแค่ไหน"
+      },
+      {
+        "t": "order",
+        "w": [
+          "is",
+          "She",
+          "time",
+          "on",
+          "usually"
+        ],
+        "a": "She is usually on time.",
+        "th": "ปกติเธอมาตรงเวลา"
+      },
+      {
+        "t": "order",
+        "w": [
+          "night",
+          "at",
+          "coffee",
+          "drink",
+          "never",
+          "I"
+        ],
+        "a": "I never drink coffee at night.",
+        "th": "ฉันไม่เคยดื่มกาแฟตอนกลางคืน"
+      },
+      {
+        "t": "fix",
+        "q": "He goes often to Japan.",
+        "a": [
+          "He often goes to Japan."
+        ],
+        "th": "วางหน้ากริยาหลัก"
+      },
+      {
+        "t": "pick",
+        "q": "\"ไปบ่อยแค่ไหน\"",
+        "o": [
+          "How many do you go?",
+          "How often do you go?"
+        ],
+        "a": 1,
+        "th": "ถามความถี่ใช้ How often"
       }
     ],
     "quiz": [
@@ -2395,6 +3016,42 @@
           "have"
         ],
         "th": "ไม่ต้องจ่าย ฟรี"
+      },
+      {
+        "t": "fill",
+        "q": "You ___ wear a helmet. It's the rule.",
+        "a": [
+          "must",
+          "have to"
+        ],
+        "th": "กฎบังคับ"
+      },
+      {
+        "t": "fill",
+        "q": "You ___ come. The meeting is optional.",
+        "a": [
+          "don't have to",
+          "do not have to"
+        ],
+        "th": "ไม่จำเป็น"
+      },
+      {
+        "t": "fix",
+        "q": "She have to work today.",
+        "a": [
+          "She has to work today."
+        ],
+        "th": "she ใช้ has to"
+      },
+      {
+        "t": "pick",
+        "q": "แนะนำเพื่อนที่ป่วย",
+        "o": [
+          "You must to rest.",
+          "You should rest."
+        ],
+        "a": 1,
+        "th": "คำแนะนำใช้ should"
       }
     ],
     "quiz": [
@@ -2533,6 +3190,40 @@
         ],
         "a": 1,
         "th": "มี yesterday ใช้ past simple"
+      },
+      {
+        "t": "fill",
+        "q": "I have ___ (see) this movie before.",
+        "a": [
+          "seen"
+        ],
+        "th": "V3 ของ see"
+      },
+      {
+        "t": "fill",
+        "q": "Have you finished ___?",
+        "a": [
+          "yet"
+        ],
+        "th": "คำถามใช้ yet"
+      },
+      {
+        "t": "fix",
+        "q": "I have finished it yesterday.",
+        "a": [
+          "I finished it yesterday."
+        ],
+        "th": "มี yesterday ใช้ past simple"
+      },
+      {
+        "t": "pick",
+        "q": "\"He has ___ to Japan.\" (ไปแล้ว ยังอยู่ที่นั่น)",
+        "o": [
+          "been",
+          "gone"
+        ],
+        "a": 1,
+        "th": "gone = ไปแล้วยังไม่กลับ"
       }
     ],
     "quiz": [
@@ -2669,6 +3360,46 @@
         ],
         "a": "I'll call you if I'm late.",
         "th": "ผมจะโทรหาคุณถ้ามาสาย"
+      },
+      {
+        "t": "fill",
+        "q": "If you ___ (need) help, call me.",
+        "a": [
+          "need"
+        ],
+        "th": "ส่วน if ใช้ present"
+      },
+      {
+        "t": "fill",
+        "q": "If the price goes up, we ___ (buy) less.",
+        "a": [
+          "will buy",
+          "'ll buy"
+        ],
+        "th": "ส่วนผลใช้ will"
+      },
+      {
+        "t": "fix",
+        "q": "Unless you don't hurry, you'll be late.",
+        "a": [
+          "Unless you hurry, you'll be late.",
+          "If you don't hurry, you'll be late."
+        ],
+        "th": "unless ไม่ใช้คู่กับ not"
+      },
+      {
+        "t": "order",
+        "w": [
+          "We",
+          "here",
+          "is",
+          "everyone",
+          "if",
+          "start",
+          "will"
+        ],
+        "a": "We will start if everyone is here.",
+        "th": "เราจะเริ่มถ้าทุกคนมาครบ"
       }
     ],
     "quiz": [
@@ -2808,6 +3539,41 @@
         ],
         "a": "Your order has been shipped.",
         "th": "คำสั่งซื้อของคุณจัดส่งแล้ว"
+      },
+      {
+        "t": "fill",
+        "q": "The office ___ (clean) every evening.",
+        "a": [
+          "is cleaned"
+        ],
+        "th": "ปัจจุบัน passive"
+      },
+      {
+        "t": "fill",
+        "q": "The meeting ___ (cancel) yesterday.",
+        "a": [
+          "was cancelled",
+          "was canceled"
+        ],
+        "th": "อดีต passive"
+      },
+      {
+        "t": "fix",
+        "q": "The goods delivered yesterday.",
+        "a": [
+          "The goods were delivered yesterday."
+        ],
+        "th": "ต้องมี be"
+      },
+      {
+        "t": "pick",
+        "q": "\"Your password ___ changed.\" (เปลี่ยนแล้ว)",
+        "o": [
+          "has been",
+          "has"
+        ],
+        "a": 0,
+        "th": "present perfect passive"
       }
     ],
     "quiz": [
@@ -2952,6 +3718,40 @@
         ],
         "a": "How long have you been waiting?",
         "th": "คุณรอมานานแค่ไหนแล้ว"
+      },
+      {
+        "t": "fill",
+        "q": "They have been ___ (talk) for an hour.",
+        "a": [
+          "talking"
+        ],
+        "th": "have been + V-ing"
+      },
+      {
+        "t": "fill",
+        "q": "I have been waiting ___ 10 o'clock.",
+        "a": [
+          "since"
+        ],
+        "th": "จุดเริ่มต้น"
+      },
+      {
+        "t": "fix",
+        "q": "How long are you working here?",
+        "a": [
+          "How long have you been working here?"
+        ],
+        "th": "ทำมาถึงตอนนี้"
+      },
+      {
+        "t": "pick",
+        "q": "\"ฉันรู้จักเขามา 5 ปีแล้ว\"",
+        "o": [
+          "I have been knowing him for five years.",
+          "I have known him for five years."
+        ],
+        "a": 1,
+        "th": "know ไม่ใช้ -ing"
       }
     ],
     "quiz": [
@@ -3091,6 +3891,46 @@
         ],
         "a": 1,
         "th": "ไม่จริงตอนนี้ ใช้แบบที่ 2"
+      },
+      {
+        "t": "fill",
+        "q": "If I ___ (be) the manager, I would change the rules.",
+        "a": [
+          "were"
+        ],
+        "th": "สมมติใช้ were"
+      },
+      {
+        "t": "fill",
+        "q": "If we had a bigger truck, we ___ (carry) more boxes.",
+        "a": [
+          "would carry",
+          "could carry"
+        ],
+        "th": "would/could + V1"
+      },
+      {
+        "t": "fix",
+        "q": "If I will have money, I would buy a car.",
+        "a": [
+          "If I had money, I would buy a car."
+        ],
+        "th": "ส่วน if ใช้ past"
+      },
+      {
+        "t": "order",
+        "w": [
+          "you",
+          "would",
+          "What",
+          "?",
+          "won",
+          "you",
+          "if",
+          "do"
+        ],
+        "a": "What would you do if you won?",
+        "th": "ถ้าคุณชนะ คุณจะทำอะไร"
       }
     ],
     "quiz": [
@@ -3235,6 +4075,44 @@
         ],
         "a": "The customer who called is angry.",
         "th": "ลูกค้าที่โทรมากำลังโกรธ"
+      },
+      {
+        "t": "fill",
+        "q": "The man ___ called you is my boss.",
+        "a": [
+          "who",
+          "that"
+        ],
+        "th": "คนใช้ who"
+      },
+      {
+        "t": "fill",
+        "q": "This is the file ___ I need.",
+        "a": [
+          "that",
+          "which"
+        ],
+        "th": "สิ่งของ"
+      },
+      {
+        "t": "fix",
+        "q": "The company which I work for it is big.",
+        "a": [
+          "The company which I work for is big.",
+          "The company that I work for is big.",
+          "The company I work for is big."
+        ],
+        "th": "ไม่ใส่ it ซ้ำ"
+      },
+      {
+        "t": "pick",
+        "q": "\"The driver ___ car broke down\"",
+        "o": [
+          "who",
+          "whose"
+        ],
+        "a": 1,
+        "th": "whose = ของคนนั้น"
       }
     ],
     "quiz": [
@@ -3374,6 +4252,40 @@
         ],
         "a": 0,
         "th": "stop + -ing = เลิก"
+      },
+      {
+        "t": "fill",
+        "q": "I enjoy ___ (work) with my team.",
+        "a": [
+          "working"
+        ],
+        "th": "enjoy + -ing"
+      },
+      {
+        "t": "fill",
+        "q": "She decided ___ (leave) the company.",
+        "a": [
+          "to leave"
+        ],
+        "th": "decide + to V1"
+      },
+      {
+        "t": "fix",
+        "q": "Thank you for help me.",
+        "a": [
+          "Thank you for helping me."
+        ],
+        "th": "หลังบุพบทใช้ -ing"
+      },
+      {
+        "t": "pick",
+        "q": "\"I'm interested ___ learning Python.\"",
+        "o": [
+          "to",
+          "in"
+        ],
+        "a": 1,
+        "th": "interested in + -ing"
       }
     ],
     "quiz": [
@@ -3514,6 +4426,45 @@
         ],
         "a": "He asked me to wait.",
         "th": "เขาขอให้ฉันรอ"
+      },
+      {
+        "t": "fill",
+        "q": "\"I am busy.\" → He said he ___ busy.",
+        "a": [
+          "was"
+        ],
+        "th": "am → was"
+      },
+      {
+        "t": "fill",
+        "q": "\"Do you like it?\" → She asked ___ I liked it.",
+        "a": [
+          "if",
+          "whether"
+        ],
+        "th": "คำถาม yes/no"
+      },
+      {
+        "t": "fix",
+        "q": "She said me that she was tired.",
+        "a": [
+          "She told me that she was tired.",
+          "She said that she was tired."
+        ],
+        "th": "บอก + คน ใช้ tell"
+      },
+      {
+        "t": "order",
+        "w": [
+          "him",
+          "call",
+          "to",
+          "me",
+          "asked",
+          "He"
+        ],
+        "a": "He asked me to call him.",
+        "th": "เขาขอให้ฉันโทรหา"
       }
     ],
     "quiz": [
@@ -3651,6 +4602,42 @@
         ],
         "a": 1,
         "th": "เกิดก่อนใช้ had + V3"
+      },
+      {
+        "t": "fill",
+        "q": "When I arrived, the meeting ___ (start).",
+        "a": [
+          "had started",
+          "had already started"
+        ],
+        "th": "เกิดก่อนอีกเรื่อง"
+      },
+      {
+        "t": "fill",
+        "q": "She was tired because she ___ (work) all night.",
+        "a": [
+          "had worked",
+          "had been working"
+        ],
+        "th": "เหตุที่เกิดก่อน"
+      },
+      {
+        "t": "fix",
+        "q": "I had saw the email before.",
+        "a": [
+          "I had seen the email before."
+        ],
+        "th": "had + V3"
+      },
+      {
+        "t": "pick",
+        "q": "\"By the time we got there, the shop ___.\"",
+        "o": [
+          "closed",
+          "had closed"
+        ],
+        "a": 1,
+        "th": "ร้านปิดก่อนเราไปถึง"
       }
     ],
     "quiz": [
@@ -3787,6 +4774,40 @@
         ],
         "a": 1,
         "th": "should have = ควรทำแต่ไม่ได้ทำ"
+      },
+      {
+        "t": "fill",
+        "q": "If I had known, I would ___ (help) you.",
+        "a": [
+          "have helped"
+        ],
+        "th": "would have + V3"
+      },
+      {
+        "t": "fill",
+        "q": "We should ___ (book) earlier.",
+        "a": [
+          "have booked"
+        ],
+        "th": "should have + V3"
+      },
+      {
+        "t": "fix",
+        "q": "If she would have asked, I would have helped.",
+        "a": [
+          "If she had asked, I would have helped."
+        ],
+        "th": "ส่วน if ใช้ had + V3"
+      },
+      {
+        "t": "pick",
+        "q": "\"You could have told me.\" หมายความว่า",
+        "o": [
+          "คุณบอกฉันแล้ว",
+          "คุณบอกฉันได้ แต่ไม่ได้บอก"
+        ],
+        "a": 1,
+        "th": "could have = ทำได้แต่ไม่ได้ทำ"
       }
     ],
     "quiz": [
@@ -3927,6 +4948,43 @@
         ],
         "a": 1,
         "th": "เดาเรื่องอดีต must have + V3"
+      },
+      {
+        "t": "fill",
+        "q": "The lights are off. Nobody ___ be home. (แน่ใจว่าไม่มี)",
+        "a": [
+          "can't",
+          "cannot"
+        ],
+        "th": "แน่ใจว่าไม่ใช่"
+      },
+      {
+        "t": "fill",
+        "q": "She isn't answering. She ___ be busy. (อาจจะ)",
+        "a": [
+          "might",
+          "may",
+          "could"
+        ],
+        "th": "ไม่แน่ใจ"
+      },
+      {
+        "t": "fix",
+        "q": "He must forgot the meeting.",
+        "a": [
+          "He must have forgotten the meeting."
+        ],
+        "th": "เดาอดีต must have + V3"
+      },
+      {
+        "t": "pick",
+        "q": "\"มั่นใจว่าใช่\"",
+        "o": [
+          "It might be John.",
+          "It must be John."
+        ],
+        "a": 1,
+        "th": "must = มั่นใจ"
       }
     ],
     "quiz": [
@@ -4067,6 +5125,43 @@
         ],
         "a": 1,
         "th": "ขึ้นประโยคใหม่ใช้ However,"
+      },
+      {
+        "t": "fill",
+        "q": "___ the price is high, the quality is excellent.",
+        "a": [
+          "although",
+          "even though"
+        ],
+        "th": "แม้ว่า + ประโยค"
+      },
+      {
+        "t": "fill",
+        "q": "The flight was cancelled ___ the storm.",
+        "a": [
+          "because of",
+          "due to"
+        ],
+        "th": "เพราะ + คำนาม"
+      },
+      {
+        "t": "fix",
+        "q": "Despite of the rain, we went out.",
+        "a": [
+          "Despite the rain, we went out.",
+          "In spite of the rain, we went out."
+        ],
+        "th": "despite ไม่มี of"
+      },
+      {
+        "t": "pick",
+        "q": "\"We missed the deadline. ___, we lost the client.\"",
+        "o": [
+          "However",
+          "As a result"
+        ],
+        "a": 1,
+        "th": "บอกผล"
       }
     ],
     "quiz": [

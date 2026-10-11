@@ -202,7 +202,12 @@ function Rail({ dash }: { dash: Dash }) {
       </section>
 
       <section className="card p-5">
-        <h2 className="mb-2 font-sans text-[15px] font-semibold">ข้อผิดที่เจอบ่อย</h2>
+        <div className="mb-2 flex items-baseline justify-between gap-2">
+          <h2 className="font-sans text-[15px] font-semibold">ข้อผิดที่เจอบ่อย</h2>
+          {dash.topMistakes.length > 0 && (
+            <Link href="/mistakes" className="text-xs font-semibold text-brand hover:underline">ทบทวนทั้งหมด →</Link>
+          )}
+        </div>
         {dash.topMistakes.length === 0 ? (
           <p className="text-sm text-muted">ยังไม่มี ข้อที่ตอบผิดในแบบทดสอบและ V1-V2-V3 จะมาอยู่ที่นี่</p>
         ) : (

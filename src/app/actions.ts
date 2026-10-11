@@ -112,6 +112,16 @@ export async function saveAttempt(lessonId: string, score: number, passed: boole
   return true;
 }
 
+/** The learner got a past mistake right: remove every copy of it, so it leaves the review list. */
+export async function resolveMistake(wrong: string, correct: string) {
+  const user = await getUser();
+  if (!user) return false;
+  const supabase = await createClient();
+  const { error } = await supabase.from("mistakes").delete().eq("wrong", wrong).eq("correct", correct);
+  if (error) throw new Error(error.message);
+  return true;
+}
+
 /** Records one flashcard or verb-drill answer and moves the card to its next Leitner box. */
 export async function reviewCard(input: {
   itemId: string;
