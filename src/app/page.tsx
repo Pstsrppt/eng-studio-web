@@ -4,6 +4,7 @@ import { Suspense, type ReactNode } from "react";
 import { PlanCheck } from "@/components/plan-check";
 import { Sentence } from "@/components/sentence";
 import { LESSONS, VERBS, WORDS, type Lesson } from "@/content";
+import { lessonWords } from "@/content/lesson-words";
 import { bangkokToday, getDashboard, getUser } from "@/lib/data";
 
 export default function TodayPage() {
@@ -94,7 +95,10 @@ function ContinueCard({ lesson, best }: { lesson: Lesson; best?: number }) {
   return (
     <section className="card grid gap-6 p-6 sm:p-7 md:grid-cols-[minmax(0,1fr)_auto]">
       <div className="flex min-w-0 flex-col gap-4">
-        <p className="eyebrow">Grammar · {lesson.level} · บทที่ {LESSONS.indexOf(lesson) + 1} จาก {LESSONS.length}</p>
+        <p className="eyebrow">
+          Grammar · {lesson.level} · บทที่ {LESSONS.indexOf(lesson) + 1} จาก {LESSONS.length}
+          {lessonWords(lesson.id).fresh.length > 0 && ` · คำใหม่ ${lessonWords(lesson.id).fresh.length} คำ`}
+        </p>
         <h2 className="-mt-2 text-2xl font-bold leading-snug">{lesson.title}</h2>
         <p className="max-w-[56ch] leading-7 text-muted">{lesson.why}</p>
         <div className="flex flex-wrap gap-1.5">

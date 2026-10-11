@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { LessonView } from "@/components/lesson-view";
+import { lessonWords } from "@/content/lesson-words";
 import { LESSONS, PASS_MARK, getLesson, nextLesson } from "@/content";
 
 type Props = { params: Promise<{ id: string }> };
@@ -42,6 +43,7 @@ async function Lesson({ params }: Props) {
       <LessonView
         key={lesson.id}
         lesson={lesson}
+        words={lessonWords(lesson.id)}
         passMark={PASS_MARK}
         next={next && { href: `/grammar/${next.id}`, title: next.title }}
       />

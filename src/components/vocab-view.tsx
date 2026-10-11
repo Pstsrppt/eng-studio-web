@@ -331,7 +331,7 @@ const POS_TONE: Record<Pos, string> = {
 };
 
 /** Icon tile, example box and highlight colours for each part of speech. */
-const POS_STYLE: Record<Pos, { tile: string; chip: string; mark: string }> = {
+export const POS_STYLE: Record<Pos, { tile: string; chip: string; mark: string }> = {
   n: { tile: "bg-subj-bg text-subj", chip: "bg-[#eef3fd]", mark: "text-subj" },
   v: { tile: "bg-verb-bg text-verb", chip: "bg-[#fdf3ec]", mark: "text-verb" },
   adj: { tile: "bg-obj-bg text-obj", chip: "bg-[#ecf7f2]", mark: "text-obj" },
@@ -590,7 +590,7 @@ function Segmented<T extends string>({ label, options, value, onChange }: { labe
   );
 }
 
-function PosBadge({ pos, pill = false }: { pos: Pos; pill?: boolean }) {
+export function PosBadge({ pos, pill = false }: { pos: Pos; pill?: boolean }) {
   return (
     <abbr title={POS_LABEL[pos].th}
       className={(pill ? "rounded-full px-2.5 text-[11px] " : "rounded px-1.5 text-[11px] ") + "py-0.5 font-mono no-underline " + POS_TONE[pos]}>
@@ -600,7 +600,7 @@ function PosBadge({ pos, pill = false }: { pos: Pos; pill?: boolean }) {
 }
 
 /** The icon picked for this word's meaning, or a dot for words added by the learner. */
-function WordIcon({ word }: { word: Word }) {
+export function WordIcon({ word }: { word: Word }) {
   const Icon = word.icon ? WORD_ICONS[word.icon] : undefined;
   if (!Icon) return <span className="size-2.5 rounded-full bg-current" aria-hidden />;
   return <Icon className="size-5" strokeWidth={2} aria-hidden />;

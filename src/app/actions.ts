@@ -112,6 +112,19 @@ export async function saveAttempt(lessonId: string, score: number, passed: boole
   return true;
 }
 
+/** After passing a lesson: its new words join the flashcards (cards already there are left alone). */
+export async function addLessonCards(itemIds: string[]) {
+  const user = await getUser();
+  if (!user || itemIds.length === 0) return 0;
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("cards")
+    .upsert(itemIds.map((item_id) => ({ item_id, kind: "word" })), { onConflict: "user_id,item_id", ignoreDuplicates: true })
+    .select("item_id");
+  if (error) throw new Error(error.message);
+  return data?.length ?? 0;
+}
+
 /** The learner got a past mistake right: remove every copy of it, so it leaves the review list. */
 export async function resolveMistake(wrong: string, correct: string) {
   const user = await getUser();

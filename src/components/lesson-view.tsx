@@ -2,22 +2,28 @@
 
 import Link from "next/link";
 import { useState, useTransition } from "react";
-import { saveAttempt } from "@/app/actions";
+import { addLessonCards, saveAttempt } from "@/app/actions";
 import type { Lesson, PracticeItem, QuizItem } from "@/content";
+import type { LessonWords } from "@/content/lesson-words";
 import { normalize } from "@/content/lookup";
+import { LessonWordsStep } from "./lesson-words-step";
 import { PlayableProse } from "./playable-prose";
 import { Sentence } from "./sentence";
 import { SpeakingDrill } from "./speaking-drill";
 
 const TABS = [
+  { id: "words", label: "คำศัพท์" },
   { id: "theory", label: "ทฤษฎี" },
   { id: "practice", label: "ฝึก" },
   { id: "quiz", label: "ทดสอบ" },
 ] as const;
 type Tab = (typeof TABS)[number]["id"];
 
-export function LessonView({ lesson, next, passMark }: { lesson: Lesson; next?: { href: string; title: string }; passMark: number }) {
-  const [tab, setTab] = useState<Tab>("theory");
+type Props = { lesson: Lesson; words: LessonWords; next?: { href: string; title: string }; passMark: number };
+
+export function LessonView({ lesson, words, next, passMark }: Props) {
+  const tabs = words.fresh.length > 0 ? TABS : TABS.filter((t) => t.id !== "words");
+  const [tab, setTab] = useState<Tab>(tabs[0].id);
   const go = (t: Tab) => {
     setTab(t);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -25,8 +31,8 @@ export function LessonView({ lesson, next, passMark }: { lesson: Lesson; next?: 
 
   return (
     <div className="flex flex-col gap-5">
-      <div role="tablist" aria-label="ส่วนของบทเรียน" className="grid grid-cols-3 rounded-[10px] bg-[#e6ebe8] p-1">
-        {TABS.map((t, i) => (
+      <div role="tablist" aria-label="ส่วนของบทเรียน" className={"grid rounded-[10px] bg-[#e6ebe8] p-1 " + (tabs.length === 4 ? "grid-cols-4" : "grid-cols-3")}>
+        {tabs.map((t, i) => (
           <button
             key={t.id}
             role="tab"
@@ -44,9 +50,10 @@ export function LessonView({ lesson, next, passMark }: { lesson: Lesson; next?: 
         ))}
       </div>
 
+      {tab === "words" && <LessonWordsStep words={words} onNext={() => go("theory")} />}
       {tab === "theory" && <Theory lesson={lesson} onNext={() => go("practice")} />}
       {tab === "practice" && <Practice lesson={lesson} onNext={() => go("quiz")} />}
-      {tab === "quiz" && <Quiz lesson={lesson} next={next} passMark={passMark} />}
+      {tab === "quiz" && <Quiz lesson={lesson} next={next} passMark={passMark} newWordIds={words.fresh.map((x) => x.word.id)} />}
     </div>
   );
 }
@@ -214,11 +221,13 @@ function PracticeCard({ n, item }: { n: number; item: PracticeItem }) {
   );
 }
 
-function Quiz({ lesson, next, passMark }: { lesson: Lesson; next?: { href: string; title: string }; passMark: number }) {
+type QuizProps = { lesson: Lesson; next?: { href: string; title: string }; passMark: number; newWordIds: string[] };
+
+function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
   // Retakes reshuffle the questions and options, so the answers can't be learned by position.
   const [quiz, setQuiz] = useState(lesson.quiz);
   const [answers, setAnswers] = useState<(number | null)[]>(() => lesson.quiz.map(() => null));
-  const [done, setDone] = useState<{ score: number; saved: boolean } | null>(null);
+  const [done, setDone] = useState<{ score: number; saved: boolean; added: number } | null>(null);
   const [error, setError] = useState(false);
   const [pending, start] = useTransition();
   const allAnswered = answers.every((a) => a !== null);
@@ -232,11 +241,14 @@ function Quiz({ lesson, next, passMark }: { lesson: Lesson; next?: { href: strin
       .map(({ q, a }) => ({ wrong: q.o[a ?? 0], correct: q.o[q.a], note: q.why }));
     start(async () => {
       try {
-        const saved = await saveAttempt(lesson.id, score, score >= passMark, wrongs);
-        setDone({ score, saved });
+        const passedNow = score >= passMark;
+        const saved = await saveAttempt(lesson.id, score, passedNow, wrongs);
+        // Passing hands the lesson's new words to the flashcards.
+        const added = saved && passedNow ? await addLessonCards(newWordIds).catch(() => 0) : 0;
+        setDone({ score, saved, added });
         setError(false);
       } catch {
-        setDone({ score, saved: false });
+        setDone({ score, saved: false, added: 0 });
         setError(true);
       }
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -255,6 +267,7 @@ function Quiz({ lesson, next, passMark }: { lesson: Lesson; next?: { href: strin
             <p className="text-muted">
               {error ? "บันทึกคะแนนไม่สำเร็จ ลองส่งอีกครั้ง" : done.saved ? "บันทึกคะแนนแล้ว" : "ยังไม่ได้เข้าสู่ระบบ คะแนนนี้จึงไม่ถูกบันทึก"}
             </p>
+            {done.added > 0 && <p className="text-obj">เพิ่มคำใหม่ {done.added} คำเข้าการ์ดทวนแล้ว</p>}
           </div>
           {passed && next ? (
             <Link href={next.href} className="btn">บทถัดไป: {next.title} →</Link>
