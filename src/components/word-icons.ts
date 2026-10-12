@@ -1,4 +1,4 @@
-// The icons used by vocab.json (the "icon" field). Only these are bundled.
+// The icons used by vocab.json and verbs.json (the "icon" field). Only these are bundled.
 // A word whose icon is missing here falls back to a plain dot, so add the name when adding a word.
 import {
   AlarmClockIcon,
@@ -293,6 +293,7 @@ import {
   ScanBarcodeIcon,
   ScanEyeIcon,
   ScanSearchIcon,
+  ScissorsIcon,
   ScrollIcon,
   ScrollTextIcon,
   SearchIcon,
@@ -681,6 +682,7 @@ export const WORD_ICONS: Record<string, LucideIcon> = {
   ScanBarcode: ScanBarcodeIcon,
   ScanEye: ScanEyeIcon,
   ScanSearch: ScanSearchIcon,
+  Scissors: ScissorsIcon,
   Scroll: ScrollIcon,
   ScrollText: ScrollTextIcon,
   Search: SearchIcon,

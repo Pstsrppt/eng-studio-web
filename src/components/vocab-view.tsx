@@ -1,5 +1,6 @@
 "use client";
 
+import { Volume2Icon } from "lucide-react";
 import Link from "next/link";
 import { Fragment, useRef, useState, useTransition } from "react";
 import { flushSync } from "react-dom";
@@ -9,10 +10,10 @@ import { POS_LABEL, WORD_LEVELS, type Pos, type WordLevel } from "@/content/pos"
 import { normalize } from "@/content/lookup";
 import type { CardMap } from "@/lib/data";
 import { buildQueue } from "@/lib/queue";
-import { Sentence } from "./sentence";
 import { speak } from "./speak";
 import { useStudy } from "./study-context";
-import { WORD_ICONS } from "./word-icons";
+import { PhotoWordCard, type Cover } from "./photo-word-card";
+import { POS_STYLE, PosBadge, WordIcon } from "./word-bits";
 
 const MINE = "mine";
 
@@ -188,67 +189,53 @@ function Review({ pool, allWords, mode, cards, today, round, signedIn, onRestart
   const box = cards[word.id]?.box;
   const answered = mode === "recall" ? shown : answer !== null;
   const options = mode === "listen" ? meaningOptions(word, allWords) : [];
-  const posLabel = word.pos ? `${POS_LABEL[word.pos].abbr} ${POS_LABEL[word.pos].th}` : "";
+  // Until the learner answers, the card hides whatever would give the answer away.
+  const cover: Cover = answered
+    ? {}
+    : mode === "recall"
+      ? { th: true }
+      : mode === "type"
+        ? { en: true, examples: true }
+        : { en: true, th: true, examples: true, photo: true };
+  const hint = MODE_HINT[mode];
 
   return (
-    <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-      <div className="flex flex-col gap-3">
-        <div className="flex justify-between font-mono text-xs text-muted tabular">
-          <span>เหลือ {queue.length} ใบ{box !== undefined ? ` · กล่อง ${box}` : " · คำใหม่"}</span>
-          <span>{mode === "recall" ? "จำได้" : "ถูก"} {stats.right}/{stats.done}</span>
-        </div>
-
-        <div className="flex min-h-56 flex-col justify-between gap-6 rounded-2xl bg-ink px-6 py-6 text-white">
-          <span className="font-mono text-[11px] tracking-[0.08em] text-mark">
-            {mode === "recall" ? "คำนี้แปลว่าอะไร" : mode === "type" ? "ภาษาอังกฤษคือคำว่าอะไร" : "ได้ยินคำว่าอะไร"}
-            {posLabel && ` · ${posLabel}`}
-          </span>
-
-          {mode === "type" && !answered ? (
-            <h2 className="text-3xl font-bold leading-snug">{word.th}</h2>
-          ) : mode === "listen" && !answered ? (
-            <button type="button" onClick={() => speak(word.en)}
-              className="flex items-center gap-3 self-start rounded-2xl bg-ink-2 px-5 py-4 text-lg font-semibold transition hover:brightness-125">
-              <svg viewBox="0 0 16 16" className="size-7" aria-hidden><path d="M2 6h3l4-3v10L5 10H2z" fill="currentColor" /><path d="M11 5.5a3.5 3.5 0 0 1 0 5M12.8 3.6a6 6 0 0 1 0 8.8" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round" /></svg>
-              กดฟังเสียง
-            </button>
-          ) : (
-            <div className="flex items-end justify-between gap-3">
-              <h2 className="text-5xl font-bold tracking-tight break-words">{word.en}</h2>
-              <button type="button" onClick={() => speak(word.en)} className="shrink-0 rounded-full border border-[#2c3f37] px-3 py-1.5 text-xs text-[#c9d4cf]">ฟัง</button>
-            </div>
-          )}
-
-          {answered ? (
-            <div>
-              <p className="text-lg text-mark">{word.th}</p>
-              {word.forms && <p className="mt-1 text-sm text-[#c9d4cf]">{word.forms}</p>}
-            </div>
-          ) : (
-            <p className="text-sm text-[#7f918a]">{MODE_HINT[mode]}</p>
-          )}
-        </div>
+    <div className="flex flex-col gap-3">
+      <div className="flex justify-between font-mono text-xs text-muted tabular">
+        <span>เหลือ {queue.length} ใบ{box !== undefined ? ` · กล่อง ${box}` : " · คำใหม่"}</span>
+        <span>{mode === "recall" ? "จำได้" : "ถูก"} {stats.right}/{stats.done}</span>
       </div>
 
+      <PhotoWordCard key={word.id} word={word} photo={word.photo} cover={cover} hint={hint} bookmark={false}
+        examples={word.ex ? [{ en: word.ex, th: word.exTh }] : []} />
+
       <div className="flex flex-col gap-3">
+        {mode === "listen" && !answered && (
+          <button type="button" onClick={() => speak(word.en)} className="btn self-start">
+            <Volume2Icon className="size-4" aria-hidden /> ฟังเสียงอีกครั้ง
+          </button>
+        )}
+
         {mode === "type" && (
-          <form onSubmit={checkTyped} className="flex flex-col gap-2">
-            <input ref={inputRef} value={typed} onChange={(e) => setTyped(e.target.value)} readOnly={answered}
-              placeholder="พิมพ์คำภาษาอังกฤษ" autoCapitalize="off" autoComplete="off" spellCheck={false} aria-label="คำตอบภาษาอังกฤษ"
-              className={"input text-lg " + (answer ? (answer.ok ? "border-obj bg-obj-bg" : "border-bad bg-bad-bg") : "")} />
-            {answer && (
-              <p className={"text-sm " + (answer.ok ? "text-obj" : "text-bad")}>
-                {answer.ok ? "✓ ถูกต้อง" : <>✗ ยังไม่ใช่ · คำตอบคือ <b className="font-semibold">{word.en}</b></>}
-              </p>
-            )}
-            <button type="submit" className="btn self-start" disabled={!answer && !typed.trim()}>
+          <form onSubmit={checkTyped} className="flex flex-col gap-2 sm:flex-row sm:items-start">
+            <div className="flex flex-1 flex-col gap-2">
+              <input ref={inputRef} value={typed} onChange={(e) => setTyped(e.target.value)} readOnly={answered}
+                placeholder="พิมพ์คำภาษาอังกฤษ" autoCapitalize="off" autoComplete="off" spellCheck={false} aria-label="คำตอบภาษาอังกฤษ"
+                className={"input text-lg " + (answer ? (answer.ok ? "border-obj bg-obj-bg" : "border-bad bg-bad-bg") : "")} />
+              {answer && (
+                <p className={"text-sm " + (answer.ok ? "text-obj" : "text-bad")}>
+                  {answer.ok ? "✓ ถูกต้อง" : <>✗ ยังไม่ใช่ · คำตอบคือ <b className="font-semibold">{word.en}</b></>}
+                </p>
+              )}
+            </div>
+            <button type="submit" className="btn" disabled={!answer && !typed.trim()}>
               {answer ? "ข้อต่อไป →" : "ตรวจ"}
             </button>
           </form>
         )}
 
         {mode === "listen" && (
-          <div className="flex flex-col gap-2" role="radiogroup" aria-label="เลือกความหมาย">
+          <div className="grid gap-2 sm:grid-cols-2" role="radiogroup" aria-label="เลือกความหมาย">
             {options.map((th) => {
               const tone = !answer
                 ? "border-line bg-surface hover:border-brand"
@@ -264,30 +251,24 @@ function Review({ pool, allWords, mode, cards, today, round, signedIn, onRestart
                 </button>
               );
             })}
-            {answer && (
-              <button type="button" className="btn mt-1 self-start" onClick={() => grade(answer.ok)}>ข้อต่อไป →</button>
-            )}
           </div>
+        )}
+        {mode === "listen" && answer && (
+          <button type="button" className="btn self-start" onClick={() => grade(answer.ok)}>ข้อต่อไป →</button>
         )}
 
-        {word.ex && (mode === "recall" || answered) && (
-          <div className="card p-5">
-            <p className="eyebrow mb-2">ประโยคตัวอย่าง</p>
-            <Sentence en={word.ex} th={word.exTh} />
-          </div>
-        )}
         {answered && word.note && (
           <p className="rounded-lg bg-[#fbf3cf] px-3.5 py-3 text-sm leading-6"><b className="font-semibold">รู้ไว้</b> {word.note}</p>
         )}
 
         {mode === "recall" &&
           (shown ? (
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-2 sm:max-w-md">
               <button type="button" className="btn-ghost border-[#f3c3bd] text-bad hover:bg-bad-bg" onClick={() => grade(false)}>ยังจำไม่ได้</button>
               <button type="button" className="btn" onClick={() => grade(true)}>จำได้</button>
             </div>
           ) : (
-            <button type="button" className="btn" onClick={() => setShown(true)}>ดูความหมาย</button>
+            <button type="button" className="btn self-start" onClick={() => setShown(true)}>ดูความหมาย</button>
           ))}
 
         <p className="text-xs leading-5 text-muted">
@@ -319,27 +300,6 @@ const SORT_OPTIONS: { id: Sort; label: string }[] = [
   { id: "az", label: "A–Z" },
   { id: "deck", label: "ตามชุด" },
 ];
-
-const POS_TONE: Record<Pos, string> = {
-  n: "bg-subj-bg text-subj",
-  v: "bg-verb-bg text-verb",
-  adj: "bg-obj-bg text-obj",
-  adv: "bg-[#f3e8fb] text-[#7a3fa6]",
-  prep: "bg-[#e3f2f1] text-[#0f6e69]",
-  conj: "bg-[#e3f2f1] text-[#0f6e69]",
-  phrase: "bg-[#fbf0d9] text-[#9a6200]",
-};
-
-/** Icon tile, example box and highlight colours for each part of speech. */
-export const POS_STYLE: Record<Pos, { tile: string; chip: string; mark: string }> = {
-  n: { tile: "bg-subj-bg text-subj", chip: "bg-[#eef3fd]", mark: "text-subj" },
-  v: { tile: "bg-verb-bg text-verb", chip: "bg-[#fdf3ec]", mark: "text-verb" },
-  adj: { tile: "bg-obj-bg text-obj", chip: "bg-[#ecf7f2]", mark: "text-obj" },
-  adv: { tile: "bg-[#f3e8fb] text-[#7a3fa6]", chip: "bg-[#f8f2fc]", mark: "text-[#7a3fa6]" },
-  prep: { tile: "bg-[#e3f2f1] text-[#0f6e69]", chip: "bg-[#eef7f6]", mark: "text-[#0f6e69]" },
-  conj: { tile: "bg-[#e3f2f1] text-[#0f6e69]", chip: "bg-[#eef7f6]", mark: "text-[#0f6e69]" },
-  phrase: { tile: "bg-[#fbf0d9] text-[#9a6200]", chip: "bg-[#fdf7ea]", mark: "text-[#9a6200]" },
-};
 
 const POS_KEYS = Object.keys(POS_LABEL) as Pos[];
 
@@ -588,22 +548,6 @@ function Segmented<T extends string>({ label, options, value, onChange }: { labe
       ))}
     </div>
   );
-}
-
-export function PosBadge({ pos, pill = false }: { pos: Pos; pill?: boolean }) {
-  return (
-    <abbr title={POS_LABEL[pos].th}
-      className={(pill ? "rounded-full px-2.5 text-[11px] " : "rounded px-1.5 text-[11px] ") + "py-0.5 font-mono no-underline " + POS_TONE[pos]}>
-      {POS_LABEL[pos].abbr}
-    </abbr>
-  );
-}
-
-/** The icon picked for this word's meaning, or a dot for words added by the learner. */
-export function WordIcon({ word }: { word: Word }) {
-  const Icon = word.icon ? WORD_ICONS[word.icon] : undefined;
-  if (!Icon) return <span className="size-2.5 rounded-full bg-current" aria-hidden />;
-  return <Icon className="size-5" strokeWidth={2} aria-hidden />;
 }
 
 /** The example sentence with the word (or its -s/-ed/-ing form) in bold colour. */

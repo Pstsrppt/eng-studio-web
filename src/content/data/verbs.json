@@ -10,7 +10,14 @@
     "ex2": "I worked late yesterday.",
     "ex2Th": "เมื่อวานฉันทำงานดึก",
     "ex3": "I have worked here for two years.",
-    "ex3Th": "ฉันทำงานที่นี่มา 2 ปีแล้ว"
+    "ex3Th": "ฉันทำงานที่นี่มา 2 ปีแล้ว",
+    "ipa": {
+      "v1": "/wɝk/",
+      "v2": "/wɝkt/",
+      "v3": "/wɝkt/"
+    },
+    "photoQuery": "working late office",
+    "icon": "Briefcase"
   },
   {
     "id": "vb-check",
@@ -23,7 +30,13 @@
     "ex2": "She checked the invoice this morning.",
     "ex2Th": "เธอตรวจใบแจ้งหนี้เมื่อเช้านี้",
     "ex3": "Have you checked your email?",
-    "ex3Th": "คุณเช็กอีเมลหรือยัง"
+    "ex3Th": "คุณเช็กอีเมลหรือยัง",
+    "ipa": {
+      "v1": "/tʃɛk/",
+      "v2": "/tʃɛkt/",
+      "v3": "/tʃɛkt/"
+    },
+    "icon": "SquareCheck"
   },
   {
     "id": "vb-call",
@@ -36,7 +49,14 @@
     "ex2": "The customer called at 9.",
     "ex2Th": "ลูกค้าโทรมาตอน 9 โมง",
     "ex3": "I have called him three times.",
-    "ex3Th": "ฉันโทรหาเขาไปแล้ว 3 ครั้ง"
+    "ex3Th": "ฉันโทรหาเขาไปแล้ว 3 ครั้ง",
+    "ipa": {
+      "v1": "/kɔl/",
+      "v2": "/kɔld/",
+      "v3": "/kɔld/"
+    },
+    "photoQuery": "phone call",
+    "icon": "Phone"
   },
   {
     "id": "vb-deliver",
@@ -49,7 +69,14 @@
     "ex2": "We delivered the goods on Monday.",
     "ex2Th": "เราส่งสินค้าเมื่อวันจันทร์",
     "ex3": "The parcel has been delivered.",
-    "ex3Th": "พัสดุส่งถึงแล้ว"
+    "ex3Th": "พัสดุส่งถึงแล้ว",
+    "ipa": {
+      "v1": "/dɪˈlɪvɚ/",
+      "v2": "/dɪˈlɪvɚd/",
+      "v3": "/dɪˈlɪvɚd/"
+    },
+    "photoQuery": "parcel delivery",
+    "icon": "PackageCheck"
   },
   {
     "id": "vb-need",
@@ -62,7 +89,13 @@
     "ex2": "We needed more boxes last week.",
     "ex2Th": "สัปดาห์ที่แล้วเราต้องการกล่องเพิ่ม",
     "ex3": "I have needed a new laptop for months.",
-    "ex3Th": "ฉันอยากได้แล็ปท็อปใหม่มาหลายเดือนแล้ว"
+    "ex3Th": "ฉันอยากได้แล็ปท็อปใหม่มาหลายเดือนแล้ว",
+    "ipa": {
+      "v1": "/nid/",
+      "v2": "/ˈnidəd/",
+      "v3": "/ˈnidəd/"
+    },
+    "icon": "CircleAlert"
   },
   {
     "id": "vb-want",
@@ -75,7 +108,13 @@
     "ex2": "He wanted a cheaper price.",
     "ex2Th": "เขาอยากได้ราคาที่ถูกกว่านี้",
     "ex3": "I have always wanted to visit Japan.",
-    "ex3Th": "ฉันอยากไปญี่ปุ่นมาตลอด"
+    "ex3Th": "ฉันอยากไปญี่ปุ่นมาตลอด",
+    "ipa": {
+      "v1": "/wɑnt/",
+      "v2": "/ˈwɔntɪd/",
+      "v3": "/ˈwɔntɪd/"
+    },
+    "icon": "Heart"
   },
   {
     "id": "vb-update",
@@ -88,7 +127,13 @@
     "ex2": "I updated the report yesterday.",
     "ex2Th": "เมื่อวานฉันอัปเดตรายงานแล้ว",
     "ex3": "The system has been updated.",
-    "ex3Th": "ระบบได้รับการอัปเดตแล้ว"
+    "ex3Th": "ระบบได้รับการอัปเดตแล้ว",
+    "ipa": {
+      "v1": "/əpˈdeɪt/",
+      "v2": "/əpˈdeɪtɪd/",
+      "v3": "/əpˈdeɪtɪd/"
+    },
+    "icon": "RefreshCw"
   },
   {
     "id": "vb-finish",
@@ -101,7 +146,14 @@
     "ex2": "We finished the project in May.",
     "ex2Th": "เราทำโปรเจกต์เสร็จเมื่อเดือนพฤษภาคม",
     "ex3": "Have you finished the task?",
-    "ex3Th": "คุณทำงานเสร็จหรือยัง"
+    "ex3Th": "คุณทำงานเสร็จหรือยัง",
+    "ipa": {
+      "v1": "/ˈfɪnɪʃ/",
+      "v2": "/ˈfɪnɪʃt/",
+      "v3": "/ˈfɪnɪʃt/"
+    },
+    "photoQuery": "finish line",
+    "icon": "Flag"
   },
   {
     "id": "vb-arrive",
@@ -114,7 +166,14 @@
     "ex2": "The ship arrived two days late.",
     "ex2Th": "เรือมาถึงช้าไป 2 วัน",
     "ex3": "The goods have just arrived.",
-    "ex3Th": "สินค้าเพิ่งมาถึง"
+    "ex3Th": "สินค้าเพิ่งมาถึง",
+    "ipa": {
+      "v1": "/ɚˈaɪv/",
+      "v2": "/ɚˈaɪvd/",
+      "v3": "/ɚˈaɪvd/"
+    },
+    "photoQuery": "cargo ship port",
+    "icon": "MapPinCheck"
   },
   {
     "id": "vb-try",
@@ -127,7 +186,13 @@
     "ex2": "I tried to call you.",
     "ex2Th": "ฉันพยายามโทรหาคุณแล้ว",
     "ex3": "Have you tried the new system?",
-    "ex3Th": "คุณลองใช้ระบบใหม่หรือยัง"
+    "ex3Th": "คุณลองใช้ระบบใหม่หรือยัง",
+    "ipa": {
+      "v1": "/traɪ/",
+      "v2": "/traɪd/",
+      "v3": "/traɪd/"
+    },
+    "icon": "FlaskConical"
   },
   {
     "id": "vb-stop",
@@ -140,7 +205,14 @@
     "ex2": "The truck stopped at the border.",
     "ex2Th": "รถบรรทุกหยุดที่ชายแดน",
     "ex3": "The machine has stopped again.",
-    "ex3Th": "เครื่องจักรหยุดอีกแล้ว"
+    "ex3Th": "เครื่องจักรหยุดอีกแล้ว",
+    "ipa": {
+      "v1": "/stɑp/",
+      "v2": "/stɑpt/",
+      "v3": "/stɑpt/"
+    },
+    "photoQuery": "border checkpoint truck",
+    "icon": "Ban"
   },
   {
     "id": "vb-plan",
@@ -153,7 +225,14 @@
     "ex2": "We planned the route carefully.",
     "ex2Th": "เราวางแผนเส้นทางอย่างละเอียด",
     "ex3": "Everything has been planned.",
-    "ex3Th": "ทุกอย่างวางแผนไว้หมดแล้ว"
+    "ex3Th": "ทุกอย่างวางแผนไว้หมดแล้ว",
+    "ipa": {
+      "v1": "/plæn/",
+      "v2": "/plænd/",
+      "v3": "/plænd/"
+    },
+    "photoQuery": "route map",
+    "icon": "Route"
   },
   {
     "id": "vb-cut",
@@ -166,7 +245,14 @@
     "ex2": "They cut the price by 10%.",
     "ex2Th": "พวกเขาลดราคาลง 10%",
     "ex3": "Our budget has been cut.",
-    "ex3Th": "งบประมาณของเราถูกตัด"
+    "ex3Th": "งบประมาณของเราถูกตัด",
+    "ipa": {
+      "v1": "/kʌt/",
+      "v2": "/kʌt/",
+      "v3": "/kʌt/"
+    },
+    "icon": "Scissors",
+    "photoQuery": "scissors cutting"
   },
   {
     "id": "vb-put",
@@ -179,7 +265,13 @@
     "ex2": "I put the documents on your desk.",
     "ex2Th": "ฉันวางเอกสารไว้บนโต๊ะคุณแล้ว",
     "ex3": "Where have you put the keys?",
-    "ex3Th": "คุณเอากุญแจไปวางไว้ไหน"
+    "ex3Th": "คุณเอากุญแจไปวางไว้ไหน",
+    "ipa": {
+      "v1": "/pʊt/",
+      "v2": "/pʊt/",
+      "v3": "/pʊt/"
+    },
+    "icon": "Inbox"
   },
   {
     "id": "vb-set",
@@ -192,7 +284,14 @@
     "ex2": "We set a new deadline.",
     "ex2Th": "เรากำหนดเส้นตายใหม่",
     "ex3": "The meeting has been set for Friday.",
-    "ex3Th": "ประชุมนัดไว้วันศุกร์แล้ว"
+    "ex3Th": "ประชุมนัดไว้วันศุกร์แล้ว",
+    "ipa": {
+      "v1": "/sɛt/",
+      "v2": "/sɛt/",
+      "v3": "/sɛt/"
+    },
+    "photoQuery": "deadline calendar",
+    "icon": "CalendarClock"
   },
   {
     "id": "vb-let",
@@ -205,7 +304,13 @@
     "ex2": "My boss let me leave early.",
     "ex2Th": "หัวหน้าให้ฉันกลับก่อน",
     "ex3": "Have you let the customer know?",
-    "ex3Th": "คุณแจ้งลูกค้าหรือยัง"
+    "ex3Th": "คุณแจ้งลูกค้าหรือยัง",
+    "ipa": {
+      "v1": "/lɛt/",
+      "v2": "/lɛt/",
+      "v3": "/lɛt/"
+    },
+    "icon": "DoorOpen"
   },
   {
     "id": "vb-hit",
@@ -218,7 +323,14 @@
     "ex2": "The truck hit a wall.",
     "ex2Th": "รถบรรทุกชนกำแพง",
     "ex3": "The storm has hit the port.",
-    "ex3Th": "พายุพัดเข้าท่าเรือแล้ว"
+    "ex3Th": "พายุพัดเข้าท่าเรือแล้ว",
+    "ipa": {
+      "v1": "/hɪt/",
+      "v2": "/hɪt/",
+      "v3": "/hɪt/"
+    },
+    "photoQuery": "truck accident",
+    "icon": "CarFront"
   },
   {
     "id": "vb-cost",
@@ -231,7 +343,13 @@
     "ex2": "The repair cost 5,000 baht.",
     "ex2Th": "ค่าซ่อม 5,000 บาท",
     "ex3": "The delay has cost us a lot of money.",
-    "ex3Th": "ความล่าช้าทำให้เราเสียเงินไปมาก"
+    "ex3Th": "ความล่าช้าทำให้เราเสียเงินไปมาก",
+    "ipa": {
+      "v1": "/kɑst/",
+      "v2": "/kɑst/",
+      "v3": "/kɑst/"
+    },
+    "icon": "DollarSign"
   },
   {
     "id": "vb-shut",
@@ -244,7 +362,13 @@
     "ex2": "They shut the warehouse at 6.",
     "ex2Th": "พวกเขาปิดคลังสินค้าตอน 6 โมง",
     "ex3": "The port has been shut because of the storm.",
-    "ex3Th": "ท่าเรือถูกปิดเพราะพายุ"
+    "ex3Th": "ท่าเรือถูกปิดเพราะพายุ",
+    "ipa": {
+      "v1": "/ʃʌt/",
+      "v2": "/ʃʌt/",
+      "v3": "/ʃʌt/"
+    },
+    "icon": "DoorClosed"
   },
   {
     "id": "vb-hurt",
@@ -257,7 +381,14 @@
     "ex2": "He hurt his back at work.",
     "ex2Th": "เขาเจ็บหลังระหว่างทำงาน",
     "ex3": "Nobody has been hurt.",
-    "ex3Th": "ไม่มีใครได้รับบาดเจ็บ"
+    "ex3Th": "ไม่มีใครได้รับบาดเจ็บ",
+    "ipa": {
+      "v1": "/hɝt/",
+      "v2": "/hɝt/",
+      "v3": "/hɝt/"
+    },
+    "photoQuery": "back pain",
+    "icon": "HeartPulse"
   },
   {
     "id": "vb-read",
@@ -270,7 +401,14 @@
     "ex2": "I read your email this morning.",
     "ex2Th": "เมื่อเช้าฉันอ่านอีเมลคุณแล้ว",
     "ex3": "Have you read the contract?",
-    "ex3Th": "คุณอ่านสัญญาหรือยัง"
+    "ex3Th": "คุณอ่านสัญญาหรือยัง",
+    "ipa": {
+      "v1": "/rid/",
+      "v2": "/rɛd/",
+      "v3": "/rɛd/"
+    },
+    "photoQuery": "reading email",
+    "icon": "BookOpen"
   },
   {
     "id": "vb-quit",
@@ -283,7 +421,13 @@
     "ex2": "She quit her job last month.",
     "ex2Th": "เธอลาออกจากงานเมื่อเดือนที่แล้ว",
     "ex3": "He has quit smoking.",
-    "ex3Th": "เขาเลิกสูบบุหรี่แล้ว"
+    "ex3Th": "เขาเลิกสูบบุหรี่แล้ว",
+    "ipa": {
+      "v1": "/kwɪt/",
+      "v2": "/kwɪt/",
+      "v3": "/kwɪt/"
+    },
+    "icon": "LogOut"
   },
   {
     "id": "vb-send",
@@ -296,7 +440,14 @@
     "ex2": "I sent the file yesterday.",
     "ex2Th": "เมื่อวานฉันส่งไฟล์ไปแล้ว",
     "ex3": "The invoice has been sent.",
-    "ex3Th": "ส่งใบแจ้งหนี้ไปแล้ว"
+    "ex3Th": "ส่งใบแจ้งหนี้ไปแล้ว",
+    "ipa": {
+      "v1": "/sɛnd/",
+      "v2": "/sɛnt/",
+      "v3": "/sɛnt/"
+    },
+    "photoQuery": "sending email",
+    "icon": "Send"
   },
   {
     "id": "vb-spend",
@@ -309,7 +460,13 @@
     "ex2": "We spent two hours in the meeting.",
     "ex2Th": "เราใช้เวลาประชุม 2 ชั่วโมง",
     "ex3": "We have spent all the budget.",
-    "ex3Th": "เราใช้งบไปหมดแล้ว"
+    "ex3Th": "เราใช้งบไปหมดแล้ว",
+    "ipa": {
+      "v1": "/spɛnd/",
+      "v2": "/spɛnt/",
+      "v3": "/spɛnt/"
+    },
+    "icon": "Wallet"
   },
   {
     "id": "vb-build",
@@ -322,7 +479,14 @@
     "ex2": "They built a new warehouse last year.",
     "ex2Th": "พวกเขาสร้างคลังสินค้าใหม่เมื่อปีที่แล้ว",
     "ex3": "The app was built with React.",
-    "ex3Th": "แอปนี้สร้างด้วย React"
+    "ex3Th": "แอปนี้สร้างด้วย React",
+    "ipa": {
+      "v1": "/bɪld/",
+      "v2": "/bɪlt/",
+      "v3": "/bɪlt/"
+    },
+    "icon": "Building2",
+    "photoQuery": "building construction"
   },
   {
     "id": "vb-lend",
@@ -335,7 +499,13 @@
     "ex2": "He lent me his laptop.",
     "ex2Th": "เขาให้ฉันยืมแล็ปท็อป",
     "ex3": "I have lent my car to a friend.",
-    "ex3Th": "ฉันให้เพื่อนยืมรถไปแล้ว"
+    "ex3Th": "ฉันให้เพื่อนยืมรถไปแล้ว",
+    "ipa": {
+      "v1": "/lɛnd/",
+      "v2": "/lɛnt/",
+      "v3": "/lɛnt/"
+    },
+    "icon": "HandHelping"
   },
   {
     "id": "vb-buy",
@@ -348,7 +518,14 @@
     "ex2": "We bought two new trucks.",
     "ex2Th": "เราซื้อรถบรรทุกใหม่ 2 คัน",
     "ex3": "Have you bought the tickets?",
-    "ex3Th": "คุณซื้อตั๋วหรือยัง"
+    "ex3Th": "คุณซื้อตั๋วหรือยัง",
+    "ipa": {
+      "v1": "/baɪ/",
+      "v2": "/bɑt/",
+      "v3": "/bɑt/"
+    },
+    "icon": "ShoppingCart",
+    "photoQuery": "shopping buying"
   },
   {
     "id": "vb-bring",
@@ -361,7 +538,13 @@
     "ex2": "She brought coffee to the meeting.",
     "ex2Th": "เธอเอากาแฟมาที่ประชุม",
     "ex3": "I have brought the documents.",
-    "ex3Th": "ฉันเอาเอกสารมาแล้ว"
+    "ex3Th": "ฉันเอาเอกสารมาแล้ว",
+    "ipa": {
+      "v1": "/brɪŋ/",
+      "v2": "/brɔt/",
+      "v3": "/brɔt/"
+    },
+    "icon": "Package"
   },
   {
     "id": "vb-think",
@@ -374,7 +557,14 @@
     "ex2": "I thought the meeting was at 3.",
     "ex2Th": "ฉันนึกว่าประชุมตอนบ่าย 3",
     "ex3": "Have you thought about my offer?",
-    "ex3Th": "คุณคิดเรื่องข้อเสนอของฉันหรือยัง"
+    "ex3Th": "คุณคิดเรื่องข้อเสนอของฉันหรือยัง",
+    "ipa": {
+      "v1": "/θɪŋk/",
+      "v2": "/θɔt/",
+      "v3": "/θɔt/"
+    },
+    "photoQuery": "thinking",
+    "icon": "BrainCircuit"
   },
   {
     "id": "vb-teach",
@@ -387,7 +577,14 @@
     "ex2": "She taught me how to use Excel.",
     "ex2Th": "เธอสอนฉันใช้ Excel",
     "ex3": "All drivers have been taught the safety rules.",
-    "ex3Th": "คนขับทุกคนได้รับการสอนกฎความปลอดภัยแล้ว"
+    "ex3Th": "คนขับทุกคนได้รับการสอนกฎความปลอดภัยแล้ว",
+    "ipa": {
+      "v1": "/titʃ/",
+      "v2": "/tɔt/",
+      "v3": "/tɔt/"
+    },
+    "icon": "Presentation",
+    "photoQuery": "teacher teaching"
   },
   {
     "id": "vb-catch",
@@ -400,7 +597,14 @@
     "ex2": "I caught the last train.",
     "ex2Th": "ฉันขึ้นรถไฟเที่ยวสุดท้ายทัน",
     "ex3": "We have caught the problem early.",
-    "ex3Th": "เราเจอปัญหาตั้งแต่เนิ่น ๆ"
+    "ex3Th": "เราเจอปัญหาตั้งแต่เนิ่น ๆ",
+    "ipa": {
+      "v1": "/kætʃ/",
+      "v2": "/kɑt/",
+      "v3": "/kɑt/"
+    },
+    "photoQuery": "train platform",
+    "icon": "TrainFront"
   },
   {
     "id": "vb-make",
@@ -413,7 +617,13 @@
     "ex2": "I made a mistake in the report.",
     "ex2Th": "ฉันทำรายงานผิด",
     "ex3": "A decision has been made.",
-    "ex3Th": "มีการตัดสินใจแล้ว"
+    "ex3Th": "มีการตัดสินใจแล้ว",
+    "ipa": {
+      "v1": "/meɪk/",
+      "v2": "/meɪd/",
+      "v3": "/meɪd/"
+    },
+    "icon": "Hammer"
   },
   {
     "id": "vb-have",
@@ -426,7 +636,13 @@
     "ex2": "We had a meeting this morning.",
     "ex2Th": "เมื่อเช้าเรามีประชุม",
     "ex3": "I have had this phone for three years.",
-    "ex3Th": "ฉันใช้โทรศัพท์เครื่องนี้มา 3 ปีแล้ว"
+    "ex3Th": "ฉันใช้โทรศัพท์เครื่องนี้มา 3 ปีแล้ว",
+    "ipa": {
+      "v1": "/hæv/",
+      "v2": "/hæd/",
+      "v3": "/hæd/"
+    },
+    "icon": "Briefcase"
   },
   {
     "id": "vb-hear",
@@ -439,7 +655,14 @@
     "ex2": "I heard the news yesterday.",
     "ex2Th": "ฉันได้ยินข่าวเมื่อวาน",
     "ex3": "Have you heard from the supplier?",
-    "ex3Th": "ซัพพลายเออร์ติดต่อมาหรือยัง"
+    "ex3Th": "ซัพพลายเออร์ติดต่อมาหรือยัง",
+    "ipa": {
+      "v1": "/hir/",
+      "v2": "/hɝd/",
+      "v3": "/hɝd/"
+    },
+    "icon": "Ear",
+    "photoQuery": "listening ear"
   },
   {
     "id": "vb-keep",
@@ -452,7 +675,13 @@
     "ex2": "He kept all the receipts.",
     "ex2Th": "เขาเก็บใบเสร็จไว้ทั้งหมด",
     "ex3": "The goods have been kept in a cold room.",
-    "ex3Th": "สินค้าถูกเก็บไว้ในห้องเย็น"
+    "ex3Th": "สินค้าถูกเก็บไว้ในห้องเย็น",
+    "ipa": {
+      "v1": "/kip/",
+      "v2": "/kɛpt/",
+      "v3": "/kɛpt/"
+    },
+    "icon": "Archive"
   },
   {
     "id": "vb-sleep",
@@ -465,7 +694,14 @@
     "ex2": "I slept badly last night.",
     "ex2Th": "เมื่อคืนฉันนอนไม่ค่อยหลับ",
     "ex3": "I haven't slept well this week.",
-    "ex3Th": "สัปดาห์นี้ฉันนอนไม่ค่อยหลับเลย"
+    "ex3Th": "สัปดาห์นี้ฉันนอนไม่ค่อยหลับเลย",
+    "ipa": {
+      "v1": "/slip/",
+      "v2": "/slɛpt/",
+      "v3": "/slɛpt/"
+    },
+    "photoQuery": "sleeping",
+    "icon": "Moon"
   },
   {
     "id": "vb-feel",
@@ -478,7 +714,14 @@
     "ex2": "I felt sick yesterday.",
     "ex2Th": "เมื่อวานฉันรู้สึกไม่สบาย",
     "ex3": "Have you ever felt nervous at work?",
-    "ex3Th": "คุณเคยรู้สึกประหม่าตอนทำงานไหม"
+    "ex3Th": "คุณเคยรู้สึกประหม่าตอนทำงานไหม",
+    "ipa": {
+      "v1": "/fil/",
+      "v2": "/fɛlt/",
+      "v3": "/fɛlt/"
+    },
+    "photoQuery": "sick",
+    "icon": "HeartPulse"
   },
   {
     "id": "vb-leave",
@@ -491,7 +734,14 @@
     "ex2": "The truck left at 8 am.",
     "ex2Th": "รถบรรทุกออกตอน 8 โมงเช้า",
     "ex3": "She has already left the office.",
-    "ex3Th": "เธอออกจากออฟฟิศไปแล้ว"
+    "ex3Th": "เธอออกจากออฟฟิศไปแล้ว",
+    "ipa": {
+      "v1": "/liv/",
+      "v2": "/lɛft/",
+      "v3": "/lɛft/"
+    },
+    "photoQuery": "truck road",
+    "icon": "LogOut"
   },
   {
     "id": "vb-meet",
@@ -504,7 +754,14 @@
     "ex2": "I met the client last week.",
     "ex2Th": "สัปดาห์ที่แล้วฉันเจอลูกค้า",
     "ex3": "Have you met our new manager?",
-    "ex3Th": "คุณเจอผู้จัดการคนใหม่หรือยัง"
+    "ex3Th": "คุณเจอผู้จัดการคนใหม่หรือยัง",
+    "ipa": {
+      "v1": "/mit/",
+      "v2": "/mɛt/",
+      "v3": "/mɛt/"
+    },
+    "photoQuery": "business meeting handshake",
+    "icon": "Handshake"
   },
   {
     "id": "vb-pay",
@@ -517,7 +774,14 @@
     "ex2": "They paid the invoice on time.",
     "ex2Th": "พวกเขาจ่ายใบแจ้งหนี้ตรงเวลา",
     "ex3": "The invoice has been paid.",
-    "ex3Th": "ใบแจ้งหนี้ชำระแล้ว"
+    "ex3Th": "ใบแจ้งหนี้ชำระแล้ว",
+    "ipa": {
+      "v1": "/peɪ/",
+      "v2": "/peɪd/",
+      "v3": "/peɪd/"
+    },
+    "photoQuery": "invoice payment",
+    "icon": "CreditCard"
   },
   {
     "id": "vb-say",
@@ -530,7 +794,13 @@
     "ex2": "He said the ship was late.",
     "ex2Th": "เขาบอกว่าเรือมาช้า",
     "ex3": "I have said this many times.",
-    "ex3Th": "ฉันพูดเรื่องนี้ไปหลายครั้งแล้ว"
+    "ex3Th": "ฉันพูดเรื่องนี้ไปหลายครั้งแล้ว",
+    "ipa": {
+      "v1": "/seɪ/",
+      "v2": "/sɛd/",
+      "v3": "/sɛd/"
+    },
+    "icon": "MessageSquare"
   },
   {
     "id": "vb-sell",
@@ -543,7 +813,14 @@
     "ex2": "We sold 500 units last month.",
     "ex2Th": "เดือนที่แล้วเราขายได้ 500 ชิ้น",
     "ex3": "This item has been sold out.",
-    "ex3Th": "สินค้านี้ขายหมดแล้ว"
+    "ex3Th": "สินค้านี้ขายหมดแล้ว",
+    "ipa": {
+      "v1": "/sɛl/",
+      "v2": "/soʊld/",
+      "v3": "/soʊld/"
+    },
+    "photoQuery": "sales",
+    "icon": "Tag"
   },
   {
     "id": "vb-tell",
@@ -556,7 +833,13 @@
     "ex2": "She told me about the delay.",
     "ex2Th": "เธอบอกฉันเรื่องความล่าช้า",
     "ex3": "Have you told the customer?",
-    "ex3Th": "คุณบอกลูกค้าหรือยัง"
+    "ex3Th": "คุณบอกลูกค้าหรือยัง",
+    "ipa": {
+      "v1": "/tɛl/",
+      "v2": "/toʊld/",
+      "v3": "/toʊld/"
+    },
+    "icon": "MessageSquareText"
   },
   {
     "id": "vb-find",
@@ -569,7 +852,13 @@
     "ex2": "I found the missing box.",
     "ex2Th": "ฉันเจอกล่องที่หายไปแล้ว",
     "ex3": "We have found a better supplier.",
-    "ex3Th": "เราเจอซัพพลายเออร์ที่ดีกว่าแล้ว"
+    "ex3Th": "เราเจอซัพพลายเออร์ที่ดีกว่าแล้ว",
+    "ipa": {
+      "v1": "/faɪnd/",
+      "v2": "/faʊnd/",
+      "v3": "/faʊnd/"
+    },
+    "icon": "Search"
   },
   {
     "id": "vb-hold",
@@ -582,7 +871,13 @@
     "ex2": "We held a meeting on Monday.",
     "ex2Th": "เราจัดประชุมเมื่อวันจันทร์",
     "ex3": "The goods are being held at customs.",
-    "ex3Th": "สินค้าถูกกักไว้ที่ศุลกากร"
+    "ex3Th": "สินค้าถูกกักไว้ที่ศุลกากร",
+    "ipa": {
+      "v1": "/hoʊld/",
+      "v2": "/hɛld/",
+      "v3": "/hɛld/"
+    },
+    "icon": "Users"
   },
   {
     "id": "vb-stand",
@@ -595,7 +890,14 @@
     "ex2": "We stood in line for an hour.",
     "ex2Th": "เรายืนต่อแถวอยู่ชั่วโมงหนึ่ง",
     "ex3": "This building has stood here for 50 years.",
-    "ex3Th": "ตึกนี้ตั้งอยู่ที่นี่มา 50 ปีแล้ว"
+    "ex3Th": "ตึกนี้ตั้งอยู่ที่นี่มา 50 ปีแล้ว",
+    "ipa": {
+      "v1": "/stænd/",
+      "v2": "/stʊd/",
+      "v3": "/stʊd/"
+    },
+    "photoQuery": "queue",
+    "icon": "Footprints"
   },
   {
     "id": "vb-understand",
@@ -608,7 +910,13 @@
     "ex2": "I understood the problem after the meeting.",
     "ex2Th": "ฉันเข้าใจปัญหาหลังประชุม",
     "ex3": "Have you understood the instructions?",
-    "ex3Th": "คุณเข้าใจคำแนะนำหรือยัง"
+    "ex3Th": "คุณเข้าใจคำแนะนำหรือยัง",
+    "ipa": {
+      "v1": "/ʌndɚˈstænd/",
+      "v2": "/ʌndɚˈstʊd/",
+      "v3": "/ʌndɚˈstʊd/"
+    },
+    "icon": "Lightbulb"
   },
   {
     "id": "vb-lose",
@@ -621,7 +929,13 @@
     "ex2": "I lost my office key.",
     "ex2Th": "ฉันทำกุญแจออฟฟิศหาย",
     "ex3": "We have lost an important customer.",
-    "ex3Th": "เราเสียลูกค้าคนสำคัญไปแล้ว"
+    "ex3Th": "เราเสียลูกค้าคนสำคัญไปแล้ว",
+    "ipa": {
+      "v1": "/luz/",
+      "v2": "/lɔst/",
+      "v3": "/lɔst/"
+    },
+    "icon": "SearchX"
   },
   {
     "id": "vb-win",
@@ -634,7 +948,14 @@
     "ex2": "Our team won the contract.",
     "ex2Th": "ทีมเราได้สัญญานี้มา",
     "ex3": "They have won three awards.",
-    "ex3Th": "พวกเขาได้รางวัลมาแล้ว 3 รางวัล"
+    "ex3Th": "พวกเขาได้รางวัลมาแล้ว 3 รางวัล",
+    "ipa": {
+      "v1": "/wɪn/",
+      "v2": "/wʌn/",
+      "v3": "/wʌn/"
+    },
+    "photoQuery": "winning team",
+    "icon": "Trophy"
   },
   {
     "id": "vb-sit",
@@ -647,7 +968,14 @@
     "ex2": "We sat near the window.",
     "ex2Th": "เรานั่งใกล้หน้าต่าง",
     "ex3": "I have sat this exam before.",
-    "ex3Th": "ฉันเคยสอบวิชานี้มาก่อน"
+    "ex3Th": "ฉันเคยสอบวิชานี้มาก่อน",
+    "ipa": {
+      "v1": "/sɪt/",
+      "v2": "/sæt/",
+      "v3": "/sæt/"
+    },
+    "icon": "Armchair",
+    "photoQuery": "people sitting meeting"
   },
   {
     "id": "vb-get",
@@ -660,7 +988,14 @@
     "ex2": "I got your message.",
     "ex2Th": "ฉันได้รับข้อความของคุณแล้ว",
     "ex3": "Prices have got higher this year.",
-    "ex3Th": "ปีนี้ราคาสูงขึ้น"
+    "ex3Th": "ปีนี้ราคาสูงขึ้น",
+    "ipa": {
+      "v1": "/ɡɛt/",
+      "v2": "/ɡɑt/",
+      "v3": "/ɡɑt/"
+    },
+    "photoQuery": "message phone",
+    "icon": "Inbox"
   },
   {
     "id": "vb-lead",
@@ -673,7 +1008,13 @@
     "ex2": "She led the project last year.",
     "ex2Th": "เธอเป็นผู้นำโปรเจกต์เมื่อปีที่แล้ว",
     "ex3": "The team is led by Mr. Lee.",
-    "ex3Th": "ทีมนี้นำโดยคุณลี"
+    "ex3Th": "ทีมนี้นำโดยคุณลี",
+    "ipa": {
+      "v1": "/lid/",
+      "v2": "/lɛd/",
+      "v3": "/lɛd/"
+    },
+    "icon": "Flag"
   },
   {
     "id": "vb-mean",
@@ -686,7 +1027,13 @@
     "ex2": "Sorry, I meant Tuesday, not Thursday.",
     "ex2Th": "ขอโทษ ฉันหมายถึงวันอังคาร ไม่ใช่วันพฤหัส",
     "ex3": "This rule was meant for new staff.",
-    "ex3Th": "กฎนี้มีไว้สำหรับพนักงานใหม่"
+    "ex3Th": "กฎนี้มีไว้สำหรับพนักงานใหม่",
+    "ipa": {
+      "v1": "/min/",
+      "v2": "/mɛnt/",
+      "v3": "/mɛnt/"
+    },
+    "icon": "Lightbulb"
   },
   {
     "id": "vb-go",
@@ -699,7 +1046,14 @@
     "ex2": "I went to the port yesterday.",
     "ex2Th": "เมื่อวานฉันไปท่าเรือ",
     "ex3": "He has gone home.",
-    "ex3Th": "เขากลับบ้านไปแล้ว"
+    "ex3Th": "เขากลับบ้านไปแล้ว",
+    "ipa": {
+      "v1": "/ɡoʊ/",
+      "v2": "/wɛnt/",
+      "v3": "/ɡɔn/"
+    },
+    "icon": "MapPin",
+    "photoQuery": "walking street"
   },
   {
     "id": "vb-do",
@@ -712,7 +1066,14 @@
     "ex2": "I did my homework last night.",
     "ex2Th": "เมื่อคืนฉันทำการบ้านแล้ว",
     "ex3": "Have you done the report?",
-    "ex3Th": "คุณทำรายงานเสร็จหรือยัง"
+    "ex3Th": "คุณทำรายงานเสร็จหรือยัง",
+    "ipa": {
+      "v1": "/du/",
+      "v2": "/dɪd/",
+      "v3": "/dʌn/"
+    },
+    "photoQuery": "homework",
+    "icon": "SquareCheck"
   },
   {
     "id": "vb-be",
@@ -725,7 +1086,13 @@
     "ex2": "The ship was late yesterday.",
     "ex2Th": "เมื่อวานเรือมาช้า",
     "ex3": "I have been to Singapore twice.",
-    "ex3Th": "ฉันเคยไปสิงคโปร์ 2 ครั้ง"
+    "ex3Th": "ฉันเคยไปสิงคโปร์ 2 ครั้ง",
+    "ipa": {
+      "v1": "/bi/",
+      "v2": "/wʌz/ · /wɝ/",
+      "v3": "/bɪn/"
+    },
+    "icon": "Star"
   },
   {
     "id": "vb-see",
@@ -738,7 +1105,13 @@
     "ex2": "I saw the damage this morning.",
     "ex2Th": "เมื่อเช้าฉันเห็นความเสียหาย",
     "ex3": "Have you seen my laptop?",
-    "ex3Th": "เห็นแล็ปท็อปฉันไหม"
+    "ex3Th": "เห็นแล็ปท็อปฉันไหม",
+    "ipa": {
+      "v1": "/si/",
+      "v2": "/sɔ/",
+      "v3": "/sin/"
+    },
+    "icon": "Eye"
   },
   {
     "id": "vb-take",
@@ -751,7 +1124,13 @@
     "ex2": "The trip took three hours.",
     "ex2Th": "การเดินทางใช้เวลา 3 ชั่วโมง",
     "ex3": "The photos were taken at the port.",
-    "ex3Th": "รูปถ่ายที่ท่าเรือ"
+    "ex3Th": "รูปถ่ายที่ท่าเรือ",
+    "ipa": {
+      "v1": "/teɪk/",
+      "v2": "/tʊk/",
+      "v3": "/ˈteɪkən/"
+    },
+    "icon": "Hand"
   },
   {
     "id": "vb-give",
@@ -764,7 +1143,13 @@
     "ex2": "She gave me the tracking number.",
     "ex2Th": "เธอให้เลขติดตามพัสดุกับฉัน",
     "ex3": "We have been given a discount.",
-    "ex3Th": "เราได้รับส่วนลด"
+    "ex3Th": "เราได้รับส่วนลด",
+    "ipa": {
+      "v1": "/ɡɪv/",
+      "v2": "/ɡeɪv/",
+      "v3": "/ˈɡɪvən/"
+    },
+    "icon": "Gift"
   },
   {
     "id": "vb-write",
@@ -777,7 +1162,14 @@
     "ex2": "I wrote the report last night.",
     "ex2Th": "เมื่อคืนฉันเขียนรายงาน",
     "ex3": "The email was written in English.",
-    "ex3Th": "อีเมลนี้เขียนเป็นภาษาอังกฤษ"
+    "ex3Th": "อีเมลนี้เขียนเป็นภาษาอังกฤษ",
+    "ipa": {
+      "v1": "/raɪt/",
+      "v2": "/roʊt/",
+      "v3": "/ˈrɪtən/"
+    },
+    "icon": "PenLine",
+    "photoQuery": "writing pen"
   },
   {
     "id": "vb-eat",
@@ -790,7 +1182,14 @@
     "ex2": "We ate lunch with the client.",
     "ex2Th": "เรากินข้าวกลางวันกับลูกค้า",
     "ex3": "Have you eaten yet?",
-    "ex3Th": "กินข้าวหรือยัง"
+    "ex3Th": "กินข้าวหรือยัง",
+    "ipa": {
+      "v1": "/it/",
+      "v2": "/eɪt/",
+      "v3": "/ˈitən/"
+    },
+    "icon": "Utensils",
+    "photoQuery": "eating lunch"
   },
   {
     "id": "vb-drive",
@@ -803,7 +1202,14 @@
     "ex2": "He drove to Laem Chabang.",
     "ex2Th": "เขาขับรถไปแหลมฉบัง",
     "ex3": "I have driven trucks for ten years.",
-    "ex3Th": "ฉันขับรถบรรทุกมา 10 ปีแล้ว"
+    "ex3Th": "ฉันขับรถบรรทุกมา 10 ปีแล้ว",
+    "ipa": {
+      "v1": "/draɪv/",
+      "v2": "/droʊv/",
+      "v3": "/ˈdrɪvən/"
+    },
+    "photoQuery": "truck driver",
+    "icon": "Truck"
   },
   {
     "id": "vb-speak",
@@ -816,7 +1222,14 @@
     "ex2": "I spoke to the manager.",
     "ex2Th": "ฉันคุยกับผู้จัดการแล้ว",
     "ex3": "English is spoken in the meeting.",
-    "ex3Th": "ในประชุมใช้ภาษาอังกฤษ"
+    "ex3Th": "ในประชุมใช้ภาษาอังกฤษ",
+    "ipa": {
+      "v1": "/spik/",
+      "v2": "/spoʊk/",
+      "v3": "/ˈspoʊkən/"
+    },
+    "icon": "MessagesSquare",
+    "photoQuery": "speaking microphone"
   },
   {
     "id": "vb-break",
@@ -829,7 +1242,14 @@
     "ex2": "Someone broke the printer.",
     "ex2Th": "มีคนทำเครื่องพิมพ์พัง",
     "ex3": "The seal has been broken.",
-    "ex3Th": "ซีลถูกทำลายแล้ว"
+    "ex3Th": "ซีลถูกทำลายแล้ว",
+    "ipa": {
+      "v1": "/breɪk/",
+      "v2": "/broʊk/",
+      "v3": "/ˈbroʊkən/"
+    },
+    "photoQuery": "broken printer",
+    "icon": "Unplug"
   },
   {
     "id": "vb-choose",
@@ -842,7 +1262,13 @@
     "ex2": "We chose sea freight.",
     "ex2Th": "เราเลือกขนส่งทางเรือ",
     "ex3": "A new supplier has been chosen.",
-    "ex3Th": "เลือกซัพพลายเออร์รายใหม่แล้ว"
+    "ex3Th": "เลือกซัพพลายเออร์รายใหม่แล้ว",
+    "ipa": {
+      "v1": "/tʃuz/",
+      "v2": "/tʃoʊz/",
+      "v3": "/ˈtʃoʊzən/"
+    },
+    "icon": "ListTodo"
   },
   {
     "id": "vb-forget",
@@ -855,7 +1281,14 @@
     "ex2": "I forgot my password.",
     "ex2Th": "ฉันลืมรหัสผ่าน",
     "ex3": "I have forgotten his name.",
-    "ex3Th": "ฉันลืมชื่อเขาไปแล้ว"
+    "ex3Th": "ฉันลืมชื่อเขาไปแล้ว",
+    "ipa": {
+      "v1": "/fɚˈɡɛt/",
+      "v2": "/fɚˈɡɑt/",
+      "v3": "/fɚˈɡɑtən/"
+    },
+    "photoQuery": "password",
+    "icon": "Brain"
   },
   {
     "id": "vb-know",
@@ -868,7 +1301,13 @@
     "ex2": "I knew the answer.",
     "ex2Th": "ฉันรู้คำตอบ",
     "ex3": "I have known her for five years.",
-    "ex3Th": "ฉันรู้จักเธอมา 5 ปีแล้ว"
+    "ex3Th": "ฉันรู้จักเธอมา 5 ปีแล้ว",
+    "ipa": {
+      "v1": "/noʊ/",
+      "v2": "/nu/",
+      "v3": "/noʊn/"
+    },
+    "icon": "Brain"
   },
   {
     "id": "vb-grow",
@@ -881,7 +1320,14 @@
     "ex2": "Sales grew by 20% last year.",
     "ex2Th": "ปีที่แล้วยอดขายโต 20%",
     "ex3": "The company has grown fast.",
-    "ex3Th": "บริษัทเติบโตเร็วมาก"
+    "ex3Th": "บริษัทเติบโตเร็วมาก",
+    "ipa": {
+      "v1": "/ɡroʊ/",
+      "v2": "/ɡru/",
+      "v3": "/ɡroʊn/"
+    },
+    "photoQuery": "growth chart",
+    "icon": "TrendingUp"
   },
   {
     "id": "vb-fly",
@@ -894,7 +1340,14 @@
     "ex2": "I flew to Japan for work.",
     "ex2Th": "ฉันบินไปทำงานที่ญี่ปุ่น",
     "ex3": "The parts were flown in from Germany.",
-    "ex3Th": "ชิ้นส่วนถูกส่งทางเครื่องบินมาจากเยอรมนี"
+    "ex3Th": "ชิ้นส่วนถูกส่งทางเครื่องบินมาจากเยอรมนี",
+    "ipa": {
+      "v1": "/flaɪ/",
+      "v2": "/flu/",
+      "v3": "/floʊn/"
+    },
+    "photoQuery": "airplane",
+    "icon": "Plane"
   },
   {
     "id": "vb-show",
@@ -907,7 +1360,13 @@
     "ex2": "She showed me the new system.",
     "ex2Th": "เธอพาฉันดูระบบใหม่",
     "ex3": "The results are shown in the table.",
-    "ex3Th": "ผลลัพธ์แสดงอยู่ในตาราง"
+    "ex3Th": "ผลลัพธ์แสดงอยู่ในตาราง",
+    "ipa": {
+      "v1": "/ʃoʊ/",
+      "v2": "/ʃoʊd/",
+      "v3": "/ʃoʊn/"
+    },
+    "icon": "Eye"
   },
   {
     "id": "vb-begin",
@@ -920,7 +1379,14 @@
     "ex2": "The meeting began at 9.",
     "ex2Th": "ประชุมเริ่มตอน 9 โมง",
     "ex3": "The work has already begun.",
-    "ex3Th": "งานเริ่มไปแล้ว"
+    "ex3Th": "งานเริ่มไปแล้ว",
+    "ipa": {
+      "v1": "/bɪˈɡɪn/",
+      "v2": "/bɪˈɡæn/",
+      "v3": "/bɪˈɡʌn/"
+    },
+    "icon": "Play",
+    "photoQuery": "start line"
   },
   {
     "id": "vb-drink",
@@ -933,7 +1399,14 @@
     "ex2": "I drank too much coffee today.",
     "ex2Th": "วันนี้ฉันดื่มกาแฟมากเกินไป",
     "ex3": "Have you drunk enough water?",
-    "ex3Th": "คุณดื่มน้ำพอหรือยัง"
+    "ex3Th": "คุณดื่มน้ำพอหรือยัง",
+    "ipa": {
+      "v1": "/drɪŋk/",
+      "v2": "/dræŋk/",
+      "v3": "/drʌŋk/"
+    },
+    "photoQuery": "coffee",
+    "icon": "Coffee"
   },
   {
     "id": "vb-wear",
@@ -946,7 +1419,14 @@
     "ex2": "All staff wore helmets.",
     "ex2Th": "พนักงานทุกคนใส่หมวกนิรภัย",
     "ex3": "This uniform has been worn only once.",
-    "ex3Th": "ชุดนี้ใส่ไปแค่ครั้งเดียว"
+    "ex3Th": "ชุดนี้ใส่ไปแค่ครั้งเดียว",
+    "ipa": {
+      "v1": "/wɛr/",
+      "v2": "/wɔr/",
+      "v3": "/wɔrn/"
+    },
+    "icon": "HardHat",
+    "photoQuery": "safety helmet workers"
   },
   {
     "id": "vb-fall",
@@ -959,7 +1439,13 @@
     "ex2": "A box fell off the truck.",
     "ex2Th": "มีกล่องหล่นจากรถบรรทุก",
     "ex3": "Prices have fallen this month.",
-    "ex3Th": "เดือนนี้ราคาลดลง"
+    "ex3Th": "เดือนนี้ราคาลดลง",
+    "ipa": {
+      "v1": "/fɔl/",
+      "v2": "/fɛl/",
+      "v3": "/ˈfɑlən/"
+    },
+    "icon": "ArrowDownToLine"
   },
   {
     "id": "vb-wake",
@@ -972,7 +1458,14 @@
     "ex2": "I woke up at 5 am.",
     "ex2Th": "ฉันตื่นตอนตี 5",
     "ex3": "Have you ever woken up late for work?",
-    "ex3Th": "คุณเคยตื่นสายไปทำงานไหม"
+    "ex3Th": "คุณเคยตื่นสายไปทำงานไหม",
+    "ipa": {
+      "v1": "/weɪk/",
+      "v2": "/woʊk/",
+      "v3": "/ˈwoʊkən/"
+    },
+    "photoQuery": "alarm clock",
+    "icon": "AlarmClock"
   },
   {
     "id": "vb-steal",
@@ -985,7 +1478,14 @@
     "ex2": "Someone stole a laptop from the office.",
     "ex2Th": "มีคนขโมยแล็ปท็อปไปจากออฟฟิศ",
     "ex3": "Two boxes have been stolen.",
-    "ex3Th": "กล่อง 2 ใบถูกขโมยไป"
+    "ex3Th": "กล่อง 2 ใบถูกขโมยไป",
+    "ipa": {
+      "v1": "/stil/",
+      "v2": "/stoʊl/",
+      "v3": "/ˈstoʊlən/"
+    },
+    "photoQuery": "theft",
+    "icon": "Bike"
   },
   {
     "id": "vb-ring",
@@ -998,7 +1498,13 @@
     "ex2": "The phone rang during the meeting.",
     "ex2Th": "โทรศัพท์ดังระหว่างประชุม",
     "ex3": "Has the bell rung yet?",
-    "ex3Th": "กริ่งดังหรือยัง"
+    "ex3Th": "กริ่งดังหรือยัง",
+    "ipa": {
+      "v1": "/rɪŋ/",
+      "v2": "/ræŋ/",
+      "v3": "/rʌŋ/"
+    },
+    "icon": "BellRing"
   },
   {
     "id": "vb-come",
@@ -1011,7 +1517,13 @@
     "ex2": "The driver came at 10.",
     "ex2Th": "คนขับมาตอน 10 โมง",
     "ex3": "The goods have come from China.",
-    "ex3Th": "สินค้ามาจากจีน"
+    "ex3Th": "สินค้ามาจากจีน",
+    "ipa": {
+      "v1": "/kʌm/",
+      "v2": "/keɪm/",
+      "v3": "/kʌm/"
+    },
+    "icon": "MapPinCheck"
   },
   {
     "id": "vb-become",
@@ -1024,7 +1536,13 @@
     "ex2": "She became a manager last year.",
     "ex2Th": "เธอได้เป็นผู้จัดการเมื่อปีที่แล้ว",
     "ex3": "Online shopping has become very popular.",
-    "ex3Th": "การซื้อของออนไลน์ได้รับความนิยมมาก"
+    "ex3Th": "การซื้อของออนไลน์ได้รับความนิยมมาก",
+    "ipa": {
+      "v1": "/bɪˈkʌm/",
+      "v2": "/bɪˈkeɪm/",
+      "v3": "/bɪˈkʌm/"
+    },
+    "icon": "UserCog"
   },
   {
     "id": "vb-run",
@@ -1037,6 +1555,13 @@
     "ex2": "He ran the company for ten years.",
     "ex2Th": "เขาบริหารบริษัทมา 10 ปี",
     "ex3": "The test has run without errors.",
-    "ex3Th": "การทดสอบรันผ่านโดยไม่มีข้อผิดพลาด"
+    "ex3Th": "การทดสอบรันผ่านโดยไม่มีข้อผิดพลาด",
+    "ipa": {
+      "v1": "/rʌn/",
+      "v2": "/ræn/",
+      "v3": "/rʌn/"
+    },
+    "icon": "Briefcase",
+    "photoQuery": "running"
   }
 ]

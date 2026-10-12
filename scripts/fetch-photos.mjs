@@ -1,4 +1,4 @@
-// Finds a Pixabay photo for every word in vocab.json, using the word's photoQuery (the scene of its example),
+// Finds a Pixabay photo for every word in vocab.json and verb in verbs.json, using its photoQuery (the scene of its example),
 // and saves a small WebP copy in public/photos (Pixabay asks apps to host the images themselves).
 // Usage: node --env-file=.env.local scripts/fetch-photos.mjs
 // Needs PIXABAY_API_KEY (free: https://pixabay.com/api/docs/). Safe to stop and rerun: words with a photo are skipped.
@@ -15,9 +15,15 @@ if (!key) {
 }
 
 fs.mkdirSync(DIR, { recursive: true });
-const words = JSON.parse(fs.readFileSync(VOCAB, "utf8"));
+// Verbs search the same way; `en` is only used to score how well a photo's tags fit.
+const words = [
+  ...JSON.parse(fs.readFileSync(VOCAB, "utf8")),
+  ...JSON.parse(fs.readFileSync("src/content/data/verbs.json", "utf8")).map((v) => ({ ...v, en: v.v1 })),
+];
 const photos = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, "utf8")) : {};
-const used = new Set(Object.values(photos).map((p) => p.sourceId));
+// Photos already on a card, and ones a person looked at and turned down, are never picked again.
+const rejected = JSON.parse(fs.readFileSync("src/content/data/photos-rejected.json", "utf8"));
+const used = new Set([...Object.values(photos).map((p) => p.sourceId), ...rejected]);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const save = () => fs.writeFileSync(OUT, JSON.stringify(photos, null, 2) + "\n");
 

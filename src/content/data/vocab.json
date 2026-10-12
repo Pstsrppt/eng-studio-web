@@ -9,8 +9,7 @@
     "pos": "adv",
     "level": "A1",
     "note": "วางหน้ากริยาหลัก แต่หลัง be: He is always late.",
-    "icon": "Infinity",
-    "photoQuery": "checking email laptop morning"
+    "icon": "Infinity"
   },
   {
     "id": "c2",
@@ -21,8 +20,7 @@
     "exTh": "ปกติฉันเริ่มงาน 9 โมง",
     "pos": "adv",
     "level": "A1",
-    "icon": "CalendarCheck",
-    "photoQuery": "morning coffee office"
+    "icon": "CalendarCheck"
   },
   {
     "id": "c3",
@@ -34,8 +32,7 @@
     "pos": "adv",
     "level": "A1",
     "note": "ตัว t มักไม่ออกเสียง: ออฟ-เฟิน",
-    "icon": "Repeat",
-    "photoQuery": "office at night working late"
+    "icon": "Repeat"
   },
   {
     "id": "c4",
@@ -47,8 +44,7 @@
     "pos": "adv",
     "level": "A1",
     "note": "วางต้นประโยคได้ ต่างจาก always / never",
-    "icon": "Shuffle",
-    "photoQuery": "truck waiting traffic jam"
+    "icon": "Shuffle"
   },
   {
     "id": "c5",
@@ -60,8 +56,7 @@
     "pos": "adv",
     "level": "A1",
     "note": "เป็นปฏิเสธในตัว ไม่ใส่ not ซ้อน",
-    "icon": "Ban",
-    "photoQuery": "password security"
+    "icon": "Ban"
   },
   {
     "id": "c6",
@@ -72,8 +67,7 @@
     "exTh": "ระบบแทบไม่เคยล่ม",
     "pos": "adv",
     "level": "A2",
-    "icon": "CalendarMinus",
-    "photoQuery": "server room"
+    "icon": "CalendarMinus"
   },
   {
     "id": "c7",
@@ -85,8 +79,7 @@
     "pos": "adv",
     "level": "A2",
     "note": "ใช้ในประโยคบอกเล่า · ปฏิเสธและคำถามใช้ yet",
-    "icon": "CheckCheck",
-    "photoQuery": "sending email laptop"
+    "icon": "CheckCheck"
   },
   {
     "id": "c8",
@@ -98,8 +91,7 @@
     "pos": "adv",
     "level": "A2",
     "note": "วางท้ายประโยค",
-    "icon": "Hourglass",
-    "photoQuery": "cargo ship arriving port"
+    "icon": "Hourglass"
   },
   {
     "id": "c9",
@@ -110,8 +102,7 @@
     "exTh": "คำสั่งซื้อยังอยู่ที่ท่าเรือ",
     "pos": "adv",
     "level": "A2",
-    "icon": "Pause",
-    "photoQuery": "container port"
+    "icon": "Pause"
   },
   {
     "id": "c10",
@@ -122,8 +113,7 @@
     "exTh": "เธอเพิ่งออกไป",
     "pos": "adv",
     "level": "A2",
-    "icon": "Sparkles",
-    "photoQuery": "person leaving office door"
+    "icon": "Sparkles"
   },
   {
     "id": "c11",
@@ -134,8 +124,7 @@
     "exTh": "สินค้าจะมาถึงเร็ว ๆ นี้",
     "pos": "adv",
     "level": "A1",
-    "icon": "AlarmClock",
-    "photoQuery": "package delivery"
+    "icon": "AlarmClock"
   },
   {
     "id": "c12",
@@ -146,8 +135,7 @@
     "exTh": "เราเพิ่งเปลี่ยนซัพพลายเออร์",
     "pos": "adv",
     "level": "B1",
-    "icon": "History",
-    "photoQuery": "business handshake new partner"
+    "icon": "History"
   },
   {
     "id": "c13",
@@ -170,8 +158,7 @@
     "pos": "adv",
     "level": "A1",
     "note": "วางหน้ากริยาหลัก · too วางท้ายประโยค",
-    "icon": "Plus",
-    "photoQuery": "japanese language study"
+    "icon": "Plus"
   },
   {
     "id": "c15",
@@ -183,8 +170,7 @@
     "pos": "adv",
     "level": "A1",
     "note": "too + คุณศัพท์ = มากเกินไป (ความหมายลบ) · very = มาก",
-    "icon": "Gauge",
-    "photoQuery": "expensive price tag"
+    "icon": "Gauge"
   },
   {
     "id": "c16",
@@ -206,8 +192,7 @@
     "exTh": "บริการดีมากจริง ๆ",
     "pos": "adv",
     "level": "A1",
-    "icon": "BadgeCheck",
-    "photoQuery": "happy customer service"
+    "icon": "BadgeCheck"
   },
   {
     "id": "c18",
@@ -229,8 +214,7 @@
     "exTh": "เรามีรถบรรทุกแค่ 2 คัน",
     "pos": "adv",
     "level": "A1",
-    "icon": "Target",
-    "photoQuery": "two trucks parked"
+    "icon": "Target"
   },
   {
     "id": "c20",
@@ -241,8 +225,7 @@
     "exTh": "ตู้คอนเทนเนอร์เกือบเต็มแล้ว",
     "pos": "adv",
     "level": "A2",
-    "icon": "LoaderCircle",
-    "photoQuery": "container loading"
+    "icon": "LoaderCircle"
   },
   {
     "id": "c21",
@@ -253,8 +236,7 @@
     "exTh": "เรือน่าจะมาช้า",
     "pos": "adv",
     "level": "A2",
-    "icon": "CloudSun",
-    "photoQuery": "cargo ship cloudy sea"
+    "icon": "CloudSun"
   },
   {
     "id": "c22",
@@ -265,8 +247,7 @@
     "exTh": "บางทีเราอาจเจอกันพรุ่งนี้ได้",
     "pos": "adv",
     "level": "A1",
-    "icon": "CircleHelp",
-    "photoQuery": "coffee meeting friends"
+    "icon": "CircleHelp"
   },
   {
     "id": "c23",
@@ -277,8 +258,7 @@
     "exTh": "บางทีเราควรโทรหาพวกเขาก่อน",
     "pos": "adv",
     "level": "B1",
-    "icon": "MessageCircleQuestion",
-    "photoQuery": "phone call office"
+    "icon": "MessageCircleQuestion"
   },
   {
     "id": "c24",
@@ -290,8 +270,7 @@
     "pos": "adv",
     "level": "A2",
     "note": "ไม่ได้แปลว่า \"ปัจจุบัน\" (ปัจจุบัน = currently)",
-    "icon": "Lightbulb",
-    "photoQuery": "meeting room clock"
+    "icon": "Lightbulb"
   },
   {
     "id": "c25",
@@ -302,8 +281,7 @@
     "exTh": "รถติดมาก โดยเฉพาะวันศุกร์",
     "pos": "adv",
     "level": "B1",
-    "icon": "Star",
-    "photoQuery": "traffic jam bangkok"
+    "icon": "Star"
   },
   {
     "id": "c26",
@@ -314,8 +292,7 @@
     "exTh": "เธอตอบกลับเร็วมาก",
     "pos": "adv",
     "level": "A2",
-    "icon": "Zap",
-    "photoQuery": "typing fast reply"
+    "icon": "Zap"
   },
   {
     "id": "c27",
@@ -326,8 +303,7 @@
     "exTh": "ช่วยพูดช้า ๆ หน่อยได้ไหม",
     "pos": "adv",
     "level": "A2",
-    "icon": "Snail",
-    "photoQuery": "people talking slowly conversation"
+    "icon": "Snail"
   },
   {
     "id": "c28",
@@ -349,8 +325,7 @@
     "exTh": "คุณเปลี่ยนการตั้งค่าได้ง่าย ๆ",
     "pos": "adv",
     "level": "A2",
-    "icon": "Feather",
-    "photoQuery": "settings screen smartphone"
+    "icon": "Feather"
   },
   {
     "id": "c30",
@@ -362,8 +337,7 @@
     "pos": "adv",
     "level": "A1",
     "note": "good ขยายคำนาม (a good job) · well ขยายกริยา (work well)",
-    "icon": "ThumbsUp",
-    "photoQuery": "thumbs up good job"
+    "icon": "ThumbsUp"
   },
   {
     "id": "c31",
@@ -386,8 +360,7 @@
     "exTh": "เดี๋ยวฉันโทรหาทีหลัง",
     "pos": "adv",
     "level": "A1",
-    "icon": "Clock",
-    "photoQuery": "phone call later"
+    "icon": "Clock"
   },
   {
     "id": "c33",
@@ -424,8 +397,7 @@
     "pos": "adv",
     "level": "B1",
     "note": "ไม่มี to: go abroad (ไม่ใช่ go to abroad)",
-    "icon": "Plane",
-    "photoQuery": "cargo plane world shipping"
+    "icon": "Plane"
   },
   {
     "id": "c36",
@@ -436,8 +408,7 @@
     "exTh": "เที่ยวบินเต็ม เราเลยใช้ขนส่งทางเรือแทน",
     "pos": "adv",
     "level": "B1",
-    "icon": "ArrowLeftRight",
-    "photoQuery": "cargo ship sea freight"
+    "icon": "ArrowLeftRight"
   },
   {
     "id": "c37",
@@ -448,8 +419,7 @@
     "exTh": "ในที่สุดเราก็แก้บั๊กได้",
     "pos": "adv",
     "level": "A2",
-    "icon": "Flag",
-    "photoQuery": "programmer fixing bug"
+    "icon": "Flag"
   },
   {
     "id": "c38",
@@ -472,8 +442,7 @@
     "exTh": "กรุณาตอบกลับทันที",
     "pos": "adv",
     "level": "B1",
-    "icon": "Siren",
-    "photoQuery": "urgent reply email"
+    "icon": "Siren"
   },
   {
     "id": "c40",
@@ -484,8 +453,7 @@
     "exTh": "ตอนนี้เรากำลังรับสมัครพนักงาน",
     "pos": "adv",
     "level": "B1",
-    "icon": "Radio",
-    "photoQuery": "we are hiring sign"
+    "icon": "Radio"
   },
   {
     "id": "c41",
@@ -496,8 +464,7 @@
     "exTh": "เกือบ 5 โมงแล้ว",
     "pos": "adv",
     "level": "A2",
-    "icon": "Percent",
-    "photoQuery": "clock five o'clock"
+    "icon": "Percent"
   },
   {
     "id": "c42",
@@ -508,8 +475,7 @@
     "exTh": "ฉันหาไฟล์ทั่วทุกที่แล้ว",
     "pos": "adv",
     "level": "A2",
-    "icon": "Globe",
-    "photoQuery": "searching files desk"
+    "icon": "Globe"
   },
   {
     "id": "c43",
@@ -533,8 +499,7 @@
     "pos": "adv",
     "level": "B1",
     "note": "ขึ้นประโยคใหม่และตามด้วย comma",
-    "icon": "Split",
-    "photoQuery": "quality product inspection"
+    "icon": "Split"
   },
   {
     "id": "c45",
@@ -545,8 +510,7 @@
     "exTh": "ระบบเก่าแล้ว ดังนั้นเราต้องมีระบบใหม่",
     "pos": "adv",
     "level": "B1",
-    "icon": "ArrowRight",
-    "photoQuery": "old computer system"
+    "icon": "ArrowRight"
   },
   {
     "id": "c46",
@@ -558,8 +522,7 @@
     "pos": "conj",
     "level": "A1",
     "note": "because + ประโยค · because of + คำนาม",
-    "icon": "Link2",
-    "photoQuery": "crowded bus"
+    "icon": "Link2"
   },
   {
     "id": "c47",
@@ -571,8 +534,7 @@
     "pos": "conj",
     "level": "B1",
     "note": "ไม่ใช้คู่กับ but ในประโยคเดียวกัน",
-    "icon": "Scale",
-    "photoQuery": "truck rain"
+    "icon": "Scale"
   },
   {
     "id": "c48",
@@ -583,8 +545,7 @@
     "exTh": "เราส่งของไม่ได้ ถ้าคุณไม่จ่ายเงินก่อน",
     "pos": "conj",
     "level": "B1",
-    "icon": "GitBranch",
-    "photoQuery": "payment invoice"
+    "icon": "GitBranch"
   },
   {
     "id": "c49",
@@ -595,8 +556,7 @@
     "exTh": "ฉันฟังเพลงระหว่างทำงาน",
     "pos": "conj",
     "level": "A2",
-    "icon": "Layers",
-    "photoQuery": "working with headphones music"
+    "icon": "Layers"
   },
   {
     "id": "c50",
@@ -608,8 +568,7 @@
     "pos": "prep",
     "level": "A2",
     "note": "by = ไม่เกิน (ส่งภายใน) · until = ต่อเนื่องจนถึง",
-    "icon": "ArrowRightToLine",
-    "photoQuery": "waiting clock"
+    "icon": "ArrowRightToLine"
   },
   {
     "id": "c51",
@@ -621,8 +580,7 @@
     "pos": "prep",
     "level": "A2",
     "note": "during + คำนาม · while + ประโยค",
-    "icon": "CalendarRange",
-    "photoQuery": "phone off meeting"
+    "icon": "CalendarRange"
   },
   {
     "id": "c52",
@@ -633,8 +591,7 @@
     "exTh": "รถบรรทุกวิ่งระหว่างกรุงเทพฯ กับแหลมฉบัง",
     "pos": "prep",
     "level": "A2",
-    "icon": "ArrowLeftRight",
-    "photoQuery": "truck on highway"
+    "icon": "ArrowLeftRight"
   },
   {
     "id": "c53",
@@ -646,8 +603,7 @@
     "pos": "prep",
     "level": "A2",
     "note": "ตามด้วย -ing ได้: without asking",
-    "icon": "CircleSlash",
-    "photoQuery": "paperwork"
+    "icon": "CircleSlash"
   },
   {
     "id": "c54",
@@ -658,8 +614,7 @@
     "exTh": "สินค้าทุกชิ้นต้องผ่านศุลกากร",
     "pos": "prep",
     "level": "B1",
-    "icon": "DoorOpen",
-    "photoQuery": "customs inspection"
+    "icon": "DoorOpen"
   },
   {
     "id": "c55",
@@ -670,8 +625,7 @@
     "exTh": "เราจะตอบกลับภายใน 24 ชั่วโมง",
     "pos": "prep",
     "level": "B1",
-    "icon": "Square",
-    "photoQuery": "customer support 24 hours"
+    "icon": "Square"
   },
   {
     "id": "c56",
@@ -682,8 +636,7 @@
     "exTh": "ตามรายงาน ยอดขายเพิ่มขึ้น",
     "pos": "prep",
     "level": "B1",
-    "icon": "Quote",
-    "photoQuery": "sales report chart"
+    "icon": "Quote"
   },
   {
     "id": "c57",
@@ -695,8 +648,7 @@
     "pos": "prep",
     "level": "B1",
     "note": "ตามด้วยคำนามหรือ -ing",
-    "icon": "Replace",
-    "photoQuery": "email laptop"
+    "icon": "Replace"
   },
   {
     "id": "c58",
@@ -777,8 +729,7 @@
     "level": "A1",
     "forms": "V2 / V3 answered",
     "note": "ตัว w ไม่ออกเสียง: อาน-เซอร์",
-    "icon": "PhoneIncoming",
-    "photoQuery": "answering phone office"
+    "icon": "PhoneIncoming"
   },
   {
     "id": "c64",
@@ -816,8 +767,7 @@
     "pos": "v",
     "level": "A1",
     "forms": "V2 / V3 stayed",
-    "icon": "Bed",
-    "photoQuery": "working late office night"
+    "icon": "Bed"
   },
   {
     "id": "c67",
@@ -843,8 +793,7 @@
     "level": "A1",
     "forms": "V2 / V3 remembered",
     "note": "remember to + V1 = อย่าลืมทำ · remember + V-ing = จำได้ว่าเคยทำ",
-    "icon": "Brain",
-    "photoQuery": "forgetting thinking person"
+    "icon": "Brain"
   },
   {
     "id": "c69",
@@ -869,8 +818,7 @@
     "pos": "v",
     "level": "B1",
     "forms": "V2 / V3 seemed",
-    "icon": "ScanEye",
-    "photoQuery": "fast computer screen"
+    "icon": "ScanEye"
   },
   {
     "id": "c71",
@@ -883,8 +831,7 @@
     "level": "A2",
     "forms": "V2 / V3 happened",
     "note": "ไม่ใช้ passive: What happened? (ไม่ใช่ What was happened?)",
-    "icon": "Zap",
-    "photoQuery": "broken down truck"
+    "icon": "Zap"
   },
   {
     "id": "c72",
@@ -910,8 +857,7 @@
     "pos": "v",
     "level": "B1",
     "forms": "V2 / V3 expected",
-    "icon": "CalendarClock",
-    "photoQuery": "delivery calendar"
+    "icon": "CalendarClock"
   },
   {
     "id": "c74",
@@ -950,8 +896,7 @@
     "pos": "v",
     "level": "B1",
     "forms": "V2 / V3 refused",
-    "icon": "CircleX",
-    "photoQuery": "parcel doorstep"
+    "icon": "CircleX"
   },
   {
     "id": "c77",
@@ -975,7 +920,8 @@
     "pos": "v",
     "level": "A1",
     "forms": "V2 / V3 closed",
-    "icon": "DoorClosed"
+    "icon": "DoorClosed",
+    "photoQuery": "closed sign"
   },
   {
     "id": "c79",
@@ -987,8 +933,7 @@
     "pos": "v",
     "level": "A2",
     "forms": "V2 / V3 ended",
-    "icon": "Flag",
-    "photoQuery": "meeting ending noon"
+    "icon": "Flag"
   },
   {
     "id": "c80",
@@ -1026,8 +971,7 @@
     "level": "A2",
     "forms": "V2 / V3 preferred",
     "note": "prefer A to B",
-    "icon": "Star",
-    "photoQuery": "inbox"
+    "icon": "Star"
   },
   {
     "id": "c83",
@@ -1118,7 +1062,7 @@
     "level": "A2",
     "forms": "V2 / V3 booked",
     "icon": "CalendarPlus",
-    "photoQuery": "conference room"
+    "photoQuery": "reservation"
   },
   {
     "id": "c90",
@@ -1131,8 +1075,7 @@
     "level": "A2",
     "forms": "V2 / V3 returned",
     "note": "ไม่ต้องมี back: return the form (ไม่ใช่ return back)",
-    "icon": "Undo2",
-    "photoQuery": "paperwork form"
+    "icon": "Undo2"
   },
   {
     "id": "c91",
@@ -1145,8 +1088,7 @@
     "level": "A2",
     "forms": "V2 / V3 borrowed",
     "note": "borrow = ยืมจากคนอื่น · lend = ให้คนอื่นยืม",
-    "icon": "HandHelping",
-    "photoQuery": "borrow pen"
+    "icon": "HandHelping"
   },
   {
     "id": "c92",
@@ -1159,7 +1101,7 @@
     "level": "A2",
     "forms": "V2 / V3 rented",
     "icon": "KeyRound",
-    "photoQuery": "warehouse building"
+    "photoQuery": "for rent sign"
   },
   {
     "id": "c93",
@@ -1185,7 +1127,7 @@
     "level": "A2",
     "forms": "V2 / V3 counted",
     "icon": "ListOrdered",
-    "photoQuery": "counting boxes warehouse"
+    "photoQuery": "counting boxes"
   },
   {
     "id": "c95",
@@ -1211,8 +1153,7 @@
     "level": "A2",
     "forms": "V2 / V3 worried",
     "note": "worry about + เรื่อง",
-    "icon": "Frown",
-    "photoQuery": "technician fixing"
+    "icon": "Frown"
   },
   {
     "id": "c97",
@@ -1224,8 +1165,7 @@
     "pos": "v",
     "level": "A2",
     "forms": "V2 / V3 believed",
-    "icon": "Heart",
-    "photoQuery": "fair price shopping"
+    "icon": "Heart"
   },
   {
     "id": "c98",
@@ -1250,8 +1190,7 @@
     "pos": "v",
     "level": "B1",
     "forms": "V2 / V3 continued",
-    "icon": "Play",
-    "photoQuery": "lunch break office"
+    "icon": "Play"
   },
   {
     "id": "c100",
@@ -1263,8 +1202,7 @@
     "pos": "v",
     "level": "B1",
     "forms": "V2 / V3 described",
-    "icon": "PenLine",
-    "photoQuery": "explaining problem meeting"
+    "icon": "PenLine"
   },
   {
     "id": "c101",
@@ -1290,8 +1228,7 @@
     "level": "B1",
     "forms": "V2 / V3 suggested",
     "note": "suggest + V-ing หรือ suggest that...",
-    "icon": "Lightbulb",
-    "photoQuery": "cargo ship"
+    "icon": "Lightbulb"
   },
   {
     "id": "c103",
@@ -1317,8 +1254,7 @@
     "pos": "v",
     "level": "B1",
     "forms": "V2 / V3 hired",
-    "icon": "UserCheck",
-    "photoQuery": "truck drivers"
+    "icon": "UserCheck"
   },
   {
     "id": "c105",
@@ -1343,7 +1279,7 @@
     "level": "A2",
     "forms": "V2 / V3 collected",
     "icon": "PackageCheck",
-    "photoQuery": "parcel courier"
+    "photoQuery": "courier collecting parcels"
   },
   {
     "id": "c107",
@@ -1420,8 +1356,7 @@
     "pos": "v",
     "level": "B1",
     "forms": "V2 / V3 replaced",
-    "icon": "Replace",
-    "photoQuery": "office printer"
+    "icon": "Replace"
   },
   {
     "id": "c113",
@@ -1446,8 +1381,7 @@
     "pos": "v",
     "level": "B1",
     "forms": "V2 / V3 prevented",
-    "icon": "ShieldAlert",
-    "photoQuery": "bubble wrap packaging"
+    "icon": "ShieldAlert"
   },
   {
     "id": "c115",
@@ -1460,8 +1394,7 @@
     "level": "B1",
     "forms": "V2 / V3 avoided",
     "note": "avoid + V-ing",
-    "icon": "Ban",
-    "photoQuery": "traffic jam"
+    "icon": "Ban"
   },
   {
     "id": "c116",
@@ -1650,8 +1583,7 @@
     "pos": "n",
     "level": "B1",
     "forms": "นับได้ · พหูพจน์ employers",
-    "icon": "Building2",
-    "photoQuery": "employee training"
+    "icon": "Building2"
   },
   {
     "id": "c130",
@@ -1664,7 +1596,7 @@
     "level": "A2",
     "forms": "นับได้ · พหูพจน์ guests",
     "icon": "UserRound",
-    "photoQuery": "business visitors"
+    "photoQuery": "welcoming guests"
   },
   {
     "id": "c131",
@@ -1728,8 +1660,7 @@
     "pos": "n",
     "level": "B1",
     "forms": "นับได้ · พหูพจน์ directors",
-    "icon": "Briefcase",
-    "photoQuery": "director signing plan"
+    "icon": "Briefcase"
   },
   {
     "id": "c136",
@@ -1767,8 +1698,7 @@
     "pos": "n",
     "level": "B1",
     "forms": "นับได้ · พหูพจน์ experts",
-    "icon": "Award",
-    "photoQuery": "cyber security expert"
+    "icon": "Award"
   },
   {
     "id": "c139",
@@ -1780,7 +1710,8 @@
     "pos": "n",
     "level": "B1",
     "forms": "นับได้ · พหูพจน์ team leaders",
-    "icon": "Flag"
+    "icon": "Flag",
+    "photoQuery": "team leader"
   },
   {
     "id": "c140",
@@ -1794,7 +1725,7 @@
     "forms": "นับได้ · พหูพจน์ homes",
     "note": "go home / at home ไม่ใช้ to: go home (ไม่ใช่ go to home)",
     "icon": "House",
-    "photoQuery": "working from home laptop"
+    "photoQuery": "working from home"
   },
   {
     "id": "c141",
@@ -1859,7 +1790,7 @@
     "level": "A1",
     "forms": "นับได้ · พหูพจน์ floors",
     "icon": "Layers",
-    "photoQuery": "office floor"
+    "photoQuery": "elevator buttons"
   },
   {
     "id": "c146",
@@ -1924,7 +1855,7 @@
     "level": "A1",
     "forms": "นับได้ · พหูพจน์ airports",
     "icon": "PlaneTakeoff",
-    "photoQuery": "air cargo airport"
+    "photoQuery": "airport terminal"
   },
   {
     "id": "c151",
@@ -1988,8 +1919,7 @@
     "pos": "n",
     "level": "A2",
     "forms": "นับได้ · พหูพจน์ areas",
-    "icon": "Map",
-    "photoQuery": "loading area warehouse"
+    "icon": "Map"
   },
   {
     "id": "c156",
@@ -2001,8 +1931,7 @@
     "pos": "n",
     "level": "A1",
     "forms": "นับได้ · พหูพจน์ places",
-    "icon": "MapPin",
-    "photoQuery": "happy workplace"
+    "icon": "MapPin"
   },
   {
     "id": "c157",
@@ -2079,7 +2008,8 @@
     "pos": "n",
     "level": "A1",
     "forms": "นับได้ · พหูพจน์ years",
-    "icon": "Calendar"
+    "icon": "Calendar",
+    "photoQuery": "new year calendar"
   },
   {
     "id": "c163",
@@ -2119,8 +2049,7 @@
     "level": "A2",
     "forms": "นับได้ · พหูพจน์ moments",
     "note": "at the moment = ตอนนี้",
-    "icon": "Timer",
-    "photoQuery": "busy person phone"
+    "icon": "Timer"
   },
   {
     "id": "c166",
@@ -2212,8 +2141,7 @@
     "pos": "n",
     "level": "B1",
     "forms": "นับได้ · พหูพจน์ roles",
-    "icon": "UserCog",
-    "photoQuery": "team roles meeting"
+    "icon": "UserCog"
   },
   {
     "id": "c173",
@@ -2225,8 +2153,7 @@
     "pos": "n",
     "level": "B1",
     "forms": "นับได้ · พหูพจน์ responsibilities",
-    "icon": "ClipboardCheck",
-    "photoQuery": "safety helmet workers"
+    "icon": "ClipboardCheck"
   },
   {
     "id": "c174",
@@ -2290,7 +2217,8 @@
     "pos": "n",
     "level": "A1",
     "forms": "นับได้ · พหูพจน์ files",
-    "icon": "File"
+    "icon": "File",
+    "photoQuery": "file folder"
   },
   {
     "id": "c179",
@@ -2354,7 +2282,8 @@
     "pos": "n",
     "level": "A1",
     "forms": "นับได้ · พหูพจน์ computers",
-    "icon": "Monitor"
+    "icon": "Monitor",
+    "photoQuery": "desktop computer"
   },
   {
     "id": "c184",
@@ -2380,7 +2309,7 @@
     "level": "A2",
     "forms": "นับได้ · พหูพจน์ printers",
     "icon": "Printer",
-    "photoQuery": "printer paper"
+    "photoQuery": "office printer"
   },
   {
     "id": "c186",
@@ -2406,7 +2335,7 @@
     "level": "A1",
     "forms": "มักใช้ the internet",
     "icon": "Globe",
-    "photoQuery": "no internet connection"
+    "photoQuery": "wifi router"
   },
   {
     "id": "c188",
@@ -2445,7 +2374,7 @@
     "level": "A2",
     "forms": "นับได้ · พหูพจน์ tools",
     "icon": "Hammer",
-    "photoQuery": "excel spreadsheet"
+    "photoQuery": "hand tools"
   },
   {
     "id": "c191",
@@ -2484,8 +2413,7 @@
     "pos": "n",
     "level": "B1",
     "forms": "นับได้ · พหูพจน์ materials",
-    "icon": "Layers",
-    "photoQuery": "recycled materials"
+    "icon": "Layers"
   },
   {
     "id": "c194",
@@ -2600,8 +2528,7 @@
     "pos": "n",
     "level": "A2",
     "forms": "นับได้ · พหูพจน์ fees",
-    "icon": "Coins",
-    "photoQuery": "bill payment"
+    "icon": "Coins"
   },
   {
     "id": "c203",
@@ -2639,8 +2566,7 @@
     "pos": "n",
     "level": "A2",
     "forms": "นับได้ · พหูพจน์ businesses",
-    "icon": "Briefcase",
-    "photoQuery": "growing business"
+    "icon": "Briefcase"
   },
   {
     "id": "c206",
@@ -2652,8 +2578,7 @@
     "pos": "n",
     "level": "B1",
     "forms": "นับได้ · พหูพจน์ industries",
-    "icon": "Factory",
-    "photoQuery": "logistics industry"
+    "icon": "Factory"
   },
   {
     "id": "c207",
@@ -2756,8 +2681,7 @@
     "pos": "n",
     "level": "A2",
     "forms": "นับได้ · พหูพจน์ chances",
-    "icon": "Dices",
-    "photoQuery": "learning opportunity"
+    "icon": "Dices"
   },
   {
     "id": "c215",
@@ -2783,8 +2707,7 @@
     "level": "B1",
     "forms": "นับได้ · พหูพจน์ advantages",
     "note": "ตรงข้ามคือ disadvantage",
-    "icon": "Trophy",
-    "photoQuery": "fast delivery speed"
+    "icon": "Trophy"
   },
   {
     "id": "c217",
@@ -2862,7 +2785,7 @@
     "level": "A2",
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
     "icon": "TrafficCone",
-    "photoQuery": "heavy traffic morning"
+    "photoQuery": "traffic jam"
   },
   {
     "id": "c223",
@@ -2875,7 +2798,7 @@
     "level": "A2",
     "forms": "นับได้ · พหูพจน์ accidents",
     "icon": "CarFront",
-    "photoQuery": "car accident highway"
+    "photoQuery": "car accident"
   },
   {
     "id": "c224",
@@ -2901,7 +2824,8 @@
     "level": "A1",
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
     "note": "ลงท้าย s แต่ใช้กริยาเอกพจน์: The news is good.",
-    "icon": "Newspaper"
+    "icon": "Newspaper",
+    "photoQuery": "newspaper"
   },
   {
     "id": "c226",
@@ -3215,8 +3139,7 @@
     "pos": "n",
     "level": "A2",
     "forms": "นับได้ · พหูพจน์ comments",
-    "icon": "MessageSquare",
-    "photoQuery": "meeting discussion comments"
+    "icon": "MessageSquare"
   },
   {
     "id": "c250",
@@ -3320,8 +3243,7 @@
     "pos": "adj",
     "level": "A1",
     "forms": "ขั้นกว่า · ขั้นสุด: smaller · smallest",
-    "icon": "Minimize2",
-    "photoQuery": "small team office"
+    "icon": "Minimize2"
   },
   {
     "id": "c258",
@@ -3346,8 +3268,7 @@
     "pos": "adj",
     "level": "A1",
     "forms": "ขั้นกว่า · ขั้นสุด: longer · longest",
-    "icon": "MoveHorizontal",
-    "photoQuery": "long meeting"
+    "icon": "MoveHorizontal"
   },
   {
     "id": "c260",
@@ -3359,8 +3280,7 @@
     "pos": "adj",
     "level": "A1",
     "forms": "ขั้นกว่า · ขั้นสุด: higher · highest",
-    "icon": "ArrowUp",
-    "photoQuery": "fuel price gas station"
+    "icon": "ArrowUp"
   },
   {
     "id": "c261",
@@ -3372,8 +3292,7 @@
     "pos": "adj",
     "level": "A1",
     "forms": "ขั้นกว่า · ขั้นสุด: lower · lowest",
-    "icon": "ArrowDown",
-    "photoQuery": "low price tag"
+    "icon": "ArrowDown"
   },
   {
     "id": "c262",
@@ -3385,7 +3304,8 @@
     "pos": "adj",
     "level": "A1",
     "forms": "ขั้นกว่า · ขั้นสุด: newer · newest",
-    "icon": "Sparkle"
+    "icon": "Sparkle",
+    "photoQuery": "modern office interior"
   },
   {
     "id": "c263",
@@ -3474,8 +3394,7 @@
     "level": "A1",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
     "note": "ใช้กับ the เสมอ: the same",
-    "icon": "Equal",
-    "photoQuery": "same problem"
+    "icon": "Equal"
   },
   {
     "id": "c270",
@@ -3541,8 +3460,7 @@
     "level": "A2",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
     "note": "as usual = ตามเคย",
-    "icon": "CalendarCheck",
-    "photoQuery": "truck"
+    "icon": "CalendarCheck"
   },
   {
     "id": "c275",
@@ -3554,8 +3472,7 @@
     "pos": "adj",
     "level": "B1",
     "forms": "ขั้นกว่า · ขั้นสุด: more · most common",
-    "icon": "Users",
-    "photoQuery": "mistake"
+    "icon": "Users"
   },
   {
     "id": "c276",
@@ -3580,8 +3497,7 @@
     "pos": "adj",
     "level": "A2",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "icon": "Globe",
-    "photoQuery": "public wifi"
+    "icon": "Globe"
   },
   {
     "id": "c278",
@@ -3593,8 +3509,7 @@
     "pos": "adj",
     "level": "B1",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "icon": "Lock",
-    "photoQuery": "private meeting"
+    "icon": "Lock"
   },
   {
     "id": "c279",
@@ -3618,8 +3533,7 @@
     "pos": "adj",
     "level": "A2",
     "forms": "ขั้นกว่า · ขั้นสุด: stronger · strongest",
-    "icon": "Dumbbell",
-    "photoQuery": "cardboard boxes"
+    "icon": "Dumbbell"
   },
   {
     "id": "c281",
@@ -3631,8 +3545,7 @@
     "pos": "adj",
     "level": "A2",
     "forms": "ขั้นกว่า · ขั้นสุด: heavier · heaviest",
-    "icon": "Weight",
-    "photoQuery": "heavy box"
+    "icon": "Weight"
   },
   {
     "id": "c282",
@@ -3670,7 +3583,7 @@
     "level": "A1",
     "forms": "ขั้นกว่า · ขั้นสุด: colder · coldest",
     "icon": "Snowflake",
-    "photoQuery": "cold medicine storage"
+    "photoQuery": "ice cold"
   },
   {
     "id": "c285",
@@ -3734,8 +3647,7 @@
     "pos": "adj",
     "level": "A1",
     "forms": "ขั้นกว่า · ขั้นสุด: nearer · nearest",
-    "icon": "LocateFixed",
-    "photoQuery": "hotel"
+    "icon": "LocateFixed"
   },
   {
     "id": "c290",
@@ -3760,8 +3672,7 @@
     "pos": "adj",
     "level": "A2",
     "forms": "ขั้นกว่า · ขั้นสุด: quicker · quickest",
-    "icon": "Zap",
-    "photoQuery": "quick question"
+    "icon": "Zap"
   },
   {
     "id": "c292",
@@ -3864,8 +3775,7 @@
     "pos": "adj",
     "level": "B1",
     "forms": "ขั้นกว่า · ขั้นสุด: more · most successful",
-    "icon": "Trophy",
-    "photoQuery": "product launch success"
+    "icon": "Trophy"
   },
   {
     "id": "c300",
@@ -3916,8 +3826,7 @@
     "pos": "adj",
     "level": "B1",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "icon": "CircleAlert",
-    "photoQuery": "port congestion"
+    "icon": "CircleAlert"
   },
   {
     "id": "c304",
@@ -3941,8 +3850,7 @@
     "pos": "adj",
     "level": "A2",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "icon": "Blocks",
-    "photoQuery": "spreadsheet"
+    "icon": "Blocks"
   },
   {
     "id": "c306",
@@ -3954,8 +3862,7 @@
     "pos": "adj",
     "level": "A2",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "icon": "CirclePlus",
-    "photoQuery": "delivery truck"
+    "icon": "CirclePlus"
   },
   {
     "id": "c307",
@@ -3968,8 +3875,7 @@
     "level": "B1",
     "forms": "ขั้นกว่า · ขั้นสุด: more · most affordable",
     "note": "ฟังดีกว่า cheap ในงานขาย",
-    "icon": "PiggyBank",
-    "photoQuery": "affordable"
+    "icon": "PiggyBank"
   },
   {
     "id": "c308",
@@ -4019,8 +3925,7 @@
     "pos": "adj",
     "level": "B1",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "icon": "ArrowDownToLine",
-    "photoQuery": "wholesale"
+    "icon": "ArrowDownToLine"
   },
   {
     "id": "c312",
@@ -4032,8 +3937,7 @@
     "pos": "adj",
     "level": "B1",
     "forms": "ขั้นกว่า · ขั้นสุด: more · most recent",
-    "icon": "History",
-    "photoQuery": "recent report"
+    "icon": "History"
   },
   {
     "id": "c313",
@@ -4057,8 +3961,7 @@
     "pos": "adj",
     "level": "A2",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "icon": "SearchX",
-    "photoQuery": "missing boxes"
+    "icon": "SearchX"
   },
   {
     "id": "c315",
@@ -4251,8 +4154,7 @@
     "pos": "v",
     "level": "B1",
     "forms": "V2 / V3 noticed",
-    "icon": "ScanEye",
-    "photoQuery": "damage inspection"
+    "icon": "ScanEye"
   },
   {
     "id": "c330",
@@ -4278,8 +4180,7 @@
     "level": "B1",
     "forms": "V2 / V3 raised",
     "note": "raise + กรรม (มีคนทำให้ขึ้น) · rise ไม่มีกรรม (ขึ้นเอง)",
-    "icon": "TrendingUp",
-    "photoQuery": "price increase"
+    "icon": "TrendingUp"
   },
   {
     "id": "c332",
@@ -4305,8 +4206,7 @@
     "level": "B1",
     "forms": "V2 / V3 recorded",
     "note": "กริยาเน้นพยางค์หลัง re-CORD · คำนามเน้นหน้า REC-ord",
-    "icon": "Disc",
-    "photoQuery": "temperature check"
+    "icon": "Disc"
   },
   {
     "id": "c334",
@@ -4346,8 +4246,7 @@
     "pos": "v",
     "level": "B1",
     "forms": "V2 / V3 selected",
-    "icon": "MousePointerClick",
-    "photoQuery": "calendar date"
+    "icon": "MousePointerClick"
   },
   {
     "id": "c337",
@@ -4360,7 +4259,7 @@
     "level": "B1",
     "forms": "V2 / V3 sorted",
     "icon": "ArrowDownUp",
-    "photoQuery": "parcel sorting"
+    "photoQuery": "sorting parcels warehouse"
   },
   {
     "id": "c338",
@@ -4373,8 +4272,7 @@
     "level": "B1",
     "forms": "V2 / V3 succeeded",
     "note": "คำนามคือ success · คุณศัพท์คือ successful",
-    "icon": "Trophy",
-    "photoQuery": "project success"
+    "icon": "Trophy"
   },
   {
     "id": "c339",
@@ -4399,8 +4297,7 @@
     "pos": "v",
     "level": "A2",
     "forms": "V2 / V3 introduced",
-    "icon": "Contact",
-    "photoQuery": "introducing colleague"
+    "icon": "Contact"
   },
   {
     "id": "c341",
@@ -4477,7 +4374,8 @@
     "pos": "n",
     "level": "A1",
     "forms": "นับได้ · พหูพจน์ afternoons",
-    "icon": "Sun"
+    "icon": "Sun",
+    "photoQuery": "afternoon sun"
   },
   {
     "id": "c347",
@@ -4516,7 +4414,8 @@
     "pos": "n",
     "level": "A1",
     "forms": "นับได้ · พหูพจน์ lunches",
-    "icon": "Sandwich"
+    "icon": "Sandwich",
+    "photoQuery": "business lunch restaurant"
   },
   {
     "id": "c350",
@@ -4528,8 +4427,7 @@
     "pos": "n",
     "level": "B1",
     "forms": "นับได้ · พหูพจน์ topics",
-    "icon": "Hash",
-    "photoQuery": "meeting agenda"
+    "icon": "Hash"
   },
   {
     "id": "c351",
@@ -4541,8 +4439,7 @@
     "pos": "n",
     "level": "A2",
     "forms": "นับได้ · พหูพจน์ subjects",
-    "icon": "Heading",
-    "photoQuery": "email"
+    "icon": "Heading"
   },
   {
     "id": "c352",
@@ -4710,7 +4607,8 @@
     "level": "A2",
     "forms": "ใช้รูปพหูพจน์เสมอ ไม่มี a good",
     "note": "ใช้กริยาพหูพจน์: The goods are...",
-    "icon": "Boxes"
+    "icon": "Boxes",
+    "photoQuery": "goods pallets warehouse"
   },
   {
     "id": "c365",
@@ -4722,8 +4620,7 @@
     "pos": "n",
     "level": "B1",
     "forms": "นับได้ · พหูพจน์ units",
-    "icon": "Box",
-    "photoQuery": "price label"
+    "icon": "Box"
   },
   {
     "id": "c366",
@@ -4827,8 +4724,7 @@
     "pos": "adj",
     "level": "A1",
     "forms": "ขั้นกว่า · ขั้นสุด: shorter · shortest",
-    "icon": "MoveHorizontal",
-    "photoQuery": "short note"
+    "icon": "MoveHorizontal"
   },
   {
     "id": "c374",
@@ -4856,7 +4752,7 @@
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
     "note": "sick leave = ลาป่วย",
     "icon": "Thermometer",
-    "photoQuery": "sick in bed"
+    "photoQuery": "sick woman thermometer"
   },
   {
     "id": "c376",
@@ -4868,8 +4764,7 @@
     "pos": "adj",
     "level": "A2",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "icon": "Circle",
-    "photoQuery": "tired office worker"
+    "icon": "Circle"
   },
   {
     "id": "c377",
@@ -4905,8 +4800,7 @@
     "pos": "adj",
     "level": "B1",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
-    "icon": "X",
-    "photoQuery": "address"
+    "icon": "X"
   },
   {
     "id": "c380",
@@ -4943,7 +4837,8 @@
     "pos": "adj",
     "level": "A2",
     "forms": "ขั้นกว่า · ขั้นสุด: angrier · angriest",
-    "icon": "Angry"
+    "icon": "Angry",
+    "photoQuery": "angry man"
   },
   {
     "id": "c383",
@@ -4982,8 +4877,7 @@
     "pos": "adj",
     "level": "B1",
     "forms": "ขั้นกว่า · ขั้นสุด: more · most certain",
-    "icon": "CircleCheckBig",
-    "photoQuery": "calendar date planner"
+    "icon": "CircleCheckBig"
   },
   {
     "id": "c386",
@@ -5008,8 +4902,7 @@
     "pos": "adj",
     "level": "A2",
     "forms": "ขั้นกว่า · ขั้นสุด: wider · widest",
-    "icon": "MoveHorizontal",
-    "photoQuery": "wide door"
+    "icon": "MoveHorizontal"
   },
   {
     "id": "v1",
@@ -5022,8 +4915,7 @@
     "forms": "V2 / V3 needed",
     "note": "ตามด้วยคำนาม หรือ to + V1: need to check",
     "level": "A1",
-    "icon": "CircleAlert",
-    "photoQuery": "need more time clock"
+    "icon": "CircleAlert"
   },
   {
     "id": "v2",
@@ -5063,8 +4955,7 @@
     "forms": "ไม่ปกติ · V2 made · V3 made",
     "note": "make = สร้าง ทำให้เกิด (make a plan) · do = ทำงาน ทำกิจกรรม (do homework)",
     "level": "A1",
-    "icon": "Hammer",
-    "photoQuery": "making plan notebook"
+    "icon": "Hammer"
   },
   {
     "id": "v5",
@@ -5116,8 +5007,7 @@
     "forms": "ไม่ปกติ · V2 knew · V3 known",
     "note": "ไม่ใช้ -ing: I know (ไม่ใช่ I am knowing)",
     "level": "A1",
-    "icon": "Brain",
-    "photoQuery": "thinking"
+    "icon": "Brain"
   },
   {
     "id": "v9",
@@ -5167,8 +5057,7 @@
     "pos": "v",
     "forms": "ไม่ปกติ · V2 found · V3 found",
     "level": "A1",
-    "icon": "Search",
-    "photoQuery": "searching invoice"
+    "icon": "Search"
   },
   {
     "id": "v13",
@@ -5275,8 +5164,7 @@
     "pos": "v",
     "forms": "V2 / V3 started",
     "level": "A1",
-    "icon": "Play",
-    "photoQuery": "work start morning"
+    "icon": "Play"
   },
   {
     "id": "v21",
@@ -5288,8 +5176,7 @@
     "pos": "v",
     "forms": "ไม่ปกติ · V2 showed · V3 shown",
     "level": "A1",
-    "icon": "Eye",
-    "photoQuery": "showing how"
+    "icon": "Eye"
   },
   {
     "id": "v22",
@@ -5328,7 +5215,8 @@
     "forms": "V2 / V3 delivered",
     "note": "คำนามคือ delivery",
     "level": "A2",
-    "icon": "PackageCheck"
+    "icon": "PackageCheck",
+    "photoQuery": "courier delivering package"
   },
   {
     "id": "v25",
@@ -5353,7 +5241,8 @@
     "pos": "v",
     "forms": "V2 / V3 fixed",
     "level": "A2",
-    "icon": "Wrench"
+    "icon": "Wrench",
+    "photoQuery": "computer repair technician"
   },
   {
     "id": "v27",
@@ -5404,8 +5293,7 @@
     "pos": "v",
     "forms": "V2 / V3 finished",
     "level": "A2",
-    "icon": "Flag",
-    "photoQuery": "finished report"
+    "icon": "Flag"
   },
   {
     "id": "n1",
@@ -5458,8 +5346,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ companies",
     "level": "A2",
-    "icon": "Building2",
-    "photoQuery": "shipping company"
+    "icon": "Building2"
   },
   {
     "id": "n5",
@@ -5484,8 +5371,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ prices",
     "level": "A2",
-    "icon": "Tag",
-    "photoQuery": "price tag sale"
+    "icon": "Tag"
   },
   {
     "id": "n7",
@@ -5524,8 +5410,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ teams",
     "level": "A1",
-    "icon": "Users",
-    "photoQuery": "team of five"
+    "icon": "Users"
   },
   {
     "id": "n10",
@@ -5577,7 +5462,8 @@
     "forms": "ขั้นกว่า · ขั้นสุด: later · latest",
     "note": "lately = ช่วงนี้ (ไม่ได้แปลว่า \"อย่างช้า\")",
     "level": "A1",
-    "icon": "AlarmClockOff"
+    "icon": "AlarmClockOff",
+    "photoQuery": "late clock"
   },
   {
     "id": "a2",
@@ -5682,8 +5568,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ requirements",
     "level": "B2",
-    "icon": "ListChecks",
-    "photoQuery": "requirements document"
+    "icon": "ListChecks"
   },
   {
     "id": "i4",
@@ -5748,8 +5633,7 @@
     "forms": "นับได้ · พหูพจน์ releases",
     "note": "เป็นกริยาด้วย: release a new version",
     "level": "B1",
-    "icon": "Rocket",
-    "photoQuery": "software"
+    "icon": "Rocket"
   },
   {
     "id": "l1",
@@ -5801,7 +5685,8 @@
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
     "note": "ใช้ได้ทั้งความหมาย \"ค่าขนส่ง\" และ \"สินค้าที่ขนส่ง\"",
     "level": "B1",
-    "icon": "Truck"
+    "icon": "Truck",
+    "photoQuery": "cargo freight"
   },
   {
     "id": "l5",
@@ -5854,7 +5739,7 @@
     "forms": "นับได้ · พหูพจน์ ports",
     "level": "A2",
     "icon": "Anchor",
-    "photoQuery": "port"
+    "photoQuery": "container port"
   },
   {
     "id": "l9",
@@ -5879,8 +5764,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ bookings",
     "level": "A2",
-    "icon": "CalendarPlus",
-    "photoQuery": "booking confirmed"
+    "icon": "CalendarPlus"
   },
   {
     "id": "l11",
@@ -5943,8 +5827,7 @@
     "pos": "v",
     "forms": "V2 / V3 prepared",
     "level": "A2",
-    "icon": "ClipboardList",
-    "photoQuery": "documents"
+    "icon": "ClipboardList"
   },
   {
     "id": "v34",
@@ -5995,8 +5878,7 @@
     "forms": "V2 / V3 discussed",
     "note": "ไม่มี about: discuss the plan (ไม่ใช่ discuss about the plan)",
     "level": "A2",
-    "icon": "MessagesSquare",
-    "photoQuery": "discussing plan"
+    "icon": "MessagesSquare"
   },
   {
     "id": "v38",
@@ -6023,8 +5905,7 @@
     "forms": "V2 / V3 decided",
     "note": "คำนามคือ decision",
     "level": "A2",
-    "icon": "Signpost",
-    "photoQuery": "route planning map"
+    "icon": "Signpost"
   },
   {
     "id": "v40",
@@ -6152,8 +6033,7 @@
     "pos": "v",
     "forms": "V2 / V3 arranged",
     "level": "A2",
-    "icon": "CalendarCog",
-    "photoQuery": "meeting"
+    "icon": "CalendarCog"
   },
   {
     "id": "v50",
@@ -6178,8 +6058,7 @@
     "pos": "v",
     "forms": "V2 / V3 approved",
     "level": "B1",
-    "icon": "Stamp",
-    "photoQuery": "approved budget"
+    "icon": "Stamp"
   },
   {
     "id": "v52",
@@ -6218,8 +6097,7 @@
     "forms": "V2 / V3 compared",
     "note": "compare A with B หรือ compare A to B",
     "level": "A2",
-    "icon": "GitCompare",
-    "photoQuery": "comparing documents"
+    "icon": "GitCompare"
   },
   {
     "id": "v55",
@@ -6258,8 +6136,7 @@
     "pos": "v",
     "forms": "V2 / V3 installed",
     "level": "A2",
-    "icon": "Download",
-    "photoQuery": "installing software"
+    "icon": "Download"
   },
   {
     "id": "v58",
@@ -6389,8 +6266,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ products",
     "level": "A2",
-    "icon": "Package",
-    "photoQuery": "popular product"
+    "icon": "Package"
   },
   {
     "id": "n20",
@@ -6415,8 +6291,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ departments",
     "level": "B1",
-    "icon": "Network",
-    "photoQuery": "finance"
+    "icon": "Network"
   },
   {
     "id": "n22",
@@ -6583,8 +6458,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ skills",
     "level": "B1",
-    "icon": "Wrench",
-    "photoQuery": "communication skills"
+    "icon": "Wrench"
   },
   {
     "id": "n35",
@@ -6674,8 +6548,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ projects",
     "level": "A2",
-    "icon": "FolderKanban",
-    "photoQuery": "project start"
+    "icon": "FolderKanban"
   },
   {
     "id": "n42",
@@ -6862,7 +6735,7 @@
     "note": "อาจฟังว่าคุณภาพต่ำ ในงานใช้ low-cost หรือ affordable จะสุภาพกว่า",
     "level": "A1",
     "icon": "BadgeDollarSign",
-    "photoQuery": "container ship"
+    "photoQuery": "cheap price tag"
   },
   {
     "id": "a10",
@@ -6888,7 +6761,8 @@
     "forms": "ขั้นกว่า · ขั้นสุด: faster · fastest",
     "note": "ใช้เป็นคำวิเศษณ์ได้เลยโดยไม่เติม -ly: drive fast",
     "level": "A1",
-    "icon": "Rabbit"
+    "icon": "Rabbit",
+    "photoQuery": "fast car"
   },
   {
     "id": "a12",
@@ -6939,8 +6813,7 @@
     "pos": "adj",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
     "level": "A2",
-    "icon": "CircleCheck",
-    "photoQuery": "same day delivery"
+    "icon": "CircleCheck"
   },
   {
     "id": "a16",
@@ -6953,8 +6826,7 @@
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
     "note": "สะกดยาก: c ตัวเดียว s สองตัว",
     "level": "B1",
-    "icon": "CircleAlert",
-    "photoQuery": "signing document"
+    "icon": "CircleAlert"
   },
   {
     "id": "a17",
@@ -6966,8 +6838,7 @@
     "pos": "adj",
     "forms": "ขั้นกว่า · ขั้นสุด: clearer · clearest",
     "level": "A2",
-    "icon": "Glasses",
-    "photoQuery": "explanation"
+    "icon": "Glasses"
   },
   {
     "id": "a18",
@@ -6991,7 +6862,8 @@
     "pos": "adj",
     "forms": "ขั้นกว่า · ขั้นสุด: more · most difficult",
     "level": "A1",
-    "icon": "Mountain"
+    "icon": "Mountain",
+    "photoQuery": "difficult puzzle"
   },
   {
     "id": "a20",
@@ -7080,8 +6952,7 @@
     "pos": "adj",
     "forms": "ไม่ค่อยใช้ขั้นกว่า",
     "level": "B1",
-    "icon": "ArrowLeft",
-    "photoQuery": "email"
+    "icon": "ArrowLeft"
   },
   {
     "id": "a27",
@@ -7105,8 +6976,7 @@
     "pos": "adj",
     "forms": "ขั้นกว่า · ขั้นสุด: more · most reliable",
     "level": "B1",
-    "icon": "ShieldCheck",
-    "photoQuery": "truck"
+    "icon": "ShieldCheck"
   },
   {
     "id": "a29",
@@ -7260,8 +7130,7 @@
     "forms": "นับได้ · พหูพจน์ logins",
     "note": "เขียนติดกัน = คำนาม (the login page) · log in เว้นวรรค = กริยา (Please log in.)",
     "level": "A2",
-    "icon": "LogIn",
-    "photoQuery": "login page"
+    "icon": "LogIn"
   },
   {
     "id": "i13",
@@ -7591,8 +7460,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ permissions",
     "level": "B1",
-    "icon": "LockKeyhole",
-    "photoQuery": "permission denied"
+    "icon": "LockKeyhole"
   },
   {
     "id": "i38",
@@ -7677,8 +7545,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ environments",
     "level": "B2",
-    "icon": "Container",
-    "photoQuery": "software testing"
+    "icon": "Container"
   },
   {
     "id": "i45",
@@ -7691,8 +7558,7 @@
     "forms": "นับได้ · พหูพจน์ logs",
     "note": "เป็นกริยาด้วย: log the error · log in = เข้าสู่ระบบ",
     "level": "B1",
-    "icon": "ScrollText",
-    "photoQuery": "computer screen code"
+    "icon": "ScrollText"
   },
   {
     "id": "i46",
@@ -7741,8 +7607,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ tickets",
     "level": "B1",
-    "icon": "Ticket",
-    "photoQuery": "support ticket"
+    "icon": "Ticket"
   },
   {
     "id": "i50",
@@ -7832,7 +7697,7 @@
     "forms": "นับได้ · พหูพจน์ forklifts",
     "level": "B1",
     "icon": "Forklift",
-    "photoQuery": "forklift"
+    "photoQuery": "forklift warehouse"
   },
   {
     "id": "l16",
@@ -7859,7 +7724,7 @@
     "forms": "นับได้ · พหูพจน์ trailers",
     "level": "B1",
     "icon": "Caravan",
-    "photoQuery": "trailer truck"
+    "photoQuery": "semi trailer truck"
   },
   {
     "id": "l18",
@@ -7962,8 +7827,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ packing lists",
     "level": "B1",
-    "icon": "ClipboardList",
-    "photoQuery": "packing list boxes"
+    "icon": "ClipboardList"
   },
   {
     "id": "l26",
@@ -7976,8 +7840,7 @@
     "forms": "นับได้ · พหูพจน์ purchase orders",
     "note": "ย่อว่า PO",
     "level": "B1",
-    "icon": "ShoppingCart",
-    "photoQuery": "purchase order"
+    "icon": "ShoppingCart"
   },
   {
     "id": "l27",
@@ -7989,8 +7852,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ quotations",
     "level": "B1",
-    "icon": "FileSpreadsheet",
-    "photoQuery": "quotation"
+    "icon": "FileSpreadsheet"
   },
   {
     "id": "l28",
@@ -8055,7 +7917,7 @@
     "forms": "นับได้ · พหูพจน์ pickups",
     "level": "A2",
     "icon": "Car",
-    "photoQuery": "package pickup"
+    "photoQuery": "courier van"
   },
   {
     "id": "l33",
@@ -8081,8 +7943,7 @@
     "pos": "v",
     "forms": "V2 / V3 dispatched",
     "level": "B1",
-    "icon": "Send",
-    "photoQuery": "warehouse"
+    "icon": "Send"
   },
   {
     "id": "l35",
@@ -8094,8 +7955,7 @@
     "pos": "n",
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
     "level": "B1",
-    "icon": "PackagePlus",
-    "photoQuery": "loading truck"
+    "icon": "PackagePlus"
   },
   {
     "id": "l36",
@@ -8120,8 +7980,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ inspections",
     "level": "B1",
-    "icon": "ScanSearch",
-    "photoQuery": "customs inspection"
+    "icon": "ScanSearch"
   },
   {
     "id": "l38",
@@ -8133,8 +7992,7 @@
     "pos": "n",
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
     "level": "B2",
-    "icon": "Stamp",
-    "photoQuery": "customs"
+    "icon": "Stamp"
   },
   {
     "id": "l39",
@@ -8197,8 +8055,7 @@
     "pos": "n",
     "forms": "นับไม่ได้ (ไม่เติม s ไม่ใช้ a/an)",
     "level": "A2",
-    "icon": "Umbrella",
-    "photoQuery": "insurance"
+    "icon": "Umbrella"
   },
   {
     "id": "l44",
@@ -8223,7 +8080,8 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ claims",
     "level": "B1",
-    "icon": "FileWarning"
+    "icon": "FileWarning",
+    "photoQuery": "insurance claim"
   },
   {
     "id": "l46",
@@ -8261,8 +8119,7 @@
     "pos": "n",
     "forms": "นับได้ · พหูพจน์ labels",
     "level": "A2",
-    "icon": "Tag",
-    "photoQuery": "shipping label"
+    "icon": "Tag"
   },
   {
     "id": "l49",
@@ -8275,7 +8132,7 @@
     "forms": "นับได้ · พหูพจน์ barcodes",
     "level": "B1",
     "icon": "Barcode",
-    "photoQuery": "barcode"
+    "photoQuery": "barcode scanner"
   },
   {
     "id": "l50",
@@ -8390,8 +8247,7 @@
     "forms": "ใช้รูปมี s (ชื่อชุดกฎ)",
     "note": "เช่น FOB = ผู้ซื้อรับผิดชอบตั้งแต่สินค้าขึ้นเรือ · CIF = ผู้ขายจ่ายค่าเรือและค่าประกันให้",
     "level": "B2",
-    "icon": "BookMarked",
-    "photoQuery": "international trade"
+    "icon": "BookMarked"
   },
   {
     "id": "l59",
@@ -8468,8 +8324,7 @@
     "pos": "phrase",
     "note": "ใช้ปิดท้ายอีเมล · หลัง look forward to ใช้ V-ing",
     "level": "B1",
-    "icon": "MailCheck",
-    "photoQuery": "letter"
+    "icon": "MailCheck"
   },
   {
     "id": "e3",
@@ -8481,8 +8336,7 @@
     "pos": "phrase",
     "note": "ย่อว่า ASAP ฟังเร่ง ใช้กับคนที่สนิทหรือเรื่องด่วนจริง",
     "level": "A2",
-    "icon": "Zap",
-    "photoQuery": "urgent email"
+    "icon": "Zap"
   },
   {
     "id": "e4",
@@ -8516,8 +8370,7 @@
     "exTh": "ถ้ามีคำถามกรุณาแจ้งให้ทราบ",
     "pos": "phrase",
     "level": "A2",
-    "icon": "Bell",
-    "photoQuery": "questions"
+    "icon": "Bell"
   },
   {
     "id": "e7",
@@ -8528,8 +8381,7 @@
     "exTh": "ฉันเขียนมาในนามของผู้จัดการ",
     "pos": "phrase",
     "level": "B1",
-    "icon": "UserRoundCheck",
-    "photoQuery": "business letter"
+    "icon": "UserRoundCheck"
   },
   {
     "id": "e8",
@@ -8553,8 +8405,7 @@
     "forms": "V2 / V3 followed up",
     "note": "กริยาวลี (phrasal verb) · follow up on + เรื่อง",
     "level": "B1",
-    "icon": "MailPlus",
-    "photoQuery": "email"
+    "icon": "MailPlus"
   },
   {
     "id": "e10",
@@ -8579,8 +8430,7 @@
     "exTh": "ตามที่คุยกันไว้ นี่คือตารางเวลาใหม่",
     "pos": "phrase",
     "level": "B1",
-    "icon": "MessagesSquare",
-    "photoQuery": "meeting"
+    "icon": "MessagesSquare"
   },
   {
     "id": "e12",
@@ -8591,8 +8441,7 @@
     "exTh": "ฉันแนบสัญญาฉบับเก่ามาเพื่อใช้อ้างอิง",
     "pos": "phrase",
     "level": "B1",
-    "icon": "Bookmark",
-    "photoQuery": "contract reference"
+    "icon": "Bookmark"
   },
   {
     "id": "e13",
@@ -8655,8 +8504,7 @@
     "exTh": "โอเค ไปหัวข้อต่อไปกัน",
     "pos": "phrase",
     "level": "B1",
-    "icon": "ArrowRight",
-    "photoQuery": "meeting"
+    "icon": "ArrowRight"
   },
   {
     "id": "e18",

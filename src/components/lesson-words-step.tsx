@@ -5,7 +5,7 @@ import type { LessonWord, LessonWords } from "@/content/lesson-words";
 import { PhotoWordCard } from "./photo-word-card";
 import { Sentence } from "./sentence";
 import { speak } from "./speak";
-import { POS_STYLE, PosBadge, WordIcon } from "./vocab-view";
+import { POS_STYLE, PosBadge, WordIcon } from "./word-bits";
 
 const CHECK_SIZE = 5;
 

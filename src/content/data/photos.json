@@ -1,202 +1,4 @@
 {
-  "c1": {
-    "sourceId": 5132832,
-    "src": "/photos/c1.webp",
-    "alt": "coffee, coffee cup, laptop, work, computer, technology, table, keyboard, cafe, cup, modern, caffeine, drink, morning, espresso, cappuccino, wake, food, brown, good morning, course, restaurant, nutrition",
-    "by": "Engin_Akyurt",
-    "byUrl": "https://pixabay.com/users/Engin_Akyurt-3656355/",
-    "url": "https://pixabay.com/photos/coffee-laptop-work-computer-5132832/",
-    "site": "Pixabay"
-  },
-  "c3": {
-    "sourceId": 1627703,
-    "src": "/photos/c3.webp",
-    "alt": "work, workaholic, writer, programmer, one, laptop, notebook, office, bank, park, park bench, hedge, outdoors, people, the atmosphere, dark, eve, light, illuminated, night, lamp, work, work, work, workaholic, writer, writer, writer, writer, writer, programmer, programmer, programmer, laptop, laptop, office, office, office, office, bank",
-    "by": "51581",
-    "byUrl": "https://pixabay.com/users/51581-51581/",
-    "url": "https://pixabay.com/photos/work-workaholic-writer-programmer-1627703/",
-    "site": "Pixabay"
-  },
-  "c4": {
-    "sourceId": 7859033,
-    "src": "/photos/c4.webp",
-    "alt": "traffic, city, traffic jam, cars, vehicles, highway, road, sunset, nature, twilight",
-    "by": "wal_172619",
-    "byUrl": "https://pixabay.com/users/wal_172619-12138562/",
-    "url": "https://pixabay.com/photos/traffic-city-traffic-jam-cars-7859033/",
-    "site": "Pixabay"
-  },
-  "c6": {
-    "sourceId": 2160321,
-    "src": "/photos/c6.webp",
-    "alt": "server, space, the server room, dark, led, shining, mystical, template, artificially, neon, gray, basement, cellar, fog, flash, hardware, computer, data, to process, coloured, garish, tube, cold, light, seem to be, work, processing, satellite, connection, clever, nerd, professional, cabinets, server cabinets, it, information, technology, server, server, server, server, server, data",
-    "by": "Schäferle",
-    "byUrl": "https://pixabay.com/users/Schäferle-3372715/",
-    "url": "https://pixabay.com/photos/server-space-the-server-room-dark-2160321/",
-    "site": "Pixabay"
-  },
-  "c7": {
-    "sourceId": 4308826,
-    "src": "/photos/c7.webp",
-    "alt": "newsletter, keyboard, send, message, automatic, envelope, email, marketing, text, blog, communication, internet, enter, computer, gray computer, gray laptop, gray marketing, gray email, gray community, gray internet, gray communication, gray blog, gray keyboard, newsletter, newsletter, newsletter, newsletter, newsletter",
-    "by": "Tumisu",
-    "byUrl": "https://pixabay.com/users/Tumisu-148124/",
-    "url": "https://pixabay.com/photos/newsletter-keyboard-send-message-4308826/",
-    "site": "Pixabay"
-  },
-  "c8": {
-    "sourceId": 6001018,
-    "src": "/photos/c8.webp",
-    "alt": "landscape, sea, evening, ship, cargo ship, container, osaka bay, osaka port, arrival at the port, pilot boat, shipping, logistics, industrial, japan",
-    "by": "Kanenori",
-    "byUrl": "https://pixabay.com/users/Kanenori-4749850/",
-    "url": "https://pixabay.com/photos/landscape-sea-evening-ship-6001018/",
-    "site": "Pixabay"
-  },
-  "c9": {
-    "sourceId": 6670684,
-    "src": "/photos/c9.webp",
-    "alt": "port, ship, nature, water, sea, crane, freight, export, import, charge, logistics, container",
-    "by": "smartschwarz",
-    "byUrl": "https://pixabay.com/users/smartschwarz-17278601/",
-    "url": "https://pixabay.com/photos/port-ship-water-sea-crane-freight-6670684/",
-    "site": "Pixabay"
-  },
-  "c10": {
-    "sourceId": 8246151,
-    "src": "/photos/c10.webp",
-    "alt": "building, door, architecture, entrance, glass, indoors, office, sliding doors, sunlight, tables, work, office, office, office, office, office, work",
-    "by": "Michael_Pointner",
-    "byUrl": "https://pixabay.com/users/Michael_Pointner-28601164/",
-    "url": "https://pixabay.com/photos/building-door-architecture-entrance-8246151/",
-    "site": "Pixabay"
-  },
-  "c12": {
-    "sourceId": 3857686,
-    "src": "/photos/c12.webp",
-    "alt": "handshake, hands, new year's day, year, monitor, online, partner, business people, team, collaboration, teamwork, friendship, together, man, trust, shaking hands, connectedness, friends, business, politics, media, business partners",
-    "by": "geralt",
-    "byUrl": "https://pixabay.com/users/geralt-9301/",
-    "url": "https://pixabay.com/photos/handshake-hands-new-years-day-year-3857686/",
-    "site": "Pixabay"
-  },
-  "c14": {
-    "sourceId": 2345801,
-    "src": "/photos/c14.webp",
-    "alt": "language, learning, books, education, learn, study, foreign, translation, knowledge, communication, international, spanish, book, dictionary, travel, studying, speech, country, french, german, italian, phrasebook, france, translator, communicate, countries, japanese, translation, translation, translation, translation, translation, translator",
-    "by": "olilynch",
-    "byUrl": "https://pixabay.com/users/olilynch-3815693/",
-    "url": "https://pixabay.com/photos/language-learning-books-education-2345801/",
-    "site": "Pixabay"
-  },
-  "c15": {
-    "sourceId": 654697,
-    "src": "/photos/c15.webp",
-    "alt": "tag, label, design, metal, rope, string, black, tag, tag, tag, tag, tag, label, label, label, label",
-    "by": "BRRT",
-    "byUrl": "https://pixabay.com/users/BRRT-122519/",
-    "url": "https://pixabay.com/photos/tag-label-design-metal-rope-654697/",
-    "site": "Pixabay"
-  },
-  "c17": {
-    "sourceId": 10186543,
-    "src": "/photos/c17.webp",
-    "alt": "package, packaging, delivery, parcel, gifts, present, cardboard, presents, decor, ai generated",
-    "by": "u_c48rf6ybx8",
-    "byUrl": "https://pixabay.com/users/u_c48rf6ybx8-55127632/",
-    "url": "https://pixabay.com/photos/package-packaging-delivery-parcel-10186543/",
-    "site": "Pixabay"
-  },
-  "c19": {
-    "sourceId": 2807545,
-    "src": "/photos/c19.webp",
-    "alt": "car, full hd wallpaper, windows wallpaper, 4k wallpaper, truck, wallpaper hd, transport, vehicle, free image, automobile, elegant, wallpaper 4k, photoshop, beautiful wallpaper, mac wallpaper, free wallpaper, edition, hd wallpaper, car wallpapers, free background, 4k wallpaper 1920x1080, cool backgrounds, background, laptop wallpaper, red, ford, red car, desktop backgrounds, scale",
-    "by": "lizbeth2055",
-    "byUrl": "https://pixabay.com/users/lizbeth2055-6598503/",
-    "url": "https://pixabay.com/photos/car-truck-transport-vehicle-2807545/",
-    "site": "Pixabay"
-  },
-  "c21": {
-    "sourceId": 336996,
-    "src": "/photos/c21.webp",
-    "alt": "oil tanker, container ship, ship, nature, water, ships, shipping, sea, reed",
-    "by": "Thomasxx2xx",
-    "byUrl": "https://pixabay.com/users/Thomasxx2xx-242877/",
-    "url": "https://pixabay.com/photos/oil-tanker-container-ship-ship-336996/",
-    "site": "Pixabay"
-  },
-  "c22": {
-    "sourceId": 2559723,
-    "src": "/photos/c22.webp",
-    "alt": "people, girls, women, coffee, drink, unwind, relax, talking, friend, wooden, talking, talking, talking, talking, talking",
-    "by": "StockSnap",
-    "byUrl": "https://pixabay.com/users/StockSnap-894430/",
-    "url": "https://pixabay.com/photos/people-girls-women-coffee-drink-2559723/",
-    "site": "Pixabay"
-  },
-  "c23": {
-    "sourceId": 5190643,
-    "src": "/photos/c23.webp",
-    "alt": "make a phone call, mobile, phone, smartphone, communication, contact, iphone, community, accessible, at home, home, friendship, woman, female, home office, web, reception, talk, talking, chat, phone, communication, communication, communication, community, home office, talk, talk, talk, talking, talking, talking, talking, talking, chat",
-    "by": "VinzentWeinbeer",
-    "byUrl": "https://pixabay.com/users/VinzentWeinbeer-5342962/",
-    "url": "https://pixabay.com/photos/make-a-phone-call-mobile-phone-5190643/",
-    "site": "Pixabay"
-  },
-  "c24": {
-    "sourceId": 1806702,
-    "src": "/photos/c24.webp",
-    "alt": "meeting room, table, business, conference, meeting, interior, work, boardroom, room, corporate, presentation, professional, chair, videoconference, gray business, gray work, gray meeting, gray room, gray table, gray company, gray conference, gray presentation, gray interior, meeting room, meeting room, meeting room, meeting room, meeting room, conference, meeting, meeting, boardroom, boardroom, presentation, Provence-Alpes-Côte d'Azur, Biot, France",
-    "by": "jraffin",
-    "byUrl": "https://pixabay.com/users/jraffin-1935103/",
-    "url": "https://pixabay.com/photos/meeting-room-table-business-1806702/",
-    "site": "Pixabay"
-  },
-  "c25": {
-    "sourceId": 1990263,
-    "src": "/photos/c25.webp",
-    "alt": "bangkok, thailand, city, cityscape, urban, cars, trucks, vehicles, traffic jam, stopped, heavy, buildings, downtown, street, skyline, hdr, bangkok, bangkok, bangkok, traffic jam, traffic jam, traffic jam, traffic jam, traffic jam",
-    "by": "12019",
-    "byUrl": "https://pixabay.com/users/12019-12019/",
-    "url": "https://pixabay.com/photos/bangkok-thailand-city-cityscape-1990263/",
-    "site": "Pixabay"
-  },
-  "c26": {
-    "sourceId": 849825,
-    "src": "/photos/c26.webp",
-    "alt": "student, typing, keyboard, text, startup, people, students, office, strategy, work, technology, company, corporate, communication, young, plan, marketing, computer, design, professional, planning, internet, project, laptop, presentation, web, display, monitor, screen, digital, electronic, pc, modern, student, office, work, work, work, marketing, computer, computer, computer, computer, computer, laptop, laptop, laptop",
-    "by": "StartupStockPhotos",
-    "byUrl": "https://pixabay.com/users/StartupStockPhotos-690514/",
-    "url": "https://pixabay.com/photos/student-typing-keyboard-text-849825/",
-    "site": "Pixabay"
-  },
-  "c27": {
-    "sourceId": 2567915,
-    "src": "/photos/c27.webp",
-    "alt": "happy holidays, women, talking, laugh, happy, friends, casual, outdoors, people",
-    "by": "StockSnap",
-    "byUrl": "https://pixabay.com/users/StockSnap-894430/",
-    "url": "https://pixabay.com/photos/happy-holidays-women-talking-laugh-2567915/",
-    "site": "Pixabay"
-  },
-  "c29": {
-    "sourceId": 4038013,
-    "src": "/photos/c29.webp",
-    "alt": "iphone x, iphone, x, mobile, technology, phone, display, design, smartphone, apps, screen, communication, electronic, device, apple, ios, photo app, photo, app, settings, profile, holding phone, hand, digital, software, iphone x, iphone x, iphone x, iphone x, iphone x, ios, holding phone, holding phone, holding phone, software",
-    "by": "BiljaST",
-    "byUrl": "https://pixabay.com/users/BiljaST-2868488/",
-    "url": "https://pixabay.com/photos/iphone-x-iphone-x-mobile-4038013/",
-    "site": "Pixabay"
-  },
-  "c30": {
-    "sourceId": 2710658,
-    "src": "/photos/c30.webp",
-    "alt": "ape, application, training, business, portrait, start-up, startup, presentation, logo, meeting, businessman, monkey, profession, necktie, business people, management, kaufmann, winner, work, success, skills, manager, career, lifestyle, dynamic, shirt, workplace, boss, office, tax consultant, office job, men's suit, funny, bureaucracy, fun, leader, professional, outfit, advisor, specialist, successful, team leader, good, thumb, positive, finger, top, very good, thumbman, high, excellent, like, confirm, thumbs up, motivation, right, logo, logo, logo, monkey, like, like, like, like, thumbs up, thumbs up, thumbs up, thumbs up, thumbs up",
-    "by": "sik-life",
-    "byUrl": "https://pixabay.com/users/sik-life-2171488/",
-    "url": "https://pixabay.com/photos/ape-application-training-business-2710658/",
-    "site": "Pixabay"
-  },
   "c31": {
     "sourceId": 2569234,
     "src": "/photos/c31.webp",
@@ -204,15 +6,6 @@
     "by": "StockSnap",
     "byUrl": "https://pixabay.com/users/StockSnap-894430/",
     "url": "https://pixabay.com/photos/people-group-friends-concept-2569234/",
-    "site": "Pixabay"
-  },
-  "c32": {
-    "sourceId": 2275745,
-    "src": "/photos/c32.webp",
-    "alt": "call center, headset, woman, service, consulting, information, conversation, continents, global, international, headphones, phone, help, call, corporate, booking, make a phone call, pc, call center, call center, call center, call center, call center, service, service, service, call",
-    "by": "geralt",
-    "byUrl": "https://pixabay.com/users/geralt-9301/",
-    "url": "https://pixabay.com/photos/call-center-headset-woman-service-2275745/",
     "site": "Pixabay"
   },
   "c33": {
@@ -224,33 +17,6 @@
     "url": "https://pixabay.com/photos/field-pasture-meadow-morning-mood-7118838/",
     "site": "Pixabay"
   },
-  "c35": {
-    "sourceId": 6631117,
-    "src": "/photos/c35.webp",
-    "alt": "container ship, container transport, seagoing vessel, boat, vessel, freighter, means of transport sea containers, transport, container ship, container ship, container ship, container ship, container ship, boat, vessel, transport, transport",
-    "by": "dendoktoor",
-    "byUrl": "https://pixabay.com/users/dendoktoor-14802912/",
-    "url": "https://pixabay.com/photos/container-ship-container-transport-6631117/",
-    "site": "Pixabay"
-  },
-  "c36": {
-    "sourceId": 5810249,
-    "src": "/photos/c36.webp",
-    "alt": "ship, cranes, loading, dock, port, pier, machinery, heavy machinery, cargo, cargo ship, shipping, shipping industry, freight, freight transport, freight ship, sea, ocean, water, travel, nature, voyage, argentina, transport, transportation, infrastructure",
-    "by": "hunt-er",
-    "byUrl": "https://pixabay.com/users/hunt-er-13068062/",
-    "url": "https://pixabay.com/photos/ship-cranes-loading-dock-port-5810249/",
-    "site": "Pixabay"
-  },
-  "c37": {
-    "sourceId": 1839406,
-    "src": "/photos/c37.webp",
-    "alt": "code, coding, computer, data, developing, development, ethernet, html, programmer, programming, screen, software, technology, work, code, code, coding, coding, coding, coding, coding, computer, computer, computer, computer, data, programming, programming, programming, software, software, technology, technology, technology, technology",
-    "by": "Pexels",
-    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
-    "url": "https://pixabay.com/photos/code-coding-computer-data-1839406/",
-    "site": "Pixabay"
-  },
   "c38": {
     "sourceId": 755802,
     "src": "/photos/c38.webp",
@@ -260,42 +26,6 @@
     "url": "https://pixabay.com/photos/goal-target-arrow-center-755802/",
     "site": "Pixabay"
   },
-  "c39": {
-    "sourceId": 410328,
-    "src": "/photos/c39.webp",
-    "alt": "waiting, wristwatch, man, watch, appointment, time, urgent, businessman, fashion, casual, pants, shirt, male, guy, short sleeves, waiting, man, watch, watch, time, time, time, time, time",
-    "by": "JESHOOTS-com",
-    "byUrl": "https://pixabay.com/users/JESHOOTS-com-264599/",
-    "url": "https://pixabay.com/photos/waiting-wristwatch-man-watch-410328/",
-    "site": "Pixabay"
-  },
-  "c40": {
-    "sourceId": 3243019,
-    "src": "/photos/c40.webp",
-    "alt": "job, job offer, workplace, job search, colleagues, job placement, attitude, employees, logo, office, service, communicate, communication, illuminated, application, request, work, looking for a job, employment office, human resources department, business, message, documents, information, info, notification notification, icon, news, a notice, seek, share with, new job, blue, notes, we are looking for you, looking for, hand, index finger, show, job, job, job, job offer, job offer, job offer, job search, job search, job search, new job, new job, new job, new job, new job",
-    "by": "MR-PANDA",
-    "byUrl": "https://pixabay.com/users/MR-PANDA-2044000/",
-    "url": "https://pixabay.com/photos/job-job-offer-workplace-job-search-3243019/",
-    "site": "Pixabay"
-  },
-  "c41": {
-    "sourceId": 1364075,
-    "src": "/photos/c41.webp",
-    "alt": "the eleventh hour, catastrophe, alarm clock, clock, ring the bell, dial, pointer, hours, time display, time",
-    "by": "Alexas_Fotos",
-    "byUrl": "https://pixabay.com/users/Alexas_Fotos-686414/",
-    "url": "https://pixabay.com/photos/the-eleventh-hour-catastrophe-1364075/",
-    "site": "Pixabay"
-  },
-  "c42": {
-    "sourceId": 459196,
-    "src": "/photos/c42.webp",
-    "alt": "macbook, laptop, google, display, screen, work, internet, browser, macbook pro, technology, freelancer, macintosh, computer, iphone, workplace, self-employed, blogger, seo, laptop, laptop, laptop, laptop, laptop, google, google, google, internet, computer, computer, computer, seo",
-    "by": "377053",
-    "byUrl": "https://pixabay.com/users/377053-377053/",
-    "url": "https://pixabay.com/photos/macbook-laptop-google-display-459196/",
-    "site": "Pixabay"
-  },
   "c43": {
     "sourceId": 7304257,
     "src": "/photos/c43.webp",
@@ -303,105 +33,6 @@
     "by": "IqbalStock",
     "byUrl": "https://pixabay.com/users/IqbalStock-12845379/",
     "url": "https://pixabay.com/photos/business-smartphone-hands-7304257/",
-    "site": "Pixabay"
-  },
-  "c44": {
-    "sourceId": 571153,
-    "src": "/photos/c44.webp",
-    "alt": "businesswoman, presentation, men's suit, hand, keep, control, control element, quality control, certification, check, rubber stamp, inspection, review, examination, symbol, sale, selling, sample, trade, test, business, label, circular, high class, high quality, quality, quality control, quality control, quality control, certification, inspection, review, quality, quality, quality, quality, quality",
-    "by": "geralt",
-    "byUrl": "https://pixabay.com/users/geralt-9301/",
-    "url": "https://pixabay.com/photos/businesswoman-presentation-571153/",
-    "site": "Pixabay"
-  },
-  "c45": {
-    "sourceId": 2202521,
-    "src": "/photos/c45.webp",
-    "alt": "video game console, video game, play, toy, computer game, device, entertainment, electronics, fun, atari, computer, fl, atari, atari, atari, atari, atari, computer",
-    "by": "WikimediaImages",
-    "byUrl": "https://pixabay.com/users/WikimediaImages-1185597/",
-    "url": "https://pixabay.com/photos/video-game-console-video-game-play-2202521/",
-    "site": "Pixabay"
-  },
-  "c46": {
-    "sourceId": 1868507,
-    "src": "/photos/c46.webp",
-    "alt": "bus, passengers, people, seats, metro, commute, commuters, commuting, transportation, travel, vehicle, bus, bus, bus, bus, bus",
-    "by": "Pexels",
-    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
-    "url": "https://pixabay.com/photos/bus-passengers-people-seats-metro-1868507/",
-    "site": "Pixabay"
-  },
-  "c48": {
-    "sourceId": 1156121,
-    "src": "/photos/c48.webp",
-    "alt": "calculator, table, invoice, work, pay, calculator, calculator, calculator, calculator, invoice, invoice, invoice, invoice, invoice",
-    "by": "Cobanams",
-    "byUrl": "https://pixabay.com/users/Cobanams-1761938/",
-    "url": "https://pixabay.com/photos/calculator-table-invoice-work-pay-1156121/",
-    "site": "Pixabay"
-  },
-  "c49": {
-    "sourceId": 4894797,
-    "src": "/photos/c49.webp",
-    "alt": "macbook, tech, digital, minimal, earbuds, work, business, office, notebook, notepad, diary, stationery, headphones, music, headset, listening, brown office, brown laptop, brown tech, brown headphones, tech, tech, tech, tech, tech, earbuds",
-    "by": "Lucfier",
-    "byUrl": "https://pixabay.com/users/Lucfier-4464529/",
-    "url": "https://pixabay.com/photos/macbook-tech-digital-minimal-4894797/",
-    "site": "Pixabay"
-  },
-  "c50": {
-    "sourceId": 2803645,
-    "src": "/photos/c50.webp",
-    "alt": "old man, old person, person, grandfather clocks, clock, time, drought earth, dried up earth, roman numerals, old, fog, wait, to wait, minute hand, second hand, hours, clock hands, dial, time display, photomontage, composing, old man, old man, old man, old man, old man, clock, time, wait",
-    "by": "Myriams-Fotos",
-    "byUrl": "https://pixabay.com/users/Myriams-Fotos-1627417/",
-    "url": "https://pixabay.com/photos/old-man-old-person-person-2803645/",
-    "site": "Pixabay"
-  },
-  "c51": {
-    "sourceId": 1851218,
-    "src": "/photos/c51.webp",
-    "alt": "hands, phone, smartphone, electronics, mobile phone, technology, touchscreen, screen, using phone, communication, wireless, phone, phone, phone, phone, phone, smartphone, smartphone, mobile phone",
-    "by": "Pexels",
-    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
-    "url": "https://pixabay.com/photos/hands-phone-smartphone-electronics-1851218/",
-    "site": "Pixabay"
-  },
-  "c52": {
-    "sourceId": 4529061,
-    "src": "/photos/c52.webp",
-    "alt": "trail, mountain, snow, the alps, transport, truck, road, streamers, activities, travel, alpine, panorama, twilight, mood, mountains, cloudy, nature, on the way, julierpass, the cold season, highway, the height of the, high, asphalt",
-    "by": "pasja1000",
-    "byUrl": "https://pixabay.com/users/pasja1000-6355831/",
-    "url": "https://pixabay.com/photos/trail-mountain-snow-the-alps-4529061/",
-    "site": "Pixabay"
-  },
-  "c54": {
-    "sourceId": 1143485,
-    "src": "/photos/c54.webp",
-    "alt": "buffer, passport, travel, borders, customs, passport, passport, passport, passport, passport",
-    "by": "jackmac34",
-    "byUrl": "https://pixabay.com/users/jackmac34-483877/",
-    "url": "https://pixabay.com/photos/buffer-passport-travel-borders-1143485/",
-    "site": "Pixabay"
-  },
-  "c55": {
-    "sourceId": 2606509,
-    "src": "/photos/c55.webp",
-    "alt": "businessman, consulting, business, meeting, conference, meet, parley, conversation, convention, colloquium, reading, success, team, teamwork, profit, marketing, plan, innovation, sale, goals, strategy, customer, buyer, seller, support, help, performance, options, ideas, can, competence, presentation, businessman, consulting, consulting, consulting, consulting, consulting, meeting, meeting, meeting, meeting, success, team, team, marketing, marketing, marketing, innovation, customer, customer, customer, support, support, help, help, presentation",
-    "by": "geralt",
-    "byUrl": "https://pixabay.com/users/geralt-9301/",
-    "url": "https://pixabay.com/photos/businessman-consulting-business-2606509/",
-    "site": "Pixabay"
-  },
-  "c56": {
-    "sourceId": 4819676,
-    "src": "/photos/c56.webp",
-    "alt": "chart, investment, analytics, graph, data, report, financial, stats, business, money, increase, analysis, budget, revenue, growth, accounting, sales, profit, income, statement, wealth, banking, success, loan, mortgage, graph, stats, stats, increase, increase, increase, budget, budget, budget, budget, revenue, revenue, revenue, revenue, revenue, loan, mortgage",
-    "by": "Tumisu",
-    "byUrl": "https://pixabay.com/users/Tumisu-148124/",
-    "url": "https://pixabay.com/photos/chart-investment-analytics-graph-4819676/",
     "site": "Pixabay"
   },
   "c60": {
@@ -422,15 +53,6 @@
     "url": "https://pixabay.com/photos/web-design-laptop-html-design-2038872/",
     "site": "Pixabay"
   },
-  "c63": {
-    "sourceId": 880800,
-    "src": "/photos/c63.webp",
-    "alt": "busy, office, ol, answer the phone, photocopy, photocopy, photocopy, photocopy, photocopy, photocopy",
-    "by": "mickey970",
-    "byUrl": "https://pixabay.com/users/mickey970-1278620/",
-    "url": "https://pixabay.com/photos/busy-office-ol-answer-the-phone-880800/",
-    "site": "Pixabay"
-  },
   "c65": {
     "sourceId": 7425079,
     "src": "/photos/c65.webp",
@@ -438,15 +60,6 @@
     "by": "viarami",
     "byUrl": "https://pixabay.com/users/viarami-13458823/",
     "url": "https://pixabay.com/photos/road-asia-thailand-bangkok-7425079/",
-    "site": "Pixabay"
-  },
-  "c66": {
-    "sourceId": 10202054,
-    "src": "/photos/c66.webp",
-    "alt": "businessman, office, stress, tired, laptop, working late, professional, executive, headache, fatigue, suit, indoor, night, business, corporate, work, technology, desk, mental health, pensive, dark, concentration, overtime, ai generated",
-    "by": "PixelWanderer",
-    "byUrl": "https://pixabay.com/users/PixelWanderer-44405193/",
-    "url": "https://pixabay.com/photos/businessman-office-stress-tired-10202054/",
     "site": "Pixabay"
   },
   "c67": {
@@ -458,15 +71,6 @@
     "url": "https://pixabay.com/photos/railway-feet-walking-legs-railroad-5593946/",
     "site": "Pixabay"
   },
-  "c68": {
-    "sourceId": 5377783,
-    "src": "/photos/c68.webp",
-    "alt": "woman, old, granny, seniors, person, female, people, grandmother, face, folds, rest think, recall, to forget, pray, dreams, wait, hope, pensioners, dementia, retirement home, maintenance, nationals, bank, to sit, grandmother, dementia, dementia, dementia, dementia, dementia, retirement home",
-    "by": "Kor_el_ya",
-    "byUrl": "https://pixabay.com/users/Kor_el_ya-16012162/",
-    "url": "https://pixabay.com/photos/woman-old-granny-seniors-person-5377783/",
-    "site": "Pixabay"
-  },
   "c69": {
     "sourceId": 5056401,
     "src": "/photos/c69.webp",
@@ -476,24 +80,6 @@
     "url": "https://pixabay.com/photos/letter-board-hope-sign-positive-5056401/",
     "site": "Pixabay"
   },
-  "c70": {
-    "sourceId": 2726920,
-    "src": "/photos/c70.webp",
-    "alt": "lamborghini, fast cars, orange, car, modern, fast, mac wallpaper, automobile, transportation, wallpaper 4k, technology, wallpaper hd, sportscar, luxury, desktop backgrounds, supercar, beautiful wallpaper, speed, vehicle, new york city, coupe, cool backgrounds, car wallpapers, free background, 4k wallpaper, sport, automotive, hd wallpaper, auto, race, free wallpaper, power, laptop wallpaper, 4k wallpaper 1920x1080, windows wallpaper, drive, background, screen saver, full hd wallpaper, wallpaper free image 2021",
-    "by": "ArtisticOperations",
-    "byUrl": "https://pixabay.com/users/ArtisticOperations-4161274/",
-    "url": "https://pixabay.com/photos/lamborghini-fast-cars-orange-car-2726920/",
-    "site": "Pixabay"
-  },
-  "c71": {
-    "sourceId": 392744,
-    "src": "/photos/c71.webp",
-    "alt": "pickup truck, junk, arizona, desert, oldster, heap, truck, bullet holes, broken down, hdr, brown desert, nature, brown truck",
-    "by": "12019",
-    "byUrl": "https://pixabay.com/users/12019-12019/",
-    "url": "https://pixabay.com/photos/pickup-truck-junk-arizona-desert-392744/",
-    "site": "Pixabay"
-  },
   "c72": {
     "sourceId": 6876982,
     "src": "/photos/c72.webp",
@@ -501,15 +87,6 @@
     "by": "KevinLeung78",
     "byUrl": "https://pixabay.com/users/KevinLeung78-4713811/",
     "url": "https://pixabay.com/photos/sign-no-open-flame-sign-6876982/",
-    "site": "Pixabay"
-  },
-  "c73": {
-    "sourceId": 6153947,
-    "src": "/photos/c73.webp",
-    "alt": "packages, delivery, delivery man, parcel, boxes, custom boxes, service, delivery, delivery, delivery, delivery, delivery, delivery man, delivery man, delivery man, delivery man, parcel",
-    "by": "romeosessions",
-    "byUrl": "https://pixabay.com/users/romeosessions-21018118/",
-    "url": "https://pixabay.com/photos/packages-delivery-delivery-man-6153947/",
     "site": "Pixabay"
   },
   "c74": {
@@ -528,15 +105,6 @@
     "by": "jarmoluk",
     "byUrl": "https://pixabay.com/users/jarmoluk-143740/",
     "url": "https://pixabay.com/photos/money-card-pocket-concept-idea-256281/",
-    "site": "Pixabay"
-  },
-  "c79": {
-    "sourceId": 5382501,
-    "src": "/photos/c79.webp",
-    "alt": "job, office, team, business, internet, technology, design, draft, portable, meeting, job, office, office, office, office, team, team, business, business, business, business, business, technology, meeting, meeting, meeting",
-    "by": "RonaldCandonga",
-    "byUrl": "https://pixabay.com/users/RonaldCandonga-17383039/",
-    "url": "https://pixabay.com/photos/job-office-team-business-internet-5382501/",
     "site": "Pixabay"
   },
   "c83": {
@@ -566,15 +134,6 @@
     "url": "https://pixabay.com/photos/merry-christmas-boarding-pass-travel-5219496/",
     "site": "Pixabay"
   },
-  "c91": {
-    "sourceId": 3481061,
-    "src": "/photos/c91.webp",
-    "alt": "merry christmas, pen, handwriting, writing, letter, paper, note, ink, write, message, diary, desk, calligraphy, text, design, fountain pen, retro, card, vintage, brown paper, brown writing, brown desk, brown design, brown letter, brown vintage, brown retro, brown note",
-    "by": "hudsoncrafted",
-    "byUrl": "https://pixabay.com/users/hudsoncrafted-5201554/",
-    "url": "https://pixabay.com/photos/merry-christmas-pen-handwriting-3481061/",
-    "site": "Pixabay"
-  },
   "c93": {
     "sourceId": 6794508,
     "src": "/photos/c93.webp",
@@ -582,33 +141,6 @@
     "by": "Peter_Lindenau",
     "byUrl": "https://pixabay.com/users/Peter_Lindenau-21556192/",
     "url": "https://pixabay.com/photos/ship-container-ship-tractor-6794508/",
-    "site": "Pixabay"
-  },
-  "c94": {
-    "sourceId": 5619201,
-    "src": "/photos/c94.webp",
-    "alt": "store, stacks, shelves, stock, warehouse, supermarket, retail, shopping, shop, purchase, warehouse, warehouse, warehouse, warehouse, warehouse",
-    "by": "tianya1223",
-    "byUrl": "https://pixabay.com/users/tianya1223-4833799/",
-    "url": "https://pixabay.com/photos/store-stacks-shelves-stock-5619201/",
-    "site": "Pixabay"
-  },
-  "c96": {
-    "sourceId": 5737958,
-    "src": "/photos/c96.webp",
-    "alt": "pc, hardware, man, personal computer, fix, fixing, technician, computer technician, computer, tech, technology, desktop, components, cpu, electronics, motherboard, broken, repair, upgrade, service, hardware, technician, technician, technician, technician, technician, computer technician, computer technician, tech, tech, tech, cpu, cpu, motherboard, upgrade",
-    "by": "JESHOOTS-com",
-    "byUrl": "https://pixabay.com/users/JESHOOTS-com-264599/",
-    "url": "https://pixabay.com/photos/pc-hardware-man-personal-computer-5737958/",
-    "site": "Pixabay"
-  },
-  "c97": {
-    "sourceId": 1232944,
-    "src": "/photos/c97.webp",
-    "alt": "grocery, shopping, supermarket, merchandising, grocery shopping, grocery store, store, shop, food, market, retail, buy, commerce, purchase, products, consumer, consumerism, shelves, produce, marketing, business, grocery, grocery, shopping, shopping, shopping, supermarket, supermarket, supermarket, supermarket, supermarket, grocery store, grocery store, grocery store, store, store, shop, shop, shop, market, market, market, retail",
-    "by": "stevepb",
-    "byUrl": "https://pixabay.com/users/stevepb-282134/",
-    "url": "https://pixabay.com/photos/grocery-shopping-supermarket-1232944/",
     "site": "Pixabay"
   },
   "c98": {
@@ -620,33 +152,6 @@
     "url": "https://pixabay.com/photos/crossword-puzzle-letters-quiz-4746035/",
     "site": "Pixabay"
   },
-  "c99": {
-    "sourceId": 923616,
-    "src": "/photos/c99.webp",
-    "alt": "macbook, lunch, sandwich, food, plate, computer, laptop, technology, business, sandwich, sandwich, sandwich, sandwich, sandwich",
-    "by": "StockSnap",
-    "byUrl": "https://pixabay.com/users/StockSnap-894430/",
-    "url": "https://pixabay.com/photos/macbook-lunch-sandwich-food-plate-923616/",
-    "site": "Pixabay"
-  },
-  "c100": {
-    "sourceId": 6982044,
-    "src": "/photos/c100.webp",
-    "alt": "man, computer, tired, zoom meeting, technology, broken computer, crash, technology problems, zoom meeting, zoom meeting, zoom meeting, zoom meeting, broken computer, broken computer, broken computer, broken computer, broken computer",
-    "by": "ACWells",
-    "byUrl": "https://pixabay.com/users/ACWells-5823360/",
-    "url": "https://pixabay.com/photos/man-computer-tired-zoom-meeting-6982044/",
-    "site": "Pixabay"
-  },
-  "c102": {
-    "sourceId": 7418239,
-    "src": "/photos/c102.webp",
-    "alt": "port, container ship, night, cargo ship, freighter ship, ship, evening, hamburg, waltershofer hafen, germany, evening atmosphere, port, port, container ship, container ship, container ship, cargo ship, cargo ship, cargo ship, cargo ship, ship, ship, ship, ship, ship",
-    "by": "LoboStudioHamburg",
-    "byUrl": "https://pixabay.com/users/LoboStudioHamburg-13838/",
-    "url": "https://pixabay.com/photos/port-container-ship-night-7418239/",
-    "site": "Pixabay"
-  },
   "c103": {
     "sourceId": 3685413,
     "src": "/photos/c103.webp",
@@ -654,15 +159,6 @@
     "by": "athree23",
     "byUrl": "https://pixabay.com/users/athree23-6195572/",
     "url": "https://pixabay.com/photos/apply-online-apply-now-application-3685413/",
-    "site": "Pixabay"
-  },
-  "c104": {
-    "sourceId": 1845572,
-    "src": "/photos/c104.webp",
-    "alt": "woman, truck, vehicle, driver, fashion, headscarf, female, model, outdoors, person, young, pickup truck, drive, truck, truck, truck, truck, truck, driver, driver, drive, drive",
-    "by": "Pexels",
-    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
-    "url": "https://pixabay.com/photos/woman-truck-vehicle-driver-fashion-1845572/",
     "site": "Pixabay"
   },
   "c107": {
@@ -710,15 +206,6 @@
     "url": "https://pixabay.com/photos/worker-woman-mask-face-mask-6322085/",
     "site": "Pixabay"
   },
-  "c112": {
-    "sourceId": 2138990,
-    "src": "/photos/c112.webp",
-    "alt": "plotter, large format printer, printer, canvas, pressure, large format printing, print, large format, epson, technology, printing technology, plotter, printer, printer, printer, printer, printer",
-    "by": "andreas160578",
-    "byUrl": "https://pixabay.com/users/andreas160578-2383079/",
-    "url": "https://pixabay.com/photos/plotter-large-format-printer-printer-2138990/",
-    "site": "Pixabay"
-  },
   "c113": {
     "sourceId": 10445658,
     "src": "/photos/c113.webp",
@@ -726,15 +213,6 @@
     "by": "flyingbirdtruckrepair",
     "byUrl": "https://pixabay.com/users/flyingbirdtruckrepair-43762702/",
     "url": "https://pixabay.com/photos/mechanic-maintenance-truck-10445658/",
-    "site": "Pixabay"
-  },
-  "c114": {
-    "sourceId": 1986602,
-    "src": "/photos/c114.webp",
-    "alt": "scissors, duct tape, blister foil, pack, bubble wrap, texture, packing material, blister, template, geometry, blow, structure, move, foil, air cushion, transparent, dimpled sheet, plastic, duct tape, bubble wrap, bubble wrap, bubble wrap, bubble wrap, bubble wrap",
-    "by": "stux",
-    "byUrl": "https://pixabay.com/users/stux-12364/",
-    "url": "https://pixabay.com/photos/scissors-duct-tape-blister-foil-1986602/",
     "site": "Pixabay"
   },
   "c117": {
@@ -818,15 +296,6 @@
     "url": "https://pixabay.com/photos/employees-team-corporate-teamwork-885338/",
     "site": "Pixabay"
   },
-  "c129": {
-    "sourceId": 2500006,
-    "src": "/photos/c129.webp",
-    "alt": "meeting, polaroid, nature, group, 4k wallpaper 1920x1080, team, business people, free background, desktop backgrounds, hd wallpaper, clouds, word clouds, windows wallpaper, abstract, dialog, 4k wallpaper, discussion, beautiful wallpaper, woman, conversation, graphic, background, icon, communicate, people, man, news, chat, twitter, laptop wallpaper, post, facebook, talk, to speak, communication, share with, wallpaper 4k, free wallpaper, exchange, social, connection, wallpaper hd, full hd wallpaper, friendship, social network, network, mac wallpaper, cool backgrounds, international, friends",
-    "by": "geralt",
-    "byUrl": "https://pixabay.com/users/geralt-9301/",
-    "url": "https://pixabay.com/photos/meeting-polaroid-group-team-2500006/",
-    "site": "Pixabay"
-  },
   "c134": {
     "sourceId": 5190614,
     "src": "/photos/c134.webp",
@@ -834,15 +303,6 @@
     "by": "VinzentWeinbeer",
     "byUrl": "https://pixabay.com/users/VinzentWeinbeer-5342962/",
     "url": "https://pixabay.com/photos/home-office-business-computer-5190614/",
-    "site": "Pixabay"
-  },
-  "c135": {
-    "sourceId": 2988085,
-    "src": "/photos/c135.webp",
-    "alt": "business idea, planning, business plan, business, executive, hand, keep, business card, plan, action, strategy, vision, mission, specialist, woman, female, woman sign, gender, men's suit, work, finance, leader, team, team leader, teamwork, success, director, boss, superior, advisor, profession, blazer, blouse, office, successful, expert, career, management, manager, outfit, person, professional, business idea, business plan, business plan, business plan, business plan, business plan, business, executive, mission, mission, mission, leader, expert",
-    "by": "geralt",
-    "byUrl": "https://pixabay.com/users/geralt-9301/",
-    "url": "https://pixabay.com/photos/business-idea-planning-business-plan-2988085/",
     "site": "Pixabay"
   },
   "c136": {
@@ -861,24 +321,6 @@
     "by": "jannonivergall",
     "byUrl": "https://pixabay.com/users/jannonivergall-19088294/",
     "url": "https://pixabay.com/photos/worker-grinder-factory-workplace-5736096/",
-    "site": "Pixabay"
-  },
-  "c138": {
-    "sourceId": 265130,
-    "src": "/photos/c138.webp",
-    "alt": "security, protection, antivirus, software, cms, wordpress, content management system, editorial staff, contents, backup, hack, web, internet, blog, upload, post office, media, comments, screen, content, create, write, publish, publication, security, security, security, security, security",
-    "by": "pixelcreatures",
-    "byUrl": "https://pixabay.com/users/pixelcreatures-127599/",
-    "url": "https://pixabay.com/photos/security-protection-antivirus-265130/",
-    "site": "Pixabay"
-  },
-  "c140": {
-    "sourceId": 5331883,
-    "src": "/photos/c140.webp",
-    "alt": "cat, work, animal, technology, pet, cute, pc, keyboard, remote work",
-    "by": "makieni777",
-    "byUrl": "https://pixabay.com/users/makieni777-16975393/",
-    "url": "https://pixabay.com/photos/cat-work-technology-pet-cute-pc-5331883/",
     "site": "Pixabay"
   },
   "c141": {
@@ -917,15 +359,6 @@
     "url": "https://pixabay.com/photos/chairs-table-contemporary-furniture-2181960/",
     "site": "Pixabay"
   },
-  "c145": {
-    "sourceId": 2181980,
-    "src": "/photos/c145.webp",
-    "alt": "chairs, conference room, contemporary, empty, indoors, interior design, room, table, whiteboards, boardroom, furniture, interior decoration, conference room, conference room, conference room, interior design, interior design, room, room, room, room, room, table, table, boardroom, furniture, furniture",
-    "by": "Pexels",
-    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
-    "url": "https://pixabay.com/photos/chairs-conference-room-contemporary-2181980/",
-    "site": "Pixabay"
-  },
   "c146": {
     "sourceId": 4806610,
     "src": "/photos/c146.webp",
@@ -962,15 +395,6 @@
     "url": "https://pixabay.com/photos/hotel-hotel-rooms-home-decoration-1749602/",
     "site": "Pixabay"
   },
-  "c150": {
-    "sourceId": 2882823,
-    "src": "/photos/c150.webp",
-    "alt": "dhl, freight, cargo, airline, airplane, aviation, transport, mail, shipment, delivery, yellow, transporting service, parcel service, parcel delivery, delivering package, logistics technology, logistics, delivery of cargo, logistics transport, freight transportation, dhl, dhl, dhl, dhl, dhl, cargo, delivery, logistics",
-    "by": "bilaleldaou",
-    "byUrl": "https://pixabay.com/users/bilaleldaou-5969228/",
-    "url": "https://pixabay.com/photos/dhl-freight-cargo-airline-airplane-2882823/",
-    "site": "Pixabay"
-  },
   "c151": {
     "sourceId": 5237269,
     "src": "/photos/c151.webp",
@@ -996,24 +420,6 @@
     "by": "tasukaran",
     "byUrl": "https://pixabay.com/users/tasukaran-19084744/",
     "url": "https://pixabay.com/photos/sunset-factory-buildings-6226244/",
-    "site": "Pixabay"
-  },
-  "c155": {
-    "sourceId": 4408573,
-    "src": "/photos/c155.webp",
-    "alt": "production, facility, logistic, distribution center, transit, truck, transport, top view, industrial, semi, aerial view, heavy, depot, germany, warehouse, container truck, shipping containers, storehouse, road, loading bay, factory, unloading, distribute, unload, europe, aerial photography, production, logistic, truck, truck, warehouse, warehouse, warehouse, warehouse, warehouse, Jankowice, Greater Poland Voivodeship, Poland",
-    "by": "marcinjozwiak",
-    "byUrl": "https://pixabay.com/users/marcinjozwiak-12652484/",
-    "url": "https://pixabay.com/photos/production-facility-logistic-4408573/",
-    "site": "Pixabay"
-  },
-  "c156": {
-    "sourceId": 4702060,
-    "src": "/photos/c156.webp",
-    "alt": "woman, work, office, whiteboard, meeting, girl, female, employee, planning, business, smile, happy, work, work, office, office, office, meeting, meeting, meeting, meeting, meeting, employee, employee, business, business, business, business, smile, happy",
-    "by": "This_is_Engineering",
-    "byUrl": "https://pixabay.com/users/This_is_Engineering-11384528/",
-    "url": "https://pixabay.com/photos/woman-work-office-whiteboard-4702060/",
     "site": "Pixabay"
   },
   "c157": {
@@ -1061,15 +467,6 @@
     "url": "https://pixabay.com/photos/beach-beach-huts-colorful-facade-1867137/",
     "site": "Pixabay"
   },
-  "c165": {
-    "sourceId": 4060860,
-    "src": "/photos/c165.webp",
-    "alt": "phone, business, person, lifestyle, males, people, man, mobile, technology, suit, busy, smartphone, work, job, adult, phone, phone, business, mobile, mobile, suit, suit, suit, suit, smartphone, smartphone, job, job, job, job, job",
-    "by": "ThorstenF",
-    "byUrl": "https://pixabay.com/users/ThorstenF-7677369/",
-    "url": "https://pixabay.com/photos/phone-business-person-lifestyle-4060860/",
-    "site": "Pixabay"
-  },
   "c167": {
     "sourceId": 791939,
     "src": "/photos/c167.webp",
@@ -1086,24 +483,6 @@
     "by": "Xperia6",
     "byUrl": "https://pixabay.com/users/Xperia6-18404084/",
     "url": "https://pixabay.com/photos/doctor-nurse-prescription-health-5591782/",
-    "site": "Pixabay"
-  },
-  "c172": {
-    "sourceId": 2284501,
-    "src": "/photos/c172.webp",
-    "alt": "meeting, business, architect, office, team, plan, blueprints, teamwork, group, people, project, workplace, table, desk, meeting, meeting, meeting, business, business, business, business, business, architect, office, office, office, office, team, team, teamwork, project, workplace",
-    "by": "mwitt1337",
-    "byUrl": "https://pixabay.com/users/mwitt1337-889520/",
-    "url": "https://pixabay.com/photos/meeting-business-architect-office-2284501/",
-    "site": "Pixabay"
-  },
-  "c173": {
-    "sourceId": 1080554,
-    "src": "/photos/c173.webp",
-    "alt": "electrician, repair, electricity, socket, professional, electric, worker, builder, man, male, helmet, work, electrician, electrician, electrician, electrician, electrician, repair, electricity, electricity, worker, work",
-    "by": "jarmoluk",
-    "byUrl": "https://pixabay.com/users/jarmoluk-143740/",
-    "url": "https://pixabay.com/photos/electrician-repair-electricity-1080554/",
     "site": "Pixabay"
   },
   "c174": {
@@ -1178,15 +557,6 @@
     "url": "https://pixabay.com/photos/startup-start-up-people-593341/",
     "site": "Pixabay"
   },
-  "c185": {
-    "sourceId": 2797178,
-    "src": "/photos/c185.webp",
-    "alt": "print, digital, printing, scan, office, technology, digital printing, computer, color, modern, printer, industry, cmyk, business, line, printed, black, press, tech, electronic, print, printing, printing, printing, digital printing, printer, printer, printer, printer, printer, tech",
-    "by": "CreaPark",
-    "byUrl": "https://pixabay.com/users/CreaPark-6555204/",
-    "url": "https://pixabay.com/photos/print-digital-printing-scan-office-2797178/",
-    "site": "Pixabay"
-  },
   "c186": {
     "sourceId": 767776,
     "src": "/photos/c186.webp",
@@ -1194,15 +564,6 @@
     "by": "Lalmch",
     "byUrl": "https://pixabay.com/users/Lalmch-1026205/",
     "url": "https://pixabay.com/photos/computer-summary-chart-business-767776/",
-    "site": "Pixabay"
-  },
-  "c187": {
-    "sourceId": 1075790,
-    "src": "/photos/c187.webp",
-    "alt": "tablet, ipad, read, screen, swipe, to touch, assign, point, gadget, modern, internet, finger, digital, technology, contact, communication, connection, electronics, dates, device, data, typing, input, information, commercial, to undertake, entrepreneur, work, tablet, tablet, tablet, tablet, ipad, ipad, ipad, ipad, ipad, internet, data, information",
-    "by": "niekverlaan",
-    "byUrl": "https://pixabay.com/users/niekverlaan-80788/",
-    "url": "https://pixabay.com/photos/tablet-ipad-read-screen-swipe-1075790/",
     "site": "Pixabay"
   },
   "c188": {
@@ -1223,15 +584,6 @@
     "url": "https://pixabay.com/photos/mouse-click-cursor-laptop-usb-5204793/",
     "site": "Pixabay"
   },
-  "c190": {
-    "sourceId": 2620140,
-    "src": "/photos/c190.webp",
-    "alt": "calculator, numbers, accounting, charts, graphs, finance, macbook, laptop, computer, technology, gray computer, gray technology, gray laptop, gray finance, gray numbers, gray accounting, accounting, accounting, accounting, accounting, accounting, finance",
-    "by": "StockSnap",
-    "byUrl": "https://pixabay.com/users/StockSnap-894430/",
-    "url": "https://pixabay.com/photos/calculator-numbers-accounting-2620140/",
-    "site": "Pixabay"
-  },
   "c191": {
     "sourceId": 3837955,
     "src": "/photos/c191.webp",
@@ -1239,15 +591,6 @@
     "by": "ivabalk",
     "byUrl": "https://pixabay.com/users/ivabalk-782511/",
     "url": "https://pixabay.com/photos/mining-machine-excavator-bucket-3837955/",
-    "site": "Pixabay"
-  },
-  "c193": {
-    "sourceId": 3155438,
-    "src": "/photos/c193.webp",
-    "alt": "paper, texture, full hd wallpaper, laptop wallpaper, mac wallpaper, wrapping paper, background, desktop backgrounds, crumples, wallpaper hd, 4k wallpaper 1920x1080, hd wallpaper, windows wallpaper, collage, structure, 4k wallpaper, cool backgrounds, free background, free wallpaper, wallpaper 4k, beautiful wallpaper, unlabeled",
-    "by": "KAVOWO",
-    "byUrl": "https://pixabay.com/users/KAVOWO-6764465/",
-    "url": "https://pixabay.com/photos/paper-texture-wrapping-paper-3155438/",
     "site": "Pixabay"
   },
   "c195": {
@@ -1313,24 +656,6 @@
     "url": "https://pixabay.com/photos/chalkboard-classroom-teacher-female-1280967/",
     "site": "Pixabay"
   },
-  "c205": {
-    "sourceId": 5241253,
-    "src": "/photos/c205.webp",
-    "alt": "investment, concept, business, finance, growth, plant, money, wealth, grow, green, coin, success, tree, financial, cash, currency, profit, leaf, growing, nature, banking, economy, bank, investment, business, business, growth, growth, growth, growth, growth, plant, plant, money, money, grow, success, success, success, tree",
-    "by": "Nature_Design",
-    "byUrl": "https://pixabay.com/users/Nature_Design-16152932/",
-    "url": "https://pixabay.com/photos/investment-concept-business-finance-5241253/",
-    "site": "Pixabay"
-  },
-  "c206": {
-    "sourceId": 1363771,
-    "src": "/photos/c206.webp",
-    "alt": "railway station, freight trains, tracks, railroad tracks, railway tracks, railway, transport, transportation, marshalling yard, lower saxony, wagons, trains, rail traffic, railway traffic, night time, city lights, railway station, railway station, railway station, railway, railway, railway, railway, railway, transport, transport, transport, transport, transportation, transportation, transportation, transportation, night time, night time",
-    "by": "fotolehrling",
-    "byUrl": "https://pixabay.com/users/fotolehrling-2423936/",
-    "url": "https://pixabay.com/photos/railway-station-freight-trains-1363771/",
-    "site": "Pixabay"
-  },
   "c207": {
     "sourceId": 3864809,
     "src": "/photos/c207.webp",
@@ -1376,15 +701,6 @@
     "url": "https://pixabay.com/photos/controls-indoors-room-computer-1853330/",
     "site": "Pixabay"
   },
-  "c214": {
-    "sourceId": 64058,
-    "src": "/photos/c214.webp",
-    "alt": "to learn, a notice, information sign, signpost, direction, arrows, road, conclusion, training, opportunities, equal opportunities, skills, career, knowledge, can, life, lifetime, school, security, graduation, study, college student, direction, direction, direction, conclusion, conclusion, conclusion, conclusion, conclusion, skills, skills, career, graduation, graduation",
-    "by": "geralt",
-    "byUrl": "https://pixabay.com/users/geralt-9301/",
-    "url": "https://pixabay.com/photos/to-learn-a-notice-information-sign-64058/",
-    "site": "Pixabay"
-  },
   "c215": {
     "sourceId": 709045,
     "src": "/photos/c215.webp",
@@ -1392,15 +708,6 @@
     "by": "stevepb",
     "byUrl": "https://pixabay.com/users/stevepb-282134/",
     "url": "https://pixabay.com/photos/slip-up-danger-careless-slippery-709045/",
-    "site": "Pixabay"
-  },
-  "c216": {
-    "sourceId": 1555614,
-    "src": "/photos/c216.webp",
-    "alt": "motorway, drive, car wallpapers, highway, traffic, road, vehicle, transportation, travel, speed, nature, transport, motion, fast, business, freeway, blur, landscape, rush, truck, white, industry, perspective, freight, hour, sky, lane, autobahn, delivery, headlight, shipping, straight, trailer, car, diminishing, plain, point, red, vanishing, ahead",
-    "by": "xenostral",
-    "byUrl": "https://pixabay.com/users/xenostral-3005143/",
-    "url": "https://pixabay.com/photos/motorway-drive-highway-traffic-1555614/",
     "site": "Pixabay"
   },
   "c218": {
@@ -1437,24 +744,6 @@
     "by": "Pexels",
     "byUrl": "https://pixabay.com/users/Pexels-2286921/",
     "url": "https://pixabay.com/photos/glass-window-wet-rain-rainy-1845534/",
-    "site": "Pixabay"
-  },
-  "c222": {
-    "sourceId": 2920533,
-    "src": "/photos/c222.webp",
-    "alt": "truck, heavy load, tractor, transport, traffic, special transport, bikes, tire, axis, low loader, chrome, machine, extra length, heavy-duty transporter, heavy load transport, truck, truck, truck, truck, truck, transport",
-    "by": "Tama66",
-    "byUrl": "https://pixabay.com/users/Tama66-1032521/",
-    "url": "https://pixabay.com/photos/truck-heavy-load-tractor-transport-2920533/",
-    "site": "Pixabay"
-  },
-  "c223": {
-    "sourceId": 2251530,
-    "src": "/photos/c223.webp",
-    "alt": "traffic, transport, traffic jam, highway, automobile, vehicles, trucks, loss of time, accident, truck, car wallpapers, car, brake lights",
-    "by": "garten-gg",
-    "byUrl": "https://pixabay.com/users/garten-gg-201217/",
-    "url": "https://pixabay.com/photos/traffic-transport-traffic-jam-2251530/",
     "site": "Pixabay"
   },
   "c226": {
@@ -1556,15 +845,6 @@
     "url": "https://pixabay.com/photos/printer-photo-printer-inkjet-1516580/",
     "site": "Pixabay"
   },
-  "c249": {
-    "sourceId": 593296,
-    "src": "/photos/c249.webp",
-    "alt": "laptops, meeting, businessmen, coworkers, colleagues, business meeting, conference room, meeting room, startup, start-up, notebooks, creative, company, silicon valley, modern, office, conference, table, discussion, business, team, computers, desk, technology, vaio, people, working, meeting, meeting, meeting, meeting, meeting, business meeting, office, office, discussion, discussion, business, business, business, team, team",
-    "by": "StartupStockPhotos",
-    "byUrl": "https://pixabay.com/users/StartupStockPhotos-690514/",
-    "url": "https://pixabay.com/photos/laptops-meeting-businessmen-593296/",
-    "site": "Pixabay"
-  },
   "c250": {
     "sourceId": 561388,
     "src": "/photos/c250.webp",
@@ -1619,15 +899,6 @@
     "url": "https://pixabay.com/photos/sea-wave-splash-big-wave-ocean-5499649/",
     "site": "Pixabay"
   },
-  "c257": {
-    "sourceId": 106694,
-    "src": "/photos/c257.webp",
-    "alt": "business, office, job, workspace, team, business, business, office, office, job, job, workspace, workspace, workspace, workspace, workspace",
-    "by": "Carlos_Bonilla_Miranda",
-    "byUrl": "https://pixabay.com/users/Carlos_Bonilla_Miranda-30101/",
-    "url": "https://pixabay.com/photos/business-office-job-workspace-team-106694/",
-    "site": "Pixabay"
-  },
   "c258": {
     "sourceId": 6291071,
     "src": "/photos/c258.webp",
@@ -1635,24 +906,6 @@
     "by": "mslclicks",
     "byUrl": "https://pixabay.com/users/mslclicks-14958271/",
     "url": "https://pixabay.com/photos/ships-ocean-sea-vessels-6291071/",
-    "site": "Pixabay"
-  },
-  "c260": {
-    "sourceId": 4267357,
-    "src": "/photos/c260.webp",
-    "alt": "photomontage, gas pump, gas station, petrol, fuel, refuel, historical, shell, fuel pump, old, vintage, old gas station, gasoline price, automobile, gas pump, gas pump, gas pump, gas pump, gas pump, gas station, gas station, gas station, petrol, petrol, fuel, fuel, fuel pump",
-    "by": "Emslichter",
-    "byUrl": "https://pixabay.com/users/Emslichter-1377910/",
-    "url": "https://pixabay.com/photos/photomontage-gas-pump-gas-station-4267357/",
-    "site": "Pixabay"
-  },
-  "c261": {
-    "sourceId": 3150731,
-    "src": "/photos/c261.webp",
-    "alt": "label, kraft, blank, design, paper, tag, brown, decoration, gift, template, label, label, label, label, label, tag, tag, tag, tag",
-    "by": "BRRT",
-    "byUrl": "https://pixabay.com/users/BRRT-122519/",
-    "url": "https://pixabay.com/photos/label-kraft-blank-design-paper-3150731/",
     "site": "Pixabay"
   },
   "c265": {
@@ -1671,15 +924,6 @@
     "by": "Tumisu",
     "byUrl": "https://pixabay.com/users/Tumisu-148124/",
     "url": "https://pixabay.com/photos/feedback-customer-satisfaction-1977987/",
-    "site": "Pixabay"
-  },
-  "c269": {
-    "sourceId": 413690,
-    "src": "/photos/c269.webp",
-    "alt": "worried girl, woman, waiting, sitting, thinking, worry, black and white, sad, expression, people, person, depression, sadness, emotion, unhappy, adult, depressed, grief, frustration, despair, human, problem, stressed, young, sad girl, female, girl, long hair, dress, bench, concrete, wall",
-    "by": "RyanMcGuire",
-    "byUrl": "https://pixabay.com/users/RyanMcGuire-123690/",
-    "url": "https://pixabay.com/photos/worried-girl-woman-waiting-sitting-413690/",
     "site": "Pixabay"
   },
   "c270": {
@@ -1709,24 +953,6 @@
     "url": "https://pixabay.com/photos/skyscrappers-buildings-warehouse-5873829/",
     "site": "Pixabay"
   },
-  "c277": {
-    "sourceId": 4372836,
-    "src": "/photos/c277.webp",
-    "alt": "vpn, public wifi, personal data, hacking, cyber attacks, cyber security, private vpn, virtual private network, iphone, security applications, stock, computer, vpn, vpn, vpn, vpn, vpn",
-    "by": "StefanCoders",
-    "byUrl": "https://pixabay.com/users/StefanCoders-11782809/",
-    "url": "https://pixabay.com/photos/vpn-public-wifi-personal-data-4372836/",
-    "site": "Pixabay"
-  },
-  "c278": {
-    "sourceId": 5200359,
-    "src": "/photos/c278.webp",
-    "alt": "online meeting, tablet, private, connection, internet, secure, vpn, android, encryption, anonymity, app, lock, business, work, network, connect, data, hidden, screen, information, woman with a tablet, secure media, work from home, online meeting, online meeting, online meeting, online meeting, online meeting",
-    "by": "Danny144",
-    "byUrl": "https://pixabay.com/users/Danny144-14187277/",
-    "url": "https://pixabay.com/photos/online-meeting-tablet-private-5200359/",
-    "site": "Pixabay"
-  },
   "c283": {
     "sourceId": 832842,
     "src": "/photos/c283.webp",
@@ -1734,15 +960,6 @@
     "by": "LUM3N",
     "byUrl": "https://pixabay.com/users/LUM3N-1066559/",
     "url": "https://pixabay.com/photos/fire-campfire-tent-camp-warehouse-832842/",
-    "site": "Pixabay"
-  },
-  "c284": {
-    "sourceId": 1851178,
-    "src": "/photos/c284.webp",
-    "alt": "medications, tablets, medicine, cure, pharmaceutical, pharmacy, pharmacology, medical, medical drugs, pills, prescription, prescription drugs, capsules, health, healthcare",
-    "by": "Pexels",
-    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
-    "url": "https://pixabay.com/photos/medications-tablets-medicine-cure-1851178/",
     "site": "Pixabay"
   },
   "c286": {
@@ -1772,15 +989,6 @@
     "url": "https://pixabay.com/photos/books-students-library-university-1281581/",
     "site": "Pixabay"
   },
-  "c291": {
-    "sourceId": 2736480,
-    "src": "/photos/c291.webp",
-    "alt": "question, question mark, opinion poll, problem, test, solution, think, to learn, mystery, facts, difficulty, pondering, theme, response, inform, help, problem solution, punctuation marks, open questions, question, question, question, question, question, question mark, question mark, facts",
-    "by": "Anemone123",
-    "byUrl": "https://pixabay.com/users/Anemone123-2637160/",
-    "url": "https://pixabay.com/photos/question-question-mark-opinion-poll-2736480/",
-    "site": "Pixabay"
-  },
   "c292": {
     "sourceId": 7249766,
     "src": "/photos/c292.webp",
@@ -1806,15 +1014,6 @@
     "by": "stevepb",
     "byUrl": "https://pixabay.com/users/stevepb-282134/",
     "url": "https://pixabay.com/photos/multi-tool-pliers-pocket-knife-608013/",
-    "site": "Pixabay"
-  },
-  "c299": {
-    "sourceId": 5041428,
-    "src": "/photos/c299.webp",
-    "alt": "launch, balloon, marketing, business, product, advertising, colorful, nature, sky, start, startup, entrepreneur, communication, hand, campaign, blue business, blue marketing, blue community, blue communication, blue entrepreneur",
-    "by": "Tumisu",
-    "byUrl": "https://pixabay.com/users/Tumisu-148124/",
-    "url": "https://pixabay.com/photos/launch-balloon-marketing-business-5041428/",
     "site": "Pixabay"
   },
   "c300": {
@@ -1844,15 +1043,6 @@
     "url": "https://pixabay.com/photos/confused-woman-doubt-female-girl-2385799/",
     "site": "Pixabay"
   },
-  "c303": {
-    "sourceId": 1837176,
-    "src": "/photos/c303.webp",
-    "alt": "architecture, buildings, nature, cars, city, cityscape, highway, infrastructure, roads, traffic, trees, urban, China, Shanghai",
-    "by": "Pexels",
-    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
-    "url": "https://pixabay.com/photos/architecture-buildings-cars-city-1837176/",
-    "site": "Pixabay"
-  },
   "c308": {
     "sourceId": 513062,
     "src": "/photos/c308.webp",
@@ -1869,24 +1059,6 @@
     "by": "stevepb",
     "byUrl": "https://pixabay.com/users/stevepb-282134/",
     "url": "https://pixabay.com/photos/kitchen-scale-weighing-baking-532651/",
-    "site": "Pixabay"
-  },
-  "c312": {
-    "sourceId": 1433427,
-    "src": "/photos/c312.webp",
-    "alt": "digital marketing, technology, notebook, stats, statistics, internet, analyst, analysis, plan, tablet, office, work desk, modern, business, marketing, digital, computer, mobile technologies, work, electronics, web browser, diagrams, data, percentages, calculation, screen, seo, advertising, digital marketing, digital marketing, digital marketing, statistics, business, business, marketing, marketing, marketing, marketing, work, data, data, data, data, data, seo, seo",
-    "by": "AS_Photography",
-    "byUrl": "https://pixabay.com/users/AS_Photography-1546875/",
-    "url": "https://pixabay.com/photos/digital-marketing-technology-1433427/",
-    "site": "Pixabay"
-  },
-  "c314": {
-    "sourceId": 2549090,
-    "src": "/photos/c314.webp",
-    "alt": "danbo, characters, love, nostalgia, miss, hearts, separation, separated, funny cute, fun",
-    "by": "Alexas_Fotos",
-    "byUrl": "https://pixabay.com/users/Alexas_Fotos-686414/",
-    "url": "https://pixabay.com/photos/danbo-characters-love-nostalgia-2549090/",
     "site": "Pixabay"
   },
   "c315": {
@@ -1970,33 +1142,6 @@
     "url": "https://pixabay.com/photos/clark-lift-yellow-heavy-machine-4293117/",
     "site": "Pixabay"
   },
-  "c329": {
-    "sourceId": 539659,
-    "src": "/photos/c329.webp",
-    "alt": "insurance, damage, repair, checklist, quotation, cost estimate, schedule, collision, accident, loss, car wallpapers, drive, auto accidents, dented, vehicle, car, panelbeater, car insurance, auto repair shop, repairs",
-    "by": "stevepb",
-    "byUrl": "https://pixabay.com/users/stevepb-282134/",
-    "url": "https://pixabay.com/photos/insurance-damage-repair-checklist-539659/",
-    "site": "Pixabay"
-  },
-  "c331": {
-    "sourceId": 7241624,
-    "src": "/photos/c331.webp",
-    "alt": "stop, inflation, man, male, cartoon, comic, caricature, price increase, poverty, inflation, inflation, inflation, inflation, inflation",
-    "by": "Alexandra_Koch",
-    "byUrl": "https://pixabay.com/users/Alexandra_Koch-621802/",
-    "url": "https://pixabay.com/photos/stop-inflation-man-male-cartoon-7241624/",
-    "site": "Pixabay"
-  },
-  "c333": {
-    "sourceId": 1749577,
-    "src": "/photos/c333.webp",
-    "alt": "blood pressure monitor, health, heart rate, blood pressure, check, doctor, ill, heal, heartbeat, supply, nurse, healthy, pulse, therapy, health check, heart, medicine, health, health, blood pressure, blood pressure, blood pressure, blood pressure, blood pressure, doctor, doctor",
-    "by": "geraldoswald62",
-    "byUrl": "https://pixabay.com/users/geraldoswald62-3547849/",
-    "url": "https://pixabay.com/photos/blood-pressure-monitor-health-1749577/",
-    "site": "Pixabay"
-  },
   "c335": {
     "sourceId": 1868708,
     "src": "/photos/c335.webp",
@@ -2006,15 +1151,6 @@
     "url": "https://pixabay.com/photos/electronics-mobile-phone-screen-1868708/",
     "site": "Pixabay"
   },
-  "c338": {
-    "sourceId": 5238324,
-    "src": "/photos/c338.webp",
-    "alt": "todo-lists, tasks, tasks list, list, task, coach, project, success, office, to do, project management, checklist, consulting, list, project management, checklist, checklist, checklist, checklist, checklist",
-    "by": "viarami",
-    "byUrl": "https://pixabay.com/users/viarami-13458823/",
-    "url": "https://pixabay.com/photos/todo-lists-tasks-tasks-list-list-5238324/",
-    "site": "Pixabay"
-  },
   "c339": {
     "sourceId": 2888625,
     "src": "/photos/c339.webp",
@@ -2022,15 +1158,6 @@
     "by": "cocoparisienne",
     "byUrl": "https://pixabay.com/users/cocoparisienne-127419/",
     "url": "https://pixabay.com/photos/hands-cohesion-together-people-2888625/",
-    "site": "Pixabay"
-  },
-  "c340": {
-    "sourceId": 594091,
-    "src": "/photos/c340.webp",
-    "alt": "meeting, brainstorming, business, teamwork, team, people, office, group, corporate, conference, colleagues, company, partnership, project, table, partners, plan, sketch, notepad, coworkers, writing, drinks, laptop, computer, notes, working, meeting, meeting, meeting, meeting, business, business, business, business, business, teamwork, team, team, team, people, office, office, office, company",
-    "by": "StartupStockPhotos",
-    "byUrl": "https://pixabay.com/users/StartupStockPhotos-690514/",
-    "url": "https://pixabay.com/photos/meeting-brainstorming-business-594091/",
     "site": "Pixabay"
   },
   "c341": {
@@ -2213,24 +1340,6 @@
     "url": "https://pixabay.com/photos/gesture-yellow-hand-symbol-ok-sign-10036320/",
     "site": "Pixabay"
   },
-  "v1": {
-    "sourceId": 3101625,
-    "src": "/photos/v1.webp",
-    "alt": "the eleventh hour, time to rethink, catastrophe, time for a change, alarm clock, clock, ring the bell, dial, pointer, hours, time display, time, transience, clock face, minutes, timepiece, clocks, wake up, alarm clock, clock, clock, clock, clock, clock, wake up",
-    "by": "Alexas_Fotos",
-    "byUrl": "https://pixabay.com/users/Alexas_Fotos-686414/",
-    "url": "https://pixabay.com/photos/the-eleventh-hour-time-to-rethink-3101625/",
-    "site": "Pixabay"
-  },
-  "v4": {
-    "sourceId": 1284248,
-    "src": "/photos/v4.webp",
-    "alt": "arm, hand, write, planner, planning, writing, notebook, pen, to do, organized, organizer, journal, write, planner, planning, planning, planning, planning, writing, writing, writing, writing, writing, notebook, pen, journal, journal",
-    "by": "Pexels",
-    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
-    "url": "https://pixabay.com/photos/arm-hand-write-planner-planning-1284248/",
-    "site": "Pixabay"
-  },
   "v7": {
     "sourceId": 3365338,
     "src": "/photos/v7.webp",
@@ -2247,15 +1356,6 @@
     "by": "Boskampi",
     "byUrl": "https://pixabay.com/users/Boskampi-3788146/",
     "url": "https://pixabay.com/photos/programming-html-css-javascript-1873854/",
-    "site": "Pixabay"
-  },
-  "v12": {
-    "sourceId": 4181395,
-    "src": "/photos/v12.webp",
-    "alt": "girl, shop, souvenirs, woman, shelf, work, shopping, spain, searching, atmosphere, shop, shop, shopping, shopping, shopping, shopping, shopping",
-    "by": "kasjanf",
-    "byUrl": "https://pixabay.com/users/kasjanf-10588063/",
-    "url": "https://pixabay.com/photos/girl-shop-souvenirs-woman-shelf-4181395/",
     "site": "Pixabay"
   },
   "v14": {
@@ -2294,24 +1394,6 @@
     "url": "https://pixabay.com/photos/shopping-receipt-business-2614155/",
     "site": "Pixabay"
   },
-  "v20": {
-    "sourceId": 4628593,
-    "src": "/photos/v20.webp",
-    "alt": "laptop, work, keyboard, screen, course, note, office, cafe, computer, coffee, technology, cappuccino, espresso, good morning, morning, caffeine, start, open air, to sit, woman, hands",
-    "by": "Engin_Akyurt",
-    "byUrl": "https://pixabay.com/users/Engin_Akyurt-3656355/",
-    "url": "https://pixabay.com/photos/laptop-work-keyboard-screen-course-4628593/",
-    "site": "Pixabay"
-  },
-  "v21": {
-    "sourceId": 3367965,
-    "src": "/photos/v21.webp",
-    "alt": "skills, can, startup, start up, founding, hd wallpaper, business, hand, write, presentation, competence, knowledge, success, strategy, ability, laptop wallpaper, full hd wallpaper, 4k wallpaper 1920x1080, experience, goal, concept, dynamics, perfomance, responsibility, wallpaper 4k, quality, marketing, businessman, creativity, reliability, professionalism, plan, flexibility, knew how, 4k wallpaper, innovation, training, windows wallpaper, to learn, school, free wallpaper, work out, trainer, availability, growth, desktop backgrounds, skill, wallpaper hd, mac wallpaper, craftsmanship, blue, green, office, science, size, adventure, experienced, company, show, business plan, cool backgrounds, background, hands, beautiful wallpaper, businesswoman, free background, selection, manager, management",
-    "by": "geralt",
-    "byUrl": "https://pixabay.com/users/geralt-9301/",
-    "url": "https://pixabay.com/photos/skills-can-startup-start-up-3367965/",
-    "site": "Pixabay"
-  },
   "v23": {
     "sourceId": 1435642,
     "src": "/photos/v23.webp",
@@ -2328,15 +1410,6 @@
     "by": "nestorestevez",
     "byUrl": "https://pixabay.com/users/nestorestevez-7492067/",
     "url": "https://pixabay.com/photos/gesture-explaining-presentation-7134756/",
-    "site": "Pixabay"
-  },
-  "v30": {
-    "sourceId": 5983142,
-    "src": "/photos/v30.webp",
-    "alt": "hand, product, finished goods",
-    "by": "KaweewatT",
-    "byUrl": "https://pixabay.com/users/KaweewatT-20159639/",
-    "url": "https://pixabay.com/photos/hand-product-finished-goods-5983142/",
     "site": "Pixabay"
   },
   "n1": {
@@ -2373,15 +1446,6 @@
     "by": "viarami",
     "byUrl": "https://pixabay.com/users/viarami-13458823/",
     "url": "https://pixabay.com/photos/may-month-calendar-year-date-5232505/",
-    "site": "Pixabay"
-  },
-  "n9": {
-    "sourceId": 8205429,
-    "src": "/photos/n9.webp",
-    "alt": "soccer, football, kick, goal, athlete, sports",
-    "by": "u_cbpd1iwm39",
-    "byUrl": "https://pixabay.com/users/u_cbpd1iwm39-38964417/",
-    "url": "https://pixabay.com/photos/soccer-football-kick-goal-athlete-8205429/",
     "site": "Pixabay"
   },
   "n10": {
@@ -2436,15 +1500,6 @@
     "by": "MR-PANDA",
     "byUrl": "https://pixabay.com/users/MR-PANDA-2044000/",
     "url": "https://pixabay.com/photos/devops-business-process-improvement-3155972/",
-    "site": "Pixabay"
-  },
-  "i3": {
-    "sourceId": 5710164,
-    "src": "/photos/i3.webp",
-    "alt": "man, sign, paper, write, document, contract, signing, agreement, signature, signing document, signing contract, signing paper, sign, contract, contract, contract, contract, contract, signing, agreement, signature, signature",
-    "by": "Maximilianovich",
-    "byUrl": "https://pixabay.com/users/Maximilianovich-16478317/",
-    "url": "https://pixabay.com/photos/man-sign-paper-write-document-5710164/",
     "site": "Pixabay"
   },
   "i5": {
@@ -2519,24 +1574,6 @@
     "url": "https://pixabay.com/photos/travel-flight-schedule-ad-plan-4865665/",
     "site": "Pixabay"
   },
-  "l8": {
-    "sourceId": 7425170,
-    "src": "/photos/l8.webp",
-    "alt": "sunset glow, twilight, taipei port, taiwan, sunset glow, taiwan, taiwan, taiwan, taiwan, taiwan",
-    "by": "lccrichard",
-    "byUrl": "https://pixabay.com/users/lccrichard-7620619/",
-    "url": "https://pixabay.com/photos/sunset-glow-twilight-taipei-port-7425170/",
-    "site": "Pixabay"
-  },
-  "l10": {
-    "sourceId": 4703485,
-    "src": "/photos/l10.webp",
-    "alt": "zeiterfassung, arbeitszeiterfassung, eugh, clocking, monitoring, hours, clock, electronic, card for booking working hours, gray book, gray books, gray clock",
-    "by": "u_h0yvbj97",
-    "byUrl": "https://pixabay.com/users/u_h0yvbj97-12931169/",
-    "url": "https://pixabay.com/photos/zeiterfassung-arbeitszeiterfassung-4703485/",
-    "site": "Pixabay"
-  },
   "v31": {
     "sourceId": 10378566,
     "src": "/photos/v31.webp",
@@ -2555,15 +1592,6 @@
     "url": "https://pixabay.com/photos/telephone-mobile-call-samsung-586268/",
     "site": "Pixabay"
   },
-  "v37": {
-    "sourceId": 2548138,
-    "src": "/photos/v37.webp",
-    "alt": "agreement, brainstorming, coffee, business, cafe, coffee shop, collaboration, corporate, deal, laptop, man, meeting, men, mobile phone, networking, online, planning, table, talking, togetherness, woman, working, collaboration, deal, meeting, meeting, meeting, networking, networking, networking, networking, networking",
-    "by": "rawpixel",
-    "byUrl": "https://pixabay.com/users/rawpixel-4283981/",
-    "url": "https://pixabay.com/photos/agreement-brainstorming-coffee-2548138/",
-    "site": "Pixabay"
-  },
   "v38": {
     "sourceId": 4040911,
     "src": "/photos/v38.webp",
@@ -2571,15 +1599,6 @@
     "by": "un-perfekt",
     "byUrl": "https://pixabay.com/users/un-perfekt-9295476/",
     "url": "https://pixabay.com/photos/handshake-shaking-hands-hands-greet-4040911/",
-    "site": "Pixabay"
-  },
-  "v39": {
-    "sourceId": 2714675,
-    "src": "/photos/v39.webp",
-    "alt": "passport, map, world, world map, trip, tourism, vacation, travel, planning, camera",
-    "by": "Pamjpat",
-    "byUrl": "https://pixabay.com/users/Pamjpat-6320763/",
-    "url": "https://pixabay.com/photos/passport-map-world-trip-tourism-2714675/",
     "site": "Pixabay"
   },
   "v40": {
@@ -2618,15 +1637,6 @@
     "url": "https://pixabay.com/photos/question-mark-a-notice-duplicate-3585355/",
     "site": "Pixabay"
   },
-  "v51": {
-    "sourceId": 440782,
-    "src": "/photos/v51.webp",
-    "alt": "savings, real estate, mortgage bond, mortgage contract, finance documents, investment, save, invest, investing, nest-egg, home, house, loan, borrow, property, real-estate, real estate, real estate, invest, house, loan, loan, loan, loan, loan, property, property, property",
-    "by": "stevepb",
-    "byUrl": "https://pixabay.com/users/stevepb-282134/",
-    "url": "https://pixabay.com/photos/savings-real-estate-mortgage-bond-440782/",
-    "site": "Pixabay"
-  },
   "v52": {
     "sourceId": 1976725,
     "src": "/photos/v52.webp",
@@ -2636,15 +1646,6 @@
     "url": "https://pixabay.com/photos/magic-cube-patience-tricky-hobby-1976725/",
     "site": "Pixabay"
   },
-  "v54": {
-    "sourceId": 428331,
-    "src": "/photos/v54.webp",
-    "alt": "document, agreement, documents, sign, business, paper, pen, agreement, agreement, agreement, agreement, agreement",
-    "by": "jarmoluk",
-    "byUrl": "https://pixabay.com/users/jarmoluk-143740/",
-    "url": "https://pixabay.com/photos/document-agreement-documents-sign-428331/",
-    "site": "Pixabay"
-  },
   "v55": {
     "sourceId": 1633406,
     "src": "/photos/v55.webp",
@@ -2652,15 +1653,6 @@
     "by": "creativesignature",
     "byUrl": "https://pixabay.com/users/creativesignature-1460253/",
     "url": "https://pixabay.com/photos/files-gdr-archive-1633406/",
-    "site": "Pixabay"
-  },
-  "v57": {
-    "sourceId": 5354969,
-    "src": "/photos/v57.webp",
-    "alt": "dvd, cd, technology, retro, disk, software, team, digital, bright, dvd-rom, program, compact, pack, update, installation, cd-rom, quality, purple, dvd, dvd, dvd, dvd, dvd, dvd-rom, update, update, update, cd-rom",
-    "by": "caruizp",
-    "byUrl": "https://pixabay.com/users/caruizp-8136980/",
-    "url": "https://pixabay.com/photos/dvd-cd-technology-retro-disk-5354969/",
     "site": "Pixabay"
   },
   "v58": {
@@ -2715,15 +1707,6 @@
     "by": "vjkombajn",
     "byUrl": "https://pixabay.com/users/vjkombajn-764634/",
     "url": "https://pixabay.com/photos/money-cash-czech-crowns-banknotes-8033100/",
-    "site": "Pixabay"
-  },
-  "n19": {
-    "sourceId": 2950005,
-    "src": "/photos/n19.webp",
-    "alt": "biscuit, shortbread, leibniz, bahlsen, yummy, tasty, pastry, long-life bakery goods, baked goods, crispy, cross, crisp, sweetness, confectionery, pleasure, enjoyment, enjoy, luxury items, occasionally, break, less hunger, food, nourishment, travel rations, nibble, popular, pastries, product photography, meal, isolated",
-    "by": "anaterate",
-    "byUrl": "https://pixabay.com/users/anaterate-2348028/",
-    "url": "https://pixabay.com/photos/biscuit-shortbread-leibniz-bahlsen-2950005/",
     "site": "Pixabay"
   },
   "n24": {
@@ -2796,15 +1779,6 @@
     "by": "MagicDesk",
     "byUrl": "https://pixabay.com/users/MagicDesk-930274/",
     "url": "https://pixabay.com/photos/office-sitting-room-executive-730681/",
-    "site": "Pixabay"
-  },
-  "n41": {
-    "sourceId": 5235092,
-    "src": "/photos/n41.webp",
-    "alt": "project management, product management, company, success, business, entrepreneur, progress, career ladder, competence, start-up, begin, list, laptop, ideas, mockup, project management, project management, project management, project management, project management",
-    "by": "viarami",
-    "byUrl": "https://pixabay.com/users/viarami-13458823/",
-    "url": "https://pixabay.com/photos/project-management-product-management-5235092/",
     "site": "Pixabay"
   },
   "n42": {
@@ -2906,15 +1880,6 @@
     "url": "https://pixabay.com/photos/privacy-policy-it-computer-security-2117996/",
     "site": "Pixabay"
   },
-  "a16": {
-    "sourceId": 917149,
-    "src": "/photos/a16.webp",
-    "alt": "mayor, signature, sign, adult, agreement, antenuptial, book, bride, caucasian, celebrate, celebration, ceremony, certificate, conceptual, contract, couple, desk, document, dress, event, family, groom, hand, happiness, log, love, man, marriage, married, message, party, pen, people, person, premarital, prenuptial, reception, mayor, signature, signature, agreement, certificate, certificate, certificate, certificate, certificate, contract, contract, contract",
-    "by": "epicioci",
-    "byUrl": "https://pixabay.com/users/epicioci-1168802/",
-    "url": "https://pixabay.com/photos/mayor-signature-sign-adult-917149/",
-    "site": "Pixabay"
-  },
   "a23": {
     "sourceId": 1929422,
     "src": "/photos/a23.webp",
@@ -2976,15 +1941,6 @@
     "by": "methodshop",
     "byUrl": "https://pixabay.com/users/methodshop-1460919/",
     "url": "https://pixabay.com/photos/hacking-cyber-hacker-crime-2964100/",
-    "site": "Pixabay"
-  },
-  "i12": {
-    "sourceId": 5409107,
-    "src": "/photos/i12.webp",
-    "alt": "instagram, ig, smartphone, cellphone, instagram home page, iphone app, social media, instagram, instagram, instagram, instagram, instagram",
-    "by": "solenfeyissa",
-    "byUrl": "https://pixabay.com/users/solenfeyissa-17494645/",
-    "url": "https://pixabay.com/photos/instagram-ig-smartphone-cellphone-5409107/",
     "site": "Pixabay"
   },
   "i13": {
@@ -3131,15 +2087,6 @@
     "url": "https://pixabay.com/photos/security-alarm-monitor-cyber-5043368/",
     "site": "Pixabay"
   },
-  "i37": {
-    "sourceId": 5355817,
-    "src": "/photos/i37.webp",
-    "alt": "cancel, break up, abort, culture, subscription, warning, clear, expired, deny, no, decline, false, denied, check, cross, negative, concept, remove, error, cancel, cancel, cancel, cancel, cancel, subscription",
-    "by": "viarami",
-    "byUrl": "https://pixabay.com/users/viarami-13458823/",
-    "url": "https://pixabay.com/photos/cancel-break-up-abort-culture-5355817/",
-    "site": "Pixabay"
-  },
   "i38": {
     "sourceId": 597495,
     "src": "/photos/i38.webp",
@@ -3147,15 +2094,6 @@
     "by": "stevepb",
     "byUrl": "https://pixabay.com/users/stevepb-282134/",
     "url": "https://pixabay.com/photos/padlock-lock-chain-key-security-597495/",
-    "site": "Pixabay"
-  },
-  "i49": {
-    "sourceId": 2974645,
-    "src": "/photos/i49.webp",
-    "alt": "ticket, coupon, admission, carnival, circus, concert, entertainment, event, fare, movie, roll, show, theater, cinema, closeup, ticket, ticket, event, movie, movie, movie, movie, movie, cinema, cinema, cinema",
-    "by": "igorovsyannykov",
-    "byUrl": "https://pixabay.com/users/igorovsyannykov-6222956/",
-    "url": "https://pixabay.com/photos/ticket-coupon-admission-carnival-2974645/",
     "site": "Pixabay"
   },
   "i50": {
@@ -3183,15 +2121,6 @@
     "by": "dimitrisvetsikas1969",
     "byUrl": "https://pixabay.com/users/dimitrisvetsikas1969-1857980/",
     "url": "https://pixabay.com/photos/truck-tanker-vehicle-transportation-7083763/",
-    "site": "Pixabay"
-  },
-  "l17": {
-    "sourceId": 1867268,
-    "src": "/photos/l17.webp",
-    "alt": "digger, excavator, engine, heavy, loader, lorry, machine, machinery, quarry, sand, semi-trailer truck, soil, trailer, transportation system, truck, vehicle, heavy machinery, truck, truck, truck, truck, truck",
-    "by": "Pexels",
-    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
-    "url": "https://pixabay.com/photos/digger-excavator-engine-heavy-1867268/",
     "site": "Pixabay"
   },
   "l18": {
@@ -3230,33 +2159,6 @@
     "url": "https://pixabay.com/photos/fog-shanghai-boats-smog-flow-1028343/",
     "site": "Pixabay"
   },
-  "l25": {
-    "sourceId": 3110034,
-    "src": "/photos/l25.webp",
-    "alt": "cardboard boxes, cardboard, packaging, packing material, box, cardboard boxes, cardboard boxes, cardboard boxes, cardboard, packaging, packaging, packaging, packaging, packaging, box, box, box, box, box",
-    "by": "Alexas_Fotos",
-    "byUrl": "https://pixabay.com/users/Alexas_Fotos-686414/",
-    "url": "https://pixabay.com/photos/cardboard-boxes-cardboard-packaging-3110034/",
-    "site": "Pixabay"
-  },
-  "l26": {
-    "sourceId": 3692772,
-    "src": "/photos/l26.webp",
-    "alt": "order now, keyboard, enter, button, online, www, shop, laptop, transaction, pay, order, purchase, internet, computer, digital, communication, input, smart, to buy",
-    "by": "athree23",
-    "byUrl": "https://pixabay.com/users/athree23-6195572/",
-    "url": "https://pixabay.com/photos/order-now-keyboard-enter-button-3692772/",
-    "site": "Pixabay"
-  },
-  "l27": {
-    "sourceId": 1081412,
-    "src": "/photos/l27.webp",
-    "alt": "newspaper, stocks, stock price, pen, newspapers, stock market, brown newspaper, brown market, stock market, stock market, stock market, stock market, stock market",
-    "by": "steinarhovland",
-    "byUrl": "https://pixabay.com/users/steinarhovland-1693607/",
-    "url": "https://pixabay.com/photos/newspaper-stocks-stock-price-pen-1081412/",
-    "site": "Pixabay"
-  },
   "l29": {
     "sourceId": 1767504,
     "src": "/photos/l29.webp",
@@ -3266,15 +2168,6 @@
     "url": "https://pixabay.com/photos/rolls-of-fabric-factory-material-1767504/",
     "site": "Pixabay"
   },
-  "l32": {
-    "sourceId": 4215684,
-    "src": "/photos/l32.webp",
-    "alt": "classic pickup, truck, old, old truck, pickup truck, old truck, old truck, old truck, old truck, old truck, pickup truck, pickup truck",
-    "by": "ernie114",
-    "byUrl": "https://pixabay.com/users/ernie114-7088342/",
-    "url": "https://pixabay.com/photos/classic-pickup-truck-old-old-truck-4215684/",
-    "site": "Pixabay"
-  },
   "l33": {
     "sourceId": 2659669,
     "src": "/photos/l33.webp",
@@ -3282,15 +2175,6 @@
     "by": "Emslichter",
     "byUrl": "https://pixabay.com/users/Emslichter-1377910/",
     "url": "https://pixabay.com/photos/volvo-pv-445-duet-isolated-2659669/",
-    "site": "Pixabay"
-  },
-  "l37": {
-    "sourceId": 1143486,
-    "src": "/photos/l37.webp",
-    "alt": "buffer, passport, travel, borders, passport, passport, passport, passport, passport",
-    "by": "jackmac34",
-    "byUrl": "https://pixabay.com/users/jackmac34-483877/",
-    "url": "https://pixabay.com/photos/buffer-passport-travel-borders-1143486/",
     "site": "Pixabay"
   },
   "l39": {
@@ -3311,15 +2195,6 @@
     "url": "https://pixabay.com/photos/energy-certificate-document-428300/",
     "site": "Pixabay"
   },
-  "l43": {
-    "sourceId": 385506,
-    "src": "/photos/l43.webp",
-    "alt": "calculator, calculation, insurance, finance, accounting, pen, fountain pen, investment, office, work, taxes, calculator, insurance, insurance, finance, finance, finance, finance, finance, accounting, accounting, accounting, investment, taxes",
-    "by": "stevepb",
-    "byUrl": "https://pixabay.com/users/stevepb-282134/",
-    "url": "https://pixabay.com/photos/calculator-calculation-insurance-385506/",
-    "site": "Pixabay"
-  },
   "l46": {
     "sourceId": 7887696,
     "src": "/photos/l46.webp",
@@ -3327,15 +2202,6 @@
     "by": "analogicus",
     "byUrl": "https://pixabay.com/users/analogicus-8164369/",
     "url": "https://pixabay.com/photos/weight-metal-old-rusted-pan-weigh-7887696/",
-    "site": "Pixabay"
-  },
-  "l48": {
-    "sourceId": 2535266,
-    "src": "/photos/l48.webp",
-    "alt": "copy space, text field, carton, wrap up, send, surprise, gift, paper, parcel, package, packaging, packing material, gift tags, gift voucher, give a gift, coupon, carton, surprise, parcel, package, package, package, package, package, packaging, packaging, packaging, gift voucher",
-    "by": "congerdesign",
-    "byUrl": "https://pixabay.com/users/congerdesign-509903/",
-    "url": "https://pixabay.com/photos/copy-space-text-field-carton-2535266/",
     "site": "Pixabay"
   },
   "l51": {
@@ -3374,15 +2240,6 @@
     "url": "https://pixabay.com/photos/alarm-clock-2175382/",
     "site": "Pixabay"
   },
-  "l58": {
-    "sourceId": 4832909,
-    "src": "/photos/l58.webp",
-    "alt": "cargo, dock, container, ship, port, trade, freight, export, logistics, transport, maritime, merchandise, commercial, international, crane, portico, france, haven",
-    "by": "barskefranck",
-    "byUrl": "https://pixabay.com/users/barskefranck-6433778/",
-    "url": "https://pixabay.com/photos/cargo-dock-container-ship-port-4832909/",
-    "site": "Pixabay"
-  },
   "l59": {
     "sourceId": 1026496,
     "src": "/photos/l59.webp",
@@ -3410,24 +2267,6 @@
     "url": "https://pixabay.com/photos/contract-signature-3031680/",
     "site": "Pixabay"
   },
-  "e3": {
-    "sourceId": 4896425,
-    "src": "/photos/e3.webp",
-    "alt": "final, notice, warning, debt, pay, letter, envelope, mailbox, payment, invoice, services, bills, unpaid, eviction, late, reminder, due, eviction, eviction, eviction, eviction, eviction",
-    "by": "Tumisu",
-    "byUrl": "https://pixabay.com/users/Tumisu-148124/",
-    "url": "https://pixabay.com/photos/final-notice-warning-debt-pay-4896425/",
-    "site": "Pixabay"
-  },
-  "e6": {
-    "sourceId": 4009695,
-    "src": "/photos/e6.webp",
-    "alt": "question mark, question, pupil, girl, frown, response, seek, think, problem, mystery, boredom, boring, perplexity, pondering, question mark, question mark, question, question, question, question, question",
-    "by": "geralt",
-    "byUrl": "https://pixabay.com/users/geralt-9301/",
-    "url": "https://pixabay.com/photos/question-mark-question-pupil-girl-4009695/",
-    "site": "Pixabay"
-  },
   "e10": {
     "sourceId": 4974179,
     "src": "/photos/e10.webp",
@@ -3435,15 +2274,6 @@
     "by": "maslme",
     "byUrl": "https://pixabay.com/users/maslme-7912632/",
     "url": "https://pixabay.com/photos/phone-office-make-a-phone-call-4974179/",
-    "site": "Pixabay"
-  },
-  "e12": {
-    "sourceId": 2463779,
-    "src": "/photos/e12.webp",
-    "alt": "books, bookshelf, library, education, literature, read, knowledge, bookstore, row, research, learning, publication, reading, literary, shelf, books, bookshelf, bookshelf, bookshelf, bookshelf, library, library, library, library, library, education, research, learning, learning",
-    "by": "AhmadArdity",
-    "byUrl": "https://pixabay.com/users/AhmadArdity-3112014/",
-    "url": "https://pixabay.com/photos/books-bookshelf-library-education-2463779/",
     "site": "Pixabay"
   },
   "e13": {
@@ -3491,42 +2321,6 @@
     "url": "https://pixabay.com/photos/smiley-emoticon-anger-angry-2979107/",
     "site": "Pixabay"
   },
-  "c2": {
-    "sourceId": 791434,
-    "src": "/photos/c2.webp",
-    "alt": "break, work, working, workspace, coffee, coffe time, china, porcelain, white, black coffee, keyboard, notebook, laptop, computer, technology, gray computer, gray technology, gray coffee, gray laptop, gray work, gray time, gray keyboard, work, coffee, coffee, coffee, coffee, coffee, coffe time, coffe time, coffe time, black coffee, black coffee, black coffee, keyboard, computer, computer, technology",
-    "by": "kaboompics",
-    "byUrl": "https://pixabay.com/users/kaboompics-1013994/",
-    "url": "https://pixabay.com/photos/break-work-working-workspace-791434/",
-    "site": "Pixabay"
-  },
-  "c5": {
-    "sourceId": 2904774,
-    "src": "/photos/c5.webp",
-    "alt": "fingerprint, unlock, network, man, thumb, business, identity, access, confidential, security, professional, touch, secret, security service, technology, privacy policy, protect, computer, password, trojan, protection, data theft, hacker, data, trojan password, fingerprint, fingerprint, fingerprint, fingerprint, security, security, security, security, security, privacy policy, hacker",
-    "by": "geralt",
-    "byUrl": "https://pixabay.com/users/geralt-9301/",
-    "url": "https://pixabay.com/photos/fingerprint-unlock-network-man-2904774/",
-    "site": "Pixabay"
-  },
-  "c11": {
-    "sourceId": 5174458,
-    "src": "/photos/c11.webp",
-    "alt": "cash register, paperboard, boxes, package, delivery, packaging, container, transport, load, shipping, packages, pack, open, brown, messenger, send, colors, package, package, package, delivery, delivery, delivery, delivery, delivery, packaging, packages",
-    "by": "cromaconceptovisual",
-    "byUrl": "https://pixabay.com/users/cromaconceptovisual-4595909/",
-    "url": "https://pixabay.com/photos/cash-register-paperboard-boxes-5174458/",
-    "site": "Pixabay"
-  },
-  "c20": {
-    "sourceId": 3552869,
-    "src": "/photos/c20.webp",
-    "alt": "container, shipping, container ship, msc carouge, cargo ship, container handling, terminal, port, container terminal, container transshipment point, loading, hamburg, elbe, port industry, port cranes, technology, handling equipment, container, shipping, container ship, container ship, container ship, cargo ship, cargo ship, cargo ship, cargo ship, cargo ship",
-    "by": "wasi1370",
-    "byUrl": "https://pixabay.com/users/wasi1370-8259843/",
-    "url": "https://pixabay.com/photos/container-shipping-container-ship-3552869/",
-    "site": "Pixabay"
-  },
   "c34": {
     "sourceId": 2801596,
     "src": "/photos/c34.webp",
@@ -3534,33 +2328,6 @@
     "by": "geralt",
     "byUrl": "https://pixabay.com/users/geralt-9301/",
     "url": "https://pixabay.com/photos/time-clock-clocks-meeting-business-2801596/",
-    "site": "Pixabay"
-  },
-  "c47": {
-    "sourceId": 3209864,
-    "src": "/photos/c47.webp",
-    "alt": "transport, vehicle, automobile, truck, trailer, truck truck, truck american, car park, truck, truck, truck, truck, truck, trailer",
-    "by": "rauschenberger",
-    "byUrl": "https://pixabay.com/users/rauschenberger-4614580/",
-    "url": "https://pixabay.com/photos/transport-vehicle-automobile-truck-3209864/",
-    "site": "Pixabay"
-  },
-  "c53": {
-    "sourceId": 2106924,
-    "src": "/photos/c53.webp",
-    "alt": "bureaucracy, file folder, paperwork, office, work, bureaucracy, paperwork, paperwork, paperwork, paperwork, paperwork",
-    "by": "Geisteskerker",
-    "byUrl": "https://pixabay.com/users/Geisteskerker-1410564/",
-    "url": "https://pixabay.com/photos/bureaucracy-file-folder-paperwork-2106924/",
-    "site": "Pixabay"
-  },
-  "c57": {
-    "sourceId": 3487698,
-    "src": "/photos/c57.webp",
-    "alt": "emailers template, email marketing, email icon, emailer design, mail, newsletter, sending an email, computer, contact, letter, model, body, young businesswoman, showing, copyspace, slogan, advertisement, teaching, announcement, konapi, brown computer, brown laptop, brown marketing, brown email, brown letter, brown body, email marketing, email marketing, email marketing, email marketing, email marketing",
-    "by": "Mohamed_hassan",
-    "byUrl": "https://pixabay.com/users/Mohamed_hassan-5229782/",
-    "url": "https://pixabay.com/photos/emailers-template-email-marketing-3487698/",
     "site": "Pixabay"
   },
   "c59": {
@@ -3590,24 +2357,6 @@
     "url": "https://pixabay.com/photos/box-moving-carton-moving-boxes-2507269/",
     "site": "Pixabay"
   },
-  "c76": {
-    "sourceId": 6896557,
-    "src": "/photos/c76.webp",
-    "alt": "package, parcel, packaging, logistics, post office, delivery, gift, order, package, package, package, parcel, parcel, parcel, parcel, parcel, logistics, logistics, delivery, delivery, delivery, delivery",
-    "by": "1644199",
-    "byUrl": "https://pixabay.com/users/1644199-1644199/",
-    "url": "https://pixabay.com/photos/package-parcel-packaging-logistics-6896557/",
-    "site": "Pixabay"
-  },
-  "c82": {
-    "sourceId": 5700049,
-    "src": "/photos/c82.webp",
-    "alt": "smartphone, hand, inbox, empty, mailbox, digital, mobile phone, screen, lcd, inbox, inbox, inbox, inbox, inbox, lcd",
-    "by": "solenfeyissa",
-    "byUrl": "https://pixabay.com/users/solenfeyissa-17494645/",
-    "url": "https://pixabay.com/photos/smartphone-hand-inbox-empty-5700049/",
-    "site": "Pixabay"
-  },
   "c85": {
     "sourceId": 315132,
     "src": "/photos/c85.webp",
@@ -3626,33 +2375,6 @@
     "url": "https://pixabay.com/photos/factory-hall-abandoned-ruin-3337207/",
     "site": "Pixabay"
   },
-  "c89": {
-    "sourceId": 2954348,
-    "src": "/photos/c89.webp",
-    "alt": "meeting, room, business, conference, office, table, corporate, presentation, conference room, discussion, professional, board, interior, company, seminar, meeting room, modern, gray business, gray office, gray meeting, gray room, gray table, gray company, gray conference, gray presentation, gray interior, gray board, conference, conference, conference room, conference room, conference room, conference room, conference room, seminar, seminar, meeting room, meeting room, meeting room, meeting room",
-    "by": "ClickerHappy",
-    "byUrl": "https://pixabay.com/users/ClickerHappy-324082/",
-    "url": "https://pixabay.com/photos/meeting-room-business-conference-2954348/",
-    "site": "Pixabay"
-  },
-  "c90": {
-    "sourceId": 2004856,
-    "src": "/photos/c90.webp",
-    "alt": "forms, tax return, additional expenses, forms, forms, tax return, tax return, tax return, tax return, tax return",
-    "by": "forium",
-    "byUrl": "https://pixabay.com/users/forium-1879970/",
-    "url": "https://pixabay.com/photos/forms-tax-return-additional-expenses-2004856/",
-    "site": "Pixabay"
-  },
-  "c92": {
-    "sourceId": 4757646,
-    "src": "/photos/c92.webp",
-    "alt": "factory, hall, symmetry, warehouse, industry, building, expired, mood, pforphoto, factory building, industrial plant, decay, dilapidated, industrial building, architecture, lost places, abandoned places, factory, warehouse, warehouse, warehouse, warehouse, warehouse",
-    "by": "Tama66",
-    "byUrl": "https://pixabay.com/users/Tama66-1032521/",
-    "url": "https://pixabay.com/photos/factory-hall-symmetry-warehouse-4757646/",
-    "site": "Pixabay"
-  },
   "c95": {
     "sourceId": 1860811,
     "src": "/photos/c95.webp",
@@ -3660,24 +2382,6 @@
     "by": "andreas160578",
     "byUrl": "https://pixabay.com/users/andreas160578-2383079/",
     "url": "https://pixabay.com/photos/tape-measure-measure-up-1860811/",
-    "site": "Pixabay"
-  },
-  "c106": {
-    "sourceId": 4967335,
-    "src": "/photos/c106.webp",
-    "alt": "space, wood, deliver, logistics, receive, transportation, business, logistic, transfer, courier, office, paper, pack, send, fragile, service, object, container, carton, box, storage, shipping, cardboard, parcel, package, brown office, brown box, brown service, logistics, courier, courier, box, box, box, parcel, parcel, parcel, parcel, parcel, package, package",
-    "by": "ha11ok",
-    "byUrl": "https://pixabay.com/users/ha11ok-1785462/",
-    "url": "https://pixabay.com/photos/space-wood-deliver-logistics-4967335/",
-    "site": "Pixabay"
-  },
-  "c115": {
-    "sourceId": 3518875,
-    "src": "/photos/c115.webp",
-    "alt": "tunnel, traffic, traffic jam, miniature, traffic light, to travel, light, tunnel, tunnel, tunnel, traffic jam, traffic jam, traffic jam, traffic jam, traffic jam",
-    "by": "torstensimon",
-    "byUrl": "https://pixabay.com/users/torstensimon-5039407/",
-    "url": "https://pixabay.com/photos/tunnel-traffic-traffic-jam-3518875/",
     "site": "Pixabay"
   },
   "c116": {
@@ -3714,15 +2418,6 @@
     "by": "Snap_it",
     "byUrl": "https://pixabay.com/users/Snap_it-1125834/",
     "url": "https://pixabay.com/photos/light-switch-vehicle-rotary-switch-3557851/",
-    "site": "Pixabay"
-  },
-  "c130": {
-    "sourceId": 6887738,
-    "src": "/photos/c130.webp",
-    "alt": "tourists, urban, window, visitors, travel, sightseeing, observation, landmark, downtown, dubai, alone, arabic, architecture, building, burj, business, camera, city, concept, deck, editorial, emirates, finance, future, futuristic",
-    "by": "katetrysh",
-    "byUrl": "https://pixabay.com/users/katetrysh-4218753/",
-    "url": "https://pixabay.com/photos/tourists-urban-window-visitors-6887738/",
     "site": "Pixabay"
   },
   "c131": {
@@ -3842,15 +2537,6 @@
     "url": "https://pixabay.com/photos/money-coins-stack-stacked-coins-2180330/",
     "site": "Pixabay"
   },
-  "c202": {
-    "sourceId": 4511130,
-    "src": "/photos/c202.webp",
-    "alt": "payment, online payment, card payment, credit card, electronics, electronics payment, commerce, transaction, customer, rupee, indian, india, money, bank note, bill, business, gandhi, wealth, currency, note, asia, asian bank, payment, payment, online payment, online payment, online payment, credit card, credit card, credit card, credit card, credit card, rupee, rupee, rupee, rupee",
-    "by": "rupixen",
-    "byUrl": "https://pixabay.com/users/rupixen-11154019/",
-    "url": "https://pixabay.com/photos/payment-online-payment-card-payment-4511130/",
-    "site": "Pixabay"
-  },
   "c224": {
     "sourceId": 2381842,
     "src": "/photos/c224.webp",
@@ -3950,15 +2636,6 @@
     "url": "https://pixabay.com/photos/young-people-woman-isolated-3061652/",
     "site": "Pixabay"
   },
-  "c259": {
-    "sourceId": 2181994,
-    "src": "/photos/c259.webp",
-    "alt": "chairs, conference room, contemporary, furniture, indoors, interior design, room, sofa, table, windows, meeting room, interior decoration, conference room, conference room, furniture, interior design, interior design, room, room, room, room, room, table, table, table, table, meeting room, meeting room, meeting room",
-    "by": "Pexels",
-    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
-    "url": "https://pixabay.com/photos/chairs-conference-room-contemporary-2181994/",
-    "site": "Pixabay"
-  },
   "c267": {
     "sourceId": 429723,
     "src": "/photos/c267.webp",
@@ -3977,42 +2654,6 @@
     "url": "https://pixabay.com/photos/store-prices-rabat-discount-sale-3867742/",
     "site": "Pixabay"
   },
-  "c274": {
-    "sourceId": 3210728,
-    "src": "/photos/c274.webp",
-    "alt": "transport, automobile, truck, vehicle, trailer, yellow, car park, truck truck, truck american, truck, truck, truck, truck, truck, trailer, trailer",
-    "by": "rauschenberger",
-    "byUrl": "https://pixabay.com/users/rauschenberger-4614580/",
-    "url": "https://pixabay.com/photos/transport-automobile-truck-vehicle-3210728/",
-    "site": "Pixabay"
-  },
-  "c275": {
-    "sourceId": 1966448,
-    "src": "/photos/c275.webp",
-    "alt": "mistake, error, question mark, fail, wrong, trouble, kid, child, disappointment, gray question, mistake, mistake, mistake, mistake, mistake, error, question mark, fail, fail, wrong",
-    "by": "Tumisu",
-    "byUrl": "https://pixabay.com/users/Tumisu-148124/",
-    "url": "https://pixabay.com/photos/mistake-error-question-mark-fail-1966448/",
-    "site": "Pixabay"
-  },
-  "c280": {
-    "sourceId": 3992896,
-    "src": "/photos/c280.webp",
-    "alt": "cans, containers, cardboard boxes, gift, decorative, surprise, gifts, packaging, paper, cardboard, cardboard boxes, cardboard boxes, cardboard boxes, cardboard boxes, cardboard boxes, packaging, cardboard, cardboard, cardboard, cardboard",
-    "by": "sweetlouise",
-    "byUrl": "https://pixabay.com/users/sweetlouise-3967705/",
-    "url": "https://pixabay.com/photos/cans-containers-cardboard-boxes-3992896/",
-    "site": "Pixabay"
-  },
-  "c281": {
-    "sourceId": 2458012,
-    "src": "/photos/c281.webp",
-    "alt": "gift box, gifts, packaging box, gift box, gift box, gift box, gift box, gift box, gifts, gifts",
-    "by": "faye_yuyun",
-    "byUrl": "https://pixabay.com/users/faye_yuyun-4696267/",
-    "url": "https://pixabay.com/photos/gift-box-gifts-packaging-box-2458012/",
-    "site": "Pixabay"
-  },
   "c285": {
     "sourceId": 3139604,
     "src": "/photos/c285.webp",
@@ -4020,15 +2661,6 @@
     "by": "Alexas_Fotos",
     "byUrl": "https://pixabay.com/users/Alexas_Fotos-686414/",
     "url": "https://pixabay.com/photos/shake-hands-handshake-helping-hand-3139604/",
-    "site": "Pixabay"
-  },
-  "c289": {
-    "sourceId": 1677347,
-    "src": "/photos/c289.webp",
-    "alt": "to travel, hotel room, hotel, room, bed, inner space, business, relaxation, vacations, accommodation, suite, tourist, room hotel, double bed, sleep, pension, bedspread, resort, tourism, hotel room, hotel room, hotel room, hotel, hotel, hotel, hotel, hotel, accommodation",
-    "by": "JanClaus",
-    "byUrl": "https://pixabay.com/users/JanClaus-2726111/",
-    "url": "https://pixabay.com/photos/to-travel-hotel-room-hotel-room-1677347/",
     "site": "Pixabay"
   },
   "c290": {
@@ -4067,42 +2699,6 @@
     "url": "https://pixabay.com/photos/helping-hands-climbing-rescue-4661809/",
     "site": "Pixabay"
   },
-  "c305": {
-    "sourceId": 2816806,
-    "src": "/photos/c305.webp",
-    "alt": "spreadsheet, number, numbers, excel, price list, row, column, spreadsheet, spreadsheet, spreadsheet, spreadsheet, spreadsheet, price list",
-    "by": "tomfield",
-    "byUrl": "https://pixabay.com/users/tomfield-4615284/",
-    "url": "https://pixabay.com/photos/spreadsheet-number-numbers-excel-2816806/",
-    "site": "Pixabay"
-  },
-  "c306": {
-    "sourceId": 4588501,
-    "src": "/photos/c306.webp",
-    "alt": "truck, lorry, tanker, vehicle, transportation, highway, driving, travel, delivery, highway truck, cartage, haulage, wheels, traffic, transport, gray truck, truck, truck, truck, truck, truck, highway truck, highway truck, cartage, haulage, haulage, haulage",
-    "by": "rmpublishing",
-    "byUrl": "https://pixabay.com/users/rmpublishing-14107605/",
-    "url": "https://pixabay.com/photos/truck-lorry-tanker-vehicle-4588501/",
-    "site": "Pixabay"
-  },
-  "c307": {
-    "sourceId": 7727576,
-    "src": "/photos/c307.webp",
-    "alt": "money, to build a house, real estate financing, equity capital, construction financing, building savings, financing, euro, currency, house, housebuilding, price increase, rising costs, banknotes, paper money, financial world, affordable housing, building money, build a house, housing, pay, house purchase, rising costs, affordable housing, affordable housing, affordable housing, affordable housing, affordable housing",
-    "by": "neelam279",
-    "byUrl": "https://pixabay.com/users/neelam279-9820894/",
-    "url": "https://pixabay.com/photos/money-to-build-a-house-7727576/",
-    "site": "Pixabay"
-  },
-  "c311": {
-    "sourceId": 2726345,
-    "src": "/photos/c311.webp",
-    "alt": "food, wood pallets, industry, wholesale, boxed tomatoes, storage, cargo holding, grocery, wholesale, wholesale, wholesale, wholesale, wholesale",
-    "by": "AlbanyColley",
-    "byUrl": "https://pixabay.com/users/AlbanyColley-6298107/",
-    "url": "https://pixabay.com/photos/food-wood-pallets-industry-2726345/",
-    "site": "Pixabay"
-  },
   "c326": {
     "sourceId": 4521074,
     "src": "/photos/c326.webp",
@@ -4137,24 +2733,6 @@
     "by": "geralt",
     "byUrl": "https://pixabay.com/users/geralt-9301/",
     "url": "https://pixabay.com/photos/email-mail-hand-smartphone-write-6370595/",
-    "site": "Pixabay"
-  },
-  "c336": {
-    "sourceId": 2296195,
-    "src": "/photos/c336.webp",
-    "alt": "agenda, appointment calendar, coffee, coffee pot, side, lines, times, calendar, time, office, planning, meeting, date gift, notebook, workplace, future, break, switch off, break enjoy, blank appointment calendar, no dates, agenda, agenda, agenda, agenda, agenda, calendar, calendar, calendar",
-    "by": "Myriams-Fotos",
-    "byUrl": "https://pixabay.com/users/Myriams-Fotos-1627417/",
-    "url": "https://pixabay.com/photos/agenda-appointment-calendar-coffee-2296195/",
-    "site": "Pixabay"
-  },
-  "c337": {
-    "sourceId": 2366468,
-    "src": "/photos/c337.webp",
-    "alt": "package, parcel, packaging, to ship, send, cardboard box, carton, shipment, teddy bear, teddy, stuffed animal, little bear, parcel, parcel, packaging, cardboard box, cardboard box, cardboard box, cardboard box, cardboard box, carton, carton, carton, shipment, shipment",
-    "by": "congerdesign",
-    "byUrl": "https://pixabay.com/users/congerdesign-509903/",
-    "url": "https://pixabay.com/photos/package-parcel-packaging-to-ship-2366468/",
     "site": "Pixabay"
   },
   "c342": {
@@ -4193,24 +2771,6 @@
     "url": "https://pixabay.com/photos/truck-transportation-road-dark-2591007/",
     "site": "Pixabay"
   },
-  "c350": {
-    "sourceId": 1355316,
-    "src": "/photos/c350.webp",
-    "alt": "agenda, work, desk, office, reading glasses, pause, appointment, time, room, voltage, stress, work stress, burn out, relaxation, hustle and bustle, pressure, tired, meeting, plan, to live, fatigue, problems, issue, difficult, agenda, agenda, agenda, agenda, agenda, pause, appointment, stress, stress, stress, stress, work stress, burn out, tired, meeting, fatigue, issue, difficult, difficult, difficult",
-    "by": "sabinevanerp",
-    "byUrl": "https://pixabay.com/users/sabinevanerp-2145163/",
-    "url": "https://pixabay.com/photos/agenda-work-desk-office-1355316/",
-    "site": "Pixabay"
-  },
-  "c351": {
-    "sourceId": 393080,
-    "src": "/photos/c351.webp",
-    "alt": "iphone, business, email, communication, smartphone, notice, email, email, email, email, email",
-    "by": "nvtrlab",
-    "byUrl": "https://pixabay.com/users/nvtrlab-44186/",
-    "url": "https://pixabay.com/photos/iphone-business-email-communication-393080/",
-    "site": "Pixabay"
-  },
   "c356": {
     "sourceId": 5911951,
     "src": "/photos/c356.webp",
@@ -4229,15 +2789,6 @@
     "url": "https://pixabay.com/photos/container-ship-cargo-ship-tug-cargo-4103368/",
     "site": "Pixabay"
   },
-  "c365": {
-    "sourceId": 908351,
-    "src": "/photos/c365.webp",
-    "alt": "price tag, sign, discount label, price tag, price tag, price tag, price tag, price tag",
-    "by": "Dow",
-    "byUrl": "https://pixabay.com/users/Dow-1339199/",
-    "url": "https://pixabay.com/photos/price-tag-sign-discount-label-908351/",
-    "site": "Pixabay"
-  },
   "c369": {
     "sourceId": 7724803,
     "src": "/photos/c369.webp",
@@ -4245,42 +2796,6 @@
     "by": "neelam279",
     "byUrl": "https://pixabay.com/users/neelam279-9820894/",
     "url": "https://pixabay.com/photos/gift-banknotes-euro-gift-bow-money-7724803/",
-    "site": "Pixabay"
-  },
-  "c373": {
-    "sourceId": 3297994,
-    "src": "/photos/c373.webp",
-    "alt": "notepad, table, decoration, notes, writing pad, write, note, paper, news, letter, correspondence, copy space, scrapbooking, blog, blogger, notepad, notepad, notepad, table, table, notes, notes, write, note, note, paper, paper, paper, paper, paper, news, letter, letter, blog, blog",
-    "by": "Darkmoon_Art",
-    "byUrl": "https://pixabay.com/users/Darkmoon_Art-1664300/",
-    "url": "https://pixabay.com/photos/notepad-table-decoration-notes-3297994/",
-    "site": "Pixabay"
-  },
-  "c375": {
-    "sourceId": 684682,
-    "src": "/photos/c375.webp",
-    "alt": "feet, feet in bed, bed, relax, weary, feet, feet, feet in bed, bed, bed, bed, bed, bed",
-    "by": "Prinz-Peter",
-    "byUrl": "https://pixabay.com/users/Prinz-Peter-871838/",
-    "url": "https://pixabay.com/photos/feet-feet-in-bed-bed-relax-weary-684682/",
-    "site": "Pixabay"
-  },
-  "c376": {
-    "sourceId": 2383407,
-    "src": "/photos/c376.webp",
-    "alt": "winks, sleeping, snooze, sleep, slumber, worker, work, siesta, nap, tired, man, male, stress, exhausted, fatigue, builder, adult, people, laze, resting, dream, napping, stressed, 40, lying, employee, nap, tired, tired, tired, tired, tired, stress, exhausted, fatigue, fatigue, fatigue",
-    "by": "5477687",
-    "byUrl": "https://pixabay.com/users/5477687-5477687/",
-    "url": "https://pixabay.com/photos/winks-sleeping-snooze-sleep-2383407/",
-    "site": "Pixabay"
-  },
-  "c379": {
-    "sourceId": 2080420,
-    "src": "/photos/c379.webp",
-    "alt": "agenda, appointment, address, pen, planing, notebook, agenda, agenda, agenda, appointment, appointment, appointment, address, address, address, address, address",
-    "by": "jackmac34",
-    "byUrl": "https://pixabay.com/users/jackmac34-483877/",
-    "url": "https://pixabay.com/photos/agenda-appointment-address-pen-2080420/",
     "site": "Pixabay"
   },
   "c380": {
@@ -4299,24 +2814,6 @@
     "by": "Alexas_Fotos",
     "byUrl": "https://pixabay.com/users/Alexas_Fotos-686414/",
     "url": "https://pixabay.com/photos/smiley-sorry-surprised-excuse-me-1271125/",
-    "site": "Pixabay"
-  },
-  "c385": {
-    "sourceId": 3820633,
-    "src": "/photos/c385.webp",
-    "alt": "planner, 2019, year, calendar, schedule, date, february, january, annual, december, organizer, personal, weeks, designer, appointment, paper, write, plan, day, event, business, planner, planner, calendar, calendar, calendar, calendar, calendar, schedule, january",
-    "by": "JessBaileyDesign",
-    "byUrl": "https://pixabay.com/users/JessBaileyDesign-7369896/",
-    "url": "https://pixabay.com/photos/planner-2019-year-calendar-3820633/",
-    "site": "Pixabay"
-  },
-  "c387": {
-    "sourceId": 4810233,
-    "src": "/photos/c387.webp",
-    "alt": "door, portal, gate, entrance, architecture, blue, wall, access, old, wood, stone, historical, door handle, door lock, house entrance, facade, ornament, front door, ring, door knocker, door fitting, fitting, entrance door, door, door, door, door, door, gate",
-    "by": "brisch27",
-    "byUrl": "https://pixabay.com/users/brisch27-1690709/",
-    "url": "https://pixabay.com/photos/door-portal-gate-entrance-4810233/",
     "site": "Pixabay"
   },
   "v2": {
@@ -4344,15 +2841,6 @@
     "by": "kaboompics",
     "byUrl": "https://pixabay.com/users/kaboompics-1013994/",
     "url": "https://pixabay.com/photos/mobile-phone-mobile-smartphone-791644/",
-    "site": "Pixabay"
-  },
-  "v8": {
-    "sourceId": 7407597,
-    "src": "/photos/v8.webp",
-    "alt": "thinking, business, work, man, computer, desk, study, thinking man, thinking, thinking, thinking, thinking, thinking, thinking man, thinking man",
-    "by": "sarahblocks",
-    "byUrl": "https://pixabay.com/users/sarahblocks-8094083/",
-    "url": "https://pixabay.com/photos/thinking-business-work-man-7407597/",
     "site": "Pixabay"
   },
   "v9": {
@@ -4409,15 +2897,6 @@
     "url": "https://pixabay.com/photos/boy-teen-schoolboy-joy-idea-2736656/",
     "site": "Pixabay"
   },
-  "n4": {
-    "sourceId": 3578733,
-    "src": "/photos/n4.webp",
-    "alt": "shipping, seafaring, shipping company, container ships, transport, cargo ship, maritime, water transport, by sea, elbe, waterway, freight transport, container, cma cgm vasco de gama, hamburg, port, shipping, shipping, shipping company, cargo ship, cargo ship, cargo ship, cargo ship, cargo ship, maritime",
-    "by": "wasi1370",
-    "byUrl": "https://pixabay.com/users/wasi1370-8259843/",
-    "url": "https://pixabay.com/photos/shipping-seafaring-shipping-company-3578733/",
-    "site": "Pixabay"
-  },
   "n5": {
     "sourceId": 1841132,
     "src": "/photos/n5.webp",
@@ -4425,15 +2904,6 @@
     "by": "Pexels",
     "byUrl": "https://pixabay.com/users/Pexels-2286921/",
     "url": "https://pixabay.com/photos/apples-farmers-market-buy-buying-1841132/",
-    "site": "Pixabay"
-  },
-  "n6": {
-    "sourceId": 2986181,
-    "src": "/photos/n6.webp",
-    "alt": "a discount, stock, sale, new year, christmas, discounts, purchase, promotion, shopping center, products, marketing, tag, badge, price-list, shop, the sale, offer, banner, module, label, sticker, element, sale, sale, sale, sale, sale",
-    "by": "Sunriseforever",
-    "byUrl": "https://pixabay.com/users/Sunriseforever-6314823/",
-    "url": "https://pixabay.com/photos/a-discount-stock-sale-new-year-2986181/",
     "site": "Pixabay"
   },
   "n7": {
@@ -4481,15 +2951,6 @@
     "url": "https://pixabay.com/photos/thumb-favorite-hand-arm-handle-422147/",
     "site": "Pixabay"
   },
-  "i8": {
-    "sourceId": 1853305,
-    "src": "/photos/i8.webp",
-    "alt": "coding, programming, css, software development, computer, close up, laptop, data, display, electronics, keyboard, screen, technology, app, program, software, computer engineering, coding, coding, coding, programming, programming, software development, computer, data, software, software, software, software, software",
-    "by": "Pexels",
-    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
-    "url": "https://pixabay.com/photos/coding-programming-css-1853305/",
-    "site": "Pixabay"
-  },
   "l9": {
     "sourceId": 7235193,
     "src": "/photos/l9.webp",
@@ -4517,15 +2978,6 @@
     "url": "https://pixabay.com/photos/aeroplane-air-airmail-airplane-4916661/",
     "site": "Pixabay"
   },
-  "v33": {
-    "sourceId": 1869579,
-    "src": "/photos/v33.webp",
-    "alt": "desk, ink, feather, quill, pen, education, paper, table, vintage, workplace, writing, author, writer, documents, quill, pen, education, writing, writing, writing, writing, writing, author, writer, writer, writer, writer",
-    "by": "Pexels",
-    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
-    "url": "https://pixabay.com/photos/desk-ink-feather-quill-pen-1869579/",
-    "site": "Pixabay"
-  },
   "v42": {
     "sourceId": 3716541,
     "src": "/photos/v42.webp",
@@ -4542,15 +2994,6 @@
     "by": "planet_fox",
     "byUrl": "https://pixabay.com/users/planet_fox-4691618/",
     "url": "https://pixabay.com/photos/gas-station-gas-pump-refuel-diesel-4978824/",
-    "site": "Pixabay"
-  },
-  "v49": {
-    "sourceId": 2557396,
-    "src": "/photos/v49.webp",
-    "alt": "people, girls, women, students, friends, talking, meeting, study, group, activity, homework, group work, brainstorming, group study, people, people, people, students, students, students, friends, friends, friends, talking, meeting, meeting, meeting, meeting, meeting, study, study, group",
-    "by": "StockSnap",
-    "byUrl": "https://pixabay.com/users/StockSnap-894430/",
-    "url": "https://pixabay.com/photos/people-girls-women-students-2557396/",
     "site": "Pixabay"
   },
   "v53": {
@@ -4598,15 +3041,6 @@
     "url": "https://pixabay.com/photos/factory-industry-abandoned-1639990/",
     "site": "Pixabay"
   },
-  "n21": {
-    "sourceId": 1863880,
-    "src": "/photos/n21.webp",
-    "alt": "stock, trading, monitor, business, finance, exchange, investment, market, trade, data, graph, economy, financial, currency, chart, information, technology, profit, forex, rate, foreign exchange, analysis, statistic, funds, digital, sell, earning, display, blue, accounting, index, management, black and white, monochrome, stock, stock, stock, trading, trading, trading, trading, trading, business, business, business, finance, finance, finance, finance, investment, investment, market, data, data, data, graph, economy, economy, economy, financial, technology, forex",
-    "by": "3844328",
-    "byUrl": "https://pixabay.com/users/3844328-3844328/",
-    "url": "https://pixabay.com/photos/stock-trading-monitor-business-1863880/",
-    "site": "Pixabay"
-  },
   "n22": {
     "sourceId": 5064997,
     "src": "/photos/n22.webp",
@@ -4623,15 +3057,6 @@
     "by": "u_w24h9b9v3p",
     "byUrl": "https://pixabay.com/users/u_w24h9b9v3p-29069534/",
     "url": "https://pixabay.com/photos/coworkers-company-colleagues-7366205/",
-    "site": "Pixabay"
-  },
-  "n34": {
-    "sourceId": 8499265,
-    "src": "/photos/n34.webp",
-    "alt": "english, language, linguistics, communication, grammar, vocabulary, write, to speak, literature, english speaking, english language, english literature, language acquisition, esl, tefl, english class, english grammar, english language skills, linguistic studies, user, tile, word, letter tiles, background, grammar, grammar, grammar, vocabulary, vocabulary, vocabulary, vocabulary, vocabulary",
-    "by": "viarami",
-    "byUrl": "https://pixabay.com/users/viarami-13458823/",
-    "url": "https://pixabay.com/photos/english-language-linguistics-8499265/",
     "site": "Pixabay"
   },
   "n36": {
@@ -4688,33 +3113,6 @@
     "url": "https://pixabay.com/photos/bank-note-the-value-currency-4122078/",
     "site": "Pixabay"
   },
-  "a9": {
-    "sourceId": 3021820,
-    "src": "/photos/a9.webp",
-    "alt": "hamburg, port of hamburg, container freighter, germany, container port, tractor, shipping, container ship, container terminal, cargo ship, port cranes, transport, port, freight, freighter, hamburg, shipping, container ship, container ship, container ship, cargo ship, cargo ship, cargo ship, cargo ship, cargo ship, port, port, port, freight",
-    "by": "Julius_Silver",
-    "byUrl": "https://pixabay.com/users/Julius_Silver-4371822/",
-    "url": "https://pixabay.com/photos/hamburg-port-of-hamburg-3021820/",
-    "site": "Pixabay"
-  },
-  "a15": {
-    "sourceId": 3402507,
-    "src": "/photos/a15.webp",
-    "alt": "foodora, bike, delivery, street, bicycle, box, food delivery, traffic, outdoors, urban, city, delivery, food delivery, food delivery, food delivery, food delivery, food delivery",
-    "by": "KaiPilger",
-    "byUrl": "https://pixabay.com/users/KaiPilger-5841200/",
-    "url": "https://pixabay.com/photos/foodora-bike-delivery-street-3402507/",
-    "site": "Pixabay"
-  },
-  "a17": {
-    "sourceId": 6260984,
-    "src": "/photos/a17.webp",
-    "alt": "to draw, therapy, hands, pen, drawing, human, frustration, burnout, help, paper, explanation, psychology, light, drawing, explanation, explanation, explanation, explanation, explanation",
-    "by": "FotoRieth",
-    "byUrl": "https://pixabay.com/users/FotoRieth-837884/",
-    "url": "https://pixabay.com/photos/to-draw-therapy-hands-pen-drawing-6260984/",
-    "site": "Pixabay"
-  },
   "a25": {
     "sourceId": 1158385,
     "src": "/photos/a25.webp",
@@ -4722,24 +3120,6 @@
     "by": "geralt",
     "byUrl": "https://pixabay.com/users/geralt-9301/",
     "url": "https://pixabay.com/photos/place-name-sign-enough-off-finished-1158385/",
-    "site": "Pixabay"
-  },
-  "a26": {
-    "sourceId": 4193401,
-    "src": "/photos/a26.webp",
-    "alt": "contact us, contact, call, us, phone, email, communication, office, address, talk, meeting, business, connection, internet, information, mail, icon, button, symbol, contact us, contact us, contact, call, call, call, call, call, email, email",
-    "by": "Tumisu",
-    "byUrl": "https://pixabay.com/users/Tumisu-148124/",
-    "url": "https://pixabay.com/photos/contact-us-contact-call-us-phone-4193401/",
-    "site": "Pixabay"
-  },
-  "a28": {
-    "sourceId": 6602140,
-    "src": "/photos/a28.webp",
-    "alt": "dump truck, kaelble k33, truck, kaelble, vehicle, tipper truck, transport, hauling, road, dump truck, dump truck, dump truck, dump truck, dump truck",
-    "by": "Katerwursty",
-    "byUrl": "https://pixabay.com/users/Katerwursty-15185499/",
-    "url": "https://pixabay.com/photos/dump-truck-kaelble-k33-truck-6602140/",
     "site": "Pixabay"
   },
   "a29": {
@@ -4814,24 +3194,6 @@
     "url": "https://pixabay.com/photos/code-coding-web-development-944499/",
     "site": "Pixabay"
   },
-  "i44": {
-    "sourceId": 4941341,
-    "src": "/photos/i44.webp",
-    "alt": "engineer, engineering, electrical engineer, electrical engineering, science, research, vehicle, cars, automobile, computer, laptop, software, testing, engineer, electrical engineering, software, software, software, software, software",
-    "by": "This_is_Engineering",
-    "byUrl": "https://pixabay.com/users/This_is_Engineering-11384528/",
-    "url": "https://pixabay.com/photos/engineer-engineering-4941341/",
-    "site": "Pixabay"
-  },
-  "i45": {
-    "sourceId": 1076536,
-    "src": "/photos/i45.webp",
-    "alt": "code, html, digital, coding, web, programming, computer, technology, internet, design, development, website, web developer, web development, programming code, data, page, computer programming, software, site, css, script, web page, website development, www, information, java, screen, code, code, code, html, coding, coding, coding, coding, coding, web, programming, programming, computer, technology, website, website, web development, software",
-    "by": "jamesmarkosborne",
-    "byUrl": "https://pixabay.com/users/jamesmarkosborne-1640589/",
-    "url": "https://pixabay.com/photos/code-html-digital-coding-web-1076536/",
-    "site": "Pixabay"
-  },
   "i46": {
     "sourceId": 393492,
     "src": "/photos/i46.webp",
@@ -4868,15 +3230,6 @@
     "url": "https://pixabay.com/photos/pallet-goods-cargo-transport-wood-1665472/",
     "site": "Pixabay"
   },
-  "l15": {
-    "sourceId": 7073503,
-    "src": "/photos/l15.webp",
-    "alt": "construction, engine, equipment, forklift, tractor, excavator, forklift, forklift, forklift, forklift, forklift",
-    "by": "TheMilMarZone",
-    "byUrl": "https://pixabay.com/users/TheMilMarZone-25543792/",
-    "url": "https://pixabay.com/photos/construction-engine-equipment-7073503/",
-    "site": "Pixabay"
-  },
   "l22": {
     "sourceId": 4951485,
     "src": "/photos/l22.webp",
@@ -4904,24 +3257,6 @@
     "url": "https://pixabay.com/photos/port-loading-container-transport-7370411/",
     "site": "Pixabay"
   },
-  "l34": {
-    "sourceId": 1850170,
-    "src": "/photos/l34.webp",
-    "alt": "archive, boxes, shelf, folders, documents, data, storage, rack, row, stock, business, warehouse, depth of field, archive, data, storage, warehouse, warehouse, warehouse, warehouse, warehouse",
-    "by": "Pexels",
-    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
-    "url": "https://pixabay.com/photos/archive-boxes-shelf-folders-1850170/",
-    "site": "Pixabay"
-  },
-  "l35": {
-    "sourceId": 5307208,
-    "src": "/photos/l35.webp",
-    "alt": "oversize load, oversized load, oversized, huge, big, wide, truck, diesel truck, semi, semitruck, semi-truck, truck and trailer, transportation, transit, transport, big truck, big load, payload, haul, oversize load, oversize load, oversize load, oversize load, oversized load, oversized load, oversized, truck, semitruck, semitruck, semitruck, semitruck, semitruck, big truck, big truck, big truck, big truck, payload",
-    "by": "royharryman",
-    "byUrl": "https://pixabay.com/users/royharryman-3111263/",
-    "url": "https://pixabay.com/photos/oversize-load-oversized-load-5307208/",
-    "site": "Pixabay"
-  },
   "l36": {
     "sourceId": 1650374,
     "src": "/photos/l36.webp",
@@ -4929,15 +3264,6 @@
     "by": "NoName_13",
     "byUrl": "https://pixabay.com/users/NoName_13-2364555/",
     "url": "https://pixabay.com/photos/port-cranes-harbor-cranes-heaven-1650374/",
-    "site": "Pixabay"
-  },
-  "l38": {
-    "sourceId": 3127925,
-    "src": "/photos/l38.webp",
-    "alt": "passport, visa, border, buffer, customs, passport, visa, visa, visa, visa, visa",
-    "by": "jackmac34",
-    "byUrl": "https://pixabay.com/users/jackmac34-483877/",
-    "url": "https://pixabay.com/photos/passport-visa-border-buffer-3127925/",
     "site": "Pixabay"
   },
   "l41": {
@@ -4956,15 +3282,6 @@
     "by": "violetta",
     "byUrl": "https://pixabay.com/users/violetta-37547/",
     "url": "https://pixabay.com/photos/container-ship-container-ship-port-2786842/",
-    "site": "Pixabay"
-  },
-  "l49": {
-    "sourceId": 4209087,
-    "src": "/photos/l49.webp",
-    "alt": "movie theater, admission ticket, smartphone, online ticket, app, demonstration, code, barcode, movie, filmstrip, black, video, analog, recording, picture, slide film, camera, kleinbild film, media, negative, strip, online ticket, barcode, barcode, barcode, barcode, barcode",
-    "by": "geralt",
-    "byUrl": "https://pixabay.com/users/geralt-9301/",
-    "url": "https://pixabay.com/photos/movie-theater-admission-ticket-4209087/",
     "site": "Pixabay"
   },
   "l54": {
@@ -4994,42 +3311,6 @@
     "url": "https://pixabay.com/photos/carton-recycling-packaging-4921329/",
     "site": "Pixabay"
   },
-  "e2": {
-    "sourceId": 1393979,
-    "src": "/photos/e2.webp",
-    "alt": "fountain pen, filler, ink, write, letter, nostalgic, handwritten, writing tool, paper, stationery, vintage, retro, nostalgia, fountain pen, fountain pen, ink, letter, letter, letter, letter, letter",
-    "by": "A_Different_Perspective",
-    "byUrl": "https://pixabay.com/users/A_Different_Perspective-2135817/",
-    "url": "https://pixabay.com/photos/fountain-pen-filler-ink-write-1393979/",
-    "site": "Pixabay"
-  },
-  "e7": {
-    "sourceId": 3202747,
-    "src": "/photos/e7.webp",
-    "alt": "writing pad, hand, pen, envelope, coffee, table, write, news, paper, block, ballpoint pen, business, mail box, letter, to ship, communication, office supplies, correspondence, mailing, regards, business letter, copy space, empty, desk, office, notes, scrapbooking, contact, office scene, office work, letter, letter, letter, letter, letter",
-    "by": "MR-PANDA",
-    "byUrl": "https://pixabay.com/users/MR-PANDA-2044000/",
-    "url": "https://pixabay.com/photos/writing-pad-hand-pen-envelope-3202747/",
-    "site": "Pixabay"
-  },
-  "e9": {
-    "sourceId": 4928767,
-    "src": "/photos/e9.webp",
-    "alt": "girl, ipad, tablet, education, woman, email, internet, computer, fashion, ipad, ipad, ipad, ipad, ipad, tablet, tablet",
-    "by": "dumcarreon",
-    "byUrl": "https://pixabay.com/users/dumcarreon-6488466/",
-    "url": "https://pixabay.com/photos/girl-ipad-tablet-education-woman-4928767/",
-    "site": "Pixabay"
-  },
-  "e11": {
-    "sourceId": 3196481,
-    "src": "/photos/e11.webp",
-    "alt": "laptop, office, hand, writing, business, document, contract, paper, education, work, notebook, data, pen, meeting, recruitment, agreement, paperwork, office, business, business, business, business, business, contract, contract, education, work, meeting, meeting",
-    "by": "AymaneJed",
-    "byUrl": "https://pixabay.com/users/AymaneJed-1888423/",
-    "url": "https://pixabay.com/photos/laptop-office-hand-writing-3196481/",
-    "site": "Pixabay"
-  },
   "e16": {
     "sourceId": 3199438,
     "src": "/photos/e16.webp",
@@ -5039,13 +3320,769 @@
     "url": "https://pixabay.com/photos/office-write-to-do-ballpoint-pen-3199438/",
     "site": "Pixabay"
   },
-  "e17": {
-    "sourceId": 3213924,
-    "src": "/photos/e17.webp",
-    "alt": "teamwork, cooperation, brainstorming, business, finance, office, team, partners, flat lay, meeting, collaboration, corporation, management, support, team building, unity, teamwork, business, business, business, business, business, office, office, team, team, meeting",
-    "by": "Mohamed_hassan",
-    "byUrl": "https://pixabay.com/users/Mohamed_hassan-5229782/",
-    "url": "https://pixabay.com/photos/teamwork-cooperation-brainstorming-3213924/",
+  "vb-work": {
+    "sourceId": 2261021,
+    "src": "/photos/vb-work.webp",
+    "alt": "despaired, businessman, business, despair, disappointment, frustration, emotion, lego, tiny, toy, mini, miniature, office, table, sad, sadness, sitting, disappointed, expression, frustrated, furniture, overwork, overworked, unhappy, upset, work, working, male, man, character, people, depression, desperate, employer, workplace, pc, computer, emotions, problems, terrified, trouble, brown business, brown computer, brown office, brown laptop, brown work, brown table, brown company, brown businessman, brown depression, brown lego, business, business, business, lego, office, office, office, sad, work, work, work, work, work, working, computer, computer, computer",
+    "by": "kirill_makes_pics",
+    "byUrl": "https://pixabay.com/users/kirill_makes_pics-5203613/",
+    "url": "https://pixabay.com/photos/despaired-businessman-business-2261021/",
+    "site": "Pixabay"
+  },
+  "vb-call": {
+    "sourceId": 2118080,
+    "src": "/photos/vb-call.webp",
+    "alt": "phone, make a phone call, communication, call center, dial, old, office, call up, call, listener, phone call, caller, telephone receiver, connection, information, technology, call center, call center, call center, call center, call center, caller, caller, caller, telephone receiver",
+    "by": "Ralphs_Fotos",
+    "byUrl": "https://pixabay.com/users/Ralphs_Fotos-1767157/",
+    "url": "https://pixabay.com/photos/phone-make-a-phone-call-2118080/",
+    "site": "Pixabay"
+  },
+  "vb-deliver": {
+    "sourceId": 4821984,
+    "src": "/photos/vb-deliver.webp",
+    "alt": "motorcycle, package, parcel delivery, india, transport, package transport, traffic, extra-wide, new tv, parcel delivery, parcel delivery, parcel delivery, parcel delivery, parcel delivery, india",
+    "by": "Tho-Ge",
+    "byUrl": "https://pixabay.com/users/Tho-Ge-113537/",
+    "url": "https://pixabay.com/photos/motorcycle-package-parcel-delivery-4821984/",
+    "site": "Pixabay"
+  },
+  "vb-finish": {
+    "sourceId": 2405991,
+    "src": "/photos/vb-finish.webp",
+    "alt": "match, arrival, track, finish line, competition, sport, stadium, athletics, finish line, finish line, finish line, finish line, finish line",
+    "by": "taniadimas",
+    "byUrl": "https://pixabay.com/users/taniadimas-1503346/",
+    "url": "https://pixabay.com/photos/match-arrival-track-finish-line-2405991/",
+    "site": "Pixabay"
+  },
+  "vb-arrive": {
+    "sourceId": 2018438,
+    "src": "/photos/vb-arrive.webp",
+    "alt": "containers, ship, port, transport, cargo, container ship, cargo crane, big ship, transportation, antwerp, belgium, logistics, cargo, logistics, logistics, logistics, logistics, logistics",
+    "by": "HesselVisser",
+    "byUrl": "https://pixabay.com/users/HesselVisser-4392767/",
+    "url": "https://pixabay.com/photos/containers-ship-port-transport-2018438/",
+    "site": "Pixabay"
+  },
+  "vb-stop": {
+    "sourceId": 4980156,
+    "src": "/photos/vb-stop.webp",
+    "alt": "border, control, entry, border control, id, national border, id control, state border, corona, quarantine, austria, exit, health check, control body, crossing the border, cop, police, passport control, niederdorf, oberaudorf, tyrol, bavaria, germany, border control, border control, border control, border control, border control, state border",
+    "by": "ReinhardThrainer",
+    "byUrl": "https://pixabay.com/users/ReinhardThrainer-10943633/",
+    "url": "https://pixabay.com/photos/border-control-entry-border-control-4980156/",
+    "site": "Pixabay"
+  },
+  "vb-plan": {
+    "sourceId": 360382,
+    "src": "/photos/vb-plan.webp",
+    "alt": "folding plan, road map, itinerary, car card, autoatlas, street map, route plan, route map, folded, map, card week, streets, route description, road map, road map, road map, road map, road map, itinerary, itinerary, itinerary, itinerary, map, map",
+    "by": "cocoparisienne",
+    "byUrl": "https://pixabay.com/users/cocoparisienne-127419/",
+    "url": "https://pixabay.com/photos/folding-plan-road-map-itinerary-360382/",
+    "site": "Pixabay"
+  },
+  "vb-set": {
+    "sourceId": 1990453,
+    "src": "/photos/vb-set.webp",
+    "alt": "calendar, dates, schedule, days, wall calendar, year, meeting, office, planning, calendar, calendar, calendar, calendar, calendar, schedule, schedule",
+    "by": "webandi",
+    "byUrl": "https://pixabay.com/users/webandi-1460261/",
+    "url": "https://pixabay.com/photos/calendar-dates-schedule-days-1990453/",
+    "site": "Pixabay"
+  },
+  "vb-hit": {
+    "sourceId": 2659736,
+    "src": "/photos/vb-hit.webp",
+    "alt": "semi, accident, crash, truck, dangerous, semi truck, big truck, wrecked, broken, damage, wheels, tires, accident, accident, accident, accident, accident, crash, truck, truck, truck, semi truck, semi truck",
+    "by": "macdeedle",
+    "byUrl": "https://pixabay.com/users/macdeedle-6173261/",
+    "url": "https://pixabay.com/photos/semi-accident-crash-truck-2659736/",
+    "site": "Pixabay"
+  },
+  "vb-hurt": {
+    "sourceId": 3337005,
+    "src": "/photos/vb-hurt.webp",
+    "alt": "medicine, adult, patient, people, electro-therapy, physio, physical therapy, the back, back pain, neck pain, pension, health insurance, insurance, physio, physical therapy, physical therapy, physical therapy, physical therapy, physical therapy, back pain, back pain, neck pain, neck pain, neck pain, health insurance, health insurance, insurance",
+    "by": "jennyfriedrichs",
+    "byUrl": "https://pixabay.com/users/jennyfriedrichs-435099/",
+    "url": "https://pixabay.com/photos/medicine-adult-patient-people-3337005/",
+    "site": "Pixabay"
+  },
+  "vb-read": {
+    "sourceId": 5937823,
+    "src": "/photos/vb-read.webp",
+    "alt": "books, stack, literature, knowledge, education, school, reading, library, stack of books, textbooks, reading books, study, read, learn, research, book stack, closed books, bookworm, copy space, books, books, books, books, books, school, study",
+    "by": "Hermann",
+    "byUrl": "https://pixabay.com/users/Hermann-130146/",
+    "url": "https://pixabay.com/photos/books-stack-literature-knowledge-5937823/",
+    "site": "Pixabay"
+  },
+  "vb-send": {
+    "sourceId": 5423674,
+    "src": "/photos/vb-send.webp",
+    "alt": "envelope, mail, message, send email, newsletter, email, mailing, correspondence, envelope, envelope, envelope, envelope, envelope, newsletter, newsletter, email, email, email",
+    "by": "hawksight",
+    "byUrl": "https://pixabay.com/users/hawksight-13091842/",
+    "url": "https://pixabay.com/photos/envelope-mail-message-send-email-5423674/",
+    "site": "Pixabay"
+  },
+  "vb-think": {
+    "sourceId": 4710211,
+    "src": "/photos/vb-think.webp",
+    "alt": "thinking, idea, think, thinking, thinking, thinking, think, think, think, think, think",
+    "by": "SAIYEDIRFANANWARHUSHEN",
+    "byUrl": "https://pixabay.com/users/SAIYEDIRFANANWARHUSHEN-4957264/",
+    "url": "https://pixabay.com/photos/thinking-idea-think-4710211/",
+    "site": "Pixabay"
+  },
+  "vb-catch": {
+    "sourceId": 5477042,
+    "src": "/photos/vb-catch.webp",
+    "alt": "woman, platform, waiting, train, tracks, train station, traveler, platform, waiting, waiting, train, train, train, train, train, train station, train station, train station, train station",
+    "by": "Fang_Y_M",
+    "byUrl": "https://pixabay.com/users/Fang_Y_M-16190112/",
+    "url": "https://pixabay.com/photos/woman-platform-waiting-train-5477042/",
+    "site": "Pixabay"
+  },
+  "vb-sleep": {
+    "sourceId": 2197947,
+    "src": "/photos/vb-sleep.webp",
+    "alt": "woman, asleep, girl, sleep, bed, cozy, tired, rest, resting, sleeping, sleeping woman, dreams, young woman, pillow, blanket, bedroom, sleeping beauty, morning, relax, sleep, sleep, sleep, sleep, sleep, sleeping, sleeping",
+    "by": "Claudio_Scott",
+    "byUrl": "https://pixabay.com/users/Claudio_Scott-4913238/",
+    "url": "https://pixabay.com/photos/woman-asleep-girl-sleep-bed-cozy-2197947/",
+    "site": "Pixabay"
+  },
+  "vb-feel": {
+    "sourceId": 1825900,
+    "src": "/photos/vb-feel.webp",
+    "alt": "alcoholism, sick, alcoholics, alcoholism, alcoholism, alcoholism, alcoholism, sick, sick, sick, sick, sick",
+    "by": "lechenie-narkomanii",
+    "byUrl": "https://pixabay.com/users/lechenie-narkomanii-3764644/",
+    "url": "https://pixabay.com/photos/alcoholism-sick-alcoholics-1825900/",
+    "site": "Pixabay"
+  },
+  "vb-leave": {
+    "sourceId": 3248723,
+    "src": "/photos/vb-leave.webp",
+    "alt": "vehicle, transportation system, truck, road, dump truck, dump truck, dump truck, dump truck, dump truck, dump truck",
+    "by": "RonaldPlett",
+    "byUrl": "https://pixabay.com/users/RonaldPlett-5139674/",
+    "url": "https://pixabay.com/photos/vehicle-transportation-system-truck-3248723/",
+    "site": "Pixabay"
+  },
+  "vb-meet": {
+    "sourceId": 3091906,
+    "src": "/photos/vb-meet.webp",
+    "alt": "shaking hands, handshake, hands, welcome, agreement, contract, shake hands, negotiation, finger, business people, collaboration, friendship, together, binding, compatible, conclusion, liability, meet, relationship, connection, men's suit, office, business, symbol, promise, teamwork, team, result, company, human, handshake, handshake, handshake, handshake, handshake",
+    "by": "geralt",
+    "byUrl": "https://pixabay.com/users/geralt-9301/",
+    "url": "https://pixabay.com/photos/shaking-hands-handshake-hands-3091906/",
+    "site": "Pixabay"
+  },
+  "vb-pay": {
+    "sourceId": 5417256,
+    "src": "/photos/vb-pay.webp",
+    "alt": "alipay, mobile payment, qrcode, alibaba, china, pay, money, mobile, code, payment, phone, smartphone, shop, digital, cashless, buy, banking, transaction, bank, alipay, mobile payment, mobile payment, mobile payment, mobile payment, mobile payment, qrcode, qrcode, payment, payment, payment, payment, cashless, cashless, cashless",
+    "by": "viarami",
+    "byUrl": "https://pixabay.com/users/viarami-13458823/",
+    "url": "https://pixabay.com/photos/alipay-mobile-payment-qrcode-5417256/",
+    "site": "Pixabay"
+  },
+  "vb-sell": {
+    "sourceId": 1853361,
+    "src": "/photos/vb-sell.webp",
+    "alt": "bazaar, booth, bracelets, candles, commerce, group, lamps, man, market, merchant, people, person, sale, sell, shop, shopping, souvenir, stock, arabic, lanterns, market, market, market, market, market, merchant, sell, shop, shop, shop, shopping, shopping, shopping, shopping, arabic",
+    "by": "Pexels",
+    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
+    "url": "https://pixabay.com/photos/bazaar-booth-bracelets-candles-1853361/",
+    "site": "Pixabay"
+  },
+  "vb-stand": {
+    "sourceId": 5734307,
+    "src": "/photos/vb-stand.webp",
+    "alt": "bhikkus, monks, queue, buddhist, buddhism, mahamevnawa, sangha, men, robe, stairs, steps, staircase, queue, queue, queue, queue, queue",
+    "by": "kalyanayahaluwo",
+    "byUrl": "https://pixabay.com/users/kalyanayahaluwo-1767926/",
+    "url": "https://pixabay.com/photos/bhikkus-monks-queue-buddhist-5734307/",
+    "site": "Pixabay"
+  },
+  "vb-win": {
+    "sourceId": 1523334,
+    "src": "/photos/vb-win.webp",
+    "alt": "winners, champions, celebration, victory, sport, championship, achievement, success, win, accomplishment, triumph, champ, baseball, game, goal, excellence, texas, achieving, baseball team, team, accomplishment, accomplishment, accomplishment, baseball, excellence, baseball team, baseball team, baseball team, baseball team, baseball team",
+    "by": "KeithJJ",
+    "byUrl": "https://pixabay.com/users/KeithJJ-2328014/",
+    "url": "https://pixabay.com/photos/winners-champions-celebration-1523334/",
+    "site": "Pixabay"
+  },
+  "vb-get": {
+    "sourceId": 5537230,
+    "src": "/photos/vb-get.webp",
+    "alt": "iphone, hand, phone, mobile phone, smart phone, technology, hand holding a phone, notify, notifications, updates, messages, iphone, iphone, phone, phone, phone, phone, phone, mobile phone, smart phone, smart phone, notifications",
+    "by": "tranmautritam",
+    "byUrl": "https://pixabay.com/users/tranmautritam-498081/",
+    "url": "https://pixabay.com/photos/iphone-hand-phone-mobile-phone-5537230/",
+    "site": "Pixabay"
+  },
+  "vb-do": {
+    "sourceId": 1853677,
+    "src": "/photos/vb-do.webp",
+    "alt": "a book, training, paper, homework, mathematics, study, homework, homework, homework, homework, homework, mathematics",
+    "by": "LUM3N",
+    "byUrl": "https://pixabay.com/users/LUM3N-1066559/",
+    "url": "https://pixabay.com/photos/a-book-training-paper-homework-1853677/",
+    "site": "Pixabay"
+  },
+  "vb-drive": {
+    "sourceId": 4933514,
+    "src": "/photos/vb-drive.webp",
+    "alt": "truck, driver, transport, traffic, vehicle, freight, vehicles, driver's license, steering wheel, truck driver, van driver, driving instructor, truck driver, truck driver, truck driver, truck driver, truck driver",
+    "by": "planet_fox",
+    "byUrl": "https://pixabay.com/users/planet_fox-4691618/",
+    "url": "https://pixabay.com/photos/truck-driver-transport-traffic-4933514/",
+    "site": "Pixabay"
+  },
+  "vb-break": {
+    "sourceId": 101792,
+    "src": "/photos/vb-break.webp",
+    "alt": "glass, crack, broken, broken glass, crack, broken, broken, broken, broken glass, broken glass, broken glass, broken glass, broken glass",
+    "by": "fotobias",
+    "byUrl": "https://pixabay.com/users/fotobias-30050/",
+    "url": "https://pixabay.com/photos/glass-crack-broken-broken-glass-101792/",
+    "site": "Pixabay"
+  },
+  "vb-forget": {
+    "sourceId": 628703,
+    "src": "/photos/vb-forget.webp",
+    "alt": "keyboard, secure, privacy policy, castle, padlock, chain, protect, computer, access, data theft, keyword, locked, security, password, close, privacy policy, padlock, padlock, padlock, padlock, padlock, access, keyword, password",
+    "by": "succo",
+    "byUrl": "https://pixabay.com/users/succo-96729/",
+    "url": "https://pixabay.com/photos/keyboard-secure-privacy-policy-628703/",
+    "site": "Pixabay"
+  },
+  "vb-grow": {
+    "sourceId": 3291738,
+    "src": "/photos/vb-grow.webp",
+    "alt": "analytics, graph, chart, data, analysis, woman, business, finance, investment, money, return, market, share, business woman, businesswoman, success, work, corporate, financial, interest, plan, planning, growth, income, management, profit, increase, capital, revenue, earn, strategy, cash, blue business, blue money, blue work, blue data, blue finance, blue growth, blue company, blue plan, blue planning, blue management, blue market, graph, graph, chart, data, data, data, finance, finance, finance, investment, investment, investment, investment, investment, money, money, money, money, share, share, business woman, business woman, business woman, businesswoman, success, financial, income, income, management, management, management, profit, profit, increase, increase, revenue, revenue, revenue, revenue",
+    "by": "Tumisu",
+    "byUrl": "https://pixabay.com/users/Tumisu-148124/",
+    "url": "https://pixabay.com/photos/analytics-graph-chart-data-3291738/",
+    "site": "Pixabay"
+  },
+  "vb-fly": {
+    "sourceId": 4516478,
+    "src": "/photos/vb-fly.webp",
+    "alt": "flight, airplane, passengers, plane, airbus, airplane interior, transport, transportation, aviation, flight, airplane, airplane, airplane, airplane, airplane, plane, plane, plane",
+    "by": "OrnaW",
+    "byUrl": "https://pixabay.com/users/OrnaW-8155178/",
+    "url": "https://pixabay.com/photos/flight-airplane-passengers-plane-4516478/",
+    "site": "Pixabay"
+  },
+  "vb-drink": {
+    "sourceId": 5355428,
+    "src": "/photos/vb-drink.webp",
+    "alt": "coffee, coffee beans, coffee shop, beans, caffeine, food, espresso, coffee pot, fragrance, roasted, aroma, enjoyment, brown, beverages, mixed up, cappuccino, drink, fresh, luxury items, breakfast, coffee grinder, coffee, coffee, coffee, coffee beans, coffee beans, coffee beans, coffee beans, coffee shop, coffee shop, coffee shop, coffee shop, coffee shop, espresso, espresso, breakfast, breakfast, coffee grinder, Germany, Baden-Württemberg, Meckesheim",
+    "by": "Markus_KF",
+    "byUrl": "https://pixabay.com/users/Markus_KF-14413501/",
+    "url": "https://pixabay.com/photos/coffee-coffee-beans-coffee-shop-5355428/",
+    "site": "Pixabay"
+  },
+  "vb-wake": {
+    "sourceId": 3416152,
+    "src": "/photos/vb-wake.webp",
+    "alt": "clock, alarm clock, blue, time, time display, pointer, clock face, dial, timepiece, clock, clock, clock, alarm clock, alarm clock, alarm clock, alarm clock, alarm clock, clock face",
+    "by": "Alexas_Fotos",
+    "byUrl": "https://pixabay.com/users/Alexas_Fotos-686414/",
+    "url": "https://pixabay.com/photos/clock-alarm-clock-blue-time-3416152/",
+    "site": "Pixabay"
+  },
+  "vb-steal": {
+    "sourceId": 439289,
+    "src": "/photos/vb-steal.webp",
+    "alt": "stolen, cycle, tricked, security, bike, lock, safe, steal, theft, thief, safety, street, luck, clever, stolen, safe, steal, steal, steal, theft, theft, theft, thief, thief, thief, thief, thief, clever, clever",
+    "by": "natefarr",
+    "byUrl": "https://pixabay.com/users/natefarr-428849/",
+    "url": "https://pixabay.com/photos/stolen-cycle-tricked-security-bike-439289/",
+    "site": "Pixabay"
+  },
+  "c78": {
+    "sourceId": 4584328,
+    "src": "/photos/c78.webp",
+    "alt": "christmas, winter festival, winter, december, festive, holiday, xmas, celebration, seasonal, closed, shop closed, shop sign, shop, presents, fir tree, gifts, brown shopping, brown shop, brown presentation, brown gift, closed, closed, shop closed, shop closed, shop closed, shop closed, shop closed",
+    "by": "elverc117",
+    "byUrl": "https://pixabay.com/users/elverc117-8373514/",
+    "url": "https://pixabay.com/photos/christmas-winter-festival-winter-4584328/",
+    "site": "Pixabay"
+  },
+  "c89": {
+    "sourceId": 5421878,
+    "src": "/photos/c89.webp",
+    "alt": "reservation, reserved, metal, plate, hotel, elegant, place, information, message, restaurant, service, reservation, reservation, reservation, reservation, reservation, reserved, reserved, reserved",
+    "by": "valentin_b90",
+    "byUrl": "https://pixabay.com/users/valentin_b90-17099702/",
+    "url": "https://pixabay.com/photos/reservation-reserved-metal-plate-5421878/",
+    "site": "Pixabay"
+  },
+  "c92": {
+    "sourceId": 2323278,
+    "src": "/photos/c92.webp",
+    "alt": "key, home, house, estate, business, mortgage, real, loan, new, property, rent, agent, buy, apartment, investment, sale, building, hand, lock, housing, owner, purchase, residential, sign, unlock, security, person, key, mortgage, mortgage, mortgage, mortgage, loan, loan, property, property, property, rent, rent, rent, rent, rent, apartment, apartment, investment",
+    "by": "mastersenaiper",
+    "byUrl": "https://pixabay.com/users/mastersenaiper-4157718/",
+    "url": "https://pixabay.com/photos/key-home-house-estate-business-2323278/",
+    "site": "Pixabay"
+  },
+  "c94": {
+    "sourceId": 5901808,
+    "src": "/photos/c94.webp",
+    "alt": "money, dollars, hand, expenses, bills, dollar bills, us dollars, currency, bank notes, savings, count, counting money, money, counting money, counting money, counting money, counting money, counting money",
+    "by": "housemind78",
+    "byUrl": "https://pixabay.com/users/housemind78-19821978/",
+    "url": "https://pixabay.com/photos/money-dollars-hand-expenses-bills-5901808/",
+    "site": "Pixabay"
+  },
+  "c130": {
+    "sourceId": 709671,
+    "src": "/photos/c130.webp",
+    "alt": "message, map, welcome, guest, daisy, four leaf clover, welcome, welcome, guest, guest, guest, guest, guest",
+    "by": "422737",
+    "byUrl": "https://pixabay.com/users/422737-422737/",
+    "url": "https://pixabay.com/photos/message-map-welcome-guest-daisy-709671/",
+    "site": "Pixabay"
+  },
+  "c139": {
+    "sourceId": 3300636,
+    "src": "/photos/c139.webp",
+    "alt": "smilies, team, together, team leader, leader, members, fun, cute, emoticon, smiley, faces, emotion, laugh, smile, male, multicoloured, emotions, funny, characters, teamwork, success, team leader, leader, leader, leader, leader, leader, members, members",
+    "by": "Alexas_Fotos",
+    "byUrl": "https://pixabay.com/users/Alexas_Fotos-686414/",
+    "url": "https://pixabay.com/photos/smilies-team-together-team-leader-3300636/",
+    "site": "Pixabay"
+  },
+  "c140": {
+    "sourceId": 5517764,
+    "src": "/photos/c140.webp",
+    "alt": "workplace, workspace, home office, office, desk, table, laptop, smartphone, cellphone, work at home, wfh, work from home, room, workplace, home office, home office, home office, home office, home office, work from home, work from home",
+    "by": "ricardorv30",
+    "byUrl": "https://pixabay.com/users/ricardorv30-2418232/",
+    "url": "https://pixabay.com/photos/workplace-workspace-home-office-5517764/",
+    "site": "Pixabay"
+  },
+  "c145": {
+    "sourceId": 358249,
+    "src": "/photos/c145.webp",
+    "alt": "elevator, passenger elevator, elevator button, floor button, elevator, elevator, elevator button, elevator button, elevator button, elevator button, elevator button",
+    "by": "kaisender",
+    "byUrl": "https://pixabay.com/users/kaisender-260385/",
+    "url": "https://pixabay.com/photos/elevator-passenger-elevator-358249/",
+    "site": "Pixabay"
+  },
+  "c150": {
+    "sourceId": 2373727,
+    "src": "/photos/c150.webp",
+    "alt": "airport, woman, flight, boarding, traveling, tourist, trip, departure, arrival, terminal, airport, airport, airport, airport, airport, flight, traveling",
+    "by": "JESHOOTS-com",
+    "byUrl": "https://pixabay.com/users/JESHOOTS-com-264599/",
+    "url": "https://pixabay.com/photos/airport-woman-flight-boarding-2373727/",
+    "site": "Pixabay"
+  },
+  "c162": {
+    "sourceId": 3990798,
+    "src": "/photos/c162.webp",
+    "alt": "calendar, year, turn of the year, number, annual financial statements, new year's day, new year's eve, sylvester, office, book calendar, new year, to mark, pen, red pen, the beginning of the year, bureaucracy, begin, calendar, calendar, calendar, calendar, calendar, new year",
+    "by": "ulleo",
+    "byUrl": "https://pixabay.com/users/ulleo-1834854/",
+    "url": "https://pixabay.com/photos/calendar-year-turn-of-the-year-3990798/",
+    "site": "Pixabay"
+  },
+  "c178": {
+    "sourceId": 626332,
+    "src": "/photos/c178.webp",
+    "alt": "folder, federal folder, filing, archive, drop, classify, office, files, folder, folder, folder, folder, folder, files, files, files",
+    "by": "422737",
+    "byUrl": "https://pixabay.com/users/422737-422737/",
+    "url": "https://pixabay.com/photos/folder-federal-folder-filing-626332/",
+    "site": "Pixabay"
+  },
+  "c183": {
+    "sourceId": 1571963,
+    "src": "/photos/c183.webp",
+    "alt": "pc, computer, android, android pc, internet, computing, business technologies, computer technology, display, screen, computer screen, desktop, white, computer, android, android, android, android, computer screen, computer screen, computer screen, computer screen, computer screen",
+    "by": "Monoar_CGI_Artist",
+    "byUrl": "https://pixabay.com/users/Monoar_CGI_Artist-2240009/",
+    "url": "https://pixabay.com/photos/pc-computer-android-android-pc-1571963/",
+    "site": "Pixabay"
+  },
+  "c185": {
+    "sourceId": 790396,
+    "src": "/photos/c185.webp",
+    "alt": "printer, desk, office, fax, scanner, home office, technology, duplicator, copier, laser printer, wireless printer, brown office, brown home, brown technology, brown desk, printer, printer, printer, printer, printer",
+    "by": "stevepb",
+    "byUrl": "https://pixabay.com/users/stevepb-282134/",
+    "url": "https://pixabay.com/photos/printer-desk-office-fax-scanner-790396/",
+    "site": "Pixabay"
+  },
+  "c187": {
+    "sourceId": 2202273,
+    "src": "/photos/c187.webp",
+    "alt": "netgear, nighthawk, ac1900, wifi, router, wifi, wifi, router, router, router, router, router",
+    "by": "WikimediaImages",
+    "byUrl": "https://pixabay.com/users/WikimediaImages-1185597/",
+    "url": "https://pixabay.com/photos/netgear-nighthawk-ac1900-wifi-2202273/",
+    "site": "Pixabay"
+  },
+  "c190": {
+    "sourceId": 1083796,
+    "src": "/photos/c190.webp",
+    "alt": "tools, awl, pliers, antique, equipment, work, craft, workshop, old, metal, wood, manual, shop, retro, handmade, traditional, hand, workmanship, wooden, punches, creation, chisel, create, homemade, tool, hobby, skill, craftsman, leather, brown work, brown shopping, brown wood, brown shop, brown tools, brown retro, brown metal, brown old, tools, tools, tools, tools, tools, workshop, leather",
+    "by": "dbreen",
+    "byUrl": "https://pixabay.com/users/dbreen-1643989/",
+    "url": "https://pixabay.com/photos/tools-awl-pliers-antique-equipment-1083796/",
+    "site": "Pixabay"
+  },
+  "c222": {
+    "sourceId": 4121829,
+    "src": "/photos/c222.webp",
+    "alt": "taxi, traffic jam, strike, traffic, vehicles, chaos, taxi, taxi, traffic jam, traffic jam, traffic jam, traffic jam, traffic jam",
+    "by": "wal_172619",
+    "byUrl": "https://pixabay.com/users/wal_172619-12138562/",
+    "url": "https://pixabay.com/photos/taxi-traffic-jam-strike-traffic-4121829/",
+    "site": "Pixabay"
+  },
+  "c223": {
+    "sourceId": 2719739,
+    "src": "/photos/c223.webp",
+    "alt": "accident, automobile, burned, broken, damage, total damage, workshop, traffic accident, traffic, accident car, accident vehicle, accident, accident, accident, accident, accident, traffic accident, traffic accident, traffic accident, accident car, accident car",
+    "by": "Jan2575",
+    "byUrl": "https://pixabay.com/users/Jan2575-2765102/",
+    "url": "https://pixabay.com/photos/accident-automobile-burned-broken-2719739/",
+    "site": "Pixabay"
+  },
+  "c225": {
+    "sourceId": 350376,
+    "src": "/photos/c225.webp",
+    "alt": "old newspaper, newspaper, retro, sepia, old, information, vintage, print, writing, news, newspaper, newspaper, newspaper, newspaper, news, news, news, news, news",
+    "by": "ChristopherPluta",
+    "byUrl": "https://pixabay.com/users/ChristopherPluta-108394/",
+    "url": "https://pixabay.com/photos/old-newspaper-newspaper-retro-sepia-350376/",
+    "site": "Pixabay"
+  },
+  "c284": {
+    "sourceId": 2062433,
+    "src": "/photos/c284.webp",
+    "alt": "ice, iceberg, ice floes, winter, cold, frost, wintry, frozen, water, nature, lake, snow, lake baikal, russia, landscape, winter lake, siberia, block of ice, horizon, ice, ice, ice, ice, ice, iceberg, winter, winter, russia",
+    "by": "8moments",
+    "byUrl": "https://pixabay.com/users/8moments-4532813/",
+    "url": "https://pixabay.com/photos/ice-iceberg-ice-floes-winter-cold-2062433/",
+    "site": "Pixabay"
+  },
+  "c346": {
+    "sourceId": 7731874,
+    "src": "/photos/c346.webp",
+    "alt": "autumn day, afternoon, landscape, pasture, sun, nature, trees, afternoon, landscape, pasture, pasture, sun, nature, nature, nature, nature, nature",
+    "by": "Bernhard_Schuermann",
+    "byUrl": "https://pixabay.com/users/Bernhard_Schuermann-20992548/",
+    "url": "https://pixabay.com/photos/autumn-day-afternoon-landscape-7731874/",
+    "site": "Pixabay"
+  },
+  "c364": {
+    "sourceId": 4328491,
+    "src": "/photos/c364.webp",
+    "alt": "pallets, euro pallet, stacked, transport, stack, wooden pallets, stacked up, warehouse, pallets, pallets, pallets, pallets, pallets, wooden pallets",
+    "by": "danielkirsch",
+    "byUrl": "https://pixabay.com/users/danielkirsch-4218687/",
+    "url": "https://pixabay.com/photos/pallets-euro-pallet-stacked-4328491/",
+    "site": "Pixabay"
+  },
+  "c382": {
+    "sourceId": 5891112,
+    "src": "/photos/c382.webp",
+    "alt": "man, portrait, model, beard, bearded man, bald, bald man, profile, male portrait, male model, expression, emotion, facial expression, studio photography, angry, pissed off, male, face, bald man, bald man, angry, angry, angry, angry, angry",
+    "by": "Engin_Akyurt",
+    "byUrl": "https://pixabay.com/users/Engin_Akyurt-3656355/",
+    "url": "https://pixabay.com/photos/man-portrait-model-beard-5891112/",
+    "site": "Pixabay"
+  },
+  "a1": {
+    "sourceId": 5011987,
+    "src": "/photos/a1.webp",
+    "alt": "worried, at the time, time, clock, wrist, look at the clock, young man, pointer, clock face, time display, late, too late, stop time, stopwatch, time change, clock hands, clocks, clockwork, summer time, nostalgia, too late, too late, too late, too late, too late, stopwatch",
+    "by": "Peggy_Marco",
+    "byUrl": "https://pixabay.com/users/Peggy_Marco-1553824/",
+    "url": "https://pixabay.com/photos/worried-at-the-time-time-clock-5011987/",
+    "site": "Pixabay"
+  },
+  "l4": {
+    "sourceId": 6392173,
+    "src": "/photos/l4.webp",
+    "alt": "train, railroad, trees, cargo, rails, railway, train tracks, tracks, cargo train, freight train, freight, travel, transport, nature, new york, cargo, cargo train, cargo train, freight train, freight train, freight train, freight train, freight train",
+    "by": "DivineLeaders",
+    "byUrl": "https://pixabay.com/users/DivineLeaders-11263161/",
+    "url": "https://pixabay.com/photos/train-railroad-trees-cargo-rails-6392173/",
+    "site": "Pixabay"
+  },
+  "l8": {
+    "sourceId": 5321111,
+    "src": "/photos/l8.webp",
+    "alt": "hamburg, port, container, algeciras, container ship, port cranes, ships, port, container, container, container, container, algeciras, container ship, container ship, container ship, container ship, container ship",
+    "by": "horstmueller_HH",
+    "byUrl": "https://pixabay.com/users/horstmueller_HH-10466898/",
+    "url": "https://pixabay.com/photos/hamburg-port-container-algeciras-5321111/",
+    "site": "Pixabay"
+  },
+  "a9": {
+    "sourceId": 194353,
+    "src": "/photos/a9.webp",
+    "alt": "artichokes, market, vegetables, boxes, price tag, price tag, price tag, price tag, price tag, price tag",
+    "by": "wuzzy2301",
+    "byUrl": "https://pixabay.com/users/wuzzy2301-42448/",
+    "url": "https://pixabay.com/photos/artichokes-market-vegetables-boxes-194353/",
+    "site": "Pixabay"
+  },
+  "a11": {
+    "sourceId": 438467,
+    "src": "/photos/a11.webp",
+    "alt": "car race, car wallpapers, ferrari, car, motorsports, racing car, race track, sports car, pirelli, race car, blue car, shiny car, race, vehicle, auto, automobile, motor, fast, drive, road",
+    "by": "Up-Free",
+    "byUrl": "https://pixabay.com/users/Up-Free-427519/",
+    "url": "https://pixabay.com/photos/car-race-ferrari-car-motorsports-438467/",
+    "site": "Pixabay"
+  },
+  "a19": {
+    "sourceId": 97544,
+    "src": "/photos/a19.webp",
+    "alt": "puzzle, game, puzzle piece, particles, share, to play, to build, tricky, difficult, patience, skill, handcraft, picture, hobby, leisure activity, leisure time, fun, puzzle, difficult, difficult, difficult, difficult, difficult",
+    "by": "Hans",
+    "byUrl": "https://pixabay.com/users/Hans-2/",
+    "url": "https://pixabay.com/photos/puzzle-game-puzzle-piece-particles-97544/",
+    "site": "Pixabay"
+  },
+  "l15": {
+    "sourceId": 2974155,
+    "src": "/photos/l15.webp",
+    "alt": "forklift, machinery, machine, building, warehouse, storage, hydraulic, cargo truck, load, transport, stowage, forklift, forklift, forklift, forklift, forklift",
+    "by": "Chepearroyo",
+    "byUrl": "https://pixabay.com/users/Chepearroyo-4252785/",
+    "url": "https://pixabay.com/photos/forklift-machinery-machine-building-2974155/",
+    "site": "Pixabay"
+  },
+  "l17": {
+    "sourceId": 1388933,
+    "src": "/photos/l17.webp",
+    "alt": "tank truck, truck, tractor, rest stop, semi-trailer, break, races, truck stop, turned off, long-distance haulage, liquids, logistics, transport, highway, trailer, truck, truck, truck, truck, truck, trailer, trailer",
+    "by": "hpgruesen",
+    "byUrl": "https://pixabay.com/users/hpgruesen-2204343/",
+    "url": "https://pixabay.com/photos/tank-truck-truck-tractor-rest-stop-1388933/",
+    "site": "Pixabay"
+  },
+  "l45": {
+    "sourceId": 1620595,
+    "src": "/photos/l45.webp",
+    "alt": "crash test, collision, rear-end collision, 60 km h, diversion, liability, insurance, mobile, smartphone, car insurance, claim, insurance, car insurance, car insurance, car insurance, car insurance, car insurance, claim",
+    "by": "Pixel-mixer",
+    "byUrl": "https://pixabay.com/users/Pixel-mixer-1197643/",
+    "url": "https://pixabay.com/photos/crash-test-collision-1620595/",
+    "site": "Pixabay"
+  },
+  "l49": {
+    "sourceId": 315881,
+    "src": "/photos/l49.webp",
+    "alt": "scanner, reader, code, wireless, scan, bluetooth, hand, isolated, numbers, cash desk, display, white, bar, retail, warehouse, business, line, fingers, commercial, light, data, barcode, identification, supply, supermarket, digital, freight, scanner, scanner, scanner, scanner, scanner, barcode, barcode",
+    "by": "PublicDomainPictures",
+    "byUrl": "https://pixabay.com/users/PublicDomainPictures-14/",
+    "url": "https://pixabay.com/photos/scanner-reader-code-wireless-scan-315881/",
+    "site": "Pixabay"
+  },
+  "vb-cut": {
+    "sourceId": 2759721,
+    "src": "/photos/vb-cut.webp",
+    "alt": "scissors, to cut, metal, sharp, handicrafts, thread, thread cutting, under water, blow, air bubbles, water bubbles, multicoloured, bandage scissors, cut off, cut here, cut the thread, beautiful, scissors under water, under water cutting, shear blade, scissors, scissors, scissors, scissors, under water, cut off, cut off, cut off, cut off, cut off",
+    "by": "ulleo",
+    "byUrl": "https://pixabay.com/users/ulleo-1834854/",
+    "url": "https://pixabay.com/photos/scissors-to-cut-metal-sharp-2759721/",
+    "site": "Pixabay"
+  },
+  "vb-build": {
+    "sourceId": 4686908,
+    "src": "/photos/vb-build.webp",
+    "alt": "construction site, workers, construction worker, construction, to build, building, construction site, construction site, workers, workers, construction worker, construction worker, construction worker, construction worker, construction, construction, construction, construction, construction",
+    "by": "wal_172619",
+    "byUrl": "https://pixabay.com/users/wal_172619-12138562/",
+    "url": "https://pixabay.com/photos/construction-site-workers-4686908/",
+    "site": "Pixabay"
+  },
+  "vb-buy": {
+    "sourceId": 4694470,
+    "src": "/photos/vb-buy.webp",
+    "alt": "shopping, online shopping, shopping cart, internet, website, purchase, to buy, shop, payment, shopping, online shopping, online shopping, online shopping, online shopping, online shopping",
+    "by": "PreisKing",
+    "byUrl": "https://pixabay.com/users/PreisKing-14621224/",
+    "url": "https://pixabay.com/photos/shopping-online-shopping-4694470/",
+    "site": "Pixabay"
+  },
+  "vb-teach": {
+    "sourceId": 8203962,
+    "src": "/photos/vb-teach.webp",
+    "alt": "children, school, education, instructor, kindergarten, group, teacher, learning, studying, teaching, preschool, people, lifestyle, music, instrument, kindergarten, teacher, teacher, teacher, teaching, teaching, teaching, teaching, teaching",
+    "by": "u_63z5ddwwp4",
+    "byUrl": "https://pixabay.com/users/u_63z5ddwwp4-38962615/",
+    "url": "https://pixabay.com/photos/children-school-education-8203962/",
+    "site": "Pixabay"
+  },
+  "vb-hear": {
+    "sourceId": 3079065,
+    "src": "/photos/vb-hear.webp",
+    "alt": "listening, listen, upset, hands on head, head, ear, hearing, hear, hands, woman, young, adult, beautiful, girl, idea, thinking, concentrating, contemplative, concentrate, finger, frustrated, portrait, desktop, office, business, businesswoman, occupation, working, project, work, job, skeptical, professional, communication, success, corporate, workplace, career, management, development, growth, company, opportunity, organizational, listening, listening, listening, listening, listening, listen, listen, listen, listen, ear, ear, hearing, hearing, hearing, hearing, hear, hear, hear",
+    "by": "RobinHiggins",
+    "byUrl": "https://pixabay.com/users/RobinHiggins-1321953/",
+    "url": "https://pixabay.com/photos/listening-listen-upset-3079065/",
+    "site": "Pixabay"
+  },
+  "vb-go": {
+    "sourceId": 7359030,
+    "src": "/photos/vb-go.webp",
+    "alt": "pedestrian, walking, sidewalk, pavement, city, crosswalk, street, road, pedestrian, walking, walking, sidewalk, sidewalk, sidewalk, sidewalk, sidewalk, city, crosswalk, crosswalk, street, street, street, road, road",
+    "by": "chris_muschard",
+    "byUrl": "https://pixabay.com/users/chris_muschard-12423344/",
+    "url": "https://pixabay.com/photos/pedestrian-walking-sidewalk-7359030/",
+    "site": "Pixabay"
+  },
+  "vb-write": {
+    "sourceId": 1851096,
+    "src": "/photos/vb-write.webp",
+    "alt": "fountain pen, note, notebook, page, paper, pen, spiral notebook, write, writing, notebook, pen, pen, pen, writing, writing, writing, writing, writing",
+    "by": "Pexels",
+    "byUrl": "https://pixabay.com/users/Pexels-2286921/",
+    "url": "https://pixabay.com/photos/fountain-pen-note-notebook-page-1851096/",
+    "site": "Pixabay"
+  },
+  "vb-eat": {
+    "sourceId": 601581,
+    "src": "/photos/vb-eat.webp",
+    "alt": "eating, restaurant, food, meal, lunch, dinner, table, drinks, plates, menu, delicious, snack, tasty, eating, restaurant, lunch, lunch, lunch, lunch, lunch, dinner, dinner, dinner, dinner, menu",
+    "by": "stokpic",
+    "byUrl": "https://pixabay.com/users/stokpic-692575/",
+    "url": "https://pixabay.com/photos/eating-restaurant-food-meal-lunch-601581/",
+    "site": "Pixabay"
+  },
+  "vb-speak": {
+    "sourceId": 3926344,
+    "src": "/photos/vb-speak.webp",
+    "alt": "public speaking, mic, microphone, stage, speech, speaker, sing, song, musician, music, performance, public, blur, audience, brave, stand out, success, attention, brown music, brown microphone, public speaking, public speaking, public speaking, public speaking, public speaking, microphone, microphone, speech, speech, speaker, United States, California, Anaheim",
+    "by": "lograstudio",
+    "byUrl": "https://pixabay.com/users/lograstudio-4785951/",
+    "url": "https://pixabay.com/photos/public-speaking-mic-microphone-3926344/",
+    "site": "Pixabay"
+  },
+  "vb-begin": {
+    "sourceId": 440901,
+    "src": "/photos/vb-begin.webp",
+    "alt": "cinder, start, stadium, lawn, sports, race, finish line, finish line, finish line, finish line, finish line, finish line",
+    "by": "jo_pictures",
+    "byUrl": "https://pixabay.com/users/jo_pictures-434085/",
+    "url": "https://pixabay.com/photos/cinder-start-stadium-lawn-sports-440901/",
+    "site": "Pixabay"
+  },
+  "vb-wear": {
+    "sourceId": 4274431,
+    "src": "/photos/vb-wear.webp",
+    "alt": "hard hat, safety hat, construction, hardhat, industrial, work, worker, engineer, safe, safety, professional, protective, protection, helmet, builder, hat, contractor, wear, occupation, industry, business, hard, hard hat, hard hat, construction, construction, construction, worker, engineer, safe, safety, safety, safety, safety, safety, contractor",
+    "by": "ZeeChow",
+    "byUrl": "https://pixabay.com/users/ZeeChow-9551095/",
+    "url": "https://pixabay.com/photos/hard-hat-safety-hat-construction-4274431/",
+    "site": "Pixabay"
+  },
+  "vb-run": {
+    "sourceId": 7056590,
+    "src": "/photos/vb-run.webp",
+    "alt": "running, woman, track, exercise, fitness, workout, sport, run, health, running track, track and field, running, running, running, running, running, track, track, exercise, exercise, fitness, fitness, workout, sport, run, run, health, health, running track, running track",
+    "by": "rojesh55",
+    "byUrl": "https://pixabay.com/users/rojesh55-12443406/",
+    "url": "https://pixabay.com/photos/running-woman-track-exercise-7056590/",
+    "site": "Pixabay"
+  },
+  "c106": {
+    "sourceId": 5503969,
+    "src": "/photos/c106.webp",
+    "alt": "packet, delivery, post, courier, shipping, transport, logistics, stock, load, goods, traffic, cargo, delivery, delivery, courier, courier, courier, courier, courier, logistics",
+    "by": "planet_fox",
+    "byUrl": "https://pixabay.com/users/planet_fox-4691618/",
+    "url": "https://pixabay.com/photos/packet-delivery-post-courier-5503969/",
+    "site": "Pixabay"
+  },
+  "c262": {
+    "sourceId": 932926,
+    "src": "/photos/c262.webp",
+    "alt": "office, work, desk, computer, workplace, indoor, business, home office, designer, web developer, gray business, gray computer, gray office, gray home, gray laptop, gray work, gray desk, gray design, gray company, gray web, office, office, office, office, office, work, work, computer, computer, business, business, home office, home office, home office, designer, designer",
+    "by": "tookapic",
+    "byUrl": "https://pixabay.com/users/tookapic-1386459/",
+    "url": "https://pixabay.com/photos/office-work-desk-computer-932926/",
+    "site": "Pixabay"
+  },
+  "c337": {
+    "sourceId": 1137993,
+    "src": "/photos/c337.webp",
+    "alt": "factory, plant, industrial hall, logistics, trade, transport, nature, warehouse, shelf, factory building, conveyor belt, tape",
+    "by": "falco",
+    "byUrl": "https://pixabay.com/users/falco-81448/",
+    "url": "https://pixabay.com/photos/factory-plant-industrial-hall-1137993/",
+    "site": "Pixabay"
+  },
+  "c349": {
+    "sourceId": 2375468,
+    "src": "/photos/c349.webp",
+    "alt": "food, lunch, doll, beans, cafe, restaurant, lunch, lunch, lunch, cafe, restaurant, restaurant, restaurant, restaurant, restaurant",
+    "by": "LuckyLife11",
+    "byUrl": "https://pixabay.com/users/LuckyLife11-5245360/",
+    "url": "https://pixabay.com/photos/food-lunch-doll-beans-cafe-2375468/",
+    "site": "Pixabay"
+  },
+  "c375": {
+    "sourceId": 5103358,
+    "src": "/photos/c375.webp",
+    "alt": "grandmom, tat-2000c, thermometer, exergen, temperature, forehead scan, body temperature, fever, sick, i, flu, corona, covid-19, pandemic, epidemic, scanning, comfort, thermometer, thermometer, thermometer, thermometer, temperature, temperature, body temperature, body temperature, body temperature, fever, sick, sick, sick, sick, sick",
+    "by": "ExergenCorporation",
+    "byUrl": "https://pixabay.com/users/ExergenCorporation-16269701/",
+    "url": "https://pixabay.com/photos/grandmom-tat-2000c-thermometer-5103358/",
+    "site": "Pixabay"
+  },
+  "v24": {
+    "sourceId": 4274609,
+    "src": "/photos/v24.webp",
+    "alt": "delivery, deliver, courier, parcel, package, shipping, box, service, movers, delivering, freight, transport, transportation, distribution, mail, export, job, shipment, saigon, vietnam, ho chi minh, life, black and white, fragile, gray life, gray email, gray job, gray box, gray service, delivery, deliver, deliver, deliver, deliver, deliver, courier, courier, courier, courier, courier, parcel, movers, shipment, shipment",
+    "by": "harpenz",
+    "byUrl": "https://pixabay.com/users/harpenz-606632/",
+    "url": "https://pixabay.com/photos/delivery-deliver-courier-parcel-4274609/",
+    "site": "Pixabay"
+  },
+  "v26": {
+    "sourceId": 1024264,
+    "src": "/photos/v26.webp",
+    "alt": "computer workshop, workshop, computing, class, hardware, repair, computers, school, computer, computer workshop, computer workshop, computer workshop, computer workshop, computer workshop, workshop, workshop, workshop, class, hardware, hardware, hardware, hardware, hardware, repair, repair, repair, repair, repair",
+    "by": "Maguiss",
+    "byUrl": "https://pixabay.com/users/Maguiss-305920/",
+    "url": "https://pixabay.com/photos/computer-workshop-workshop-computing-1024264/",
+    "site": "Pixabay"
+  },
+  "l32": {
+    "sourceId": 2002079,
+    "src": "/photos/l32.webp",
+    "alt": "van, delivery van, vehicle, white van, transport, delivery van, delivery van, delivery van, delivery van, white van, white van, white van, white van, white van",
+    "by": "weis2",
+    "byUrl": "https://pixabay.com/users/weis2-3393163/",
+    "url": "https://pixabay.com/photos/van-delivery-van-vehicle-white-van-2002079/",
+    "site": "Pixabay"
+  },
+  "vb-sit": {
+    "sourceId": 3347948,
+    "src": "/photos/vb-sit.webp",
+    "alt": "pensioners, men, domino game, sitting, cap, protected, pastime, park, leisure time, strategy, domino, old people, masculine, together, meeting point, city, city park, green area, time, game, interaction, collective, intellect, teamwork, group, people, friendship, contact, to play, communication, make contact, community, pensioners, pensioners, domino, old people, old people, old people, old people, old people, interaction",
+    "by": "anaterate",
+    "byUrl": "https://pixabay.com/users/anaterate-2348028/",
+    "url": "https://pixabay.com/photos/pensioners-men-domino-game-sitting-3347948/",
     "site": "Pixabay"
   }
 }

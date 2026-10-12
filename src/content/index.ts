@@ -52,6 +52,10 @@ export type Verb = {
   ex2Th?: string;
   ex3?: string;
   ex3Th?: string;
+  /** IPA of each form, e.g. { v1: "/ɡoʊ/", v2: "/wɛnt/", v3: "/ɡɔn/" }. */
+  ipa?: { v1: string; v2: string; v3: string };
+  icon?: string;
+  photo?: Photo;
 };
 export type Word = {
   id: string;
@@ -70,8 +74,10 @@ export type Word = {
   note?: string;
   /** Lucide icon name for the word's meaning (see components/word-icons.ts). */
   icon?: string;
-  /** What to search Pexels for: the scene of the example sentence. */
+  /** What to search for a stock photo: the scene of the example sentence. */
   photoQuery?: string;
+  /** Filled in by the server for pages that show photo cards. */
+  photo?: Photo;
 };
 
 export type Deck = { id: string; name: string; pre: string };
@@ -79,6 +85,9 @@ export type Deck = { id: string; name: string; pre: string };
 /** A stock photo of the scene in a word's example sentence, saved in public/photos (scripts/fetch-photos.mjs). */
 export type Photo = { sourceId: number; src: string; alt: string; by: string; byUrl: string; url: string; site: string };
 export const PHOTOS = photosData as Record<string, Photo>;
+
+/** Words and verbs with their photo attached, for pages that render photo cards. */
+export const withPhoto = <T extends { id: string }>(items: T[]) => items.map((x) => (PHOTOS[x.id] ? { ...x, photo: PHOTOS[x.id] } : x));
 
 export const LESSONS = grammarData as unknown as Lesson[];
 /** Pronunciation lessons. Same shape as grammar lessons, shown under /sounds. */

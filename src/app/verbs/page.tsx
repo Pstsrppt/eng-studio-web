@@ -3,7 +3,7 @@ import { connection } from "next/server";
 import { Suspense } from "react";
 import { PracticeSkeleton } from "@/components/skeleton";
 import { VerbsView } from "@/components/verbs-view";
-import { VERBS, VERB_GROUPS } from "@/content";
+import { VERBS, VERB_GROUPS, withPhoto } from "@/content";
 import { bangkokToday, getCards, getUser } from "@/lib/data";
 
 export const metadata: Metadata = { title: "V1-V2-V3" };
@@ -29,5 +29,5 @@ export default function VerbsPage() {
 async function VerbsWithCards() {
   await connection();
   const [user, cards] = await Promise.all([getUser(), getCards("verb")]);
-  return <VerbsView verbs={VERBS} groups={VERB_GROUPS} cards={cards} signedIn={Boolean(user)} today={bangkokToday()} />;
+  return <VerbsView verbs={withPhoto(VERBS)} groups={VERB_GROUPS} cards={cards} signedIn={Boolean(user)} today={bangkokToday()} />;
 }

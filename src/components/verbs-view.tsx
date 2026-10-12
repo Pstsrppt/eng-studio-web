@@ -8,7 +8,7 @@ import { verbFormOk } from "@/content/lookup";
 import type { CardMap } from "@/lib/data";
 import { buildQueue } from "@/lib/queue";
 import { speak } from "./speak";
-import { Sentence } from "./sentence";
+import { type Cover, PhotoWordCard } from "./photo-word-card";
 import { SpeakButton } from "./speak-button";
 
 type Groups = Record<VerbGroup, { name: string; tip: string }>;
@@ -94,7 +94,7 @@ function VerbTable({ verbs, cards }: { verbs: Verb[]; cards: CardMap }) {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-sm text-muted">แตะ ⌄ เพื่อดูประโยคที่ใช้ V2 และ V3 จริง</p>
+        <p className="text-sm text-muted">แตะ ⌄ เพื่อดูการ์ดคำ พร้อมประโยคที่ใช้ V2 และ V3 จริง</p>
         <div className="flex rounded-[10px] bg-[#e6ebe8] p-1 text-sm" role="radiogroup" aria-label="เรียงลำดับ">
           {([["az", "A–Z"], ["group", "ตามกลุ่ม"]] as const).map(([id, label]) => (
             <button key={id} type="button" role="radio" aria-checked={sort === id} onClick={() => setSort(id)}
@@ -146,7 +146,10 @@ function VerbTable({ verbs, cards }: { verbs: Verb[]; cards: CardMap }) {
                   {isOpen && (
                     <tr className="border-b border-line bg-paper/60">
                       <td colSpan={5} className="px-4 pt-1 pb-4">
-                        <VerbExamples verb={v} />
+                        {/* The table scrolls sideways on phones; keep the card inside the screen. */}
+                        <div className="max-sm:sticky max-sm:left-4 max-sm:w-[calc(100vw-4rem)]">
+                          <VerbCard verb={v} />
+                        </div>
                       </td>
                     </tr>
                   )}
@@ -160,20 +163,13 @@ function VerbTable({ verbs, cards }: { verbs: Verb[]; cards: CardMap }) {
   );
 }
 
-/** The verb used in two real sentences: once as V2, once as V3. */
-function VerbExamples({ verb }: { verb: Verb }) {
+/** A verb as a photo card: V1 as the word, V2 and V3 as its forms, one real sentence for each. */
+function VerbCard({ verb, cover }: { verb: Verb; cover?: Cover }) {
+  const word = { id: verb.id, en: verb.v1, th: verb.th, pos: "v" as const, ipa: verb.ipa?.v1, icon: verb.icon, level: verb.level };
+  const examples = ([["V2", verb.ex2, verb.ex2Th], ["V3", verb.ex3, verb.ex3Th]] as const).flatMap(([label, en, th]) => (en ? [{ label, en, th }] : []));
   return (
-    <div className="grid gap-3 sm:grid-cols-2">
-      {([["V2", verb.ex2, verb.ex2Th, "bg-verb-bg text-verb"], ["V3", verb.ex3, verb.ex3Th, "bg-obj-bg text-obj"]] as const).map(
-        ([label, en, th, tone]) =>
-          en && (
-            <div key={label} className="rounded-lg border border-line bg-surface px-3 py-2.5">
-              <span className={"mb-1 inline-block rounded px-1.5 py-0.5 font-mono text-[11px] " + tone}>{label}</span>
-              <Sentence en={en} th={th} />
-            </div>
-          ),
-      )}
-    </div>
+    <PhotoWordCard key={verb.id} word={word} photo={verb.photo} cover={cover} bookmark={{ kind: "verb" }} examples={examples}
+      forms={[{ label: "V2", text: verb.v2, ipa: verb.ipa?.v2 }, { label: "V3", text: verb.v3, ipa: verb.ipa?.v3 }]} />
   );
 }
 
@@ -248,23 +244,16 @@ function Drill({ pool, cards, today, groups, signedIn, round, onRestart, onRevie
     state === "ok" ? "border-[#9ccdb8] bg-obj-bg text-obj" : state === "no" ? "border-[#f3c3bd] bg-bad-bg text-bad" : "border-line bg-surface";
 
   return (
-    <form onSubmit={check} className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-      <div className="flex flex-col gap-4">
-        <div className="flex justify-between font-mono text-xs text-muted tabular">
-          <span>{groups[verb.g].name} · เหลือ {queue.length}</span>
-          <span>ถูก {stats.right}/{stats.done}</span>
-        </div>
-        <div className="flex flex-col gap-1.5 rounded-2xl bg-ink px-6 py-6 text-white">
-          <span className="font-mono text-[11px] tracking-[0.08em] text-mark">V1 · เติม V2 และ V3</span>
-          <div className="flex items-center justify-between gap-3">
-            <h2 className="text-5xl font-bold tracking-tight">{verb.v1}</h2>
-            <button type="button" onClick={() => speak(verb.v1)} className="rounded-full border border-[#2c3f37] px-3 py-1.5 text-xs text-[#c9d4cf]">ฟัง</button>
-          </div>
-          <p className="text-sm text-[#b7c5bf]">{verb.th}</p>
-        </div>
+    <form onSubmit={check} className="flex flex-col gap-4">
+      <div className="flex justify-between font-mono text-xs text-muted tabular">
+        <span>{groups[verb.g].name} · เหลือ {queue.length}</span>
+        <span>ถูก {stats.right}/{stats.done}</span>
       </div>
+      {/* V2, V3 and their sentences stay covered until the answer is checked. */}
+      <VerbCard verb={verb} cover={result === null ? { forms: true, examples: true } : {}} />
 
       <div className="flex flex-col gap-3">
+        <p className="text-sm text-muted">เติม V2 และ V3 ของ <b className="font-semibold text-ink">{verb.v1}</b></p>
         <div className="grid grid-cols-3 gap-2">
           <div className="rounded-[10px] border-[1.5px] border-line bg-surface px-3 py-2.5">
             <small className="block font-mono text-[10.5px] text-muted">V1</small>
@@ -292,7 +281,6 @@ function Drill({ pool, cards, today, groups, signedIn, round, onRestart, onRevie
             {!result && <span className="block text-xs">คำนี้จะกลับมาให้ลองอีกครั้งในรอบนี้</span>}
           </p>
         )}
-        {result !== null && <VerbExamples verb={verb} />}
 
         <button type="submit" className="btn self-start" disabled={result === null && (!v2.trim() || !v3.trim())}>
           {result === null ? "ตรวจ" : "ข้อต่อไป →"}
