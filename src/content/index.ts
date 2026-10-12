@@ -5,6 +5,7 @@ import vocabData from "./data/vocab.json";
 import decksData from "./data/decks.json";
 import levelsData from "./data/levels.json";
 import soundsData from "./data/sounds.json";
+import photosData from "./data/photos.json";
 import type { Pos } from "./pos";
 
 export type Level = "A1" | "A2" | "B1" | "B2";
@@ -55,6 +56,8 @@ export type Verb = {
 export type Word = {
   id: string;
   en: string;
+  /** American IPA, from the CMU Pronouncing Dictionary (a few fixed by hand). */
+  ipa?: string;
   th: string;
   ex?: string;
   /** Thai translation of `ex`. */
@@ -67,9 +70,15 @@ export type Word = {
   note?: string;
   /** Lucide icon name for the word's meaning (see components/word-icons.ts). */
   icon?: string;
+  /** What to search Pexels for: the scene of the example sentence. */
+  photoQuery?: string;
 };
 
 export type Deck = { id: string; name: string; pre: string };
+
+/** A stock photo of the scene in a word's example sentence, saved in public/photos (scripts/fetch-photos.mjs). */
+export type Photo = { sourceId: number; src: string; alt: string; by: string; byUrl: string; url: string; site: string };
+export const PHOTOS = photosData as Record<string, Photo>;
 
 export const LESSONS = grammarData as unknown as Lesson[];
 /** Pronunciation lessons. Same shape as grammar lessons, shown under /sounds. */

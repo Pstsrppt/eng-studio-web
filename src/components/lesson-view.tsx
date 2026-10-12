@@ -22,7 +22,7 @@ type Tab = (typeof TABS)[number]["id"];
 type Props = { lesson: Lesson; words: LessonWords; next?: { href: string; title: string }; passMark: number };
 
 export function LessonView({ lesson, words, next, passMark }: Props) {
-  const tabs = words.fresh.length > 0 ? TABS : TABS.filter((t) => t.id !== "words");
+  const tabs = words.fresh.length + words.review.length > 0 ? TABS : TABS.filter((t) => t.id !== "words");
   const [tab, setTab] = useState<Tab>(tabs[0].id);
   const go = (t: Tab) => {
     setTab(t);

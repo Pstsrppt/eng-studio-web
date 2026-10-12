@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, IBM_Plex_Mono, IBM_Plex_Sans_Thai } from "next/font/google";
+import { Bricolage_Grotesque, Fraunces, IBM_Plex_Mono, IBM_Plex_Sans_Thai } from "next/font/google";
 import Link from "next/link";
 import { Suspense } from "react";
 import { Account } from "@/components/account";
@@ -10,6 +10,7 @@ import "./globals.css";
 
 const body = IBM_Plex_Sans_Thai({ subsets: ["thai", "latin"], weight: ["400", "500", "600"], variable: "--font-body" });
 const display = Bricolage_Grotesque({ subsets: ["latin"], weight: ["500", "700"], variable: "--font-display-face" });
+const serif = Fraunces({ subsets: ["latin"], weight: ["600"], variable: "--font-serif-face" });
 const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono-face" });
 
 export const metadata: Metadata = {
@@ -29,7 +30,7 @@ function Brand() {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="th" className={`${body.variable} ${display.variable} ${mono.variable}`}>
+    <html lang="th" className={`${body.variable} ${display.variable} ${mono.variable} ${serif.variable}`}>
       <body className="min-h-dvh bg-paper text-ink">
         <StudyProvider>
           <div className="lg:grid lg:min-h-dvh lg:grid-cols-[232px_1fr]">

@@ -2,11 +2,20 @@
 
 import { useState } from "react";
 import type { LessonWord, LessonWords } from "@/content/lesson-words";
+import { PhotoWordCard } from "./photo-word-card";
 import { Sentence } from "./sentence";
 import { speak } from "./speak";
 import { POS_STYLE, PosBadge, WordIcon } from "./vocab-view";
 
 const CHECK_SIZE = 5;
+
+/** The sentence from the lesson first, then the word's own example if it is a different one. */
+function examplesOf(item: LessonWord) {
+  const list: { en: string; th?: string }[] = [];
+  if (item.ex) list.push({ en: item.ex, th: item.exTh });
+  if (item.word.ex && item.word.ex !== item.ex) list.push({ en: item.word.ex, th: item.word.exTh });
+  return list;
+}
 
 function hash(s: string) {
   let h = 2166136261;
@@ -25,60 +34,85 @@ function options(target: LessonWord, pool: LessonWord[]) {
 /** Step 1 of a lesson: meet the new words in a sentence from the lesson, then a quick listening check. */
 export function LessonWordsStep({ words, onNext }: { words: LessonWords; onNext: () => void }) {
   const [checking, setChecking] = useState(false);
-  const pool = [...words.fresh, ...words.more, ...words.review];
+  const [view, setView] = useState<"cards" | "list">("cards");
+  const [at, setAt] = useState(0);
+  const all = [...words.fresh, ...words.review];
+  const first = words.fresh[0] ?? all[0];
+  const current = all[Math.min(at, all.length - 1)];
+  const lastCard = at >= all.length - 1;
 
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h2 className="text-lg font-bold">คำใหม่ในบทนี้ {words.fresh.length} คำ</h2>
-          <p className="text-sm text-muted">รู้ความหมายก่อน แล้วทฤษฎีจะอ่านง่ายขึ้น · แตะไอคอนเพื่อฟังเสียง · สอบผ่านบทนี้แล้วคำเหล่านี้จะเข้าการ์ดทวนให้เอง</p>
+          <h2 className="text-lg font-bold">
+            คำศัพท์ในบทนี้ {all.length} คำ
+            {words.review.length > 0 && <span className="ml-2 text-sm font-normal text-muted">ใหม่ {words.fresh.length} · เรียนแล้ว {words.review.length}</span>}
+          </h2>
+          <p className="text-sm text-muted">รู้ความหมายก่อน แล้วทฤษฎีจะอ่านง่ายขึ้น · แตะไอคอนเพื่อฟังเสียง · สอบผ่านบทนี้แล้วคำใหม่จะเข้าการ์ดทวนให้เอง</p>
         </div>
         <button type="button" className="btn-ghost py-2" onClick={onNext}>รู้หมดแล้ว ข้ามไปทฤษฎี →</button>
       </div>
 
       {checking ? (
-        <QuickCheck words={words.fresh} pool={pool} onDone={onNext} onBack={() => setChecking(false)} />
+        <QuickCheck words={words.fresh.length >= 2 ? words.fresh : all} pool={all} onDone={onNext} onBack={() => setChecking(false)} />
       ) : (
         <>
-          <ol className="grid gap-2.5 lg:grid-cols-2">
-            {words.fresh.map((x) => <WordCard key={x.word.id} item={x} />)}
-          </ol>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex rounded-[10px] bg-[#e6ebe8] p-1 text-sm" role="radiogroup" aria-label="รูปแบบการดูคำศัพท์">
+              {([["cards", "ทีละคำ"], ["list", "ดูทั้งหมด"]] as const).map(([id, label]) => (
+                <button key={id} type="button" role="radio" aria-checked={view === id} onClick={() => setView(id)}
+                  className={"rounded-lg px-3 py-1.5 transition " + (view === id ? "bg-surface font-semibold shadow-sm" : "text-muted hover:text-ink")}>
+                  {label}
+                </button>
+              ))}
+            </div>
+            {view === "cards" && current && (
+              <span className="font-mono text-xs text-muted tabular">
+                คำที่ {at + 1}/{all.length} · {at < words.fresh.length ? "คำใหม่" : "เรียนแล้ว"}
+              </span>
+            )}
+          </div>
+
+          {view === "cards" && current ? (
+            <div className="flex flex-col gap-3">
+              <PhotoWordCard key={current.word.id} word={current.word} photo={current.photo} index={at} examples={examplesOf(current)} />
+              <div className="flex items-center justify-between gap-3">
+                <button type="button" className="btn-ghost py-2" disabled={at === 0} onClick={() => setAt(at - 1)}>← คำก่อน</button>
+                <div className="hidden flex-wrap justify-center gap-1 sm:flex" aria-hidden>
+                  {all.map((x, i) => (
+                    <span key={x.word.id} className={"size-1.5 rounded-full " + (i === at ? "bg-brand" : i < words.fresh.length ? "bg-[#b9c6c0]" : "bg-line")} />
+                  ))}
+                </div>
+                {lastCard ? (
+                  <button type="button" className="btn py-2" onClick={() => { setChecking(true); speak((first ?? current).word.en); }}>เช็คตัวเอง →</button>
+                ) : (
+                  <button type="button" className="btn py-2" onClick={() => { setAt(at + 1); speak(all[at + 1].word.en); }}>คำถัดไป →</button>
+                )}
+              </div>
+            </div>
+          ) : (
+            <ol className="grid gap-2.5 lg:grid-cols-2">
+              {words.fresh.map((x) => <WordCard key={x.word.id} item={x} />)}
+              {words.review.map((x) => <WordCard key={x.word.id} item={x} learned />)}
+            </ol>
+          )}
           <div className="card flex flex-wrap items-center justify-between gap-3 p-4">
-            <p className="text-sm">ลองเช็คตัวเองสั้น ๆ {Math.min(CHECK_SIZE, words.fresh.length)} ข้อ ฟังเสียงแล้วเลือกความหมาย</p>
+            <p className="text-sm">ลองเช็คตัวเองสั้น ๆ {Math.min(CHECK_SIZE, all.length)} ข้อ ฟังเสียงแล้วเลือกความหมาย</p>
             <div className="flex gap-2">
-              {words.fresh.length >= 2 && pool.length >= 2 && (
-                <button type="button" className="btn-ghost py-2" onClick={() => { setChecking(true); speak(words.fresh[0].word.en); }}>เช็คตัวเอง</button>
+              {all.length >= 2 && first && (
+                <button type="button" className="btn-ghost py-2" onClick={() => { setChecking(true); speak(first.word.en); }}>เช็คตัวเอง</button>
               )}
               <button type="button" className="btn" onClick={onNext}>ไปทฤษฎี →</button>
             </div>
           </div>
         </>
       )}
-
-      {(words.more.length > 0 || words.review.length > 0) && (
-        <details className="card p-4 text-sm">
-          <summary className="cursor-pointer font-semibold">
-            คำอื่นในบทนี้ {words.more.length + words.review.length} คำ
-            <span className="ml-1 font-normal text-muted">(เรียนแล้วในบทก่อน ๆ หรือเจอไม่บ่อย)</span>
-          </summary>
-          <ul className="mt-3 flex flex-wrap gap-1.5">
-            {[...words.more, ...words.review].map((x) => (
-              <li key={x.word.id}>
-                <button type="button" onClick={() => speak(x.word.en)}
-                  className="rounded-full border border-line bg-surface px-3 py-1 hover:border-brand">
-                  <b className="font-semibold">{x.word.en}</b> <span className="text-muted">{x.word.th}</span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </details>
-      )}
     </div>
   );
 }
 
-function WordCard({ item }: { item: LessonWord }) {
+function WordCard({ item, learned = false }: { item: LessonWord; learned?: boolean }) {
   const w = item.word;
   const tone = POS_STYLE[w.pos ?? "phrase"];
   return (
@@ -92,6 +126,7 @@ function WordCard({ item }: { item: LessonWord }) {
           <span className="text-lg font-bold leading-tight">{w.en}</span>
           {w.pos && <PosBadge pos={w.pos} />}
           {w.level && <span className="font-mono text-[10px] text-muted">{w.level}</span>}
+          {learned && <span className="rounded-full bg-[#eef2ef] px-2 py-0.5 text-[11px] text-muted">เรียนแล้ว</span>}
         </div>
         <p className="text-[15px]">{w.th}</p>
         {item.ex && (

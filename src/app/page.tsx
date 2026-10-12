@@ -1,3 +1,4 @@
+import { BookOpenIcon, LanguagesIcon, MousePointerClickIcon, RotateCcwIcon, Volume2Icon } from "lucide-react";
 import Link from "next/link";
 import { connection } from "next/server";
 import { Suspense, type ReactNode } from "react";
@@ -54,6 +55,7 @@ async function Today() {
       </header>
 
       <div className="flex min-w-0 flex-col gap-7">
+        {passedCount === 0 && <BeginnerNote />}
         <ContinueCard lesson={current} best={best[current.id]?.best} />
 
         <section>
@@ -89,6 +91,42 @@ async function Today() {
 
 const ROLE_TONES = ["bg-subj-bg text-subj", "bg-verb-bg text-verb", "bg-obj-bg text-obj"];
 
+const HELPS = [
+  { Icon: BookOpenIcon, text: "ทุกบทเริ่มจากคำศัพท์ที่ใช้ในบท พร้อมความหมาย เสียงอ่าน และประโยคตัวอย่าง" },
+  { Icon: MousePointerClickIcon, text: "คำภาษาอังกฤษที่มีเส้นประใต้ แตะเพื่อดูความหมายได้ทุกคำ" },
+  { Icon: LanguagesIcon, text: "ทุกประโยคมีคำแปลไทย เปิดหรือปิดได้ที่ปุ่ม “คำแปลไทย” ด้านบน" },
+  { Icon: Volume2Icon, text: "กดไอคอนลำโพงเพื่อฟังการออกเสียง" },
+  { Icon: RotateCcwIcon, text: "ศัพท์ที่เรียนแล้วจะกลับมาให้ทวนเองตามรอบ ไม่ต้องจดเอง" },
+];
+
+/** For learners who haven't passed a lesson yet: knowing few words is fine. */
+function BeginnerNote() {
+  return (
+    <section className="card border-[#bfd6cc] bg-brand-soft/60 p-5 sm:p-6" aria-labelledby="beginner-title">
+      <h2 id="beginner-title" className="text-xl font-bold">ไม่รู้ศัพท์เยอะ ก็เริ่มได้</h2>
+      <p className="mt-1 text-[15px] text-ink-2">เว็บนี้ออกแบบให้เริ่มจากศูนย์ได้ ทุกบทเรียนทีละขั้น:</p>
+      <ol className="mt-3 flex flex-wrap items-center gap-1.5 text-sm">
+        {["คำศัพท์", "ทฤษฎี", "ฝึก", "ทดสอบ"].map((step, i) => (
+          <li key={step} className="flex items-center gap-1.5">
+            <span className="rounded-full bg-surface px-3 py-1 font-semibold shadow-[0_0_0_1px_var(--color-line)]">
+              <span className="mr-1 font-mono text-xs text-muted">{i + 1}</span>{step}
+            </span>
+            {i < 3 && <span className="text-muted" aria-hidden>→</span>}
+          </li>
+        ))}
+      </ol>
+      <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
+        {HELPS.map(({ Icon, text }) => (
+          <li key={text} className="flex items-start gap-2.5 text-sm leading-6">
+            <span className="grid size-7 shrink-0 place-items-center rounded-lg bg-surface text-brand"><Icon className="size-4" aria-hidden /></span>
+            {text}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 function ContinueCard({ lesson, best }: { lesson: Lesson; best?: number }) {
   const parts = lesson.formula.split("+").map((p) => p.trim());
   const [en, th] = lesson.examples[0] ?? ["", ""];
@@ -113,6 +151,11 @@ function ContinueCard({ lesson, best }: { lesson: Lesson; best?: number }) {
           <Link href={`/grammar/${lesson.id}`} className="btn">{best ? "เรียนต่อ" : "เริ่มบทนี้"}</Link>
           <Link href="/grammar" className="btn-ghost">ดูทุกบท</Link>
         </div>
+        {lessonWords(lesson.id).fresh.length > 0 && (
+          <p className="-mt-1 text-sm text-muted">
+            บทนี้เริ่มจากคำศัพท์ {lessonWords(lesson.id).fresh.length} คำ พร้อมความหมาย เสียงอ่าน และตัวอย่าง ไม่ต้องรู้มาก่อน
+          </p>
+        )}
       </div>
       {best !== undefined && (
         <div className="grid size-28 place-items-center self-center rounded-full"

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { LESSONS, LEVELS, PASS_MARK } from "@/content";
+import { lessonWords } from "@/content/lesson-words";
 import { getLessonBest } from "@/lib/data";
 
 export const metadata: Metadata = { title: "Grammar" };
@@ -11,9 +12,12 @@ export default function GrammarPage() {
     <div className="flex flex-col gap-8">
       <header>
         <p className="eyebrow">Grammar · {LESSONS.length} บท</p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight">เรียนทีละบท ทฤษฎี ฝึก แล้วทดสอบ</h1>
+        <h1 className="mt-1 text-3xl font-bold tracking-tight">เรียนทีละบท คำศัพท์ ทฤษฎี ฝึก แล้วทดสอบ</h1>
         <p className="mt-2 max-w-[60ch] text-muted">
           แต่ละบทผ่านเมื่อได้ {PASS_MARK}% ขึ้นไป เรียงจากโครงสร้างที่ใช้บ่อยที่สุดก่อน
+        </p>
+        <p className="mt-3 max-w-[60ch] rounded-lg bg-brand-soft px-4 py-3 text-sm leading-6">
+          <b className="font-semibold">ไม่ต้องรู้ศัพท์มาก่อน</b> ทุกบทเริ่มจากคำศัพท์ที่ใช้ในบท พร้อมความหมายและเสียงอ่าน แล้วค่อยเรียนทฤษฎี ฝึก และทดสอบ
         </p>
       </header>
       <Suspense fallback={<LessonList best={{}} />}>
@@ -59,6 +63,9 @@ function LessonList({ best }: { best: Record<string, { best: number; passed: boo
                         <span className="block text-[15px] font-semibold leading-snug">{l.title}</span>
                         <span className="mt-1 block font-mono text-[11px] text-muted">
                           {b ? `คะแนนสูงสุด ${b.best}%` : l.formula}
+                        </span>
+                        <span className="mt-1 block text-[11px] text-brand">
+                          {lessonWords(l.id).fresh.length > 0 ? `คำใหม่ ${lessonWords(l.id).fresh.length} คำ` : "ใช้คำที่เรียนแล้ว"}
                         </span>
                       </span>
                     </Link>
