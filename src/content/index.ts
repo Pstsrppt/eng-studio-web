@@ -5,7 +5,8 @@ import vocabData from "./data/vocab.json";
 import decksData from "./data/decks.json";
 import levelsData from "./data/levels.json";
 import soundsData from "./data/sounds.json";
-import photosData from "./data/photos.json";
+import manifestData from "./data/image-manifest.json";
+import type { Diagram } from "./diagram";
 import type { Pos } from "./pos";
 
 export type Level = "A1" | "A2" | "B1" | "B2";
@@ -56,6 +57,7 @@ export type Verb = {
   ipa?: { v1: string; v2: string; v3: string };
   icon?: string;
   photo?: Photo;
+  diagram?: Diagram;
 };
 export type Word = {
   id: string;
@@ -76,18 +78,52 @@ export type Word = {
   icon?: string;
   /** What to search for a stock photo: the scene of the example sentence. */
   photoQuery?: string;
-  /** Filled in by the server for pages that show photo cards. */
+  /** Filled in by the server for pages that show photo cards (see withImages). */
   photo?: Photo;
+  diagram?: Diagram;
 };
 
 export type Deck = { id: string; name: string; pre: string };
 
-/** A stock photo of the scene in a word's example sentence, saved in public/photos (scripts/fetch-photos.mjs). */
-export type Photo = { sourceId: number; src: string; alt: string; by: string; byUrl: string; url: string; site: string };
-export const PHOTOS = photosData as Record<string, Photo>;
+/** An approved picture for a word, saved in public/photos. `url` and `byUrl` link to the source when there is one. */
+export type Photo = { src: string; alt: string; site: string; by?: string; byUrl?: string; url?: string };
 
-/** Words and verbs with their photo attached, for pages that render photo cards. */
-export const withPhoto = <T extends { id: string }>(items: T[]) => items.map((x) => (PHOTOS[x.id] ? { ...x, photo: PHOTOS[x.id] } : x));
+/**
+ * Every word's picture plan and its image's state (src/lib/image-pipeline.mjs, /review/images in dev).
+ * Keyed by word id, and each id is one meaning, so "pickup" the collection never gets a pickup truck.
+ */
+export type ImageStatus = "missing" | "candidate" | "approved" | "rejected";
+export type ImageEntry = {
+  word: string;
+  senseId: string;
+  kind: "photo" | "scene" | "diagram";
+  status: ImageStatus;
+  prompt?: string;
+  diagram?: Diagram;
+  image?: Photo & { origin: "pixabay" | "ai" | "own"; license?: string; tool?: string; sourceId?: number; approvedAt: string };
+  candidate?: Photo & { file: string; origin: string; tool?: string; warnings: string[]; addedAt: string; original?: { width: number; height: number } };
+  rejected?: { file: string; reason?: string; rejectedAt: string }[];
+};
+export const IMAGES = manifestData as unknown as Record<string, ImageEntry>;
+
+/** Only approved images reach the site; a waiting candidate never replaces the live one. */
+function photoOf(id: string): Photo | undefined {
+  const img = IMAGES[id]?.image;
+  return img && { src: img.src, alt: img.alt, site: img.site, by: img.by, byUrl: img.byUrl, url: img.url };
+}
+
+export const PHOTOS: Record<string, Photo> = Object.fromEntries(Object.keys(IMAGES).flatMap((id) => {
+  const p = photoOf(id);
+  return p ? [[id, p]] : [];
+}));
+
+/** Words and verbs with their approved photo and planned diagram attached, for pages that render photo cards. */
+export const withImages = <T extends { id: string }>(items: T[]): (T & { photo?: Photo; diagram?: Diagram })[] =>
+  items.map((x) => {
+    const photo = PHOTOS[x.id];
+    const diagram = IMAGES[x.id]?.diagram;
+    return photo || diagram ? { ...x, ...(photo && { photo }), ...(diagram && { diagram }) } : x;
+  });
 
 export const LESSONS = grammarData as unknown as Lesson[];
 /** Pronunciation lessons. Same shape as grammar lessons, shown under /sounds. */

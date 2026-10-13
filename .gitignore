@@ -40,3 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# images waiting for review (see src/lib/image-pipeline.mjs)
+/image-inbox/
+/image-review/

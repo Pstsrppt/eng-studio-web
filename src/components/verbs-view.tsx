@@ -104,7 +104,7 @@ function VerbTable({ verbs, cards }: { verbs: Verb[]; cards: CardMap }) {
           ))}
         </div>
       </div>
-      <div className="card overflow-x-auto">
+      <div className="card relative overflow-x-auto">
         <table className="w-full min-w-[560px] text-left text-[15px]">
           <thead className="eyebrow">
             <tr className="border-b border-line">
@@ -169,6 +169,7 @@ function VerbCard({ verb, cover }: { verb: Verb; cover?: Cover }) {
   const examples = ([["V2", verb.ex2, verb.ex2Th], ["V3", verb.ex3, verb.ex3Th]] as const).flatMap(([label, en, th]) => (en ? [{ label, en, th }] : []));
   return (
     <PhotoWordCard key={verb.id} word={word} photo={verb.photo} cover={cover} bookmark={{ kind: "verb" }} examples={examples}
+      diagram={{ type: "verb" }} verb={verb}
       forms={[{ label: "V2", text: verb.v2, ipa: verb.ipa?.v2 }, { label: "V3", text: verb.v3, ipa: verb.ipa?.v3 }]} />
   );
 }

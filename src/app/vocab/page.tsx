@@ -3,7 +3,7 @@ import { connection } from "next/server";
 import { Suspense } from "react";
 import { PracticeSkeleton } from "@/components/skeleton";
 import { VocabView } from "@/components/vocab-view";
-import { DECKS, WORDS, withPhoto } from "@/content";
+import { DECKS, WORDS, withImages } from "@/content";
 import { bangkokToday, getCards, getUser } from "@/lib/data";
 
 export const metadata: Metadata = { title: "คำศัพท์" };
@@ -28,5 +28,5 @@ export default function VocabPage() {
 async function VocabWithCards() {
   await connection();
   const [user, cards] = await Promise.all([getUser(), getCards("word")]);
-  return <VocabView words={withPhoto(WORDS)} decks={DECKS} cards={cards} signedIn={Boolean(user)} today={bangkokToday()} />;
+  return <VocabView words={withImages(WORDS)} decks={DECKS} cards={cards} signedIn={Boolean(user)} today={bangkokToday()} />;
 }

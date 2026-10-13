@@ -1,5 +1,5 @@
 // Which vocabulary words each lesson uses, so a lesson can teach its new words before the theory.
-import { LESSONS, PHOTOS, SOUNDS, WORDS, type Lesson, type Photo, type Word } from "./index";
+import { IMAGES, LESSONS, PHOTOS, SOUNDS, WORDS, type Lesson, type Photo, type Word } from "./index";
 
 /** Words shown at the start of a lesson: new ones first, then ones taught in earlier lessons. */
 export const WORDS_PER_LESSON = 20;
@@ -40,7 +40,7 @@ function wordsIn(lesson: Lesson): LessonWord[] {
   for (const s of sentences(lesson)) {
     for (const token of s.en.match(/[A-Za-z']+/g) ?? []) {
       const w = wordFor(token);
-      if (w && !seen.has(w.id)) seen.set(w.id, { word: w, ex: s.th ? s.en : w.ex, exTh: s.th ? s.th : w.exTh, photo: PHOTOS[w.id] });
+      if (w && !seen.has(w.id)) seen.set(w.id, { word: IMAGES[w.id]?.diagram ? { ...w, diagram: IMAGES[w.id].diagram } : w, ex: s.th ? s.en : w.ex, exTh: s.th ? s.th : w.exTh, photo: PHOTOS[w.id] });
     }
   }
   return [...seen.values()];

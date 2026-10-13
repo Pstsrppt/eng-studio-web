@@ -5,9 +5,11 @@ import Link from "next/link";
 import { useState, useTransition } from "react";
 import { addCard } from "@/app/actions";
 import type { Photo, Word } from "@/content";
+import type { Diagram, VerbForms } from "@/content/diagram";
 import { POS_LABEL } from "@/content/pos";
 import { Sentence } from "./sentence";
 import { speak } from "./speak";
+import { WordDiagram } from "./word-diagram";
 import { POS_STYLE, WordIcon } from "./word-bits";
 
 type Example = { en: string; th?: string; label?: string };
@@ -29,6 +31,9 @@ type Props = {
   bookmark?: { kind: "word" | "verb" } | false;
   /** Shown when the meaning is covered. */
   hint?: string;
+  /** Drawn instead of a photo for words like "although", or offered next to one (V1–V2–V3). */
+  diagram?: Diagram;
+  verb?: VerbForms;
 };
 
 /**
@@ -36,13 +41,15 @@ type Props = {
  * and a photo of the example's scene. Without a photo the word's icon stands in.
  * Flashcards and drills cover parts of it until the learner answers.
  */
-export function PhotoWordCard({ word, photo, examples, index, forms, cover = {}, bookmark = { kind: "word" }, hint }: Props) {
+export function PhotoWordCard({ word, photo, examples, index, forms, cover = {}, bookmark = { kind: "word" }, hint, diagram, verb }: Props) {
   const [shown, setShown] = useState(0);
+  const [view, setView] = useState<"photo" | "diagram">(photo ? "photo" : "diagram");
   const [saved, setSaved] = useState<"idle" | "added" | "signed-out">("idle");
   const [, start] = useTransition();
   const tone = POS_STYLE[word.pos ?? "phrase"];
   const example = examples[shown];
-  const showPhoto = photo && !cover.photo;
+  const showPhoto = photo && !cover.photo && (view === "photo" || !diagram);
+  const showDiagram = diagram && !cover.photo && !showPhoto;
 
   function save() {
     if (!bookmark || saved === "added") return;
@@ -59,10 +66,15 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
   }
 
   return (
-    <article className="relative grid overflow-hidden rounded-[28px] bg-surface shadow-[0_18px_40px_-24px_rgba(19,32,27,0.35)] ring-1 ring-line md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
-      {/* Photo: on top on phones, on the right with a curved edge from md up. */}
-      <div className="relative h-48 md:order-2 md:h-auto md:min-h-[360px]">
-        {showPhoto ? (
+    <article className="relative grid overflow-hidden rounded-[28px] bg-surface shadow-[0_18px_40px_-24px_rgba(19,32,27,0.35)] ring-1 ring-line md:grid-cols-[minmax(0,11fr)_minmax(0,9fr)]">
+      {/* Picture: on top on phones, on the right with a curved edge from md up. Text 55%, picture 45%. */}
+      <div className={"relative md:order-2 md:h-auto md:min-h-[360px] " + (showDiagram ? "flex" : "h-48")}>
+        {showDiagram ? (
+          <div className={"flex w-full items-center md:[clip-path:ellipse(100%_90%_at_100%_50%)] " + tone.tile}>
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(currentColor_1px,transparent_1.5px)] [background-size:18px_18px] opacity-15" aria-hidden />
+            <WordDiagram diagram={diagram} word={word.en} verb={verb} hide={{ word: cover.en, meaning: cover.th, forms: cover.forms, examples: cover.examples }} />
+          </div>
+        ) : showPhoto ? (
           // Already resized to 800×600 WebP by scripts/fetch-photos.mjs, so a plain img is enough.
           // eslint-disable-next-line @next/next/no-img-element
           <img src={photo.src} alt={photo.alt} loading="lazy"
@@ -76,6 +88,9 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
               <span className="absolute -bottom-3 left-5 font-serif text-[88px] leading-none font-semibold whitespace-nowrap opacity-10 md:text-[120px]">
                 {word.en}
               </span>
+            )}
+            {!cover.photo && (
+              <span className="absolute bottom-3 left-4 rounded-full bg-surface/80 px-2.5 py-1 text-[11px] text-ink-2 md:left-[22%]">กำลังจัดทำภาพประกอบ</span>
             )}
             <div className="absolute inset-0 grid place-items-center md:pl-10">
               <div className="grid size-24 rotate-[-4deg] place-items-center rounded-[28px] bg-surface shadow-[0_14px_30px_-12px_rgba(19,32,27,0.35)] md:size-32">
@@ -94,12 +109,22 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
             {saved === "added" ? <BookmarkCheckIcon className="size-5" /> : <BookmarkIcon className="size-5" />}
           </button>
         )}
-        {showPhoto && (
-          <a href={photo.url} target="_blank" rel="noreferrer"
-            className="absolute right-3 bottom-2 rounded bg-black/35 px-1.5 py-0.5 text-[10px] text-white/90 backdrop-blur hover:text-white">
-            ภาพ: {photo.by} / {photo.site}
-          </a>
+        {photo && diagram && !cover.photo && (
+          <div role="group" aria-label="มุมมองภาพ" className="absolute top-3 left-3 flex rounded-full bg-black/35 p-0.5 text-xs text-white backdrop-blur md:left-[24%]">
+            {(["photo", "diagram"] as const).map((v) => (
+              <button key={v} type="button" aria-pressed={view === v} onClick={() => setView(v)}
+                className={"rounded-full px-3 py-1.5 transition " + (view === v ? "bg-white font-semibold text-ink" : "hover:bg-white/15")}>
+                {v === "photo" ? "ภาพ" : diagram.type === "verb" ? "ไทม์ไลน์" : "ไดอะแกรม"}
+              </button>
+            ))}
+          </div>
         )}
+        {showPhoto && (() => {
+          // Stock photos link to their page; pictures made for the app (no url) just say where they came from.
+          const credit = `ภาพ: ${photo.by ? `${photo.by} / ` : ""}${photo.site}`;
+          const cls = "absolute right-3 bottom-2 rounded bg-black/35 px-1.5 py-0.5 text-[10px] text-white/90 backdrop-blur";
+          return photo.url ? <a href={photo.url} target="_blank" rel="noreferrer" className={cls + " hover:text-white"}>{credit}</a> : <span className={cls}>{credit}</span>;
+        })()}
       </div>
 
       <div className="flex min-w-0 flex-col gap-4 p-6 sm:p-8">

@@ -76,7 +76,7 @@ export function LessonWordsStep({ words, onNext }: { words: LessonWords; onNext:
 
           {view === "cards" && current ? (
             <div className="flex flex-col gap-3">
-              <PhotoWordCard key={current.word.id} word={current.word} photo={current.photo} index={at} examples={examplesOf(current)} />
+              <PhotoWordCard key={current.word.id} word={current.word} photo={current.photo} diagram={current.word.diagram} index={at} examples={examplesOf(current)} />
               <div className="flex items-center justify-between gap-3">
                 <button type="button" className="btn-ghost py-2" disabled={at === 0} onClick={() => setAt(at - 1)}>← คำก่อน</button>
                 <div className="hidden flex-wrap justify-center gap-1 sm:flex" aria-hidden>

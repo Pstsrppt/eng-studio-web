@@ -206,7 +206,7 @@ function Review({ pool, allWords, mode, cards, today, round, signedIn, onRestart
         <span>{mode === "recall" ? "จำได้" : "ถูก"} {stats.right}/{stats.done}</span>
       </div>
 
-      <PhotoWordCard key={word.id} word={word} photo={word.photo} cover={cover} hint={hint} bookmark={false}
+      <PhotoWordCard key={word.id} word={word} photo={word.photo} diagram={word.diagram} cover={cover} hint={hint} bookmark={false}
         examples={word.ex ? [{ en: word.ex, th: word.exTh }] : []} />
 
       <div className="flex flex-col gap-3">
