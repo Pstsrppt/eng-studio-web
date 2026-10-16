@@ -10,7 +10,8 @@
     "images:check": "node scripts/check-images.mjs",
     "images:ingest": "node scripts/ingest-images.mjs",
     "images:prompts": "node scripts/export-prompts.mjs",
-    "images:pixabay": "node --env-file=.env.local scripts/fetch-photos.mjs"
+    "images:pixabay": "node --env-file=.env.local scripts/fetch-photos.mjs",
+    "test": "vitest run"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
@@ -29,6 +30,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.4.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.2.7"
   }
 }

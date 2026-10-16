@@ -1,5 +1,6 @@
 -- English Studio database schema (PostgreSQL / Supabase).
 -- Paste this whole file into Supabase > SQL Editor and press Run.
+-- Then run each file in supabase/migrations/ in order (001_learning_studio.sql, ...).
 --
 -- Lesson content (grammar, verbs, vocabulary) lives in the repo under src/content,
 -- so these tables hold only what each learner does.

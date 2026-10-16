@@ -5,10 +5,12 @@ import Link from "next/link";
 import { Fragment, useRef, useState, useTransition } from "react";
 import { flushSync } from "react-dom";
 import { reviewCard } from "@/app/actions";
+import { gradeCard } from "@/app/learn/actions";
 import type { Deck, Word } from "@/content";
 import { POS_LABEL, WORD_LEVELS, type Pos, type WordLevel } from "@/content/pos";
 import { normalize } from "@/content/lookup";
 import type { CardMap } from "@/lib/data";
+import { boxFor } from "@/lib/learning/srs";
 import { buildQueue } from "@/lib/queue";
 import { speak } from "./speak";
 import { useStudy } from "./study-context";
@@ -164,8 +166,15 @@ function Review({ pool, allWords, mode, cards, today, round, signedIn, onRestart
     if (mode === "type") requestAnimationFrame(() => inputRef.current?.focus());
     start(async () => {
       try {
-        const card = await reviewCard({ itemId: word.id, kind: "word", correct: remembered });
-        if (card) onReviewed(word.id, card);
+        // Course words share the Learning Studio schedule (Again / Good); words the learner added stay on Leitner boxes.
+        if (word.id.startsWith("u-")) {
+          const card = await reviewCard({ itemId: word.id, kind: "word", correct: remembered });
+          if (card) onReviewed(word.id, card);
+        } else {
+          const res = await gradeCard({ itemId: word.id, grade: remembered ? "good" : "again", eventId: crypto.randomUUID() });
+          if (!res.ok && res.reason !== "signed-out") throw new Error(res.reason);
+          if (res.ok) onReviewed(word.id, { box: boxFor(res.intervalDays), due_on: res.dueOn });
+        }
         setSaveFailed(false);
       } catch {
         setSaveFailed(true);

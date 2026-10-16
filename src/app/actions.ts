@@ -35,7 +35,7 @@ export async function continueWithEmail(_: AuthState, form: FormData): Promise<A
   const signUp = await supabase.auth.signUp({
     email,
     password,
-    options: { emailRedirectTo: `${await origin()}/auth/callback` },
+    options: { emailRedirectTo: `${await origin()}/auth/callback?next=/welcome` },
   });
   if (signUp.error) {
     if (signUp.error.code === "user_already_exists") return { error: "รหัสผ่านไม่ถูกต้อง" };
@@ -183,5 +183,9 @@ export async function addCard(input: { itemId?: string; kind: "word" | "verb"; e
     { onConflict: "user_id,item_id", ignoreDuplicates: true },
   );
   if (error) throw new Error(error.message);
+  // Mark it for "Study Bookmarks", also when the word was already in the deck from a lesson.
+  // Before the Learning Studio migration the column doesn't exist; the card is still added.
+  const { error: markError } = await supabase.from("cards").update({ bookmarked: true }).eq("item_id", input.itemId ?? `u-${input.en.toLowerCase()}`);
+  if (markError && markError.code !== "42703" && markError.code !== "PGRST204") throw new Error(markError.message);
   return "added" as const;
 }

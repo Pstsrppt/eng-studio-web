@@ -72,6 +72,13 @@
   .ipa { font-family: "Segoe UI", "Noto Sans", "Lucida Sans Unicode", "Arial Unicode MS", system-ui, sans-serif; }
 }
 
+/* A card or summary arriving: a short rise, never long enough to slow the learner down. */
+@keyframes learn-in {
+  from { opacity: 0; transform: translateY(6px) scale(0.99); }
+  to { opacity: 1; transform: none; }
+}
+.learn-in { animation: learn-in 0.22s ease-out both; }
+
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }

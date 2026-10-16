@@ -355,9 +355,33 @@
       {
         "at": "2026-10-12T19:09:18.263Z",
         "action": "planned"
+      },
+      {
+        "at": "2026-10-13T21:31:26.552Z",
+        "action": "candidate",
+        "note": "c19.png"
       }
     ],
-    "status": "missing"
+    "status": "candidate",
+    "candidate": {
+      "file": "c19.webp",
+      "origin": "ai",
+      "tool": "ChatGPT",
+      "license": "AI-generated for this project by its owner",
+      "site": "AI",
+      "by": "ChatGPT",
+      "originalName": "c19.png",
+      "alt": "only",
+      "original": {
+        "width": 1448,
+        "height": 1086,
+        "format": "png"
+      },
+      "sha256": "96eaddd381d92445f3b8283b57f4a2637d8b4f0edec7a4c6433bdebb28c9c7bd",
+      "hash": "ff3f01010f030303",
+      "warnings": [],
+      "addedAt": "2026-10-13T21:31:26.551Z"
+    }
   },
   "c20": {
     "word": "almost",
@@ -545,9 +569,33 @@
       {
         "at": "2026-10-12T19:09:18.263Z",
         "action": "planned"
+      },
+      {
+        "at": "2026-10-14T05:27:25.569Z",
+        "action": "candidate",
+        "note": "c30.png"
       }
     ],
-    "status": "missing"
+    "status": "candidate",
+    "candidate": {
+      "file": "c30.webp",
+      "origin": "ai",
+      "tool": "ChatGPT",
+      "license": "AI-generated for this project by its owner",
+      "site": "AI",
+      "by": "ChatGPT",
+      "originalName": "c30.png",
+      "alt": "well",
+      "original": {
+        "width": 800,
+        "height": 600,
+        "format": "png"
+      },
+      "sha256": "9dc40aac9d54198eb98c5bf7ad18478eeb4585c43d90b3acc80aadffba37b530",
+      "hash": "839b33e3e0c68291",
+      "warnings": [],
+      "addedAt": "2026-10-14T05:27:25.568Z"
+    }
   },
   "c31": {
     "word": "together",
@@ -1145,9 +1193,33 @@
       {
         "at": "2026-10-12T19:09:18.263Z",
         "action": "planned"
+      },
+      {
+        "at": "2026-10-13T22:10:14.990Z",
+        "action": "candidate",
+        "note": "c58.png"
       }
     ],
-    "status": "missing"
+    "status": "candidate",
+    "candidate": {
+      "file": "c58.webp",
+      "origin": "ai",
+      "tool": "ChatGPT",
+      "license": "AI-generated for this project by its owner",
+      "site": "AI",
+      "by": "ChatGPT",
+      "originalName": "c58.png",
+      "alt": "look",
+      "original": {
+        "width": 800,
+        "height": 600,
+        "format": "png"
+      },
+      "sha256": "20cf9e7115f084d187ac1cd1d58f01d314735f1add51cef26b786676233a072e",
+      "hash": "cfc90c05010b377f",
+      "warnings": [],
+      "addedAt": "2026-10-13T22:10:14.990Z"
+    }
   },
   "c59": {
     "word": "wait",
@@ -1266,9 +1338,33 @@
       {
         "at": "2026-10-12T19:09:18.263Z",
         "action": "planned"
+      },
+      {
+        "at": "2026-10-13T22:28:38.950Z",
+        "action": "candidate",
+        "note": "c63.png"
       }
     ],
-    "status": "missing"
+    "status": "candidate",
+    "candidate": {
+      "file": "c63.webp",
+      "origin": "ai",
+      "tool": "ChatGPT",
+      "license": "AI-generated for this project by its owner",
+      "site": "AI",
+      "by": "ChatGPT",
+      "originalName": "c63.png",
+      "alt": "answer",
+      "original": {
+        "width": 1448,
+        "height": 1086,
+        "format": "png"
+      },
+      "sha256": "f415889ba53ddabd574d4d181e90a3a69eeeb86b2436a1f76ddd3d7df0ebd381",
+      "hash": "c7c711000700bbff",
+      "warnings": [],
+      "addedAt": "2026-10-13T22:28:38.949Z"
+    }
   },
   "c64": {
     "word": "move",
@@ -1333,9 +1429,33 @@
       {
         "at": "2026-10-12T19:09:18.263Z",
         "action": "planned"
+      },
+      {
+        "at": "2026-10-13T23:39:01.642Z",
+        "action": "candidate",
+        "note": "c66.png"
       }
     ],
-    "status": "missing"
+    "status": "candidate",
+    "candidate": {
+      "file": "c66.webp",
+      "origin": "ai",
+      "tool": "ChatGPT (ตัดขอบโดย Claude)",
+      "license": "AI-generated for this project by its owner",
+      "site": "AI",
+      "by": "ChatGPT (ตัดขอบโดย Claude)",
+      "originalName": "c66.png",
+      "alt": "stay",
+      "original": {
+        "width": 800,
+        "height": 600,
+        "format": "png"
+      },
+      "sha256": "8e020edac3b62f8cad7fd79371ed906e4b519c48a5562c9d110e5dff9bd6e244",
+      "hash": "000300001ad9f8ff",
+      "warnings": [],
+      "addedAt": "2026-10-13T23:39:01.642Z"
+    }
   },
   "c67": {
     "word": "walk",
@@ -1373,9 +1493,33 @@
       {
         "at": "2026-10-12T19:09:18.263Z",
         "action": "planned"
+      },
+      {
+        "at": "2026-10-13T23:39:01.917Z",
+        "action": "candidate",
+        "note": "c68.png"
       }
     ],
-    "status": "missing"
+    "status": "candidate",
+    "candidate": {
+      "file": "c68.webp",
+      "origin": "ai",
+      "tool": "ChatGPT (ตัดขอบโดย Claude)",
+      "license": "AI-generated for this project by its owner",
+      "site": "AI",
+      "by": "ChatGPT (ตัดขอบโดย Claude)",
+      "originalName": "c68.png",
+      "alt": "remember",
+      "original": {
+        "width": 800,
+        "height": 600,
+        "format": "png"
+      },
+      "sha256": "ae43c18e649304e3730c371503534472e837a072e70d2d298689f86e65cbeb13",
+      "hash": "27cf0f1d3c29a8a8",
+      "warnings": [],
+      "addedAt": "2026-10-13T23:39:01.917Z"
+    }
   },
   "c69": {
     "word": "hope",
@@ -1612,9 +1756,33 @@
       {
         "at": "2026-10-12T19:09:18.263Z",
         "action": "planned"
+      },
+      {
+        "at": "2026-10-13T22:10:15.399Z",
+        "action": "candidate",
+        "note": "c81.png"
       }
     ],
-    "status": "missing"
+    "status": "candidate",
+    "candidate": {
+      "file": "c81.webp",
+      "origin": "ai",
+      "tool": "ChatGPT",
+      "license": "AI-generated for this project by its owner",
+      "site": "AI",
+      "by": "ChatGPT",
+      "originalName": "c81.png",
+      "alt": "like",
+      "original": {
+        "width": 800,
+        "height": 600,
+        "format": "png"
+      },
+      "sha256": "f9d16bf9efe8a903ff52efaacd639f476ecf0aa98a0f5923cc020588d7a1de08",
+      "hash": "4767770f07c584e0",
+      "warnings": [],
+      "addedAt": "2026-10-13T22:10:15.399Z"
+    }
   },
   "c82": {
     "word": "prefer",
@@ -5836,9 +6004,33 @@
       {
         "at": "2026-10-12T19:09:18.263Z",
         "action": "planned"
+      },
+      {
+        "at": "2026-10-13T22:10:14.650Z",
+        "action": "candidate",
+        "note": "c257.png"
       }
     ],
-    "status": "missing"
+    "status": "candidate",
+    "candidate": {
+      "file": "c257.webp",
+      "origin": "ai",
+      "tool": "ChatGPT",
+      "license": "AI-generated for this project by its owner",
+      "site": "AI",
+      "by": "ChatGPT",
+      "originalName": "c257.png",
+      "alt": "small",
+      "original": {
+        "width": 800,
+        "height": 600,
+        "format": "png"
+      },
+      "sha256": "e56d29a4d6594318fd63cab6f51ec295ab389cc812ff0fa1a5351dc949b51062",
+      "hash": "f8f7d1808c9cbc80",
+      "warnings": [],
+      "addedAt": "2026-10-13T22:10:14.649Z"
+    }
   },
   "c258": {
     "word": "large",
@@ -5876,9 +6068,33 @@
       {
         "at": "2026-10-12T19:09:18.263Z",
         "action": "planned"
+      },
+      {
+        "at": "2026-10-13T22:10:14.814Z",
+        "action": "candidate",
+        "note": "c259.png"
       }
     ],
-    "status": "missing"
+    "status": "candidate",
+    "candidate": {
+      "file": "c259.webp",
+      "origin": "ai",
+      "tool": "ChatGPT",
+      "license": "AI-generated for this project by its owner",
+      "site": "AI",
+      "by": "ChatGPT",
+      "originalName": "c259.png",
+      "alt": "long",
+      "original": {
+        "width": 1448,
+        "height": 1086,
+        "format": "png"
+      },
+      "sha256": "bb8e6c4f04d2933a7bf00ed96713bea43e5f7b8f0f970de0ef586a5331402ecf",
+      "hash": "1f3f041846ee3e62",
+      "warnings": [],
+      "addedAt": "2026-10-13T22:10:14.814Z"
+    }
   },
   "c260": {
     "word": "high",
@@ -5968,9 +6184,33 @@
       {
         "at": "2026-10-12T19:09:18.263Z",
         "action": "planned"
+      },
+      {
+        "at": "2026-10-13T23:39:01.430Z",
+        "action": "candidate",
+        "note": "c263.png"
       }
     ],
-    "status": "missing"
+    "status": "candidate",
+    "candidate": {
+      "file": "c263.webp",
+      "origin": "ai",
+      "tool": "ChatGPT (ตัดขอบโดย Claude)",
+      "license": "AI-generated for this project by its owner",
+      "site": "AI",
+      "by": "ChatGPT (ตัดขอบโดย Claude)",
+      "originalName": "c263.png",
+      "alt": "old",
+      "original": {
+        "width": 800,
+        "height": 600,
+        "format": "png"
+      },
+      "sha256": "219c9473bee2508a6a984acfc0f34fab8c5d6fa7acb232c6b614130e92b8c88d",
+      "hash": "8083ff4743437d03",
+      "warnings": [],
+      "addedAt": "2026-10-13T23:39:01.429Z"
+    }
   },
   "c264": {
     "word": "easy",
@@ -9250,9 +9490,33 @@
       {
         "at": "2026-10-12T19:09:18.263Z",
         "action": "planned"
+      },
+      {
+        "at": "2026-10-13T23:39:02.139Z",
+        "action": "candidate",
+        "note": "v22.png"
       }
     ],
-    "status": "missing"
+    "status": "candidate",
+    "candidate": {
+      "file": "v22.webp",
+      "origin": "ai",
+      "tool": "ChatGPT (ตัดขอบโดย Claude)",
+      "license": "AI-generated for this project by its owner",
+      "site": "AI",
+      "by": "ChatGPT (ตัดขอบโดย Claude)",
+      "originalName": "v22.png",
+      "alt": "help",
+      "original": {
+        "width": 800,
+        "height": 600,
+        "format": "png"
+      },
+      "sha256": "7f51c80fb918901b2e73b2c5c40266ad26de6a6666ba9df91339d52833c59805",
+      "hash": "9c380c8d8dadffcf",
+      "warnings": [],
+      "addedAt": "2026-10-13T23:39:02.139Z"
+    }
   },
   "v23": {
     "word": "arrive",
@@ -12225,9 +12489,33 @@
       {
         "at": "2026-10-12T19:09:18.263Z",
         "action": "planned"
+      },
+      {
+        "at": "2026-10-13T23:39:01.113Z",
+        "action": "candidate",
+        "note": "a22.png"
       }
     ],
-    "status": "missing"
+    "status": "candidate",
+    "candidate": {
+      "file": "a22.webp",
+      "origin": "ai",
+      "tool": "ChatGPT (ตัดขอบโดย Claude)",
+      "license": "AI-generated for this project by its owner",
+      "site": "AI",
+      "by": "ChatGPT (ตัดขอบโดย Claude)",
+      "originalName": "a22.png",
+      "alt": "full",
+      "original": {
+        "width": 800,
+        "height": 600,
+        "format": "png"
+      },
+      "sha256": "ae605192acc065a749246bd60bdcc555d2c8a93f4d4ae39a0c5fa817e6cdf7e2",
+      "hash": "3f3f3e3e3e383e00",
+      "warnings": [],
+      "addedAt": "2026-10-13T23:39:01.112Z"
+    }
   },
   "a23": {
     "word": "empty",
