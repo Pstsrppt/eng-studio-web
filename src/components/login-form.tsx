@@ -1,14 +1,22 @@
 "use client";
 
+import { MailCheckIcon } from "lucide-react";
 import Link from "next/link";
-import { useActionState } from "react";
-import { continueWithEmail, continueWithGoogle, type AuthState } from "@/app/actions";
+import { useActionState, useEffect, useState } from "react";
+import { continueWithEmail, continueWithGoogle, resendConfirmation, type AuthState } from "@/app/actions";
 
 export function LoginForm({ configured, google }: { configured: boolean; google: boolean }) {
   const [emailState, emailAction, emailPending] = useActionState(continueWithEmail, {} as AuthState);
   const [googleState, googleAction, googlePending] = useActionState(continueWithGoogle, {} as AuthState);
   const state = googleState.error ? googleState : emailState;
   const pending = emailPending || googlePending;
+  // Controlled, so the address survives the form reset React does after each submit.
+  const [email, setEmail] = useState("");
+  const [dismissed, setDismissed] = useState<string | null>(null);
+
+  if (emailState.sent && dismissed !== emailState.sent) {
+    return <CheckEmail email={emailState.sent} note={emailState.info} onBack={() => setDismissed(emailState.sent!)} />;
+  }
 
   return (
     <div className="card flex flex-col gap-5 p-6">
@@ -30,7 +38,8 @@ export function LoginForm({ configured, google }: { configured: boolean; google:
       <form action={emailAction} className="flex flex-col gap-4">
         <label className="flex flex-col gap-1.5 text-sm font-medium">
           อีเมล
-          <input id="email" name="email" type="email" required autoComplete="email" className="input" placeholder="you@example.com" />
+          <input id="email" name="email" type="email" required autoComplete="email" className="input" placeholder="you@example.com"
+            value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
         <label className="flex flex-col gap-1.5 text-sm font-medium">
           <span className="flex items-baseline justify-between">
@@ -42,10 +51,56 @@ export function LoginForm({ configured, google }: { configured: boolean; google:
         {state.error && <p className="text-sm text-bad" role="alert">{state.error}</p>}
         {state.info && <p className="text-sm text-obj" role="status">{state.info}</p>}
         <button className="btn py-3 text-[15px]" disabled={pending || !configured}>
-          {emailPending ? "รอสักครู่…" : "เข้าใช้งาน"}
+          {emailPending ? "กำลังตรวจสอบ…" : "เข้าใช้งาน"}
         </button>
+        {emailPending && <p className="text-xs text-muted" role="status">ถ้าเป็นบัญชีใหม่ ระบบกำลังส่งอีเมลยืนยัน อาจใช้เวลาประมาณ 5–10 วินาที</p>}
         <p className="text-xs leading-5 text-muted">ยังไม่มีบัญชีก็กดปุ่มเดียวกันนี้ ระบบจะสร้างบัญชีให้อัตโนมัติ</p>
       </form>
+    </div>
+  );
+}
+
+/** Shown instead of the form once a confirmation link is on its way, so the learner knows what to do next. */
+function CheckEmail({ email, note, onBack }: { email: string; note?: string; onBack: () => void }) {
+  const [state, resend, pending] = useActionState(resendConfirmation, {} as AuthState);
+  // Supabase sends at most one link a minute to the same address.
+  const [wait, setWait] = useState(note ? 0 : 60);
+  useEffect(() => {
+    if (wait <= 0) return;
+    const t = setTimeout(() => setWait((w) => w - 1), 1000);
+    return () => clearTimeout(t);
+  }, [wait]);
+  const [lastResent, setLastResent] = useState<AuthState | null>(null);
+  if (state !== lastResent && state.resent) {
+    setLastResent(state);
+    setWait(60);
+  }
+
+  return (
+    <div className="card flex flex-col items-center gap-4 p-6 text-center" role="status" aria-live="polite">
+      <span className="learn-in grid size-16 place-items-center rounded-full bg-brand-soft text-brand">
+        <MailCheckIcon className="size-8" aria-hidden />
+      </span>
+      <div>
+        <h2 className="text-2xl font-bold">เช็กอีเมลของคุณ</h2>
+        {note && <p className="mt-1 text-sm text-muted">{note}</p>}
+        <p className="mt-2 leading-7">เราส่งลิงก์ยืนยันไปที่<br /><b className="break-all">{email}</b></p>
+      </div>
+      <ol className="w-full list-decimal rounded-lg bg-paper px-4 py-3 pl-9 text-left text-sm leading-7">
+        <li>เปิดกล่องจดหมายของอีเมลนี้</li>
+        <li>เปิดอีเมลจาก <b>English Studio</b> แล้วกดปุ่ม <b>ยืนยันอีเมล</b></li>
+        <li>เว็บจะเปิดหน้า &ldquo;ยืนยันอีเมลสำเร็จ&rdquo; และพาเข้าใช้งานให้เลย</li>
+      </ol>
+      <p className="text-xs leading-5 text-muted">ไม่เจออีเมล? รอ 1–2 นาที แล้วดูในโฟลเดอร์ <b>สแปม</b> หรือ <b>โปรโมชัน</b> ด้วย</p>
+      <form action={resend} className="flex w-full flex-col gap-2">
+        <input type="hidden" name="email" value={email} />
+        <button className="btn-ghost w-full" disabled={pending || wait > 0}>
+          {pending ? "กำลังส่ง…" : wait > 0 ? `ส่งลิงก์อีกครั้งได้ใน ${wait} วินาที` : "ส่งลิงก์อีกครั้ง"}
+        </button>
+        {state.resent && <p className="text-sm text-obj">ส่งลิงก์ใหม่แล้ว ใช้ลิงก์ในอีเมลฉบับล่าสุด</p>}
+        {state.error && <p className="text-sm text-bad" role="alert">{state.error}</p>}
+      </form>
+      <button type="button" onClick={onBack} className="text-sm text-brand underline underline-offset-2">ใช้อีเมลอื่น หรือเข้าสู่ระบบ</button>
     </div>
   );
 }

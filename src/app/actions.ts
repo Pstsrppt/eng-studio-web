@@ -6,7 +6,8 @@ import { getUser } from "@/lib/data";
 import { hasSupabase } from "@/lib/supabase/env";
 import { createClient } from "@/lib/supabase/server";
 
-export type AuthState = { error?: string; info?: string };
+/** `sent`: the address a confirmation link was just sent to (the form then shows "check your email"). */
+export type AuthState = { error?: string; info?: string; sent?: string; resent?: boolean };
 
 const NOT_CONFIGURED = "ยังไม่ได้ตั้งค่า Supabase ในไฟล์ .env.local";
 
@@ -27,7 +28,7 @@ export async function continueWithEmail(_: AuthState, form: FormData): Promise<A
   const signIn = await supabase.auth.signInWithPassword({ email, password });
   if (!signIn.error) redirect("/");
   if (signIn.error.code === "email_not_confirmed") {
-    return { info: "บัญชีนี้ยังไม่ได้ยืนยันอีเมล เปิดอีเมลแล้วกดลิงก์ยืนยันก่อน" };
+    return { sent: email, info: "บัญชีนี้สมัครไว้แล้วแต่ยังไม่ได้ยืนยันอีเมล" };
   }
   if (signIn.error.code !== "invalid_credentials") return { error: signIn.error.message };
 
@@ -45,7 +46,25 @@ export async function continueWithEmail(_: AuthState, form: FormData): Promise<A
   if (signUp.data.session) redirect("/");
   // With email confirmation on, an existing email comes back with no identities.
   if (signUp.data.user && signUp.data.user.identities?.length === 0) return { error: "รหัสผ่านไม่ถูกต้อง" };
-  return { info: `สร้างบัญชีแล้ว ส่งลิงก์ยืนยันไปที่ ${email} กดลิงก์นั้นแล้วจะเข้าใช้งานได้ทันที` };
+  return { sent: email };
+}
+
+/** Sends the sign-up confirmation link again. Supabase allows one every 60 seconds per address. */
+export async function resendConfirmation(_: AuthState, form: FormData): Promise<AuthState> {
+  if (!hasSupabase) return { error: NOT_CONFIGURED };
+  const email = String(form.get("email") ?? "").trim();
+  if (!email) return { error: "ไม่พบอีเมล" };
+  const supabase = await createClient();
+  const { error } = await supabase.auth.resend({
+    type: "signup",
+    email,
+    options: { emailRedirectTo: `${await origin()}/auth/callback?next=/welcome` },
+  });
+  if (error) {
+    if (error.status === 429 || error.code === "over_email_send_rate_limit") return { sent: email, error: "เพิ่งส่งไปเมื่อสักครู่ รอประมาณ 1 นาทีแล้วลองอีกครั้ง" };
+    return { sent: email, error: error.message };
+  }
+  return { sent: email, resent: true };
 }
 
 /** Sends the learner to Google's sign-in page, which returns to /auth/callback. */
