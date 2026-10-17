@@ -64,7 +64,7 @@ export function LoginForm({ configured, google }: { configured: boolean; google:
 function CheckEmail({ email, note, onBack }: { email: string; note?: string; onBack: () => void }) {
   const [state, resend, pending] = useActionState(resendConfirmation, {} as AuthState);
   // Supabase sends at most one link a minute to the same address.
-  const [wait, setWait] = useState(note ? 0 : 60);
+  const [wait, setWait] = useState(60);
   useEffect(() => {
     if (wait <= 0) return;
     const t = setTimeout(() => setWait((w) => w - 1), 1000);

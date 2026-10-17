@@ -2,6 +2,8 @@
   English Studio: sign-up confirmation email.
   Paste into Supabase > Authentication > Emails > Templates > "Confirm sign up" (Source / HTML).
   Subject: ยืนยันอีเมลของคุณ · English Studio
+  The link goes to our own /auth/confirm (token hash), so it works from any browser and shows our address.
+  Needs Site URL (Authentication > URL Configuration) set to https://eng-studio-web.vercel.app
   Tables and inline styles only: Gmail and Outlook ignore <style> blocks and modern CSS.
 -->
 <!doctype html>
@@ -14,7 +16,7 @@
 </head>
 <body style="margin:0;padding:0;background:#f4f6f3;">
 <!-- Preview line shown next to the subject in the inbox -->
-<div style="display:none;max-height:0;overflow:hidden;opacity:0;">กดปุ่มยืนยันเพื่อเริ่มเรียนภาษาอังกฤษกับ English Studio ลิงก์ใช้ได้ภายใน 24 ชั่วโมง</div>
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">กดปุ่มยืนยันเพื่อเริ่มเรียนภาษาอังกฤษกับ English Studio ลิงก์ใช้ได้ภายใน 1 ชั่วโมง</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f6f3;">
   <tr>
     <td align="center" style="padding:32px 16px;">
@@ -40,7 +42,7 @@
             <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 26px;">
               <tr>
                 <td style="background:#0e5a45;border-radius:10px;">
-                  <a href="{{ .ConfirmationURL }}" target="_blank"
+                  <a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email&next=/welcome" target="_blank"
                      style="display:inline-block;padding:14px 30px;font-family:Tahoma,Arial,sans-serif;font-size:16px;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:10px;">
                     ยืนยันอีเมล
                   </a>
@@ -51,7 +53,7 @@
               ถ้าปุ่มกดไม่ได้ ให้คัดลอกลิงก์นี้ไปวางในเบราว์เซอร์:
             </p>
             <p style="margin:0 0 24px;font-family:'Courier New',monospace;font-size:12px;line-height:1.6;word-break:break-all;">
-              <a href="{{ .ConfirmationURL }}" target="_blank" style="color:#0e5a45;">{{ .ConfirmationURL }}</a>
+              <a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email&next=/welcome" target="_blank" style="color:#0e5a45;">{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email&next=/welcome</a>
             </p>
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
               <tr>
@@ -67,7 +69,7 @@
         <tr>
           <td style="background:#ffffff;border:1px solid #dce3de;border-top:0;border-radius:0 0 16px 16px;padding:18px 32px 24px;">
             <p style="margin:0;font-family:Tahoma,Arial,sans-serif;font-size:12px;line-height:1.7;color:#5e6c66;">
-              ลิงก์นี้ใช้ได้ภายใน 24 ชั่วโมง ถ้าคุณไม่ได้สมัครใช้งาน ไม่ต้องทำอะไร บัญชีนี้จะไม่ถูกเปิดใช้งาน
+              ลิงก์นี้ใช้ได้ภายใน 1 ชั่วโมง ถ้าคุณไม่ได้สมัครใช้งาน ไม่ต้องทำอะไร บัญชีนี้จะไม่ถูกเปิดใช้งาน
             </p>
           </td>
         </tr>

@@ -28,7 +28,20 @@ export async function continueWithEmail(_: AuthState, form: FormData): Promise<A
   const signIn = await supabase.auth.signInWithPassword({ email, password });
   if (!signIn.error) redirect("/");
   if (signIn.error.code === "email_not_confirmed") {
-    return { sent: email, info: "บัญชีนี้สมัครไว้แล้วแต่ยังไม่ได้ยืนยันอีเมล" };
+    // The first link may never have arrived (or expired), so send a fresh one; the panel says so.
+    const { error } = await supabase.auth.resend({
+      type: "signup",
+      email,
+      options: { emailRedirectTo: `${await origin()}/auth/callback?next=/welcome` },
+    });
+    const limited = error && (error.status === 429 || error.code === "over_email_send_rate_limit");
+    if (error && !limited) return { error: error.message };
+    return {
+      sent: email,
+      info: limited
+        ? "บัญชีนี้สมัครไว้แล้วแต่ยังไม่ได้ยืนยัน เพิ่งส่งลิงก์ไปเมื่อไม่ถึงนาทีที่แล้ว ใช้ลิงก์ในอีเมลล่าสุด"
+        : "บัญชีนี้สมัครไว้แล้วแต่ยังไม่ได้ยืนยัน จึงส่งลิงก์ใหม่ให้อีกครั้ง",
+    };
   }
   if (signIn.error.code !== "invalid_credentials") return { error: signIn.error.message };
 
