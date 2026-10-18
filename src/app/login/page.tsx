@@ -5,7 +5,7 @@ import { hasGoogle, hasSupabase } from "@/lib/supabase/env";
 
 export const metadata: Metadata = { title: "เข้าสู่ระบบ" };
 
-export default function LoginPage({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
+export default function LoginPage({ searchParams }: { searchParams: Promise<{ error?: string; signedout?: string }> }) {
   return (
     <div className="mx-auto flex max-w-sm flex-col gap-5 pt-4 lg:pt-12">
       <header>
@@ -27,8 +27,9 @@ export default function LoginPage({ searchParams }: { searchParams: Promise<{ er
 }
 
 /** Explains why an email link landed here instead of signing the learner in. */
-async function LinkNotice({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
-  const { error } = await searchParams;
+async function LinkNotice({ searchParams }: { searchParams: Promise<{ error?: string; signedout?: string }> }) {
+  const { error, signedout } = await searchParams;
+  if (signedout) return <p role="status" className="rounded-lg bg-obj-bg px-4 py-3 text-sm text-obj">ออกจากระบบแล้ว ความคืบหน้าทั้งหมดยังบันทึกอยู่ เข้าสู่ระบบอีกครั้งเมื่อไหร่ก็เรียนต่อได้</p>;
   if (error !== "confirm") return null;
   return (
     <div role="alert" className="rounded-lg bg-[#fbf3cf] px-4 py-3 text-sm leading-6">

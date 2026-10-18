@@ -124,7 +124,7 @@ export async function signOut() {
     const supabase = await createClient();
     await supabase.auth.signOut();
   }
-  redirect("/login");
+  redirect("/login?signedout=1");
 }
 
 type Wrong = { wrong: string; correct: string; note?: string };

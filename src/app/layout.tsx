@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Fraunces, IBM_Plex_Mono, IBM_Plex_Sans_Thai } from "next/font/google";
 import Link from "next/link";
 import { Suspense } from "react";
-import { Account } from "@/components/account";
+import { Account, MobileAccount, MobileAccountFallback } from "@/components/account";
 import { SideNav, TabBar } from "@/components/nav";
 import { StudyProvider } from "@/components/study-context";
 import { ThaiToggle } from "@/components/thai-toggle";
@@ -55,8 +55,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <header className="sticky top-0 z-30 flex items-center justify-between gap-3 bg-ink px-4 py-3 text-white lg:hidden">
                 <Brand />
                 <div className="flex items-center gap-2">
-                  <Link href="/guide" className="rounded-full border border-[#2c3f37] px-3 py-1.5 text-xs text-[#c9d4cf]">คู่มือ</Link>
                   <ThaiToggle dark />
+                  {/* The guide, mistakes and sign-out live on /account on phones. */}
+                  <Suspense fallback={<MobileAccountFallback />}><MobileAccount /></Suspense>
                 </div>
               </header>
               <main className="mx-auto w-full max-w-6xl px-4 pt-6 pb-28 sm:px-6 lg:px-10 lg:pt-9 lg:pb-12">{children}</main>
