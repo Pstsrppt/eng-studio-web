@@ -6,7 +6,8 @@ import { PlanCheck } from "@/components/plan-check";
 import { Sentence } from "@/components/sentence";
 import { LESSONS, VERBS, WORDS, type Lesson } from "@/content";
 import { lessonWords } from "@/content/lesson-words";
-import { bangkokToday, getDashboard, getUser } from "@/lib/data";
+import { bangkokToday, getDashboard, getPlacements, getUser } from "@/lib/data";
+import { startLesson, type PlacedAt } from "@/lib/placement";
 
 export default function TodayPage() {
   return (
@@ -31,10 +32,13 @@ type Dash = NonNullable<Awaited<ReturnType<typeof getDashboard>>>;
 async function Today() {
   // The plan depends on today's date, so render on every request.
   await connection();
-  const [user, dash] = await Promise.all([getUser(), getDashboard()]);
+  const [user, dash, placements] = await Promise.all([getUser(), getDashboard(), getPlacements()]);
   const today = dash?.today ?? bangkokToday();
   const best = dash?.best ?? {};
-  const current = LESSONS.find((l) => !best[l.id]?.passed) ?? LESSONS[LESSONS.length - 1];
+  // After a placement test, start from the learner's level instead of lesson one (easier lessons stay open).
+  const placed = placements[0]?.level as PlacedAt | undefined;
+  const from = placed ? LESSONS.indexOf(startLesson(LESSONS, placed) ?? LESSONS[0]) : 0;
+  const current = LESSONS.find((l, i) => i >= from && !best[l.id]?.passed) ?? LESSONS.find((l) => !best[l.id]?.passed) ?? LESSONS[LESSONS.length - 1];
   const passedCount = LESSONS.filter((l) => best[l.id]?.passed).length;
   const dueTotal = dash ? dash.due.word + dash.due.verb : 0;
   const reviewDone = Boolean(dash && (dash.reviewsToday >= 10 || (dueTotal === 0 && dash.reviewsToday > 0)));
@@ -46,7 +50,7 @@ async function Today() {
         <div>
           <p className="text-sm text-muted">{dateLabel}</p>
           <h1 className="mt-1 text-3xl font-bold tracking-tight lg:text-[34px]">
-            {passedCount === 0 ? "เริ่มบทแรกกันเลย" : `เรียนต่อจากบทที่ ${LESSONS.indexOf(current) + 1}`}
+            {passedCount === 0 && !placed ? "เริ่มบทแรกกันเลย" : `${passedCount === 0 ? "เริ่มเรียน" : "เรียนต่อ"}จากบทที่ ${LESSONS.indexOf(current) + 1}`}
           </h1>
         </div>
         {!user && (
@@ -55,7 +59,8 @@ async function Today() {
       </header>
 
       <div className="flex min-w-0 flex-col gap-7">
-        {passedCount === 0 && <BeginnerNote />}
+        {passedCount === 0 && !placed && <PlacementInvite />}
+        {passedCount === 0 && !placed && <BeginnerNote />}
         <ContinueCard lesson={current} best={best[current.id]?.best} />
 
         <section>
@@ -100,6 +105,20 @@ const HELPS = [
 ];
 
 /** For learners who haven't passed a lesson yet: knowing few words is fine. */
+/** For learners who may already know some English: find their level instead of starting at lesson one. */
+function PlacementInvite() {
+  return (
+    <section className="flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-ink p-5 text-white sm:p-6">
+      <div className="min-w-0">
+        <p className="font-mono text-[11px] tracking-[0.08em] text-mark">ไม่แน่ใจว่าควรเริ่มตรงไหน?</p>
+        <p className="mt-1 font-display text-xl font-bold">สอบวัดระดับ 5–8 นาที</p>
+        <p className="mt-1 text-sm text-[#b7c5bf]">รู้ระดับ A1–B2 ของตัวเอง แล้วเริ่มบทที่เหมาะ ไม่ต้องเรียนซ้ำเรื่องที่รู้แล้ว</p>
+      </div>
+      <Link href="/placement" className="inline-flex items-center gap-2 rounded-xl bg-mark px-5 py-3 font-semibold text-ink">เริ่มสอบ</Link>
+    </section>
+  );
+}
+
 function BeginnerNote() {
   return (
     <section className="card border-[#bfd6cc] bg-brand-soft/60 p-5 sm:p-6" aria-labelledby="beginner-title">

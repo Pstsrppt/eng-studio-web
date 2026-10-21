@@ -13,9 +13,19 @@ const display = Bricolage_Grotesque({ subsets: ["latin"], weight: ["500", "700"]
 const serif = Fraunces({ subsets: ["latin"], weight: ["600"], variable: "--font-serif-face" });
 const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono-face" });
 
+const DESCRIPTION = "เรียนภาษาอังกฤษสำหรับคนทำงาน ไวยากรณ์ทีละบท คำศัพท์พร้อมภาพและเสียง ทวนอัตโนมัติ เรียนฟรีบนมือถือ";
+
 export const metadata: Metadata = {
+  // Link previews need absolute image URLs; Vercel sets the production host for us.
+  metadataBase: new URL(process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000"),
   title: { default: "English Studio", template: "%s · English Studio" },
-  description: "เรียนภาษาอังกฤษทีละขั้น ตั้งแต่โครงประโยคจนใช้ทำงานได้",
+  description: DESCRIPTION,
+  applicationName: "English Studio",
+  openGraph: { type: "website", siteName: "English Studio", locale: "th_TH", title: "English Studio · เรียนภาษาอังกฤษสำหรับคนทำงาน", description: DESCRIPTION },
+  twitter: { card: "summary_large_image", title: "English Studio · เรียนภาษาอังกฤษสำหรับคนทำงาน", description: DESCRIPTION },
+  // Opened from the iPhone home screen: full screen, with a black status bar above the dark header.
+  appleWebApp: { capable: true, title: "English Studio", statusBarStyle: "black" },
+  formatDetection: { telephone: false },
 };
 
 export const viewport: Viewport = { themeColor: "#13201b", viewportFit: "cover" };

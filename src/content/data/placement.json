@@ -1,0 +1,29 @@
+[
+  { "id": "p-a1-1", "level": "A1", "lesson": "1-3", "q": "She ___ a teacher.", "o": ["am", "is", "are", "be"], "a": 1, "why": "ประธานเอกพจน์ she/he/it ใช้ is" },
+  { "id": "p-a1-2", "level": "A1", "lesson": "a1-4", "q": "There ___ two trucks in the yard.", "o": ["is", "are", "am", "be"], "a": 1, "why": "ของหลายชิ้น (two trucks) ใช้ There are" },
+  { "id": "p-a1-3", "level": "A1", "lesson": "1-2", "q": "He ___ coffee every morning.", "o": ["drink", "drinks", "drinking", "is drink"], "a": 1, "why": "ทำเป็นประจำ + ประธาน he ใช้กริยาเติม s" },
+  { "id": "p-a1-4", "level": "A1", "lesson": "1-4", "q": "___ you work on Saturday?", "o": ["Do", "Does", "Are", "Is"], "a": 0, "why": "คำถามของกริยาทั่วไปกับ you ขึ้นต้นด้วย Do" },
+  { "id": "p-a1-5", "level": "A1", "lesson": "1-9", "q": "The meeting is ___ Monday.", "o": ["in", "on", "at", "to"], "a": 1, "why": "วันในสัปดาห์ใช้ on" },
+  { "id": "p-a1-6", "level": "A1", "lesson": "1-5", "q": "This is ___ urgent order.", "o": ["a", "an", "many", "two"], "a": 1, "why": "urgent ขึ้นต้นด้วยเสียงสระ ใช้ an" },
+
+  { "id": "p-a2-1", "level": "A2", "lesson": "1-7", "q": "Yesterday I ___ the invoice to the client.", "o": ["send", "sent", "sending", "sends"], "a": 1, "why": "yesterday = จบแล้วในอดีต ใช้ V2 (sent)" },
+  { "id": "p-a2-2", "level": "A2", "lesson": "a2-4", "q": "The truck is ___ than the van.", "o": ["big", "bigger", "biggest", "more big"], "a": 1, "why": "เปรียบเทียบสองสิ่งด้วย than ใช้ -er (bigger)" },
+  { "id": "p-a2-3", "level": "A2", "lesson": "a2-5", "q": "How ___ boxes do we need?", "o": ["much", "many", "any", "some"], "a": 1, "why": "boxes นับได้ ใช้ How many" },
+  { "id": "p-a2-4", "level": "A2", "lesson": "a2-9", "q": "If the ship ___ late, we will call the customer.", "o": ["arrives", "will arrive", "arrived", "arriving"], "a": 0, "why": "If แบบที่ 1: ประโยค if ใช้ปัจจุบัน ส่วนผลใช้ will" },
+  { "id": "p-a2-5", "level": "A2", "lesson": "a2-7", "q": "You ___ wear a helmet in the warehouse. It's the rule.", "o": ["must", "can", "might", "would"], "a": 0, "why": "เป็นกฎที่ต้องทำ ใช้ must" },
+  { "id": "p-a2-6", "level": "A2", "lesson": "a2-8", "q": "I ___ finished the report. Here it is.", "o": ["have", "has", "am", "did"], "a": 0, "why": "เพิ่งทำเสร็จและส่งผลถึงตอนนี้ ใช้ have + V3" },
+
+  { "id": "p-b1-1", "level": "B1", "lesson": "b1-1", "q": "The goods ___ to Japan last week.", "o": ["shipped", "were shipped", "are shipping", "have ship"], "a": 1, "why": "สินค้าถูกส่ง (passive) ในอดีต ใช้ was/were + V3" },
+  { "id": "p-b1-2", "level": "B1", "lesson": "b1-2", "q": "I ___ here since 2020.", "o": ["work", "am working", "have been working", "worked"], "a": 2, "why": "ทำมาตั้งแต่อดีตจนถึงตอนนี้ (since) ใช้ have been + V-ing" },
+  { "id": "p-b1-3", "level": "B1", "lesson": "b1-3", "q": "If I ___ more time, I would learn Japanese.", "o": ["have", "had", "will have", "would have"], "a": 1, "why": "สมมติสิ่งที่ไม่จริงตอนนี้ (If แบบที่ 2) ใช้ V2 คู่กับ would" },
+  { "id": "p-b1-4", "level": "B1", "lesson": "b1-4", "q": "The driver ___ delivered the parcel was very polite.", "o": ["which", "who", "what", "where"], "a": 1, "why": "ขยายคน (the driver) ใช้ who" },
+  { "id": "p-b1-5", "level": "B1", "lesson": "b1-5", "q": "We decided ___ a new supplier.", "o": ["to choose", "choosing", "choose", "chose"], "a": 0, "why": "decide ตามด้วย to + V1" },
+  { "id": "p-b1-6", "level": "B1", "lesson": "b1-6", "q": "Last week Tom said, \"I am tired.\" → Tom said that he ___ tired.", "o": ["is", "was", "be", "were"], "a": 1, "why": "เล่าคำพูดในอดีต ถอยกาลจาก am เป็น was" },
+
+  { "id": "p-b2-1", "level": "B2", "lesson": "b2-1", "q": "When I arrived, the meeting ___.", "o": ["had already started", "has already started", "already starts", "was already start"], "a": 0, "why": "ประชุมเริ่มก่อนที่ฉันมาถึง (เกิดก่อนอีกเรื่องในอดีต) ใช้ had + V3" },
+  { "id": "p-b2-2", "level": "B2", "lesson": "b2-2", "q": "If we ___ the space earlier, we wouldn't have paid extra.", "o": ["booked", "had booked", "would book", "have booked"], "a": 1, "why": "ถ้าตอนนั้น... (If แบบที่ 3) ใช้ had + V3 คู่กับ would have" },
+  { "id": "p-b2-3", "level": "B2", "lesson": "b2-3", "q": "He isn't answering his phone. He ___ be in a meeting.", "o": ["must", "can't", "mustn't", "shouldn't"], "a": 0, "why": "เดาอย่างมั่นใจจากเหตุผล ใช้ must be" },
+  { "id": "p-b2-4", "level": "B2", "lesson": "b2-4", "q": "The price is high. ___, the quality is excellent.", "o": ["Therefore", "However", "Because", "So"], "a": 1, "why": "สองประโยคขัดกัน ใช้ However" },
+  { "id": "p-b2-5", "level": "B2", "lesson": "b2-4", "q": "Sales dropped this month; ___, we need a new plan.", "o": ["however", "therefore", "although", "unless"], "a": 1, "why": "ประโยคหลังเป็นผลของประโยคแรก ใช้ therefore" },
+  { "id": "p-b2-6", "level": "B2", "lesson": "b2-4", "q": "The shipment was delayed ___ bad weather.", "o": ["due to", "because", "although", "despite of"], "a": 0, "why": "ตามด้วยคำนาม (bad weather) ใช้ due to; because ต้องตามด้วยประโยค" }
+]

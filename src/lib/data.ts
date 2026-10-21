@@ -145,3 +145,18 @@ export async function getMistakes(): Promise<MistakeGroup[] | null> {
   }
   return [...groups.values()].sort((a, b) => b.n - a.n);
 }
+
+export type PlacementRecord = { level: string; correct: number; total: number; created_at: string };
+
+/** The learner's placement results, newest first. Empty before migration 003 or for visitors. */
+export async function getPlacements(): Promise<PlacementRecord[]> {
+  const user = await getUser();
+  if (!user) return [];
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("placement_results")
+    .select("level, correct, total, created_at")
+    .order("created_at", { ascending: false })
+    .limit(10);
+  return error ? [] : (data ?? []);
+}

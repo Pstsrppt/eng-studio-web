@@ -1,4 +1,4 @@
-import { BookOpenIcon, ChevronRightIcon, LayersIcon, LogOutIcon, RotateCcwIcon, type LucideIcon } from "lucide-react";
+import { BookOpenIcon, ChevronRightIcon, GaugeIcon, LayersIcon, LogOutIcon, RotateCcwIcon, type LucideIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -21,6 +21,7 @@ export default function AccountPage() {
       <nav aria-label="เมนูเพิ่มเติม" className="card divide-y divide-line">
         <Row href="/mistakes" icon={RotateCcwIcon} title="ทบทวนข้อผิด" sub="ทำข้อที่เคยตอบผิดซ้ำจนถูก" />
         <Row href="/learn" icon={LayersIcon} title="ฝึกศัพท์" sub="Smart Flashcard และ Daily Quest" />
+        <Row href="/placement" icon={GaugeIcon} title="สอบวัดระดับ" sub="รู้ระดับ A1–B2 และบทที่ควรเริ่ม" />
         <Row href="/guide" icon={BookOpenIcon} title="คู่มือ" sub="n. v. adj. V3 กริยาช่วย คืออะไร" />
       </nav>
     </div>
