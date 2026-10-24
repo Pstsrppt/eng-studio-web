@@ -1,4 +1,4 @@
-import { BookOpenIcon, ChevronRightIcon, GaugeIcon, LayersIcon, LogOutIcon, RotateCcwIcon, type LucideIcon } from "lucide-react";
+import { AudioLinesIcon, BookMarkedIcon, BookOpenIcon, RepeatIcon, ChevronRightIcon, GaugeIcon, LayersIcon, LogOutIcon, RotateCcwIcon, type LucideIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -19,6 +19,9 @@ export default function AccountPage() {
         <Who />
       </Suspense>
       <nav aria-label="เมนูเพิ่มเติม" className="card divide-y divide-line">
+        <Row href="/grammar" icon={BookMarkedIcon} title="บทเรียนทั้งหมด" sub="ไวยากรณ์ A1–B2 ทีละบท" />
+        <Row href="/verbs" icon={RepeatIcon} title="V1-V2-V3" sub="กริยาผันไม่ปกติ ฝึกพิมพ์และตาราง" />
+        <Row href="/sounds" icon={AudioLinesIcon} title="ออกเสียง" sub="เสียงที่คนไทยมักออกผิด" />
         <Row href="/mistakes" icon={RotateCcwIcon} title="ทบทวนข้อผิด" sub="ทำข้อที่เคยตอบผิดซ้ำจนถูก" />
         <Row href="/learn" icon={LayersIcon} title="ฝึกศัพท์" sub="Smart Flashcard และ Daily Quest" />
         <Row href="/placement" icon={GaugeIcon} title="สอบวัดระดับ" sub="รู้ระดับ A1–B2 และบทที่ควรเริ่ม" />

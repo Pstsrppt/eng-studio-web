@@ -21,7 +21,7 @@ export default function WelcomePage() {
         </Suspense>
       </header>
       <div className="grid w-full gap-3 text-left sm:grid-cols-2">
-        <Link href="/" className="card flex items-start gap-3 p-4 transition hover:border-brand">
+        <Link href="/roadmap" className="card flex items-start gap-3 p-4 transition hover:border-brand">
           <BookOpenIcon className="mt-0.5 size-5 shrink-0 text-brand" aria-hidden />
           <span><b className="block font-semibold">เริ่มบทเรียนแรก</b><span className="text-sm text-muted">ไวยากรณ์ทีละบท พร้อมแบบฝึกหัด</span></span>
         </Link>

@@ -30,7 +30,7 @@ export function HubContinue({ userKey, startLabel, startHref, detail, hideWhenId
       <div className="min-w-0">
         <p className="font-mono text-[11px] tracking-[0.08em] text-mark">{resume ? "เรียนค้างไว้" : "รอบถัดไป"}</p>
         <p className="mt-1 font-display text-2xl font-bold">{resume ? `ต่อคำที่ ${resume.pos + 1} จาก ${resume.queue.length}` : startLabel}</p>
-        <p className="mt-1 text-sm text-[#b7c5bf]">{resume ? (resume.guest ? "รอบทดลอง (ไม่บันทึกผล) เล่นต่อจากคำที่ค้างได้เลย" : "ผลที่ให้คะแนนไปแล้วบันทึกครบ เริ่มต่อจากคำที่ค้างได้เลย") : detail}</p>
+        <p className="mt-1 text-sm text-[#b8c7d7]">{resume ? (resume.guest ? "รอบทดลอง (ไม่บันทึกผล) เล่นต่อจากคำที่ค้างได้เลย" : "ผลที่ให้คะแนนไปแล้วบันทึกครบ เริ่มต่อจากคำที่ค้างได้เลย") : detail}</p>
       </div>
       <Link href={resume ? "/learn/session" : startHref}
         className="inline-flex items-center gap-2 rounded-xl bg-mark px-5 py-3 font-semibold text-ink transition hover:brightness-105">

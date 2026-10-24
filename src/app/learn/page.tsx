@@ -64,13 +64,13 @@ function Guest() {
       <div>
         <p className="font-mono text-[11px] tracking-[0.08em] text-mark">เริ่มต้น</p>
         <p className="mt-1 font-display text-2xl font-bold">ลองฝึกคำใหม่ {DAILY_NEW_LIMIT} คำ</p>
-        <p className="mt-1 max-w-[56ch] text-sm text-[#b7c5bf]">
+        <p className="mt-1 max-w-[56ch] text-sm text-[#b8c7d7]">
           เล่นได้เลยโดยไม่ต้องสมัคร แต่ผลจะไม่ถูกบันทึก เข้าสู่ระบบเพื่อเก็บ streak, XP, Daily Quest และให้ระบบนัดทวนคำให้
         </p>
       </div>
       <div className="flex flex-wrap gap-2">
         <Link href="/learn/session?mode=new" className="inline-flex items-center rounded-xl bg-mark px-5 py-3 font-semibold text-ink">ลองเล่นเลย</Link>
-        <Link href="/login" className="inline-flex items-center rounded-xl border border-[#2c3f37] px-5 py-3 font-semibold">เข้าสู่ระบบ</Link>
+        <Link href="/login" className="inline-flex items-center rounded-xl border border-[#22395a] px-5 py-3 font-semibold">เข้าสู่ระบบ</Link>
       </div>
     </section>
   );
@@ -157,7 +157,7 @@ function QuestCard({ q }: { q: QuestProgress }) {
       </div>
       <div>
         <div className="flex justify-between text-xs"><span className="tabular">{q.progress}/{q.target}</span><span className={q.done ? "font-semibold text-obj" : "text-muted"}>{q.done ? "✓ สำเร็จแล้ว" : "กำลังทำ"}</span></div>
-        <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-[#e6ebe8]" role="progressbar" aria-label={q.title} aria-valuemin={0} aria-valuemax={q.target} aria-valuenow={q.progress}>
+        <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-[#ebe5d8]" role="progressbar" aria-label={q.title} aria-valuemin={0} aria-valuemax={q.target} aria-valuenow={q.progress}>
           <div className={"h-full rounded-full transition-[width] duration-500 " + (q.done ? "bg-obj" : "bg-brand")} style={{ width: `${(q.progress / q.target) * 100}%` }} />
         </div>
       </div>
@@ -245,7 +245,7 @@ function Modes({ data }: { data: LearnOverview | null }) {
           <li key={m.title} className="flex items-start gap-3 rounded-xl border border-dashed border-line p-4 text-muted">
             <m.icon className="mt-0.5 size-5 shrink-0" aria-hidden />
             <div>
-              <p className="font-semibold text-ink-2">{m.title} <span className="ml-1 rounded-full bg-[#e6ebe8] px-2 py-0.5 text-[10.5px] font-normal">เร็วๆ นี้ · ยังใช้ไม่ได้</span></p>
+              <p className="font-semibold text-ink-2">{m.title} <span className="ml-1 rounded-full bg-[#ebe5d8] px-2 py-0.5 text-[10.5px] font-normal">เร็วๆ นี้ · ยังใช้ไม่ได้</span></p>
               <p className="text-xs">{m.body}</p>
             </div>
           </li>

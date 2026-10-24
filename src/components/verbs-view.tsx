@@ -46,7 +46,7 @@ export function VerbsView({ verbs, groups, cards: initialCards, signedIn, today 
       )}
 
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div role="tablist" className="grid w-full max-w-xs grid-cols-2 rounded-[10px] bg-[#e6ebe8] p-1">
+        <div role="tablist" className="grid w-full max-w-xs grid-cols-2 rounded-[10px] bg-[#ebe5d8] p-1">
           {(["drill", "table"] as const).map((m) => (
             <button key={m} role="tab" type="button" aria-selected={mode === m} onClick={() => setMode(m)}
               className={"rounded-lg py-2 text-sm " + (mode === m ? "bg-surface font-semibold shadow-sm" : "text-muted")}>
@@ -73,7 +73,7 @@ function GroupButton({ on, onClick, title, sub }: { on: boolean; onClick: () => 
     <button type="button" onClick={onClick} aria-pressed={on}
       className={"rounded-lg border px-2 py-2 text-center transition " + (on ? "border-ink bg-ink text-white" : "border-line bg-surface hover:border-brand")}>
       <b className="block font-mono text-[13px]">{title}</b>
-      <small className={"block truncate text-[10.5px] " + (on ? "text-[#b7c5bf]" : "text-muted")}>{sub}</small>
+      <small className={"block truncate text-[10.5px] " + (on ? "text-[#b8c7d7]" : "text-muted")}>{sub}</small>
     </button>
   );
 }
@@ -95,7 +95,7 @@ function VerbTable({ verbs, cards }: { verbs: Verb[]; cards: CardMap }) {
     <div className="flex flex-col gap-3">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm text-muted">แตะ ⌄ เพื่อดูการ์ดคำ พร้อมประโยคที่ใช้ V2 และ V3 จริง</p>
-        <div className="flex rounded-[10px] bg-[#e6ebe8] p-1 text-sm" role="radiogroup" aria-label="เรียงลำดับ">
+        <div className="flex rounded-[10px] bg-[#ebe5d8] p-1 text-sm" role="radiogroup" aria-label="เรียงลำดับ">
           {([["az", "A–Z"], ["group", "ตามกลุ่ม"]] as const).map(([id, label]) => (
             <button key={id} type="button" role="radio" aria-checked={sort === id} onClick={() => setSort(id)}
               className={"rounded-lg px-3 py-1.5 transition " + (sort === id ? "bg-surface font-semibold shadow-sm" : "text-muted hover:text-ink")}>

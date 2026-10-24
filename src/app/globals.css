@@ -1,17 +1,24 @@
 @import "tailwindcss";
 
-/* Dictionary desk: calm paper, deep ink green, highlighter yellow for what matters.
-   Sentence roles have their own colours: subject blue, verb orange, object green. */
+/* Odyssey: ivory pages for reading, deep navy for the academy around them, warm gold for what matters.
+   Sentence roles keep their own colours: subject blue, verb orange, object green. */
 @theme {
-  --color-paper: #f4f6f3;
+  --color-paper: #f8f5ee;
   --color-surface: #ffffff;
-  --color-ink: #13201b;
-  --color-ink-2: #22332c;
-  --color-muted: #5e6c66;
-  --color-line: #dce3de;
-  --color-brand: #0e5a45;
-  --color-brand-soft: #e3efe9;
-  --color-mark: #f4d85a;
+  --color-ink: #07182b;
+  --color-ink-2: #142b45;
+  --color-muted: #556477;
+  --color-line: #e2dccf;
+  --color-brand: #0d233b;
+  --color-brand-soft: #eaeef4;
+  --color-mark: #e9bb70;
+  --color-gold: #e9bb70;
+  --color-gold-soft: #ffe2a0;
+  --color-navy: #07182b;
+  --color-navy-2: #0d233b;
+  --color-navy-3: #142b45;
+  --color-cyan: #69d8ff;
+  --color-mist: #b8c7d7;
   --color-subj: #2b57cf;
   --color-subj-bg: #e6ecfb;
   --color-verb: #b94a12;
@@ -25,22 +32,33 @@
   --font-display: var(--font-display-face), var(--font-body), system-ui, sans-serif;
   --font-mono: var(--font-mono-face), ui-monospace, monospace;
   --font-serif: var(--font-serif-face), Georgia, serif;
+  --font-brand: var(--font-brand-face), var(--font-serif-face), Georgia, serif;
 }
 
 @layer base {
   html { background: var(--color-paper); color: var(--color-ink); }
-  body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+  /* overflow-x: clip keeps edge-to-edge scenes (100vw) from adding a sideways scrollbar. */
+  body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; overflow-x: clip; }
   h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; }
-  :focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
+  :focus-visible { outline: 2px solid #2f6fb0; outline-offset: 2px; }
+  .on-dark :focus-visible { outline-color: var(--color-gold-soft); }
   button { cursor: pointer; }
 }
 
 @layer components {
   .card { @apply rounded-xl border border-line bg-surface; }
   .eyebrow { @apply font-mono text-[11px] uppercase tracking-[0.08em] text-muted; }
-  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-50; }
-  .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-lg border border-[#bfd6cc] px-4 py-2.5 text-sm font-semibold text-brand transition hover:bg-brand-soft disabled:opacity-50; }
-  .input { @apply w-full rounded-lg border-[1.5px] border-line bg-surface px-3 py-2.5 text-[15px] outline-none focus:border-brand focus:ring-3 focus:ring-[#cfe5da]; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-4 py-2.5 text-sm font-semibold text-navy transition hover:bg-gold-soft disabled:opacity-50; }
+  /* Dark navy glass panels on the academy pages. */
+  .glass { @apply rounded-2xl border border-white/10 bg-[rgba(9,28,48,0.82)] text-[#f8f7f3] shadow-[0_24px_60px_-30px_rgba(0,0,0,0.7)] backdrop-blur-md; }
+  .btn-dark { @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10 disabled:opacity-50; }
+  /* Wide scenes break out of the page container. */
+  .bleed { width: 100vw; margin-left: calc(50% - 50vw); }
+  /* A whole page drawn edge to edge under the header (cancels the main column's padding). */
+  .page-bleed { width: 100vw; margin-left: calc(50% - 50vw); margin-top: -1.5rem; margin-bottom: -7rem; }
+  @media (min-width: 64rem) { .page-bleed { margin-top: -2.25rem; margin-bottom: -3rem; } }
+  .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-lg border border-[#c9d3e0] px-4 py-2.5 text-sm font-semibold text-brand transition hover:bg-brand-soft disabled:opacity-50; }
+  .input { @apply w-full rounded-lg border-[1.5px] border-line bg-surface px-3 py-2.5 text-[15px] outline-none focus:border-brand focus:ring-3 focus:ring-[#d6e2ef]; }
   .hl { background: linear-gradient(transparent 55%, var(--color-mark) 55%); }
   .prose-lesson { @apply text-[15px] leading-7; }
   .prose-lesson p { @apply my-2; }
@@ -58,11 +76,11 @@
   .prose-lesson .tip { @apply my-4 rounded-lg bg-[#fbf3cf] px-3.5 py-3 text-sm leading-6; }
   .prose-lesson .steps { @apply my-4 rounded-lg border border-line px-3.5 py-3 text-sm leading-6; }
   .prose-lesson .steps ol { @apply mb-0; }
-  .prose-lesson code { @apply rounded bg-[#eef2ef] px-1 font-mono text-[13px]; }
+  .prose-lesson code { @apply rounded bg-[#efeae0] px-1 font-mono text-[13px]; }
   .prose-lesson s { @apply text-bad decoration-[1.5px]; }
   /* English the learner can tap to hear (marked by PlayableProse). */
-  .prose-lesson .say { @apply cursor-pointer rounded-sm underline decoration-[#7fa394] decoration-dotted underline-offset-4 transition-colors hover:bg-brand-soft focus-visible:bg-brand-soft; }
-  .prose-lesson .ex.say { @apply relative pr-10 no-underline hover:bg-[#d5e8df]; }
+  .prose-lesson .say { @apply cursor-pointer rounded-sm underline decoration-[#8a9bb0] decoration-dotted underline-offset-4 transition-colors hover:bg-brand-soft focus-visible:bg-brand-soft; }
+  .prose-lesson .ex.say { @apply relative pr-10 no-underline hover:bg-[#e3e9f1]; }
   .prose-lesson .ex.say::after {
     content: ""; position: absolute; right: 0.75rem; top: 0.7rem; width: 1rem; height: 1rem; background: var(--color-brand); opacity: 0.7;
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 6h3l4-3v10L5 10H2z'/%3E%3Cpath d='M11 5.5a3.5 3.5 0 0 1 0 5' stroke='black' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
@@ -78,6 +96,18 @@
   to { opacity: 1; transform: none; }
 }
 .learn-in { animation: learn-in 0.22s ease-out both; }
+
+/* The academy scenes breathe: a slow zoom and drift, like clouds passing. */
+@keyframes hero-drift {
+  from { transform: scale(1.04) translate3d(0, 0, 0); }
+  to { transform: scale(1.1) translate3d(-1.5%, -1%, 0); }
+}
+.hero-drift { animation: hero-drift 38s ease-in-out infinite alternate; will-change: transform; }
+@keyframes pin-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(233, 187, 112, 0.55); }
+  50% { box-shadow: 0 0 0 10px rgba(233, 187, 112, 0); }
+}
+.pin-glow { animation: pin-glow 2.4s ease-out infinite; }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }

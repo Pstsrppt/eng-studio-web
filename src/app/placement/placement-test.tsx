@@ -122,7 +122,7 @@ export function PlacementTest({ questions, lessons, levels, signedIn, history }:
           </div>
           <div className="mt-2 grid grid-cols-4 gap-1.5" aria-hidden>
             {[1, 2, 3, 4].map((n) => (
-              <div key={n} className="h-2 overflow-hidden rounded-full bg-[#e6ebe8]">
+              <div key={n} className="h-2 overflow-hidden rounded-full bg-[#ebe5d8]">
                 <div className="h-full rounded-full bg-brand transition-[width] duration-300"
                   style={{ width: n < levelNo ? "100%" : n === levelNo ? `${(state.idx / block.length) * 100}%` : "0%" }} />
               </div>
@@ -214,8 +214,8 @@ function ResultView({ result, lessons, levels, signedIn, onAgain }: { result: Re
         <p className="font-mono text-[11px] tracking-[0.08em] text-mark">ระดับของคุณตอนนี้</p>
         <p className="font-display text-5xl font-bold">{result.level === "pre-A1" ? "ก่อน A1" : result.level}</p>
         <p className="text-lg font-semibold">{info.name}</p>
-        <p className="text-sm text-[#b7c5bf]">{info.can}</p>
-        <p className="font-mono text-xs text-[#b7c5bf] tabular">ตอบถูก {result.correct} จาก {result.total} ข้อ</p>
+        <p className="text-sm text-[#b8c7d7]">{info.can}</p>
+        <p className="font-mono text-xs text-[#b8c7d7] tabular">ตอบถูก {result.correct} จาก {result.total} ข้อ</p>
       </section>
 
       <section className="card flex flex-col gap-3 p-5">
@@ -225,7 +225,7 @@ function ResultView({ result, lessons, levels, signedIn, onAgain }: { result: Re
           return (
             <div key={lv} className="grid grid-cols-[2.5rem_1fr_3.5rem] items-center gap-3 text-sm">
               <span className="font-mono font-semibold">{lv}</span>
-              <div className="h-2.5 overflow-hidden rounded-full bg-[#e6ebe8]">
+              <div className="h-2.5 overflow-hidden rounded-full bg-[#ebe5d8]">
                 {s && <div className={"h-full rounded-full " + (s.correct >= 4 ? "bg-obj" : "bg-[#d9a84a]")} style={{ width: `${(s.correct / s.total) * 100}%` }} />}
               </div>
               <span className="text-right font-mono text-xs text-muted tabular">{s ? `${s.correct}/${s.total}` : "ไม่ได้สอบ"}</span>

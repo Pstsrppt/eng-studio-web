@@ -22,7 +22,7 @@ export function Sentence({ en, th, size = "md" }: { en: string; th?: string; siz
                 onClick={() => openWord(p, en)}
                 className={
                   "rounded-sm hover:bg-brand-soft " +
-                  (isGlossed(p) ? "underline decoration-[#7fa394] decoration-dotted underline-offset-4" : "")
+                  (isGlossed(p) ? "underline decoration-[#8a9bb0] decoration-dotted underline-offset-4" : "")
                 }
               >
                 {p}

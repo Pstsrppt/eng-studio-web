@@ -10,11 +10,11 @@ export function ThaiToggle({ dark = false }: { dark?: boolean }) {
       onClick={toggleThai}
       aria-pressed={showThai}
       className={
-        "rounded-full border px-3 py-1.5 text-xs transition " +
-        (dark ? "border-[#2c3f37] text-[#c9d4cf] hover:bg-ink-2" : "border-line bg-surface hover:border-brand")
+        "rounded-full border px-3 py-1.5 text-xs whitespace-nowrap transition " +
+        (dark ? "border-[#22395a] text-[#c4d0dd] hover:bg-ink-2" : "border-line bg-surface hover:border-brand")
       }
     >
-      คำแปลไทย: <b className="font-semibold">{showThai ? "แสดง" : "ซ่อน"}</b>
+      <span className="max-sm:hidden">คำแปล</span>ไทย: <b className="font-semibold">{showThai ? "แสดง" : "ซ่อน"}</b>
     </button>
   );
 }

@@ -235,7 +235,7 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
 
       <div>
         <div className="flex justify-between text-sm"><span className="font-semibold" aria-live="polite">{atLabel}</span><span className="font-mono text-xs text-muted tabular">XP วันนี้ {session.xpNow}</span></div>
-        <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#e6ebe8]" role="progressbar" aria-label="ความคืบหน้ารอบนี้" aria-valuemin={0} aria-valuemax={total} aria-valuenow={session.pos}>
+        <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#ebe5d8]" role="progressbar" aria-label="ความคืบหน้ารอบนี้" aria-valuemin={0} aria-valuemax={total} aria-valuenow={session.pos}>
           <div className="h-full rounded-full bg-brand transition-[width] duration-300" style={{ width: `${(session.pos / total) * 100}%` }} />
         </div>
       </div>

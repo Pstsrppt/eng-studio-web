@@ -31,7 +31,7 @@ const STATUS_TONE: Record<ImageStatus, string> = {
   approved: "bg-obj-bg text-obj",
   candidate: "bg-[#fbf0d9] text-[#9a6200]",
   rejected: "bg-bad-bg text-bad",
-  missing: "bg-[#e6ebe8] text-muted",
+  missing: "bg-[#ebe5d8] text-muted",
 };
 
 /** Which tab an item belongs in. A turned-down picture stays visible under "rejected" until a new one arrives. */
@@ -100,7 +100,7 @@ export function ImageReviewBoard({ items }: { items: ReviewItem[] }) {
       </dl>
 
       <div className="flex flex-wrap items-center gap-2">
-        <div role="tablist" className="flex flex-wrap gap-1 rounded-[10px] bg-[#e6ebe8] p-1">
+        <div role="tablist" className="flex flex-wrap gap-1 rounded-[10px] bg-[#ebe5d8] p-1">
           {TABS.map((t) => (
             <button key={t.id} type="button" role="tab" aria-selected={tab === t.id} onClick={() => { setTab(t.id); setPage(0); }}
               className={"rounded-lg px-3 py-1.5 text-sm " + (tab === t.id ? "bg-surface font-semibold shadow-sm" : "text-muted")}>
@@ -257,7 +257,7 @@ function ReviewRow({ item, tool }: { item: ReviewItem; tool: string }) {
       )}
 
       {e.kind !== "diagram" && (
-        <label className="inline-flex w-fit cursor-pointer items-center gap-2 rounded-lg border border-dashed border-[#bfd6cc] px-3 py-2 text-sm text-brand hover:bg-brand-soft">
+        <label className="inline-flex w-fit cursor-pointer items-center gap-2 rounded-lg border border-dashed border-[#c9d3e0] px-3 py-2 text-sm text-brand hover:bg-brand-soft">
           <UploadIcon className="size-4" />
           {e.image || e.candidate ? "อัปโหลดภาพใหม่แทน" : "อัปโหลดภาพ"} <span className="text-xs text-muted">(PNG/JPG/WebP · จะปรับเป็น 800×600 ให้เอง)</span>
           <input type="file" accept="image/png,image/jpeg,image/webp,image/avif" className="sr-only" disabled={busy}
