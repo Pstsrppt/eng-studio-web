@@ -15,7 +15,7 @@ export function SiteHeader({ account }: { account: React.ReactNode }) {
   return (
     <header className={"sticky top-0 z-30 border-b backdrop-blur-md " +
       (light ? "theme-academic border-[#ebe5d9] bg-white/95 text-[#0f2440]" : "on-dark border-white/10 bg-[rgba(7,24,43,0.92)] text-white")}>
-      <div className={"mx-auto flex h-[62px] items-center justify-between gap-4 px-4 sm:px-6 lg:h-[70px] " + (light ? "max-w-[1600px] lg:px-10" : "max-w-[1440px]")}>
+      <div className={"mx-auto flex h-[62px] items-center justify-between gap-4 px-4 sm:px-6 lg:h-[70px] " + (light ? "max-w-[1520px] lg:px-10 2xl:px-12" : "max-w-[1440px]")}>
         <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label="Odyssey หน้าแรก">
           {light && <LandmarkIcon className="size-8 text-[#0f2440]" strokeWidth={1.6} aria-hidden />}
           <span className="flex flex-col leading-none">

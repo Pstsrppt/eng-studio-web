@@ -40,7 +40,7 @@ export function TopNav({ light = false }: { light?: boolean }) {
         const on = isActive(pathname, item.href);
         return (
           <Link key={item.href} href={item.href} aria-current={on ? "page" : undefined}
-            className={"relative rounded-lg px-3 py-2 text-sm whitespace-nowrap transition " + (i > 5 ? "hidden xl:block " : "") +
+            className={"relative rounded-lg px-3 py-2 whitespace-nowrap transition " + (light ? "text-[15px] " : "text-sm ") + (i > 5 ? "hidden xl:block " : "") +
               (light
               ? (on ? "font-semibold text-[#0f2440]" : "text-[#3d4757] hover:bg-[#f5efe3] hover:text-[#0f2440]")
               : (on ? "font-semibold text-white" : "text-[#c4d0dd] hover:bg-white/5 hover:text-white"))}>
