@@ -32,7 +32,7 @@ function isActive(pathname: string, href: string) {
   return pathname.startsWith(href);
 }
 
-export function TopNav() {
+export function TopNav({ light = false }: { light?: boolean }) {
   const pathname = usePathname();
   return (
     <nav aria-label="เมนูหลัก" className="flex min-w-0 items-center gap-0.5">
@@ -41,9 +41,11 @@ export function TopNav() {
         return (
           <Link key={item.href} href={item.href} aria-current={on ? "page" : undefined}
             className={"relative rounded-lg px-3 py-2 text-sm whitespace-nowrap transition " + (i > 5 ? "hidden xl:block " : "") +
-              (on ? "font-semibold text-white" : "text-[#c4d0dd] hover:bg-white/5 hover:text-white")}>
+              (light
+              ? (on ? "font-semibold text-[#0f2440]" : "text-[#3d4757] hover:bg-[#f5efe3] hover:text-[#0f2440]")
+              : (on ? "font-semibold text-white" : "text-[#c4d0dd] hover:bg-white/5 hover:text-white"))}>
             {item.label}
-            {on && <span className="absolute inset-x-3 -bottom-[13px] h-[3px] rounded-full bg-gold" aria-hidden />}
+            {on && <span className={"absolute inset-x-3 h-[3px] rounded-full " + (light ? "-bottom-[17px] bg-[#b8843d]" : "-bottom-[13px] bg-gold")} aria-hidden />}
           </Link>
         );
       })}

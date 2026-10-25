@@ -91,6 +91,27 @@
 }
 
 /* A card or summary arriving: a short rise, never long enough to slow the learner down. */
+/* Academic Studio theme (approved Home reference). Scoped: only pages wrapped in .theme-academic use it,
+   so the global tokens above and every other page stay as they are until each page is moved over. */
+.theme-academic {
+  --ac-bg: #faf8f3;
+  --ac-surface: #ffffff;
+  --ac-navy: #0f2440;
+  --ac-navy-2: #16304f;
+  --ac-ink: #14243b;
+  --ac-body: #3d4757;
+  --ac-muted: #626b7a;
+  --ac-line: #ebe5d9;
+  --ac-gold: #b8843d;
+  --ac-gold-bright: #e2b366;
+  --ac-gold-soft: #f5e9d2;
+  --ac-shadow: 0 18px 44px -28px rgba(15, 36, 64, 0.35);
+}
+.theme-academic .ac-serif { font-family: var(--font-academic-face), Georgia, "Times New Roman", serif; }
+.theme-academic :focus-visible { outline-color: var(--ac-navy); }
+/* The account button in the light header: navy, as in the reference. */
+.theme-academic .account-chip { background: var(--ac-navy); color: #ffffff; }
+
 @keyframes learn-in {
   from { opacity: 0; transform: translateY(6px) scale(0.99); }
   to { opacity: 1; transform: none; }
