@@ -79,11 +79,11 @@ function Hero() {
             See Your Roadmap
           </Link>
         </div>
-        <ul className="grid grid-cols-2 gap-x-5 gap-y-4 pt-3 sm:grid-cols-4">
+        <ul className="grid grid-cols-1 gap-2.5 pt-3 min-[420px]:grid-cols-2 lg:grid-cols-4 lg:gap-3">
           {HIGHLIGHTS.map(({ Icon, text }) => (
-            <li key={text} className="flex items-center gap-3">
-              <span className="grid size-12 shrink-0 place-items-center rounded-full bg-(--ac-gold-soft) text-(--ac-gold)"><Icon className="size-[22px]" aria-hidden /></span>
-              <span className="text-[14px] leading-[1.35] text-(--ac-body)">{text}</span>
+            <li key={text} className="flex items-center gap-3 rounded-full bg-white/85 py-1.5 pr-4 pl-1.5 shadow-[0_6px_18px_-12px_rgba(15,36,64,0.45)] ring-1 ring-(--ac-line)/70 backdrop-blur-sm">
+              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-(--ac-gold-soft) text-(--ac-gold)"><Icon className="size-5" aria-hidden /></span>
+              <span className="text-[14px] leading-[1.3] font-medium text-(--ac-ink)">{text}</span>
             </li>
           ))}
         </ul>
@@ -139,9 +139,9 @@ function Roadmap({ stages, current }: { stages: StageProgress[]; current: string
                   {done && <span className="absolute -right-1 -bottom-1 grid size-5 place-items-center rounded-full bg-[#2e7d5b] text-white"><CheckIcon className="size-3" aria-label="ผ่านแล้ว" /></span>}
                   {active && !done && <span className="absolute -right-1 -bottom-1 grid size-5 place-items-center rounded-full bg-(--ac-gold-bright) text-[10px] font-bold text-(--ac-navy)">{s.n}</span>}
                 </span>
-                <span className="flex flex-col gap-1">
-                  <span className="text-[15px] leading-tight font-semibold text-(--ac-navy)">{s.title}</span>
-                  <span className="text-[13px] leading-[1.4] text-(--ac-muted)">{look.short}</span>
+                <span className="flex flex-col items-center gap-1.5">
+                  <span className="flex min-h-[2.5em] items-start text-[15px] leading-[1.25] font-semibold text-balance text-(--ac-navy)">{s.title}</span>
+                  <span className="max-w-[11rem] text-[13.5px] leading-[1.45] text-balance text-(--ac-muted)">{look.short}</span>
                 </span>
               </Link>
             </li>

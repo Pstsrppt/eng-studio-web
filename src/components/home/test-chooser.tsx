@@ -40,22 +40,22 @@ export function TestChooser() {
           const expanded = open.has(t.id);
           return (
             <article key={t.id} aria-labelledby={`test-${t.id}`}
-              className={"flex flex-col gap-4 rounded-2xl border bg-white p-6 shadow-(--ac-shadow) transition lg:p-7 " +
+              className={"flex flex-col gap-5 rounded-2xl border bg-white p-6 shadow-(--ac-shadow) transition lg:p-8 " +
                 (on ? "border-(--ac-navy) ring-2 ring-(--ac-gold-soft)" : picked ? "border-(--ac-line) opacity-75" : "border-(--ac-line)")}>
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <h3 id={`test-${t.id}`} className="ac-serif text-[24px] font-bold text-(--ac-navy)">{t.name}</h3>
-                  <p className="mt-1 text-[15px] leading-6 text-(--ac-body)">{t.tagline.en}<Thai className="text-sm text-(--ac-muted)">{t.tagline.th}</Thai></p>
+                  <p className="mt-2 text-[15px] leading-7 text-(--ac-body)">{t.tagline.en}<Thai className="mt-1 text-sm leading-6 text-(--ac-muted)">{t.tagline.th}</Thai></p>
                 </div>
                 {on && <span className="shrink-0 rounded-full bg-(--ac-gold-soft) px-3 py-1 text-xs font-semibold text-(--ac-navy)">Selected</span>}
               </div>
               <div>
-                <p className="mb-2 font-mono text-[11px] tracking-[0.18em] text-(--ac-gold)">SUITABLE FOR</p>
-                <ul className="flex flex-col gap-2">
+                <p className="mb-3 font-mono text-[11px] tracking-[0.18em] text-(--ac-gold)">SUITABLE FOR</p>
+                <ul className="flex flex-col gap-3.5">
                   {t.suitable.map((s) => (
                     <li key={s.en} className="flex gap-2.5 text-[15px] leading-6 text-(--ac-ink)">
                       <CheckIcon className="mt-1 size-4 shrink-0 text-(--ac-gold)" aria-hidden />
-                      <span>{s.en}<Thai className="text-sm text-(--ac-muted)">{s.th}</Thai></span>
+                      <span>{s.en}<Thai className="mt-0.5 text-sm leading-6 text-(--ac-muted)">{s.th}</Thai></span>
                     </li>
                   ))}
                 </ul>
@@ -66,9 +66,9 @@ export function TestChooser() {
                 <ChevronDownIcon className={"size-4 transition " + (expanded ? "rotate-180" : "")} aria-hidden />
               </button>
               {expanded && (
-                <dl id={`test-more-${t.id}`} className="learn-in grid gap-3 rounded-xl bg-(--ac-bg) p-4 text-sm leading-6">
-                  <div><dt className="font-semibold text-(--ac-navy)">Reading</dt><dd className="text-(--ac-body)">{t.reading.en}<Thai className="text-(--ac-muted)">{t.reading.th}</Thai></dd></div>
-                  <div><dt className="font-semibold text-(--ac-navy)">Writing</dt><dd className="text-(--ac-body)">{t.writing.en}<Thai className="text-(--ac-muted)">{t.writing.th}</Thai></dd></div>
+                <dl id={`test-more-${t.id}`} className="learn-in grid gap-4 rounded-xl bg-(--ac-bg) p-5 text-sm leading-6">
+                  <div><dt className="font-semibold text-(--ac-navy)">Reading</dt><dd className="mt-1 text-(--ac-body)">{t.reading.en}<Thai className="mt-1 text-(--ac-muted)">{t.reading.th}</Thai></dd></div>
+                  <div><dt className="font-semibold text-(--ac-navy)">Writing</dt><dd className="mt-1 text-(--ac-body)">{t.writing.en}<Thai className="mt-1 text-(--ac-muted)">{t.writing.th}</Thai></dd></div>
                 </dl>
               )}
             </article>
@@ -77,9 +77,9 @@ export function TestChooser() {
       </div>
 
       <div className="flex flex-col gap-3 rounded-2xl border border-(--ac-line) bg-white/70 p-5 sm:flex-row sm:items-center sm:justify-between">
-        <ul className="flex flex-col gap-1.5 text-sm leading-6 text-(--ac-body)">
+        <ul className="flex flex-col gap-3 text-sm leading-6 text-(--ac-body)">
           {TEST_NOTES.map((n) => (
-            <li key={n.en} className="flex gap-2"><InfoIcon className="mt-1 size-4 shrink-0 text-(--ac-gold)" aria-hidden /><span>{n.en}<Thai className="text-(--ac-muted)">{n.th}</Thai></span></li>
+            <li key={n.en} className="flex gap-2"><InfoIcon className="mt-1 size-4 shrink-0 text-(--ac-gold)" aria-hidden /><span>{n.en}<Thai className="mt-0.5 text-(--ac-muted)">{n.th}</Thai></span></li>
           ))}
         </ul>
         <Link href="/ielts" className="inline-flex shrink-0 items-center gap-1.5 text-[15px] font-semibold text-(--ac-navy) hover:text-(--ac-gold)">

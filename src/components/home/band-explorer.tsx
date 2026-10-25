@@ -14,7 +14,7 @@ export function BandExplorer() {
   const info = BANDS.find((b) => b.band === band)!;
   return (
     <div className="grid overflow-hidden rounded-2xl border border-(--ac-line) bg-white shadow-(--ac-shadow) lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-      <div className="flex flex-col gap-5 bg-(--ac-navy) p-6 text-white lg:p-8">
+      <div className="flex flex-col gap-6 bg-(--ac-navy) p-6 text-white lg:justify-center lg:p-10">
         <p className="text-sm text-[#c9d3e1]">Choose a band to see what it means</p>
         <div role="radiogroup" aria-label="เลือก Band" className="grid grid-cols-4 gap-2 sm:grid-cols-7 lg:grid-cols-4">
           {BANDS.map((b) => (
@@ -25,9 +25,9 @@ export function BandExplorer() {
             </button>
           ))}
         </div>
-        <div className="mt-auto" aria-live="polite">
-          <p className="ac-serif text-[64px] leading-none font-bold text-(--ac-gold-bright)">{info.band}</p>
-          <p className="mt-2 text-lg font-semibold">{info.level}</p>
+        <div className="flex items-end gap-4 border-t border-white/15 pt-6" aria-live="polite">
+          <p className="ac-serif text-[72px] leading-none font-bold text-(--ac-gold-bright)">{info.band}</p>
+          <p className="pb-2 text-lg leading-snug font-semibold">{info.level}</p>
         </div>
       </div>
       <div key={band} className="learn-in flex flex-col gap-5 p-6 lg:p-8">
