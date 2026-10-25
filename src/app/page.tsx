@@ -6,6 +6,10 @@ import {
 import Link from "next/link";
 import { Suspense } from "react";
 import { AcademicPhoto } from "@/components/academic-photo";
+import { BandExplorer } from "@/components/home/band-explorer";
+import { Faq } from "@/components/home/faq";
+import { TestChooser } from "@/components/home/test-chooser";
+import { Thai } from "@/components/home/thai";
 import { courseCompletion, stageProgress, type StageProgress } from "@/content/stages";
 import { getLessonBest, getPlacements, getUser } from "@/lib/data";
 
@@ -22,6 +26,21 @@ export default function HomePage() {
         <Suspense fallback={null}>
           <Continue />
         </Suspense>
+        <Section id="tests" eyebrow="IELTS ACADEMIC OR GENERAL" title="Which IELTS Test Is Right for You?"
+          subtitle="Understand the differences and choose the test that fits your goals.">
+          <TestChooser />
+        </Section>
+        <Section id="bands" eyebrow="BAND SCORES" title="Know Your Band. Plan Your Progress."
+          subtitle="Choose a band to read what it means on the official scale and what to work on next.">
+          <BandExplorer />
+        </Section>
+        <Section id="how" eyebrow="HOW IT WORKS" title="Your Learning Journey, Made Simple.">
+          <HowItWorks />
+        </Section>
+        <Section id="faq" eyebrow="FAQ" title="Everything You Need to Know">
+          <Faq />
+        </Section>
+        <FinalCta />
       </div>
     </div>
   );
@@ -228,3 +247,75 @@ async function Continue() {
   );
 }
 
+
+/** A content section below the fold: generous space above, one heading level, an optional subtitle. */
+function Section({ id, eyebrow, title, subtitle, children }: { id: string; eyebrow: string; title: string; subtitle?: string; children: React.ReactNode }) {
+  return (
+    <section aria-labelledby={`${id}-title`} className="flex scroll-mt-24 flex-col gap-7 pt-10 lg:pt-16" id={id}>
+      <header className="max-w-3xl">
+        <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold)">{eyebrow}</p>
+        <h2 id={`${id}-title`} className="ac-serif mt-2 text-[30px] leading-tight font-bold text-(--ac-navy) sm:text-[38px]">{title}</h2>
+        {subtitle && <p className="mt-3 text-[17px] leading-7 text-(--ac-body)">{subtitle}</p>}
+      </header>
+      {children}
+    </section>
+  );
+}
+
+const STEPS: { n: string; title: string; text: string; th: string; cta: string; href: string; Icon: LucideIcon }[] = [
+  { n: "01", title: "Discover Your Level", Icon: TargetIcon, cta: "Take Placement Test", href: "/placement",
+    text: "Take the placement test to see your starting point and the areas to work on.",
+    th: "ทำแบบทดสอบวัดระดับ เพื่อดูพื้นฐานของคุณและจุดที่ควรพัฒนา" },
+  { n: "02", title: "Follow Your Roadmap", Icon: CompassIcon, cta: "Explore Roadmap", href: "/roadmap",
+    text: "See the path from English Foundation all the way to exam preparation.",
+    th: "ดูเส้นทางการเรียนตั้งแต่ English Foundation ไปจนถึงการเตรียมสอบ" },
+  { n: "03", title: "Practice & Improve", Icon: BookOpenIcon, cta: "Browse Lessons", href: "/grammar",
+    text: "Study grammar and vocabulary, practise each skill, and follow your progress as you go.",
+    th: "เรียนไวยากรณ์และคำศัพท์ ฝึกแต่ละทักษะ และติดตามความคืบหน้าระหว่างทาง" },
+];
+
+function HowItWorks() {
+  return (
+    <ol className="relative grid gap-5 md:grid-cols-3">
+      {/* The timeline behind the three steps on wide screens. */}
+      <span className="absolute top-[42px] right-[16%] left-[16%] hidden h-px bg-[linear-gradient(90deg,var(--ac-line),var(--ac-gold-bright),var(--ac-line))] md:block" aria-hidden />
+      {STEPS.map((step) => (
+        <li key={step.n} className="relative flex flex-col gap-4 rounded-2xl border border-(--ac-line) bg-white p-6 shadow-(--ac-shadow) lg:p-7">
+          <div className="flex items-center gap-4">
+            <span className="grid size-[54px] shrink-0 place-items-center rounded-full border border-(--ac-line) bg-(--ac-bg) text-(--ac-navy)"><step.Icon className="size-6" strokeWidth={1.6} aria-hidden /></span>
+            <span className="font-mono text-sm tracking-[0.2em] text-(--ac-gold)">STEP {step.n}</span>
+          </div>
+          <h3 className="ac-serif text-[22px] font-bold text-(--ac-navy)">{step.title}</h3>
+          <p className="text-[15px] leading-7 text-(--ac-body)">{step.text}<Thai className="text-sm leading-6 text-(--ac-muted)">{step.th}</Thai></p>
+          <Link href={step.href} className="mt-auto inline-flex w-fit items-center gap-1.5 pt-1 text-[15px] font-semibold text-(--ac-navy) hover:text-(--ac-gold)">
+            {step.cta} <ArrowRightIcon className="size-4" aria-hidden />
+          </Link>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function FinalCta() {
+  return (
+    <section aria-labelledby="final-title" className="relative mt-10 overflow-hidden rounded-3xl bg-(--ac-navy) px-6 py-12 text-center text-white sm:px-10 lg:mt-16 lg:py-16">
+      <WorldDots />
+      <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-5">
+        <span className="h-0.5 w-12 bg-(--ac-gold-bright)" aria-hidden />
+        <h2 id="final-title" className="ac-serif text-[32px] leading-tight font-bold sm:text-[42px]">Your English Journey Starts Here.</h2>
+        <p className="text-[17px] leading-7 text-[#dbe3ee]">
+          Build stronger skills, understand your progress, and take the next step toward your IELTS goal.
+          <Thai className="mt-1 text-[15px] text-[#b8c4d4]">สร้างทักษะให้แข็งแรง เข้าใจความคืบหน้าของตัวเอง และก้าวต่อไปสู่เป้าหมาย IELTS</Thai>
+        </p>
+        <div className="flex flex-wrap justify-center gap-3 pt-2">
+          <Link href="/placement" className="inline-flex items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-6 py-3.5 text-[15px] font-semibold text-(--ac-navy) transition hover:bg-[#ecc580]">
+            Start Placement Test <ArrowRightIcon className="size-4" aria-hidden />
+          </Link>
+          <Link href="/roadmap" className="inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/40 px-6 py-3.5 text-[15px] font-semibold text-white transition hover:bg-white/10">
+            Explore Your Roadmap
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
