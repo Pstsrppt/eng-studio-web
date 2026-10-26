@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function LessonPage({ params }: Props) {
   // Reading params suspends on client navigation, so the lesson streams in behind a boundary.
   return (
-    <Suspense fallback={<div className="page-bleed h-[70vh] animate-pulse bg-navy" />}>
+    <Suspense fallback={<div className="page-bleed h-[70vh] animate-pulse bg-[#faf8f3]" />}>
       <Lesson params={params} />
     </Suspense>
   );

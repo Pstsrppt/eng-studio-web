@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeftIcon, ArrowRightIcon, CheckCircle2Icon, KeyboardIcon, LightbulbIcon, RotateCcwIcon, XCircleIcon } from "lucide-react";
-import { useEffect, useState, useTransition } from "react";
+import { ArrowLeftIcon, ArrowRightIcon, CheckCircle2Icon, CheckIcon, ClipboardCheckIcon, KeyboardIcon, LightbulbIcon, PencilLineIcon, RotateCcwIcon, XCircleIcon, XIcon } from "lucide-react";
+import { type KeyboardEvent as ReactKeyboardEvent, type ReactNode, useEffect, useRef, useState, useTransition } from "react";
 import { addLessonCards, saveAttempt } from "@/app/actions";
 import type { Lesson, PracticeItem, QuizItem } from "@/content";
 import type { LessonWords } from "@/content/lesson-words";
@@ -173,14 +173,18 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
     setReview(false);
   }
 
-  // Keyboard: A–D choose (multiple choice), Enter checks, ← → move. Typing in a box is left alone.
+  // Keyboard: A–D choose (multiple choice), Enter checks or goes on, ← → move. Typing in a box is left alone.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (review || e.altKey || e.ctrlKey || e.metaKey) return;
-      if ((e.target as HTMLElement).closest("input, textarea, select")) return;
+      const target = e.target as HTMLElement;
+      if (target.closest("input, textarea, select")) return;
       const k = e.key.toUpperCase();
-      if (item?.t === "pick" && LETTERS.includes(k) && LETTERS.indexOf(k) < item.o.length && st.checked !== "ok") {
+      if (item?.t === "pick" && LETTERS.includes(k) && LETTERS.indexOf(k) < item.o.length && st.checked !== "ok" && !st.shown) {
         update({ choice: LETTERS.indexOf(k), checked: null });
+      } else if (e.key === "Enter" && !target.closest("button, a")) {
+        if (st.checked === "ok" || st.shown) goOn();
+        else if (item && ready(item, st)) check();
       } else if (e.key === "ArrowRight") move(at + 1);
       else if (e.key === "ArrowLeft") move(at - 1);
     }
@@ -188,29 +192,39 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
     return () => window.removeEventListener("keydown", onKey);
   });
 
-  if (total === 0) return <p className="text-muted">บทนี้ยังไม่มีแบบฝึก ไปที่แท็บ Quiz ได้เลย</p>;
+  function goOn() {
+    if (finished) setReview(true);
+    else move(at + 1 < total ? at + 1 : states.findIndex((s) => !(s.checked === "ok" || s.shown)));
+  }
+
+  if (total === 0) return <p className="text-(--ac-muted)">บทนี้ยังไม่มีแบบฝึก ไปที่แท็บ Quiz ได้เลย</p>;
 
   if (review) {
     const right = states.filter((s) => s.firstTry).length;
     return (
-      <div className="flex flex-col gap-4">
-        <div className="flex flex-wrap items-center gap-4 rounded-2xl bg-navy p-5 text-white">
-          <p className="font-brand text-4xl font-bold text-gold-soft tabular">{right}/{total}</p>
-          <div className="min-w-0 flex-1 text-sm">
-            <p className="font-semibold">ถูกตั้งแต่ครั้งแรก {right} จาก {total} ข้อ</p>
-            <p className="text-mist">แบบฝึกไม่นับคะแนน ใช้ดูว่าพร้อมทำ Quiz หรือยัง</p>
+      <div className="flex flex-col gap-5">
+        <ModeHeader kind="practice" />
+        <section aria-labelledby="practice-summary" className="flex flex-wrap items-center gap-5 rounded-2xl bg-(--ac-navy) p-6 text-white">
+          <p className="ac-serif text-5xl font-bold text-(--ac-gold-bright) tabular">{right}/{total}</p>
+          <div className="min-w-0 flex-1">
+            <h3 id="practice-summary" className="text-lg font-semibold">ถูกตั้งแต่ครั้งแรก {right} จาก {total} ข้อ</h3>
+            <p className="text-sm text-[#c9d3e1]">แบบฝึกไม่นับคะแนน ใช้ดูว่าพร้อมทำ Quiz หรือยัง</p>
           </div>
-          <button type="button" className="btn-dark" onClick={restart}><RotateCcwIcon className="size-4" /> ฝึกอีกรอบ</button>
-          <button type="button" className="btn" onClick={onNext}>ไปทำ Quiz <ArrowRightIcon className="size-4" /></button>
-        </div>
-        <ol className="flex flex-col gap-2">
+          <div className="flex flex-wrap gap-2">
+            <button type="button" onClick={restart} className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-white/30 px-4 text-sm font-semibold text-white hover:bg-white/10"><RotateCcwIcon className="size-4" aria-hidden /> ฝึกอีกรอบ</button>
+            <button type="button" onClick={onNext} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-4 text-sm font-semibold text-(--ac-navy) hover:bg-[#ecc580]">ไปทำ Quiz <ArrowRightIcon className="size-4" aria-hidden /></button>
+          </div>
+        </section>
+        <ol className="flex flex-col gap-2.5">
           {items.map((it, i) => (
-            <li key={i} className="card flex items-start gap-3 p-4 text-sm">
-              {states[i].firstTry ? <CheckCircle2Icon className="mt-0.5 size-5 shrink-0 text-obj" aria-label="ถูกครั้งแรก" /> : <XCircleIcon className="mt-0.5 size-5 shrink-0 text-[#b45309]" aria-label="ต้องลองหลายครั้งหรือดูเฉลย" />}
+            <li key={i} className="flex items-start gap-3 rounded-xl border border-(--ac-line) bg-white p-4 text-[15px]">
+              {states[i].firstTry
+                ? <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-[#e3f1ea] px-2 py-0.5 text-xs font-semibold text-[#22694b]"><CheckIcon className="size-3.5" aria-hidden />ครั้งแรก</span>
+                : <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-[#fbf0d9] px-2 py-0.5 text-xs font-semibold text-[#7a5418]"><RotateCcwIcon className="size-3.5" aria-hidden />ลองหลายครั้ง</span>}
               <div className="min-w-0">
-                <p className="font-medium">{it.t === "order" ? it.th : it.q}</p>
-                <p className="text-obj">คำตอบ: <b>{answerOf(it)}</b></p>
-                {it.t !== "order" && it.th && <p className="text-xs text-muted">{it.th}</p>}
+                <p className="font-medium text-(--ac-ink)">{it.t === "order" ? it.th : it.q}</p>
+                <p className="text-(--ac-body)">คำตอบ: <b className="text-[#22694b]">{answerOf(it)}</b></p>
+                {it.t !== "order" && it.th && <p className="text-sm text-(--ac-muted)">{it.th}</p>}
               </div>
             </li>
           ))}
@@ -220,70 +234,109 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
   }
 
   const percent = Math.round((checkedCount / total) * 100);
+  const locked = st.checked === "ok" || st.shown;
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-5">
       {lesson.speak && <SpeakingDrill items={lesson.speak} />}
+      <ModeHeader kind="practice" />
       <div>
         <div className="flex items-center justify-between text-sm">
-          <span className="font-semibold">ข้อ {at + 1} จาก {total}</span>
-          <span className="text-muted tabular">ทำแล้ว {percent}%</span>
+          <span className="font-semibold text-(--ac-navy)">ข้อ {at + 1} จาก {total}</span>
+          <span className="text-(--ac-muted) tabular">ทำแล้ว {checkedCount}/{total}</span>
         </div>
-        <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#ebe5d8]" role="progressbar" aria-label="ความคืบหน้าแบบฝึก" aria-valuemin={0} aria-valuemax={total} aria-valuenow={checkedCount}>
-          <div className="h-full rounded-full bg-navy transition-[width] duration-300" style={{ width: `${percent}%` }} />
+        <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#efe9dd]" role="progressbar" aria-label="ความคืบหน้าแบบฝึก" aria-valuemin={0} aria-valuemax={total} aria-valuenow={checkedCount}>
+          <div className="h-full rounded-full bg-(--ac-gold) transition-[width] duration-300" style={{ width: `${percent}%` }} />
         </div>
       </div>
 
-      <section key={at} className="learn-in overflow-hidden rounded-2xl border border-line bg-surface" aria-labelledby="ex-q">
-        <div className="h-1 bg-[linear-gradient(90deg,#0d233b,#e9bb70)]" aria-hidden />
-        <div className="flex flex-col gap-5 p-5 sm:p-7">
+      <section key={at} aria-labelledby="ex-q" className="overflow-hidden rounded-2xl border border-(--ac-line) bg-white shadow-(--ac-shadow)">
+        <div className="flex flex-col gap-6 p-5 sm:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <p className="flex items-center gap-3 text-sm text-ink-2">
-              <span className="grid size-9 place-items-center rounded-full bg-brand-soft font-semibold text-navy">{at + 1}</span>
-              {KIND_LABEL[item.t]}
+            <p className="flex items-center gap-3">
+              <span className="grid size-9 place-items-center rounded-full bg-(--ac-navy) text-sm font-semibold text-white">{at + 1}</span>
+              <span className="rounded-full bg-(--ac-gold-soft) px-3 py-1 text-xs font-semibold text-[#7a5418]">{KIND_LABEL[item.t]}</span>
             </p>
-            {item.t === "pick" && <p className="hidden items-center gap-1.5 text-xs text-muted sm:flex"><KeyboardIcon className="size-4" aria-hidden /> A–D เลือก · ← → เปลี่ยนข้อ</p>}
+            {item.t === "pick" && <p className="hidden items-center gap-1.5 text-xs text-(--ac-muted) sm:flex"><KeyboardIcon className="size-4" aria-hidden /> A–D เลือก · Enter ตรวจ · ← → เปลี่ยนข้อ</p>}
           </div>
 
           <ExerciseBody item={item} st={st} update={update} onSubmit={check} />
 
-          <div className="flex flex-wrap gap-2">
-            {st.checked !== "ok" && !st.shown && (
-              <button type="button" className="btn" disabled={!ready(item, st)} onClick={check}>ตรวจคำตอบ</button>
-            )}
-            {!st.hint && st.checked !== "ok" && !st.shown && (
-              <button type="button" className="btn-ghost" onClick={() => update({ hint: true })}><LightbulbIcon className="size-4" /> คำใบ้</button>
-            )}
-            {st.checked === "no" && !st.shown && (
-              <button type="button" className="btn-ghost" onClick={() => update({ shown: true, firstTry: st.firstTry ?? false })}>ดูเฉลย</button>
+          {st.hint && !locked && (
+            <p className="flex gap-2.5 rounded-xl bg-[#fbf6ea] px-4 py-3 text-[15px] leading-6 text-(--ac-ink)">
+              <LightbulbIcon className="mt-0.5 size-5 shrink-0 text-(--ac-gold)" aria-hidden /><span><b>คำใบ้:</b> {hintOf(item)}</span>
+            </p>
+          )}
+
+          {/* Announced to screen readers as soon as an answer is checked. */}
+          <div aria-live="polite" aria-atomic="true"><Feedback item={item} st={st} /></div>
+
+          <div className="flex flex-wrap items-center gap-2.5 border-t border-(--ac-line) pt-5">
+            {!locked ? (
+              <>
+                <button type="button" disabled={!ready(item, st)} onClick={check}
+                  className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-(--ac-navy) px-6 text-[15px] font-semibold text-white transition hover:bg-(--ac-navy-2) disabled:cursor-not-allowed disabled:opacity-40">
+                  ตรวจคำตอบ
+                </button>
+                {!st.hint && (
+                  <button type="button" onClick={() => update({ hint: true })} className="inline-flex min-h-12 items-center gap-2 rounded-lg border border-(--ac-line) px-4 text-[15px] font-semibold text-(--ac-navy) hover:bg-(--ac-bg)">
+                    <LightbulbIcon className="size-4" aria-hidden /> คำใบ้
+                  </button>
+                )}
+                {st.checked === "no" && (
+                  <button type="button" onClick={() => update({ shown: true, firstTry: st.firstTry ?? false })} className="inline-flex min-h-12 items-center rounded-lg px-3 text-[15px] font-semibold text-(--ac-body) underline underline-offset-4 hover:text-(--ac-navy)">
+                    ดูเฉลย
+                  </button>
+                )}
+              </>
+            ) : (
+              <button type="button" onClick={goOn}
+                className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-6 text-[15px] font-semibold text-(--ac-navy) transition hover:bg-[#ecc580]">
+                {finished ? "ดูสรุปผล" : "ข้อต่อไป"} <ArrowRightIcon className="size-4" aria-hidden />
+              </button>
             )}
           </div>
-
-          {st.hint && st.checked !== "ok" && !st.shown && (
-            <p className="rounded-xl bg-[#fbf3cf] px-4 py-3 text-sm"><b>คำใบ้:</b> {hintOf(item)}</p>
-          )}
-          <Feedback item={item} st={st} />
         </div>
       </section>
 
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <button type="button" className="btn-ghost" disabled={at === 0} onClick={() => move(at - 1)}><ArrowLeftIcon className="size-4" /> ข้อก่อน</button>
-        <ol className="flex flex-wrap justify-center gap-1.5" aria-label="ทุกข้อ">
-          {states.map((s, i) => (
-            <li key={i}>
-              <button type="button" onClick={() => move(i)} aria-label={`ข้อ ${i + 1}${s.checked === "ok" ? " ถูกแล้ว" : s.shown ? " ดูเฉลยแล้ว" : s.checked === "no" ? " ยังไม่ถูก" : ""}`}
-                aria-current={i === at ? "step" : undefined}
-                className={"size-3.5 rounded-full transition " + (i === at ? "ring-2 ring-navy ring-offset-2 " : "") +
-                  (s.checked === "ok" ? "bg-obj" : s.shown ? "bg-[#d9a84a]" : s.checked === "no" ? "bg-[#f0b9a8]" : "bg-[#ddd5c4]")} />
-            </li>
-          ))}
+      <nav aria-label="เปลี่ยนข้อ" className="flex flex-wrap items-center justify-between gap-3">
+        <button type="button" disabled={at === 0} onClick={() => move(at - 1)} className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 text-sm font-semibold text-(--ac-navy) hover:bg-white disabled:opacity-30"><ArrowLeftIcon className="size-4" aria-hidden /> ข้อก่อน</button>
+        <ol className="flex flex-wrap justify-center gap-2">
+          {states.map((s, i) => {
+            const label = s.checked === "ok" ? "ถูกแล้ว" : s.shown ? "ดูเฉลยแล้ว" : s.checked === "no" ? "ยังไม่ถูก" : "ยังไม่ทำ";
+            return (
+              <li key={i}>
+                <button type="button" onClick={() => move(i)} aria-label={`ข้อ ${i + 1}: ${label}`} aria-current={i === at ? "step" : undefined}
+                  className={"grid size-8 place-items-center rounded-full border text-xs font-semibold transition " + (i === at ? "ring-2 ring-(--ac-navy) ring-offset-2 " : "") +
+                    (s.checked === "ok" ? "border-[#2e7d5b] bg-[#e3f1ea] text-[#22694b]" : s.shown ? "border-(--ac-gold) bg-(--ac-gold-soft) text-[#7a5418]" : s.checked === "no" ? "border-[#e0a49a] bg-[#fdecea] text-bad" : "border-(--ac-line) bg-white text-(--ac-muted)")}>
+                  {s.checked === "ok" ? <CheckIcon className="size-3.5" aria-hidden /> : s.checked === "no" && !s.shown ? <XIcon className="size-3.5" aria-hidden /> : i + 1}
+                </button>
+              </li>
+            );
+          })}
         </ol>
-        {finished ? (
-          <button type="button" className="btn" onClick={() => setReview(true)}>ดูสรุปผล <ArrowRightIcon className="size-4" /></button>
-        ) : (
-          <button type="button" className="btn-ghost" disabled={at === total - 1} onClick={() => move(at + 1)}>ข้อต่อไป <ArrowRightIcon className="size-4" /></button>
-        )}
+        <button type="button" disabled={at === total - 1} onClick={() => move(at + 1)} className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 text-sm font-semibold text-(--ac-navy) hover:bg-white disabled:opacity-30">ข้อต่อไป <ArrowRightIcon className="size-4" aria-hidden /></button>
+      </nav>
+      <p className="text-sm leading-6 text-(--ac-body)"><b className="text-(--ac-navy)">การบ้าน:</b> {lesson.homework}</p>
+    </div>
+  );
+}
+
+/** Tells Practice and Quiz apart at a glance: what the mode is for and how it behaves. */
+function ModeHeader({ kind, count, passMark }: { kind: "practice" | "quiz"; count?: number; passMark?: number }) {
+  const practice = kind === "practice";
+  return (
+    <div className={"flex flex-wrap items-start gap-4 rounded-2xl border p-5 " + (practice ? "border-(--ac-line) bg-(--ac-bg)" : "border-(--ac-navy)/15 bg-[#eef2f8]")}>
+      <span className={"grid size-11 shrink-0 place-items-center rounded-xl " + (practice ? "bg-(--ac-gold-soft) text-[#7a5418]" : "bg-(--ac-navy) text-white")}>
+        {practice ? <PencilLineIcon className="size-5" aria-hidden /> : <ClipboardCheckIcon className="size-5" aria-hidden />}
+      </span>
+      <div className="min-w-0 flex-1">
+        <p className="ac-serif text-xl font-bold text-(--ac-navy)">{practice ? "Practice · ฝึกจากข้อผิดพลาด" : "Quiz · วัดความเข้าใจ"}</p>
+        <p className="mt-0.5 text-sm leading-6 text-(--ac-body)">
+          {practice
+            ? "ทำทีละข้อ ตอบผิดได้ไม่จำกัด มีคำใบ้และเฉลย ไม่นับคะแนน"
+            : `${count} ข้อ ไม่มีคำใบ้ เฉลยและคำอธิบายจะขึ้นหลังส่งคำตอบ ได้ ${passMark}% ขึ้นไปถือว่าผ่านบทนี้`}
+        </p>
       </div>
-      <p className="text-sm text-muted"><b className="text-ink">การบ้าน:</b> {lesson.homework}</p>
     </div>
   );
 }
@@ -301,28 +354,20 @@ function hintOf(item: PracticeItem) {
   return `คำตอบขึ้นต้นด้วย "${answer.slice(0, 1)}" และยาว ${answer.length} ตัวอักษร`;
 }
 
+const questionText = "text-[22px] leading-[1.45] font-semibold text-(--ac-navy) sm:text-[26px]";
+
 function ExerciseBody({ item, st, update, onSubmit }: { item: PracticeItem; st: ItemState; update: (p: Partial<ItemState>) => void; onSubmit: () => void }) {
   const locked = st.checked === "ok" || st.shown;
   if (item.t === "pick") {
     return (
       <>
-        <p id="ex-q" className="font-display text-2xl leading-snug font-semibold sm:text-[28px]">{item.q}</p>
+        <p id="ex-q" className={questionText}>{item.q}</p>
         <div className="grid gap-3 sm:grid-cols-2" role="radiogroup" aria-labelledby="ex-q">
-          {item.o.map((o, i) => {
-            const chosen = st.choice === i;
-            const right = locked && i === item.a;
-            const wrong = st.checked === "no" && chosen;
-            return (
-              <button key={o} type="button" role="radio" aria-checked={chosen} disabled={locked} onClick={() => update({ choice: i, checked: null })}
-                className={"flex items-center gap-4 rounded-2xl border-2 px-4 py-4 text-left text-[17px] transition " +
-                  (right ? "border-obj bg-obj-bg" : wrong ? "border-[#e8a58f] bg-bad-bg" : chosen ? "border-navy bg-brand-soft" : "border-line bg-surface hover:border-navy/40")}>
-                <span className={"grid size-9 shrink-0 place-items-center rounded-lg font-mono text-sm font-semibold " + (right ? "bg-obj text-white" : chosen ? "bg-navy text-white" : "text-muted")}>{LETTERS[i]}</span>
-                <span className="flex-1">{o}</span>
-                {right && <CheckCircle2Icon className="size-6 text-obj" aria-hidden />}
-                {wrong && <XCircleIcon className="size-6 text-bad" aria-hidden />}
-              </button>
-            );
-          })}
+          {item.o.map((o, i) => (
+            <OptionButton key={o} letter={LETTERS[i]} text={o} chosen={st.choice === i} disabled={locked}
+              state={locked && i === item.a ? "correct" : st.checked === "no" && st.choice === i ? "wrong" : null}
+              onPick={() => update({ choice: i, checked: null })} />
+          ))}
         </div>
       </>
     );
@@ -330,17 +375,19 @@ function ExerciseBody({ item, st, update, onSubmit }: { item: PracticeItem; st: 
   if (item.t === "order") {
     return (
       <>
-        <p id="ex-q" className="text-[17px]">เรียงคำให้ได้ความหมาย: <b>{item.th}</b></p>
-        <div className="flex min-h-14 flex-wrap gap-2 rounded-xl border-2 border-dashed border-line p-2.5" aria-label="ประโยคที่เรียงแล้ว">
+        <p id="ex-q" className="text-[17px] leading-7 text-(--ac-ink)">เรียงคำให้ได้ความหมาย: <b className="text-(--ac-navy)">{item.th}</b></p>
+        <div className="flex min-h-16 flex-wrap items-center gap-2 rounded-xl border-2 border-dashed border-(--ac-line) bg-(--ac-bg) p-3" aria-label="ประโยคที่เรียงแล้ว">
+          {st.picked.length === 0 && <span className="text-sm text-(--ac-muted)">แตะคำด้านล่างเพื่อเรียงประโยค</span>}
           {st.picked.map((idx, i) => (
-            <button key={i} type="button" disabled={locked} className="rounded-lg bg-navy px-3 py-1.5 font-mono text-[15px] text-white"
+            <button key={i} type="button" disabled={locked} aria-label={`เอา "${item.w[idx]}" ออก`}
+              className="min-h-11 rounded-lg bg-(--ac-navy) px-3.5 text-[16px] text-white"
               onClick={() => update({ picked: st.picked.filter((_, j) => j !== i), checked: null })}>{item.w[idx]}</button>
           ))}
         </div>
         <div className="flex flex-wrap gap-2">
           {item.w.map((w, idx) => (
             <button key={idx} type="button" disabled={locked || st.picked.includes(idx)}
-              className="rounded-lg border border-line bg-surface px-3 py-1.5 font-mono text-[15px] hover:border-navy/40 disabled:opacity-25"
+              className="min-h-11 rounded-lg border border-(--ac-line) bg-white px-3.5 text-[16px] text-(--ac-ink) hover:border-(--ac-navy)/40 disabled:opacity-25"
               onClick={() => update({ picked: [...st.picked, idx], checked: null })}>{w}</button>
           ))}
         </div>
@@ -349,42 +396,53 @@ function ExerciseBody({ item, st, update, onSubmit }: { item: PracticeItem; st: 
   }
   return (
     <form className="flex flex-col gap-3" onSubmit={(e) => { e.preventDefault(); if (ready(item, st)) onSubmit(); }}>
-      <p id="ex-q" className="font-display text-2xl leading-snug font-semibold">{item.t === "fix" ? <><span className="text-base font-normal text-muted">แก้ให้ถูก: </span>{item.q}</> : item.q}</p>
-      <input className="input text-lg" value={st.value} readOnly={locked} onChange={(e) => update({ value: e.target.value, checked: null })}
-        placeholder={item.t === "fix" ? "พิมพ์ประโยคที่ถูก" : "พิมพ์คำที่หายไป"} autoCapitalize="off" autoComplete="off" spellCheck={false} aria-labelledby="ex-q" />
+      <p id="ex-q" className={questionText}>{item.t === "fix" ? <><span className="block text-base font-normal text-(--ac-muted)">แก้ประโยคนี้ให้ถูก</span>{item.q}</> : item.q}</p>
+      <input value={st.value} readOnly={locked} onChange={(e) => update({ value: e.target.value, checked: null })}
+        placeholder={item.t === "fix" ? "พิมพ์ประโยคที่ถูก แล้วกด Enter" : "พิมพ์คำที่หายไป แล้วกด Enter"} autoCapitalize="off" autoComplete="off" spellCheck={false} aria-labelledby="ex-q"
+        className={"min-h-13 w-full rounded-xl border-2 bg-white px-4 text-lg outline-none transition focus:border-(--ac-navy) focus:ring-4 focus:ring-(--ac-gold-soft) " +
+          (st.checked === "ok" ? "border-[#2e7d5b]" : st.checked === "no" ? "border-[#e0a49a]" : "border-(--ac-line)")} />
     </form>
   );
 }
 
+/** One answer choice. States show as border, an icon and a word, never colour alone. */
+function OptionButton({ letter, text, chosen, disabled, state, onPick }: { letter: string; text: string; chosen: boolean; disabled: boolean; state: "correct" | "wrong" | null; onPick: () => void }) {
+  const tone = state === "correct" ? "border-[#2e7d5b] bg-[#eef7f1]"
+    : state === "wrong" ? "border-[#d9776a] bg-[#fdf1ef]"
+    : chosen ? "border-(--ac-navy) bg-[#eef2f8]"
+    : "border-(--ac-line) bg-white hover:border-(--ac-navy)/40 hover:bg-(--ac-bg)";
+  return (
+    <button type="button" role="radio" aria-checked={chosen} disabled={disabled} onClick={onPick}
+      className={"flex min-h-14 items-center gap-3.5 rounded-xl border-2 px-4 py-3 text-left text-[17px] text-(--ac-ink) transition disabled:cursor-default " + tone}>
+      <span className={"grid size-8 shrink-0 place-items-center rounded-lg font-mono text-sm font-semibold " +
+        (state === "correct" ? "bg-[#2e7d5b] text-white" : state === "wrong" ? "bg-[#c4483a] text-white" : chosen ? "bg-(--ac-navy) text-white" : "bg-[#f4f1ea] text-(--ac-muted)")}>{letter}</span>
+      <span className="min-w-0 flex-1">{text}</span>
+      {state === "correct" && <span className="flex items-center gap-1 text-sm font-semibold text-[#22694b]"><CheckCircle2Icon className="size-5" aria-hidden />ถูก</span>}
+      {state === "wrong" && <span className="flex items-center gap-1 text-sm font-semibold text-bad"><XCircleIcon className="size-5" aria-hidden />ไม่ใช่</span>}
+      {chosen && !state && <span className="sr-only">(เลือกแล้ว)</span>}
+    </button>
+  );
+}
+
 function Feedback({ item, st }: { item: PracticeItem; st: ItemState }) {
-  if (st.checked === "ok") {
+  if (st.checked === "ok" || st.shown) {
+    const ok = st.checked === "ok";
     return (
-      <div className="flex gap-3 rounded-xl border-l-4 border-obj bg-obj-bg px-4 py-3" role="status">
-        <CheckCircle2Icon className="mt-0.5 size-5 shrink-0 text-obj" aria-hidden />
-        <div className="text-sm leading-6">
-          <p className="font-semibold text-obj">ถูกต้อง!{st.attempts > 1 ? ` (ครั้งที่ ${st.attempts})` : ""}</p>
+      <div className={"flex gap-3 rounded-xl border-l-4 px-4 py-4 " + (ok ? "border-[#2e7d5b] bg-[#eef7f1]" : "border-(--ac-gold) bg-[#fbf6ea]")}>
+        {ok ? <CheckCircle2Icon className="mt-0.5 size-5 shrink-0 text-[#2e7d5b]" aria-hidden /> : <LightbulbIcon className="mt-0.5 size-5 shrink-0 text-(--ac-gold)" aria-hidden />}
+        <div className="flex flex-col gap-1 text-[15px] leading-6 text-(--ac-ink)">
+          <p className={"font-semibold " + (ok ? "text-[#22694b]" : "text-[#7a5418]")}>{ok ? `ถูกต้อง${st.attempts > 1 ? ` (ครั้งที่ ${st.attempts})` : ""}` : "เฉลย"}</p>
           <p>คำตอบ: <b>{answerOf(item)}</b></p>
-          {item.th && <p className="text-muted">{item.th}</p>}
-        </div>
-      </div>
-    );
-  }
-  if (st.shown) {
-    return (
-      <div className="flex gap-3 rounded-xl border-l-4 border-[#d9a84a] bg-[#fbf3cf] px-4 py-3" role="status">
-        <LightbulbIcon className="mt-0.5 size-5 shrink-0 text-[#8a5a00]" aria-hidden />
-        <div className="text-sm leading-6">
-          <p>เฉลย: <b>{answerOf(item)}</b></p>
-          {item.th && <p className="text-muted">{item.th}</p>}
+          {item.th && <p className="text-(--ac-body)"><span className="font-semibold">ความหมาย:</span> {item.th}</p>}
         </div>
       </div>
     );
   }
   if (st.checked === "no") {
     return (
-      <div className="flex gap-3 rounded-xl border-l-4 border-bad bg-bad-bg px-4 py-3" role="status">
+      <div className="flex gap-3 rounded-xl border-l-4 border-[#c4483a] bg-[#fdf1ef] px-4 py-4">
         <XCircleIcon className="mt-0.5 size-5 shrink-0 text-bad" aria-hidden />
-        <p className="text-sm leading-6"><b className="text-bad">ยังไม่ใช่</b> แก้คำตอบแล้วตรวจอีกครั้ง หรือกดดูคำใบ้</p>
+        <p className="text-[15px] leading-6 text-(--ac-ink)"><b className="text-bad">ยังไม่ถูก</b> แก้คำตอบแล้วตรวจอีกครั้ง หรือเปิดคำใบ้ก่อนดูเฉลย</p>
       </div>
     );
   }
@@ -453,7 +511,6 @@ function Summary({ lesson, words, next, onQuiz }: { lesson: Lesson; words: Lesso
   );
 }
 
-
 type QuizProps = { lesson: Lesson; next?: { href: string; title: string }; passMark: number; newWordIds: string[] };
 
 function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
@@ -463,9 +520,14 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
   const [done, setDone] = useState<{ score: number; saved: boolean; added: number } | null>(null);
   const [error, setError] = useState(false);
   const [pending, start] = useTransition();
-  const allAnswered = answers.every((a) => a !== null);
+  // Set before the first await, so a double click can't save the same attempt twice.
+  const submitting = useRef(false);
+  const answered = answers.filter((a) => a !== null).length;
+  const allAnswered = answered === quiz.length;
 
   function submit() {
+    if (submitting.current || done) return;
+    submitting.current = true;
     const right = quiz.filter((q, i) => answers[i] === q.a).length;
     const score = Math.round((right / quiz.length) * 100);
     const wrongs = quiz
@@ -484,63 +546,114 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
         setDone({ score, saved: false, added: 0 });
         setError(true);
       }
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      document.getElementById("lesson-content")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
 
+  function retake() {
+    setQuiz(shuffleQuiz(lesson.quiz));
+    setAnswers(lesson.quiz.map(() => null));
+    setDone(null);
+    submitting.current = false;
+  }
+
   const passed = done && done.score >= passMark;
+  const rightCount = done ? quiz.filter((q, i) => answers[i] === q.a).length : 0;
 
   return (
-    <div className="flex flex-col gap-4">
-      {done && (
-        <div className={"card flex flex-wrap items-center gap-4 p-5 " + (passed ? "border-[#9ccdb8] bg-obj-bg" : "border-[#f3c3bd] bg-bad-bg")}>
-          <p className="font-display text-4xl font-bold tabular">{done.score}%</p>
-          <div className="min-w-0 flex-1 text-sm">
-            <p className="font-semibold">{passed ? "ผ่านแล้ว" : `ยังไม่ผ่าน ต้องได้ ${passMark}% ขึ้นไป`}</p>
-            <p className="text-muted">
-              {error ? "บันทึกคะแนนไม่สำเร็จ ลองส่งอีกครั้ง" : done.saved ? "บันทึกคะแนนแล้ว" : "ยังไม่ได้เข้าสู่ระบบ คะแนนนี้จึงไม่ถูกบันทึก"}
-            </p>
-            {done.added > 0 && <p className="text-obj">เพิ่มคำใหม่ {done.added} คำเข้าการ์ดทวนแล้ว</p>}
-          </div>
-          {passed && next ? (
-            <Link href={next.href} className="btn">บทถัดไป: {next.title} →</Link>
-          ) : (
-            <button type="button" className="btn-ghost" onClick={() => { setQuiz(shuffleQuiz(lesson.quiz)); setAnswers(lesson.quiz.map(() => null)); setDone(null); }}>ทำใหม่</button>
-          )}
-        </div>
-      )}
+    <div className="flex flex-col gap-5">
+      <ModeHeader kind="quiz" count={quiz.length} passMark={passMark} />
 
-      <ol className="grid gap-4 lg:grid-cols-2">
-        {quiz.map((q, i) => (
-          <li key={i} className="card flex flex-col gap-3 p-5">
-            <p className="eyebrow">ข้อ {i + 1} จาก {quiz.length}</p>
-            <p className="text-[15px] font-medium">{q.q}</p>
-            <div className="flex flex-col gap-2" role="radiogroup" aria-label={`ข้อ ${i + 1}`}>
-              {q.o.map((o, j) => {
-                const chosen = answers[i] === j;
-                const reveal = done !== null;
-                const tone = reveal && j === q.a ? "border-obj bg-obj-bg" : reveal && chosen ? "border-bad bg-bad-bg" : chosen ? "border-brand bg-brand-soft" : "border-line bg-surface hover:border-brand";
-                return (
-                  <button key={j} type="button" role="radio" aria-checked={chosen} disabled={reveal}
-                    onClick={() => setAnswers(answers.map((a, k) => (k === i ? j : a)))}
-                    className={"rounded-lg border-[1.5px] px-3 py-2.5 text-left text-[15px] transition " + tone}>
-                    {o}
-                  </button>
-                );
-              })}
+      <div aria-live="polite">
+        {done && (
+          <section aria-labelledby="quiz-result" className={"flex flex-wrap items-center gap-5 rounded-2xl border-2 p-6 " + (passed ? "border-[#2e7d5b] bg-[#eef7f1]" : "border-[#d9776a] bg-[#fdf1ef]")}>
+            <p className="ac-serif text-5xl font-bold text-(--ac-navy) tabular">{done.score}%</p>
+            <div className="min-w-0 flex-1 text-[15px] leading-6">
+              <h3 id="quiz-result" className={"flex items-center gap-1.5 text-lg font-semibold " + (passed ? "text-[#22694b]" : "text-bad")}>
+                {passed ? <CheckCircle2Icon className="size-5" aria-hidden /> : <XCircleIcon className="size-5" aria-hidden />}
+                {passed ? "ผ่านแล้ว" : `ยังไม่ผ่าน ต้องได้ ${passMark}% ขึ้นไป`}
+              </h3>
+              <p className="text-(--ac-body)">ถูก {rightCount} จาก {quiz.length} ข้อ · {error ? "บันทึกคะแนนไม่สำเร็จ ลองทำใหม่อีกครั้ง" : done.saved ? "บันทึกคะแนนแล้ว" : "ยังไม่ได้เข้าสู่ระบบ คะแนนนี้จึงไม่ถูกบันทึก"}</p>
+              {done.added > 0 && <p className="text-[#22694b]">เพิ่มคำใหม่ {done.added} คำเข้าการ์ดทวนแล้ว</p>}
             </div>
-            {done && q.why && <p className="text-xs text-muted">{q.why}</p>}
-          </li>
-        ))}
+            <div className="flex flex-wrap gap-2">
+              {passed && next && (
+                <Link href={next.href} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-4 text-sm font-semibold text-(--ac-navy) hover:bg-[#ecc580]">บทถัดไป: {next.title} <ArrowRightIcon className="size-4" aria-hidden /></Link>
+              )}
+              <button type="button" onClick={retake} className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-(--ac-line) bg-white px-4 text-sm font-semibold text-(--ac-navy) hover:bg-(--ac-bg)">
+                <RotateCcwIcon className="size-4" aria-hidden /> ทำใหม่ (สลับข้อ)
+              </button>
+            </div>
+          </section>
+        )}
+      </div>
+
+      <ol className="flex flex-col gap-4">
+        {quiz.map((q, i) => {
+          const reveal = done !== null;
+          const ok = reveal && answers[i] === q.a;
+          return (
+            <li key={`${i}-${q.q}`} className="rounded-2xl border border-(--ac-line) bg-white p-5 shadow-(--ac-shadow) sm:p-7">
+              <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+                <p className="flex items-center gap-2.5 text-sm text-(--ac-muted)">
+                  <span className="grid size-8 place-items-center rounded-full bg-(--ac-navy) text-sm font-semibold text-white">{i + 1}</span>
+                  ข้อ {i + 1} จาก {quiz.length}
+                </p>
+                {reveal && (
+                  <span className={"inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold " + (ok ? "bg-[#e3f1ea] text-[#22694b]" : "bg-[#fdecea] text-bad")}>
+                    {ok ? <CheckIcon className="size-3.5" aria-hidden /> : <XIcon className="size-3.5" aria-hidden />}{ok ? "ถูก" : "ผิด"}
+                  </span>
+                )}
+              </div>
+              <p id={`quiz-q-${i}`} className="text-[19px] leading-[1.5] font-semibold text-(--ac-navy) sm:text-[21px]">{q.q}</p>
+              <RadioGroup labelledBy={`quiz-q-${i}`} className="mt-4 grid gap-2.5 sm:grid-cols-2">
+                {q.o.map((o, j) => (
+                  <OptionButton key={j} letter={LETTERS[j]} text={o} chosen={answers[i] === j} disabled={reveal}
+                    state={reveal && j === q.a ? "correct" : reveal && answers[i] === j ? "wrong" : null}
+                    onPick={() => setAnswers(answers.map((a, k) => (k === i ? j : a)))} />
+                ))}
+              </RadioGroup>
+              {reveal && q.why && (
+                <p className="mt-4 rounded-xl bg-(--ac-bg) px-4 py-3 text-[15px] leading-6 text-(--ac-ink)"><b className="text-(--ac-navy)">คำอธิบาย:</b> {q.why}</p>
+              )}
+            </li>
+          );
+        })}
       </ol>
 
       {!done && (
-        <button type="button" className="btn self-start" disabled={!allAnswered || pending} onClick={submit}>
-          {pending ? "กำลังตรวจ…" : allAnswered ? "ส่งคำตอบ" : `ตอบให้ครบก่อน (${answers.filter((a) => a !== null).length}/${quiz.length})`}
-        </button>
+        // Stays in view while scrolling; sits above the phone tab bar.
+        <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-10 flex flex-wrap items-center gap-4 rounded-2xl border border-(--ac-line) bg-white/95 p-4 shadow-(--ac-shadow) backdrop-blur lg:bottom-4">
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-semibold text-(--ac-navy)">ตอบแล้ว {answered} จาก {quiz.length} ข้อ</p>
+            <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-[#efe9dd]" role="progressbar" aria-label="ตอบแล้ว" aria-valuemin={0} aria-valuemax={quiz.length} aria-valuenow={answered}>
+              <div className="h-full rounded-full bg-(--ac-gold) transition-[width] duration-300" style={{ width: `${(answered / quiz.length) * 100}%` }} />
+            </div>
+          </div>
+          <button type="button" disabled={!allAnswered || pending} onClick={submit}
+            className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-(--ac-navy) px-6 text-[15px] font-semibold text-white transition hover:bg-(--ac-navy-2) disabled:cursor-not-allowed disabled:opacity-40">
+            {pending ? "กำลังตรวจ…" : allAnswered ? "ส่งคำตอบ" : "ตอบให้ครบก่อนส่ง"}
+          </button>
+        </div>
       )}
     </div>
   );
+}
+
+/** Radio-group keyboard behaviour: arrow keys move between the choices and pick them. */
+function RadioGroup({ labelledBy, className, children }: { labelledBy: string; className: string; children: ReactNode }) {
+  function onKeyDown(e: ReactKeyboardEvent<HTMLDivElement>) {
+    if (!["ArrowDown", "ArrowUp", "ArrowRight", "ArrowLeft"].includes(e.key)) return;
+    const radios = [...e.currentTarget.querySelectorAll<HTMLButtonElement>('[role="radio"]:not(:disabled)')];
+    const at = radios.indexOf(document.activeElement as HTMLButtonElement);
+    if (at < 0) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const to = radios[(at + (e.key === "ArrowDown" || e.key === "ArrowRight" ? 1 : -1) + radios.length) % radios.length];
+    to.focus();
+    to.click();
+  }
+  return <div role="radiogroup" aria-labelledby={labelledBy} className={className} onKeyDown={onKeyDown}>{children}</div>;
 }
 
 function shuffled<T>(list: T[]): T[] {

@@ -1,124 +1,311 @@
-import { ArrowRightIcon, CompassIcon, GaugeIcon } from "lucide-react";
+import {
+  ArrowRightIcon, BarChart3Icon, BookOpenIcon, BookOpenTextIcon, CheckIcon, ChevronRightIcon, CompassIcon,
+  FileTextIcon, GlobeIcon, GraduationCapIcon, HeadphonesIcon, LandmarkIcon, MessageCircleIcon, MicIcon,
+  PenLineIcon, SchoolIcon, TargetIcon, type LucideIcon,
+} from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
-import { IeltsIntro } from "@/components/ielts-intro";
-import { courseCompletion, STAGES, stageProgress } from "@/content/stages";
+import { AcademicPhoto } from "@/components/academic-photo";
+import { STAGE_LOOK } from "@/components/stage-look";
+import { BandExplorer } from "@/components/home/band-explorer";
+import { Faq } from "@/components/home/faq";
+import { TestChooser } from "@/components/home/test-chooser";
+import { Thai } from "@/components/home/thai";
+import { courseCompletion, stageProgress, type StageProgress } from "@/content/stages";
 import { getLessonBest, getPlacements, getUser } from "@/lib/data";
-import { RoadmapPreview } from "./roadmap-preview";
 
-/** The academy: what the site is for, the road to the target band, and where the learner is on it. */
+/** Home, on the Academic Studio theme (scoped by .theme-academic; other pages keep their own look). */
 export default function HomePage() {
   return (
-    <div className="page-bleed on-dark bg-navy text-white">
-      <Hero />
-      <section aria-labelledby="road" className="relative mx-auto max-w-6xl px-4 pt-14 sm:px-6 lg:px-10">
-        <p className="font-mono text-[11px] tracking-[0.3em] text-gold">THE ROAD TO YOUR TARGET BAND</p>
-        <h2 id="road" className="mt-2 font-brand text-2xl font-semibold tracking-wide sm:text-3xl">7 สถานีสู่ Band เป้าหมาย</h2>
-        <p className="mt-2 max-w-[60ch] text-mist">แตะสถานีเพื่อดูว่าเรียนอะไร แล้วเปิด Roadmap เพื่อเริ่มจากสถานีนั้น</p>
-        <RoadmapPreview stages={STAGES.map(({ n, id, title, th, blurb }) => ({ n, id, title, th, blurb }))} />
-      </section>
-      <section aria-labelledby="progress" className="mx-auto max-w-6xl px-4 pt-14 sm:px-6 lg:px-10">
-        <h2 id="progress" className="sr-only">ความคืบหน้าของคุณ</h2>
-        <Suspense fallback={<div className="glass h-40 animate-pulse" />}>
-          <Progress />
+    <div className="theme-academic page-bleed bg-(--ac-bg) text-(--ac-ink)">
+      <div className="mx-auto flex max-w-[1520px] flex-col gap-6 px-4 pb-32 sm:px-6 lg:gap-8 lg:px-10 lg:pb-16 2xl:px-12">
+        <Hero />
+        <Suspense fallback={<Roadmap stages={stageProgress({})} current={null} />}>
+          <RoadmapWithProgress />
         </Suspense>
-      </section>
-      <section aria-labelledby="what" className="mx-auto max-w-6xl px-4 pt-16 pb-32 sm:px-6 lg:px-10 lg:pb-20">
-        <p className="font-mono text-[11px] tracking-[0.3em] text-gold">STAGE 01</p>
-        <h2 id="what" className="mt-2 mb-6 font-brand text-2xl font-semibold tracking-wide sm:text-3xl">What is IELTS?</h2>
-        <IeltsIntro headingLevel={3} />
-      </section>
+        <Skills />
+        <Suspense fallback={null}>
+          <Continue />
+        </Suspense>
+        <Section id="tests" eyebrow="IELTS ACADEMIC OR GENERAL" title="Which IELTS Test Is Right for You?"
+          subtitle="Understand the differences and choose the test that fits your goals.">
+          <TestChooser />
+        </Section>
+        <Section id="bands" eyebrow="BAND SCORES" title="Know Your Band. Plan Your Progress."
+          subtitle="Choose a band to read what it means on the official scale and what to work on next.">
+          <BandExplorer />
+        </Section>
+        <Section id="how" eyebrow="HOW IT WORKS" title="Your Learning Journey, Made Simple.">
+          <HowItWorks />
+        </Section>
+        <Section id="faq" eyebrow="FAQ" title="Everything You Need to Know">
+          <Faq />
+        </Section>
+        <FinalCta />
+      </div>
     </div>
   );
 }
 
+const HIGHLIGHTS: { Icon: LucideIcon; text: string }[] = [
+  { Icon: BarChart3Icon, text: "Personalized learning path" },
+  { Icon: BookOpenIcon, text: "Exam-format practice" },
+  { Icon: TargetIcon, text: "Trackable progress" },
+  { Icon: GlobeIcon, text: "Skills for study, work and life" },
+];
+
 function Hero() {
   return (
-    <section className="relative isolate flex min-h-[min(84vh,760px)] items-end overflow-hidden lg:items-center">
-      {/* The academy scene drifts very slowly; reduced-motion settings stop it (globals.css). */}
-      <picture className="absolute inset-0 -z-10">
-        <source media="(max-width: 700px)" srcSet="/scenes/home-900.webp" />
-        <img src="/scenes/home-1600.webp" alt="" fetchPriority="high" className="hero-drift size-full object-cover object-[60%_center]" />
-      </picture>
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,24,43,0.92)_0%,rgba(7,24,43,0.7)_38%,rgba(7,24,43,0.05)_70%)] max-lg:bg-[linear-gradient(0deg,rgba(7,24,43,0.95)_0%,rgba(7,24,43,0.75)_45%,rgba(7,24,43,0.1)_80%)]" aria-hidden />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-b from-transparent to-navy" aria-hidden />
-      <div className="mx-auto w-full max-w-6xl px-4 pt-40 pb-12 sm:px-6 lg:px-10 lg:py-24">
-        <div className="learn-in max-w-xl">
-          <p className="font-mono text-[11px] tracking-[0.35em] text-gold">IELTS ODYSSEY · A HIGHER YOU</p>
-          <h1 className="mt-4 font-brand text-[40px] leading-[1.08] font-bold tracking-wide sm:text-[56px]">
-            Enter the <span className="text-gold-soft">Living Academy</span>
-          </h1>
-          <p className="mt-5 text-lg leading-8 text-[#dce5ee]">
-            Understand IELTS. Build your four skills. Follow a clear roadmap to your target band.
-          </p>
-          <p className="mt-2 text-[15px] leading-7 text-mist">
-            เริ่มจากรู้จักข้อสอบ ปูพื้นภาษาอังกฤษทีละบท แล้วไต่ระดับไปทีละสถานีจนพร้อมสอบ
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/roadmap" className="btn px-6 py-3.5 text-[15px]">Start Your Journey <ArrowRightIcon className="size-4" /></Link>
-            <Link href="/roadmap?view=list" className="btn-dark px-6 py-3.5 text-[15px]"><CompassIcon className="size-4" /> Explore Roadmap</Link>
-          </div>
+    <section className="relative flex flex-col lg:min-h-[540px] lg:justify-center" aria-labelledby="home-title">
+      {/* From 30% to the right edge of the screen; an ivory wash joins the photo to the text side. */}
+      <div className="relative -mx-4 h-56 sm:-mx-6 sm:h-72 lg:absolute lg:inset-y-0 lg:right-[calc((100%_-_100vw)/2)] lg:left-[30%] lg:mx-0 lg:h-auto">
+        <AcademicPhoto name="hero-study" alt="ห้องเรียนสว่างแบบวิชาการ แสงธรรมชาติ หนังสือและโต๊ะไม้" icon={SchoolIcon} priority className="size-full object-[62%_center] lg:object-center" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_60%,var(--ac-bg)_100%)] lg:bg-[linear-gradient(90deg,var(--ac-bg)_0%,rgba(250,248,243,0.92)_14%,rgba(250,248,243,0.55)_28%,rgba(250,248,243,0)_42%)]" aria-hidden />
+        <div className="absolute inset-x-0 bottom-0 hidden h-24 bg-[linear-gradient(180deg,transparent,var(--ac-bg))] lg:block" aria-hidden />
+      </div>
+      <div className="relative z-10 flex max-w-[780px] flex-col gap-6 pt-4 pb-2 lg:py-14">
+        <h1 id="home-title" className="ac-serif text-[38px] leading-[1.08] font-bold tracking-[-0.015em] text-(--ac-navy) sm:text-[50px] lg:text-[54px] xl:text-[64px] xl:whitespace-nowrap">
+          Learn English with Clarity.<br />
+          <span className="text-(--ac-gold)">Reach Your IELTS Goal.</span>
+        </h1>
+        <p className="max-w-[36rem] text-[17px] leading-[1.6] text-(--ac-body) sm:text-[19px]">
+          Structured lessons. Real-world practice. Clear progress.{" "}<br className="hidden sm:block" />
+          Everything you need to confidently reach your target band.
+        </p>
+                <div className="flex flex-wrap gap-3">
+          <Link href="/placement" className="inline-flex items-center gap-2 rounded-lg bg-(--ac-navy) px-6 py-3.5 text-[15px] font-semibold text-white shadow-(--ac-shadow) transition hover:bg-(--ac-navy-2)">
+            Start Placement Test <ArrowRightIcon className="size-4" aria-hidden />
+          </Link>
+          <Link href="/roadmap" className="inline-flex items-center gap-2 rounded-lg border-[1.5px] border-(--ac-navy) bg-white px-6 py-3.5 text-[15px] font-semibold text-(--ac-navy) transition hover:bg-(--ac-gold-soft)">
+            See Your Roadmap
+          </Link>
         </div>
+        <ul className="grid grid-cols-1 gap-2.5 pt-3 min-[420px]:grid-cols-2 lg:grid-cols-4 lg:gap-3">
+          {HIGHLIGHTS.map(({ Icon, text }) => (
+            <li key={text} className="flex items-center gap-3 rounded-full bg-white/85 py-1.5 pr-4 pl-1.5 shadow-[0_6px_18px_-12px_rgba(15,36,64,0.45)] ring-1 ring-(--ac-line)/70 backdrop-blur-sm">
+              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-(--ac-gold-soft) text-(--ac-gold)"><Icon className="size-5" aria-hidden /></span>
+              <span className="text-[14px] leading-[1.3] font-medium text-(--ac-ink)">{text}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
 }
 
-async function Progress() {
-  const [user, best, placements] = await Promise.all([getUser(), getLessonBest(), getPlacements()]);
-  if (!user) {
-    return (
-      <div className="glass flex flex-wrap items-center justify-between gap-5 p-6">
-        <div className="max-w-xl">
-          <p className="font-brand text-xl font-semibold tracking-wide text-gold-soft">Start with an assessment</p>
-          <p className="mt-1 text-mist">ไม่แน่ใจว่าควรเริ่มตรงไหน? สอบวัดระดับ 5–8 นาที แล้วเว็บจะแนะนำสถานีและบทที่เหมาะกับคุณ</p>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <Link href="/placement" className="btn"><GaugeIcon className="size-4" /> สอบวัดระดับ</Link>
-          <Link href="/login" className="btn-dark">เข้าสู่ระบบเพื่อบันทึกความคืบหน้า</Link>
-        </div>
+async function RoadmapWithProgress() {
+  const user = await getUser();
+  if (!user) return <Roadmap stages={stageProgress({})} current={null} />;
+  const stages = stageProgress(await getLessonBest());
+  return <Roadmap stages={stages} current={stages.find((s) => s.status === "current")?.id ?? null} />;
+}
+
+function Roadmap({ stages, current }: { stages: StageProgress[]; current: string | null }) {
+  return (
+    <section className="grid gap-7 rounded-2xl border border-(--ac-line) bg-(--ac-surface) p-6 shadow-(--ac-shadow) lg:grid-cols-[270px_minmax(0,1fr)] lg:items-center lg:gap-10 lg:px-10 lg:py-9" aria-labelledby="road-title">
+      <div>
+        <h2 id="road-title" className="ac-serif text-[28px] leading-[1.15] font-bold text-(--ac-navy)">Your 7-Stage<br className="hidden lg:block" /> IELTS Roadmap</h2>
+        <p className="mt-3 text-[15px] leading-6 text-(--ac-muted)">A clear path from your current level to your target band.</p>
       </div>
-    );
-  }
+      <ol className="-mx-2 flex snap-x gap-1 overflow-x-auto px-2 pb-2 lg:mx-0 lg:grid lg:grid-cols-7 lg:overflow-visible lg:px-0 lg:pb-0">
+        {stages.map((s, i) => {
+          const look = STAGE_LOOK[s.id];
+          const active = current ? s.id === current : i === 0;
+          const done = s.status === "done";
+          return (
+            <li key={s.id} className="relative flex w-[148px] shrink-0 snap-start lg:w-auto">
+              {i < stages.length - 1 && (
+                <span className="absolute top-8 left-[calc(50%+40px)] right-[calc(-50%+40px)] hidden items-center lg:flex" aria-hidden>
+                  <span className="h-px flex-1 bg-(--ac-line)" />
+                  <ChevronRightIcon className="size-3.5 text-(--ac-muted)" />
+                  <span className="h-px flex-1 bg-(--ac-line)" />
+                </span>
+              )}
+              <Link href={`/roadmap?stage=${s.id}`} aria-current={active ? "step" : undefined}
+                className="group flex w-full flex-col items-center gap-3 rounded-xl px-1.5 py-1 text-center">
+                <span className={"relative grid size-16 place-items-center rounded-full transition " +
+                  (active ? "bg-(--ac-navy) text-white shadow-[0_0_0_6px_var(--ac-gold-soft)]" : "bg-[#f4f1ea] text-(--ac-navy) group-hover:bg-(--ac-gold-soft)")}>
+                  {active ? <span className="ac-serif text-2xl font-bold">{s.n}</span> : <look.Icon className="size-7" strokeWidth={1.5} aria-hidden />}
+                  {done && <span className="absolute -right-1 -bottom-1 grid size-5 place-items-center rounded-full bg-[#2e7d5b] text-white"><CheckIcon className="size-3" aria-label="ผ่านแล้ว" /></span>}
+                  {active && !done && <span className="absolute -right-1 -bottom-1 grid size-5 place-items-center rounded-full bg-(--ac-gold-bright) text-[10px] font-bold text-(--ac-navy)">{s.n}</span>}
+                </span>
+                <span className="flex flex-col items-center gap-1.5">
+                  <span className="flex min-h-[2.5em] items-start text-[15px] leading-[1.25] font-semibold text-balance text-(--ac-navy)">{s.title}</span>
+                  <span className="max-w-[11rem] text-[13.5px] leading-[1.45] text-balance text-(--ac-muted)">{look.short}</span>
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+  );
+}
+
+const SKILL_CARDS: { name: string; Icon: LucideIcon; photo: string; alt: string; photoIcon: LucideIcon; text: string }[] = [
+  { name: "Listening", Icon: HeadphonesIcon, photo: "skill-listening", alt: "หูฟังบนโต๊ะเรียน", photoIcon: HeadphonesIcon, text: "Train your ear for real conversations, lectures and everyday situations." },
+  { name: "Reading", Icon: BookOpenTextIcon, photo: "skill-reading", alt: "กองหนังสือและเอกสารอ่าน", photoIcon: BookOpenIcon, text: "Build speed, accuracy and critical reading skills." },
+  { name: "Writing", Icon: PenLineIcon, photo: "skill-writing", alt: "สมุดและปากกาบนโต๊ะเขียน", photoIcon: FileTextIcon, text: "Learn how to plan, structure and write clear essays and reports." },
+  { name: "Speaking", Icon: MessageCircleIcon, photo: "skill-speaking", alt: "ไมโครโฟนสำหรับฝึกพูด", photoIcon: MicIcon, text: "Build confidence and fluency for real-life and exam situations." },
+];
+
+function Skills() {
+  return (
+    <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-[minmax(0,2.3fr)_repeat(4,minmax(0,1fr))]" aria-labelledby="what-title">
+      <div className="relative flex flex-col gap-4 overflow-hidden rounded-2xl bg-(--ac-navy) p-7 text-white md:col-span-2 lg:p-8 xl:col-span-1">
+        <WorldDots />
+        <span className="relative h-0.5 w-10 bg-(--ac-gold-bright)" aria-hidden />
+        <h2 id="what-title" className="ac-serif relative text-[32px] leading-tight font-bold">What is IELTS?</h2>
+        <p className="relative max-w-[30rem] text-[15px] leading-7 text-[#dbe3ee]">
+          IELTS (International English Language Testing System) วัดภาษาอังกฤษ 4 ทักษะ ผลออกเป็น Band 0–9
+          ใช้ยื่นเรียนต่อ ทำงาน และย้ายถิ่นฐานในหลายประเทศ
+        </p>
+        <Link href="/ielts" className="relative inline-flex w-fit items-center gap-2 rounded-md bg-(--ac-gold-bright) px-4 py-2.5 text-sm font-semibold text-(--ac-navy) transition hover:bg-[#ecc580]">
+          Learn More About IELTS <ArrowRightIcon className="size-4" aria-hidden />
+        </Link>
+        <ul className="relative mt-auto grid grid-cols-1 gap-4 pt-2 text-[14px] leading-5 text-[#dbe3ee] sm:grid-cols-3">
+          <li className="flex items-center gap-3"><LandmarkIcon className="size-8 shrink-0 text-white" strokeWidth={1.4} aria-hidden />4 skills, Band 0–9</li>
+          <li className="flex items-center gap-3"><GlobeIcon className="size-8 shrink-0 text-white" strokeWidth={1.4} aria-hidden />For study, work and migration</li>
+          <li className="flex items-center gap-3"><GraduationCapIcon className="size-8 shrink-0 text-white" strokeWidth={1.4} aria-hidden />Academic or General Training</li>
+        </ul>
+      </div>
+      {SKILL_CARDS.map((c) => (
+        <article key={c.name} className="flex flex-col overflow-hidden rounded-2xl border border-(--ac-line) bg-(--ac-surface) shadow-(--ac-shadow)">
+          <div className="p-2 pb-0">
+            <AcademicPhoto name={c.photo} alt={c.alt} icon={c.photoIcon} className="aspect-[16/8] w-full rounded-t-xl md:aspect-[16/9] xl:aspect-[16/9]" />
+          </div>
+          <div className="relative flex flex-1 flex-col gap-2 px-5 pt-9 pb-5">
+            <span className="absolute -top-6 left-4 grid size-12 place-items-center rounded-full border border-(--ac-line) bg-white text-(--ac-navy) shadow-sm">
+              <c.Icon className="size-5" aria-hidden />
+            </span>
+            <h3 className="ac-serif text-[22px] font-bold text-(--ac-navy)">{c.name}</h3>
+            <p className="text-[14.5px] leading-[1.5] text-(--ac-body)">{c.text}</p>
+            {/* No lessons for each skill yet: the link shows what Stage 04 has now and what's coming. */}
+            <Link href="/roadmap?stage=skills" className="mt-auto inline-flex items-center gap-1.5 pt-3 text-[15px] font-semibold text-(--ac-navy) hover:text-(--ac-gold)">
+              See in Roadmap <ArrowRightIcon className="size-4" aria-hidden />
+            </Link>
+          </div>
+        </article>
+      ))}
+    </section>
+  );
+}
+
+/** The faint world map in the IELTS card, drawn as a dot grid so it needs no image. */
+function WorldDots() {
+  // Rough continents on a 40×18 grid (1 = land).
+  const rows = [
+    "0000000111111000000000001111111111110000", "0001111111111110000001111111111111111000", "0011111111111100000011111111111111111100",
+    "0001111111111000000111111111111111111000", "0000111111110000000011111111111111110000", "0000011111000000000001111111111111100000",
+    "0000001111000000000000111111111110000000", "0000000110000000000001111111111100000000", "0000000011110000000011111101111000000000",
+    "0000000011111100000011111000110000000000", "0000000001111110000001111000000000000000", "0000000000111110000000111000000011110000",
+    "0000000000011100000000110000000111111000", "0000000000011000000000110000000011111000", "0000000000010000000000000000000001110000",
+  ];
+  return (
+    <svg viewBox="0 0 40 15" className="pointer-events-none absolute top-4 right-[-4%] w-[62%] opacity-[0.13]" aria-hidden>
+      {rows.flatMap((r, y) => [...r].map((c, x) => (c === "1" ? <circle key={`${x}-${y}`} cx={x + 0.5} cy={y + 0.5} r={0.32} fill="#fff" /> : null)))}
+    </svg>
+  );
+}
+
+async function Continue() {
+  const user = await getUser();
+  if (!user) return null;
+  const [best, placements] = await Promise.all([getLessonBest(), getPlacements()]);
   const stages = stageProgress(best);
-  const current = stages.find((s) => s.status === "current") ?? stages.find((s) => s.status === "todo");
+  const current = stages.find((s) => s.status === "current");
   const overall = courseCompletion(best);
   const level = placements[0]?.level;
   return (
-    <div className="grid gap-4 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
-      <div className="glass flex flex-col gap-4 p-6">
-        <p className="font-mono text-[11px] tracking-[0.25em] text-gold">CONTINUE YOUR JOURNEY</p>
-        {current ? (
-          <>
-            <div>
-              <p className="text-sm text-mist">Stage {String(current.n).padStart(2, "0")} / 07</p>
-              <p className="font-brand text-2xl font-semibold tracking-wide">{current.title}</p>
-              <p className="text-sm text-mist">{current.th} · ผ่านแล้ว {current.done} จาก {current.total} บท</p>
-            </div>
-            <div className="h-2 overflow-hidden rounded-full bg-white/10" role="progressbar" aria-label={`ความคืบหน้า ${current.title}`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={current.percent}>
-              <div className="h-full rounded-full bg-gold" style={{ width: `${current.percent}%` }} />
-            </div>
-            {current.next && (
-              <Link href={current.next.href} className="btn self-start">Continue: {current.next.title} <ArrowRightIcon className="size-4" /></Link>
-            )}
-          </>
-        ) : (
-          <p>ผ่านบทเรียนครบทุกสถานีแล้ว เยี่ยมมาก ทบทวนต่อได้ที่ Roadmap</p>
-        )}
+    <section className="flex flex-wrap items-center justify-between gap-5 rounded-2xl border border-(--ac-line) bg-(--ac-surface) p-6 shadow-(--ac-shadow)" aria-labelledby="continue-title">
+      <div className="min-w-0">
+        <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold-ink)">YOUR PROGRESS</p>
+        <h2 id="continue-title" className="ac-serif mt-1 text-2xl font-bold text-(--ac-navy)">
+          {current ? `Stage ${String(current.n).padStart(2, "0")} · ${current.title}` : "ผ่านบทเรียนครบทุกสถานีแล้ว"}
+        </h2>
+        <p className="mt-1 text-sm text-(--ac-muted)">
+          ผ่านแล้ว {overall.done} จาก {overall.total} บท ({overall.percent}%)
+          {level ? ` · ระดับจากการสอบวัดระดับ: ${level === "pre-A1" ? "ก่อน A1" : level} (CEFR ไม่ใช่ Band IELTS)` : " · ยังไม่ได้สอบวัดระดับ"}
+        </p>
       </div>
-      <dl className="glass grid grid-cols-2 gap-4 p-6">
-        <div>
-          <dt className="text-xs text-mist">บทเรียนที่ผ่าน</dt>
-          <dd className="font-brand text-3xl font-bold text-gold-soft tabular">{overall.percent}%</dd>
-          <dd className="text-xs text-mist">{overall.done} จาก {overall.total} บท</dd>
+      {current?.next && (
+        <Link href={current.next.href} className="inline-flex items-center gap-2 rounded-lg bg-(--ac-navy) px-5 py-3 text-sm font-semibold text-white hover:bg-(--ac-navy-2)">
+          Continue: {current.next.title} <ArrowRightIcon className="size-4" aria-hidden />
+        </Link>
+      )}
+    </section>
+  );
+}
+
+
+/** A content section below the fold: generous space above, one heading level, an optional subtitle. */
+function Section({ id, eyebrow, title, subtitle, children }: { id: string; eyebrow: string; title: string; subtitle?: string; children: React.ReactNode }) {
+  return (
+    <section aria-labelledby={`${id}-title`} className="flex scroll-mt-24 flex-col gap-7 pt-10 lg:pt-16" id={id}>
+      <header className="max-w-3xl">
+        <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold-ink)">{eyebrow}</p>
+        <h2 id={`${id}-title`} className="ac-serif mt-2 text-[30px] leading-tight font-bold text-(--ac-navy) sm:text-[38px]">{title}</h2>
+        {subtitle && <p className="mt-3 text-[17px] leading-7 text-(--ac-body)">{subtitle}</p>}
+      </header>
+      {children}
+    </section>
+  );
+}
+
+const STEPS: { n: string; title: string; text: string; th: string; cta: string; href: string; Icon: LucideIcon }[] = [
+  { n: "01", title: "Discover Your Level", Icon: TargetIcon, cta: "Take Placement Test", href: "/placement",
+    text: "Take the placement test to see your starting point and the areas to work on.",
+    th: "ทำแบบทดสอบวัดระดับ เพื่อดูพื้นฐานของคุณและจุดที่ควรพัฒนา" },
+  { n: "02", title: "Follow Your Roadmap", Icon: CompassIcon, cta: "Explore Roadmap", href: "/roadmap",
+    text: "See the path from English Foundation all the way to exam preparation.",
+    th: "ดูเส้นทางการเรียนตั้งแต่ English Foundation ไปจนถึงการเตรียมสอบ" },
+  { n: "03", title: "Practice & Improve", Icon: BookOpenIcon, cta: "Browse Lessons", href: "/grammar",
+    text: "Study grammar and vocabulary, practise each skill, and follow your progress as you go.",
+    th: "เรียนไวยากรณ์และคำศัพท์ ฝึกแต่ละทักษะ และติดตามความคืบหน้าระหว่างทาง" },
+];
+
+function HowItWorks() {
+  return (
+    <ol className="relative grid gap-5 md:grid-cols-3">
+      {/* The timeline behind the three steps on wide screens. */}
+      <span className="absolute top-[42px] right-[16%] left-[16%] hidden h-px bg-[linear-gradient(90deg,var(--ac-line),var(--ac-gold-bright),var(--ac-line))] md:block" aria-hidden />
+      {STEPS.map((step) => (
+        <li key={step.n} className="relative flex flex-col gap-4 rounded-2xl border border-(--ac-line) bg-white p-6 shadow-(--ac-shadow) lg:p-7">
+          <div className="flex items-center gap-4">
+            <span className="grid size-[54px] shrink-0 place-items-center rounded-full border border-(--ac-line) bg-(--ac-bg) text-(--ac-navy)"><step.Icon className="size-6" strokeWidth={1.6} aria-hidden /></span>
+            <span className="font-mono text-sm tracking-[0.2em] text-(--ac-gold-ink)">STEP {step.n}</span>
+          </div>
+          <h3 className="ac-serif text-[22px] font-bold text-(--ac-navy)">{step.title}</h3>
+          <p className="text-[15px] leading-7 text-(--ac-body)">{step.text}<Thai className="text-sm leading-6 text-(--ac-muted)">{step.th}</Thai></p>
+          <Link href={step.href} className="mt-auto inline-flex w-fit items-center gap-1.5 pt-1 text-[15px] font-semibold text-(--ac-navy) hover:text-(--ac-gold)">
+            {step.cta} <ArrowRightIcon className="size-4" aria-hidden />
+          </Link>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function FinalCta() {
+  return (
+    <section aria-labelledby="final-title" className="relative mt-10 overflow-hidden rounded-3xl bg-(--ac-navy) px-6 py-12 text-center text-white sm:px-10 lg:mt-16 lg:py-16">
+      <WorldDots />
+      <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-5">
+        <span className="h-0.5 w-12 bg-(--ac-gold-bright)" aria-hidden />
+        <h2 id="final-title" className="ac-serif text-[32px] leading-tight font-bold sm:text-[42px]">Your English Journey Starts Here.</h2>
+        <p className="text-[17px] leading-7 text-[#dbe3ee]">
+          Build stronger skills, understand your progress, and take the next step toward your IELTS goal.
+          <Thai className="mt-1 text-[15px] text-[#b8c4d4]">สร้างทักษะให้แข็งแรง เข้าใจความคืบหน้าของตัวเอง และก้าวต่อไปสู่เป้าหมาย IELTS</Thai>
+        </p>
+        <div className="flex flex-wrap justify-center gap-3 pt-2">
+          <Link href="/placement" className="inline-flex items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-6 py-3.5 text-[15px] font-semibold text-(--ac-navy) transition hover:bg-[#ecc580]">
+            Start Placement Test <ArrowRightIcon className="size-4" aria-hidden />
+          </Link>
+          <Link href="/roadmap" className="inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/40 px-6 py-3.5 text-[15px] font-semibold text-white transition hover:bg-white/10">
+            Explore Your Roadmap
+          </Link>
         </div>
-        <div>
-          <dt className="text-xs text-mist">ระดับจากการสอบวัดระดับ</dt>
-          <dd className="font-brand text-3xl font-bold text-gold-soft">{level ? (level === "pre-A1" ? "<A1" : level) : "—"}</dd>
-          <dd className="text-xs text-mist">{level ? "ระดับ CEFR ไม่ใช่ Band IELTS" : <Link href="/placement" className="underline">ยังไม่ได้สอบ</Link>}</dd>
-        </div>
-        <p className="col-span-2 text-xs leading-5 text-mist">Band IELTS จริงได้จากการสอบที่ศูนย์สอบเท่านั้น เว็บนี้ยังไม่ประเมิน Band ให้</p>
-      </dl>
-    </div>
+      </div>
+    </section>
   );
 }

@@ -6,11 +6,11 @@ import { getUser } from "@/lib/data";
 export async function MobileAccount() {
   const user = await getUser();
   if (!user) {
-    return <Link href="/login" className="rounded-full bg-mark px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-ink">เข้าสู่ระบบ</Link>;
+    return <Link href="/login" className="account-chip rounded-full bg-mark px-3 py-1.5 text-xs font-semibold whitespace-nowrap text-ink">เข้าสู่ระบบ</Link>;
   }
   return (
     <Link href="/account" aria-label={`บัญชีของฉัน (${user.email})`}
-      className="grid size-8 place-items-center rounded-full bg-mark font-display text-sm font-bold text-ink">
+      className="account-chip grid size-8 place-items-center rounded-full bg-mark font-display text-sm font-bold text-ink lg:size-10 lg:text-base">
       {user.email.slice(0, 1).toUpperCase()}
     </Link>
   );

@@ -1,8 +1,9 @@
 "use client";
 
-import { ArrowRightIcon, CheckIcon, ClockIcon, GlobeIcon, ListIcon, LockIcon, SparklesIcon } from "lucide-react";
+import { ArrowRightIcon, CheckIcon, CircleDotIcon, ClockIcon, ListIcon, LockIcon, MapIcon, SparklesIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { STAGE_LOOK } from "@/components/stage-look";
 import type { StageItem, StageProgress } from "@/content/stages";
 
 type Props = {
@@ -12,15 +13,22 @@ type Props = {
   level: string | null;
   signedIn: boolean;
   initialStage?: string;
+  /** "world" is the path view (kept as the URL value so old links still work). */
   initialView: "world" | "list";
+  /** The atmosphere photo strip, rendered on the server. */
+  banner: React.ReactNode;
 };
 
-const STATUS_TH: Record<StageProgress["status"], string> = {
-  done: "ผ่านแล้ว", current: "กำลังเรียน", todo: "ยังไม่เริ่ม", open: "เปิดอ่านได้", soon: "เร็วๆ นี้",
+const STATUS: Record<StageProgress["status"], { th: string; tone: string }> = {
+  done: { th: "ผ่านแล้ว", tone: "bg-[#e3f1ea] text-[#22694b]" },
+  current: { th: "กำลังเรียน", tone: "bg-(--ac-gold-soft) text-[#7a5418]" },
+  todo: { th: "ยังไม่เริ่ม", tone: "bg-[#f1eee7] text-(--ac-muted)" },
+  open: { th: "เปิดอ่านได้", tone: "bg-[#e8eef6] text-(--ac-navy-2)" },
+  soon: { th: "กำลังจัดทำ", tone: "bg-[#f1eee7] text-(--ac-muted)" },
 };
 const pad = (n: number) => String(n).padStart(2, "0");
 
-export function RoadmapView({ stages, passed, overall, level, signedIn, initialStage, initialView }: Props) {
+export function RoadmapView({ stages, passed, overall, level, signedIn, initialStage, initialView, banner }: Props) {
   const current = stages.find((s) => s.status === "current") ?? stages[1];
   const [selected, setSelected] = useState(initialStage ?? current.id);
   const [view, setView] = useState(initialView);
@@ -37,132 +45,122 @@ export function RoadmapView({ stages, passed, overall, level, signedIn, initialS
 
   return (
     <div className="flex flex-col">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-wrap items-end justify-between gap-4 px-4 pt-8 sm:px-6 lg:px-10">
-        <div>
-          <p className="font-mono text-[11px] tracking-[0.3em] text-gold">THE FLOATING ACADEMY</p>
-          <h1 className="mt-1 font-brand text-3xl font-bold tracking-wide">Your Roadmap</h1>
-        </div>
-        <div role="tablist" aria-label="มุมมอง" className="flex rounded-xl border border-white/10 bg-white/5 p-1">
-          {([["world", "Explore World", GlobeIcon], ["list", "Learning List", ListIcon]] as const).map(([id, label, Icon]) => (
-            <button key={id} type="button" role="tab" aria-selected={view === id} onClick={() => setView(id)}
-              className={"flex items-center gap-2 rounded-lg px-4 py-2 text-sm transition " + (view === id ? "bg-gold font-semibold text-navy" : "text-mist hover:text-white")}>
-              <Icon className="size-4" aria-hidden /> {label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {view === "world" ? (
-        <>
-          <World stages={stages} selected={stage.id} onChoose={choose} />
-          <div className="relative z-10 mx-auto -mt-4 grid w-full max-w-[1440px] gap-4 px-4 pb-32 sm:px-6 sm:-mt-20 lg:-mt-40 lg:grid-cols-[260px_minmax(0,1fr)_340px] lg:px-10 lg:pb-14">
-            <MyProgress overall={overall} level={level} signedIn={signedIn} />
-            <StageCard stage={stage} signedIn={signedIn} />
-            <LessonPreview stage={stage} done={done} />
+      <header className="relative isolate overflow-hidden">
+        <div className="absolute inset-0 -z-10">{banner}</div>
+        {/* Phones: the title spans the whole width, so the photo is washed out evenly behind it. */}
+        <div className="absolute inset-0 -z-10 bg-[rgba(250,248,243,0.86)] md:bg-[linear-gradient(90deg,var(--ac-bg)_0%,rgba(250,248,243,0.92)_30%,rgba(250,248,243,0.55)_55%,rgba(250,248,243,0.1)_80%)]" aria-hidden />
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-16 bg-[linear-gradient(180deg,transparent,var(--ac-bg))]" aria-hidden />
+        <div className="mx-auto flex max-w-[1520px] flex-wrap items-end justify-between gap-5 px-4 pt-10 pb-10 sm:px-6 lg:px-10 lg:pt-14 lg:pb-14 2xl:px-12">
+          <div className="max-w-2xl">
+            <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold-ink)">YOUR LEARNING ROADMAP</p>
+            <h1 className="ac-serif mt-2 text-[34px] leading-[1.1] font-bold text-(--ac-navy) sm:text-[44px]">From Foundation to Your Target Band</h1>
+            <p className="mt-3 text-[17px] leading-7 text-(--ac-body)">Seven stages, one clear path. Choose a stage to see its lessons and where to continue.</p>
           </div>
-        </>
-      ) : (
-        <LearningList stages={stages} done={done} selected={stage.id} />
-      )}
+          <div role="tablist" aria-label="มุมมอง" className="flex rounded-xl border border-(--ac-line) bg-white p-1 shadow-(--ac-shadow)">
+            {([["world", "Stage Path", MapIcon], ["list", "Learning List", ListIcon]] as const).map(([id, label, Icon]) => (
+              <button key={id} type="button" role="tab" aria-selected={view === id} onClick={() => setView(id)}
+                className={"flex items-center gap-2 rounded-lg px-4 py-2 text-[15px] transition " + (view === id ? "bg-(--ac-navy) font-semibold text-white" : "text-(--ac-body) hover:bg-(--ac-gold-soft)")}>
+                <Icon className="size-4" aria-hidden /> {label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </header>
+
+      <div className="mx-auto flex w-full max-w-[1520px] flex-col gap-6 px-4 pb-32 sm:px-6 lg:px-10 lg:pb-16 2xl:px-12">
+        {view === "world" ? (
+          <>
+            <StagePath stages={stages} selected={stage.id} onChoose={choose} />
+            <div className="grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.3fr)_minmax(0,0.9fr)] lg:items-start">
+              <StageCard stage={stage} signedIn={signedIn} />
+              <LessonPreview stage={stage} done={done} />
+              <MyProgress overall={overall} level={level} signedIn={signedIn} />
+            </div>
+          </>
+        ) : (
+          <LearningList stages={stages} done={done} selected={stage.id} />
+        )}
+      </div>
     </div>
   );
 }
 
-function World({ stages, selected, onChoose }: { stages: StageProgress[]; selected: string; onChoose: (id: string) => void }) {
+function StatusChip({ status }: { status: StageProgress["status"] }) {
+  const Icon = status === "done" ? CheckIcon : status === "current" ? CircleDotIcon : status === "soon" ? LockIcon : null;
   return (
-    <div className="relative mt-6 isolate overflow-hidden">
-      <picture>
-        <source media="(max-width: 700px)" srcSet="/scenes/roadmap-900.webp" />
-        <img src="/scenes/roadmap-1600.webp" alt="เมืองเกาะลอยฟ้า ที่ตั้งของ 7 สถานีการเรียน" className="hero-drift h-[420px] w-full object-cover sm:h-[560px] lg:h-[680px]" />
-      </picture>
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,24,43,0.55)_0%,rgba(7,24,43,0)_30%,rgba(7,24,43,0)_55%,#07182b_100%)]" aria-hidden />
-      {/* The golden path, joining the stations in order. */}
-      <svg className="absolute inset-0 size-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
-        <polyline points={stages.map((s) => `${s.pin.x},${s.pin.y}`).join(" ")} fill="none" stroke="#ffe2a0" strokeWidth="0.45" strokeDasharray="1.4 1" strokeLinecap="round" opacity="0.85" vectorEffect="non-scaling-stroke" style={{ strokeWidth: 3 }} />
-      </svg>
-      <ol className="absolute inset-0">
-        {stages.map((s) => {
+    <span className={"inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium whitespace-nowrap " + STATUS[status].tone}>
+      {Icon && <Icon className="size-3" aria-hidden />}{STATUS[status].th}
+    </span>
+  );
+}
+
+/** The seven stages in order. Selecting one updates the cards below without leaving the page. */
+function StagePath({ stages, selected, onChoose }: { stages: StageProgress[]; selected: string; onChoose: (id: string) => void }) {
+  return (
+    <section aria-label="7 สถานีการเรียน" className="rounded-2xl border border-(--ac-line) bg-white p-5 shadow-(--ac-shadow) lg:px-8 lg:py-8">
+      <ol className="-mx-1 flex snap-x gap-2 overflow-x-auto px-1 pb-1 lg:mx-0 lg:grid lg:grid-cols-7 lg:gap-0 lg:overflow-visible lg:px-0 lg:pb-0">
+        {stages.map((s, i) => {
+          const look = STAGE_LOOK[s.id];
           const on = s.id === selected;
           return (
-            <li key={s.id} className="absolute -translate-x-1/2 -translate-y-1/2" style={{ left: `${s.pin.x}%`, top: `${s.pin.y}%` }}>
-              <button type="button" onClick={() => onChoose(s.id)} aria-pressed={on} aria-label={`Stage ${s.n}: ${s.title} (${STATUS_TH[s.status]})`}
-                className="group flex flex-col items-center gap-1.5">
-                <span className={"grid size-11 place-items-center rounded-full border-2 font-brand text-sm font-bold transition sm:size-12 " +
-                  (on ? "pin-glow scale-110 border-gold-soft bg-gold text-navy" :
-                    s.status === "done" ? "border-[#7fe0b8] bg-[#0b3a2e] text-[#bff5dc]" :
-                    s.status === "soon" ? "border-white/30 bg-navy-2/80 text-mist" :
-                    "border-gold/80 bg-navy-2/90 text-gold-soft group-hover:border-gold-soft")}>
-                  {s.status === "done" && !on ? <CheckIcon className="size-5" aria-hidden /> : pad(s.n)}
+            <li key={s.id} className="relative flex w-[150px] shrink-0 snap-start lg:w-auto">
+              {i < stages.length - 1 && (
+                <span className={"absolute top-10 left-[calc(50%+38px)] right-[calc(-50%+38px)] hidden h-0.5 rounded-full lg:block " + (s.status === "done" ? "bg-(--ac-gold-bright)" : "bg-(--ac-line)")} aria-hidden />
+              )}
+              <button type="button" onClick={() => onChoose(s.id)} aria-pressed={on} aria-label={`Stage ${s.n}: ${s.title} (${STATUS[s.status].th})`}
+                className={"group flex w-full flex-col items-center gap-2.5 rounded-xl px-2 py-2 text-center transition " + (on ? "bg-(--ac-bg)" : "hover:bg-(--ac-bg)")}>
+                <span className={"relative grid size-16 place-items-center rounded-full transition " +
+                  (on ? "bg-(--ac-navy) text-white shadow-[0_0_0_6px_var(--ac-gold-soft)]" : "bg-[#f4f1ea] text-(--ac-navy) group-hover:bg-(--ac-gold-soft)")}>
+                  <look.Icon className="size-7" strokeWidth={1.5} aria-hidden />
+                  {s.status === "done" && <span className="absolute -right-1 -bottom-1 grid size-6 place-items-center rounded-full bg-[#2e7d5b] text-white ring-2 ring-white"><CheckIcon className="size-3.5" aria-hidden /></span>}
                 </span>
-                <span className={"hidden rounded-md px-2 py-0.5 text-xs whitespace-nowrap backdrop-blur sm:block " + (on ? "bg-gold text-navy font-semibold" : "bg-navy/70 text-white")}>{s.title}</span>
+                <span className="font-mono text-[11px] tracking-[0.16em] text-(--ac-gold-ink)">STAGE {pad(s.n)}</span>
+                <span className="flex min-h-[2.5em] items-start text-[15px] leading-[1.25] font-semibold text-balance text-(--ac-navy)">{s.title}</span>
+                <StatusChip status={s.status} />
               </button>
             </li>
           );
         })}
       </ol>
-    </div>
-  );
-}
-
-function Ring({ percent }: { percent: number }) {
-  const r = 34;
-  const c = 2 * Math.PI * r;
-  return (
-    <svg viewBox="0 0 80 80" className="size-20 -rotate-90" aria-hidden>
-      <circle cx="40" cy="40" r={r} fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="7" />
-      <circle cx="40" cy="40" r={r} fill="none" stroke="#e9bb70" strokeWidth="7" strokeLinecap="round" strokeDasharray={c} strokeDashoffset={c * (1 - percent / 100)} />
-    </svg>
-  );
-}
-
-function MyProgress({ overall, level, signedIn }: { overall: Props["overall"]; level: string | null; signedIn: boolean }) {
-  return (
-    <section aria-labelledby="my-progress" className="glass order-3 flex flex-col gap-3 p-5 lg:order-none">
-      <h2 id="my-progress" className="font-mono text-[11px] tracking-[0.25em] text-gold">MY PROGRESS</h2>
-      <div className="flex items-center gap-4">
-        <div className="relative">
-          <Ring percent={overall.percent} />
-          <span className="absolute inset-0 grid place-items-center font-brand text-lg font-bold">{overall.percent}%</span>
-        </div>
-        <div className="text-sm">
-          <p className="text-white">ผ่าน {overall.done} / {overall.total} บท</p>
-          <p className="text-mist">ระดับ: {level ? (level === "pre-A1" ? "ก่อน A1" : level) : "ยังไม่ได้สอบวัดระดับ"}</p>
-        </div>
-      </div>
-      <p className="text-xs leading-5 text-mist">{signedIn ? "นับจากแบบทดสอบท้ายบทที่ผ่าน · ระดับมาจากการสอบวัดระดับ (CEFR) ไม่ใช่ Band IELTS" : "เข้าสู่ระบบเพื่อให้เว็บจำบทที่ผ่าน"}</p>
-      <Link href={signedIn ? "/today" : "/login"} className="btn-dark py-2 text-xs">{signedIn ? "ดูรายละเอียด" : "เข้าสู่ระบบ"}</Link>
     </section>
   );
 }
 
 function StageCard({ stage, signedIn }: { stage: StageProgress; signedIn: boolean }) {
+  const look = STAGE_LOOK[stage.id];
   return (
-    <section aria-labelledby="stage-title" key={stage.id} className="glass learn-in grid overflow-hidden md:grid-cols-[minmax(0,1fr)_220px]">
-      <div className="flex flex-col gap-3 p-6">
-        <p className="font-mono text-xs tracking-[0.2em] text-gold">STAGE {pad(stage.n)} / 07 · <span className="text-mist">{STATUS_TH[stage.status]}</span></p>
-        <h2 id="stage-title" className="font-brand text-[28px] leading-tight font-bold tracking-wide">{stage.title}</h2>
-        <p className="text-sm text-gold-soft">{stage.th}</p>
-        <p className="text-[15px] leading-7 text-[#dce5ee]">{stage.blurb}</p>
-        {stage.total > 0 && (
-          <div>
-            <div className="flex justify-between text-xs text-mist"><span>Progress</span><span className="tabular">{stage.percent}% · {stage.done}/{stage.total} บท</span></div>
-            <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-white/10" role="progressbar" aria-label={`ความคืบหน้า ${stage.title}`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={stage.percent}>
-              <div className="h-full rounded-full bg-gold transition-[width] duration-700" style={{ width: `${stage.percent}%` }} />
-            </div>
-          </div>
-        )}
-        {stage.next ? (
-          <div className="mt-1 flex flex-wrap items-center gap-3">
-            <Link href={stage.next.href} className="btn px-5 py-3">{stage.done > 0 ? "Continue Learning" : "Start Stage"} <ArrowRightIcon className="size-4" /></Link>
-            <span className="text-sm text-mist">Next: <span className="text-white">{stage.next.title}</span></span>
-          </div>
-        ) : (
-          <p className="flex items-center gap-2 text-sm text-mist"><LockIcon className="size-4" aria-hidden /> สถานีนี้กำลังจัดทำ ยังไม่มีบทเรียนให้เริ่ม</p>
-        )}
-        {!signedIn && stage.total > 0 && <p className="text-xs text-mist">เรียนได้เลย แต่ต้องเข้าสู่ระบบเพื่อบันทึกบทที่ผ่าน</p>}
+    <section key={stage.id} aria-labelledby="stage-title" className="learn-in relative flex flex-col gap-4 overflow-hidden rounded-2xl bg-(--ac-navy) p-6 text-white lg:p-7">
+      <look.Icon className="absolute -right-6 -bottom-6 size-40 text-white/5" strokeWidth={1} aria-hidden />
+      <div className="relative flex flex-wrap items-center gap-2">
+        <span className="font-mono text-xs tracking-[0.18em] text-(--ac-gold-bright)">STAGE {pad(stage.n)} / 07</span>
+        <StatusChip status={stage.status} />
       </div>
-      {/* eslint-disable-next-line @next/next/no-img-element -- scene pre-sized to WebP in public/scenes */}
-      <img src="/scenes/roadmap-900.webp" alt="" className="hidden h-full w-full object-cover object-[55%_40%] md:block" />
+      <div className="relative">
+        <h2 id="stage-title" className="ac-serif text-[28px] leading-tight font-bold">{stage.title}</h2>
+        <p className="mt-1 text-sm text-(--ac-gold-bright)">{stage.th}</p>
+      </div>
+      <p className="relative text-[15px] leading-7 text-[#dbe3ee]">{stage.blurb}</p>
+      {stage.total > 0 && (
+        <div className="relative">
+          <div className="flex justify-between text-xs text-[#b8c4d4]"><span>Progress</span><span className="tabular">{stage.percent}% · {stage.done}/{stage.total} บท</span></div>
+          <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-white/15" role="progressbar" aria-label={`ความคืบหน้า ${stage.title}`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={stage.percent}>
+            <div className="h-full rounded-full bg-(--ac-gold-bright) transition-[width] duration-700" style={{ width: `${stage.percent}%` }} />
+          </div>
+        </div>
+      )}
+      <div className="relative flex flex-col gap-2 pt-2">
+        {stage.next ? (
+          <>
+            <Link href={stage.next.href} className="inline-flex w-fit items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-5 py-3 text-[15px] font-semibold text-(--ac-navy) transition hover:bg-[#ecc580]">
+              {stage.done > 0 ? "Continue Learning" : "Start Stage"} <ArrowRightIcon className="size-4" aria-hidden />
+            </Link>
+            <span className="text-sm text-[#b8c4d4]">Next: <span className="text-white">{stage.next.title}</span></span>
+          </>
+        ) : (
+          <p className="flex items-center gap-2 text-sm text-[#b8c4d4]"><LockIcon className="size-4" aria-hidden /> สถานีนี้กำลังจัดทำ ยังไม่มีบทเรียนให้เริ่ม</p>
+        )}
+        {!signedIn && stage.total > 0 && <p className="text-xs text-[#b8c4d4]">เรียนได้เลย แต่ต้องเข้าสู่ระบบเพื่อบันทึกบทที่ผ่าน</p>}
+      </div>
     </section>
   );
 }
@@ -171,12 +169,12 @@ function ItemRow({ item, done, n }: { item: StageItem; done: Set<string>; n: num
   const passed = item.lessonId ? done.has(item.lessonId) : false;
   return (
     <li>
-      <Link href={item.href} className="flex items-center gap-3 rounded-lg px-2 py-2.5 transition hover:bg-white/5">
-        <span className={"grid size-7 shrink-0 place-items-center rounded-full text-xs font-semibold " + (passed ? "bg-[#7fe0b8] text-navy" : "border border-white/20 text-mist")}>
+      <Link href={item.href} className="flex items-center gap-3 rounded-xl px-3 py-3 transition hover:bg-(--ac-bg)">
+        <span className={"grid size-8 shrink-0 place-items-center rounded-full text-xs font-semibold " + (passed ? "bg-[#2e7d5b] text-white" : "border border-(--ac-line) text-(--ac-muted)")}>
           {passed ? <CheckIcon className="size-4" aria-label="ผ่านแล้ว" /> : pad(n)}
         </span>
-        <span className="min-w-0 flex-1 text-sm leading-5 text-white">{item.title}</span>
-        <span className="flex shrink-0 items-center gap-1 text-xs text-mist"><ClockIcon className="size-3" aria-hidden />{item.minutes}′</span>
+        <span className="min-w-0 flex-1 text-[15px] leading-6 text-(--ac-ink)">{item.title}</span>
+        <span className="flex shrink-0 items-center gap-1 text-xs text-(--ac-muted)"><ClockIcon className="size-3.5" aria-hidden />{item.minutes} นาที</span>
       </Link>
     </li>
   );
@@ -184,17 +182,22 @@ function ItemRow({ item, done, n }: { item: StageItem; done: Set<string>; n: num
 
 function LessonPreview({ stage, done }: { stage: StageProgress; done: Set<string> }) {
   return (
-    <section aria-labelledby="stage-lessons" className="glass flex max-h-[420px] flex-col p-5">
-      <h2 id="stage-lessons" className="mb-2 font-mono text-[11px] tracking-[0.25em] text-gold">LESSONS IN THIS STAGE</h2>
-      {stage.items.length > 0 && (
-        <ol className="-mx-2 flex-1 overflow-y-auto">
+    <section aria-labelledby="stage-lessons" className="flex max-h-[560px] flex-col rounded-2xl border border-(--ac-line) bg-white p-5 shadow-(--ac-shadow) lg:p-6">
+      <div className="mb-2 flex items-baseline justify-between gap-3 px-3">
+        <h2 id="stage-lessons" className="ac-serif text-[20px] font-bold text-(--ac-navy)">Lessons in this stage</h2>
+        <span className="text-sm text-(--ac-muted)">{stage.items.length} รายการ</span>
+      </div>
+      {stage.items.length > 0 ? (
+        <ol className="flex-1 divide-y divide-(--ac-line) overflow-y-auto">
           {stage.items.map((item, i) => <ItemRow key={item.id} item={item} done={done} n={i + 1} />)}
         </ol>
+      ) : (
+        <p className="px-3 py-4 text-[15px] text-(--ac-muted)">ยังไม่มีบทเรียนในสถานีนี้</p>
       )}
       {stage.soon && (
-        <div className="mt-3 border-t border-white/10 pt-3">
-          <p className="flex items-center gap-1.5 text-xs text-gold-soft"><SparklesIcon className="size-3.5" aria-hidden /> กำลังจัดทำ</p>
-          <ul className="mt-1.5 flex flex-col gap-1 text-sm text-mist">
+        <div className="mt-3 rounded-xl bg-(--ac-bg) p-4">
+          <p className="flex items-center gap-1.5 text-sm font-semibold text-(--ac-navy)"><SparklesIcon className="size-4 text-(--ac-gold)" aria-hidden /> กำลังจัดทำ</p>
+          <ul className="mt-1.5 flex flex-col gap-1 text-sm text-(--ac-body)">
             {stage.soon.map((s) => <li key={s}>· {s}</li>)}
           </ul>
         </div>
@@ -203,23 +206,66 @@ function LessonPreview({ stage, done }: { stage: StageProgress; done: Set<string
   );
 }
 
+function Ring({ percent }: { percent: number }) {
+  const r = 34;
+  const c = 2 * Math.PI * r;
+  return (
+    <svg viewBox="0 0 80 80" className="size-24 -rotate-90" aria-hidden>
+      <circle cx="40" cy="40" r={r} fill="none" stroke="#efe9dd" strokeWidth="7" />
+      <circle cx="40" cy="40" r={r} fill="none" stroke="#b8843d" strokeWidth="7" strokeLinecap="round" strokeDasharray={c} strokeDashoffset={c * (1 - percent / 100)} />
+    </svg>
+  );
+}
+
+function MyProgress({ overall, level, signedIn }: { overall: Props["overall"]; level: string | null; signedIn: boolean }) {
+  return (
+    <section aria-labelledby="my-progress" className="flex flex-col gap-4 rounded-2xl border border-(--ac-line) bg-white p-6 shadow-(--ac-shadow)">
+      <h2 id="my-progress" className="ac-serif text-[20px] font-bold text-(--ac-navy)">My Progress</h2>
+      <div className="flex items-center gap-5">
+        <div className="relative shrink-0">
+          <Ring percent={overall.percent} />
+          <span className="ac-serif absolute inset-0 grid place-items-center text-2xl font-bold text-(--ac-navy)">{overall.percent}%</span>
+        </div>
+        <dl className="flex flex-col gap-2 text-sm">
+          <div><dt className="text-(--ac-muted)">บทที่ผ่าน</dt><dd className="font-semibold text-(--ac-ink)">{overall.done} จาก {overall.total} บท</dd></div>
+          <div><dt className="text-(--ac-muted)">ระดับ (สอบวัดระดับ)</dt><dd className="font-semibold text-(--ac-ink)">{level ? (level === "pre-A1" ? "ก่อน A1" : level) : "ยังไม่ได้สอบ"}</dd></div>
+        </dl>
+      </div>
+      <p className="text-xs leading-5 text-(--ac-muted)">
+        {signedIn ? "นับจากแบบทดสอบท้ายบทที่ผ่าน · ระดับเป็น CEFR ไม่ใช่ Band IELTS" : "เข้าสู่ระบบเพื่อให้เว็บจำบทที่ผ่าน"}
+      </p>
+      <Link href={signedIn ? (level ? "/today" : "/placement") : "/login"}
+        className="inline-flex w-fit items-center gap-1.5 text-[15px] font-semibold text-(--ac-navy) hover:text-(--ac-gold)">
+        {signedIn ? (level ? "ดูแผนวันนี้" : "สอบวัดระดับ") : "เข้าสู่ระบบ"} <ArrowRightIcon className="size-4" aria-hidden />
+      </Link>
+    </section>
+  );
+}
+
 function LearningList({ stages, done, selected }: { stages: StageProgress[]; done: Set<string>; selected: string }) {
   return (
-    <ol className="mx-auto grid w-full max-w-[1440px] gap-4 px-4 pt-6 pb-32 sm:px-6 lg:grid-cols-2 lg:px-10 lg:pb-14">
-      {stages.map((s) => (
-        <li key={s.id} id={`stage-${s.id}`} className={"glass flex flex-col gap-3 p-5 " + (s.id === selected ? "ring-2 ring-gold/70" : "")}>
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <p className="font-mono text-xs tracking-[0.2em] text-gold">STAGE {pad(s.n)} · <span className="text-mist">{STATUS_TH[s.status]}</span></p>
-              <h2 className="font-brand text-xl font-bold tracking-wide">{s.title}</h2>
-              <p className="text-sm text-mist">{s.th}</p>
+    <ol className="grid gap-5 lg:grid-cols-2 lg:items-start">
+      {stages.map((s) => {
+        const look = STAGE_LOOK[s.id];
+        return (
+          <li key={s.id} id={`stage-${s.id}`} className={"flex flex-col gap-3 rounded-2xl border bg-white p-6 shadow-(--ac-shadow) " + (s.id === selected ? "border-(--ac-navy) ring-2 ring-(--ac-gold-soft)" : "border-(--ac-line)")}>
+            <div className="flex items-start gap-4">
+              <span className="grid size-12 shrink-0 place-items-center rounded-full bg-[#f4f1ea] text-(--ac-navy)"><look.Icon className="size-6" strokeWidth={1.5} aria-hidden /></span>
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="font-mono text-xs tracking-[0.16em] text-(--ac-gold-ink)">STAGE {pad(s.n)}</span>
+                  <StatusChip status={s.status} />
+                </div>
+                <h2 className="ac-serif mt-1 text-[22px] font-bold text-(--ac-navy)">{s.title}</h2>
+                <p className="text-sm text-(--ac-muted)">{s.th}</p>
+              </div>
+              {s.total > 0 && <span className="shrink-0 font-mono text-sm text-(--ac-gold-ink) tabular">{s.done}/{s.total}</span>}
             </div>
-            {s.total > 0 && <span className="shrink-0 font-mono text-sm text-gold-soft tabular">{s.done}/{s.total}</span>}
-          </div>
-          {s.items.length > 0 && <ol className="-mx-2">{s.items.map((item, i) => <ItemRow key={item.id} item={item} done={done} n={i + 1} />)}</ol>}
-          {s.soon && <p className="text-sm text-mist">กำลังจัดทำ: {s.soon.join(" · ")}</p>}
-        </li>
-      ))}
+            {s.items.length > 0 && <ol className="divide-y divide-(--ac-line)">{s.items.map((item, i) => <ItemRow key={item.id} item={item} done={done} n={i + 1} />)}</ol>}
+            {s.soon && <p className="rounded-xl bg-(--ac-bg) px-4 py-3 text-sm text-(--ac-body)">กำลังจัดทำ: {s.soon.join(" · ")}</p>}
+          </li>
+        );
+      })}
     </ol>
   );
 }

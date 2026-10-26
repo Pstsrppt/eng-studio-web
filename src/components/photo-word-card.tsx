@@ -203,7 +203,7 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
         )}
 
         <div className="mt-auto flex items-center gap-4">
-          <span className="font-serif text-5xl leading-none font-semibold text-line tabular">
+          <span className="font-serif text-5xl leading-none font-semibold text-line tabular" aria-hidden>
             {String((index ?? shown) + 1).padStart(2, "0")}
           </span>
           <span className="font-mono text-xs tracking-[0.2em] text-muted">{index === undefined ? "EXAMPLE" : "WORD"}</span>
