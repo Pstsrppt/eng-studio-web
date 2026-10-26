@@ -3,6 +3,7 @@ import { BookOpenIcon, LanguagesIcon, MousePointerClickIcon, RotateCcwIcon, Volu
 import Link from "next/link";
 import { connection } from "next/server";
 import { Suspense, type ReactNode } from "react";
+import { AcademicPage, PageHeader } from "@/components/academic-page";
 import { PlanCheck } from "@/components/plan-check";
 import { Sentence } from "@/components/sentence";
 import { LESSONS, VERBS, WORDS, type Lesson } from "@/content";
@@ -14,9 +15,11 @@ export const metadata: Metadata = { title: "แผนวันนี้" };
 
 export default function TodayPage() {
   return (
-    <Suspense fallback={<TodaySkeleton />}>
-      <Today />
-    </Suspense>
+    <AcademicPage>
+      <Suspense fallback={<TodaySkeleton />}>
+        <Today />
+      </Suspense>
+    </AcademicPage>
   );
 }
 
@@ -49,17 +52,12 @@ async function Today() {
 
   return (
     <div className="grid gap-7 xl:grid-cols-[minmax(0,1fr)_320px]">
-      <header className="flex flex-wrap items-end justify-between gap-3 xl:col-span-2">
-        <div>
-          <p className="text-sm text-muted">{dateLabel}</p>
-          <h1 className="mt-1 text-3xl font-bold tracking-tight lg:text-[34px]">
-            {passedCount === 0 && !placed ? "เริ่มบทแรกกันเลย" : `${passedCount === 0 ? "เริ่มเรียน" : "เรียนต่อ"}จากบทที่ ${LESSONS.indexOf(current) + 1}`}
-          </h1>
-        </div>
+      <PageHeader className="xl:col-span-2" eyebrow="TODAY" lead={dateLabel}
+        title={passedCount === 0 && !placed ? "เริ่มบทแรกกันเลย" : `${passedCount === 0 ? "เริ่มเรียน" : "เรียนต่อ"}จากบทที่ ${LESSONS.indexOf(current) + 1}`}>
         {!user && (
           <Link href="/login" className="btn">เข้าสู่ระบบเพื่อบันทึกความคืบหน้า</Link>
         )}
-      </header>
+      </PageHeader>
 
       <div className="flex min-w-0 flex-col gap-7">
         {passedCount === 0 && !placed && <PlacementInvite />}
@@ -111,20 +109,20 @@ const HELPS = [
 /** For learners who may already know some English: find their level instead of starting at lesson one. */
 function PlacementInvite() {
   return (
-    <section className="flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-ink p-5 text-white sm:p-6">
+    <section className="on-dark flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-(--ac-navy) p-5 text-white sm:p-6">
       <div className="min-w-0">
-        <p className="font-mono text-[11px] tracking-[0.08em] text-mark">ไม่แน่ใจว่าควรเริ่มตรงไหน?</p>
-        <p className="mt-1 font-display text-xl font-bold">สอบวัดระดับ 5–8 นาที</p>
-        <p className="mt-1 text-sm text-[#b8c7d7]">รู้ระดับ A1–B2 ของตัวเอง แล้วเริ่มบทที่เหมาะ ไม่ต้องเรียนซ้ำเรื่องที่รู้แล้ว</p>
+        <p className="eyebrow">ไม่แน่ใจว่าควรเริ่มตรงไหน?</p>
+        <p className="mt-1 font-display text-2xl font-bold">สอบวัดระดับ 5–8 นาที</p>
+        <p className="mt-1 text-sm text-[#c9d3e1]">รู้ระดับ A1–B2 ของตัวเอง แล้วเริ่มบทที่เหมาะ ไม่ต้องเรียนซ้ำเรื่องที่รู้แล้ว</p>
       </div>
-      <Link href="/placement" className="inline-flex items-center gap-2 rounded-xl bg-mark px-5 py-3 font-semibold text-ink">เริ่มสอบ</Link>
+      <Link href="/placement" className="btn">เริ่มสอบ</Link>
     </section>
   );
 }
 
 function BeginnerNote() {
   return (
-    <section className="card border-[#c9d3e0] bg-brand-soft/60 p-5 sm:p-6" aria-labelledby="beginner-title">
+    <section className="card border-(--ac-gold-soft) bg-[#fbf6ea] p-5 sm:p-6" aria-labelledby="beginner-title">
       <h2 id="beginner-title" className="text-xl font-bold">ไม่รู้ศัพท์เยอะ ก็เริ่มได้</h2>
       <p className="mt-1 text-[15px] text-ink-2">เว็บนี้ออกแบบให้เริ่มจากศูนย์ได้ ทุกบทเรียนทีละขั้น:</p>
       <ol className="mt-3 flex flex-wrap items-center gap-1.5 text-sm">
@@ -194,8 +192,8 @@ function ContinueCard({ lesson, best }: { lesson: Lesson; best?: number }) {
 function SectionHead({ title, note }: { title: string; note?: string }) {
   return (
     <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
-      <h2 className="text-[17px] font-bold">{title}</h2>
-      {note && <span className="text-xs text-brand">{note}</span>}
+      <h2 className="text-[21px] font-bold text-(--ac-navy)">{title}</h2>
+      {note && <span className="text-xs text-(--ac-muted)">{note}</span>}
     </div>
   );
 }
@@ -206,11 +204,11 @@ function Task(props: {
 }) {
   const { tone, kind, title, meta, done, check, href, cta, external } = props;
   return (
-    <div className={"flex min-h-40 flex-col gap-2.5 rounded-[10px] border p-4 " + (done ? "border-[#c6ddd2] bg-brand-soft" : "border-line bg-surface")}>
+    <div className={"flex min-h-40 flex-col gap-2.5 rounded-2xl border p-4 " + (done ? "border-[#b9dccb] bg-[#eef7f1]" : "border-line bg-surface")}>
       <div className="flex items-center justify-between gap-2">
         {check ?? (
           <span aria-label={done ? "ทำแล้ว" : "ยังไม่ได้ทำ"}
-            className={"grid size-5 shrink-0 place-items-center rounded-[5px] border-[1.5px] text-[11px] text-white " + (done ? "border-brand bg-brand" : "border-[#b9c6c0]")}>
+            className={"grid size-5 shrink-0 place-items-center rounded-[5px] border-[1.5px] text-[11px] text-white " + (done ? "border-[#2e7d5b] bg-[#2e7d5b]" : "border-[#c9c1b1]")}>
             {done ? "✓" : ""}
           </span>
         )}
@@ -230,13 +228,13 @@ function Task(props: {
 
 function Module({ href, glyph, tone, title, note, value }: { href: string; glyph: string; tone: string; title: string; note: string; value: number }) {
   return (
-    <Link href={href} className="card flex items-center gap-3.5 p-4 transition hover:border-brand">
+    <Link href={href} className="card flex items-center gap-3.5 p-4 transition hover:border-(--ac-navy)/40 hover:shadow-(--ac-shadow)">
       <span className={"grid size-11 shrink-0 place-items-center rounded-[9px] font-display text-[15px] font-bold " + tone}>{glyph}</span>
       <span className="min-w-0 flex-1">
         <span className="block text-[14.5px] font-semibold">{title}</span>
         <span className="block text-xs text-muted">{note}</span>
-        <span className="mt-2 block h-1 overflow-hidden rounded-full bg-[#ebefec]">
-          <span className="block h-full rounded-full bg-brand" style={{ width: `${Math.round(value * 100)}%` }} />
+        <span className="mt-2 block h-1.5 overflow-hidden rounded-full bg-[#efe9dd]">
+          <span className="block h-full rounded-full bg-(--ac-gold)" style={{ width: `${Math.round(value * 100)}%` }} />
         </span>
       </span>
     </Link>

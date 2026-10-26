@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { AcademicPage, PageHeader } from "@/components/academic-page";
 
 export const metadata: Metadata = { title: "คู่มือ" };
 
@@ -20,8 +21,8 @@ const SECTIONS = [
 function Section({ id, children }: { id: string; children: ReactNode }) {
   const title = SECTIONS.find((s) => s.id === id)?.title;
   return (
-    <section id={id} className="card scroll-mt-20 p-5 sm:p-6">
-      <h2 className="mb-3 text-xl font-bold">{title}</h2>
+    <section id={id} className="card scroll-mt-24 p-5 sm:p-7">
+      <h2 className="mb-3 text-[22px] font-bold text-(--ac-navy)">{title}</h2>
       <div className="prose-lesson">{children}</div>
     </section>
   );
@@ -57,25 +58,24 @@ const lesson = (id: string, label: string) => <Link href={`/grammar/${id}`} clas
 
 export default function GuidePage() {
   return (
-    <div className="flex flex-col gap-6">
-      <header>
-        <p className="eyebrow">คู่มือ</p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight">คำศัพท์ไวยากรณ์และสัญลักษณ์ที่ใช้ในเว็บ</h1>
-        <p className="mt-2 max-w-[62ch] text-muted">
-          เจอคำอย่าง “กริยาช่วย” “นับไม่ได้” “V3” ในบทเรียนแล้วไม่แน่ใจ กลับมาเปิดหน้านี้ได้ตลอด
-        </p>
-      </header>
+    <AcademicPage className="flex flex-col gap-6">
+      <PageHeader eyebrow="LEARNING GUIDE · คู่มือ" title="คำศัพท์ไวยากรณ์และสัญลักษณ์ที่ใช้ในเว็บ"
+        lead="เจอคำอย่าง “กริยาช่วย” “นับไม่ได้” “V3” ในบทเรียนแล้วไม่แน่ใจ กลับมาเปิดหน้านี้ได้ตลอด" />
 
-      <nav aria-label="สารบัญ" className="card p-5">
-        <p className="eyebrow mb-2">สารบัญ</p>
-        <ol className="grid gap-x-6 gap-y-1.5 text-[15px] sm:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-[260px_minmax(0,1fr)] lg:items-start">
+      {/* Contents stay in view beside the reading column on wide screens. */}
+      <nav aria-label="สารบัญ" className="card p-5 lg:sticky lg:top-24">
+        <p className="eyebrow mb-3">CONTENTS · สารบัญ</p>
+        <ol className="grid gap-x-6 gap-y-1 text-[15px] sm:grid-cols-2 lg:grid-cols-1">
           {SECTIONS.map((s, i) => (
             <li key={s.id}>
-              <a href={`#${s.id}`} className="hover:text-brand"><span className="mr-2 font-mono text-xs text-muted">{i + 1}</span>{s.title}</a>
+              <a href={`#${s.id}`} className="flex min-h-9 items-baseline gap-2 rounded-lg px-2 py-1.5 text-(--ac-ink) hover:bg-(--ac-bg) hover:text-(--ac-navy)"><span className="font-mono text-xs text-(--ac-gold-ink)">{String(i + 1).padStart(2, "0")}</span>{s.title}</a>
             </li>
           ))}
         </ol>
       </nav>
+
+      <div className="flex min-w-0 flex-col gap-6">
 
       <Section id="pos">
         <p>คำแต่ละคำมี <b>หน้าที่</b> ในประโยค พจนานุกรมจะบอกด้วยตัวย่อหลังคำ เช่น <b>deliver (v.)</b> รู้ชนิดของคำแล้วจะรู้ว่าวางตรงไหน และเปลี่ยนรูปอย่างไร</p>
@@ -264,6 +264,8 @@ export default function GuidePage() {
         <h4>ตัวอักษรที่ไม่ออกเสียง</h4>
         <p>hour (อาว-เออร์), receipt (รี-ซีท), Wednesday (เวนส์-เดย์), listen (ลิส-เซิน), know (โน)</p>
       </Section>
-    </div>
+      </div>
+      </div>
+    </AcademicPage>
   );
 }
