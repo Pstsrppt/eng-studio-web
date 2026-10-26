@@ -2,6 +2,7 @@
 
 Save each image here as WebP with the exact file name below. The Home page shows a placeholder
 until the file exists; after adding a file, rebuild or redeploy and the photo appears.
+Sources and licences for photos not made from these prompts: `IMAGE-CREDITS.md`.
 
 Shared style for all five (paste after each prompt):
 
