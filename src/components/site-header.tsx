@@ -7,7 +7,7 @@ import { TopNav } from "./nav";
 import { ThaiToggle } from "./thai-toggle";
 
 /** Pages already on the Academic Studio theme get the light header; the rest keep the dark one. */
-const isLight = (path: string) => path === "/" || path.startsWith("/roadmap");
+const isLight = (path: string) => path === "/" || path.startsWith("/roadmap") || path.startsWith("/grammar/") || path.startsWith("/sounds/");
 
 /** The site header. `account` is rendered on the server (it reads the session) and passed in. */
 export function SiteHeader({ account }: { account: React.ReactNode }) {

@@ -1,18 +1,22 @@
 // The lesson page frame: the stage's lessons on the left, the lesson in the middle, and words and a
 // tip on the right. Below 1280px the side columns fold into the page so nothing is squeezed.
-import { ArrowLeftIcon, CheckIcon, ChevronDownIcon, ClockIcon, LightbulbIcon } from "lucide-react";
+// Academic Studio theme (scoped by .theme-academic), like Home and Roadmap.
+import { ArrowLeftIcon, BookOpenIcon, CheckIcon, ChevronDownIcon, ClockIcon, LightbulbIcon } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
 import type { Lesson } from "@/content";
 import { lessonWords } from "@/content/lesson-words";
 import { stageOfLesson, type Stage, type StageItem } from "@/content/stages";
 import { getLessonBest } from "@/lib/data";
+import { AcademicPhoto } from "./academic-photo";
 import { LessonView } from "./lesson-view";
 import { SpeakButton } from "./speak-button";
+import { STAGE_LOOK } from "./stage-look";
 
 type Props = { lesson: Lesson; kind: "grammar" | "sounds"; passMark: number; next?: { href: string; title: string } };
 const pad = (n: number) => String(n).padStart(2, "0");
 const LEVEL_TH: Record<string, string> = { A1: "Beginner", A2: "Elementary", B1: "Intermediate", B2: "Upper-intermediate" };
+const card = "rounded-2xl border border-(--ac-line) bg-white shadow-(--ac-shadow)";
 
 export function LessonShell({ lesson, kind, passMark, next }: Props) {
   const found = stageOfLesson(lesson.id);
@@ -21,88 +25,121 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
   const index = found?.index ?? 0;
   const words = lessonWords(lesson.id);
   const minutes = items[index]?.minutes ?? 20;
-  const tip = lesson.mistakes[0];
+  const tips = lesson.mistakes.slice(0, 2);
   const later = items.slice(index + 1, index + 4);
+  // What this lesson covers, counted from its own content (no invented goals).
+  const objectives = [
+    `เข้าใจรูปแบบ: ${lesson.formula}`,
+    `ดูการใช้จริงจากประโยคตัวอย่าง ${lesson.examples.length} ประโยค`,
+    lesson.mistakes.length ? `รู้จุดที่คนไทยพลาดบ่อย ${lesson.mistakes.length} จุด` : null,
+    `ฝึก ${lesson.practice.length} ข้อ แล้วทำ Quiz ${lesson.quiz.length} ข้อ ผ่าน ${passMark}% เพื่อปลดบทนี้`,
+  ].filter(Boolean) as string[];
+  const StageIcon = stage ? STAGE_LOOK[stage.id].Icon : BookOpenIcon;
 
   return (
-    <div className="page-bleed on-dark bg-navy text-white">
-      <div className="mx-auto grid max-w-[1440px] gap-6 px-4 pt-6 pb-32 sm:px-6 lg:pb-14 xl:grid-cols-[260px_minmax(0,1fr)_300px] xl:px-8">
-        <aside className="xl:sticky xl:top-[78px] xl:max-h-[calc(100dvh-94px)] xl:self-start xl:overflow-y-auto" aria-label="บทเรียนในสถานีนี้">
+    <div className="theme-academic page-bleed bg-(--ac-bg) text-(--ac-ink)">
+      <div className="mx-auto grid max-w-[1520px] gap-6 px-4 pt-6 pb-32 sm:px-6 lg:pb-16 xl:grid-cols-[260px_minmax(0,1fr)_290px] xl:px-10 2xl:px-12">
+        <aside className="xl:sticky xl:top-[86px] xl:max-h-[calc(100dvh-102px)] xl:self-start xl:overflow-y-auto" aria-label="บทเรียนในสถานีนี้">
           <StageNav stage={stage} items={items} current={lesson.id} />
         </aside>
 
         <div className="flex min-w-0 flex-col gap-6">
-          <section className="relative isolate overflow-hidden rounded-3xl border border-white/10" aria-labelledby="lesson-title">
-            {/* eslint-disable-next-line @next/next/no-img-element -- scene pre-sized to WebP in public/scenes */}
-            <img src="/scenes/library-1600.webp" alt="" className="absolute inset-0 -z-10 size-full object-cover object-[70%_center]" />
-            <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,24,43,0.95)_0%,rgba(7,24,43,0.82)_45%,rgba(7,24,43,0.25)_100%)]" aria-hidden />
-            <div className="flex max-w-2xl flex-col gap-3 p-6 sm:p-9">
-              <p className="font-mono text-xs tracking-[0.25em] text-gold">
+          <section className={"relative isolate overflow-hidden " + card} aria-labelledby="lesson-title">
+            <div className="absolute inset-y-0 right-0 -z-10 hidden w-[52%] md:block">
+              <AcademicPhoto name="lesson-banner" fallback="skill-reading" alt="" icon={BookOpenIcon} className="size-full object-[50%_45%]" />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,#ffffff_0%,rgba(255,255,255,0.75)_30%,rgba(255,255,255,0)_70%)]" aria-hidden />
+            </div>
+            <div className="flex max-w-[640px] flex-col gap-3 p-6 sm:p-9">
+              <p className="font-mono text-xs tracking-[0.2em] text-(--ac-gold)">
                 {stage ? `STAGE ${pad(stage.n)} · ` : ""}LESSON {pad(index + 1)}
               </p>
-              <h1 id="lesson-title" className="font-brand text-[30px] leading-tight font-bold tracking-wide sm:text-[40px]">{lesson.title}</h1>
-              <p className="text-[15px] leading-7 text-[#dce5ee]">{lesson.why}</p>
-              <ul className="flex flex-wrap gap-2 text-xs">
-                <li className="rounded-full border border-white/20 bg-navy/60 px-3 py-1">{kind === "grammar" ? "Grammar" : "Pronunciation"}</li>
-                <li className="rounded-full border border-white/20 bg-navy/60 px-3 py-1">{lesson.level} · {LEVEL_TH[lesson.level] ?? lesson.level}</li>
-                <li className="flex items-center gap-1 rounded-full border border-white/20 bg-navy/60 px-3 py-1"><ClockIcon className="size-3" aria-hidden />ประมาณ {minutes} นาที</li>
+              <h1 id="lesson-title" className="ac-serif text-[30px] leading-[1.12] font-bold text-(--ac-navy) sm:text-[40px]">{lesson.title}</h1>
+              <p className="text-[16px] leading-7 text-(--ac-body)">{lesson.why}</p>
+              <ul className="flex flex-wrap gap-2 text-[13px]">
+                <li className="rounded-full border border-(--ac-line) bg-white/90 px-3 py-1 text-(--ac-body)">{kind === "grammar" ? "Grammar" : "Pronunciation"}</li>
+                <li className="rounded-full border border-(--ac-line) bg-white/90 px-3 py-1 text-(--ac-body)">{lesson.level} · {LEVEL_TH[lesson.level] ?? lesson.level}</li>
+                <li className="flex items-center gap-1 rounded-full border border-(--ac-line) bg-white/90 px-3 py-1 text-(--ac-body)"><ClockIcon className="size-3.5" aria-hidden />ประมาณ {minutes} นาที</li>
               </ul>
-              <p className="w-fit rounded-lg bg-navy/80 px-3 py-2 font-mono text-[13px] text-gold-soft">{lesson.formula}</p>
-              <a href="#lesson-content" className="btn mt-1 self-start px-5 py-3">Continue Learning ↓</a>
+              <p className="w-fit rounded-lg bg-(--ac-navy) px-3 py-2 font-mono text-[13px] text-(--ac-gold-bright)">{lesson.formula}</p>
+              <a href="#lesson-content" className="mt-1 inline-flex w-fit items-center gap-2 rounded-lg bg-(--ac-navy) px-5 py-3 text-[15px] font-semibold text-white transition hover:bg-(--ac-navy-2)">Continue Learning ↓</a>
             </div>
           </section>
 
-          <div id="lesson-content" className="on-light scroll-mt-20 rounded-3xl bg-paper p-4 text-ink sm:p-6">
+          <section aria-labelledby="objectives" className="rounded-2xl border border-(--ac-line) bg-white/70 px-6 py-5">
+            <h2 id="objectives" className="text-sm font-semibold text-(--ac-navy)">ในบทนี้คุณจะได้</h2>
+            <ul className="mt-2 grid gap-x-6 gap-y-1.5 text-[15px] leading-6 text-(--ac-body) sm:grid-cols-2">
+              {objectives.map((o) => (
+                <li key={o} className="flex gap-2"><CheckIcon className="mt-1 size-4 shrink-0 text-(--ac-gold)" aria-hidden /><span className="min-w-0 break-words">{o}</span></li>
+              ))}
+            </ul>
+          </section>
+
+          <div id="lesson-content" className={"scroll-mt-24 p-4 sm:p-6 " + card}>
             <LessonView key={lesson.id} lesson={lesson} words={words} passMark={passMark} next={next} />
           </div>
         </div>
 
-        <aside className="flex flex-col gap-4 xl:sticky xl:top-[78px] xl:self-start" aria-label="ข้อมูลประกอบบทเรียน">
+        {/* Supporting material: quieter than the lesson (smaller headings, muted cards); below 1280px it follows the lesson. */}
+        <aside className="grid gap-5 md:grid-cols-2 xl:sticky xl:top-[86px] xl:flex xl:flex-col xl:self-start" aria-label="ข้อมูลประกอบบทเรียน">
           {later.length > 0 && (
-            <section className="glass p-4" aria-labelledby="up-next">
-              <h2 id="up-next" className="mb-2 font-mono text-[11px] tracking-[0.25em] text-gold">NEXT IN THIS STAGE</h2>
+            <section className={"p-5 " + card} aria-labelledby="up-next">
+              <h2 id="up-next" className="ac-serif text-[17px] font-bold text-(--ac-navy)">Lessons in This Stage</h2>
+              <p className="mb-3 text-xs text-(--ac-muted)">บทถัดไป · ทั้งหมด {items.length} รายการ</p>
               <ol className="flex flex-col gap-2">
                 {later.map((item) => (
                   <li key={item.id}>
-                    <Link href={item.href} className="flex items-center gap-3 rounded-xl border border-white/10 p-2 transition hover:bg-white/5">
-                      {/* eslint-disable-next-line @next/next/no-img-element -- scene pre-sized to WebP in public/scenes */}
-                      <img src="/scenes/library-900.webp" alt="" className="h-11 w-14 shrink-0 rounded-lg object-cover" />
+                    <Link href={item.href} className="flex items-center gap-3 rounded-xl border border-(--ac-line) p-2.5 transition hover:border-(--ac-navy)/30 hover:bg-(--ac-bg)">
+                      <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-[#f4f1ea] text-(--ac-navy)"><StageIcon className="size-5" strokeWidth={1.6} aria-hidden /></span>
                       <span className="min-w-0 flex-1">
-                        <span className="block truncate text-sm text-white">{item.title}</span>
-                        <span className="text-xs text-mist">{item.minutes} นาที</span>
+                        <span className="block truncate text-sm font-medium text-(--ac-ink)">{item.title}</span>
+                        <span className="text-xs text-(--ac-muted)">{item.minutes} นาที</span>
                       </span>
                     </Link>
                   </li>
                 ))}
               </ol>
+              <Link href={stage ? `/roadmap?stage=${stage.id}` : "/roadmap"} className="mt-3 inline-flex text-sm font-semibold text-(--ac-navy) hover:text-(--ac-gold)">ดูทั้งหมดใน Roadmap →</Link>
+            </section>
+          )}
+          {later.length === 0 && stage && (
+            <section className={"p-5 " + card} aria-labelledby="up-next">
+              <h2 id="up-next" className="ac-serif text-[17px] font-bold text-(--ac-navy)">Lessons in This Stage</h2>
+              <p className="mt-1 text-sm leading-6 text-(--ac-body)">นี่คือบทสุดท้ายของ {stage.title} ผ่าน Quiz แล้วไปต่อสถานีถัดไปได้เลย</p>
+              <Link href={`/roadmap?stage=${stage.id}`} className="mt-3 inline-flex text-sm font-semibold text-(--ac-navy) hover:text-(--ac-gold)">ดูทั้งสถานีใน Roadmap →</Link>
             </section>
           )}
           {words.fresh.length > 0 && (
-            <section className="glass p-4" aria-labelledby="vocab-preview">
-              <h2 id="vocab-preview" className="mb-2 font-mono text-[11px] tracking-[0.25em] text-gold">VOCABULARY</h2>
-              <ul className="flex flex-col divide-y divide-white/10">
+            <section className={"p-5 " + card} aria-labelledby="vocab-preview">
+              <h2 id="vocab-preview" className="ac-serif mb-2 text-[17px] font-bold text-(--ac-navy)">Vocabulary Preview</h2>
+              <ul className="flex flex-col divide-y divide-(--ac-line)">
                 {words.fresh.slice(0, 5).map(({ word }) => (
-                  <li key={word.id} className="flex items-center gap-3 py-2">
+                  <li key={word.id} className="flex items-center gap-3 py-2.5">
                     <span className="min-w-0 flex-1">
-                      <b className="block font-semibold text-white">{word.en}</b>
-                      <span className="block truncate text-xs text-mist">{word.th}</span>
+                      <b className="block font-semibold text-(--ac-navy)">{word.en}</b>
+                      <span className="block truncate text-sm text-(--ac-muted)">{word.th}</span>
                     </span>
-                    <span className="[&_button]:border-white/20 [&_button]:text-mist"><SpeakButton text={word.en} /></span>
+                    <SpeakButton text={word.en} />
                   </li>
                 ))}
               </ul>
-              <p className="mt-2 text-xs text-mist">บทนี้มีคำใหม่ {words.fresh.length} คำ ดูทั้งหมดได้ในแท็บ Learn</p>
+              <p className="mt-2 text-xs text-(--ac-muted)">บทนี้มีคำใหม่ {words.fresh.length} คำ ดูทั้งหมดได้ในแท็บ Learn</p>
             </section>
           )}
-          {tip && (
-            <section className="glass p-4" aria-labelledby="coach-tip">
-              <h2 id="coach-tip" className="mb-2 flex items-center gap-2 font-mono text-[11px] tracking-[0.25em] text-gold">
-                <LightbulbIcon className="size-4" aria-hidden /> COACH TIP
+          {tips.length > 0 && (
+            <section className="rounded-2xl border border-(--ac-gold-bright)/40 bg-(--ac-gold-soft)/50 p-5" aria-labelledby="coach-tip">
+              <h2 id="coach-tip" className="mb-2 flex items-center gap-2 text-sm font-semibold text-(--ac-navy)">
+                <LightbulbIcon className="size-4 text-(--ac-gold)" aria-hidden /> Learning Tips
               </h2>
-              <p className="text-sm leading-6 text-[#dce5ee]">
-                ระวังจุดที่คนไทยพลาดบ่อย: <s className="text-[#ff9c8f]">{tip[0]}</s> → <b className="text-[#7fe0b8]">{tip[1]}</b>
-              </p>
-              <p className="mt-1 text-xs leading-5 text-mist">{tip[2]}</p>
+              <p className="text-xs text-(--ac-body)">จุดที่คนไทยพลาดบ่อยในบทนี้</p>
+              <ul className="mt-2 flex flex-col gap-3">
+                {tips.map(([wrong, right, note]) => (
+                  <li key={wrong} className="text-sm leading-6 text-(--ac-ink)">
+                    <s className="text-bad">{wrong}</s> → <b className="text-obj">{right}</b>
+                    <span className="block text-xs leading-5 text-(--ac-body)">{note}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/guide" className="mt-3 inline-flex text-sm font-semibold text-(--ac-navy) hover:text-(--ac-gold)">คู่มือศัพท์ไวยากรณ์ →</Link>
             </section>
           )}
         </aside>
@@ -118,22 +155,22 @@ function StageNav({ stage, items, current }: { stage?: Stage; items: StageItem[]
     </Suspense>
   );
   return (
-    <div className="glass flex flex-col gap-3 p-4">
-      <Link href={stage ? `/roadmap?stage=${stage.id}` : "/roadmap"} className="flex items-center gap-1.5 text-sm text-mist hover:text-white">
+    <div className={"flex flex-col gap-4 p-5 " + card}>
+      <Link href={stage ? `/roadmap?stage=${stage.id}` : "/roadmap"} className="flex items-center gap-1.5 text-sm font-medium text-(--ac-body) hover:text-(--ac-navy)">
         <ArrowLeftIcon className="size-4" aria-hidden /> Back to Roadmap
       </Link>
       {stage && (
         <div>
-          <p className="font-mono text-[11px] tracking-[0.25em] text-gold">STAGE {pad(stage.n)} / 07</p>
-          <p className="font-brand text-lg font-bold tracking-wide">{stage.title}</p>
+          <p className="font-mono text-[11px] tracking-[0.2em] text-(--ac-gold)">STAGE {pad(stage.n)} / 07</p>
+          <p className="ac-serif text-[20px] font-bold text-(--ac-navy)">{stage.title}</p>
         </div>
       )}
       {/* Phones and tablets: folded, so the lesson comes first. */}
       <details className="group xl:hidden">
-        <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg border border-white/15 px-3 py-2 text-sm">
+        <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg border border-(--ac-line) px-3 py-2 text-sm text-(--ac-ink) [&::-webkit-details-marker]:hidden">
           บทเรียนในสถานีนี้ ({items.length}) <ChevronDownIcon className="size-4 transition group-open:rotate-180" aria-hidden />
         </summary>
-        <div className="mt-2">{list}</div>
+        <div className="mt-3">{list}</div>
       </details>
       <div className="hidden xl:block">{list}</div>
     </div>
@@ -153,20 +190,20 @@ function Timeline({ items, current, passed }: { items: StageItem[]; current: str
   return (
     <div className="flex flex-col gap-3">
       <div>
-        <div className="flex justify-between text-xs text-mist"><span>Stage progress</span><span className="tabular">{done}/{tracked.length}</span></div>
-        <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-white/10"><div className="h-full rounded-full bg-gold" style={{ width: `${percent}%` }} /></div>
+        <div className="flex justify-between text-xs text-(--ac-muted)"><span>Stage progress</span><span className="tabular">{done}/{tracked.length}</span></div>
+        <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-[#efe9dd]"><div className="h-full rounded-full bg-(--ac-gold)" style={{ width: `${percent}%` }} /></div>
       </div>
       <ol className="relative flex flex-col">
-        <span className="absolute top-3 bottom-3 left-[13px] w-px bg-white/15" aria-hidden />
+        <span className="absolute top-3 bottom-3 left-[13px] w-px bg-(--ac-line)" aria-hidden />
         {items.map((item, i) => {
           const on = item.lessonId === current;
           const ok = item.lessonId ? passed.has(item.lessonId) : false;
           return (
             <li key={item.id} className="relative">
               <Link href={item.href} aria-current={on ? "page" : undefined}
-                className={"flex items-start gap-3 rounded-lg py-2 pr-2 text-sm transition " + (on ? "bg-gold/15 text-white" : "text-mist hover:text-white")}>
+                className={"flex items-start gap-3 rounded-lg py-2 pr-2 text-sm transition " + (on ? "bg-(--ac-gold-soft) text-(--ac-navy)" : "text-(--ac-body) hover:text-(--ac-navy)")}>
                 <span className={"relative z-10 grid size-[27px] shrink-0 place-items-center rounded-full text-[11px] font-semibold " +
-                  (on ? "bg-gold text-navy" : ok ? "bg-[#7fe0b8] text-navy" : "border border-white/25 bg-navy-2")}>
+                  (on ? "bg-(--ac-navy) text-white" : ok ? "bg-[#2e7d5b] text-white" : "border border-(--ac-line) bg-white text-(--ac-muted)")}>
                   {ok && !on ? <CheckIcon className="size-3.5" aria-label="ผ่านแล้ว" /> : pad(i + 1)}
                 </span>
                 <span className={"pt-1 leading-5 " + (on ? "font-semibold" : "")}>{item.title}</span>
