@@ -26,12 +26,12 @@ export const metadata: Metadata = {
   applicationName: "Odyssey",
   openGraph: { type: "website", siteName: "Odyssey", locale: "th_TH", title: TITLE, description: DESCRIPTION },
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
-  // Opened from the iPhone home screen: full screen, with a black status bar above the dark header.
-  appleWebApp: { capable: true, title: "Odyssey", statusBarStyle: "black" },
+  // Opened from the iPhone home screen: full screen, with the default (dark text) status bar above the white header.
+  appleWebApp: { capable: true, title: "Odyssey", statusBarStyle: "default" },
   formatDetection: { telephone: false },
 };
 
-export const viewport: Viewport = { themeColor: "#07182b", viewportFit: "cover" };
+export const viewport: Viewport = { themeColor: "#ffffff", viewportFit: "cover" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

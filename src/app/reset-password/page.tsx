@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
+import { AcademicPage, PageHeader } from "@/components/academic-page";
 import { ResetForm } from "@/components/password-forms";
 import { getUser } from "@/lib/data";
 
@@ -8,15 +9,12 @@ export const metadata: Metadata = { title: "ตั้งรหัสผ่าน
 
 export default function ResetPasswordPage() {
   return (
-    <div className="mx-auto flex max-w-sm flex-col gap-5 pt-4 lg:pt-12">
-      <header>
-        <p className="eyebrow">บัญชีผู้เรียน</p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight">ตั้งรหัสผ่านใหม่</h1>
-      </header>
+    <AcademicPage className="mx-auto flex max-w-md flex-col gap-5 pt-2 lg:pt-10">
+      <PageHeader eyebrow="ACCOUNT · บัญชีผู้เรียน" title="ตั้งรหัสผ่านใหม่" />
       <Suspense fallback={<div className="card h-56 animate-pulse" />}>
         <ResetOrExpired />
       </Suspense>
-    </div>
+    </AcademicPage>
   );
 }
 

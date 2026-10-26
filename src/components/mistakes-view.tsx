@@ -58,7 +58,7 @@ export function MistakesView({ items }: { items: MistakeItem[] }) {
               <div className="flex items-baseline justify-between gap-2">
                 <p className="eyebrow">ข้อ {i + 1} · ผิดมาแล้ว {m.n} ครั้ง</p>
                 {m.from && (
-                  <Link href={m.from.href} className="truncate text-xs text-brand underline underline-offset-2">{m.from.title}</Link>
+                  <Link href={m.from.href} className="inline-flex min-h-6 items-center truncate text-xs text-brand underline underline-offset-2">{m.from.title}</Link>
                 )}
               </div>
               <p className="text-[15px] font-medium">ข้อไหนถูก?</p>

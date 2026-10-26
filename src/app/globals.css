@@ -3,7 +3,7 @@
 /* Odyssey: ivory pages for reading, deep navy for the academy around them, warm gold for what matters.
    Sentence roles keep their own colours: subject blue, verb orange, object green. */
 @theme {
-  --color-paper: #f8f5ee;
+  --color-paper: #faf8f3;
   --color-surface: #ffffff;
   --color-ink: #07182b;
   --color-ink-2: #142b45;
@@ -21,7 +21,8 @@
   --color-mist: #b8c7d7;
   --color-subj: #2b57cf;
   --color-subj-bg: #e6ecfb;
-  --color-verb: #b94a12;
+  /* Verb orange, a shade darker than before so 11-14px labels on --color-verb-bg reach 4.5:1. */
+  --color-verb: #a8430f;
   --color-verb-bg: #fbeadf;
   --color-obj: #0e7a57;
   --color-obj-bg: #dff2ea;
@@ -109,10 +110,49 @@
   --ac-gold-ink: #8f6326;
   --ac-shadow: 0 18px 44px -28px rgba(15, 36, 64, 0.35);
 }
-.theme-academic .ac-serif { font-family: var(--font-academic-face), Georgia, "Times New Roman", serif; }
+/* Source Serif has no Thai glyphs: Thai in a heading falls through to the body face, not the system serif. */
+.theme-academic .ac-serif { font-family: var(--font-academic-face), var(--font-body), Georgia, "Times New Roman", serif; }
 .theme-academic :focus-visible { outline-color: var(--ac-navy); }
 /* The account button in the light header: navy, as in the reference. */
 .theme-academic .account-chip { background: var(--ac-navy); color: #ffffff; }
+
+/* Pages moved onto the theme after the first release (wrapped in <AcademicPage>). The older tokens and
+   shared classes those pages are built from take the Academic values here, so .card, .btn, text-muted and
+   friends look right without touching every element. Home, Roadmap and lessons don't carry this class. */
+.academic-page {
+  --color-paper: #faf8f3;
+  --color-surface: #ffffff;
+  --color-ink: #14243b;
+  --color-ink-2: #3d4757;
+  --color-muted: #626b7a;
+  --color-line: #ebe5d9;
+  --color-brand: #0f2440;
+  --color-brand-soft: #eef2f8;
+  --color-navy: #0f2440;
+  --color-navy-2: #16304f;
+  --color-navy-3: #1d3a5c;
+  --color-gold: #e2b366;
+  --color-gold-soft: #f5e9d2;
+  --color-mist: #c9d3e1;
+  /* Display type (titles, big numbers) is the Academic serif; Thai falls through to the body face. */
+  --font-display: var(--font-academic-face), var(--font-body), Georgia, serif;
+  color: var(--ac-ink);
+}
+@layer components {
+  .academic-page h1 { color: var(--ac-navy); }
+  /* Card and task titles stay in the UI face, as in the lesson's Practice and Quiz. */
+  .academic-page h3 { font-family: var(--font-sans); }
+  /* Thai in an eyebrow falls back to the body face, and the tracking stays light enough for Thai to read. */
+  .academic-page .eyebrow { @apply text-[11px] tracking-[0.12em] text-(--ac-gold-ink); font-family: var(--font-mono-face), var(--font-body), monospace; }
+  .academic-page .card { @apply rounded-2xl border-(--ac-line) bg-white shadow-[0_1px_2px_rgba(15,36,64,0.04)]; }
+  .academic-page .btn { @apply min-h-11 rounded-lg bg-(--ac-navy) px-5 text-white hover:bg-(--ac-navy-2); }
+  .academic-page .btn-ghost { @apply min-h-11 rounded-lg border-(--ac-line) bg-white px-5 text-(--ac-navy) hover:border-(--ac-navy)/40 hover:bg-(--ac-bg); }
+  .academic-page .input { @apply min-h-12 rounded-xl border-(--ac-line) px-4 focus:border-(--ac-navy) focus:ring-(--ac-gold-soft); }
+  /* On a navy panel the primary action turns gold and labels lighten, as on the Roadmap stage card. */
+  .academic-page .on-dark .btn { @apply bg-(--ac-gold-bright) text-(--ac-navy) hover:bg-[#ecc580]; }
+  .academic-page .on-dark .eyebrow { @apply text-(--ac-gold-bright); }
+  .academic-page .on-dark :focus-visible { outline-color: var(--ac-gold-bright); }
+}
 
 @keyframes learn-in {
   from { opacity: 0; transform: translateY(6px) scale(0.99); }

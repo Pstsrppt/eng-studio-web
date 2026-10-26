@@ -10,7 +10,7 @@ export function PlanCheck({ id, day, label }: { id: string; day: string; label: 
 
   return (
     <button type="button" onClick={toggle} aria-pressed={done} aria-label={`${label}: ${done ? "ทำแล้ว" : "ยังไม่ได้ทำ"}`}
-      className={"grid size-5 shrink-0 place-items-center rounded-[5px] border-[1.5px] text-[11px] text-white " + (done ? "border-brand bg-brand" : "border-[#b9c6c0] bg-surface")}>
+      className={"grid size-6 shrink-0 place-items-center rounded-md border-[1.5px] text-xs text-white " + (done ? "border-[#2e7d5b] bg-[#2e7d5b]" : "border-[#c9c1b1] bg-surface")}>
       {done ? "✓" : ""}
     </button>
   );

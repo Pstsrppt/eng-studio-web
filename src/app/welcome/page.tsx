@@ -2,6 +2,7 @@ import { BookOpenIcon, CheckIcon, LayersIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
+import { AcademicPage } from "@/components/academic-page";
 import { getUser } from "@/lib/data";
 
 export const metadata: Metadata = { title: "ยืนยันอีเมลสำเร็จ" };
@@ -9,13 +10,13 @@ export const metadata: Metadata = { title: "ยืนยันอีเมลส
 /** Where the sign-up confirmation link lands, so the learner sees it worked. */
 export default function WelcomePage() {
   return (
-    <div className="mx-auto flex max-w-lg flex-col items-center gap-6 pt-6 text-center lg:pt-14">
-      <span className="learn-in grid size-20 place-items-center rounded-full bg-obj text-white shadow-[0_14px_30px_-12px_rgba(14,122,87,0.6)]">
+    <AcademicPage className="mx-auto flex max-w-lg flex-col items-center gap-6 pt-6 text-center lg:pt-14">
+      <span className="learn-in grid size-20 place-items-center rounded-full bg-[#2e7d5b] text-white shadow-[0_14px_30px_-14px_rgba(46,125,91,0.6)]">
         <CheckIcon className="size-10" strokeWidth={2.5} aria-hidden />
       </span>
       <header>
-        <p className="eyebrow">English Studio</p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight">ยืนยันอีเมลสำเร็จ</h1>
+        <p className="eyebrow">ODYSSEY · IELTS</p>
+        <h1 className="mt-2 text-[30px] leading-[1.15] font-bold sm:text-[38px]">ยืนยันอีเมลสำเร็จ</h1>
         <Suspense fallback={<p className="mt-2 text-muted">บัญชีของคุณพร้อมใช้งานแล้ว</p>}>
           <Who />
         </Suspense>
@@ -30,7 +31,7 @@ export default function WelcomePage() {
           <span><b className="block font-semibold">ฝึกคำศัพท์</b><span className="text-sm text-muted">การ์ดคำพร้อมภาพ เสียง และ Daily Quest</span></span>
         </Link>
       </div>
-    </div>
+    </AcademicPage>
   );
 }
 

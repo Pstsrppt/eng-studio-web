@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { connection } from "next/server";
 import { Suspense } from "react";
+import { AcademicPage, PageHeader } from "@/components/academic-page";
 import { PracticeSkeleton } from "@/components/skeleton";
 import { VocabView } from "@/components/vocab-view";
 import { DECKS, WORDS, withImages } from "@/content";
@@ -10,18 +11,13 @@ export const metadata: Metadata = { title: "คำศัพท์" };
 
 export default function VocabPage() {
   return (
-    <div className="flex flex-col gap-6">
-      <header>
-        <p className="eyebrow">คำศัพท์ {WORDS.length} คำ · ทวนตามรอบ</p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight">การ์ดคำศัพท์</h1>
-        <p className="mt-2 max-w-[62ch] text-muted">
-          ทวนวันละ 10 ใบ คำที่จำได้แล้วจะห่างออกไปเรื่อย ๆ ส่วนคำที่ลืมจะกลับมาบ่อยขึ้น
-        </p>
-      </header>
+    <AcademicPage className="flex flex-col gap-6">
+      <PageHeader eyebrow={`VOCABULARY · ${WORDS.length} คำ · ทวนตามรอบ`} title="การ์ดคำศัพท์"
+        lead="ทวนวันละ 10 ใบ คำที่จำได้แล้วจะห่างออกไปเรื่อย ๆ ส่วนคำที่ลืมจะกลับมาบ่อยขึ้น" />
       <Suspense fallback={<PracticeSkeleton />}>
         <VocabWithCards />
       </Suspense>
-    </div>
+    </AcademicPage>
   );
 }
 

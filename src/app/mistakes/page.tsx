@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
+import { AcademicPage, PageHeader } from "@/components/academic-page";
 import { PracticeSkeleton } from "@/components/skeleton";
 import { MistakesView, type MistakeItem } from "@/components/mistakes-view";
 import { LESSONS, SOUNDS } from "@/content";
@@ -10,18 +11,13 @@ export const metadata: Metadata = { title: "ทบทวนข้อผิด" }
 
 export default function MistakesPage() {
   return (
-    <div className="flex flex-col gap-6">
-      <header>
-        <p className="eyebrow">ทบทวนข้อผิด</p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight">ข้อที่เคยตอบผิด</h1>
-        <p className="mt-2 max-w-[62ch] text-muted">
-          รวมทุกข้อที่ตอบผิดจากแบบทดสอบและ V1-V2-V3 ทำซ้ำจนถูก จุดอ่อนจะหายไปจริง ๆ
-        </p>
-      </header>
+    <AcademicPage className="flex flex-col gap-6">
+      <PageHeader eyebrow="MISTAKE REVIEW · ทบทวนข้อผิด" title="ข้อที่เคยตอบผิด"
+        lead="รวมทุกข้อที่ตอบผิดจากแบบทดสอบและ V1-V2-V3 ทำซ้ำจนถูก จุดอ่อนจะหายไปจริง ๆ" />
       <Suspense fallback={<PracticeSkeleton />}>
         <Mistakes />
       </Suspense>
-    </div>
+    </AcademicPage>
   );
 }
 

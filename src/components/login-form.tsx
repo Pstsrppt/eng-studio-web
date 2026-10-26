@@ -88,7 +88,7 @@ function CheckEmail({ email, note, onBack }: { email: string; note?: string; onB
       </div>
       <ol className="w-full list-decimal rounded-lg bg-paper px-4 py-3 pl-9 text-left text-sm leading-7">
         <li>เปิดกล่องจดหมายของอีเมลนี้</li>
-        <li>เปิดอีเมลจาก <b>English Studio</b> แล้วกดปุ่ม <b>ยืนยันอีเมล</b></li>
+        <li>เปิดอีเมลยืนยันบัญชีที่ระบบส่งให้ แล้วกดปุ่ม <b>ยืนยันอีเมล</b></li>
         <li>เว็บจะเปิดหน้า &ldquo;ยืนยันอีเมลสำเร็จ&rdquo; และพาเข้าใช้งานให้เลย</li>
       </ol>
       <p className="text-xs leading-5 text-muted">ไม่เจออีเมล? รอ 1–2 นาที แล้วดูในโฟลเดอร์ <b>สแปม</b> หรือ <b>โปรโมชัน</b> ด้วย</p>

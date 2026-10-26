@@ -3,16 +3,16 @@ import type { MetadataRoute } from "next";
 /** Lets phones add the site to the home screen and open it full screen like an app. */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "English Studio · เรียนภาษาอังกฤษสำหรับคนทำงาน",
-    short_name: "English Studio",
+    name: "IELTS Odyssey — A Higher You",
+    short_name: "Odyssey",
     description: "ไวยากรณ์ทีละบท คำศัพท์พร้อมภาพและเสียง ทวนอัตโนมัติ เรียนฟรีบนมือถือ",
     lang: "th",
     start_url: "/",
     scope: "/",
     display: "standalone",
     orientation: "portrait",
-    background_color: "#f4f6f3",
-    theme_color: "#13201b",
+    background_color: "#faf8f3",
+    theme_color: "#ffffff",
     categories: ["education"],
     icons: [
       { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },

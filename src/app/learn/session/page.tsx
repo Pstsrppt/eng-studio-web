@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { AcademicPage } from "@/components/academic-page";
 import { DECKS } from "@/content";
 import { getUser } from "@/lib/data";
 import { LEARN_MODES, type LearnMode } from "@/lib/learning/queue";
@@ -11,9 +12,11 @@ type Search = Promise<{ mode?: string; deck?: string; again?: string }>;
 
 export default function LearnSessionPage({ searchParams }: { searchParams: Search }) {
   return (
-    <Suspense fallback={<div className="h-[520px] animate-pulse rounded-[28px] bg-line/60" aria-busy="true" aria-label="กำลังเตรียมการ์ด" />}>
-      <Session searchParams={searchParams} />
-    </Suspense>
+    <AcademicPage>
+      <Suspense fallback={<div className="h-[520px] animate-pulse rounded-[28px] bg-line/60" aria-busy="true" aria-label="กำลังเตรียมการ์ด" />}>
+        <Session searchParams={searchParams} />
+      </Suspense>
+    </AcademicPage>
   );
 }
 
