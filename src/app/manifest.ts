@@ -3,8 +3,8 @@ import type { MetadataRoute } from "next";
 /** Lets phones add the site to the home screen and open it full screen like an app. */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "English Studio · เรียนภาษาอังกฤษสำหรับคนทำงาน",
-    short_name: "English Studio",
+    name: "IELTS Odyssey — A Higher You",
+    short_name: "Odyssey",
     description: "ไวยากรณ์ทีละบท คำศัพท์พร้อมภาพและเสียง ทวนอัตโนมัติ เรียนฟรีบนมือถือ",
     lang: "th",
     start_url: "/",
