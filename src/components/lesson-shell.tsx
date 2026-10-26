@@ -50,7 +50,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
               <div className="absolute inset-0 bg-[linear-gradient(90deg,#ffffff_0%,rgba(255,255,255,0.75)_30%,rgba(255,255,255,0)_70%)]" aria-hidden />
             </div>
             <div className="flex max-w-[640px] flex-col gap-3 p-6 sm:p-9">
-              <p className="font-mono text-xs tracking-[0.2em] text-(--ac-gold)">
+              <p className="font-mono text-xs tracking-[0.2em] text-(--ac-gold-ink)">
                 {stage ? `STAGE ${pad(stage.n)} · ` : ""}LESSON {pad(index + 1)}
               </p>
               <h1 id="lesson-title" className="ac-serif text-[30px] leading-[1.12] font-bold text-(--ac-navy) sm:text-[40px]">{lesson.title}</h1>
@@ -161,7 +161,7 @@ function StageNav({ stage, items, current }: { stage?: Stage; items: StageItem[]
       </Link>
       {stage && (
         <div>
-          <p className="font-mono text-[11px] tracking-[0.2em] text-(--ac-gold)">STAGE {pad(stage.n)} / 07</p>
+          <p className="font-mono text-[11px] tracking-[0.2em] text-(--ac-gold-ink)">STAGE {pad(stage.n)} / 07</p>
           <p className="ac-serif text-[20px] font-bold text-(--ac-navy)">{stage.title}</p>
         </div>
       )}

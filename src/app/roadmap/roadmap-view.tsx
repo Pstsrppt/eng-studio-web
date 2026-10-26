@@ -52,7 +52,7 @@ export function RoadmapView({ stages, passed, overall, level, signedIn, initialS
         <div className="absolute inset-x-0 bottom-0 -z-10 h-16 bg-[linear-gradient(180deg,transparent,var(--ac-bg))]" aria-hidden />
         <div className="mx-auto flex max-w-[1520px] flex-wrap items-end justify-between gap-5 px-4 pt-10 pb-10 sm:px-6 lg:px-10 lg:pt-14 lg:pb-14 2xl:px-12">
           <div className="max-w-2xl">
-            <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold)">YOUR LEARNING ROADMAP</p>
+            <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold-ink)">YOUR LEARNING ROADMAP</p>
             <h1 className="ac-serif mt-2 text-[34px] leading-[1.1] font-bold text-(--ac-navy) sm:text-[44px]">From Foundation to Your Target Band</h1>
             <p className="mt-3 text-[17px] leading-7 text-(--ac-body)">Seven stages, one clear path. Choose a stage to see its lessons and where to continue.</p>
           </div>
@@ -114,7 +114,7 @@ function StagePath({ stages, selected, onChoose }: { stages: StageProgress[]; se
                   <look.Icon className="size-7" strokeWidth={1.5} aria-hidden />
                   {s.status === "done" && <span className="absolute -right-1 -bottom-1 grid size-6 place-items-center rounded-full bg-[#2e7d5b] text-white ring-2 ring-white"><CheckIcon className="size-3.5" aria-hidden /></span>}
                 </span>
-                <span className="font-mono text-[11px] tracking-[0.16em] text-(--ac-gold)">STAGE {pad(s.n)}</span>
+                <span className="font-mono text-[11px] tracking-[0.16em] text-(--ac-gold-ink)">STAGE {pad(s.n)}</span>
                 <span className="flex min-h-[2.5em] items-start text-[15px] leading-[1.25] font-semibold text-balance text-(--ac-navy)">{s.title}</span>
                 <StatusChip status={s.status} />
               </button>
@@ -253,13 +253,13 @@ function LearningList({ stages, done, selected }: { stages: StageProgress[]; don
               <span className="grid size-12 shrink-0 place-items-center rounded-full bg-[#f4f1ea] text-(--ac-navy)"><look.Icon className="size-6" strokeWidth={1.5} aria-hidden /></span>
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="font-mono text-xs tracking-[0.16em] text-(--ac-gold)">STAGE {pad(s.n)}</span>
+                  <span className="font-mono text-xs tracking-[0.16em] text-(--ac-gold-ink)">STAGE {pad(s.n)}</span>
                   <StatusChip status={s.status} />
                 </div>
                 <h2 className="ac-serif mt-1 text-[22px] font-bold text-(--ac-navy)">{s.title}</h2>
                 <p className="text-sm text-(--ac-muted)">{s.th}</p>
               </div>
-              {s.total > 0 && <span className="shrink-0 font-mono text-sm text-(--ac-gold) tabular">{s.done}/{s.total}</span>}
+              {s.total > 0 && <span className="shrink-0 font-mono text-sm text-(--ac-gold-ink) tabular">{s.done}/{s.total}</span>}
             </div>
             {s.items.length > 0 && <ol className="divide-y divide-(--ac-line)">{s.items.map((item, i) => <ItemRow key={item.id} item={item} done={done} n={i + 1} />)}</ol>}
             {s.soon && <p className="rounded-xl bg-(--ac-bg) px-4 py-3 text-sm text-(--ac-body)">กำลังจัดทำ: {s.soon.join(" · ")}</p>}

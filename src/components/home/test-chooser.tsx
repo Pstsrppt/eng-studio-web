@@ -50,7 +50,7 @@ export function TestChooser() {
                 {on && <span className="shrink-0 rounded-full bg-(--ac-gold-soft) px-3 py-1 text-xs font-semibold text-(--ac-navy)">Selected</span>}
               </div>
               <div>
-                <p className="mb-3 font-mono text-[11px] tracking-[0.18em] text-(--ac-gold)">SUITABLE FOR</p>
+                <p className="mb-3 font-mono text-[11px] tracking-[0.18em] text-(--ac-gold-ink)">SUITABLE FOR</p>
                 <ul className="flex flex-col gap-3.5">
                   {t.suitable.map((s) => (
                     <li key={s.en} className="flex gap-2.5 text-[15px] leading-6 text-(--ac-ink)">

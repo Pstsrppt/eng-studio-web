@@ -32,7 +32,7 @@ export function BandExplorer() {
       </div>
       <div key={band} className="learn-in flex flex-col gap-5 p-6 lg:p-8">
         <div>
-          <p className="mb-2 font-mono text-[11px] tracking-[0.18em] text-(--ac-gold)">WHAT IT MEANS (OFFICIAL BAND SCALE)</p>
+          <p className="mb-2 font-mono text-[11px] tracking-[0.18em] text-(--ac-gold-ink)">WHAT IT MEANS (OFFICIAL BAND SCALE)</p>
           {info.official ? (
             <blockquote className="border-l-2 border-(--ac-gold-bright) pl-4 text-[15px] leading-7 text-(--ac-ink)">
               “{info.official}”
@@ -46,7 +46,7 @@ export function BandExplorer() {
           )}
         </div>
         <div>
-          <p className="mb-2 font-mono text-[11px] tracking-[0.18em] text-(--ac-gold)">WHAT TO WORK ON</p>
+          <p className="mb-2 font-mono text-[11px] tracking-[0.18em] text-(--ac-gold-ink)">WHAT TO WORK ON</p>
           <ul className="flex flex-col gap-2">
             {info.focus.map((f) => (
               <li key={f.en} className="flex gap-2.5 text-[15px] leading-6 text-(--ac-body)">

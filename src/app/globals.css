@@ -105,6 +105,8 @@
   --ac-gold: #b8843d;
   --ac-gold-bright: #e2b366;
   --ac-gold-soft: #f5e9d2;
+  /* Gold for small text: --ac-gold is 3.1:1 on ivory, this one 5:1 (WCAG AA). */
+  --ac-gold-ink: #8f6326;
   --ac-shadow: 0 18px 44px -28px rgba(15, 36, 64, 0.35);
 }
 .theme-academic .ac-serif { font-family: var(--font-academic-face), Georgia, "Times New Roman", serif; }

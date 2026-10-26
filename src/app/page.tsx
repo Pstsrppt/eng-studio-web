@@ -219,7 +219,7 @@ async function Continue() {
   return (
     <section className="flex flex-wrap items-center justify-between gap-5 rounded-2xl border border-(--ac-line) bg-(--ac-surface) p-6 shadow-(--ac-shadow)" aria-labelledby="continue-title">
       <div className="min-w-0">
-        <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold)">YOUR PROGRESS</p>
+        <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold-ink)">YOUR PROGRESS</p>
         <h2 id="continue-title" className="ac-serif mt-1 text-2xl font-bold text-(--ac-navy)">
           {current ? `Stage ${String(current.n).padStart(2, "0")} · ${current.title}` : "ผ่านบทเรียนครบทุกสถานีแล้ว"}
         </h2>
@@ -243,7 +243,7 @@ function Section({ id, eyebrow, title, subtitle, children }: { id: string; eyebr
   return (
     <section aria-labelledby={`${id}-title`} className="flex scroll-mt-24 flex-col gap-7 pt-10 lg:pt-16" id={id}>
       <header className="max-w-3xl">
-        <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold)">{eyebrow}</p>
+        <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold-ink)">{eyebrow}</p>
         <h2 id={`${id}-title`} className="ac-serif mt-2 text-[30px] leading-tight font-bold text-(--ac-navy) sm:text-[38px]">{title}</h2>
         {subtitle && <p className="mt-3 text-[17px] leading-7 text-(--ac-body)">{subtitle}</p>}
       </header>
@@ -273,7 +273,7 @@ function HowItWorks() {
         <li key={step.n} className="relative flex flex-col gap-4 rounded-2xl border border-(--ac-line) bg-white p-6 shadow-(--ac-shadow) lg:p-7">
           <div className="flex items-center gap-4">
             <span className="grid size-[54px] shrink-0 place-items-center rounded-full border border-(--ac-line) bg-(--ac-bg) text-(--ac-navy)"><step.Icon className="size-6" strokeWidth={1.6} aria-hidden /></span>
-            <span className="font-mono text-sm tracking-[0.2em] text-(--ac-gold)">STEP {step.n}</span>
+            <span className="font-mono text-sm tracking-[0.2em] text-(--ac-gold-ink)">STEP {step.n}</span>
           </div>
           <h3 className="ac-serif text-[22px] font-bold text-(--ac-navy)">{step.title}</h3>
           <p className="text-[15px] leading-7 text-(--ac-body)">{step.text}<Thai className="text-sm leading-6 text-(--ac-muted)">{step.th}</Thai></p>
