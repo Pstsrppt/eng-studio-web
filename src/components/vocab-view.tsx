@@ -548,7 +548,7 @@ function WordTable({ words, mine, decks, cards, signedIn }: TableProps) {
 
 function Segmented<T extends string>({ label, options, value, onChange }: { label: string; options: { id: T; label: string }[]; value: T; onChange: (v: T) => void }) {
   return (
-    <div className="flex rounded-[10px] bg-[#ebe5d8] p-1 text-sm" role="radiogroup" aria-label={label}>
+    <div className="flex rounded-[10px] bg-[#f4f1ea] p-1 text-sm" role="radiogroup" aria-label={label}>
       {options.map((o) => (
         <button key={o.id} type="button" role="radio" aria-checked={value === o.id} onClick={() => onChange(o.id)}
           className={"rounded-lg px-3 py-1.5 transition " + (value === o.id ? "bg-surface font-semibold shadow-sm" : "text-muted hover:text-ink")}>
@@ -578,7 +578,7 @@ function Marked({ text, word, className }: { text: string; word: string; classNa
 
 function Cover({ onClick }: { onClick: () => void }) {
   return (
-    <button type="button" onClick={onClick} className="h-6 w-24 rounded-md bg-[#ebe5d8] text-xs text-muted hover:bg-line">
+    <button type="button" onClick={onClick} className="h-6 w-24 rounded-md bg-[#f4f1ea] text-xs text-muted hover:bg-line">
       แตะเพื่อดู
     </button>
   );

@@ -21,7 +21,8 @@
   --color-mist: #b8c7d7;
   --color-subj: #2b57cf;
   --color-subj-bg: #e6ecfb;
-  --color-verb: #b94a12;
+  /* Verb orange, a shade darker than before so 11-14px labels on --color-verb-bg reach 4.5:1. */
+  --color-verb: #a8430f;
   --color-verb-bg: #fbeadf;
   --color-obj: #0e7a57;
   --color-obj-bg: #dff2ea;

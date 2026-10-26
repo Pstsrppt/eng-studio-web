@@ -151,7 +151,7 @@ function QuestCard({ q }: { q: QuestProgress }) {
           <h3 className="font-semibold">{q.title}</h3>
           <p className="text-xs leading-5 text-muted">{q.description}</p>
         </div>
-        <span className="shrink-0 rounded-full bg-(--ac-gold-soft) px-2 py-0.5 font-mono text-[11px] font-semibold text-(--ac-gold-ink)">+{q.xp} XP</span>
+        <span className="shrink-0 rounded-full bg-(--ac-gold-soft) px-2 py-0.5 font-mono text-[11px] font-semibold text-[#7a5418]">+{q.xp} XP</span>
       </div>
       <div>
         <div className="flex justify-between text-xs"><span className="tabular">{q.progress}/{q.target}</span><span className={q.done ? "font-semibold text-obj" : "text-muted"}>{q.done ? "✓ สำเร็จแล้ว" : "กำลังทำ"}</span></div>

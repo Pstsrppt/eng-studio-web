@@ -207,8 +207,8 @@ function Task(props: {
     <div className={"flex min-h-40 flex-col gap-2.5 rounded-2xl border p-4 " + (done ? "border-[#b9dccb] bg-[#eef7f1]" : "border-line bg-surface")}>
       <div className="flex items-center justify-between gap-2">
         {check ?? (
-          <span aria-label={done ? "ทำแล้ว" : "ยังไม่ได้ทำ"}
-            className={"grid size-5 shrink-0 place-items-center rounded-[5px] border-[1.5px] text-[11px] text-white " + (done ? "border-[#2e7d5b] bg-[#2e7d5b]" : "border-[#c9c1b1]")}>
+          <span role="img" aria-label={done ? "ทำแล้ว" : "ยังไม่ได้ทำ"}
+            className={"grid size-6 shrink-0 place-items-center rounded-md border-[1.5px] text-xs text-white " + (done ? "border-[#2e7d5b] bg-[#2e7d5b]" : "border-[#c9c1b1]")}>
             {done ? "✓" : ""}
           </span>
         )}
@@ -218,7 +218,7 @@ function Task(props: {
       <p className="line-clamp-2 text-xs text-muted">{meta}</p>
       {href && (
         <Link href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined}
-          className="mt-auto self-start text-sm font-semibold text-brand hover:underline">
+          className="mt-auto inline-flex min-h-11 items-center self-start text-sm font-semibold text-(--ac-navy) hover:underline">
           {cta} →
         </Link>
       )}
@@ -272,7 +272,7 @@ function Rail({ dash }: { dash: Dash }) {
         <div className="mb-2 flex items-baseline justify-between gap-2">
           <h2 className="font-sans text-[15px] font-semibold">ข้อผิดที่เจอบ่อย</h2>
           {dash.topMistakes.length > 0 && (
-            <Link href="/mistakes" className="text-xs font-semibold text-brand hover:underline">ทบทวนทั้งหมด →</Link>
+            <Link href="/mistakes" className="inline-flex min-h-6 items-center text-xs font-semibold text-brand hover:underline">ทบทวนทั้งหมด →</Link>
           )}
         </div>
         {dash.topMistakes.length === 0 ? (

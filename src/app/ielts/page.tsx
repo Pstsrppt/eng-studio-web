@@ -11,7 +11,7 @@ export default function IeltsPage() {
   return (
     <AcademicPage className="flex flex-col gap-8">
       <div className="flex flex-col gap-3">
-        <Link href="/roadmap" className="inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-(--ac-navy) hover:underline">
+        <Link href="/roadmap" className="inline-flex min-h-11 w-fit items-center gap-1.5 text-sm font-semibold text-(--ac-navy) hover:underline">
           <ArrowLeftIcon className="size-4" aria-hidden /> Roadmap · Stage 01
         </Link>
         <PageHeader eyebrow="STAGE 01 · WHAT IS IELTS?" title="What is IELTS?" lead="รู้จักข้อสอบก่อนเริ่มเตรียมตัว: วัดอะไร มีกี่แบบ และ Band คิดอย่างไร" />
