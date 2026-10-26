@@ -267,7 +267,7 @@ function Review({ pool, allWords, mode, cards, today, round, signedIn, onRestart
         )}
 
         {answered && word.note && (
-          <p className="rounded-lg bg-[#fbf3cf] px-3.5 py-3 text-sm leading-6"><b className="font-semibold">รู้ไว้</b> {word.note}</p>
+          <p className="rounded-xl border border-(--ac-gold-soft) bg-[#fbf6ea] px-4 py-3 text-sm leading-6"><b className="font-semibold">รู้ไว้</b> {word.note}</p>
         )}
 
         {mode === "recall" &&

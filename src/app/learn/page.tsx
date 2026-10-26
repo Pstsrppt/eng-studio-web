@@ -5,6 +5,7 @@ import {
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
+import { AcademicPage, PageHeader } from "@/components/academic-page";
 import { DECKS, WORDS } from "@/content";
 import { getUser } from "@/lib/data";
 import { DAILY_NEW_LIMIT } from "@/lib/learning/queue";
@@ -16,9 +17,11 @@ export const metadata: Metadata = { title: "ฝึกศัพท์" };
 
 export default function LearnPage() {
   return (
-    <Suspense fallback={<HubSkeleton />}>
-      <Hub />
-    </Suspense>
+    <AcademicPage>
+      <Suspense fallback={<HubSkeleton />}>
+        <Hub />
+      </Suspense>
+    </AcademicPage>
   );
 }
 
@@ -40,13 +43,8 @@ async function Hub() {
   const [user, data] = await Promise.all([getUser(), getLearnOverview()]);
   return (
     <div className="flex flex-col gap-8">
-      <header>
-        <p className="eyebrow">Learning Studio · ฝึกศัพท์</p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight lg:text-[34px]">พร้อมฝึกศัพท์วันนี้หรือยัง?</h1>
-        <p className="mt-2 max-w-[62ch] text-muted">
-          เปิดการ์ด นึกความหมาย แล้วบอกตามจริงว่าจำได้แค่ไหน ระบบจะนัดคำที่ลืมให้กลับมาเร็ว และเว้นระยะคำที่จำได้ดีให้ห่างออกไป
-        </p>
-      </header>
+      <PageHeader eyebrow="LEARNING HUB · ฝึกศัพท์" title="พร้อมฝึกศัพท์วันนี้หรือยัง?"
+        lead="เปิดการ์ด นึกความหมาย แล้วบอกตามจริงว่าจำได้แค่ไหน ระบบจะนัดคำที่ลืมให้กลับมาเร็ว และเว้นระยะคำที่จำได้ดีให้ห่างออกไป" />
       {data && user ? <SignedIn data={data} userKey={user.id} /> : (
         <>
           <Guest />
@@ -60,17 +58,17 @@ async function Hub() {
 
 function Guest() {
   return (
-    <section className="grid gap-4 rounded-2xl bg-ink p-6 text-white sm:grid-cols-[1fr_auto] sm:items-center">
+    <section className="on-dark grid gap-4 rounded-2xl bg-(--ac-navy) p-6 text-white sm:grid-cols-[1fr_auto] sm:items-center">
       <div>
-        <p className="font-mono text-[11px] tracking-[0.08em] text-mark">เริ่มต้น</p>
+        <p className="eyebrow">เริ่มต้น</p>
         <p className="mt-1 font-display text-2xl font-bold">ลองฝึกคำใหม่ {DAILY_NEW_LIMIT} คำ</p>
-        <p className="mt-1 max-w-[56ch] text-sm text-[#b8c7d7]">
+        <p className="mt-1 max-w-[56ch] text-sm text-[#c9d3e1]">
           เล่นได้เลยโดยไม่ต้องสมัคร แต่ผลจะไม่ถูกบันทึก เข้าสู่ระบบเพื่อเก็บ streak, XP, Daily Quest และให้ระบบนัดทวนคำให้
         </p>
       </div>
       <div className="flex flex-wrap gap-2">
-        <Link href="/learn/session?mode=new" className="inline-flex items-center rounded-xl bg-mark px-5 py-3 font-semibold text-ink">ลองเล่นเลย</Link>
-        <Link href="/login" className="inline-flex items-center rounded-xl border border-[#22395a] px-5 py-3 font-semibold">เข้าสู่ระบบ</Link>
+        <Link href="/learn/session?mode=new" className="btn">ลองเล่นเลย</Link>
+        <Link href="/login" className="btn-dark min-h-11">เข้าสู่ระบบ</Link>
       </div>
     </section>
   );
@@ -100,7 +98,7 @@ function SignedIn({ data, userKey }: { data: LearnOverview; userKey: string }) {
       </dl>
 
       {!data.hasHistory && (
-        <p className="rounded-xl bg-brand-soft px-4 py-3 text-sm leading-6">
+        <p className="rounded-xl border border-(--ac-gold-soft) bg-[#fbf6ea] px-4 py-3 text-sm leading-6">
           ยินดีต้อนรับ! เริ่มจากคำใหม่วันละ {DAILY_NEW_LIMIT} คำก่อน พรุ่งนี้คำที่เรียนวันนี้จะกลับมาให้ทวน แล้วตัวเลขด้านบนจะเริ่มขยับ
         </p>
       )}
@@ -144,24 +142,24 @@ function SignedIn({ data, userKey }: { data: LearnOverview; userKey: string }) {
 function QuestCard({ q }: { q: QuestProgress }) {
   const Icon = QUEST_ICON[q.icon];
   return (
-    <li className={"card flex flex-col gap-3 p-4 transition " + (q.done ? "border-[#9ccdb8] bg-obj-bg/40" : "")}>
+    <li className={"card flex flex-col gap-3 p-5 transition " + (q.done ? "border-[#b9dccb] bg-[#eef7f1]" : "")}>
       <div className="flex items-start gap-3">
-        <span className={"grid size-10 shrink-0 place-items-center rounded-xl " + (q.done ? "bg-obj text-white" : "bg-brand-soft text-brand")}>
+        <span className={"grid size-10 shrink-0 place-items-center rounded-xl " + (q.done ? "bg-[#2e7d5b] text-white" : "bg-(--ac-gold-soft) text-(--ac-gold-ink)")}>
           {q.done ? <CheckIcon className="size-5 learn-in" aria-hidden /> : <Icon className="size-5" aria-hidden />}
         </span>
         <div className="min-w-0 flex-1">
           <h3 className="font-semibold">{q.title}</h3>
           <p className="text-xs leading-5 text-muted">{q.description}</p>
         </div>
-        <span className="shrink-0 rounded-full bg-mark/40 px-2 py-0.5 font-mono text-[11px] font-semibold">+{q.xp} XP</span>
+        <span className="shrink-0 rounded-full bg-(--ac-gold-soft) px-2 py-0.5 font-mono text-[11px] font-semibold text-(--ac-gold-ink)">+{q.xp} XP</span>
       </div>
       <div>
         <div className="flex justify-between text-xs"><span className="tabular">{q.progress}/{q.target}</span><span className={q.done ? "font-semibold text-obj" : "text-muted"}>{q.done ? "✓ สำเร็จแล้ว" : "กำลังทำ"}</span></div>
-        <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-[#ebe5d8]" role="progressbar" aria-label={q.title} aria-valuemin={0} aria-valuemax={q.target} aria-valuenow={q.progress}>
-          <div className={"h-full rounded-full transition-[width] duration-500 " + (q.done ? "bg-obj" : "bg-brand")} style={{ width: `${(q.progress / q.target) * 100}%` }} />
+        <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-[#efe9dd]" role="progressbar" aria-label={q.title} aria-valuemin={0} aria-valuemax={q.target} aria-valuenow={q.progress}>
+          <div className={"h-full rounded-full transition-[width] duration-500 " + (q.done ? "bg-[#2e7d5b]" : "bg-(--ac-gold)")} style={{ width: `${(q.progress / q.target) * 100}%` }} />
         </div>
       </div>
-      {!q.done && <Link href={q.href} className="btn-ghost self-start py-2">ทำ Quest นี้</Link>}
+      {!q.done && <Link href={q.href} className="btn-ghost self-start">ทำ Quest นี้</Link>}
     </li>
   );
 }
@@ -211,13 +209,13 @@ function Modes({ data }: { data: LearnOverview | null }) {
     { title: "Listening Practice", body: "ฟังเสียงแล้วเลือกคำ", icon: EarIcon },
     { title: "Sentence Builder", body: "เติมคำในประโยคตัวอย่าง", icon: PuzzleIcon },
   ];
-  const choice = "rounded-lg border border-line bg-surface px-3 py-2 text-sm transition hover:border-brand hover:bg-brand-soft";
+  const choice = "inline-flex min-h-11 items-center rounded-lg border border-line bg-surface px-4 text-sm font-medium text-(--ac-navy) transition hover:border-(--ac-navy)/40 hover:bg-(--ac-bg)";
   return (
     <section aria-labelledby="modes" className="flex flex-col gap-3">
       <h2 id="modes" className="text-xl font-bold">โหมดการเรียน</h2>
       <div className="card flex flex-col gap-4 p-5">
         <div className="flex items-start gap-3">
-          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-ink text-mark"><LayersIcon className="size-5" aria-hidden /></span>
+          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-(--ac-navy) text-(--ac-gold-bright)"><LayersIcon className="size-5" aria-hidden /></span>
           <div>
             <h3 className="text-lg font-bold">Smart Flashcard</h3>
             <p className="text-sm text-muted">การ์ดคำพร้อมภาพและเสียง ให้คะแนนความจำ จำไม่ได้ / ยังไม่แม่น / จำได้ แล้วระบบนัดทวนให้</p>
@@ -233,10 +231,10 @@ function Modes({ data }: { data: LearnOverview | null }) {
         <form action="/learn/session" className="flex flex-wrap items-center gap-2">
           <input type="hidden" name="mode" value="deck" />
           <label htmlFor="deck" className="text-sm text-muted">ตามหมวด</label>
-          <select id="deck" name="deck" className="input w-auto py-2">
+          <select id="deck" name="deck" className="input w-auto min-h-11 py-2">
             {DECKS.map((d) => <option key={d.id} value={d.id}>{d.name}</option>)}
           </select>
-          <button type="submit" className="btn py-2">เริ่ม</button>
+          <button type="submit" className="btn">เริ่ม</button>
         </form>
         <p className="text-xs text-muted">อยากดูคำทั้งหมดแบบตาราง ไปที่ <Link href="/vocab" className="text-brand underline">หน้าคำศัพท์</Link></p>
       </div>
@@ -245,7 +243,7 @@ function Modes({ data }: { data: LearnOverview | null }) {
           <li key={m.title} className="flex items-start gap-3 rounded-xl border border-dashed border-line p-4 text-muted">
             <m.icon className="mt-0.5 size-5 shrink-0" aria-hidden />
             <div>
-              <p className="font-semibold text-ink-2">{m.title} <span className="ml-1 rounded-full bg-[#ebe5d8] px-2 py-0.5 text-[10.5px] font-normal">เร็วๆ นี้ · ยังใช้ไม่ได้</span></p>
+              <p className="font-semibold text-ink-2">{m.title} <span className="ml-1 rounded-full bg-[#f1eee7] px-2 py-0.5 text-[11px] font-normal text-(--ac-muted)">เร็วๆ นี้ · ยังใช้ไม่ได้</span></p>
               <p className="text-xs">{m.body}</p>
             </div>
           </li>

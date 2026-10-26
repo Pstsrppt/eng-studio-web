@@ -40,7 +40,7 @@ export function VerbsView({ verbs, groups, cards: initialCards, signedIn, today 
       </div>
 
       {group !== "ALL" && (
-        <p className="rounded-lg bg-brand-soft px-4 py-3 text-sm leading-6">
+        <p className="rounded-xl border border-(--ac-line) bg-white px-4 py-3 text-sm leading-6">
           <b className="font-semibold">{groups[group].name}</b> · {groups[group].tip}
         </p>
       )}
