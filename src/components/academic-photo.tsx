@@ -7,8 +7,11 @@ import type { LucideIcon } from "lucide-react";
  * Until a file is there, a quiet placeholder of the same shape stands in, so dropping the file in is
  * all it takes to swap it. Checked when the page is built.
  */
-export function AcademicPhoto({ name, alt, icon: Icon, className = "", priority = false }: { name: string; alt: string; icon: LucideIcon; className?: string; priority?: boolean }) {
-  const exists = fs.existsSync(path.join(process.cwd(), "public", "academic", `${name}.webp`));
+export function AcademicPhoto({ name, alt, icon: Icon, className = "", priority = false, fallback }: { name: string; alt: string; icon: LucideIcon; className?: string; priority?: boolean; fallback?: string }) {
+  const has = (n: string) => fs.existsSync(path.join(process.cwd(), "public", "academic", `${n}.webp`));
+  // A missing photo can borrow an approved one (e.g. the Home hero) instead of showing a placeholder.
+  if (!has(name) && fallback && has(fallback)) name = fallback;
+  const exists = has(name);
   if (exists) {
     return (
       // eslint-disable-next-line @next/next/no-img-element -- pre-sized WebP in public/academic

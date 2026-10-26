@@ -1,11 +1,12 @@
 import {
-  ArrowRightIcon, BarChart3Icon, BookOpenIcon, BookOpenTextIcon, CheckIcon, ChevronRightIcon, ClipboardListIcon, CompassIcon,
-  FileTextIcon, FlagIcon, GlobeIcon, GraduationCapIcon, HeadphonesIcon, LandmarkIcon, LayersIcon, MessageCircleIcon, MicIcon,
+  ArrowRightIcon, BarChart3Icon, BookOpenIcon, BookOpenTextIcon, CheckIcon, ChevronRightIcon, CompassIcon,
+  FileTextIcon, GlobeIcon, GraduationCapIcon, HeadphonesIcon, LandmarkIcon, MessageCircleIcon, MicIcon,
   PenLineIcon, SchoolIcon, TargetIcon, type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
 import { AcademicPhoto } from "@/components/academic-photo";
+import { STAGE_LOOK } from "@/components/stage-look";
 import { BandExplorer } from "@/components/home/band-explorer";
 import { Faq } from "@/components/home/faq";
 import { TestChooser } from "@/components/home/test-chooser";
@@ -91,17 +92,6 @@ function Hero() {
     </section>
   );
 }
-
-/** Icons and one-line English summaries for the existing stages (names and order come from stages.ts). */
-const STAGE_LOOK: Record<string, { Icon: LucideIcon; short: string }> = {
-  ielts: { Icon: GraduationCapIcon, short: "Know the test, its parts and its bands" },
-  foundation: { Icon: LandmarkIcon, short: "Build core English skills" },
-  grammar: { Icon: LayersIcon, short: "Grow your word bank and grammar" },
-  skills: { Icon: HeadphonesIcon, short: "Listen, read, write and speak" },
-  strategy: { Icon: CompassIcon, short: "Master key exam strategies" },
-  practice: { Icon: ClipboardListIcon, short: "Practise and simulate the exam" },
-  summit: { Icon: FlagIcon, short: "Be ready for your IELTS goal" },
-};
 
 async function RoadmapWithProgress() {
   const user = await getUser();

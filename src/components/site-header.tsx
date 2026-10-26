@@ -7,11 +7,11 @@ import { TopNav } from "./nav";
 import { ThaiToggle } from "./thai-toggle";
 
 /** Pages already on the Academic Studio theme get the light header; the rest keep the dark one. */
-const LIGHT_PAGES = new Set(["/"]);
+const isLight = (path: string) => path === "/" || path.startsWith("/roadmap");
 
 /** The site header. `account` is rendered on the server (it reads the session) and passed in. */
 export function SiteHeader({ account }: { account: React.ReactNode }) {
-  const light = LIGHT_PAGES.has(usePathname());
+  const light = isLight(usePathname());
   return (
     <header className={"sticky top-0 z-30 border-b backdrop-blur-md " +
       (light ? "theme-academic border-[#ebe5d9] bg-white/95 text-[#0f2440]" : "on-dark border-white/10 bg-[rgba(7,24,43,0.92)] text-white")}>
