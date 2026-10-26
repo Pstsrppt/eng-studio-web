@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { signOut } from "@/app/actions";
+import { AcademicPage, PageHeader } from "@/components/academic-page";
 import { getUser } from "@/lib/data";
 
 export const metadata: Metadata = { title: "บัญชีของฉัน" };
@@ -10,11 +11,8 @@ export const metadata: Metadata = { title: "บัญชีของฉัน" }
 /** The account menu. Phones reach it from the header; it holds what the desktop sidebar shows. */
 export default function AccountPage() {
   return (
-    <div className="mx-auto flex max-w-md flex-col gap-5 pt-2 lg:pt-10">
-      <header>
-        <p className="eyebrow">บัญชีผู้เรียน</p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight">บัญชีของฉัน</h1>
-      </header>
+    <AcademicPage className="mx-auto flex max-w-md flex-col gap-5 pt-2 lg:pt-10">
+      <PageHeader eyebrow="ACCOUNT · บัญชีผู้เรียน" title="บัญชีของฉัน" />
       <Suspense fallback={<div className="card h-24 animate-pulse" />}>
         <Who />
       </Suspense>
@@ -27,13 +25,13 @@ export default function AccountPage() {
         <Row href="/placement" icon={GaugeIcon} title="สอบวัดระดับ" sub="รู้ระดับ A1–B2 และบทที่ควรเริ่ม" />
         <Row href="/guide" icon={BookOpenIcon} title="คู่มือ" sub="n. v. adj. V3 กริยาช่วย คืออะไร" />
       </nav>
-    </div>
+    </AcademicPage>
   );
 }
 
 function Row({ href, icon: Icon, title, sub }: { href: string; icon: LucideIcon; title: string; sub: string }) {
   return (
-    <Link href={href} className="flex items-center gap-3 px-4 py-3.5 transition hover:bg-paper">
+    <Link href={href} className="flex min-h-14 items-center gap-3 px-4 py-3.5 transition hover:bg-paper">
       <Icon className="size-5 shrink-0 text-brand" aria-hidden />
       <span className="min-w-0 flex-1"><b className="block font-semibold">{title}</b><span className="text-xs text-muted">{sub}</span></span>
       <ChevronRightIcon className="size-4 text-muted" aria-hidden />
@@ -54,7 +52,7 @@ async function Who() {
   return (
     <div className="card flex flex-col gap-4 p-5">
       <div className="flex items-center gap-3">
-        <span className="grid size-12 shrink-0 place-items-center rounded-full bg-ink font-display text-lg font-bold text-mark" aria-hidden>
+        <span className="grid size-12 shrink-0 place-items-center rounded-full bg-(--ac-navy) text-lg font-bold text-white" aria-hidden>
           {user.email.slice(0, 1).toUpperCase()}
         </span>
         <div className="min-w-0">

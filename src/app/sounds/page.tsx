@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
+import { AcademicPage, PageHeader } from "@/components/academic-page";
 import { PASS_MARK, SOUNDS } from "@/content";
 import { getLessonBest } from "@/lib/data";
 
@@ -8,18 +9,13 @@ export const metadata: Metadata = { title: "ออกเสียง" };
 
 export default function SoundsPage() {
   return (
-    <div className="flex flex-col gap-8">
-      <header>
-        <p className="eyebrow">ออกเสียง · {SOUNDS.length} บท</p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight">เสียงที่คนไทยพลาดบ่อย</h1>
-        <p className="mt-2 max-w-[60ch] text-muted">
-          ออกเสียงถูก คนฟังเข้าใจ และเราก็ฟังเขาออกง่ายขึ้น เรียนแบบเดียวกับ Grammar ผ่านเมื่อได้ {PASS_MARK}% ขึ้นไป
-        </p>
-      </header>
+    <AcademicPage className="flex flex-col gap-8">
+      <PageHeader eyebrow={`PRONUNCIATION · ออกเสียง · ${SOUNDS.length} บท`} title="เสียงที่คนไทยพลาดบ่อย"
+        lead={`ออกเสียงถูก คนฟังเข้าใจ และเราก็ฟังเขาออกง่ายขึ้น เรียนแบบเดียวกับ Grammar ผ่านเมื่อได้ ${PASS_MARK}% ขึ้นไป`} />
       <Suspense fallback={<SoundList best={{}} />}>
         <SoundListWithProgress />
       </Suspense>
-    </div>
+    </AcademicPage>
   );
 }
 
@@ -34,11 +30,11 @@ function SoundList({ best }: { best: Record<string, { best: number; passed: bool
         const b = best[l.id];
         return (
           <li key={l.id}>
-            <Link href={`/sounds/${l.id}`} className="card flex h-full items-start gap-3 p-4 transition hover:border-brand">
+            <Link href={`/sounds/${l.id}`} className="card flex h-full items-start gap-3 p-4 transition hover:border-(--ac-navy)/40 hover:shadow-(--ac-shadow)">
               <span
                 className={
                   "grid size-9 shrink-0 place-items-center rounded-lg font-mono text-xs " +
-                  (b?.passed ? "bg-brand text-white" : "bg-verb-bg text-verb")
+                  (b?.passed ? "bg-[#2e7d5b] text-white" : "bg-[#f4f1ea] text-(--ac-muted)")
                 }
                 aria-label={b?.passed ? "ผ่านแล้ว" : undefined}
               >
