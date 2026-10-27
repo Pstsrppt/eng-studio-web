@@ -25,7 +25,7 @@ export function TestChooser() {
 
   return (
     <div className="flex flex-col gap-5">
-      <div role="radiogroup" aria-label="เลือกประเภทการสอบ" className="flex w-fit rounded-xl border border-(--ac-line) bg-white p-1">
+      <div role="radiogroup" aria-label="เลือกประเภทการสอบ" className="flex w-fit rounded-xl border border-(--ac-line) bg-card p-1">
         {TEST_TYPES.map((t) => (
           <button key={t.id} type="button" role="radio" aria-checked={picked === t.id} onClick={() => pick(t.id)}
             className={"rounded-lg px-4 py-2 text-[15px] transition " + (picked === t.id ? "bg-(--ac-navy) font-semibold text-white" : "text-(--ac-body) hover:bg-(--ac-gold-soft)")}>
@@ -40,7 +40,7 @@ export function TestChooser() {
           const expanded = open.has(t.id);
           return (
             <article key={t.id} aria-labelledby={`test-${t.id}`}
-              className={"flex flex-col gap-5 rounded-2xl border bg-white p-6 shadow-(--ac-shadow) transition lg:p-8 " +
+              className={"flex flex-col gap-5 rounded-2xl border bg-card p-6 shadow-(--ac-shadow) transition lg:p-8 " +
                 (on ? "border-(--ac-navy) ring-2 ring-(--ac-gold-soft)" : picked ? "border-(--ac-line) opacity-75" : "border-(--ac-line)")}>
               <div className="flex items-start justify-between gap-3">
                 <div>
@@ -61,7 +61,7 @@ export function TestChooser() {
                 </ul>
               </div>
               <button type="button" aria-expanded={expanded} aria-controls={`test-more-${t.id}`} onClick={() => toggle(t.id)}
-                className="mt-auto flex w-fit items-center gap-1.5 text-sm font-semibold text-(--ac-navy) hover:text-(--ac-gold)">
+                className="mt-auto flex w-fit items-center gap-1.5 text-sm font-semibold text-(--ac-navy) hover:text-(--ac-gold-ink)">
                 {expanded ? "Hide" : "Show"} Reading &amp; Writing details
                 <ChevronDownIcon className={"size-4 transition " + (expanded ? "rotate-180" : "")} aria-hidden />
               </button>
@@ -76,13 +76,13 @@ export function TestChooser() {
         })}
       </div>
 
-      <div className="flex flex-col gap-3 rounded-2xl border border-(--ac-line) bg-white/70 p-5 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 rounded-2xl border border-(--ac-line) bg-card/70 p-5 sm:flex-row sm:items-center sm:justify-between">
         <ul className="flex flex-col gap-3 text-sm leading-6 text-(--ac-body)">
           {TEST_NOTES.map((n) => (
             <li key={n.en} className="flex gap-2"><InfoIcon className="mt-1 size-4 shrink-0 text-(--ac-gold)" aria-hidden /><span>{n.en}<Thai className="mt-0.5 text-(--ac-muted)">{n.th}</Thai></span></li>
           ))}
         </ul>
-        <Link href="/ielts" className="inline-flex shrink-0 items-center gap-1.5 text-[15px] font-semibold text-(--ac-navy) hover:text-(--ac-gold)">
+        <Link href="/ielts" className="inline-flex shrink-0 items-center gap-1.5 text-[15px] font-semibold text-(--ac-navy) hover:text-(--ac-gold-ink)">
           More about IELTS <ArrowRightIcon className="size-4" aria-hidden />
         </Link>
       </div>

@@ -34,7 +34,7 @@ function SoundList({ best }: { best: Record<string, { best: number; passed: bool
               <span
                 className={
                   "grid size-9 shrink-0 place-items-center rounded-lg font-mono text-xs " +
-                  (b?.passed ? "bg-[#2e7d5b] text-white" : "bg-[#f4f1ea] text-(--ac-muted)")
+                  (b?.passed ? "bg-[#2e7d5b] text-white" : "bg-sunken text-(--ac-muted)")
                 }
                 aria-label={b?.passed ? "ผ่านแล้ว" : undefined}
               >

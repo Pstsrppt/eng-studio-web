@@ -1,24 +1,76 @@
 @import "tailwindcss";
 
-/* Odyssey: ivory pages for reading, deep navy for the academy around them, warm gold for what matters.
-   Sentence roles keep their own colours: subject blue, verb orange, object green. */
+/* Odyssey · Aubergine Porcelain. One source of truth for the theme: the --od-* values below. Every page,
+   learning surfaces included, reads them through the semantic Tailwind colours (bg-page, bg-card, text-body,
+   border-rule, bg-dark, text-accent-text…) or through the older names, which now point at the same values.
+   Rose copper (--od-accent) is decorative only: rules, icons, indicators, never text on light surfaces.
+   Contrast (WCAG AA) is noted where a pair is used for text. The Odyssey O keeps its own navy and gold.
+   Sentence roles and right/wrong keep their own colours: subject blue, verb orange, object green, red. */
+:root {
+  --od-page: #f2eee9;            /* page background */
+  --od-page-alt: #eae3dc;        /* alternate band, footer, progress tracks */
+  --od-sunken: #f0eae4;          /* tiles, segmented-control tracks and chips inside cards */
+  --od-card: #fffdfb;            /* cards, header, tab bar, inputs */
+  --od-rule: #e2d8d0;            /* hairlines and card borders (decorative) */
+  --od-rule-strong: #7f7179;     /* checkbox and input borders: 3.6:1 on page-alt, 4.6:1 on card */
+  --od-primary: #38283f;         /* headings, primary buttons, current item: 11.8:1 on page */
+  --od-primary-hover: #4a3753;
+  --od-dark: #302336;            /* dark sections; white text 14.8:1 */
+  --od-ink: #241a2a;             /* strong text: 14.5:1 on page */
+  --od-body: #43384a;            /* running text: 9.6:1 on page */
+  --od-muted: #675c6c;           /* secondary text: 5.0:1 on page-alt, 5.5:1 on page */
+  --od-accent: #aa8d83;          /* rose copper, decorative */
+  --od-accent-text: #74574d;     /* copper for small text on light surfaces: 5.1:1 on page-alt */
+  --od-accent-on-dark: #c4aba1;  /* copper text and buttons on dark: 6.8:1 on dark, 6.3:1 with primary text */
+  --od-accent-on-dark-hover: #d2bcb2;
+  --od-accent-soft: #efe4df;     /* icon tiles, current chips; accent-text on it 5.2:1 */
+  --od-accent-wash: #f7f0eb;     /* notes and tips */
+  --od-tint: #eee8f0;            /* primary tint for selected rows and examples; muted on it 5.3:1 */
+  --od-tint-strong: #e6dee8;
+  --od-on-dark: #e9e2eb;         /* running text on dark: 11.7:1 */
+  --od-on-dark-muted: #bfb3c4;   /* secondary text on dark: 7.4:1 */
+  --od-mark: #ead2c6;            /* highlighter behind words */
+  --od-shadow-rgb: 48 35 54;
+}
+
 @theme {
-  --color-paper: #faf8f3;
-  --color-surface: #ffffff;
-  --color-ink: #07182b;
-  --color-ink-2: #142b45;
-  --color-muted: #556477;
-  --color-line: #e2dccf;
-  --color-brand: #0d233b;
-  --color-brand-soft: #eaeef4;
-  --color-mark: #e9bb70;
-  --color-gold: #e9bb70;
-  --color-gold-soft: #ffe2a0;
-  --color-navy: #07182b;
-  --color-navy-2: #0d233b;
-  --color-navy-3: #142b45;
+  --color-page: var(--od-page);
+  --color-page-alt: var(--od-page-alt);
+  --color-sunken: var(--od-sunken);
+  --color-card: var(--od-card);
+  --color-rule: var(--od-rule);
+  --color-rule-strong: var(--od-rule-strong);
+  --color-primary: var(--od-primary);
+  --color-primary-hover: var(--od-primary-hover);
+  --color-dark: var(--od-dark);
+  --color-body: var(--od-body);
+  --color-accent: var(--od-accent);
+  --color-accent-text: var(--od-accent-text);
+  --color-accent-on-dark: var(--od-accent-on-dark);
+  --color-accent-on-dark-hover: var(--od-accent-on-dark-hover);
+  --color-accent-soft: var(--od-accent-soft);
+  --color-accent-wash: var(--od-accent-wash);
+  --color-tint: var(--od-tint);
+  --color-tint-strong: var(--od-tint-strong);
+  --color-on-dark: var(--od-on-dark);
+  --color-on-dark-muted: var(--od-on-dark-muted);
+  /* Older names, kept so existing classes (bg-paper, text-brand, bg-navy…) follow the theme. */
+  --color-paper: var(--od-page);
+  --color-surface: var(--od-card);
+  --color-ink: var(--od-ink);
+  --color-ink-2: var(--od-body);
+  --color-muted: var(--od-muted);
+  --color-line: var(--od-rule);
+  --color-brand: var(--od-primary);
+  --color-brand-soft: var(--od-tint);
+  --color-mark: var(--od-mark);
+  --color-gold: var(--od-accent-on-dark);
+  --color-gold-soft: var(--od-accent-soft);
+  --color-navy: var(--od-primary);
+  --color-navy-2: var(--od-primary-hover);
+  --color-navy-3: #5a4663;
   --color-cyan: #69d8ff;
-  --color-mist: #b8c7d7;
+  --color-mist: var(--od-on-dark-muted);
   --color-subj: #2b57cf;
   --color-subj-bg: #e6ecfb;
   /* Verb orange, a shade darker than before so 11-14px labels on --color-verb-bg reach 4.5:1. */
@@ -41,25 +93,27 @@
   /* overflow-x: clip keeps edge-to-edge scenes (100vw) from adding a sideways scrollbar. */
   body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; overflow-x: clip; }
   h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; }
-  :focus-visible { outline: 2px solid #2f6fb0; outline-offset: 2px; }
-  .on-dark :focus-visible { outline-color: var(--color-gold-soft); }
+  :focus-visible { outline: 2px solid var(--od-primary); outline-offset: 2px; }
+  .on-dark :focus-visible { outline-color: var(--od-accent-on-dark); }
   button { cursor: pointer; }
 }
 
 @layer components {
   .card { @apply rounded-xl border border-line bg-surface; }
   .eyebrow { @apply font-mono text-[11px] uppercase tracking-[0.08em] text-muted; }
-  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-4 py-2.5 text-sm font-semibold text-navy transition hover:bg-gold-soft disabled:opacity-50; }
+  /* Primary action: aubergine on light surfaces; inside an .on-dark panel it turns copper (below). */
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-hover disabled:opacity-50; }
+  .on-dark .btn { @apply bg-accent-on-dark text-primary hover:bg-accent-on-dark-hover; }
   /* Dark navy glass panels on the academy pages. */
-  .glass { @apply rounded-2xl border border-white/10 bg-[rgba(9,28,48,0.82)] text-[#f8f7f3] shadow-[0_24px_60px_-30px_rgba(0,0,0,0.7)] backdrop-blur-md; }
+  .glass { @apply rounded-2xl border border-white/10 bg-dark/85 text-on-dark shadow-[0_24px_60px_-30px_rgba(0,0,0,0.7)] backdrop-blur-md; }
   .btn-dark { @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10 disabled:opacity-50; }
   /* Wide scenes break out of the page container. */
   .bleed { width: 100vw; margin-left: calc(50% - 50vw); }
   /* A whole page drawn edge to edge under the header (cancels the main column's padding). */
   .page-bleed { width: 100vw; margin-left: calc(50% - 50vw); margin-top: -1.5rem; margin-bottom: -7rem; }
   @media (min-width: 64rem) { .page-bleed { margin-top: -2.25rem; margin-bottom: -3rem; } }
-  .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-lg border border-[#c9d3e0] px-4 py-2.5 text-sm font-semibold text-brand transition hover:bg-brand-soft disabled:opacity-50; }
-  .input { @apply w-full rounded-lg border-[1.5px] border-line bg-surface px-3 py-2.5 text-[15px] outline-none focus:border-brand focus:ring-3 focus:ring-[#d6e2ef]; }
+  .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-lg border border-rule px-4 py-2.5 text-sm font-semibold text-brand transition hover:bg-brand-soft disabled:opacity-50; }
+  .input { @apply w-full rounded-lg border-[1.5px] border-rule-strong bg-surface px-3 py-2.5 text-[15px] outline-none focus:border-brand focus:ring-3 focus:ring-accent-soft; }
   .hl { background: linear-gradient(transparent 55%, var(--color-mark) 55%); }
   .prose-lesson { @apply text-[15px] leading-7; }
   .prose-lesson p { @apply my-2; }
@@ -74,14 +128,14 @@
   .prose-lesson .scroll { @apply -mx-1 overflow-x-auto px-1; }
   .prose-lesson .ex { @apply my-3 rounded-r-lg border-l-[3px] border-brand bg-brand-soft px-3 py-2; }
   .prose-lesson .ex .th { @apply text-sm leading-6 text-muted; }
-  .prose-lesson .tip { @apply my-4 rounded-lg bg-[#fbf3cf] px-3.5 py-3 text-sm leading-6; }
+  .prose-lesson .tip { @apply my-4 rounded-lg bg-accent-wash px-3.5 py-3 text-sm leading-6; }
   .prose-lesson .steps { @apply my-4 rounded-lg border border-line px-3.5 py-3 text-sm leading-6; }
   .prose-lesson .steps ol { @apply mb-0; }
-  .prose-lesson code { @apply rounded bg-[#efeae0] px-1 font-mono text-[13px]; }
+  .prose-lesson code { @apply rounded bg-sunken px-1 font-mono text-[13px]; }
   .prose-lesson s { @apply text-bad decoration-[1.5px]; }
   /* English the learner can tap to hear (marked by PlayableProse). */
-  .prose-lesson .say { @apply cursor-pointer rounded-sm underline decoration-[#8a9bb0] decoration-dotted underline-offset-4 transition-colors hover:bg-brand-soft focus-visible:bg-brand-soft; }
-  .prose-lesson .ex.say { @apply relative pr-10 no-underline hover:bg-[#e3e9f1]; }
+  .prose-lesson .say { @apply cursor-pointer rounded-sm underline decoration-accent decoration-dotted underline-offset-4 transition-colors hover:bg-brand-soft focus-visible:bg-brand-soft; }
+  .prose-lesson .ex.say { @apply relative pr-10 no-underline hover:bg-tint-strong; }
   .prose-lesson .ex.say::after {
     content: ""; position: absolute; right: 0.75rem; top: 0.7rem; width: 1rem; height: 1rem; background: var(--color-brand); opacity: 0.7;
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 6h3l4-3v10L5 10H2z'/%3E%3Cpath d='M11 5.5a3.5 3.5 0 0 1 0 5' stroke='black' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
@@ -91,24 +145,30 @@
   .ipa { font-family: "Segoe UI", "Noto Sans", "Lucida Sans Unicode", "Arial Unicode MS", system-ui, sans-serif; }
 }
 
-/* A card or summary arriving: a short rise, never long enough to slow the learner down. */
-/* Academic Studio theme (approved Home reference). Scoped: only pages wrapped in .theme-academic use it,
-   so the global tokens above and every other page stay as they are until each page is moved over. */
-.theme-academic {
-  --ac-bg: #faf8f3;
-  --ac-surface: #ffffff;
-  --ac-navy: #0f2440;
-  --ac-navy-2: #16304f;
-  --ac-ink: #14243b;
-  --ac-body: #3d4757;
-  --ac-muted: #626b7a;
-  --ac-line: #ebe5d9;
-  --ac-gold: #b8843d;
-  --ac-gold-bright: #e2b366;
-  --ac-gold-soft: #f5e9d2;
-  /* Gold for small text: --ac-gold is 3.1:1 on ivory, this one 5:1 (WCAG AA). */
-  --ac-gold-ink: #8f6326;
-  --ac-shadow: 0 18px 44px -28px rgba(15, 36, 64, 0.35);
+/* Academic Studio names (--ac-*), used across the pages built on the Home reference. They are aliases of
+   the --od-* theme above, defined on :root so the header, footer and every page share one set of values.
+   "navy" and "gold" are historical names: they now mean primary and rose copper. */
+:root {
+  --ac-bg: var(--od-page);
+  --ac-alt: var(--od-page-alt);
+  --ac-sunken: var(--od-sunken);
+  --ac-surface: var(--od-card);
+  --ac-navy: var(--od-primary);
+  --ac-navy-2: var(--od-primary-hover);
+  --ac-dark: var(--od-dark);
+  --ac-ink: var(--od-ink);
+  --ac-body: var(--od-body);
+  --ac-muted: var(--od-muted);
+  --ac-line: var(--od-rule);
+  --ac-line-strong: var(--od-rule-strong);
+  --ac-gold: var(--od-accent);
+  /* On dark sections: copper text, numbers and the primary button. */
+  --ac-gold-bright: var(--od-accent-on-dark);
+  --ac-gold-hover: var(--od-accent-on-dark-hover);
+  --ac-gold-soft: var(--od-accent-soft);
+  /* Copper for small text on light surfaces (--ac-gold is decorative only). */
+  --ac-gold-ink: var(--od-accent-text);
+  --ac-shadow: 0 18px 44px -28px rgb(var(--od-shadow-rgb) / 0.32);
 }
 /* Source Serif has no Thai glyphs: Thai in a heading falls through to the body face, not the system serif. */
 .theme-academic .ac-serif { font-family: var(--font-academic-face), var(--font-body), Georgia, "Times New Roman", serif; }
@@ -116,24 +176,9 @@
 /* The account button in the light header: navy, as in the reference. */
 .theme-academic .account-chip { background: var(--ac-navy); color: #ffffff; }
 
-/* Pages moved onto the theme after the first release (wrapped in <AcademicPage>). The older tokens and
-   shared classes those pages are built from take the Academic values here, so .card, .btn, text-muted and
-   friends look right without touching every element. Home, Roadmap and lessons don't carry this class. */
+/* Pages wrapped in <AcademicPage>: the shared classes (.card, .btn, .eyebrow, .input) take the Academic
+   shapes below. Colours come from the theme on :root, the same as every other page. */
 .academic-page {
-  --color-paper: #faf8f3;
-  --color-surface: #ffffff;
-  --color-ink: #14243b;
-  --color-ink-2: #3d4757;
-  --color-muted: #626b7a;
-  --color-line: #ebe5d9;
-  --color-brand: #0f2440;
-  --color-brand-soft: #eef2f8;
-  --color-navy: #0f2440;
-  --color-navy-2: #16304f;
-  --color-navy-3: #1d3a5c;
-  --color-gold: #e2b366;
-  --color-gold-soft: #f5e9d2;
-  --color-mist: #c9d3e1;
   /* Display type (titles, big numbers) is the Academic serif; Thai falls through to the body face. */
   --font-display: var(--font-academic-face), var(--font-body), Georgia, serif;
   color: var(--ac-ink);
@@ -144,12 +189,12 @@
   .academic-page h3 { font-family: var(--font-sans); }
   /* Thai in an eyebrow falls back to the body face, and the tracking stays light enough for Thai to read. */
   .academic-page .eyebrow { @apply text-[11px] tracking-[0.12em] text-(--ac-gold-ink); font-family: var(--font-mono-face), var(--font-body), monospace; }
-  .academic-page .card { @apply rounded-2xl border-(--ac-line) bg-white shadow-[0_1px_2px_rgba(15,36,64,0.04)]; }
+  .academic-page .card { @apply rounded-2xl border-(--ac-line) bg-card shadow-[0_1px_2px_rgb(var(--od-shadow-rgb)/0.05)]; }
   .academic-page .btn { @apply min-h-11 rounded-lg bg-(--ac-navy) px-5 text-white hover:bg-(--ac-navy-2); }
-  .academic-page .btn-ghost { @apply min-h-11 rounded-lg border-(--ac-line) bg-white px-5 text-(--ac-navy) hover:border-(--ac-navy)/40 hover:bg-(--ac-bg); }
-  .academic-page .input { @apply min-h-12 rounded-xl border-(--ac-line) px-4 focus:border-(--ac-navy) focus:ring-(--ac-gold-soft); }
-  /* On a navy panel the primary action turns gold and labels lighten, as on the Roadmap stage card. */
-  .academic-page .on-dark .btn { @apply bg-(--ac-gold-bright) text-(--ac-navy) hover:bg-[#ecc580]; }
+  .academic-page .btn-ghost { @apply min-h-11 rounded-lg border-(--ac-line) bg-card px-5 text-(--ac-navy) hover:border-(--ac-navy)/40 hover:bg-(--ac-bg); }
+  .academic-page .input { @apply min-h-12 rounded-xl border-(--ac-line-strong) px-4 focus:border-(--ac-navy) focus:ring-(--ac-gold-soft); }
+  /* On a dark panel the primary action turns copper and labels lighten, as on the Roadmap stage card. */
+  .academic-page .on-dark .btn { @apply bg-(--ac-gold-bright) text-(--ac-navy) hover:bg-(--ac-gold-hover); }
   .academic-page .on-dark .eyebrow { @apply text-(--ac-gold-bright); }
   .academic-page .on-dark :focus-visible { outline-color: var(--ac-gold-bright); }
 }
@@ -167,8 +212,8 @@
 }
 .hero-drift { animation: hero-drift 38s ease-in-out infinite alternate; will-change: transform; }
 @keyframes pin-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(233, 187, 112, 0.55); }
-  50% { box-shadow: 0 0 0 10px rgba(233, 187, 112, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgb(196 171 161 / 0.55); }
+  50% { box-shadow: 0 0 0 10px rgb(196 171 161 / 0); }
 }
 .pin-glow { animation: pin-glow 2.4s ease-out infinite; }
 

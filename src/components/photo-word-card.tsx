@@ -66,7 +66,7 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
   }
 
   return (
-    <article className="relative grid overflow-hidden rounded-[28px] bg-surface shadow-[0_18px_40px_-24px_rgba(19,32,27,0.35)] ring-1 ring-line md:grid-cols-[minmax(0,11fr)_minmax(0,9fr)]">
+    <article className="relative grid overflow-hidden rounded-[28px] bg-surface shadow-[0_18px_40px_-24px_rgb(var(--od-shadow-rgb)/0.35)] ring-1 ring-line md:grid-cols-[minmax(0,11fr)_minmax(0,9fr)]">
       {/* Picture: on top on phones, on the right with a curved edge from md up. Text 55%, picture 45%. */}
       <div className={"relative md:order-2 md:h-auto md:min-h-[360px] " + (showDiagram ? "flex" : "h-48")}>
         {showDiagram ? (
@@ -93,7 +93,7 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
               <span className="absolute bottom-3 left-4 rounded-full bg-surface/80 px-2.5 py-1 text-[11px] text-ink-2 md:left-[22%]">กำลังจัดทำภาพประกอบ</span>
             )}
             <div className="absolute inset-0 grid place-items-center md:pl-10">
-              <div className="grid size-24 rotate-[-4deg] place-items-center rounded-[28px] bg-surface shadow-[0_14px_30px_-12px_rgba(19,32,27,0.35)] md:size-32">
+              <div className="grid size-24 rotate-[-4deg] place-items-center rounded-[28px] bg-surface shadow-[0_14px_30px_-12px_rgb(var(--od-shadow-rgb)/0.35)] md:size-32">
                 {cover.photo ? (
                   <span className="font-serif text-6xl font-semibold md:text-7xl">?</span>
                 ) : (
@@ -113,7 +113,7 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
           <div role="group" aria-label="มุมมองภาพ" className="absolute top-3 left-3 flex rounded-full bg-black/35 p-0.5 text-xs text-white backdrop-blur md:left-[24%]">
             {(["photo", "diagram"] as const).map((v) => (
               <button key={v} type="button" aria-pressed={view === v} onClick={() => setView(v)}
-                className={"rounded-full px-3 py-1.5 transition " + (view === v ? "bg-white font-semibold text-ink" : "hover:bg-white/15")}>
+                className={"rounded-full px-3 py-1.5 transition " + (view === v ? "bg-card font-semibold text-ink" : "hover:bg-white/15")}>
                 {v === "photo" ? "ภาพ" : diagram.type === "verb" ? "ไทม์ไลน์" : "ไดอะแกรม"}
               </button>
             ))}

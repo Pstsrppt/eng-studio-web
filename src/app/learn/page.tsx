@@ -58,11 +58,11 @@ async function Hub() {
 
 function Guest() {
   return (
-    <section className="on-dark grid gap-4 rounded-2xl bg-(--ac-navy) p-6 text-white sm:grid-cols-[1fr_auto] sm:items-center">
+    <section className="on-dark grid gap-4 rounded-2xl bg-(--ac-dark) p-6 text-white sm:grid-cols-[1fr_auto] sm:items-center">
       <div>
         <p className="eyebrow">เริ่มต้น</p>
         <p className="mt-1 font-display text-2xl font-bold">ลองฝึกคำใหม่ {DAILY_NEW_LIMIT} คำ</p>
-        <p className="mt-1 max-w-[56ch] text-sm text-[#c9d3e1]">
+        <p className="mt-1 max-w-[56ch] text-sm text-on-dark-muted">
           เล่นได้เลยโดยไม่ต้องสมัคร แต่ผลจะไม่ถูกบันทึก เข้าสู่ระบบเพื่อเก็บ streak, XP, Daily Quest และให้ระบบนัดทวนคำให้
         </p>
       </div>
@@ -98,7 +98,7 @@ function SignedIn({ data, userKey }: { data: LearnOverview; userKey: string }) {
       </dl>
 
       {!data.hasHistory && (
-        <p className="rounded-xl border border-(--ac-gold-soft) bg-[#fbf6ea] px-4 py-3 text-sm leading-6">
+        <p className="rounded-xl border border-(--ac-gold-soft) bg-accent-wash px-4 py-3 text-sm leading-6">
           ยินดีต้อนรับ! เริ่มจากคำใหม่วันละ {DAILY_NEW_LIMIT} คำก่อน พรุ่งนี้คำที่เรียนวันนี้จะกลับมาให้ทวน แล้วตัวเลขด้านบนจะเริ่มขยับ
         </p>
       )}
@@ -151,11 +151,11 @@ function QuestCard({ q }: { q: QuestProgress }) {
           <h3 className="font-semibold">{q.title}</h3>
           <p className="text-xs leading-5 text-muted">{q.description}</p>
         </div>
-        <span className="shrink-0 rounded-full bg-(--ac-gold-soft) px-2 py-0.5 font-mono text-[11px] font-semibold text-[#7a5418]">+{q.xp} XP</span>
+        <span className="shrink-0 rounded-full bg-(--ac-gold-soft) px-2 py-0.5 font-mono text-[11px] font-semibold text-accent-text">+{q.xp} XP</span>
       </div>
       <div>
         <div className="flex justify-between text-xs"><span className="tabular">{q.progress}/{q.target}</span><span className={q.done ? "font-semibold text-obj" : "text-muted"}>{q.done ? "✓ สำเร็จแล้ว" : "กำลังทำ"}</span></div>
-        <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-[#efe9dd]" role="progressbar" aria-label={q.title} aria-valuemin={0} aria-valuemax={q.target} aria-valuenow={q.progress}>
+        <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-page-alt" role="progressbar" aria-label={q.title} aria-valuemin={0} aria-valuemax={q.target} aria-valuenow={q.progress}>
           <div className={"h-full rounded-full transition-[width] duration-500 " + (q.done ? "bg-[#2e7d5b]" : "bg-(--ac-gold)")} style={{ width: `${(q.progress / q.target) * 100}%` }} />
         </div>
       </div>
@@ -243,7 +243,7 @@ function Modes({ data }: { data: LearnOverview | null }) {
           <li key={m.title} className="flex items-start gap-3 rounded-xl border border-dashed border-line p-4 text-muted">
             <m.icon className="mt-0.5 size-5 shrink-0" aria-hidden />
             <div>
-              <p className="font-semibold text-ink-2">{m.title} <span className="ml-1 rounded-full bg-[#f1eee7] px-2 py-0.5 text-[11px] font-normal text-(--ac-muted)">เร็วๆ นี้ · ยังใช้ไม่ได้</span></p>
+              <p className="font-semibold text-ink-2">{m.title} <span className="ml-1 rounded-full bg-sunken px-2 py-0.5 text-[11px] font-normal text-(--ac-muted)">เร็วๆ นี้ · ยังใช้ไม่ได้</span></p>
               <p className="text-xs">{m.body}</p>
             </div>
           </li>

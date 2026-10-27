@@ -18,5 +18,5 @@ export async function MobileAccount() {
 
 /** Shown while the session is read, so the header doesn't jump. */
 export function MobileAccountFallback() {
-  return <span className="grid size-8 place-items-center rounded-full border border-[#ebe5d9] text-[#626b7a] lg:size-10"><UserRoundIcon className="size-4" aria-hidden /></span>;
+  return <span className="grid size-8 place-items-center rounded-full border border-rule text-muted lg:size-10"><UserRoundIcon className="size-4" aria-hidden /></span>;
 }

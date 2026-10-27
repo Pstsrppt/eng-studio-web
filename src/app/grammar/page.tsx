@@ -14,7 +14,7 @@ export default function GrammarPage() {
       <div className="flex flex-col gap-4">
         <PageHeader eyebrow={`GRAMMAR · ${LESSONS.length} บท`} title="เรียนทีละบท คำศัพท์ ทฤษฎี ฝึก แล้วทดสอบ"
           lead={`แต่ละบทผ่านเมื่อได้ ${PASS_MARK}% ขึ้นไป เรียงจากโครงสร้างที่ใช้บ่อยที่สุดก่อน`} />
-        <p className="max-w-[64ch] rounded-xl border border-(--ac-line) bg-white px-4 py-3 text-sm leading-6 text-(--ac-body)">
+        <p className="max-w-[64ch] rounded-xl border border-(--ac-line) bg-card px-4 py-3 text-sm leading-6 text-(--ac-body)">
           <b className="font-semibold text-(--ac-navy)">ไม่ต้องรู้ศัพท์มาก่อน</b> ทุกบทเริ่มจากคำศัพท์ที่ใช้ในบท พร้อมความหมายและเสียงอ่าน แล้วค่อยเรียนทฤษฎี ฝึก และทดสอบ
         </p>
       </div>
@@ -51,7 +51,7 @@ function LessonList({ best }: { best: Record<string, { best: number; passed: boo
                       <span
                         className={
                           "grid size-9 shrink-0 place-items-center rounded-lg font-mono text-xs " +
-                          (b?.passed ? "bg-[#2e7d5b] text-white" : "bg-[#f4f1ea] text-(--ac-muted)")
+                          (b?.passed ? "bg-[#2e7d5b] text-white" : "bg-sunken text-(--ac-muted)")
                         }
                         aria-label={b?.passed ? "ผ่านแล้ว" : undefined}
                       >

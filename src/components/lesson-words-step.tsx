@@ -59,7 +59,7 @@ export function LessonWordsStep({ words, onNext }: { words: LessonWords; onNext:
       ) : (
         <>
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex rounded-[10px] bg-[#ebe5d8] p-1 text-sm" role="radiogroup" aria-label="รูปแบบการดูคำศัพท์">
+            <div className="flex rounded-[10px] bg-page-alt p-1 text-sm" role="radiogroup" aria-label="รูปแบบการดูคำศัพท์">
               {([["cards", "ทีละคำ"], ["list", "ดูทั้งหมด"]] as const).map(([id, label]) => (
                 <button key={id} type="button" role="radio" aria-checked={view === id} onClick={() => setView(id)}
                   className={"rounded-lg px-3 py-1.5 transition " + (view === id ? "bg-surface font-semibold shadow-sm" : "text-muted hover:text-ink")}>
@@ -81,7 +81,7 @@ export function LessonWordsStep({ words, onNext }: { words: LessonWords; onNext:
                 <button type="button" className="btn-ghost py-2" disabled={at === 0} onClick={() => setAt(at - 1)}>← คำก่อน</button>
                 <div className="hidden flex-wrap justify-center gap-1 sm:flex" aria-hidden>
                   {all.map((x, i) => (
-                    <span key={x.word.id} className={"size-1.5 rounded-full " + (i === at ? "bg-brand" : i < words.fresh.length ? "bg-[#b9c6c0]" : "bg-line")} />
+                    <span key={x.word.id} className={"size-1.5 rounded-full " + (i === at ? "bg-brand" : i < words.fresh.length ? "bg-rule-strong/40" : "bg-line")} />
                   ))}
                 </div>
                 {lastCard ? (
@@ -126,7 +126,7 @@ function WordCard({ item, learned = false }: { item: LessonWord; learned?: boole
           <span className="text-lg font-bold leading-tight">{w.en}</span>
           {w.pos && <PosBadge pos={w.pos} />}
           {w.level && <span className="font-mono text-[10px] text-muted">{w.level}</span>}
-          {learned && <span className="rounded-full bg-[#efeae0] px-2 py-0.5 text-[11px] text-muted">เรียนแล้ว</span>}
+          {learned && <span className="rounded-full bg-sunken px-2 py-0.5 text-[11px] text-muted">เรียนแล้ว</span>}
         </div>
         <p className="text-[15px]">{w.th}</p>
         {item.ex && (
