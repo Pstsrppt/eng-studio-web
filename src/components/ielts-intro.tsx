@@ -1,5 +1,6 @@
 // What IELTS is, in plain Thai. Facts follow the published test format; nothing here is a score.
-import { BookOpenTextIcon, EarIcon, MicIcon, PenLineIcon, type LucideIcon } from "lucide-react";
+import { BookOpenTextIcon, EarIcon, ExternalLinkIcon, MicIcon, MonitorIcon, PenLineIcon, SigmaIcon, type LucideIcon } from "lucide-react";
+import { FORMAT_SOURCE, FORMAT_UPDATE, OVERALL_RULE, ROUNDING_EXAMPLES, SCORING_SOURCE } from "@/content/ielts-guide";
 
 type Skill = { en: string; th: string; time: string; what: string; Icon: LucideIcon };
 
@@ -40,14 +41,14 @@ export function IeltsIntro({ headingLevel = 2 }: { headingLevel?: 2 | 3 }) {
             ["4.0–5.0", "ใช้ภาษาได้จำกัด เข้าใจเรื่องคุ้นเคย"],
             ["5.5–6.5", "ใช้งานได้ดีพอสมควร เป็นเกณฑ์ที่หลายหลักสูตรขอ"],
             ["7.0–8.0", "ใช้ได้คล่อง ผิดบ้างในเรื่องซับซ้อน"],
-            ["8.5–9.0", "ใกล้เคียงเจ้าของภาษา"],
+            ["8.5–9.0", "ใช้ได้แม่นและยืดหยุ่นแทบทุกสถานการณ์"],
           ].map(([band, meaning]) => (
             <div key={band} className="flex items-baseline gap-3 border-b border-white/10 pb-2.5 last:border-0 last:pb-0">
               <span className="w-[4.5rem] shrink-0 font-mono text-sm text-(--ac-gold-bright)">{band}</span>
               <span className="text-sm text-[#dfe5ee]">{meaning}</span>
             </div>
           ))}
-          <p className="text-xs text-[#c9d3e1]">เกณฑ์ที่ต้องใช้ขึ้นกับแต่ละสถาบัน ควรเช็กกับที่ที่คุณจะยื่นผล</p>
+          <p className="text-xs text-[#c9d3e1]">สรุปอย่างย่อโดย Odyssey ไม่ใช่คำอธิบาย Band ทางการ เกณฑ์ที่ต้องใช้ขึ้นกับแต่ละสถาบัน ควรเช็กกับที่ที่คุณจะยื่นผล</p>
         </div>
       </div>
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -60,6 +61,42 @@ export function IeltsIntro({ headingLevel = 2 }: { headingLevel?: 2 | 3 }) {
           </li>
         ))}
       </ul>
+      <div className="grid gap-4 lg:grid-cols-2">
+        <section className="card flex flex-col gap-3 p-5 sm:p-6" aria-labelledby="overall-title">
+          <span className="grid size-11 place-items-center rounded-xl bg-(--ac-gold-soft) text-(--ac-gold-ink)"><SigmaIcon className="size-5" aria-hidden /></span>
+          <H id="overall-title" className="ac-serif text-xl font-bold text-(--ac-navy)">Band รวม (Overall) คิดอย่างไร</H>
+          <p className="text-sm leading-6 text-(--ac-body)">{OVERALL_RULE.th}</p>
+          <ul className="grid grid-cols-3 gap-2">
+            {ROUNDING_EXAMPLES.map((e) => (
+              <li key={e.average} className="rounded-lg bg-(--ac-bg) px-3 py-2.5 text-center">
+                <span className="block font-mono text-xs text-(--ac-muted)">เฉลี่ย {e.average}</span>
+                <b className="font-mono text-lg text-(--ac-navy)">{e.overall.toFixed(1)}</b>
+              </li>
+            ))}
+          </ul>
+          <p className="text-xs leading-5 text-(--ac-muted)">
+            ใช้อธิบายกติกาเท่านั้น คะแนนแบบทดสอบและการสอบวัดระดับในเว็บนี้ไม่ใช่ Band IELTS{" "}
+            <a href={SCORING_SOURCE} target="_blank" rel="noreferrer" className="inline-flex min-h-6 items-center gap-1 underline hover:text-(--ac-navy)">ที่มา: ielts.org<ExternalLinkIcon className="size-3" aria-hidden /></a>
+          </p>
+        </section>
+        <section className="card flex flex-col gap-3 p-5 sm:p-6" aria-labelledby="format-title">
+          <span className="grid size-11 place-items-center rounded-xl bg-(--ac-gold-soft) text-(--ac-gold-ink)"><MonitorIcon className="size-5" aria-hidden /></span>
+          <H id="format-title" className="ac-serif text-xl font-bold text-(--ac-navy)">รูปแบบการสอบตั้งแต่ปี 2026</H>
+          <ul className="flex flex-col gap-2">
+            {FORMAT_UPDATE.points.map((p) => (
+              <li key={p.en} className="flex gap-2.5 text-sm leading-6 text-(--ac-body)">
+                <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-(--ac-gold)" aria-hidden />
+                {p.th}
+              </li>
+            ))}
+          </ul>
+          <p className="rounded-lg bg-(--ac-gold-soft) px-3 py-2.5 text-sm font-medium text-(--ac-navy)">{FORMAT_UPDATE.advice.th}</p>
+          <p className="text-xs leading-5 text-(--ac-muted)">
+            ตามประกาศวันที่ {FORMAT_UPDATE.announcedTh} · ตรวจข้อมูลล่าสุด {FORMAT_UPDATE.checkedTh}{" "}
+            <a href={FORMAT_SOURCE} target="_blank" rel="noreferrer" className="inline-flex min-h-6 items-center gap-1 underline hover:text-(--ac-navy)">ที่มา: ielts.org<ExternalLinkIcon className="size-3" aria-hidden /></a>
+          </p>
+        </section>
+      </div>
     </div>
   );
 }

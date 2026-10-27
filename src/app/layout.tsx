@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Cinzel, Fraunces, IBM_Plex_Mono, IBM_Plex_Sans_Tha
 import { Suspense } from "react";
 import { MobileAccount, MobileAccountFallback } from "@/components/account";
 import { TabBar } from "@/components/nav";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { StudyProvider } from "@/components/study-context";
 import "./globals.css";
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {/* Sign-out, mistakes and the rest of the menu live on /account. */}
           <SiteHeader account={<Suspense fallback={<MobileAccountFallback />}><MobileAccount /></Suspense>} />
           <main className="mx-auto w-full max-w-6xl px-4 pt-6 pb-28 sm:px-6 lg:px-10 lg:pt-9 lg:pb-12">{children}</main>
+          <SiteFooter />
           <TabBar />
         </StudyProvider>
       </body>
