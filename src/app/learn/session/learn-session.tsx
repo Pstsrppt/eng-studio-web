@@ -235,13 +235,13 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
 
       <div>
         <div className="flex justify-between text-sm"><span className="font-semibold" aria-live="polite">{atLabel}</span><span className="font-mono text-xs text-muted tabular">XP วันนี้ {session.xpNow}</span></div>
-        <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#efe9dd]" role="progressbar" aria-label="ความคืบหน้ารอบนี้" aria-valuemin={0} aria-valuemax={total} aria-valuenow={session.pos}>
+        <div className="mt-2 h-2 overflow-hidden rounded-full bg-page-alt" role="progressbar" aria-label="ความคืบหน้ารอบนี้" aria-valuemin={0} aria-valuemax={total} aria-valuenow={session.pos}>
           <div className="h-full rounded-full bg-(--ac-gold) transition-[width] duration-300" style={{ width: `${(session.pos / total) * 100}%` }} />
         </div>
       </div>
 
       {session.guest && (
-        <p className="rounded-xl border border-(--ac-gold-soft) bg-[#fbf6ea] px-4 py-3 text-sm">โหมดทดลอง: ผลรอบนี้ไม่ถูกบันทึก <Link href="/login" className="font-semibold text-brand underline">เข้าสู่ระบบ</Link> เพื่อเก็บความคืบหน้าและทวนตามรอบ</p>
+        <p className="rounded-xl border border-(--ac-gold-soft) bg-accent-wash px-4 py-3 text-sm">โหมดทดลอง: ผลรอบนี้ไม่ถูกบันทึก <Link href="/login" className="font-semibold text-brand underline">เข้าสู่ระบบ</Link> เพื่อเก็บความคืบหน้าและทวนตามรอบ</p>
       )}
       {storageOff && <p className="text-xs text-muted">เบราว์เซอร์นี้เก็บตำแหน่งรอบเรียนไม่ได้ ถ้าปิดหน้าไปจะเริ่มรอบใหม่ แต่คะแนนที่ให้แล้วถูกบันทึกครบ</p>}
       {toast && (
@@ -258,13 +258,13 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
             cover={revealed ? {} : { th: true, examples: true, photo: hidePicture }}
             hint="นึกความหมายในใจก่อน แล้วกดเปิดเฉลย" />
           {revealed && current.note && (
-            <p className="mt-3 rounded-xl border border-(--ac-line) bg-white px-4 py-3 text-sm leading-6"><b className="font-semibold text-(--ac-navy)">เกร็ดการใช้คำ:</b> {current.note}</p>
+            <p className="mt-3 rounded-xl border border-(--ac-line) bg-card px-4 py-3 text-sm leading-6"><b className="font-semibold text-(--ac-navy)">เกร็ดการใช้คำ:</b> {current.note}</p>
           )}
         </div>
       )}
 
       {/* Sits above the phone tab bar so the buttons are always in reach of a thumb. */}
-      <div className="fixed inset-x-0 bottom-[calc(4.25rem+env(safe-area-inset-bottom))] z-30 border-t border-line bg-white/95 px-4 py-3 backdrop-blur lg:static lg:border-0 lg:bg-transparent lg:p-0">
+      <div className="fixed inset-x-0 bottom-[calc(4.25rem+env(safe-area-inset-bottom))] z-30 border-t border-line bg-card/95 px-4 py-3 backdrop-blur lg:static lg:border-0 lg:bg-transparent lg:p-0">
         {error && <p role="alert" className="mb-2 text-sm text-bad">{error}</p>}
         {!revealed ? (
           <button type="button" className="btn w-full py-3.5 text-base" onClick={() => setRevealed(true)}>เปิดเฉลย <kbd className="hidden rounded bg-white/20 px-1.5 font-mono text-xs lg:inline">Space</kbd></button>

@@ -109,11 +109,11 @@ const HELPS = [
 /** For learners who may already know some English: find their level instead of starting at lesson one. */
 function PlacementInvite() {
   return (
-    <section className="on-dark flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-(--ac-navy) p-5 text-white sm:p-6">
+    <section className="on-dark flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-(--ac-dark) p-5 text-white sm:p-6">
       <div className="min-w-0">
         <p className="eyebrow">ไม่แน่ใจว่าควรเริ่มตรงไหน?</p>
         <p className="mt-1 font-display text-2xl font-bold">สอบวัดระดับ 5–8 นาที</p>
-        <p className="mt-1 text-sm text-[#c9d3e1]">รู้ระดับ A1–B2 ของตัวเอง แล้วเริ่มบทที่เหมาะ ไม่ต้องเรียนซ้ำเรื่องที่รู้แล้ว</p>
+        <p className="mt-1 text-sm text-on-dark-muted">รู้ระดับ A1–B2 ของตัวเอง แล้วเริ่มบทที่เหมาะ ไม่ต้องเรียนซ้ำเรื่องที่รู้แล้ว</p>
       </div>
       <Link href="/placement" className="btn">เริ่มสอบ</Link>
     </section>
@@ -122,7 +122,7 @@ function PlacementInvite() {
 
 function BeginnerNote() {
   return (
-    <section className="card border-(--ac-gold-soft) bg-[#fbf6ea] p-5 sm:p-6" aria-labelledby="beginner-title">
+    <section className="card border-(--ac-gold-soft) bg-accent-wash p-5 sm:p-6" aria-labelledby="beginner-title">
       <h2 id="beginner-title" className="text-xl font-bold">ไม่รู้ศัพท์เยอะ ก็เริ่มได้</h2>
       <p className="mt-1 text-[15px] text-ink-2">เว็บนี้ออกแบบให้เริ่มจากศูนย์ได้ ทุกบทเรียนทีละขั้น:</p>
       <ol className="mt-3 flex flex-wrap items-center gap-1.5 text-sm">
@@ -208,7 +208,7 @@ function Task(props: {
       <div className="flex items-center justify-between gap-2">
         {check ?? (
           <span role="img" aria-label={done ? "ทำแล้ว" : "ยังไม่ได้ทำ"}
-            className={"grid size-6 shrink-0 place-items-center rounded-md border-[1.5px] text-xs text-white " + (done ? "border-[#2e7d5b] bg-[#2e7d5b]" : "border-[#c9c1b1]")}>
+            className={"grid size-6 shrink-0 place-items-center rounded-md border-[1.5px] text-xs text-white " + (done ? "border-[#2e7d5b] bg-[#2e7d5b]" : "border-rule-strong")}>
             {done ? "✓" : ""}
           </span>
         )}
@@ -233,7 +233,7 @@ function Module({ href, glyph, tone, title, note, value }: { href: string; glyph
       <span className="min-w-0 flex-1">
         <span className="block text-[14.5px] font-semibold">{title}</span>
         <span className="block text-xs text-muted">{note}</span>
-        <span className="mt-2 block h-1.5 overflow-hidden rounded-full bg-[#efe9dd]">
+        <span className="mt-2 block h-1.5 overflow-hidden rounded-full bg-page-alt">
           <span className="block h-full rounded-full bg-(--ac-gold)" style={{ width: `${Math.round(value * 100)}%` }} />
         </span>
       </span>

@@ -5,7 +5,7 @@ import { Thai } from "./thai";
 /** Native <details>: keyboard and screen-reader friendly, and opens even before scripts load. */
 export function Faq() {
   return (
-    <div className="divide-y divide-(--ac-line) overflow-hidden rounded-2xl border border-(--ac-line) bg-white shadow-(--ac-shadow)">
+    <div className="divide-y divide-(--ac-line) overflow-hidden rounded-2xl border border-(--ac-line) bg-card shadow-(--ac-shadow)">
       {FAQ.map((item, i) => (
         <details key={item.q} className="group" open={i === 0}>
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-left transition hover:bg-(--ac-bg) [&::-webkit-details-marker]:hidden">

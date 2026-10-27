@@ -35,7 +35,7 @@ export function IeltsIntro({ headingLevel = 2 }: { headingLevel?: 2 | 3 }) {
           </ul>
           <p className="text-sm text-(--ac-muted)">Listening และ Speaking เหมือนกันทั้งสองแบบ ส่วน Reading และ Writing ต่างกันตามประเภท</p>
         </div>
-        <div className="on-dark flex flex-col gap-3 rounded-2xl bg-(--ac-navy) p-6 text-white">
+        <div className="on-dark flex flex-col gap-3 rounded-2xl bg-(--ac-dark) p-6 text-white">
           <H className="ac-serif text-xl font-bold text-white">Band 0–9 อ่านอย่างไร</H>
           {[
             ["4.0–5.0", "ใช้ภาษาได้จำกัด เข้าใจเรื่องคุ้นเคย"],
@@ -45,10 +45,10 @@ export function IeltsIntro({ headingLevel = 2 }: { headingLevel?: 2 | 3 }) {
           ].map(([band, meaning]) => (
             <div key={band} className="flex items-baseline gap-3 border-b border-white/10 pb-2.5 last:border-0 last:pb-0">
               <span className="w-[4.5rem] shrink-0 font-mono text-sm text-(--ac-gold-bright)">{band}</span>
-              <span className="text-sm text-[#dfe5ee]">{meaning}</span>
+              <span className="text-sm text-on-dark">{meaning}</span>
             </div>
           ))}
-          <p className="text-xs text-[#c9d3e1]">สรุปอย่างย่อโดย Odyssey ไม่ใช่คำอธิบาย Band ทางการ เกณฑ์ที่ต้องใช้ขึ้นกับแต่ละสถาบัน ควรเช็กกับที่ที่คุณจะยื่นผล</p>
+          <p className="text-xs text-on-dark-muted">สรุปอย่างย่อโดย Odyssey ไม่ใช่คำอธิบาย Band ทางการ เกณฑ์ที่ต้องใช้ขึ้นกับแต่ละสถาบัน ควรเช็กกับที่ที่คุณจะยื่นผล</p>
         </div>
       </div>
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -41,9 +41,9 @@ export function TopNav() {
         return (
           <Link key={item.href} href={item.href} aria-current={on ? "page" : undefined}
             className={"relative rounded-lg px-3 py-2 text-[15px] whitespace-nowrap transition " + (i > 5 ? "hidden xl:block " : "") +
-              (on ? "font-semibold text-[#0f2440]" : "text-[#3d4757] hover:bg-[#f5efe3] hover:text-[#0f2440]")}>
+              (on ? "font-semibold text-primary" : "text-body hover:bg-accent-soft hover:text-primary")}>
             {item.label}
-            {on && <span className="absolute inset-x-3 -bottom-[17px] h-[3px] rounded-full bg-[#b8843d]" aria-hidden />}
+            {on && <span className="absolute inset-x-3 -bottom-[17px] h-[3px] rounded-full bg-accent" aria-hidden />}
           </Link>
         );
       })}
@@ -55,14 +55,14 @@ export function TabBar() {
   const pathname = usePathname();
   return (
     <nav aria-label="เมนูหลัก"
-      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-[#ebe5d9] bg-white/95 pt-1.5 pb-[calc(0.6rem+env(safe-area-inset-bottom))] shadow-[0_-8px_24px_-18px_rgba(15,36,64,0.35)] backdrop-blur-md lg:hidden">
+      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-rule bg-card/95 pt-1.5 pb-[calc(0.6rem+env(safe-area-inset-bottom))] shadow-[0_-8px_24px_-18px_rgb(var(--od-shadow-rgb)/0.35)] backdrop-blur-md lg:hidden">
       {TABS.map(({ href, label, Icon }) => {
         const on = isActive(pathname, href);
         return (
           <Link key={href} href={href} aria-current={on ? "page" : undefined}
-            className={"relative flex min-h-12 flex-col items-center justify-center gap-1 text-[11px] " + (on ? "font-semibold text-[#0f2440]" : "text-[#626b7a] hover:text-[#0f2440]")}>
+            className={"relative flex min-h-12 flex-col items-center justify-center gap-1 text-[11px] " + (on ? "font-semibold text-primary" : "text-muted hover:text-primary")}>
             {/* The current tab: a gold bar on top plus navy, bold text, so it never relies on colour alone. */}
-            {on && <span className="absolute -top-1.5 h-[3px] w-8 rounded-full bg-[#b8843d]" aria-hidden />}
+            {on && <span className="absolute -top-1.5 h-[3px] w-8 rounded-full bg-accent" aria-hidden />}
             <Icon className="size-5" strokeWidth={on ? 2.2 : 1.8} aria-hidden />
             {label}
           </Link>

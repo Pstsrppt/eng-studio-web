@@ -50,7 +50,7 @@ export function LessonView({ lesson, words, next, passMark }: Props) {
         {tab === "learn" && (
           <div className="flex flex-col gap-4">
             {hasWords && (
-              <div className="flex w-fit rounded-xl bg-[#ebe5d8] p-1 text-sm" role="group" aria-label="ขั้นตอนใน Learn">
+              <div className="flex w-fit rounded-xl bg-page-alt p-1 text-sm" role="group" aria-label="ขั้นตอนใน Learn">
                 {([["words", "1 · คำศัพท์ของบท"], ["theory", "2 · ทฤษฎีและตัวอย่าง"]] as const).map(([id, label]) => (
                   <button key={id} type="button" aria-pressed={step === id} onClick={() => setStep(id)}
                     className={"rounded-lg px-3 py-1.5 transition " + (step === id ? "bg-surface font-semibold shadow-sm" : "text-muted hover:text-ink")}>{label}</button>
@@ -204,23 +204,23 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
     return (
       <div className="flex flex-col gap-5">
         <ModeHeader kind="practice" />
-        <section aria-labelledby="practice-summary" className="flex flex-wrap items-center gap-5 rounded-2xl bg-(--ac-navy) p-6 text-white">
+        <section aria-labelledby="practice-summary" className="flex flex-wrap items-center gap-5 rounded-2xl bg-(--ac-dark) p-6 text-white">
           <p className="ac-serif text-5xl font-bold text-(--ac-gold-bright) tabular">{right}/{total}</p>
           <div className="min-w-0 flex-1">
             <h3 id="practice-summary" className="text-lg font-semibold">ถูกตั้งแต่ครั้งแรก {right} จาก {total} ข้อ</h3>
-            <p className="text-sm text-[#c9d3e1]">แบบฝึกไม่นับคะแนน ใช้ดูว่าพร้อมทำ Quiz หรือยัง</p>
+            <p className="text-sm text-on-dark-muted">แบบฝึกไม่นับคะแนน ใช้ดูว่าพร้อมทำ Quiz หรือยัง</p>
           </div>
           <div className="flex flex-wrap gap-2">
             <button type="button" onClick={restart} className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-white/30 px-4 text-sm font-semibold text-white hover:bg-white/10"><RotateCcwIcon className="size-4" aria-hidden /> ฝึกอีกรอบ</button>
-            <button type="button" onClick={onNext} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-4 text-sm font-semibold text-(--ac-navy) hover:bg-[#ecc580]">ไปทำ Quiz <ArrowRightIcon className="size-4" aria-hidden /></button>
+            <button type="button" onClick={onNext} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-4 text-sm font-semibold text-(--ac-navy) hover:bg-accent-on-dark-hover">ไปทำ Quiz <ArrowRightIcon className="size-4" aria-hidden /></button>
           </div>
         </section>
         <ol className="flex flex-col gap-2.5">
           {items.map((it, i) => (
-            <li key={i} className="flex items-start gap-3 rounded-xl border border-(--ac-line) bg-white p-4 text-[15px]">
+            <li key={i} className="flex items-start gap-3 rounded-xl border border-(--ac-line) bg-card p-4 text-[15px]">
               {states[i].firstTry
                 ? <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-[#e3f1ea] px-2 py-0.5 text-xs font-semibold text-[#22694b]"><CheckIcon className="size-3.5" aria-hidden />ครั้งแรก</span>
-                : <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-[#fbf0d9] px-2 py-0.5 text-xs font-semibold text-[#7a5418]"><RotateCcwIcon className="size-3.5" aria-hidden />ลองหลายครั้ง</span>}
+                : <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-accent-soft px-2 py-0.5 text-xs font-semibold text-accent-text"><RotateCcwIcon className="size-3.5" aria-hidden />ลองหลายครั้ง</span>}
               <div className="min-w-0">
                 <p className="font-medium text-(--ac-ink)">{it.t === "order" ? it.th : it.q}</p>
                 <p className="text-(--ac-body)">คำตอบ: <b className="text-[#22694b]">{answerOf(it)}</b></p>
@@ -244,17 +244,17 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
           <span className="font-semibold text-(--ac-navy)">ข้อ {at + 1} จาก {total}</span>
           <span className="text-(--ac-muted) tabular">ทำแล้ว {checkedCount}/{total}</span>
         </div>
-        <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#efe9dd]" role="progressbar" aria-label="ความคืบหน้าแบบฝึก" aria-valuemin={0} aria-valuemax={total} aria-valuenow={checkedCount}>
+        <div className="mt-2 h-2 overflow-hidden rounded-full bg-page-alt" role="progressbar" aria-label="ความคืบหน้าแบบฝึก" aria-valuemin={0} aria-valuemax={total} aria-valuenow={checkedCount}>
           <div className="h-full rounded-full bg-(--ac-gold) transition-[width] duration-300" style={{ width: `${percent}%` }} />
         </div>
       </div>
 
-      <section key={at} aria-labelledby="ex-q" className="overflow-hidden rounded-2xl border border-(--ac-line) bg-white shadow-(--ac-shadow)">
+      <section key={at} aria-labelledby="ex-q" className="overflow-hidden rounded-2xl border border-(--ac-line) bg-card shadow-(--ac-shadow)">
         <div className="flex flex-col gap-6 p-5 sm:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="flex items-center gap-3">
               <span className="grid size-9 place-items-center rounded-full bg-(--ac-navy) text-sm font-semibold text-white">{at + 1}</span>
-              <span className="rounded-full bg-(--ac-gold-soft) px-3 py-1 text-xs font-semibold text-[#7a5418]">{KIND_LABEL[item.t]}</span>
+              <span className="rounded-full bg-(--ac-gold-soft) px-3 py-1 text-xs font-semibold text-accent-text">{KIND_LABEL[item.t]}</span>
             </p>
             {item.t === "pick" && <p className="hidden items-center gap-1.5 text-xs text-(--ac-muted) sm:flex"><KeyboardIcon className="size-4" aria-hidden /> A–D เลือก · Enter ตรวจ · ← → เปลี่ยนข้อ</p>}
           </div>
@@ -262,7 +262,7 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
           <ExerciseBody item={item} st={st} update={update} onSubmit={check} />
 
           {st.hint && !locked && (
-            <p className="flex gap-2.5 rounded-xl bg-[#fbf6ea] px-4 py-3 text-[15px] leading-6 text-(--ac-ink)">
+            <p className="flex gap-2.5 rounded-xl bg-accent-wash px-4 py-3 text-[15px] leading-6 text-(--ac-ink)">
               <LightbulbIcon className="mt-0.5 size-5 shrink-0 text-(--ac-gold)" aria-hidden /><span><b>คำใบ้:</b> {hintOf(item)}</span>
             </p>
           )}
@@ -290,7 +290,7 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
               </>
             ) : (
               <button type="button" onClick={goOn}
-                className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-6 text-[15px] font-semibold text-(--ac-navy) transition hover:bg-[#ecc580]">
+                className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-(--ac-navy) px-6 text-[15px] font-semibold text-white transition hover:bg-(--ac-navy-2)">
                 {finished ? "ดูสรุปผล" : "ข้อต่อไป"} <ArrowRightIcon className="size-4" aria-hidden />
               </button>
             )}
@@ -299,7 +299,7 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
       </section>
 
       <nav aria-label="เปลี่ยนข้อ" className="flex flex-wrap items-center justify-between gap-3">
-        <button type="button" disabled={at === 0} onClick={() => move(at - 1)} className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 text-sm font-semibold text-(--ac-navy) hover:bg-white disabled:opacity-30"><ArrowLeftIcon className="size-4" aria-hidden /> ข้อก่อน</button>
+        <button type="button" disabled={at === 0} onClick={() => move(at - 1)} className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 text-sm font-semibold text-(--ac-navy) hover:bg-card disabled:opacity-30"><ArrowLeftIcon className="size-4" aria-hidden /> ข้อก่อน</button>
         <ol className="flex flex-wrap justify-center gap-2">
           {states.map((s, i) => {
             const label = s.checked === "ok" ? "ถูกแล้ว" : s.shown ? "ดูเฉลยแล้ว" : s.checked === "no" ? "ยังไม่ถูก" : "ยังไม่ทำ";
@@ -307,14 +307,14 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
               <li key={i}>
                 <button type="button" onClick={() => move(i)} aria-label={`ข้อ ${i + 1}: ${label}`} aria-current={i === at ? "step" : undefined}
                   className={"grid size-8 place-items-center rounded-full border text-xs font-semibold transition " + (i === at ? "ring-2 ring-(--ac-navy) ring-offset-2 " : "") +
-                    (s.checked === "ok" ? "border-[#2e7d5b] bg-[#e3f1ea] text-[#22694b]" : s.shown ? "border-(--ac-gold) bg-(--ac-gold-soft) text-[#7a5418]" : s.checked === "no" ? "border-[#e0a49a] bg-[#fdecea] text-bad" : "border-(--ac-line) bg-white text-(--ac-muted)")}>
+                    (s.checked === "ok" ? "border-[#2e7d5b] bg-[#e3f1ea] text-[#22694b]" : s.shown ? "border-(--ac-gold) bg-(--ac-gold-soft) text-accent-text" : s.checked === "no" ? "border-[#e0a49a] bg-[#fdecea] text-bad" : "border-(--ac-line) bg-card text-(--ac-muted)")}>
                   {s.checked === "ok" ? <CheckIcon className="size-3.5" aria-hidden /> : s.checked === "no" && !s.shown ? <XIcon className="size-3.5" aria-hidden /> : i + 1}
                 </button>
               </li>
             );
           })}
         </ol>
-        <button type="button" disabled={at === total - 1} onClick={() => move(at + 1)} className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 text-sm font-semibold text-(--ac-navy) hover:bg-white disabled:opacity-30">ข้อต่อไป <ArrowRightIcon className="size-4" aria-hidden /></button>
+        <button type="button" disabled={at === total - 1} onClick={() => move(at + 1)} className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 text-sm font-semibold text-(--ac-navy) hover:bg-card disabled:opacity-30">ข้อต่อไป <ArrowRightIcon className="size-4" aria-hidden /></button>
       </nav>
       <p className="text-sm leading-6 text-(--ac-body)"><b className="text-(--ac-navy)">การบ้าน:</b> {lesson.homework}</p>
     </div>
@@ -325,8 +325,8 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
 function ModeHeader({ kind, count, passMark }: { kind: "practice" | "quiz"; count?: number; passMark?: number }) {
   const practice = kind === "practice";
   return (
-    <div className={"flex flex-wrap items-start gap-4 rounded-2xl border p-5 " + (practice ? "border-(--ac-line) bg-(--ac-bg)" : "border-(--ac-navy)/15 bg-[#eef2f8]")}>
-      <span className={"grid size-11 shrink-0 place-items-center rounded-xl " + (practice ? "bg-(--ac-gold-soft) text-[#7a5418]" : "bg-(--ac-navy) text-white")}>
+    <div className={"flex flex-wrap items-start gap-4 rounded-2xl border p-5 " + (practice ? "border-(--ac-line) bg-(--ac-bg)" : "border-(--ac-navy)/15 bg-tint")}>
+      <span className={"grid size-11 shrink-0 place-items-center rounded-xl " + (practice ? "bg-(--ac-gold-soft) text-accent-text" : "bg-(--ac-navy) text-white")}>
         {practice ? <PencilLineIcon className="size-5" aria-hidden /> : <ClipboardCheckIcon className="size-5" aria-hidden />}
       </span>
       <div className="min-w-0 flex-1">
@@ -387,7 +387,7 @@ function ExerciseBody({ item, st, update, onSubmit }: { item: PracticeItem; st: 
         <div className="flex flex-wrap gap-2">
           {item.w.map((w, idx) => (
             <button key={idx} type="button" disabled={locked || st.picked.includes(idx)}
-              className="min-h-11 rounded-lg border border-(--ac-line) bg-white px-3.5 text-[16px] text-(--ac-ink) hover:border-(--ac-navy)/40 disabled:opacity-25"
+              className="min-h-11 rounded-lg border border-(--ac-line) bg-card px-3.5 text-[16px] text-(--ac-ink) hover:border-(--ac-navy)/40 disabled:opacity-25"
               onClick={() => update({ picked: [...st.picked, idx], checked: null })}>{w}</button>
           ))}
         </div>
@@ -399,7 +399,7 @@ function ExerciseBody({ item, st, update, onSubmit }: { item: PracticeItem; st: 
       <p id="ex-q" className={questionText}>{item.t === "fix" ? <><span className="block text-base font-normal text-(--ac-muted)">แก้ประโยคนี้ให้ถูก</span>{item.q}</> : item.q}</p>
       <input value={st.value} readOnly={locked} onChange={(e) => update({ value: e.target.value, checked: null })}
         placeholder={item.t === "fix" ? "พิมพ์ประโยคที่ถูก แล้วกด Enter" : "พิมพ์คำที่หายไป แล้วกด Enter"} autoCapitalize="off" autoComplete="off" spellCheck={false} aria-labelledby="ex-q"
-        className={"min-h-13 w-full rounded-xl border-2 bg-white px-4 text-lg outline-none transition focus:border-(--ac-navy) focus:ring-4 focus:ring-(--ac-gold-soft) " +
+        className={"min-h-13 w-full rounded-xl border-2 bg-card px-4 text-lg outline-none transition focus:border-(--ac-navy) focus:ring-4 focus:ring-(--ac-gold-soft) " +
           (st.checked === "ok" ? "border-[#2e7d5b]" : st.checked === "no" ? "border-[#e0a49a]" : "border-(--ac-line)")} />
     </form>
   );
@@ -409,13 +409,13 @@ function ExerciseBody({ item, st, update, onSubmit }: { item: PracticeItem; st: 
 function OptionButton({ letter, text, chosen, disabled, state, onPick }: { letter: string; text: string; chosen: boolean; disabled: boolean; state: "correct" | "wrong" | null; onPick: () => void }) {
   const tone = state === "correct" ? "border-[#2e7d5b] bg-[#eef7f1]"
     : state === "wrong" ? "border-[#d9776a] bg-[#fdf1ef]"
-    : chosen ? "border-(--ac-navy) bg-[#eef2f8]"
-    : "border-(--ac-line) bg-white hover:border-(--ac-navy)/40 hover:bg-(--ac-bg)";
+    : chosen ? "border-(--ac-navy) bg-tint"
+    : "border-(--ac-line) bg-card hover:border-(--ac-navy)/40 hover:bg-(--ac-bg)";
   return (
     <button type="button" role="radio" aria-checked={chosen} disabled={disabled} onClick={onPick}
       className={"flex min-h-14 items-center gap-3.5 rounded-xl border-2 px-4 py-3 text-left text-[17px] text-(--ac-ink) transition disabled:cursor-default " + tone}>
       <span className={"grid size-8 shrink-0 place-items-center rounded-lg font-mono text-sm font-semibold " +
-        (state === "correct" ? "bg-[#2e7d5b] text-white" : state === "wrong" ? "bg-[#c4483a] text-white" : chosen ? "bg-(--ac-navy) text-white" : "bg-[#f4f1ea] text-(--ac-muted)")}>{letter}</span>
+        (state === "correct" ? "bg-[#2e7d5b] text-white" : state === "wrong" ? "bg-[#c4483a] text-white" : chosen ? "bg-(--ac-navy) text-white" : "bg-sunken text-(--ac-muted)")}>{letter}</span>
       <span className="min-w-0 flex-1">{text}</span>
       {state === "correct" && <span className="flex items-center gap-1 text-sm font-semibold text-[#22694b]"><CheckCircle2Icon className="size-5" aria-hidden />ถูก</span>}
       {state === "wrong" && <span className="flex items-center gap-1 text-sm font-semibold text-bad"><XCircleIcon className="size-5" aria-hidden />ไม่ใช่</span>}
@@ -428,10 +428,10 @@ function Feedback({ item, st }: { item: PracticeItem; st: ItemState }) {
   if (st.checked === "ok" || st.shown) {
     const ok = st.checked === "ok";
     return (
-      <div className={"flex gap-3 rounded-xl border-l-4 px-4 py-4 " + (ok ? "border-[#2e7d5b] bg-[#eef7f1]" : "border-(--ac-gold) bg-[#fbf6ea]")}>
+      <div className={"flex gap-3 rounded-xl border-l-4 px-4 py-4 " + (ok ? "border-[#2e7d5b] bg-[#eef7f1]" : "border-(--ac-gold) bg-accent-wash")}>
         {ok ? <CheckCircle2Icon className="mt-0.5 size-5 shrink-0 text-[#2e7d5b]" aria-hidden /> : <LightbulbIcon className="mt-0.5 size-5 shrink-0 text-(--ac-gold)" aria-hidden />}
         <div className="flex flex-col gap-1 text-[15px] leading-6 text-(--ac-ink)">
-          <p className={"font-semibold " + (ok ? "text-[#22694b]" : "text-[#7a5418]")}>{ok ? `ถูกต้อง${st.attempts > 1 ? ` (ครั้งที่ ${st.attempts})` : ""}` : "เฉลย"}</p>
+          <p className={"font-semibold " + (ok ? "text-[#22694b]" : "text-accent-text")}>{ok ? `ถูกต้อง${st.attempts > 1 ? ` (ครั้งที่ ${st.attempts})` : ""}` : "เฉลย"}</p>
           <p>คำตอบ: <b>{answerOf(item)}</b></p>
           {item.th && <p className="text-(--ac-body)"><span className="font-semibold">ความหมาย:</span> {item.th}</p>}
         </div>
@@ -502,7 +502,7 @@ function Summary({ lesson, words, next, onQuiz }: { lesson: Lesson; words: Lesso
           </ul>
         </section>
       )}
-      <section className="flex flex-wrap items-center gap-3 rounded-2xl bg-navy p-5 text-white lg:col-span-2">
+      <section className="on-dark flex flex-wrap items-center gap-3 rounded-2xl bg-dark p-5 text-white lg:col-span-2">
         <p className="min-w-0 flex-1 text-sm text-mist">พร้อมแล้ว? ทำ Quiz ให้ผ่านเพื่อปลดบทนี้ใน Roadmap</p>
         <button type="button" className="btn" onClick={onQuiz}>ทำ Quiz</button>
         {next && <Link href={next.href} className="btn-dark">บทถัดไป: {next.title}</Link>}
@@ -578,9 +578,9 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
             </div>
             <div className="flex flex-wrap gap-2">
               {passed && next && (
-                <Link href={next.href} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-4 text-sm font-semibold text-(--ac-navy) hover:bg-[#ecc580]">บทถัดไป: {next.title} <ArrowRightIcon className="size-4" aria-hidden /></Link>
+                <Link href={next.href} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-(--ac-navy) px-4 text-sm font-semibold text-white hover:bg-(--ac-navy-2)">บทถัดไป: {next.title} <ArrowRightIcon className="size-4" aria-hidden /></Link>
               )}
-              <button type="button" onClick={retake} className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-(--ac-line) bg-white px-4 text-sm font-semibold text-(--ac-navy) hover:bg-(--ac-bg)">
+              <button type="button" onClick={retake} className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-(--ac-line) bg-card px-4 text-sm font-semibold text-(--ac-navy) hover:bg-(--ac-bg)">
                 <RotateCcwIcon className="size-4" aria-hidden /> ทำใหม่ (สลับข้อ)
               </button>
             </div>
@@ -593,7 +593,7 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
           const reveal = done !== null;
           const ok = reveal && answers[i] === q.a;
           return (
-            <li key={`${i}-${q.q}`} className="rounded-2xl border border-(--ac-line) bg-white p-5 shadow-(--ac-shadow) sm:p-7">
+            <li key={`${i}-${q.q}`} className="rounded-2xl border border-(--ac-line) bg-card p-5 shadow-(--ac-shadow) sm:p-7">
               <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
                 <p className="flex items-center gap-2.5 text-sm text-(--ac-muted)">
                   <span className="grid size-8 place-items-center rounded-full bg-(--ac-navy) text-sm font-semibold text-white">{i + 1}</span>
@@ -623,10 +623,10 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
 
       {!done && (
         // Stays in view while scrolling; sits above the phone tab bar.
-        <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-10 flex flex-wrap items-center gap-4 rounded-2xl border border-(--ac-line) bg-white/95 p-4 shadow-(--ac-shadow) backdrop-blur lg:bottom-4">
+        <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-10 flex flex-wrap items-center gap-4 rounded-2xl border border-(--ac-line) bg-card/95 p-4 shadow-(--ac-shadow) backdrop-blur lg:bottom-4">
           <div className="min-w-0 flex-1">
             <p className="text-sm font-semibold text-(--ac-navy)">ตอบแล้ว {answered} จาก {quiz.length} ข้อ</p>
-            <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-[#efe9dd]" role="progressbar" aria-label="ตอบแล้ว" aria-valuemin={0} aria-valuemax={quiz.length} aria-valuenow={answered}>
+            <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-page-alt" role="progressbar" aria-label="ตอบแล้ว" aria-valuemin={0} aria-valuemax={quiz.length} aria-valuenow={answered}>
               <div className="h-full rounded-full bg-(--ac-gold) transition-[width] duration-300" style={{ width: `${(answered / quiz.length) * 100}%` }} />
             </div>
           </div>

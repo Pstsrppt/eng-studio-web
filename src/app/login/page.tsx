@@ -30,7 +30,7 @@ async function LinkNotice({ searchParams }: { searchParams: Promise<{ error?: st
   if (signedout) return <p role="status" className="rounded-xl border border-[#b9dccb] bg-obj-bg px-4 py-3 text-sm text-obj">ออกจากระบบแล้ว ความคืบหน้าทั้งหมดยังบันทึกอยู่ เข้าสู่ระบบอีกครั้งเมื่อไหร่ก็เรียนต่อได้</p>;
   if (error !== "confirm") return null;
   return (
-    <div role="alert" className="rounded-xl border border-(--ac-gold-soft) bg-[#fbf6ea] px-4 py-3 text-sm leading-6">
+    <div role="alert" className="rounded-xl border border-(--ac-gold-soft) bg-accent-wash px-4 py-3 text-sm leading-6">
       <b className="font-semibold">ลิงก์ยืนยันพาเข้าสู่ระบบอัตโนมัติไม่ได้</b>
       <ul className="mt-1 list-disc pl-5">
         <li>ถ้าเปิดลิงก์จากอีกเครื่องหรืออีกแอป (เช่น สมัครบนคอม แต่กดลิงก์ใน Gmail บนมือถือ) อีเมลมักยืนยันแล้ว ลองเข้าสู่ระบบด้วยอีเมลและรหัสผ่านด้านล่างได้เลย</li>

@@ -11,9 +11,9 @@ export function BandExplorer() {
   const [band, setBand] = useState("6.5");
   const info = BANDS.find((b) => b.band === band)!;
   return (
-    <div className="grid overflow-hidden rounded-2xl border border-(--ac-line) bg-white shadow-(--ac-shadow) lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-      <div className="flex flex-col gap-6 bg-(--ac-navy) p-6 text-white lg:justify-center lg:p-10">
-        <p className="text-sm text-[#c9d3e1]">Choose a band to see what it means</p>
+    <div className="grid overflow-hidden rounded-2xl border border-(--ac-line) bg-card shadow-(--ac-shadow) lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+      <div className="flex flex-col gap-6 bg-(--ac-dark) p-6 text-white lg:justify-center lg:p-10">
+        <p className="text-sm text-on-dark-muted">Choose a band to see what it means</p>
         <div role="radiogroup" aria-label="เลือก Band" className="grid grid-cols-4 gap-2 sm:grid-cols-7 lg:grid-cols-4">
           {BANDS.map((b) => (
             <button key={b.band} type="button" role="radio" aria-checked={band === b.band} onClick={() => setBand(b.band)}

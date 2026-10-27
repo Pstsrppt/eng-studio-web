@@ -9,7 +9,7 @@ export function ThaiToggle() {
       type="button"
       onClick={toggleThai}
       aria-pressed={showThai}
-      className="rounded-full border border-[#ebe5d9] bg-white px-3 py-1.5 text-xs whitespace-nowrap text-[#3d4757] transition hover:border-[#0f2440]"
+      className="rounded-full border border-rule bg-card px-3 py-1.5 text-xs whitespace-nowrap text-body transition hover:border-primary"
     >
       <span className="max-sm:hidden">คำแปล</span>ไทย: <b className="font-semibold">{showThai ? "แสดง" : "ซ่อน"}</b>
     </button>

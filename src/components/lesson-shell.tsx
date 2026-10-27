@@ -16,7 +16,7 @@ import { STAGE_LOOK } from "./stage-look";
 type Props = { lesson: Lesson; kind: "grammar" | "sounds"; passMark: number; next?: { href: string; title: string } };
 const pad = (n: number) => String(n).padStart(2, "0");
 const LEVEL_TH: Record<string, string> = { A1: "Beginner", A2: "Elementary", B1: "Intermediate", B2: "Upper-intermediate" };
-const card = "rounded-2xl border border-(--ac-line) bg-white shadow-(--ac-shadow)";
+const card = "rounded-2xl border border-(--ac-line) bg-card shadow-(--ac-shadow)";
 
 export function LessonShell({ lesson, kind, passMark, next }: Props) {
   const found = stageOfLesson(lesson.id);
@@ -47,7 +47,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
           <section className={"relative isolate overflow-hidden " + card} aria-labelledby="lesson-title">
             <div className="absolute inset-y-0 right-0 -z-10 hidden w-[52%] md:block">
               <AcademicPhoto name="lesson-banner" fallback="skill-reading" alt="" icon={BookOpenIcon} className="size-full object-[50%_45%]" />
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,#ffffff_0%,rgba(255,255,255,0.75)_30%,rgba(255,255,255,0)_70%)]" aria-hidden />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--ac-surface)_0%,color-mix(in_srgb,var(--ac-surface)_75%,transparent)_30%,transparent_70%)]" aria-hidden />
             </div>
             <div className="flex max-w-[640px] flex-col gap-3 p-6 sm:p-9">
               <p className="font-mono text-xs tracking-[0.2em] text-(--ac-gold-ink)">
@@ -56,16 +56,16 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
               <h1 id="lesson-title" className="ac-serif text-[30px] leading-[1.12] font-bold text-(--ac-navy) sm:text-[40px]">{lesson.title}</h1>
               <p className="text-[16px] leading-7 text-(--ac-body)">{lesson.why}</p>
               <ul className="flex flex-wrap gap-2 text-[13px]">
-                <li className="rounded-full border border-(--ac-line) bg-white/90 px-3 py-1 text-(--ac-body)">{kind === "grammar" ? "Grammar" : "Pronunciation"}</li>
-                <li className="rounded-full border border-(--ac-line) bg-white/90 px-3 py-1 text-(--ac-body)">{lesson.level} · {LEVEL_TH[lesson.level] ?? lesson.level}</li>
-                <li className="flex items-center gap-1 rounded-full border border-(--ac-line) bg-white/90 px-3 py-1 text-(--ac-body)"><ClockIcon className="size-3.5" aria-hidden />ประมาณ {minutes} นาที</li>
+                <li className="rounded-full border border-(--ac-line) bg-card/90 px-3 py-1 text-(--ac-body)">{kind === "grammar" ? "Grammar" : "Pronunciation"}</li>
+                <li className="rounded-full border border-(--ac-line) bg-card/90 px-3 py-1 text-(--ac-body)">{lesson.level} · {LEVEL_TH[lesson.level] ?? lesson.level}</li>
+                <li className="flex items-center gap-1 rounded-full border border-(--ac-line) bg-card/90 px-3 py-1 text-(--ac-body)"><ClockIcon className="size-3.5" aria-hidden />ประมาณ {minutes} นาที</li>
               </ul>
               <p className="w-fit rounded-lg bg-(--ac-navy) px-3 py-2 font-mono text-[13px] text-(--ac-gold-bright)">{lesson.formula}</p>
               <a href="#lesson-content" className="mt-1 inline-flex w-fit items-center gap-2 rounded-lg bg-(--ac-navy) px-5 py-3 text-[15px] font-semibold text-white transition hover:bg-(--ac-navy-2)">Continue Learning ↓</a>
             </div>
           </section>
 
-          <section aria-labelledby="objectives" className="rounded-2xl border border-(--ac-line) bg-white/70 px-6 py-5">
+          <section aria-labelledby="objectives" className="rounded-2xl border border-(--ac-line) bg-card/70 px-6 py-5">
             <h2 id="objectives" className="text-sm font-semibold text-(--ac-navy)">ในบทนี้คุณจะได้</h2>
             <ul className="mt-2 grid gap-x-6 gap-y-1.5 text-[15px] leading-6 text-(--ac-body) sm:grid-cols-2">
               {objectives.map((o) => (
@@ -89,7 +89,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
                 {later.map((item) => (
                   <li key={item.id}>
                     <Link href={item.href} className="flex items-center gap-3 rounded-xl border border-(--ac-line) p-2.5 transition hover:border-(--ac-navy)/30 hover:bg-(--ac-bg)">
-                      <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-[#f4f1ea] text-(--ac-navy)"><StageIcon className="size-5" strokeWidth={1.6} aria-hidden /></span>
+                      <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-sunken text-(--ac-navy)"><StageIcon className="size-5" strokeWidth={1.6} aria-hidden /></span>
                       <span className="min-w-0 flex-1">
                         <span className="block truncate text-sm font-medium text-(--ac-ink)">{item.title}</span>
                         <span className="text-xs text-(--ac-muted)">{item.minutes} นาที</span>
@@ -98,14 +98,14 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
                   </li>
                 ))}
               </ol>
-              <Link href={stage ? `/roadmap?stage=${stage.id}` : "/roadmap"} className="mt-3 inline-flex text-sm font-semibold text-(--ac-navy) hover:text-(--ac-gold)">ดูทั้งหมดใน Roadmap →</Link>
+              <Link href={stage ? `/roadmap?stage=${stage.id}` : "/roadmap"} className="mt-3 inline-flex text-sm font-semibold text-(--ac-navy) hover:text-(--ac-gold-ink)">ดูทั้งหมดใน Roadmap →</Link>
             </section>
           )}
           {later.length === 0 && stage && (
             <section className={"p-5 " + card} aria-labelledby="up-next">
               <h2 id="up-next" className="ac-serif text-[17px] font-bold text-(--ac-navy)">Lessons in This Stage</h2>
               <p className="mt-1 text-sm leading-6 text-(--ac-body)">นี่คือบทสุดท้ายของ {stage.title} ผ่าน Quiz แล้วไปต่อสถานีถัดไปได้เลย</p>
-              <Link href={`/roadmap?stage=${stage.id}`} className="mt-3 inline-flex text-sm font-semibold text-(--ac-navy) hover:text-(--ac-gold)">ดูทั้งสถานีใน Roadmap →</Link>
+              <Link href={`/roadmap?stage=${stage.id}`} className="mt-3 inline-flex text-sm font-semibold text-(--ac-navy) hover:text-(--ac-gold-ink)">ดูทั้งสถานีใน Roadmap →</Link>
             </section>
           )}
           {words.fresh.length > 0 && (
@@ -139,7 +139,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
                   </li>
                 ))}
               </ul>
-              <Link href="/guide" className="mt-3 inline-flex text-sm font-semibold text-(--ac-navy) hover:text-(--ac-gold)">คู่มือศัพท์ไวยากรณ์ →</Link>
+              <Link href="/guide" className="mt-3 inline-flex text-sm font-semibold text-(--ac-navy) hover:text-(--ac-gold-ink)">คู่มือศัพท์ไวยากรณ์ →</Link>
             </section>
           )}
         </aside>
@@ -191,7 +191,7 @@ function Timeline({ items, current, passed }: { items: StageItem[]; current: str
     <div className="flex flex-col gap-3">
       <div>
         <div className="flex justify-between text-xs text-(--ac-muted)"><span>Stage progress</span><span className="tabular">{done}/{tracked.length}</span></div>
-        <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-[#efe9dd]"><div className="h-full rounded-full bg-(--ac-gold)" style={{ width: `${percent}%` }} /></div>
+        <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-page-alt"><div className="h-full rounded-full bg-(--ac-gold)" style={{ width: `${percent}%` }} /></div>
       </div>
       <ol className="relative flex flex-col">
         <span className="absolute top-3 bottom-3 left-[13px] w-px bg-(--ac-line)" aria-hidden />
@@ -203,7 +203,7 @@ function Timeline({ items, current, passed }: { items: StageItem[]; current: str
               <Link href={item.href} aria-current={on ? "page" : undefined}
                 className={"flex items-start gap-3 rounded-lg py-2 pr-2 text-sm transition " + (on ? "bg-(--ac-gold-soft) text-(--ac-navy)" : "text-(--ac-body) hover:text-(--ac-navy)")}>
                 <span className={"relative z-10 grid size-[27px] shrink-0 place-items-center rounded-full text-[11px] font-semibold " +
-                  (on ? "bg-(--ac-navy) text-white" : ok ? "bg-[#2e7d5b] text-white" : "border border-(--ac-line) bg-white text-(--ac-muted)")}>
+                  (on ? "bg-(--ac-navy) text-white" : ok ? "bg-[#2e7d5b] text-white" : "border border-(--ac-line) bg-card text-(--ac-muted)")}>
                   {ok && !on ? <CheckIcon className="size-3.5" aria-label="ผ่านแล้ว" /> : pad(i + 1)}
                 </span>
                 <span className={"pt-1 leading-5 " + (on ? "font-semibold" : "")}>{item.title}</span>

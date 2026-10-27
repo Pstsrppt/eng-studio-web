@@ -122,7 +122,7 @@ export function PlacementTest({ questions, lessons, levels, signedIn, history }:
           </div>
           <div className="mt-2 grid grid-cols-4 gap-1.5" aria-hidden>
             {[1, 2, 3, 4].map((n) => (
-              <div key={n} className="h-2 overflow-hidden rounded-full bg-[#efe9dd]">
+              <div key={n} className="h-2 overflow-hidden rounded-full bg-page-alt">
                 <div className="h-full rounded-full bg-(--ac-gold) transition-[width] duration-300"
                   style={{ width: n < levelNo ? "100%" : n === levelNo ? `${(state.idx / block.length) * 100}%` : "0%" }} />
               </div>
@@ -136,7 +136,7 @@ export function PlacementTest({ questions, lessons, levels, signedIn, history }:
             {current.o.map((opt, i) => (
               <button key={opt} type="button" disabled={checking} onClick={() => choose(i)}
                 className="flex min-h-14 items-center gap-3.5 rounded-xl border-2 border-line bg-surface px-4 py-3 text-left text-[17px] font-medium text-(--ac-ink) transition hover:border-(--ac-navy)/40 hover:bg-(--ac-bg) disabled:opacity-50">
-                <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-[#f4f1ea] font-mono text-sm font-semibold text-(--ac-muted)">{"ABCD"[i]}</span>{opt}
+                <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-sunken font-mono text-sm font-semibold text-(--ac-muted)">{"ABCD"[i]}</span>{opt}
               </button>
             ))}
           </div>
@@ -210,12 +210,12 @@ function ResultView({ result, lessons, levels, signedIn, onAgain }: { result: Re
   const titleOf = (id: string) => lessons.find((l) => l.id === id)?.title ?? id;
   return (
     <div className="learn-in flex flex-col gap-5">
-      <section className="on-dark flex flex-col items-start gap-3 rounded-2xl bg-(--ac-navy) p-6 text-white sm:p-8">
+      <section className="on-dark flex flex-col items-start gap-3 rounded-2xl bg-(--ac-dark) p-6 text-white sm:p-8">
         <p className="eyebrow">ระดับของคุณตอนนี้</p>
         <p className="font-display text-5xl font-bold">{result.level === "pre-A1" ? "ก่อน A1" : result.level}</p>
         <p className="text-lg font-semibold">{info.name}</p>
-        <p className="text-sm text-[#c9d3e1]">{info.can}</p>
-        <p className="font-mono text-xs text-[#c9d3e1] tabular">ตอบถูก {result.correct} จาก {result.total} ข้อ</p>
+        <p className="text-sm text-on-dark-muted">{info.can}</p>
+        <p className="font-mono text-xs text-on-dark-muted tabular">ตอบถูก {result.correct} จาก {result.total} ข้อ</p>
       </section>
 
       <section className="card flex flex-col gap-3 p-5">
@@ -225,7 +225,7 @@ function ResultView({ result, lessons, levels, signedIn, onAgain }: { result: Re
           return (
             <div key={lv} className="grid grid-cols-[2.5rem_1fr_3.5rem] items-center gap-3 text-sm">
               <span className="font-mono font-semibold">{lv}</span>
-              <div className="h-2.5 overflow-hidden rounded-full bg-[#efe9dd]">
+              <div className="h-2.5 overflow-hidden rounded-full bg-page-alt">
                 {s && <div className={"h-full rounded-full " + (s.correct >= 4 ? "bg-obj" : "bg-[#d9a84a]")} style={{ width: `${(s.correct / s.total) * 100}%` }} />}
               </div>
               <span className="text-right font-mono text-xs text-muted tabular">{s ? `${s.correct}/${s.total}` : "ไม่ได้สอบ"}</span>
