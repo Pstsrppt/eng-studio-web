@@ -9,7 +9,10 @@ Last checked: 27 October 2026 (branch `fix/phase3-p0-accuracy`).
   `src/content/ielts-guide.ts`. The Band Explorer now shows study notes written for Odyssey, labelled
   "not the official band descriptor", with a link to the official page.
 - The official level names (Modest, Competent, Good, Very good) are still shown as short labels.
-- An independence notice is shown in the site footer (Thai and English) and on `/ielts#about-odyssey`.
+- An independence notice is shown in the site footer (Thai and English) and on `/ielts#about-odyssey`, with a
+  trade mark note naming the IELTS partners (British Council, IDP IELTS, Cambridge University Press & Assessment)
+  and saying Odyssey has no licence, partnership or endorsement from them.
+- Home no longer says "Exam-format practice" or "Everything you need to confidently reach your target band".
 - A regression test (`src/content/ielts-guide.test.ts`) fails if distinctive descriptor phrases or
   "official / endorsed / partner" claims appear anywhere in `src/`.
 

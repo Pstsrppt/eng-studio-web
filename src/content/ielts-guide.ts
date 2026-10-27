@@ -14,9 +14,10 @@ export const DISCLAIMER: Bilingual = {
   th: "Odyssey เป็นเว็บไซต์เตรียมภาษาอังกฤษและ IELTS อิสระ ไม่ได้เป็นส่วนหนึ่งของหรือได้รับการรับรองโดยผู้จัดสอบ IELTS",
 };
 
+/** Owners as named on ielts.org (copyright and trade mark statement, checked 27 October 2026). */
 export const TRADEMARK_NOTE: Bilingual = {
-  en: "IELTS is a trade mark of its owners and is named here only to refer to the test.",
-  th: "IELTS เป็นเครื่องหมายการค้าของเจ้าของสิทธิ์ เว็บนี้ใช้ชื่อนี้เพื่ออ้างถึงข้อสอบเท่านั้น",
+  en: "IELTS is a trade mark of the IELTS partners: the British Council, IDP IELTS and Cambridge University Press & Assessment. Odyssey is an independent website and has no licence, partnership or endorsement from them.",
+  th: "IELTS เป็นเครื่องหมายการค้าของหุ้นส่วน IELTS ได้แก่ British Council, IDP IELTS และ Cambridge University Press & Assessment Odyssey เป็นเว็บไซต์อิสระ ไม่ได้รับอนุญาต ไม่ได้เป็นหุ้นส่วน และไม่ได้รับการรับรองจากองค์กรเหล่านี้",
 };
 
 export type TestType = {

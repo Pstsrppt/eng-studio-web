@@ -49,7 +49,7 @@ export default function HomePage() {
 
 const HIGHLIGHTS: { Icon: LucideIcon; text: string }[] = [
   { Icon: BarChart3Icon, text: "Personalized learning path" },
-  { Icon: BookOpenIcon, text: "Exam-format practice" },
+  { Icon: BookOpenIcon, text: "Grammar & vocabulary" },
   { Icon: TargetIcon, text: "Trackable progress" },
   { Icon: GlobeIcon, text: "Skills for study, work and life" },
 ];
@@ -70,7 +70,7 @@ function Hero() {
         </h1>
         <p className="max-w-[36rem] text-[17px] leading-[1.6] text-(--ac-body) sm:text-[19px]">
           Structured lessons. Real-world practice. Clear progress.{" "}<br className="hidden sm:block" />
-          Everything you need to confidently reach your target band.
+          Build the English foundation your IELTS preparation needs.
         </p>
                 <div className="flex flex-wrap gap-3">
           <Link href="/placement" className="inline-flex items-center gap-2 rounded-lg bg-(--ac-navy) px-6 py-3.5 text-[15px] font-semibold text-white shadow-(--ac-shadow) transition hover:bg-(--ac-navy-2)">

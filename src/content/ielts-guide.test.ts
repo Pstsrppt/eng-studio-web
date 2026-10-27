@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { BANDS, DISCLAIMER, FAQ, FORMAT_UPDATE, OVERALL_RULE, ROUNDING_EXAMPLES, TEST_TYPES, overallBand } from "./ielts-guide";
+import { BANDS, DISCLAIMER, FAQ, FORMAT_UPDATE, OVERALL_RULE, ROUNDING_EXAMPLES, TEST_TYPES, TRADEMARK_NOTE, overallBand } from "./ielts-guide";
 import { STAGES } from "./stages";
 
 describe("ielts guide", () => {
@@ -61,6 +61,7 @@ describe("ielts guide", () => {
     expect(TEST_TYPES.map((t) => t.id)).toEqual(["academic", "general"]);
     expect(FAQ).toHaveLength(8);
     for (const f of FAQ) expect(f.a.en && f.a.th).toBeTruthy();
+    expect(DISCLAIMER.en).toMatch(/independent.*not endorsed by/);
     expect(DISCLAIMER.th).toBe("Odyssey เป็นเว็บไซต์เตรียมภาษาอังกฤษและ IELTS อิสระ ไม่ได้เป็นส่วนหนึ่งของหรือได้รับการรับรองโดยผู้จัดสอบ IELTS");
   });
 });
@@ -73,6 +74,23 @@ function sourceFiles(dir: string): string[] {
     return /\.(tsx?|json|md)$/.test(name) && !name.endsWith(".test.ts") ? [path] : [];
   });
 }
+
+describe("trade mark note", () => {
+  it("names the IELTS partners in both languages and claims no licence or endorsement", () => {
+    for (const text of [TRADEMARK_NOTE.en, TRADEMARK_NOTE.th]) {
+      for (const owner of ["British Council", "IDP IELTS", "Cambridge University Press & Assessment"]) expect(text).toContain(owner);
+    }
+    expect(TRADEMARK_NOTE.en).toMatch(/independent website and has no licence, partnership or endorsement/);
+    expect(TRADEMARK_NOTE.th).toMatch(/เว็บไซต์อิสระ ไม่ได้รับอนุญาต ไม่ได้เป็นหุ้นส่วน และไม่ได้รับการรับรอง/);
+    // The brand itself contains "IELTS", so the note must not say the word is only used to name the test.
+    expect(`${TRADEMARK_NOTE.en} ${TRADEMARK_NOTE.th}`).not.toMatch(/only to refer|เพื่ออ้างถึงข้อสอบเท่านั้น/);
+  });
+
+  it("Home makes no promise of a complete IELTS course or a result", () => {
+    const home = readFileSync(join(__dirname, "..", "app", "page.tsx"), "utf8");
+    expect(home).not.toMatch(/Exam-format practice|Everything you need to confidently reach your target band/);
+  });
+});
 
 describe("no official text or endorsement claims", () => {
   const files = sourceFiles(join(__dirname, "..")).map((path) => ({ path, text: readFileSync(path, "utf8") }));
