@@ -15,7 +15,7 @@ export default function GrammarPage() {
         <PageHeader eyebrow={`GRAMMAR · ${LESSONS.length} บท`} title="เรียนทีละบท คำศัพท์ ทฤษฎี ฝึก แล้วทดสอบ"
           lead={`แต่ละบทผ่านเมื่อได้ ${PASS_MARK}% ขึ้นไป เรียงจากโครงสร้างที่ใช้บ่อยที่สุดก่อน`} />
         <p className="max-w-[64ch] rounded-xl border border-(--ac-line) bg-card px-4 py-3 text-sm leading-6 text-(--ac-body)">
-          <b className="font-semibold text-(--ac-navy)">ไม่ต้องรู้ศัพท์มาก่อน</b> ทุกบทเริ่มจากคำศัพท์ที่ใช้ในบท พร้อมความหมายและเสียงอ่าน แล้วค่อยเรียนทฤษฎี ฝึก และทดสอบ
+          <b className="font-semibold text-(--ac-heading)">ไม่ต้องรู้ศัพท์มาก่อน</b> ทุกบทเริ่มจากคำศัพท์ที่ใช้ในบท พร้อมความหมายและเสียงอ่าน แล้วค่อยเรียนทฤษฎี ฝึก และทดสอบ
         </p>
       </div>
       <Suspense fallback={<LessonList best={{}} />}>

@@ -44,7 +44,7 @@ export function TestChooser() {
                 (on ? "border-(--ac-navy) ring-2 ring-(--ac-gold-soft)" : picked ? "border-(--ac-line) opacity-75" : "border-(--ac-line)")}>
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <h3 id={`test-${t.id}`} className="ac-serif text-[24px] font-bold text-(--ac-navy)">{t.name}</h3>
+                  <h3 id={`test-${t.id}`} className="ac-serif text-[24px] font-bold text-(--ac-heading)">{t.name}</h3>
                   <p className="mt-2 text-[15px] leading-7 text-(--ac-body)">{t.tagline.en}<Thai className="mt-1 text-sm leading-6 text-(--ac-muted)">{t.tagline.th}</Thai></p>
                 </div>
                 {on && <span className="shrink-0 rounded-full bg-(--ac-gold-soft) px-3 py-1 text-xs font-semibold text-(--ac-navy)">Selected</span>}
@@ -67,8 +67,8 @@ export function TestChooser() {
               </button>
               {expanded && (
                 <dl id={`test-more-${t.id}`} className="learn-in grid gap-4 rounded-xl bg-(--ac-bg) p-5 text-sm leading-6">
-                  <div><dt className="font-semibold text-(--ac-navy)">Reading</dt><dd className="mt-1 text-(--ac-body)">{t.reading.en}<Thai className="mt-1 text-(--ac-muted)">{t.reading.th}</Thai></dd></div>
-                  <div><dt className="font-semibold text-(--ac-navy)">Writing</dt><dd className="mt-1 text-(--ac-body)">{t.writing.en}<Thai className="mt-1 text-(--ac-muted)">{t.writing.th}</Thai></dd></div>
+                  <div><dt className="font-semibold text-(--ac-heading)">Reading</dt><dd className="mt-1 text-(--ac-body)">{t.reading.en}<Thai className="mt-1 text-(--ac-muted)">{t.reading.th}</Thai></dd></div>
+                  <div><dt className="font-semibold text-(--ac-heading)">Writing</dt><dd className="mt-1 text-(--ac-body)">{t.writing.en}<Thai className="mt-1 text-(--ac-muted)">{t.writing.th}</Thai></dd></div>
                 </dl>
               )}
             </article>

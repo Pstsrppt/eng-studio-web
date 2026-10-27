@@ -241,7 +241,7 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
       <ModeHeader kind="practice" />
       <div>
         <div className="flex items-center justify-between text-sm">
-          <span className="font-semibold text-(--ac-navy)">ข้อ {at + 1} จาก {total}</span>
+          <span className="font-semibold text-(--ac-heading)">ข้อ {at + 1} จาก {total}</span>
           <span className="text-(--ac-muted) tabular">ทำแล้ว {checkedCount}/{total}</span>
         </div>
         <div className="mt-2 h-2 overflow-hidden rounded-full bg-page-alt" role="progressbar" aria-label="ความคืบหน้าแบบฝึก" aria-valuemin={0} aria-valuemax={total} aria-valuenow={checkedCount}>
@@ -316,7 +316,7 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
         </ol>
         <button type="button" disabled={at === total - 1} onClick={() => move(at + 1)} className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 text-sm font-semibold text-(--ac-navy) hover:bg-card disabled:opacity-30">ข้อต่อไป <ArrowRightIcon className="size-4" aria-hidden /></button>
       </nav>
-      <p className="text-sm leading-6 text-(--ac-body)"><b className="text-(--ac-navy)">การบ้าน:</b> {lesson.homework}</p>
+      <p className="text-sm leading-6 text-(--ac-body)"><b className="text-(--ac-heading)">การบ้าน:</b> {lesson.homework}</p>
     </div>
   );
 }
@@ -330,7 +330,7 @@ function ModeHeader({ kind, count, passMark }: { kind: "practice" | "quiz"; coun
         {practice ? <PencilLineIcon className="size-5" aria-hidden /> : <ClipboardCheckIcon className="size-5" aria-hidden />}
       </span>
       <div className="min-w-0 flex-1">
-        <p className="ac-serif text-xl font-bold text-(--ac-navy)">{practice ? "Practice · ฝึกจากข้อผิดพลาด" : "Quiz · วัดความเข้าใจ"}</p>
+        <p className="ac-serif text-xl font-bold text-(--ac-heading)">{practice ? "Practice · ฝึกจากข้อผิดพลาด" : "Quiz · วัดความเข้าใจ"}</p>
         <p className="mt-0.5 text-sm leading-6 text-(--ac-body)">
           {practice
             ? "ทำทีละข้อ ตอบผิดได้ไม่จำกัด มีคำใบ้และเฉลย ไม่นับคะแนน"
@@ -354,7 +354,7 @@ function hintOf(item: PracticeItem) {
   return `คำตอบขึ้นต้นด้วย "${answer.slice(0, 1)}" และยาว ${answer.length} ตัวอักษร`;
 }
 
-const questionText = "text-[22px] leading-[1.45] font-semibold text-(--ac-navy) sm:text-[26px]";
+const questionText = "text-[22px] leading-[1.45] font-semibold text-(--ac-heading) sm:text-[26px]";
 
 function ExerciseBody({ item, st, update, onSubmit }: { item: PracticeItem; st: ItemState; update: (p: Partial<ItemState>) => void; onSubmit: () => void }) {
   const locked = st.checked === "ok" || st.shown;
@@ -375,7 +375,7 @@ function ExerciseBody({ item, st, update, onSubmit }: { item: PracticeItem; st: 
   if (item.t === "order") {
     return (
       <>
-        <p id="ex-q" className="text-[17px] leading-7 text-(--ac-ink)">เรียงคำให้ได้ความหมาย: <b className="text-(--ac-navy)">{item.th}</b></p>
+        <p id="ex-q" className="text-[17px] leading-7 text-(--ac-ink)">เรียงคำให้ได้ความหมาย: <b className="text-(--ac-heading)">{item.th}</b></p>
         <div className="flex min-h-16 flex-wrap items-center gap-2 rounded-xl border-2 border-dashed border-(--ac-line) bg-(--ac-bg) p-3" aria-label="ประโยคที่เรียงแล้ว">
           {st.picked.length === 0 && <span className="text-sm text-(--ac-muted)">แตะคำด้านล่างเพื่อเรียงประโยค</span>}
           {st.picked.map((idx, i) => (
@@ -474,7 +474,7 @@ function Summary({ lesson, words, next, onQuiz }: { lesson: Lesson; words: Lesso
     <div className="grid gap-4 lg:grid-cols-2">
       <section className="card flex flex-col gap-3 p-5">
         <p className="eyebrow">สูตรของบทนี้</p>
-        <p className="rounded-lg bg-navy px-3 py-2.5 font-mono text-[14px] text-gold-soft">{lesson.formula}</p>
+        <p className="rounded-lg border border-line bg-tint px-3 py-2.5 font-mono text-[14px] text-heading">{lesson.formula}</p>
         <p className="text-sm leading-6 text-ink-2">{lesson.why}</p>
       </section>
       <section className="card flex flex-col gap-3 p-5">
@@ -605,7 +605,7 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
                   </span>
                 )}
               </div>
-              <p id={`quiz-q-${i}`} className="text-[19px] leading-[1.5] font-semibold text-(--ac-navy) sm:text-[21px]">{q.q}</p>
+              <p id={`quiz-q-${i}`} className="text-[19px] leading-[1.5] font-semibold text-(--ac-heading) sm:text-[21px]">{q.q}</p>
               <RadioGroup labelledBy={`quiz-q-${i}`} className="mt-4 grid gap-2.5 sm:grid-cols-2">
                 {q.o.map((o, j) => (
                   <OptionButton key={j} letter={LETTERS[j]} text={o} chosen={answers[i] === j} disabled={reveal}
@@ -614,7 +614,7 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
                 ))}
               </RadioGroup>
               {reveal && q.why && (
-                <p className="mt-4 rounded-xl bg-(--ac-bg) px-4 py-3 text-[15px] leading-6 text-(--ac-ink)"><b className="text-(--ac-navy)">คำอธิบาย:</b> {q.why}</p>
+                <p className="mt-4 rounded-xl bg-(--ac-bg) px-4 py-3 text-[15px] leading-6 text-(--ac-ink)"><b className="text-(--ac-heading)">คำอธิบาย:</b> {q.why}</p>
               )}
             </li>
           );
@@ -625,7 +625,7 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
         // Stays in view while scrolling; sits above the phone tab bar.
         <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-10 flex flex-wrap items-center gap-4 rounded-2xl border border-(--ac-line) bg-card/95 p-4 shadow-(--ac-shadow) backdrop-blur lg:bottom-4">
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-semibold text-(--ac-navy)">ตอบแล้ว {answered} จาก {quiz.length} ข้อ</p>
+            <p className="text-sm font-semibold text-(--ac-heading)">ตอบแล้ว {answered} จาก {quiz.length} ข้อ</p>
             <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-page-alt" role="progressbar" aria-label="ตอบแล้ว" aria-valuemin={0} aria-valuemax={quiz.length} aria-valuenow={answered}>
               <div className="h-full rounded-full bg-(--ac-gold) transition-[width] duration-300" style={{ width: `${(answered / quiz.length) * 100}%` }} />
             </div>

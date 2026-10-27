@@ -104,7 +104,7 @@ function Roadmap({ stages, current }: { stages: StageProgress[]; current: string
   return (
     <section className="grid gap-7 rounded-2xl border border-(--ac-line) bg-(--ac-surface) p-6 shadow-(--ac-shadow) lg:grid-cols-[270px_minmax(0,1fr)] lg:items-center lg:gap-10 lg:px-10 lg:py-9" aria-labelledby="road-title">
       <div>
-        <h2 id="road-title" className="ac-serif text-[28px] leading-[1.15] font-bold text-(--ac-navy)">Your 7-Stage<br className="hidden lg:block" /> IELTS Roadmap</h2>
+        <h2 id="road-title" className="ac-serif text-[28px] leading-[1.15] font-bold text-(--ac-heading)">Your 7-Stage<br className="hidden lg:block" /> IELTS Roadmap</h2>
         <p className="mt-3 text-[15px] leading-6 text-(--ac-muted)">A clear path from your current level to your target band.</p>
       </div>
       <ol className="-mx-2 flex snap-x gap-1 overflow-x-auto px-2 pb-2 lg:mx-0 lg:grid lg:grid-cols-7 lg:overflow-visible lg:px-0 lg:pb-0">
@@ -130,7 +130,7 @@ function Roadmap({ stages, current }: { stages: StageProgress[]; current: string
                   {active && !done && <span className="absolute -right-1 -bottom-1 grid size-5 place-items-center rounded-full bg-(--ac-gold-bright) text-[10px] font-bold text-(--ac-navy)">{s.n}</span>}
                 </span>
                 <span className="flex flex-col items-center gap-1.5">
-                  <span className="flex min-h-[2.5em] items-start text-[15px] leading-[1.25] font-semibold text-balance text-(--ac-navy)">{s.title}</span>
+                  <span className="flex min-h-[2.5em] items-start text-[15px] leading-[1.25] font-semibold text-balance text-(--ac-heading)">{s.title}</span>
                   <span className="max-w-[11rem] text-[13.5px] leading-[1.45] text-balance text-(--ac-muted)">{look.short}</span>
                 </span>
               </Link>
@@ -178,7 +178,7 @@ function Skills() {
             <span className="absolute -top-6 left-4 grid size-12 place-items-center rounded-full border border-(--ac-line) bg-card text-(--ac-navy) shadow-sm">
               <c.Icon className="size-5" aria-hidden />
             </span>
-            <h3 className="ac-serif text-[22px] font-bold text-(--ac-navy)">{c.name}</h3>
+            <h3 className="ac-serif text-[22px] font-bold text-(--ac-heading)">{c.name}</h3>
             <p className="text-[14.5px] leading-[1.5] text-(--ac-body)">{c.text}</p>
             {/* No lessons for each skill yet: the link shows what Stage 04 has now and what's coming. */}
             <Link href="/roadmap?stage=skills" className="mt-auto inline-flex items-center gap-1.5 pt-3 text-[15px] font-semibold text-(--ac-navy) hover:text-(--ac-gold-ink)">
@@ -220,7 +220,7 @@ async function Continue() {
     <section className="flex flex-wrap items-center justify-between gap-5 rounded-2xl border border-(--ac-line) bg-(--ac-surface) p-6 shadow-(--ac-shadow)" aria-labelledby="continue-title">
       <div className="min-w-0">
         <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold-ink)">YOUR PROGRESS</p>
-        <h2 id="continue-title" className="ac-serif mt-1 text-2xl font-bold text-(--ac-navy)">
+        <h2 id="continue-title" className="ac-serif mt-1 text-2xl font-bold text-(--ac-heading)">
           {current ? `Stage ${String(current.n).padStart(2, "0")} · ${current.title}` : "ผ่านบทเรียนครบทุกสถานีแล้ว"}
         </h2>
         <p className="mt-1 text-sm text-(--ac-muted)">
@@ -244,7 +244,7 @@ function Section({ id, eyebrow, title, subtitle, children }: { id: string; eyebr
     <section aria-labelledby={`${id}-title`} className="flex scroll-mt-24 flex-col gap-7 pt-10 lg:pt-16" id={id}>
       <header className="max-w-3xl">
         <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold-ink)">{eyebrow}</p>
-        <h2 id={`${id}-title`} className="ac-serif mt-2 text-[30px] leading-tight font-bold text-(--ac-navy) sm:text-[38px]">{title}</h2>
+        <h2 id={`${id}-title`} className="ac-serif mt-2 text-[30px] leading-tight font-bold text-(--ac-heading) sm:text-[38px]">{title}</h2>
         {subtitle && <p className="mt-3 text-[17px] leading-7 text-(--ac-body)">{subtitle}</p>}
       </header>
       {children}
@@ -275,7 +275,7 @@ function HowItWorks() {
             <span className="grid size-[54px] shrink-0 place-items-center rounded-full border border-(--ac-line) bg-(--ac-bg) text-(--ac-navy)"><step.Icon className="size-6" strokeWidth={1.6} aria-hidden /></span>
             <span className="font-mono text-sm tracking-[0.2em] text-(--ac-gold-ink)">STEP {step.n}</span>
           </div>
-          <h3 className="ac-serif text-[22px] font-bold text-(--ac-navy)">{step.title}</h3>
+          <h3 className="ac-serif text-[22px] font-bold text-(--ac-heading)">{step.title}</h3>
           <p className="text-[15px] leading-7 text-(--ac-body)">{step.text}<Thai className="text-sm leading-6 text-(--ac-muted)">{step.th}</Thai></p>
           <Link href={step.href} className="mt-auto inline-flex w-fit items-center gap-1.5 pt-1 text-[15px] font-semibold text-(--ac-navy) hover:text-(--ac-gold-ink)">
             {step.cta} <ArrowRightIcon className="size-4" aria-hidden />
@@ -288,20 +288,20 @@ function HowItWorks() {
 
 function FinalCta() {
   return (
-    <section aria-labelledby="final-title" className="relative mt-10 overflow-hidden rounded-3xl bg-(--ac-dark) px-6 py-12 text-center text-white sm:px-10 lg:mt-16 lg:py-16">
-      <WorldDots />
+    // A light closing band: Home keeps its dark panels for What is IELTS? and the Band Explorer only.
+    <section aria-labelledby="final-title" className="relative mt-10 overflow-hidden rounded-3xl border border-(--ac-line) bg-(--ac-alt) px-6 py-12 text-center sm:px-10 lg:mt-16 lg:py-16">
       <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-5">
-        <span className="h-0.5 w-12 bg-(--ac-gold-bright)" aria-hidden />
-        <h2 id="final-title" className="ac-serif text-[32px] leading-tight font-bold sm:text-[42px]">Your English Journey Starts Here.</h2>
-        <p className="text-[17px] leading-7 text-on-dark">
+        <span className="h-0.5 w-12 bg-(--ac-gold)" aria-hidden />
+        <h2 id="final-title" className="ac-serif text-[32px] leading-tight font-bold text-(--ac-heading) sm:text-[42px]">Your English Journey Starts Here.</h2>
+        <p className="text-[17px] leading-7 text-(--ac-body)">
           Build stronger skills, understand your progress, and take the next step toward your IELTS goal.
-          <Thai className="mt-1 text-[15px] text-on-dark-muted">สร้างทักษะให้แข็งแรง เข้าใจความคืบหน้าของตัวเอง และก้าวต่อไปสู่เป้าหมาย IELTS</Thai>
+          <Thai className="mt-1 text-[15px] text-(--ac-muted)">สร้างทักษะให้แข็งแรง เข้าใจความคืบหน้าของตัวเอง และก้าวต่อไปสู่เป้าหมาย IELTS</Thai>
         </p>
         <div className="flex flex-wrap justify-center gap-3 pt-2">
-          <Link href="/placement" className="inline-flex items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-6 py-3.5 text-[15px] font-semibold text-(--ac-navy) transition hover:bg-accent-on-dark-hover">
+          <Link href="/placement" className="inline-flex items-center gap-2 rounded-lg bg-(--ac-navy) px-6 py-3.5 text-[15px] font-semibold text-white transition hover:bg-(--ac-navy-2)">
             Start Placement Test <ArrowRightIcon className="size-4" aria-hidden />
           </Link>
-          <Link href="/roadmap" className="inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/40 px-6 py-3.5 text-[15px] font-semibold text-white transition hover:bg-white/10">
+          <Link href="/roadmap" className="inline-flex items-center gap-2 rounded-lg border-[1.5px] border-(--ac-navy) bg-card px-6 py-3.5 text-[15px] font-semibold text-(--ac-navy) transition hover:bg-(--ac-gold-soft)">
             Explore Your Roadmap
           </Link>
         </div>

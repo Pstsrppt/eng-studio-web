@@ -1,30 +1,33 @@
 @import "tailwindcss";
 
-/* Odyssey · Aubergine Porcelain. One source of truth for the theme: the --od-* values below. Every page,
-   learning surfaces included, reads them through the semantic Tailwind colours (bg-page, bg-card, text-body,
-   border-rule, bg-dark, text-accent-text…) or through the older names, which now point at the same values.
+/* Odyssey · Bright Aubergine. One source of truth for the theme: the --od-* values below. Every page,
+   learning surfaces included, reads them through the semantic Tailwind colours (bg-page, bg-card, text-heading,
+   text-body, border-rule, bg-dark, text-accent-text…) or through the older names, which point at the same values.
+   Type hierarchy: graphite for headings and labels, neutral grey for body and secondary text. Aubergine is kept
+   for primary buttons, links, active and selected states and the signature Home headline, not for every heading.
    Rose copper (--od-accent) is decorative only: rules, icons, indicators, never text on light surfaces.
    Contrast (WCAG AA) is noted where a pair is used for text. The Odyssey O keeps its own navy and gold.
    Sentence roles and right/wrong keep their own colours: subject blue, verb orange, object green, red. */
 :root {
-  --od-page: #f2eee9;            /* page background */
-  --od-page-alt: #eae3dc;        /* alternate band, footer, progress tracks */
-  --od-sunken: #f0eae4;          /* tiles, segmented-control tracks and chips inside cards */
-  --od-card: #fffdfb;            /* cards, header, tab bar, inputs */
-  --od-rule: #e2d8d0;            /* hairlines and card borders (decorative) */
-  --od-rule-strong: #7f7179;     /* checkbox and input borders: 3.6:1 on page-alt, 4.6:1 on card */
-  --od-primary: #38283f;         /* headings, primary buttons, current item: 11.8:1 on page */
+  --od-page: #faf8f5;            /* page background */
+  --od-page-alt: #f5f1ec;        /* alternate band, footer, progress tracks */
+  --od-sunken: #f3eee8;          /* tiles, segmented-control tracks and chips inside cards */
+  --od-card: #fffefc;            /* cards, header, tab bar, inputs */
+  --od-rule: #e5ddd4;            /* hairlines and card borders: separate cards from the bright page */
+  --od-rule-strong: #7f7179;     /* checkbox and input borders: 4.1:1 on page-alt, 4.6:1 on card */
+  --od-primary: #38283f;         /* primary buttons, links, active and selected states: 12.8:1 on page */
   --od-primary-hover: #4a3753;
   --od-dark: #302336;            /* dark sections; white text 14.8:1 */
-  --od-ink: #241a2a;             /* strong text: 14.5:1 on page */
-  --od-body: #43384a;            /* running text: 9.6:1 on page */
-  --od-muted: #675c6c;           /* secondary text: 5.0:1 on page-alt, 5.5:1 on page */
+  --od-heading: #34313a;         /* graphite headings and labels: 12.0:1 on page */
+  --od-ink: #34313a;             /* strong text, same graphite */
+  --od-body: #514d55;            /* running text: 7.8:1 on page, 7.4:1 on page-alt */
+  --od-muted: #6d6770;           /* secondary text: 5.2:1 on page, 4.9:1 on page-alt */
   --od-accent: #aa8d83;          /* rose copper, decorative */
-  --od-accent-text: #74574d;     /* copper for small text on light surfaces: 5.1:1 on page-alt */
+  --od-accent-text: #74574d;     /* copper for small text on light surfaces: 5.8:1 on page-alt */
   --od-accent-on-dark: #c4aba1;  /* copper text and buttons on dark: 6.8:1 on dark, 6.3:1 with primary text */
   --od-accent-on-dark-hover: #d2bcb2;
   --od-accent-soft: #efe4df;     /* icon tiles, current chips; accent-text on it 5.2:1 */
-  --od-accent-wash: #f7f0eb;     /* notes and tips */
+  --od-accent-wash: #f8f2ee;     /* notes and tips */
   --od-tint: #eee8f0;            /* primary tint for selected rows and examples; muted on it 5.3:1 */
   --od-tint-strong: #e6dee8;
   --od-on-dark: #e9e2eb;         /* running text on dark: 11.7:1 */
@@ -43,6 +46,7 @@
   --color-primary: var(--od-primary);
   --color-primary-hover: var(--od-primary-hover);
   --color-dark: var(--od-dark);
+  --color-heading: var(--od-heading);
   --color-body: var(--od-body);
   --color-accent: var(--od-accent);
   --color-accent-text: var(--od-accent-text);
@@ -157,6 +161,7 @@
   --ac-navy-2: var(--od-primary-hover);
   --ac-dark: var(--od-dark);
   --ac-ink: var(--od-ink);
+  --ac-heading: var(--od-heading);
   --ac-body: var(--od-body);
   --ac-muted: var(--od-muted);
   --ac-line: var(--od-rule);
@@ -184,12 +189,13 @@
   color: var(--ac-ink);
 }
 @layer components {
-  .academic-page h1 { color: var(--ac-navy); }
+  /* Page titles are graphite; aubergine is for actions and active states. */
+  .academic-page h1 { color: var(--ac-heading); }
   /* Card and task titles stay in the UI face, as in the lesson's Practice and Quiz. */
   .academic-page h3 { font-family: var(--font-sans); }
   /* Thai in an eyebrow falls back to the body face, and the tracking stays light enough for Thai to read. */
   .academic-page .eyebrow { @apply text-[11px] tracking-[0.12em] text-(--ac-gold-ink); font-family: var(--font-mono-face), var(--font-body), monospace; }
-  .academic-page .card { @apply rounded-2xl border-(--ac-line) bg-card shadow-[0_1px_2px_rgb(var(--od-shadow-rgb)/0.05)]; }
+  .academic-page .card { @apply rounded-2xl border-(--ac-line) bg-card shadow-[0_1px_2px_rgb(var(--od-shadow-rgb)/0.04),0_8px_22px_-14px_rgb(var(--od-shadow-rgb)/0.16)]; }
   .academic-page .btn { @apply min-h-11 rounded-lg bg-(--ac-navy) px-5 text-white hover:bg-(--ac-navy-2); }
   .academic-page .btn-ghost { @apply min-h-11 rounded-lg border-(--ac-line) bg-card px-5 text-(--ac-navy) hover:border-(--ac-navy)/40 hover:bg-(--ac-bg); }
   .academic-page .input { @apply min-h-12 rounded-xl border-(--ac-line-strong) px-4 focus:border-(--ac-navy) focus:ring-(--ac-gold-soft); }
