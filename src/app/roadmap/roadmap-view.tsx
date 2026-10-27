@@ -53,7 +53,7 @@ export function RoadmapView({ stages, passed, overall, level, signedIn, initialS
         <div className="mx-auto flex max-w-[1520px] flex-wrap items-end justify-between gap-5 px-4 pt-10 pb-10 sm:px-6 lg:px-10 lg:pt-14 lg:pb-14 2xl:px-12">
           <div className="max-w-2xl">
             <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold-ink)">YOUR LEARNING ROADMAP</p>
-            <h1 className="ac-serif mt-2 text-[34px] leading-[1.1] font-bold text-(--ac-navy) sm:text-[44px]">From Foundation to Your Target Band</h1>
+            <h1 className="ac-serif mt-2 text-[34px] leading-[1.1] font-bold text-(--ac-heading) sm:text-[44px]">From Foundation to Your Target Band</h1>
             <p className="mt-3 text-[17px] leading-7 text-(--ac-body)">Seven stages, one clear path. Choose a stage to see its lessons and where to continue.</p>
           </div>
           <div role="tablist" aria-label="มุมมอง" className="flex rounded-xl border border-(--ac-line) bg-card p-1 shadow-(--ac-shadow)">
@@ -115,7 +115,7 @@ function StagePath({ stages, selected, onChoose }: { stages: StageProgress[]; se
                   {s.status === "done" && <span className="absolute -right-1 -bottom-1 grid size-6 place-items-center rounded-full bg-[#2e7d5b] text-white ring-2 ring-card"><CheckIcon className="size-3.5" aria-hidden /></span>}
                 </span>
                 <span className="font-mono text-[11px] tracking-[0.16em] text-(--ac-gold-ink)">STAGE {pad(s.n)}</span>
-                <span className="flex min-h-[2.5em] items-start text-[15px] leading-[1.25] font-semibold text-balance text-(--ac-navy)">{s.title}</span>
+                <span className="flex min-h-[2.5em] items-start text-[15px] leading-[1.25] font-semibold text-balance text-(--ac-heading)">{s.title}</span>
                 <StatusChip status={s.status} />
               </button>
             </li>
@@ -184,7 +184,7 @@ function LessonPreview({ stage, done }: { stage: StageProgress; done: Set<string
   return (
     <section aria-labelledby="stage-lessons" className="flex max-h-[560px] flex-col rounded-2xl border border-(--ac-line) bg-card p-5 shadow-(--ac-shadow) lg:p-6">
       <div className="mb-2 flex items-baseline justify-between gap-3 px-3">
-        <h2 id="stage-lessons" className="ac-serif text-[20px] font-bold text-(--ac-navy)">Lessons in this stage</h2>
+        <h2 id="stage-lessons" className="ac-serif text-[20px] font-bold text-(--ac-heading)">Lessons in this stage</h2>
         <span className="text-sm text-(--ac-muted)">{stage.items.length} รายการ</span>
       </div>
       {stage.items.length > 0 ? (
@@ -196,7 +196,7 @@ function LessonPreview({ stage, done }: { stage: StageProgress; done: Set<string
       )}
       {stage.soon && (
         <div className="mt-3 rounded-xl bg-(--ac-bg) p-4">
-          <p className="flex items-center gap-1.5 text-sm font-semibold text-(--ac-navy)"><SparklesIcon className="size-4 text-(--ac-gold)" aria-hidden /> กำลังจัดทำ</p>
+          <p className="flex items-center gap-1.5 text-sm font-semibold text-(--ac-heading)"><SparklesIcon className="size-4 text-(--ac-gold)" aria-hidden /> กำลังจัดทำ</p>
           <ul className="mt-1.5 flex flex-col gap-1 text-sm text-(--ac-body)">
             {stage.soon.map((s) => <li key={s}>· {s}</li>)}
           </ul>
@@ -220,11 +220,11 @@ function Ring({ percent }: { percent: number }) {
 function MyProgress({ overall, level, signedIn }: { overall: Props["overall"]; level: string | null; signedIn: boolean }) {
   return (
     <section aria-labelledby="my-progress" className="flex flex-col gap-4 rounded-2xl border border-(--ac-line) bg-card p-6 shadow-(--ac-shadow)">
-      <h2 id="my-progress" className="ac-serif text-[20px] font-bold text-(--ac-navy)">My Progress</h2>
+      <h2 id="my-progress" className="ac-serif text-[20px] font-bold text-(--ac-heading)">My Progress</h2>
       <div className="flex items-center gap-5">
         <div className="relative shrink-0">
           <Ring percent={overall.percent} />
-          <span className="ac-serif absolute inset-0 grid place-items-center text-2xl font-bold text-(--ac-navy)">{overall.percent}%</span>
+          <span className="ac-serif absolute inset-0 grid place-items-center text-2xl font-bold text-(--ac-heading)">{overall.percent}%</span>
         </div>
         <dl className="flex flex-col gap-2 text-sm">
           <div><dt className="text-(--ac-muted)">บทที่ผ่าน</dt><dd className="font-semibold text-(--ac-ink)">{overall.done} จาก {overall.total} บท</dd></div>
@@ -256,7 +256,7 @@ function LearningList({ stages, done, selected }: { stages: StageProgress[]; don
                   <span className="font-mono text-xs tracking-[0.16em] text-(--ac-gold-ink)">STAGE {pad(s.n)}</span>
                   <StatusChip status={s.status} />
                 </div>
-                <h2 className="ac-serif mt-1 text-[22px] font-bold text-(--ac-navy)">{s.title}</h2>
+                <h2 className="ac-serif mt-1 text-[22px] font-bold text-(--ac-heading)">{s.title}</h2>
                 <p className="text-sm text-(--ac-muted)">{s.th}</p>
               </div>
               {s.total > 0 && <span className="shrink-0 font-mono text-sm text-(--ac-gold-ink) tabular">{s.done}/{s.total}</span>}

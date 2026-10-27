@@ -192,7 +192,7 @@ function ContinueCard({ lesson, best }: { lesson: Lesson; best?: number }) {
 function SectionHead({ title, note }: { title: string; note?: string }) {
   return (
     <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
-      <h2 className="text-[21px] font-bold text-(--ac-navy)">{title}</h2>
+      <h2 className="text-[21px] font-bold text-(--ac-heading)">{title}</h2>
       {note && <span className="text-xs text-(--ac-muted)">{note}</span>}
     </div>
   );

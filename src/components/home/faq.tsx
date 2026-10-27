@@ -9,7 +9,7 @@ export function Faq() {
       {FAQ.map((item, i) => (
         <details key={item.q} className="group" open={i === 0}>
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-left transition hover:bg-(--ac-bg) [&::-webkit-details-marker]:hidden">
-            <span className="ac-serif text-[18px] font-semibold text-(--ac-navy) sm:text-[19px]">{item.q}</span>
+            <span className="ac-serif text-[18px] font-semibold text-(--ac-heading) sm:text-[19px]">{item.q}</span>
             <PlusIcon className="size-5 shrink-0 text-(--ac-gold) transition group-open:rotate-45" aria-hidden />
           </summary>
           <div className="px-6 pb-6 text-[15px] leading-7 text-(--ac-body)">

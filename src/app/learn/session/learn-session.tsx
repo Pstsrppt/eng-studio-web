@@ -258,7 +258,7 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
             cover={revealed ? {} : { th: true, examples: true, photo: hidePicture }}
             hint="นึกความหมายในใจก่อน แล้วกดเปิดเฉลย" />
           {revealed && current.note && (
-            <p className="mt-3 rounded-xl border border-(--ac-line) bg-card px-4 py-3 text-sm leading-6"><b className="font-semibold text-(--ac-navy)">เกร็ดการใช้คำ:</b> {current.note}</p>
+            <p className="mt-3 rounded-xl border border-(--ac-line) bg-card px-4 py-3 text-sm leading-6"><b className="font-semibold text-(--ac-heading)">เกร็ดการใช้คำ:</b> {current.note}</p>
           )}
         </div>
       )}

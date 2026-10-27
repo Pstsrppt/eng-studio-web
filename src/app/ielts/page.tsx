@@ -19,7 +19,7 @@ export default function IeltsPage() {
       </div>
       <IeltsIntro headingLevel={2} />
       <section id="about-odyssey" className="card flex scroll-mt-24 flex-col gap-2 p-5 sm:p-6" aria-labelledby="about-odyssey-title">
-        <h2 id="about-odyssey-title" className="ac-serif text-xl font-bold text-(--ac-navy)">เกี่ยวกับ Odyssey</h2>
+        <h2 id="about-odyssey-title" className="ac-serif text-xl font-bold text-(--ac-heading)">เกี่ยวกับ Odyssey</h2>
         <p className="text-sm leading-6 text-(--ac-body)">{DISCLAIMER.th}</p>
         <p className="text-sm leading-6 text-(--ac-body)">{TRADEMARK_NOTE.th}</p>
         <p lang="en" className="text-sm leading-6 text-(--ac-muted)">{DISCLAIMER.en} {TRADEMARK_NOTE.en}</p>
@@ -27,7 +27,7 @@ export default function IeltsPage() {
       </section>
       <div className="card flex flex-wrap items-center justify-between gap-4 p-5 sm:p-6">
         <div>
-          <p className="font-semibold text-(--ac-navy)">ขั้นต่อไป: รู้ระดับของตัวเอง</p>
+          <p className="font-semibold text-(--ac-heading)">ขั้นต่อไป: รู้ระดับของตัวเอง</p>
           <p className="text-sm text-(--ac-muted)">สอบวัดระดับ 5–8 นาที แล้วเว็บจะแนะนำบทที่ควรเริ่ม</p>
         </div>
         <Link href="/placement" className="btn">สอบวัดระดับ <ArrowRightIcon className="size-4" aria-hidden /></Link>

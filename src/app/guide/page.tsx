@@ -22,7 +22,7 @@ function Section({ id, children }: { id: string; children: ReactNode }) {
   const title = SECTIONS.find((s) => s.id === id)?.title;
   return (
     <section id={id} className="card scroll-mt-24 p-5 sm:p-7">
-      <h2 className="mb-3 text-[22px] font-bold text-(--ac-navy)">{title}</h2>
+      <h2 className="mb-3 text-[22px] font-bold text-(--ac-heading)">{title}</h2>
       <div className="prose-lesson">{children}</div>
     </section>
   );

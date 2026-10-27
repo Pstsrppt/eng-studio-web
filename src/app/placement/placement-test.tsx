@@ -131,7 +131,7 @@ export function PlacementTest({ questions, lessons, levels, signedIn, history }:
         </div>
         <div key={current.id} className="learn-in card flex flex-col gap-5 p-5 sm:p-7">
           <p className="w-fit rounded-full bg-(--ac-gold-soft) px-3 py-1 text-xs font-semibold text-(--ac-gold-ink)">เลือกคำที่เติมในช่องว่างแล้วถูกต้องที่สุด</p>
-          <p className="text-[22px] leading-[1.45] font-semibold text-(--ac-navy) sm:text-[26px]">{current.q.replace("___", "______")}</p>
+          <p className="text-[22px] leading-[1.45] font-semibold text-(--ac-heading) sm:text-[26px]">{current.q.replace("___", "______")}</p>
           <div className="grid gap-3 sm:grid-cols-2" role="group" aria-label="ตัวเลือก">
             {current.o.map((opt, i) => (
               <button key={opt} type="button" disabled={checking} onClick={() => choose(i)}

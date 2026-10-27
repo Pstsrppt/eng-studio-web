@@ -19,17 +19,17 @@ export function IeltsIntro({ headingLevel = 2 }: { headingLevel?: 2 | 3 }) {
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
         <div className="flex flex-col gap-4 text-[16px] leading-7 text-(--ac-body)">
           <p>
-            <b className="text-(--ac-navy)">IELTS</b> (International English Language Testing System) คือข้อสอบวัดความสามารถภาษาอังกฤษ
-            ที่มหาวิทยาลัย บริษัท และหน่วยงานด้านวีซ่าในหลายประเทศใช้ ผลสอบบอกเป็น <b className="text-(--ac-navy)">Band 0–9</b>
+            <b className="text-(--ac-heading)">IELTS</b> (International English Language Testing System) คือข้อสอบวัดความสามารถภาษาอังกฤษ
+            ที่มหาวิทยาลัย บริษัท และหน่วยงานด้านวีซ่าในหลายประเทศใช้ ผลสอบบอกเป็น <b className="text-(--ac-heading)">Band 0–9</b>
             แยกทีละทักษะ และมีคะแนนรวม (Overall)
           </p>
           <ul className="grid gap-3 sm:grid-cols-2">
             <li className="card p-5">
-              <b className="block text-(--ac-navy)">Academic</b>
+              <b className="block text-(--ac-heading)">Academic</b>
               <span className="text-sm leading-6 text-(--ac-muted)">สำหรับเรียนต่อปริญญาตรี–โท หรือวิชาชีพบางสาขา</span>
             </li>
             <li className="card p-5">
-              <b className="block text-(--ac-navy)">General Training</b>
+              <b className="block text-(--ac-heading)">General Training</b>
               <span className="text-sm leading-6 text-(--ac-muted)">สำหรับทำงานหรือย้ายถิ่นฐาน Reading และ Writing Task 1 ต่างจาก Academic</span>
             </li>
           </ul>
@@ -55,7 +55,7 @@ export function IeltsIntro({ headingLevel = 2 }: { headingLevel?: 2 | 3 }) {
         {SKILLS.map(({ en, th, time, what, Icon }) => (
           <li key={en} className="card flex flex-col gap-2 p-5">
             <span className="grid size-11 place-items-center rounded-xl bg-(--ac-gold-soft) text-(--ac-gold-ink)"><Icon className="size-5" aria-hidden /></span>
-            <H className="ac-serif mt-1 text-xl font-bold text-(--ac-navy)">{en}</H>
+            <H className="ac-serif mt-1 text-xl font-bold text-(--ac-heading)">{en}</H>
             <span className="text-xs font-medium text-(--ac-gold-ink)">{th} · {time}</span>
             <p className="text-sm leading-6 text-(--ac-body)">{what}</p>
           </li>
@@ -64,7 +64,7 @@ export function IeltsIntro({ headingLevel = 2 }: { headingLevel?: 2 | 3 }) {
       <div className="grid gap-4 lg:grid-cols-2">
         <section className="card flex flex-col gap-3 p-5 sm:p-6" aria-labelledby="overall-title">
           <span className="grid size-11 place-items-center rounded-xl bg-(--ac-gold-soft) text-(--ac-gold-ink)"><SigmaIcon className="size-5" aria-hidden /></span>
-          <H id="overall-title" className="ac-serif text-xl font-bold text-(--ac-navy)">Band รวม (Overall) คิดอย่างไร</H>
+          <H id="overall-title" className="ac-serif text-xl font-bold text-(--ac-heading)">Band รวม (Overall) คิดอย่างไร</H>
           <p className="text-sm leading-6 text-(--ac-body)">{OVERALL_RULE.th}</p>
           <ul className="grid grid-cols-3 gap-2">
             {ROUNDING_EXAMPLES.map((e) => (
@@ -81,7 +81,7 @@ export function IeltsIntro({ headingLevel = 2 }: { headingLevel?: 2 | 3 }) {
         </section>
         <section className="card flex flex-col gap-3 p-5 sm:p-6" aria-labelledby="format-title">
           <span className="grid size-11 place-items-center rounded-xl bg-(--ac-gold-soft) text-(--ac-gold-ink)"><MonitorIcon className="size-5" aria-hidden /></span>
-          <H id="format-title" className="ac-serif text-xl font-bold text-(--ac-navy)">รูปแบบการสอบตั้งแต่ปี 2026</H>
+          <H id="format-title" className="ac-serif text-xl font-bold text-(--ac-heading)">รูปแบบการสอบตั้งแต่ปี 2026</H>
           <ul className="flex flex-col gap-2">
             {FORMAT_UPDATE.points.map((p) => (
               <li key={p.en} className="flex gap-2.5 text-sm leading-6 text-(--ac-body)">
@@ -90,7 +90,7 @@ export function IeltsIntro({ headingLevel = 2 }: { headingLevel?: 2 | 3 }) {
               </li>
             ))}
           </ul>
-          <p className="rounded-lg bg-(--ac-gold-soft) px-3 py-2.5 text-sm font-medium text-(--ac-navy)">{FORMAT_UPDATE.advice.th}</p>
+          <p className="rounded-lg bg-(--ac-gold-soft) px-3 py-2.5 text-sm font-medium text-(--ac-heading)">{FORMAT_UPDATE.advice.th}</p>
           <p className="text-xs leading-5 text-(--ac-muted)">
             ตามประกาศวันที่ {FORMAT_UPDATE.announcedTh} · ตรวจข้อมูลล่าสุด {FORMAT_UPDATE.checkedTh}{" "}
             <a href={FORMAT_SOURCE} target="_blank" rel="noreferrer" className="inline-flex min-h-6 items-center gap-1 underline hover:text-(--ac-navy)">ที่มา: ielts.org<ExternalLinkIcon className="size-3" aria-hidden /></a>
