@@ -1,0 +1,39 @@
+// Which primary menu item a page belongs to. One function for the desktop menu and the phone tab bar,
+// so the two can never highlight different things.
+
+export type NavGroup = "home" | "study" | "roadmap" | "ielts" | "tools" | "account";
+export type NavLink = { href: string; label: string; sub: string };
+
+/** The study pages grouped under "เรียน". /study arrives in a later release; until then "เรียน" opens /today. */
+export const STUDY_LINKS: NavLink[] = [
+  { href: "/today", label: "วันนี้", sub: "แผนวันนี้และบทที่เรียนต่อ" },
+  { href: "/grammar", label: "บทเรียน", sub: "ไวยากรณ์ A1–B2 ทีละบท" },
+  { href: "/learn", label: "ฝึกศัพท์", sub: "Flashcards ทวนตามรอบ" },
+  { href: "/vocab", label: "คำศัพท์", sub: "คลังคำศัพท์ทั้งหมด" },
+];
+
+export const TOOL_LINKS: NavLink[] = [
+  { href: "/verbs", label: "V1-V2-V3", sub: "กริยาผันไม่ปกติ" },
+  { href: "/sounds", label: "ออกเสียง", sub: "เสียงที่คนไทยมักออกผิด" },
+  { href: "/mistakes", label: "ทบทวนข้อผิด", sub: "ทำข้อที่เคยตอบผิดซ้ำจนถูก" },
+  { href: "/guide", label: "คู่มือ", sub: "n. v. adj. V3 กริยาช่วย คืออะไร" },
+];
+
+export const STUDY_HOME = "/today";
+
+const under = (pathname: string, base: string) => pathname === base || pathname.startsWith(base + "/");
+
+export function navGroup(pathname: string): NavGroup | null {
+  if (pathname === "/") return "home";
+  if (STUDY_LINKS.some((l) => under(pathname, l.href))) return "study";
+  if (TOOL_LINKS.some((l) => under(pathname, l.href))) return "tools";
+  if (under(pathname, "/roadmap")) return "roadmap";
+  if (under(pathname, "/ielts")) return "ielts";
+  if (["/account", "/login", "/welcome", "/forgot-password", "/reset-password"].some((b) => under(pathname, b))) return "account";
+  return null;
+}
+
+/** The study page whose sub-menu item is current: the four list pages only, not a lesson or a flashcard session. */
+export function studyPage(pathname: string): string | null {
+  return STUDY_LINKS.find((l) => l.href === pathname)?.href ?? null;
+}
