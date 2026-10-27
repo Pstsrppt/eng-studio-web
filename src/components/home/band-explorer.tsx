@@ -3,12 +3,10 @@
 import { ArrowRightIcon, ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { BANDS, OVERALL_RULE } from "@/content/ielts-guide";
+import { BANDS, OVERALL_RULE, SCORING_SOURCE } from "@/content/ielts-guide";
 import { Thai } from "./thai";
 
-const SOURCE = "https://ielts.org/take-a-test/your-results/ielts-scoring-in-detail";
-
-/** Explains what a band means and what to work on. An explainer, not an assessment of the learner. */
+/** Explains what a band means and what to work on, in our own words. An explainer, not an assessment of the learner. */
 export function BandExplorer() {
   const [band, setBand] = useState("6.5");
   const info = BANDS.find((b) => b.band === band)!;
@@ -32,18 +30,16 @@ export function BandExplorer() {
       </div>
       <div key={band} className="learn-in flex flex-col gap-5 p-6 lg:p-8">
         <div>
-          <p className="mb-2 font-mono text-[11px] tracking-[0.18em] text-(--ac-gold-ink)">WHAT IT MEANS (OFFICIAL BAND SCALE)</p>
-          {info.official ? (
-            <blockquote className="border-l-2 border-(--ac-gold-bright) pl-4 text-[15px] leading-7 text-(--ac-ink)">
-              “{info.official}”
-              <Thai className="mt-1 text-sm leading-6 text-(--ac-muted)">{info.officialTh}</Thai>
-            </blockquote>
-          ) : (
-            <p className="text-[15px] leading-7 text-(--ac-ink)">
-              The official scale describes whole bands only. Band {info.band} sits between band {Math.floor(Number(info.band))} and band {Math.ceil(Number(info.band))}: choose those to read both descriptions.
-              <Thai className="text-sm leading-6 text-(--ac-muted)">คำอธิบายทางการมีเฉพาะ Band เต็ม Band {info.band} อยู่ระหว่าง Band {Math.floor(Number(info.band))} กับ {Math.ceil(Number(info.band))} เลือกสองตัวนั้นเพื่ออ่านคำอธิบาย</Thai>
-            </p>
-          )}
+          <p className="mb-2 font-mono text-[11px] tracking-[0.18em] text-(--ac-gold-ink)">IN PRACTICE · ODYSSEY STUDY NOTE</p>
+          <p className="border-l-2 border-(--ac-gold-bright) pl-4 text-[15px] leading-7 text-(--ac-ink)">
+            {info.summary.en}
+            <Thai className="mt-1 text-sm leading-6 text-(--ac-muted)">{info.summary.th}</Thai>
+          </p>
+          <p className="mt-2 text-xs leading-5 text-(--ac-muted)">
+            Our own summary for planning study, not the official band descriptor.{" "}
+            <a href={SCORING_SOURCE} target="_blank" rel="noreferrer" className="inline-flex min-h-6 items-center gap-1 underline hover:text-(--ac-navy)">Read the official descriptions on ielts.org<ExternalLinkIcon className="size-3" aria-hidden /></a>
+            <Thai>สรุปโดย Odyssey เพื่อวางแผนการเรียน ไม่ใช่คำอธิบาย Band อย่างเป็นทางการ อ่านเกณฑ์ทางการได้ที่ ielts.org</Thai>
+          </p>
         </div>
         <div>
           <p className="mb-2 font-mono text-[11px] tracking-[0.18em] text-(--ac-gold-ink)">WHAT TO WORK ON</p>
@@ -66,7 +62,7 @@ export function BandExplorer() {
         </div>
         <p className="border-t border-(--ac-line) pt-4 text-xs leading-5 text-(--ac-muted)">
           {OVERALL_RULE.en} This explorer explains the scale; it does not estimate your band, and no number of lessons guarantees a result.{" "}
-          <a href={SOURCE} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 underline hover:text-(--ac-navy)">Source: ielts.org<ExternalLinkIcon className="size-3" aria-hidden /></a>
+          <a href={SCORING_SOURCE} target="_blank" rel="noreferrer" className="inline-flex min-h-6 items-center gap-1 underline hover:text-(--ac-navy)">Scoring rule: ielts.org<ExternalLinkIcon className="size-3" aria-hidden /></a>
           <Thai className="mt-1">{OVERALL_RULE.th} ส่วนนี้อธิบายความหมายของ Band เท่านั้น ไม่ได้ประเมินคะแนนของคุณ และการเรียนครบจำนวนบทไม่ได้รับประกัน Band ใด</Thai>
         </p>
       </div>

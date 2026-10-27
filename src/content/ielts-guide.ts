@@ -1,9 +1,23 @@
-// Facts about IELTS for the Home page guide. English first, Thai alongside (shown with the
-// "คำแปลไทย" toggle). Band descriptions quote the official IELTS band scale:
-// https://ielts.org/take-a-test/your-results/ielts-scoring-in-detail
+// Facts about IELTS for the Home page guide and /ielts. English first, Thai alongside (shown with the
+// "คำแปลไทย" toggle). Scoring facts follow the official page linked as SCORING_SOURCE; the band
+// summaries are written for this site and are not the official band descriptors.
 // Nothing here is a learner's score; the explorer only explains what a band means.
 
 export type Bilingual = { en: string; th: string };
+
+export const SCORING_SOURCE = "https://ielts.org/take-a-test/your-results/ielts-scoring-in-detail";
+export const FORMAT_SOURCE = "https://ielts.org/news-and-insights/updates-to-ielts-test-delivery";
+
+/** Shown in the footer and on /ielts. A disclaimer alone does not settle trade mark questions; see the P0 notes. */
+export const DISCLAIMER: Bilingual = {
+  en: "Odyssey is an independent English and IELTS preparation website. It is not part of, and is not endorsed by, the organisations that run the IELTS test.",
+  th: "Odyssey เป็นเว็บไซต์เตรียมภาษาอังกฤษและ IELTS อิสระ ไม่ได้เป็นส่วนหนึ่งของหรือได้รับการรับรองโดยผู้จัดสอบ IELTS",
+};
+
+export const TRADEMARK_NOTE: Bilingual = {
+  en: "IELTS is a trade mark of its owners and is named here only to refer to the test.",
+  th: "IELTS เป็นเครื่องหมายการค้าของเจ้าของสิทธิ์ เว็บนี้ใช้ชื่อนี้เพื่ออ้างถึงข้อสอบเท่านั้น",
+};
 
 export type TestType = {
   id: "academic" | "general";
@@ -49,35 +63,46 @@ export const TEST_NOTES: Bilingual[] = [
 
 export type BandInfo = {
   band: string;
-  /** Official skill level for whole bands; half bands sit between two of them. */
+  /** The official level name for whole bands (a label only); half bands sit between two of them. */
   level: string;
-  /** Quoted from the official band scale (whole bands only). */
-  official?: string;
-  officialTh?: string;
+  /** Our own study-oriented summary, written for this site. Not the official descriptor and not a translation of it. */
+  summary: Bilingual;
   focus: Bilingual[];
   stage: string;
 };
 
-const WHOLE: Record<number, { level: string; official: string; officialTh: string }> = {
-  5: {
-    level: "Modest",
-    official: "The test taker has a partial command of the language and copes with overall meaning in most situations, although they are likely to make many mistakes. They should be able to handle basic communication in their own field.",
-    officialTh: "ใช้ภาษาได้บางส่วน เข้าใจความหมายโดยรวมในสถานการณ์ส่วนใหญ่ แต่มีแนวโน้มผิดพลาดมาก ควรสื่อสารพื้นฐานในสายงานของตัวเองได้",
+/** Level names from the official band scale. Only the names are used; every description below is ours. */
+const LEVEL: Record<number, string> = { 5: "Modest", 6: "Competent", 7: "Good", 8: "Very good" };
+
+/** What learners around each band tend to manage and struggle with, seen from the teaching side. Planning help only. */
+const SUMMARY: Record<string, Bilingual> = {
+  "5.0": {
+    en: "Short, everyday exchanges work: you can ask and answer questions, talk about your routine and pick out key facts from simple texts. Longer or abstract material is hard to keep up with, and frequent grammar slips mean people sometimes have to work to understand you.",
+    th: "บทสนทนาสั้นๆ ในชีวิตประจำวันทำได้ ถามตอบ เล่าเรื่องกิจวัตร และหาข้อมูลสำคัญจากข้อความง่ายๆ ได้ แต่เนื้อหายาวหรือนามธรรมยังตามได้ยาก และไวยากรณ์พลาดบ่อยจนบางครั้งคนฟังต้องพยายามจึงจะเข้าใจ",
   },
-  6: {
-    level: "Competent",
-    official: "The test taker has an effective command of the language despite some inaccuracies, inappropriate usage and misunderstandings. They can use and understand reasonably complex language, particularly in familiar situations.",
-    officialTh: "ใช้ภาษาได้อย่างมีประสิทธิภาพ แม้มีจุดผิด ใช้ไม่เหมาะสม หรือเข้าใจผิดบ้าง ใช้และเข้าใจภาษาที่ค่อนข้างซับซ้อนได้ โดยเฉพาะในเรื่องที่คุ้นเคย",
+  "5.5": {
+    en: "A step beyond 5: everyday communication feels more secure, but accuracy and range are still uneven. One skill is often clearly ahead of the others, so the overall band can hide a weaker area.",
+    th: "ก้าวต่อจาก 5 การสื่อสารในชีวิตประจำวันมั่นใจขึ้น แต่ความแม่นและความหลากหลายของภาษายังไม่สม่ำเสมอ มักมีทักษะหนึ่งนำทักษะอื่นชัด Band รวมจึงอาจบังจุดอ่อนไว้",
   },
-  7: {
-    level: "Good",
-    official: "The test taker has operational command of the language, though with occasional inaccuracies, inappropriate usage and misunderstandings in some situations. They generally handle complex language well and understand detailed reasoning.",
-    officialTh: "ใช้ภาษาได้คล่อง แม้บางครั้งมีจุดผิด ใช้ไม่เหมาะสม หรือเข้าใจผิดในบางสถานการณ์ โดยทั่วไปรับมือภาษาที่ซับซ้อนได้ดี และเข้าใจการให้เหตุผลที่ละเอียด",
+  "6.0": {
+    en: "You can study or work in English day to day: join a discussion, write a structured answer, read most of a course text. Harder ideas take noticeably more effort, and mistakes and the odd wrong word still show, though they rarely stop the message getting through.",
+    th: "ใช้ภาษาอังกฤษเรียนหรือทำงานในแต่ละวันได้ ร่วมอภิปราย เขียนคำตอบที่มีโครงสร้าง และอ่านเอกสารประกอบการเรียนได้เป็นส่วนใหญ่ เรื่องที่ยากขึ้นยังต้องใช้แรงมากกว่าชัดเจน และยังเห็นจุดผิดหรือการเลือกคำพลาด แต่แทบไม่ทำให้สื่อสารไม่ได้",
   },
-  8: {
-    level: "Very good",
-    official: "The test taker has fully operational command of the language with only occasional unsystematic inaccuracies and inappropriate usage. They may misunderstand some things in unfamiliar situations. They handle complex and detailed argumentation well.",
-    officialTh: "ใช้ภาษาได้คล่องเต็มที่ ผิดหรือใช้ไม่เหมาะสมเพียงบางครั้งโดยไม่เป็นรูปแบบ อาจเข้าใจผิดบ้างในสถานการณ์ที่ไม่คุ้นเคย รับมือการโต้แย้งที่ซับซ้อนและละเอียดได้ดี",
+  "6.5": {
+    en: "A common target for university entry. Between 6 and 7: longer sentences and less common words come more often and with more control, but errors still creep in when time is short or the topic is new to you.",
+    th: "เป็นเป้าหมายที่หลายมหาวิทยาลัยขอ อยู่ระหว่าง 6 กับ 7 ใช้ประโยคยาวและคำที่ไม่พื้นฐานได้บ่อยขึ้นและคุมได้ดีขึ้น แต่ยังพลาดเมื่อเวลาจำกัดหรือเจอหัวข้อใหม่",
+  },
+  "7.0": {
+    en: "Long, demanding texts and talks are within reach. You can explain a view with reasons and pick words for effect, not just to be understood. Errors turn up now and then rather than in every paragraph, and seldom change what you mean.",
+    th: "บทอ่านและการบรรยายที่ยาวและยากอยู่ในระดับที่รับมือได้ อธิบายความเห็นพร้อมเหตุผลได้ และเลือกคำให้ได้ผลตามต้องการ ไม่ใช่แค่ให้เข้าใจ ข้อผิดพลาดมีเป็นครั้งคราว ไม่ใช่ทุกย่อหน้า และไม่ค่อยเปลี่ยนความหมาย",
+  },
+  "7.5": {
+    en: "Between 7 and 8: control is strong across most tasks. What separates you from 8 is usually consistency, keeping precision and natural word choice all the way through a timed paper.",
+    th: "อยู่ระหว่าง 7 กับ 8 ควบคุมภาษาได้ดีในงานเกือบทุกแบบ สิ่งที่ห่างจาก 8 มักเป็นความสม่ำเสมอ คือรักษาความแม่นและการเลือกคำที่เป็นธรรมชาติไว้ได้ตลอดการสอบแบบจับเวลา",
+  },
+  "8.0": {
+    en: "English rarely limits what you can do. You can argue a case in depth, adjust your tone to the audience and recover quickly from the rare slip. Remaining gaps tend to show only on very specialised subjects.",
+    th: "ภาษาอังกฤษแทบไม่จำกัดสิ่งที่คุณทำได้ โต้แย้งประเด็นได้ลึก ปรับน้ำเสียงให้เหมาะกับผู้ฟัง และแก้ตัวได้เร็วเมื่อพลาดซึ่งเกิดไม่บ่อย ช่องว่างที่เหลือมักเห็นเฉพาะในเรื่องเฉพาะทางมากๆ",
   },
 };
 
@@ -117,16 +142,57 @@ const STAGE_FOR: Record<string, string> = { "5.0": "foundation", "5.5": "grammar
 
 export const BANDS: BandInfo[] = ["5.0", "5.5", "6.0", "6.5", "7.0", "7.5", "8.0"].map((band) => {
   const n = Number(band);
-  const whole = WHOLE[n];
-  return whole
-    ? { band, level: whole.level, official: whole.official, officialTh: whole.officialTh, focus: FOCUS[band], stage: STAGE_FOR[band] }
-    : { band, level: `Between ${WHOLE[Math.floor(n)].level} and ${WHOLE[Math.ceil(n)].level}`, focus: FOCUS[band], stage: STAGE_FOR[band] };
+  const level = LEVEL[n] ?? `Between ${LEVEL[Math.floor(n)]} and ${LEVEL[Math.ceil(n)]}`;
+  return { band, level, summary: SUMMARY[band], focus: FOCUS[band], stage: STAGE_FOR[band] };
 });
 
-/** Official rule for the overall band (quoted from the same page). */
+/**
+ * The overall band from the average of the four skills, as the scoring page explains it: nearest half band,
+ * with .25 rounding up to the next half band and .75 up to the next whole band. For explaining the rule only;
+ * nothing on this site produces an IELTS band.
+ */
+export function overallBand(average: number): number {
+  // Averages of half bands are multiples of 0.125, so this is exact in floating point.
+  return Math.floor(average * 2 + 0.5) / 2;
+}
+
+export const ROUNDING_EXAMPLES: { average: number; overall: number }[] = [
+  { average: 6.25, overall: 6.5 },
+  { average: 6.75, overall: 7.0 },
+  { average: 6.125, overall: 6.0 },
+];
+
+const examples = ROUNDING_EXAMPLES.map((e) => `${e.average} → ${e.overall.toFixed(1)}`).join(", ");
+
 export const OVERALL_RULE: Bilingual = {
-  en: "The overall band score is the average of the four section band scores rounded to the nearest half band.",
-  th: "Band รวมคือค่าเฉลี่ยของ 4 ทักษะ ปัดเป็นครึ่ง Band ที่ใกล้ที่สุด",
+  en: `The overall band is the average of the Listening, Reading, Writing and Speaking bands, rounded to a whole or half band. An average ending in .25 rounds up to the next half band, and one ending in .75 rounds up to the next whole band. Examples: ${examples}.`,
+  th: `Band รวมคือค่าเฉลี่ยของ Listening, Reading, Writing และ Speaking แล้วปัดเป็น Band เต็มหรือครึ่ง Band ถ้าค่าเฉลี่ยลงท้าย .25 ปัดขึ้นเป็นครึ่ง Band ถัดไป ถ้าลงท้าย .75 ปัดขึ้นเป็น Band เต็มถัดไป ตัวอย่าง: ${examples}`,
+};
+
+/** The move to computer delivery, from the announcement of 5 March 2026. Re-check the source before relying on it. */
+export const FORMAT_UPDATE = {
+  announced: "5 March 2026",
+  announcedTh: "5 มีนาคม 2026",
+  checked: "27 October 2026",
+  checkedTh: "27 ตุลาคม 2026",
+  points: [
+    {
+      en: "From mid-2026, IELTS is moving from paper to computer delivery. Exact timelines vary by country and test centre.",
+      th: "ตั้งแต่กลางปี 2026 IELTS ทยอยเปลี่ยนจากสอบบนกระดาษเป็นสอบบนคอมพิวเตอร์ กำหนดการจริงต่างกันไปตามประเทศและศูนย์สอบ",
+    },
+    {
+      en: "In selected markets only, you may be able to choose Writing on Paper: you handwrite the Writing test while the other parts stay on computer.",
+      th: "บางตลาดเท่านั้นที่อาจเลือก Writing on Paper ได้ คือเขียน Writing ด้วยมือบนกระดาษ ส่วนทักษะอื่นยังสอบบนคอมพิวเตอร์",
+    },
+    {
+      en: "Paper-based results you already have are not affected.",
+      th: "ผลสอบแบบกระดาษที่มีอยู่แล้วไม่ได้รับผลกระทบ",
+    },
+  ] satisfies Bilingual[],
+  advice: {
+    en: "Before you book, check which format your test centre offers on your date.",
+    th: "ก่อนสมัคร ตรวจกับศูนย์สอบว่าวันที่คุณเลือกสอบในรูปแบบใด",
+  } satisfies Bilingual,
 };
 
 export const FAQ: { q: string; a: Bilingual }[] = [
@@ -154,8 +220,15 @@ export const FAQ: { q: string; a: Bilingual }[] = [
   {
     q: "How do IELTS band scores work?",
     a: {
-      en: "Each skill gets a band from 0 to 9, and half bands such as 6.5 are possible. The overall band is the average of the four, rounded to the nearest half band. Many institutions ask for an overall band and a minimum in each skill.",
-      th: "แต่ละทักษะได้ Band 0–9 และมีครึ่ง Band เช่น 6.5 ได้ Band รวมคือค่าเฉลี่ยของ 4 ทักษะ ปัดเป็นครึ่ง Band ที่ใกล้ที่สุด หลายสถาบันกำหนดทั้ง Band รวมและคะแนนขั้นต่ำของแต่ละทักษะ",
+      en: `Each skill gets a band from 0 to 9, and half bands such as 6.5 are possible. ${OVERALL_RULE.en} Many institutions ask for an overall band and a minimum in each skill.`,
+      th: `แต่ละทักษะได้ Band 0–9 และมีครึ่ง Band เช่น 6.5 ได้ ${OVERALL_RULE.th} หลายสถาบันกำหนดทั้ง Band รวมและคะแนนขั้นต่ำของแต่ละทักษะ`,
+    },
+  },
+  {
+    q: "Is IELTS still taken on paper?",
+    a: {
+      en: `${FORMAT_UPDATE.points[0].en} ${FORMAT_UPDATE.points[1].en} ${FORMAT_UPDATE.advice.en} (Announced ${FORMAT_UPDATE.announced}; checked ${FORMAT_UPDATE.checked}.)`,
+      th: `${FORMAT_UPDATE.points[0].th} ${FORMAT_UPDATE.points[1].th} ${FORMAT_UPDATE.advice.th} (ประกาศเมื่อ ${FORMAT_UPDATE.announcedTh} ตรวจข้อมูลล่าสุด ${FORMAT_UPDATE.checkedTh})`,
     },
   },
   {
@@ -170,6 +243,13 @@ export const FAQ: { q: string; a: Bilingual }[] = [
     a: {
       en: "No. Quiz and practice scores show how well you know a lesson, and the placement test gives a CEFR level (A1–B2), not an IELTS band. Official results come only from an IELTS test taken at an official test centre.",
       th: "ไม่ใช่ คะแนนแบบทดสอบและแบบฝึกบอกว่าเข้าใจบทเรียนแค่ไหน และสอบวัดระดับบอกระดับ CEFR (A1–B2) ไม่ใช่ Band IELTS ผลอย่างเป็นทางการได้จากการสอบ IELTS ที่ศูนย์สอบที่ได้รับอนุญาตเท่านั้น",
+    },
+  },
+  {
+    q: "Is Odyssey an official IELTS website?",
+    a: {
+      en: `No. ${DISCLAIMER.en} The band summaries here are our own study notes; the official band descriptions and scoring rules are on ielts.org.`,
+      th: `ไม่ใช่ ${DISCLAIMER.th} คำอธิบาย Band ในเว็บนี้เป็นบันทึกการเรียนที่เราเขียนเอง คำอธิบายและเกณฑ์คะแนนทางการอยู่ที่ ielts.org`,
     },
   },
 ];

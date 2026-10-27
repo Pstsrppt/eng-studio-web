@@ -32,7 +32,7 @@ export default function HomePage() {
           <TestChooser />
         </Section>
         <Section id="bands" eyebrow="BAND SCORES" title="Know Your Band. Plan Your Progress."
-          subtitle="Choose a band to read what it means on the official scale and what to work on next.">
+          subtitle="Choose a band to see what it tends to mean in practice and what to work on next.">
           <BandExplorer />
         </Section>
         <Section id="how" eyebrow="HOW IT WORKS" title="Your Learning Journey, Made Simple.">
