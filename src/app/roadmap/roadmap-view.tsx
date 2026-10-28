@@ -2,7 +2,7 @@
 
 import { ArrowRightIcon, CheckIcon, CircleDotIcon, ClockIcon, ListIcon, LockIcon, MapIcon, SparklesIcon } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { STAGE_LOOK } from "@/components/stage-look";
 import type { StageItem, StageProgress } from "@/content/stages";
 
@@ -129,14 +129,31 @@ function SplitNote({ split: { rec, open }, lesson, placed, onChoose }: { split: 
 
 /** The seven stages in order. Selecting one updates the cards below without leaving the page. */
 function StagePath({ stages, selected, onChoose, split }: { stages: StageProgress[]; selected: string; onChoose: (id: string) => void; split?: Split }) {
+  const row = useRef<HTMLOListElement>(null);
+  const first = useRef(true);
+  // Phones and tablets: the stations scroll sideways, so bring the selected one into view. Only the row scrolls,
+  // never the page. On load it is centred before paint; later it moves only if the selected station is out of view,
+  // so manual scrolling and tapping are left alone. Computers show all seven, so nothing scrolls there.
+  useLayoutEffect(() => {
+    const ol = row.current;
+    const li = ol?.querySelector<HTMLElement>(`[data-stage="${selected}"]`);
+    const initial = first.current;
+    first.current = false;
+    if (!ol || !li || ol.scrollWidth <= ol.clientWidth) return;
+    const box = ol.getBoundingClientRect(), item = li.getBoundingClientRect();
+    if (!initial && item.left >= box.left && item.right <= box.right) return;
+    const left = ol.scrollLeft + item.left - box.left - (ol.clientWidth - item.width) / 2;
+    const smooth = !initial && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    ol.scrollTo({ left: Math.max(0, Math.min(left, ol.scrollWidth - ol.clientWidth)), behavior: smooth ? "smooth" : "instant" });
+  }, [selected]);
   return (
     <section aria-label="7 สถานีการเรียน" className="rounded-2xl border border-(--ac-line) bg-card p-5 shadow-(--ac-shadow) lg:px-8 lg:py-8">
-      <ol className="-mx-1 flex snap-x gap-2 overflow-x-auto px-1 pb-1 lg:mx-0 lg:grid lg:grid-cols-7 lg:gap-0 lg:overflow-visible lg:px-0 lg:pb-0">
+      <ol ref={row} className="-mx-1 flex snap-x gap-2 overflow-x-auto px-1 pb-1 lg:mx-0 lg:grid lg:grid-cols-7 lg:gap-0 lg:overflow-visible lg:px-0 lg:pb-0">
         {stages.map((s, i) => {
           const look = STAGE_LOOK[s.id];
           const on = s.id === selected;
           return (
-            <li key={s.id} className="relative flex w-[150px] shrink-0 snap-start lg:w-auto">
+            <li key={s.id} data-stage={s.id} className="relative flex w-[150px] shrink-0 snap-center lg:w-auto">
               {i < stages.length - 1 && (
                 <span className={"absolute top-10 left-[calc(50%+38px)] right-[calc(-50%+38px)] hidden h-0.5 rounded-full lg:block " + (s.status === "done" ? "bg-(--ac-gold-bright)" : "bg-(--ac-line)")} aria-hidden />
               )}
@@ -188,7 +205,7 @@ function StageCard({ stage, signedIn, split, recommended }: { stage: StageProgre
           <>
             <Link href={target.href} data-next-lesson={recommended?.lessonId}
               className="od-press inline-flex w-fit items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-5 py-3 text-[15px] font-semibold text-(--ac-navy) hover:bg-accent-on-dark-hover">
-              {stage.done > 0 || recommended ? "Continue Learning" : "Start Stage"} <ArrowRightIcon className="size-4" aria-hidden />
+              {stage.done > 0 ? "เรียนต่อ" : recommended ? "เริ่มบทที่แนะนำ" : "Start Stage"} <ArrowRightIcon className="size-4" aria-hidden />
             </Link>
             <span className="text-sm text-on-dark-muted">{recommended ? "แนะนำต่อ" : "Next"}: <span className="text-white">{target.title}</span></span>
           </>
