@@ -4,7 +4,7 @@ import { BookOpenIcon, ChevronDownIcon, CompassIcon, HomeIcon, UserRoundIcon } f
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
-import { STUDY_HOME, STUDY_LINKS, TOOL_LINKS, navGroup, studyPage, type NavGroup, type NavLink } from "./nav-groups";
+import { STUDY_HOME, STUDY_LINKS, TOOL_LINKS, ariaCurrent, navGroup, studyPage, type NavGroup, type NavLink } from "./nav-groups";
 
 const ITEM = "relative inline-flex items-center gap-1 rounded-lg px-3 py-2 text-[15px] whitespace-nowrap transition";
 const itemTone = (on: boolean) => (on ? "font-semibold text-primary" : "text-body hover:bg-accent-soft hover:text-primary");
@@ -22,7 +22,7 @@ export function TopNav() {
   const close = () => setOpen(null);
 
   const link = (href: string, label: string, g: NavGroup) => (
-    <Link href={href} aria-current={pathname === href ? "page" : undefined} className={ITEM + " " + itemTone(group === g)}>
+    <Link href={href} aria-current={ariaCurrent(pathname, href, group === g)} className={ITEM + " " + itemTone(group === g)}>
       {label}
       {group === g && <Bar />}
     </Link>
@@ -106,7 +106,7 @@ export function TabBar() {
       {TABS.map(({ href, label, Icon, group: g }) => {
         const on = group === g;
         return (
-          <Link key={href} href={href} aria-current={on ? "page" : undefined}
+          <Link key={href} href={href} aria-current={ariaCurrent(pathname, href, on)}
             className={"relative flex min-h-12 flex-col items-center justify-center gap-1 text-[11px] " + (on ? "font-semibold text-primary" : "text-muted hover:text-primary")}>
             {on && <span className="absolute -top-1.5 h-[3px] w-8 rounded-full bg-accent" aria-hidden />}
             <Icon className="size-5" strokeWidth={on ? 2.2 : 1.8} aria-hidden />
@@ -118,15 +118,17 @@ export function TabBar() {
   );
 }
 
-/** The sub-menu at the top of the four study pages, on every width: one tap between Today, lessons, flashcards and words. */
+/** The sub-menu at the top of the four study pages on phones and tablets: one tap between Today, lessons, flashcards
+    and words. Computers already have the เรียน menu in the header, so it is hidden from lg up. About 47 px tall,
+    with 40 px tap targets. */
 export function StudyNav() {
   const pathname = usePathname();
   const current = studyPage(pathname);
   if (!current) return null;
   return (
-    <div className="theme-academic border-b border-rule bg-page">
+    <div className="theme-academic border-b border-rule bg-page lg:hidden">
       <nav aria-label="เมนูการเรียน"
-        className="mx-auto flex max-w-6xl gap-1.5 overflow-x-auto px-4 py-2.5 [scrollbar-width:none] sm:px-6 lg:px-10">
+        className="mx-auto flex max-w-6xl gap-1.5 overflow-x-auto px-4 py-[3px] [scrollbar-width:none] sm:px-6">
         {STUDY_LINKS.map((l) => {
           const on = l.href === current;
           return (
