@@ -245,7 +245,7 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
       )}
       {storageOff && <p className="text-xs text-muted">เบราว์เซอร์นี้เก็บตำแหน่งรอบเรียนไม่ได้ ถ้าปิดหน้าไปจะเริ่มรอบใหม่ แต่คะแนนที่ให้แล้วถูกบันทึกครบ</p>}
       {toast && (
-        <p role="status" className="flex flex-wrap items-center gap-2 text-sm text-obj">
+        <p role="status" className="od-pop flex flex-wrap items-center gap-2 text-sm text-obj">
           <CheckIcon className="size-4" aria-hidden /> {toast.text}
           {toast.quest && <span className="inline-flex items-center gap-1 rounded-full bg-(--ac-gold-soft) px-2.5 py-0.5 font-semibold text-(--ac-gold-ink)"><SparklesIcon className="size-3.5" aria-hidden />{toast.quest}</span>}
         </p>
@@ -267,16 +267,16 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
       <div className="fixed inset-x-0 bottom-[calc(4.25rem+env(safe-area-inset-bottom))] z-30 border-t border-line bg-card/95 px-4 py-3 backdrop-blur lg:static lg:border-0 lg:bg-transparent lg:p-0">
         {error && <p role="alert" className="mb-2 text-sm text-bad">{error}</p>}
         {!revealed ? (
-          <button type="button" className="btn w-full py-3.5 text-base" onClick={() => setRevealed(true)}>เปิดเฉลย <kbd className="hidden rounded bg-white/20 px-1.5 font-mono text-xs lg:inline">Space</kbd></button>
+          <button type="button" className="btn od-press w-full py-3.5 text-base" onClick={() => setRevealed(true)}>เปิดเฉลย <kbd className="hidden rounded bg-white/20 px-1.5 font-mono text-xs lg:inline">Space</kbd></button>
         ) : error && session.pending ? (
           <button type="button" className="btn w-full py-3.5" disabled={saving} onClick={() => { busy.current = true; send(session, session.pending!); }}>
             <RotateCcwIcon className="size-4" /> ลองบันทึกอีกครั้ง
           </button>
         ) : (
-          <div className="grid grid-cols-3 gap-2" role="group" aria-label="ให้คะแนนความจำ">
+          <div className="od-pop grid grid-cols-3 gap-2" role="group" aria-label="ให้คะแนนความจำ">
             {(["again", "hard", "good"] as const).map((g) => (
               <button key={g} type="button" disabled={saving} onClick={() => grade(g)}
-                className={"flex flex-col items-center gap-0.5 rounded-xl border-[1.5px] px-2 py-2.5 transition disabled:opacity-50 " + GRADE_UI[g].tone}>
+                className={"od-press flex flex-col items-center gap-0.5 rounded-xl border-[1.5px] px-2 py-2.5 disabled:opacity-50 " + GRADE_UI[g].tone}>
                 <span className="text-[15px] font-semibold">{GRADE_UI[g].label}</span>
                 <span className="text-[11px] opacity-80">{g === "again" ? "ทวนอีกครั้งรอบนี้" : `ทวน${whenLabel(preview(g))}`}</span>
                 <kbd className="hidden font-mono text-[10.5px] opacity-60 lg:block">{GRADE_UI[g].key}</kbd>
