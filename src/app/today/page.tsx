@@ -4,12 +4,13 @@ import Link from "next/link";
 import { connection } from "next/server";
 import { Suspense, type ReactNode } from "react";
 import { AcademicPage, PageHeader } from "@/components/academic-page";
+import { GrammarComplete } from "@/components/grammar-complete";
 import { PlanCheck } from "@/components/plan-check";
 import { Sentence } from "@/components/sentence";
 import { LESSONS, VERBS, WORDS, type Lesson } from "@/content";
 import { lessonWords } from "@/content/lesson-words";
 import { bangkokToday, getDashboard, getPlacements, getUser } from "@/lib/data";
-import { startLesson, type PlacedAt } from "@/lib/placement";
+import { nextLesson, placedLevel } from "@/lib/next-lesson";
 
 export const metadata: Metadata = { title: "แผนวันนี้" };
 
@@ -41,11 +42,11 @@ async function Today() {
   const [user, dash, placements] = await Promise.all([getUser(), getDashboard(), getPlacements()]);
   const today = dash?.today ?? bangkokToday();
   const best = dash?.best ?? {};
-  // After a placement test, start from the learner's level instead of lesson one (easier lessons stay open).
-  const placed = placements[0]?.level as PlacedAt | undefined;
-  const from = placed ? LESSONS.indexOf(startLesson(LESSONS, placed) ?? LESSONS[0]) : 0;
-  const current = LESSONS.find((l, i) => i >= from && !best[l.id]?.passed) ?? LESSONS.find((l) => !best[l.id]?.passed) ?? LESSONS[LESSONS.length - 1];
-  const passedCount = LESSONS.filter((l) => best[l.id]?.passed).length;
+  // The same Continue rule as Home and /study: placement-aware, and a "Grammar complete" state at the end.
+  const placed = placedLevel(placements[0]?.level);
+  const next = nextLesson(LESSONS, best, placed);
+  const current = next.kind === "lesson" ? next.lesson : null;
+  const passedCount = next.passed;
   const dueTotal = dash ? dash.due.word + dash.due.verb : 0;
   const reviewDone = Boolean(dash && (dash.reviewsToday >= 10 || (dueTotal === 0 && dash.reviewsToday > 0)));
   const dateLabel = new Date().toLocaleDateString("th-TH", { weekday: "long", day: "numeric", month: "long", timeZone: "Asia/Bangkok" });
@@ -53,7 +54,7 @@ async function Today() {
   return (
     <div className="grid gap-7 xl:grid-cols-[minmax(0,1fr)_320px]">
       <PageHeader className="xl:col-span-2" eyebrow="TODAY" lead={dateLabel}
-        title={passedCount === 0 && !placed ? "เริ่มบทแรกกันเลย" : `${passedCount === 0 ? "เริ่มเรียน" : "เรียนต่อ"}จากบทที่ ${LESSONS.indexOf(current) + 1}`}>
+        title={!current ? "ผ่าน Grammar ครบทุกบทแล้ว" : passedCount === 0 && !placed ? "เริ่มบทแรกกันเลย" : `${passedCount === 0 ? "เริ่มเรียน" : "เรียนต่อ"}จากบทที่ ${LESSONS.indexOf(current) + 1}`}>
         {!user && (
           <Link href="/login" className="btn">เข้าสู่ระบบเพื่อบันทึกความคืบหน้า</Link>
         )}
@@ -62,19 +63,20 @@ async function Today() {
       <div className="flex min-w-0 flex-col gap-7">
         {passedCount === 0 && !placed && <PlacementInvite />}
         {passedCount === 0 && !placed && <BeginnerNote />}
-        <ContinueCard lesson={current} best={best[current.id]?.best} />
+        {current ? <ContinueCard lesson={current} best={best[current.id]?.best} /> : <GrammarComplete total={next.total} />}
 
         <section>
           <SectionHead title="แผน 60 นาทีวันนี้" note="ครบ 3 ใน 4 นับเป็นวันที่เรียน" />
           <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             <Task tone="text-brand" kind="ทวน" done={reviewDone} title="การ์ดคำศัพท์และ V1-V2-V3 ที่ถึงรอบ"
               meta={dash ? `ถึงรอบ ${dueTotal} ใบ · ทวนแล้ว ${dash.reviewsToday}` : "10 ใบต่อวัน"} href="/vocab" cta="ทวน" />
-            <Task tone="text-subj" kind="ตัวภาษา" done={Boolean(dash?.passedToday)} title={`Grammar บทที่ ${LESSONS.indexOf(current) + 1} ให้ผ่าน 80%`}
-              meta={current.title} href={`/grammar/${current.id}`} cta="เรียน" />
+            <Task tone="text-subj" kind="ตัวภาษา" done={Boolean(dash?.passedToday)}
+              title={current ? `Grammar บทที่ ${LESSONS.indexOf(current) + 1} ให้ผ่าน 80%` : "ทบทวนบท Grammar ที่อยากแม่นขึ้น"}
+              meta={current ? current.title : `ผ่านครบ ${LESSONS.length} บทแล้ว`} href={current ? `/grammar/${current.id}` : "/grammar"} cta="เรียน" />
             <Task tone="text-obj" kind="รับเข้า" check={<PlanCheck id="input" day={today} label="ฟังหรืออ่าน" />}
               title="ฟังหรืออ่านเรื่องสั้นที่เข้าใจเกือบหมด" meta="VOA ระดับ 1 หรือ BBC" href="https://learningenglish.voanews.com/" cta="เปิด VOA" external />
             <Task tone="text-verb" kind="ส่งออก" check={<PlanCheck id="output" day={today} label="เขียน" />}
-              title="เขียน 3–5 ประโยคเรื่องงานเมื่อวาน" meta={current.homework} />
+              title="เขียน 3–5 ประโยคเรื่องงานเมื่อวาน" meta={current?.homework ?? "ใช้ไวยากรณ์ที่เรียนมาเล่าเรื่องงานเมื่อวาน"} />
           </div>
         </section>
 
@@ -168,7 +170,7 @@ function ContinueCard({ lesson, best }: { lesson: Lesson; best?: number }) {
         </div>
         {en && <div className="rounded-lg bg-paper px-4 py-3"><Sentence en={en} th={th} size="lg" /></div>}
         <div className="flex flex-wrap gap-2.5">
-          <Link href={`/grammar/${lesson.id}`} className="btn">{best ? "เรียนต่อ" : "เริ่มบทนี้"}</Link>
+          <Link href={`/grammar/${lesson.id}`} data-next-lesson={lesson.id} className="btn">{best ? "เรียนต่อ" : "เริ่มบทนี้"}</Link>
           <Link href="/grammar" className="btn-ghost">ดูทุกบท</Link>
         </div>
         {lessonWords(lesson.id).fresh.length > 0 && (

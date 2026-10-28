@@ -4,7 +4,7 @@
 export type NavGroup = "home" | "study" | "roadmap" | "ielts" | "tools" | "account";
 export type NavLink = { href: string; label: string; sub: string };
 
-/** The study pages grouped under "เรียน". /study arrives in a later release; until then "เรียน" opens /today. */
+/** The study pages grouped under "เรียน"; they share the sub-menu on phones. */
 export const STUDY_LINKS: NavLink[] = [
   { href: "/today", label: "วันนี้", sub: "แผนวันนี้และบทที่เรียนต่อ" },
   { href: "/grammar", label: "บทเรียน", sub: "ไวยากรณ์ A1–B2 ทีละบท" },
@@ -19,13 +19,20 @@ export const TOOL_LINKS: NavLink[] = [
   { href: "/guide", label: "คู่มือ", sub: "n. v. adj. V3 กริยาช่วย คืออะไร" },
 ];
 
-export const STUDY_HOME = "/today";
+/** Where "เรียน" goes: the study overview (continue, review and a way into every study page). */
+export const STUDY_HOME = "/study";
+
+/** The desktop เรียน menu: the overview first, then the four pages. */
+export const STUDY_MENU: NavLink[] = [
+  { href: STUDY_HOME, label: "ภาพรวมการเรียน", sub: "เรียนต่อ ทวน และทุกส่วนในที่เดียว" },
+  ...STUDY_LINKS,
+];
 
 const under = (pathname: string, base: string) => pathname === base || pathname.startsWith(base + "/");
 
 export function navGroup(pathname: string): NavGroup | null {
   if (pathname === "/") return "home";
-  if (STUDY_LINKS.some((l) => under(pathname, l.href))) return "study";
+  if (STUDY_MENU.some((l) => under(pathname, l.href))) return "study";
   if (TOOL_LINKS.some((l) => under(pathname, l.href))) return "tools";
   if (under(pathname, "/roadmap")) return "roadmap";
   if (under(pathname, "/ielts")) return "ielts";

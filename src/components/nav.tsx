@@ -4,7 +4,7 @@ import { BookOpenIcon, ChevronDownIcon, CompassIcon, HomeIcon, UserRoundIcon } f
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
-import { STUDY_HOME, STUDY_LINKS, TOOL_LINKS, ariaCurrent, navGroup, studyPage, type NavGroup, type NavLink } from "./nav-groups";
+import { STUDY_HOME, STUDY_LINKS, STUDY_MENU, TOOL_LINKS, ariaCurrent, navGroup, studyPage, type NavGroup, type NavLink } from "./nav-groups";
 
 const ITEM = "relative inline-flex items-center gap-1 rounded-lg px-3 py-2 text-[15px] whitespace-nowrap transition";
 const itemTone = (on: boolean) => (on ? "font-semibold text-primary" : "text-body hover:bg-accent-soft hover:text-primary");
@@ -31,7 +31,7 @@ export function TopNav() {
   return (
     <nav aria-label="เมนูหลัก" className="flex min-w-0 items-center gap-0.5">
       {link("/", "หน้าแรก", "home")}
-      <Disclosure label="เรียน" links={STUDY_LINKS} active={group === "study"} open={openId === "study"} pathname={pathname}
+      <Disclosure label="เรียน" links={STUDY_MENU} active={group === "study"} open={openId === "study"} pathname={pathname}
         onToggle={() => toggle("study")} onClose={close} />
       {link("/roadmap", "Roadmap", "roadmap")}
       {link("/ielts", "IELTS", "ielts")}
@@ -89,7 +89,7 @@ function Disclosure({ label, links, active, open, pathname, onToggle, onClose }:
   );
 }
 
-/** Phones: four tabs. "เรียน" opens /today until the study hub exists; its pages share the sub-menu below. */
+/** Phones: four tabs. "เรียน" opens the study overview; the four study pages share the sub-menu below. */
 const TABS = [
   { href: "/", label: "หน้าแรก", Icon: HomeIcon, group: "home" },
   { href: STUDY_HOME, label: "เรียน", Icon: BookOpenIcon, group: "study" },

@@ -11,8 +11,10 @@ import { BandExplorer } from "@/components/home/band-explorer";
 import { Faq } from "@/components/home/faq";
 import { TestChooser } from "@/components/home/test-chooser";
 import { Thai } from "@/components/home/thai";
-import { courseCompletion, stageProgress, type StageProgress } from "@/content/stages";
+import { LESSONS } from "@/content";
+import { courseCompletion, stageOfLesson, stageProgress, type StageProgress } from "@/content/stages";
 import { getLessonBest, getPlacements, getUser } from "@/lib/data";
+import { nextLesson, placedLevel } from "@/lib/next-lesson";
 
 /** Home, on the Academic Studio theme (scoped by .theme-academic; other pages keep their own look). */
 export default function HomePage() {
@@ -96,8 +98,12 @@ function Hero() {
 async function RoadmapWithProgress() {
   const user = await getUser();
   if (!user) return <Roadmap stages={stageProgress({})} current={null} />;
-  const stages = stageProgress(await getLessonBest());
-  return <Roadmap stages={stages} current={stages.find((s) => s.status === "current")?.id ?? null} />;
+  const [best, placements] = await Promise.all([getLessonBest(), getPlacements()]);
+  const stages = stageProgress(best);
+  // Highlight the stage of the lesson the Continue rule recommends; stage statuses (done, todo) are unchanged.
+  const next = nextLesson(LESSONS, best, placedLevel(placements[0]?.level));
+  const current = (next.kind === "lesson" ? stageOfLesson(next.lesson.id)?.stage.id : undefined) ?? stages.find((s) => s.status === "current")?.id ?? null;
+  return <Roadmap stages={stages} current={current} />;
 }
 
 function Roadmap({ stages, current }: { stages: StageProgress[]; current: string | null }) {
@@ -212,25 +218,30 @@ async function Continue() {
   const user = await getUser();
   if (!user) return null;
   const [best, placements] = await Promise.all([getLessonBest(), getPlacements()]);
-  const stages = stageProgress(best);
-  const current = stages.find((s) => s.status === "current");
   const overall = courseCompletion(best);
   const level = placements[0]?.level;
+  // The same Continue rule as /today and /study.
+  const next = nextLesson(LESSONS, best, placedLevel(level));
+  const stage = next.kind === "lesson" ? stageOfLesson(next.lesson.id)?.stage : undefined;
   return (
     <section className="flex flex-wrap items-center justify-between gap-5 rounded-2xl border border-(--ac-line) bg-(--ac-surface) p-6 shadow-(--ac-shadow)" aria-labelledby="continue-title">
       <div className="min-w-0">
         <p className="font-mono text-[11px] tracking-[0.22em] text-(--ac-gold-ink)">YOUR PROGRESS</p>
         <h2 id="continue-title" className="ac-serif mt-1 text-2xl font-bold text-(--ac-heading)">
-          {current ? `Stage ${String(current.n).padStart(2, "0")} · ${current.title}` : "ผ่านบทเรียนครบทุกสถานีแล้ว"}
+          {next.kind === "grammar-complete" ? "ผ่าน Grammar ครบทุกบทแล้ว" : stage ? `Stage ${String(stage.n).padStart(2, "0")} · ${stage.title}` : "เรียนต่อ"}
         </h2>
         <p className="mt-1 text-sm text-(--ac-muted)">
           ผ่านแล้ว {overall.done} จาก {overall.total} บท ({overall.percent}%)
           {level ? ` · ระดับจากการสอบวัดระดับ: ${level === "pre-A1" ? "ก่อน A1" : level} (CEFR ไม่ใช่ Band IELTS)` : " · ยังไม่ได้สอบวัดระดับ"}
         </p>
       </div>
-      {current?.next && (
-        <Link href={current.next.href} className="inline-flex items-center gap-2 rounded-lg bg-(--ac-navy) px-5 py-3 text-sm font-semibold text-white hover:bg-(--ac-navy-2)">
-          Continue: {current.next.title} <ArrowRightIcon className="size-4" aria-hidden />
+      {next.kind === "lesson" ? (
+        <Link href={`/grammar/${next.lesson.id}`} data-next-lesson={next.lesson.id} className="inline-flex items-center gap-2 rounded-lg bg-(--ac-navy) px-5 py-3 text-sm font-semibold text-white hover:bg-(--ac-navy-2)">
+          Continue: {next.lesson.title} <ArrowRightIcon className="size-4" aria-hidden />
+        </Link>
+      ) : (
+        <Link href="/study" className="inline-flex items-center gap-2 rounded-lg bg-(--ac-navy) px-5 py-3 text-sm font-semibold text-white hover:bg-(--ac-navy-2)">
+          ไปหน้าเรียน <ArrowRightIcon className="size-4" aria-hidden />
         </Link>
       )}
     </section>

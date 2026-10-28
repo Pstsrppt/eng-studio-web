@@ -43,7 +43,7 @@ async function Hub() {
   const [user, data] = await Promise.all([getUser(), getLearnOverview()]);
   return (
     <div className="flex flex-col gap-8">
-      <PageHeader eyebrow="LEARNING HUB · ฝึกศัพท์" title="พร้อมฝึกศัพท์วันนี้หรือยัง?"
+      <PageHeader eyebrow="FLASHCARDS · ฝึกศัพท์ทวนตามรอบ" title="พร้อมฝึกศัพท์วันนี้หรือยัง?"
         lead="เปิดการ์ด นึกความหมาย แล้วบอกตามจริงว่าจำได้แค่ไหน ระบบจะนัดคำที่ลืมให้กลับมาเร็ว และเว้นระยะคำที่จำได้ดีให้ห่างออกไป" />
       {data && user ? <SignedIn data={data} userKey={user.id} /> : (
         <>

@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { STUDY_HOME, STUDY_LINKS, TOOL_LINKS, ariaCurrent, navGroup, studyPage } from "./nav-groups";
+import { STUDY_HOME, STUDY_LINKS, STUDY_MENU, TOOL_LINKS, ariaCurrent, navGroup, studyPage } from "./nav-groups";
 
 describe("navGroup", () => {
   it("keeps เรียน active on every study page and its nested routes", () => {
-    for (const p of ["/today", "/grammar", "/grammar/1-7", "/grammar/b2-4", "/learn", "/learn/session", "/vocab"]) {
+    for (const p of ["/study", "/today", "/grammar", "/grammar/1-7", "/grammar/b2-4", "/learn", "/learn/session", "/vocab"]) {
       expect(navGroup(p), p).toBe("study");
     }
   });
@@ -26,10 +26,12 @@ describe("navGroup", () => {
     expect(navGroup("/grammarian")).toBeNull();
   });
 
-  it("lists four study pages and four tools, with no /study link yet", () => {
+  it("เรียน goes to /study; its menu adds the overview before the same four pages", () => {
+    expect(STUDY_HOME).toBe("/study");
     expect(STUDY_LINKS.map((l) => l.href)).toEqual(["/today", "/grammar", "/learn", "/vocab"]);
+    expect(STUDY_MENU.map((l) => l.href)).toEqual(["/study", "/today", "/grammar", "/learn", "/vocab"]);
     expect(TOOL_LINKS.map((l) => l.href)).toEqual(["/verbs", "/sounds", "/mistakes", "/guide"]);
-    expect([...STUDY_LINKS, ...TOOL_LINKS].some((l) => l.href.startsWith("/study"))).toBe(false);
+    expect(navGroup("/studying")).toBeNull();
   });
 });
 
@@ -38,18 +40,18 @@ describe("ariaCurrent (tab bar and header links)", () => {
   const TABS = [["/", "home"], [STUDY_HOME, "study"], ["/roadmap", "roadmap"], ["/account", "account"]] as const;
   const states = (pathname: string) => TABS.map(([href, g]) => ariaCurrent(pathname, href, navGroup(pathname) === g));
 
-  it("announces the เรียน tab as the page only on /today", () => {
-    expect(states("/today")).toEqual([undefined, "page", undefined, undefined]);
+  it("announces the เรียน tab as the page only on /study", () => {
+    expect(states("/study")).toEqual([undefined, "page", undefined, undefined]);
   });
 
   it("marks เรียน as the selected item, not the page, on the other study routes", () => {
-    for (const p of ["/grammar", "/grammar/1-7", "/learn", "/learn/session", "/vocab"]) {
+    for (const p of ["/today", "/grammar", "/grammar/1-7", "/learn", "/learn/session", "/vocab"]) {
       expect(states(p), p).toEqual([undefined, "true", undefined, undefined]);
     }
   });
 
   it("never gives two tabs aria-current, and never says page for a link that goes elsewhere", () => {
-    for (const p of ["/", "/today", "/grammar/1-7", "/roadmap", "/account", "/login", "/verbs", "/placement", "/ielts"]) {
+    for (const p of ["/", "/study", "/today", "/grammar/1-7", "/roadmap", "/account", "/login", "/verbs", "/placement", "/ielts"]) {
       const s = states(p);
       expect(s.filter(Boolean).length, p).toBeLessThanOrEqual(1);
       TABS.forEach(([href], i) => { if (s[i] === "page") expect(href, p).toBe(p); });
@@ -67,7 +69,8 @@ describe("ariaCurrent (tab bar and header links)", () => {
 });
 
 describe("studyPage", () => {
-  it("marks the four list pages, not a lesson or a flashcard session", () => {
+  it("marks the four list pages, not the overview, a lesson or a flashcard session", () => {
+    expect(studyPage("/study")).toBeNull();
     expect(studyPage("/grammar")).toBe("/grammar");
     expect(studyPage("/vocab")).toBe("/vocab");
     expect(studyPage("/grammar/1-7")).toBeNull();
