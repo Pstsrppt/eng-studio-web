@@ -62,7 +62,8 @@ export type LearnOverview = {
   hasHistory: boolean;
 };
 
-/** Everything the Learning Hub shows, from real saved activity. Null when nobody is signed in. */
+/** Everything the Flashcards page (/learn) shows, and the review counts on /study, from real saved activity.
+    Null when nobody is signed in. */
 export async function getLearnOverview(): Promise<LearnOverview | null> {
   const user = await getUser();
   if (!user) return null;
