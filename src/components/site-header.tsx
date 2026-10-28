@@ -19,9 +19,9 @@ export function SiteHeader({ account }: { account: React.ReactNode }) {
         </Link>
         <div className="hidden min-w-0 flex-1 justify-center lg:flex"><TopNav /></div>
         <div className="flex items-center gap-2">
-          <Link href="/guide" className="hidden rounded-full border border-rule px-3 py-1.5 text-xs text-body hover:border-primary lg:block">คู่มือ</Link>
           <ThaiToggle />
-          {account}
+          {/* Phones reach the account from the บัญชี tab, so the header keeps it for computers only. */}
+          <div className="hidden lg:block">{account}</div>
         </div>
       </div>
     </header>
