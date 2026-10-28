@@ -6,10 +6,10 @@ import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { STUDY_HOME, STUDY_LINKS, STUDY_MENU, TOOL_LINKS, ariaCurrent, navGroup, studyPage, type NavGroup, type NavLink } from "./nav-groups";
 
-const ITEM = "relative inline-flex items-center gap-1 rounded-lg px-3 py-2 text-[15px] whitespace-nowrap transition";
+const ITEM = "od-press relative inline-flex items-center gap-1 rounded-lg px-3 py-2 text-[15px] whitespace-nowrap";
 const itemTone = (on: boolean) => (on ? "font-semibold text-primary" : "text-body hover:bg-accent-soft hover:text-primary");
 /** The current item: a copper bar under it plus aubergine, bold text, so it never relies on colour alone. */
-const Bar = () => <span className="absolute inset-x-3 -bottom-[17px] h-[3px] rounded-full bg-accent" aria-hidden />;
+const Bar = () => <span className="od-grow absolute inset-x-3 -bottom-[17px] h-[3px] rounded-full bg-accent" aria-hidden />;
 
 /** Top bar on computers: หน้าแรก · เรียน ▾ · Roadmap · IELTS · เครื่องมือ ▾. */
 export function TopNav() {
@@ -65,18 +65,18 @@ function Disclosure({ label, links, active, open, pathname, onToggle, onClose }:
         className={ITEM + " " + itemTone(active)}>
         {label}
         {active && <span className="sr-only"> (หน้าปัจจุบันอยู่ในเมนูนี้)</span>}
-        <ChevronDownIcon className={"size-4 transition " + (open ? "rotate-180" : "")} aria-hidden />
+        <ChevronDownIcon className={"size-4 transition-transform duration-(--od-base) ease-(--od-ease) " + (open ? "rotate-180" : "")} aria-hidden />
         {active && <Bar />}
       </button>
       <div id={id} hidden={!open}
-        className="absolute top-[calc(100%+10px)] left-0 z-40 w-72 rounded-2xl border border-rule bg-card p-2 shadow-[0_18px_40px_-18px_rgb(var(--od-shadow-rgb)/0.35)]">
+        className="od-pop absolute top-[calc(100%+10px)] left-0 z-40 w-72 rounded-2xl border border-rule bg-card p-2 shadow-[0_18px_40px_-18px_rgb(var(--od-shadow-rgb)/0.35)]">
         <ul className="flex flex-col">
           {links.map((l) => {
             const on = pathname === l.href;
             return (
               <li key={l.href}>
                 <Link href={l.href} aria-current={on ? "page" : undefined} onClick={onClose}
-                  className={"flex flex-col rounded-xl px-3 py-2.5 transition " + (on ? "bg-accent-soft" : "hover:bg-sunken")}>
+                  className={"od-press flex flex-col rounded-xl px-3 py-2.5 " + (on ? "bg-accent-soft" : "hover:bg-sunken")}>
                   <span className={"text-[15px] " + (on ? "font-semibold text-primary" : "font-medium text-heading")}>{l.label}</span>
                   <span className="text-xs text-muted">{l.sub}</span>
                 </Link>
@@ -107,8 +107,8 @@ export function TabBar() {
         const on = group === g;
         return (
           <Link key={href} href={href} aria-current={ariaCurrent(pathname, href, on)}
-            className={"relative flex min-h-12 flex-col items-center justify-center gap-1 text-[11px] " + (on ? "font-semibold text-primary" : "text-muted hover:text-primary")}>
-            {on && <span className="absolute -top-1.5 h-[3px] w-8 rounded-full bg-accent" aria-hidden />}
+            className={"od-press relative flex min-h-12 flex-col items-center justify-center gap-1 text-[11px] " + (on ? "font-semibold text-primary" : "text-muted hover:text-primary")}>
+            {on && <span className="od-grow absolute -top-1.5 h-[3px] w-8 rounded-full bg-accent" aria-hidden />}
             <Icon className="size-5" strokeWidth={on ? 2.2 : 1.8} aria-hidden />
             {label}
           </Link>
@@ -133,7 +133,7 @@ export function StudyNav() {
           const on = l.href === current;
           return (
             <Link key={l.href} href={l.href} aria-current={on ? "page" : undefined}
-              className={"inline-flex min-h-10 shrink-0 items-center rounded-full px-4 text-sm whitespace-nowrap transition " +
+              className={"od-press inline-flex min-h-10 shrink-0 items-center rounded-full px-4 text-sm whitespace-nowrap " +
                 (on ? "bg-primary font-semibold text-white" : "text-body hover:bg-accent-soft hover:text-primary")}>
               {l.label}
             </Link>

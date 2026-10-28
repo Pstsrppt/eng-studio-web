@@ -34,6 +34,11 @@
   --od-on-dark-muted: #bfb3c4;   /* secondary text on dark: 7.4:1 */
   --od-mark: #ead2c6;            /* highlighter behind words */
   --od-shadow-rgb: 48 35 54;
+  /* Motion: short and quiet. Press feedback is fast, hover and state changes a little slower. */
+  --od-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --od-fast: 120ms;
+  --od-base: 180ms;
+  --od-slow: 220ms;
 }
 
 @theme {
@@ -209,7 +214,28 @@
   from { opacity: 0; transform: translateY(6px) scale(0.99); }
   to { opacity: 1; transform: none; }
 }
-.learn-in { animation: learn-in 0.22s ease-out both; }
+.learn-in { animation: learn-in var(--od-slow) var(--od-ease) both; }
+
+/* Microinteractions (all removed under prefers-reduced-motion, below).
+   .od-lift: cards that open a page rise 2px on hover and settle on press.
+   .od-press: buttons and chips dip slightly on press. Hover lift only where a pointer can hover. */
+.od-lift { transition: transform var(--od-base) var(--od-ease), box-shadow var(--od-base) var(--od-ease), border-color var(--od-base) var(--od-ease), background-color var(--od-base) var(--od-ease); }
+@media (hover: hover) {
+  .od-lift:hover { transform: translateY(-2px); box-shadow: 0 16px 32px -20px rgb(var(--od-shadow-rgb) / 0.38); }
+}
+.od-lift:active { transform: translateY(0) scale(0.985); transition-duration: var(--od-fast); }
+.od-press { transition: transform var(--od-fast) var(--od-ease), background-color var(--od-base) var(--od-ease), border-color var(--od-base) var(--od-ease), color var(--od-base) var(--od-ease), box-shadow var(--od-base) var(--od-ease); }
+.od-press:active { transform: scale(0.97); }
+/* Menus and panels that appear: a short fade and settle. */
+@keyframes od-pop { from { opacity: 0; transform: translateY(-4px); } }
+.od-pop { animation: od-pop var(--od-base) var(--od-ease) both; }
+/* The copper "current" bars grow in from the middle. */
+@keyframes od-grow { from { transform: scaleX(0.2); opacity: 0; } }
+.od-grow { animation: od-grow var(--od-base) var(--od-ease) both; }
+/* Roadmap stations: the selected ring and colour ease in instead of snapping. */
+.od-station { transition: background-color var(--od-slow) var(--od-ease), color var(--od-slow) var(--od-ease), box-shadow var(--od-slow) var(--od-ease); }
+/* Keyboard focus rings settle into place instead of snapping. */
+:focus-visible { transition: outline-offset var(--od-fast) var(--od-ease); }
 
 /* The academy scenes breathe: a slow zoom and drift, like clouds passing. */
 @keyframes hero-drift {
@@ -225,4 +251,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
+  /* No movement at all: hover and press keep their colour change but not the lift or dip. */
+  .od-lift:hover, .od-lift:active, .od-press:active { transform: none !important; }
 }

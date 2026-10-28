@@ -2,8 +2,10 @@ import { LibraryBigIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { AcademicPhoto } from "@/components/academic-photo";
-import { courseCompletion, stageProgress } from "@/content/stages";
+import { LESSONS } from "@/content";
+import { courseCompletion, stageOfLesson, stageProgress } from "@/content/stages";
 import { getLessonBest, getPlacements, getUser } from "@/lib/data";
+import { nextLesson, placedLevel } from "@/lib/next-lesson";
 import { RoadmapView } from "./roadmap-view";
 
 export const metadata: Metadata = { title: "Roadmap" };
@@ -28,6 +30,13 @@ export default function RoadmapPage({ searchParams }: { searchParams: Search }) 
 async function Roadmap({ searchParams }: { searchParams: Search }) {
   const [params, user, best, placements] = await Promise.all([searchParams, getUser(), getLessonBest(), getPlacements()]);
   const stages = stageProgress(best);
+  // The same Continue lesson as Home, /today and /study. Display only: stage statuses stay as stageProgress made them.
+  const placed = placedLevel(placements[0]?.level);
+  const next = nextLesson(LESSONS, best, placed);
+  const recStage = next.kind === "lesson" ? stageOfLesson(next.lesson.id)?.stage.id : undefined;
+  const recommended = next.kind === "lesson" && recStage
+    ? { stage: recStage, lessonId: next.lesson.id, title: next.lesson.title, href: `/grammar/${next.lesson.id}`, placed: placed ?? null }
+    : undefined;
   return (
     <RoadmapView
       stages={stages}
@@ -35,6 +44,7 @@ async function Roadmap({ searchParams }: { searchParams: Search }) {
       overall={courseCompletion(best)}
       level={placements[0]?.level ?? null}
       signedIn={!!user}
+      recommended={recommended}
       initialStage={stages.some((s) => s.id === params.stage) ? params.stage! : undefined}
       initialView={params.view === "list" ? "list" : "world"}
       banner={<Banner />}
