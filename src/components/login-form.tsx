@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useActionState, useState } from "react";
 import { continueWithGoogle, signInWithEmail, type AuthState } from "@/app/actions";
+import { PasswordField } from "@/components/auth/password-field";
 import { CheckEmail } from "@/components/check-email";
 
 export function LoginForm({ configured, google }: { configured: boolean; google: boolean }) {
@@ -19,43 +20,40 @@ export function LoginForm({ configured, google }: { configured: boolean; google:
   }
 
   return (
-    <div className="card flex flex-col gap-5 p-6">
+    <div className="flex flex-col gap-5">
       {google && (
         <>
           <form action={googleAction}>
-            <button className="flex w-full items-center justify-center gap-3 rounded-lg border-[1.5px] border-line bg-surface px-4 py-3 text-[15px] font-semibold transition hover:border-ink disabled:opacity-50"
+            <button className="flex min-h-12 w-full items-center justify-center gap-3 rounded-lg border border-(--ac-line-strong) bg-card px-4 text-[15px] font-semibold text-(--ac-ink) transition hover:border-(--ac-navy) disabled:opacity-50"
               disabled={pending || !configured}>
               <GoogleMark />
               {googlePending ? "กำลังไปที่ Google…" : "เข้าใช้งานด้วย Google"}
             </button>
           </form>
-          <div className="flex items-center gap-3 text-xs text-muted">
-            <span className="h-px flex-1 bg-line" />หรือใช้อีเมล<span className="h-px flex-1 bg-line" />
+          <div className="flex items-center gap-3 text-xs text-(--ac-muted)">
+            <span className="h-px flex-1 bg-(--ac-line)" />หรือใช้อีเมล<span className="h-px flex-1 bg-(--ac-line)" />
           </div>
         </>
       )}
 
-      <form action={emailAction} className="flex flex-col gap-4">
-        <label className="flex flex-col gap-1.5 text-sm font-medium">
-          อีเมล
-          <input id="email" name="email" type="email" required autoComplete="email" className="input" placeholder="you@example.com"
-            value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
-        <label className="flex flex-col gap-1.5 text-sm font-medium">
-          <span className="flex items-baseline justify-between">
-            รหัสผ่าน
-            <Link href="/forgot-password" className="text-xs font-normal text-brand underline underline-offset-2">ลืมรหัสผ่าน?</Link>
-          </span>
-          <input id="password" name="password" type="password" required autoComplete="current-password" className="input" />
-        </label>
-        {state.error && <p className="text-sm text-bad" role="alert">{state.error}</p>}
+      {/* noValidate: the server action checks the fields and answers in Thai, the same on every browser. */}
+      <form action={emailAction} className="flex flex-col gap-4" noValidate aria-describedby={state.error ? "login-error" : undefined}>
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="email" className="text-sm font-medium text-(--ac-ink)">อีเมล</label>
+          <input id="email" name="email" type="email" required autoComplete="email" inputMode="email" autoCapitalize="none" spellCheck={false}
+            className="input w-full" placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <PasswordField id="password" label="รหัสผ่าน" autoComplete="current-password" />
+        {/* After the field, so Tab goes email → password → this link. */}
+        <Link href="/forgot-password" className="-mt-2 inline-flex min-h-11 items-center self-end text-sm font-medium text-(--ac-navy) underline underline-offset-2">ลืมรหัสผ่าน?</Link>
+        {state.error && <p id="login-error" className="rounded-lg bg-bad-bg px-3 py-2 text-sm text-bad" role="alert">{state.error}</p>}
         {state.info && <p className="text-sm text-obj" role="status">{state.info}</p>}
-        <button className="btn py-3 text-[15px]" disabled={pending || !configured}>
+        <button className="btn min-h-12 w-full text-[15px] font-semibold" disabled={pending || !configured}>
           {emailPending ? "กำลังเข้าสู่ระบบ…" : "เข้าสู่ระบบ"}
         </button>
       </form>
-      <p className="border-t border-line pt-4 text-center text-[15px]">
-        ยังไม่มีบัญชี? <Link href="/signup" className="font-semibold text-brand underline underline-offset-2">สมัครสมาชิกฟรี</Link>
+      <p className="text-center text-[15px] text-(--ac-body)">
+        ยังไม่มีบัญชี? <Link href="/signup" className="font-semibold text-(--ac-navy) underline underline-offset-2">สมัครสมาชิกฟรี</Link>
       </p>
     </div>
   );

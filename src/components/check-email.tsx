@@ -24,7 +24,7 @@ export function CheckEmail({ email, note, onBack, signup = false }: { email: str
   }
 
   return (
-    <div className="card flex flex-col items-center gap-4 p-6 text-center" role="status" aria-live="polite">
+    <div className="flex flex-col items-center gap-4 text-center" role="status" aria-live="polite">
       <span className="learn-in grid size-16 place-items-center rounded-full bg-brand-soft text-brand">
         <MailCheckIcon className="size-8" aria-hidden />
       </span>
@@ -34,7 +34,7 @@ export function CheckEmail({ email, note, onBack, signup = false }: { email: str
         <p className="mt-2 leading-7">{signup ? "ถ้าอีเมลนี้ยังไม่มีบัญชี ระบบส่งลิงก์ยืนยันไปที่" : "เราส่งลิงก์ยืนยันไปที่"}<br /><b className="break-all">{email}</b>{signup && " แล้ว"}</p>
         {signup && <p className="mt-1 text-sm text-muted">บัญชียังไม่ได้ยืนยันจนกว่าจะกดลิงก์ในอีเมล</p>}
       </div>
-      <ol className="w-full list-decimal rounded-lg bg-paper px-4 py-3 pl-9 text-left text-sm leading-7">
+      <ol className="w-full list-decimal rounded-xl bg-sunken px-4 py-3 pl-9 text-left text-sm leading-7">
         <li>เปิดกล่องจดหมายของอีเมลนี้</li>
         <li>เปิดอีเมลยืนยันบัญชีที่ระบบส่งให้ แล้วกดปุ่ม <b>ยืนยันอีเมล</b></li>
         <li>เว็บจะเปิดหน้า &ldquo;ยืนยันอีเมลสำเร็จ&rdquo; และพาเข้าใช้งานให้เลย</li>
@@ -47,7 +47,7 @@ export function CheckEmail({ email, note, onBack, signup = false }: { email: str
       )}
       <form action={resend} className="flex w-full flex-col gap-2">
         <input type="hidden" name="email" value={email} />
-        <button className="btn-ghost w-full" disabled={pending || wait > 0}>
+        <button className="btn-ghost min-h-12 w-full" disabled={pending || wait > 0}>
           {pending ? "กำลังส่ง…" : wait > 0 ? `ส่งลิงก์อีกครั้งได้ใน ${wait} วินาที` : "ส่งลิงก์อีกครั้ง"}
         </button>
         {state.resent && <p className="text-sm text-obj">ส่งลิงก์ใหม่แล้ว ใช้ลิงก์ในอีเมลฉบับล่าสุด</p>}
