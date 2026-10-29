@@ -36,7 +36,7 @@ export function navGroup(pathname: string): NavGroup | null {
   if (TOOL_LINKS.some((l) => under(pathname, l.href))) return "tools";
   if (under(pathname, "/roadmap")) return "roadmap";
   if (under(pathname, "/ielts")) return "ielts";
-  if (["/account", "/login", "/welcome", "/forgot-password", "/reset-password"].some((b) => under(pathname, b))) return "account";
+  if (["/account", "/login", "/signup", "/welcome", "/forgot-password", "/reset-password"].some((b) => under(pathname, b))) return "account";
   return null;
 }
 
