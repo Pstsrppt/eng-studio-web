@@ -6,8 +6,8 @@ import { useActionState, useEffect, useState } from "react";
 import { resendConfirmation, type AuthState } from "@/app/actions";
 
 /** Shown instead of a form once a confirmation link is on its way, so the learner knows what to do next.
-    `signup`: wording for the sign-up page, which gets the same screen whether or not the address already has an
-    account (Supabase sends no email then), so it says what to do in that case too. */
+    `signup`: wording for the sign-up page. With email confirmation on, Supabase answers an address that already has
+    an account like a new one (and sends no email), so this screen also says what to do in that case. */
 export function CheckEmail({ email, note, onBack, signup = false }: { email: string; note?: string; onBack: () => void; signup?: boolean }) {
   const [state, resend, pending] = useActionState(resendConfirmation, {} as AuthState);
   // Supabase sends at most one link a minute to the same address.

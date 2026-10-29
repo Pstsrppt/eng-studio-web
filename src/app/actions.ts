@@ -3,6 +3,7 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { signInError, signUpError } from "@/lib/auth-input";
+import { isRateLimited, signUpOutcome } from "@/lib/auth-result";
 import { getUser } from "@/lib/data";
 import { hasSupabase } from "@/lib/supabase/env";
 import { createClient } from "@/lib/supabase/server";
@@ -17,7 +18,7 @@ async function origin() {
   return (await headers()).get("origin") ?? "";
 }
 
-const limited = (e: { status?: number; code?: string }) => e.status === 429 || e.code === "over_email_send_rate_limit" || e.code === "over_request_rate_limit";
+const limited = isRateLimited;
 
 /** Signs in an existing account. It never creates one: a wrong email or password only says so. */
 export async function signInWithEmail(_: AuthState, form: FormData): Promise<AuthState> {
@@ -46,7 +47,7 @@ export async function signInWithEmail(_: AuthState, form: FormData): Promise<Aut
         : "บัญชีนี้สมัครไว้แล้วแต่ยังไม่ได้ยืนยัน จึงส่งลิงก์ใหม่ให้อีกครั้ง",
     };
   }
-  // Same answer for an unknown email and a wrong password, so the form can't be used to find accounts.
+  // Same message for an unknown email and a wrong password (Supabase returns invalid_credentials for both).
   if (signIn.error.code === "invalid_credentials") return { error: "อีเมลหรือรหัสผ่านไม่ถูกต้อง" };
   if (limited(signIn.error)) return { error: "ลองเข้าสู่ระบบหลายครั้งเกินไป รอสักครู่แล้วลองใหม่" };
   return { error: "เข้าสู่ระบบไม่สำเร็จ ลองใหม่อีกครั้ง" };
@@ -62,23 +63,13 @@ export async function signUpWithEmail(_: AuthState, form: FormData): Promise<Aut
 
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signUp({
+    // Unchanged Supabase call: the account lives in auth.users; no table of our own.
     email,
     password,
     options: { emailRedirectTo: `${await origin()}/auth/callback?next=/welcome` },
   });
-  if (error) {
-    if (error.code === "weak_password") return { error: "รหัสผ่านง่ายเกินไปตามเงื่อนไขของระบบ ลองให้ยาวขึ้นและผสมตัวอักษรกับตัวเลข" };
-    if (error.code === "email_address_invalid" || error.code === "validation_failed") return { error: "ใช้อีเมลนี้สมัครไม่ได้ ตรวจรูปแบบอีเมลอีกครั้ง" };
-    if (limited(error)) return { error: "มีการสมัครหรือส่งอีเมลบ่อยเกินไป รอสักครู่แล้วลองใหม่" };
-    // Only reachable when email confirmation is off; Supabase itself reports the existing account then.
-    if (error.code === "user_already_exists") return { error: "สมัครด้วยอีเมลนี้ไม่ได้ ถ้าเคยสมัครไว้แล้ว ให้เข้าสู่ระบบหรือตั้งรหัสผ่านใหม่" };
-    return { error: "สมัครไม่สำเร็จ ลองใหม่อีกครั้ง" };
-  }
-  // Email confirmation off: the account is created and signed in. Stay on the page and say so.
-  if (data.session) return { created: true };
-  // Confirmation on. An address that already has an account comes back with no identities and no email is sent;
-  // it gets the same screen as a new one, so the form can't be used to find accounts.
-  return { sent: email };
+  // Messages, and what they do and don't reveal about existing accounts, are in lib/auth-result.ts.
+  return signUpOutcome(email, { data, error });
 }
 
 /** Sends the sign-up confirmation link again. Supabase allows one every 60 seconds per address. */
