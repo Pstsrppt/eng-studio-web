@@ -158,7 +158,7 @@ const SKILL_CARDS: { name: string; Icon: LucideIcon; photo: string; alt: string;
 function Skills() {
   return (
     <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-[minmax(0,2.3fr)_repeat(4,minmax(0,1fr))]" aria-labelledby="what-title">
-      <div className="relative flex flex-col gap-4 overflow-hidden rounded-2xl bg-(--ac-dark) p-7 text-white md:col-span-2 lg:p-8 xl:col-span-1">
+      <div className="on-dark relative flex flex-col gap-4 overflow-hidden rounded-2xl bg-(--ac-dark) p-7 text-white md:col-span-2 lg:p-8 xl:col-span-1">
         <WorldDots />
         <span className="relative h-0.5 w-10 bg-(--ac-gold-bright)" aria-hidden />
         <h2 id="what-title" className="ac-serif relative text-[32px] leading-tight font-bold">What is IELTS?</h2>

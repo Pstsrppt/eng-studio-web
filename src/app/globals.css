@@ -183,6 +183,8 @@
 /* Source Serif has no Thai glyphs: Thai in a heading falls through to the body face, not the system serif. */
 .theme-academic .ac-serif { font-family: var(--font-academic-face), var(--font-body), Georgia, "Times New Roman", serif; }
 .theme-academic :focus-visible { outline-color: var(--ac-navy); }
+/* On dark cards the navy ring disappears (1.6:1); the light accent reads 7.8:1 against the dark surface. */
+.theme-academic .on-dark :focus-visible { outline-color: var(--ac-gold-bright); }
 /* The account button in the light header: navy, as in the reference. */
 .theme-academic .account-chip { background: var(--ac-navy); color: #ffffff; }
 
