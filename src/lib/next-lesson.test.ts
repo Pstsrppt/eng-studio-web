@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { LESSONS, SOUNDS } from "@/content";
-import { isPassed, nextLesson, placedLevel } from "./next-lesson";
+import { isPassed, nextLesson, placedLevel, recommendationBasis } from "./next-lesson";
 
 // Positions come from the real Grammar list, never from assumed totals.
 const first = (level: string) => LESSONS.findIndex((l) => l.level === level);
@@ -98,5 +98,27 @@ describe("nextLesson: the one Continue rule for Home, /today and /study", () => 
 
   it("handles an empty lesson list", () => {
     expect(nextLesson([], {}, undefined)).toEqual({ kind: "grammar-complete", passed: 0, total: 0 });
+  });
+});
+
+describe("recommendationBasis: what the Roadmap labels say about the recommendation", () => {
+  it("no placement, nothing passed: the start", () => {
+    expect(recommendationBasis(nextLesson(LESSONS, {}, undefined), undefined)).toBe("start");
+  });
+  it("placement chose the lesson: placement, also while continuing from there", () => {
+    expect(recommendationBasis(nextLesson(LESSONS, {}, "A1"), "A1")).toBe("placement");
+    expect(recommendationBasis(nextLesson(LESSONS, passedAll(ids(first("A2"), first("A2") + 1)), "A1"), "A1")).toBe("placement");
+  });
+  it("an easier lesson left after everything from the placement point is passed: progress, not placement", () => {
+    const r = nextLesson(LESSONS, passedAll(ids(first("A2"))), "A1");
+    expect(r).toMatchObject({ reason: "earlier-gap" });
+    expect(recommendationBasis(r, "A1")).toBe("progress");
+  });
+  it("saved progress without placement: progress", () => {
+    expect(recommendationBasis(nextLesson(LESSONS, passedAll(ids(0, 2)), undefined), undefined)).toBe("progress");
+  });
+  it("grammar complete or an unknown placement value: nothing, or not placement", () => {
+    expect(recommendationBasis(nextLesson(LESSONS, passedAll(ids(0)), "A1"), "A1")).toBeUndefined();
+    expect(recommendationBasis(nextLesson(LESSONS, {}, "Z9"), "Z9")).toBe("start");
   });
 });

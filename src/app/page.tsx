@@ -1,18 +1,18 @@
 import {
-  ArrowRightIcon, BarChart3Icon, BookOpenIcon, BookOpenTextIcon, CheckIcon, ChevronRightIcon, CompassIcon,
+  ArrowRightIcon, BarChart3Icon, BookOpenIcon, BookOpenTextIcon, CompassIcon,
   FileTextIcon, GlobeIcon, GraduationCapIcon, HeadphonesIcon, LandmarkIcon, MessageCircleIcon, MicIcon,
   PenLineIcon, SchoolIcon, TargetIcon, type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
 import { AcademicPhoto } from "@/components/academic-photo";
-import { STAGE_LOOK } from "@/components/stage-look";
 import { BandExplorer } from "@/components/home/band-explorer";
 import { Faq } from "@/components/home/faq";
+import { homeRecommendation, RoadmapStrip } from "@/components/home/roadmap-strip";
 import { TestChooser } from "@/components/home/test-chooser";
 import { Thai } from "@/components/home/thai";
 import { LESSONS } from "@/content";
-import { courseCompletion, stageOfLesson, stageProgress, type StageProgress } from "@/content/stages";
+import { courseCompletion, stageOfLesson, stageProgress } from "@/content/stages";
 import { getLessonBest, getPlacements, getUser } from "@/lib/data";
 import { nextLesson, placedLevel } from "@/lib/next-lesson";
 
@@ -22,7 +22,7 @@ export default function HomePage() {
     <div className="theme-academic page-bleed bg-(--ac-bg) text-(--ac-ink)">
       <div className="mx-auto flex max-w-[1520px] flex-col gap-6 px-4 pb-32 sm:px-6 lg:gap-8 lg:px-10 lg:pb-16 2xl:px-12">
         <Hero />
-        <Suspense fallback={<Roadmap stages={stageProgress({})} current={null} />}>
+        <Suspense fallback={<RoadmapStrip stages={stageProgress({})} recommended={null} />}>
           <RoadmapWithProgress />
         </Suspense>
         <Skills />
@@ -97,55 +97,13 @@ function Hero() {
 
 async function RoadmapWithProgress() {
   const user = await getUser();
-  if (!user) return <Roadmap stages={stageProgress({})} current={null} />;
+  if (!user) return <RoadmapStrip stages={stageProgress({})} recommended={null} />;
   const [best, placements] = await Promise.all([getLessonBest(), getPlacements()]);
   const stages = stageProgress(best);
-  // Highlight the stage of the lesson the Continue rule recommends; stage statuses (done, todo) are unchanged.
-  const next = nextLesson(LESSONS, best, placedLevel(placements[0]?.level));
-  const current = (next.kind === "lesson" ? stageOfLesson(next.lesson.id)?.stage.id : undefined) ?? stages.find((s) => s.status === "current")?.id ?? null;
-  return <Roadmap stages={stages} current={current} />;
-}
-
-function Roadmap({ stages, current }: { stages: StageProgress[]; current: string | null }) {
-  return (
-    <section className="grid gap-7 rounded-2xl border border-(--ac-line) bg-(--ac-surface) p-6 shadow-(--ac-shadow) lg:grid-cols-[270px_minmax(0,1fr)] lg:items-center lg:gap-10 lg:px-10 lg:py-9" aria-labelledby="road-title">
-      <div>
-        <h2 id="road-title" className="ac-serif text-[28px] leading-[1.15] font-bold text-(--ac-heading)">Your 7-Stage<br className="hidden lg:block" /> IELTS Roadmap</h2>
-        <p className="mt-3 text-[15px] leading-6 text-(--ac-muted)">A clear path from your current level to your target band.</p>
-      </div>
-      <ol className="-mx-2 flex snap-x gap-1 overflow-x-auto px-2 pb-2 lg:mx-0 lg:grid lg:grid-cols-7 lg:overflow-visible lg:px-0 lg:pb-0">
-        {stages.map((s, i) => {
-          const look = STAGE_LOOK[s.id];
-          const active = current ? s.id === current : i === 0;
-          const done = s.status === "done";
-          return (
-            <li key={s.id} className="relative flex w-[148px] shrink-0 snap-start lg:w-auto">
-              {i < stages.length - 1 && (
-                <span className="absolute top-8 left-[calc(50%+40px)] right-[calc(-50%+40px)] hidden items-center lg:flex" aria-hidden>
-                  <span className="h-px flex-1 bg-(--ac-line)" />
-                  <ChevronRightIcon className="size-3.5 text-(--ac-muted)" />
-                  <span className="h-px flex-1 bg-(--ac-line)" />
-                </span>
-              )}
-              <Link href={`/roadmap?stage=${s.id}`} aria-current={active ? "step" : undefined}
-                className="group flex w-full flex-col items-center gap-3 rounded-xl px-1.5 py-1 text-center">
-                <span className={"relative grid size-16 place-items-center rounded-full transition " +
-                  (active ? "bg-(--ac-navy) text-white shadow-[0_0_0_6px_var(--ac-gold-soft)]" : "bg-sunken text-(--ac-navy) group-hover:bg-(--ac-gold-soft)")}>
-                  {active ? <span className="ac-serif text-2xl font-bold">{s.n}</span> : <look.Icon className="size-7" strokeWidth={1.5} aria-hidden />}
-                  {done && <span className="absolute -right-1 -bottom-1 grid size-5 place-items-center rounded-full bg-[#2e7d5b] text-white"><CheckIcon className="size-3" aria-label="ผ่านแล้ว" /></span>}
-                  {active && !done && <span className="absolute -right-1 -bottom-1 grid size-5 place-items-center rounded-full bg-(--ac-gold-bright) text-[10px] font-bold text-(--ac-dark)">{s.n}</span>}
-                </span>
-                <span className="flex flex-col items-center gap-1.5">
-                  <span className="flex min-h-[2.5em] items-start text-[15px] leading-[1.25] font-semibold text-balance text-(--ac-heading)">{s.title}</span>
-                  <span className="max-w-[11rem] text-[13.5px] leading-[1.45] text-balance text-(--ac-muted)">{look.short}</span>
-                </span>
-              </Link>
-            </li>
-          );
-        })}
-      </ol>
-    </section>
-  );
+  // Mark the stage of the lesson the Continue rule recommends, and say why. Stage statuses (done, todo) are unchanged:
+  // a recommendation past Stage 1 or 2 never marks those stages as passed.
+  const placed = placedLevel(placements[0]?.level);
+  return <RoadmapStrip stages={stages} recommended={homeRecommendation(stages, nextLesson(LESSONS, best, placed), placed)} />;
 }
 
 const SKILL_CARDS: { name: string; Icon: LucideIcon; photo: string; alt: string; photoIcon: LucideIcon; text: string }[] = [

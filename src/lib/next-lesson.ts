@@ -55,3 +55,13 @@ export function nextLesson<L extends LessonLike>(lessons: readonly L[], best: un
   const gap = done.findIndex((d) => !d);
   return { kind: "lesson", lesson: lessons[gap], index: gap, reason: "earlier-gap", passed, total };
 }
+
+/** Why a lesson is the recommendation, for labels only. "placement": the placement result chose where to start
+    (an earlier gap is not that). "start": nothing passed and no placement. "progress": the next lesson in order. */
+export type RecommendationBasis = "placement" | "start" | "progress";
+
+export function recommendationBasis(next: NextLesson<LessonLike>, placement?: unknown): RecommendationBasis | undefined {
+  if (next.kind !== "lesson") return undefined;
+  if (placedLevel(placement) && next.reason !== "earlier-gap") return "placement";
+  return next.reason === "start" ? "start" : "progress";
+}
