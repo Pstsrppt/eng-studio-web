@@ -6,6 +6,7 @@ import { LESSONS } from "@/content";
 import { courseCompletion, stageOfLesson, stageProgress } from "@/content/stages";
 import { getLessonBest, getPlacements, getUser } from "@/lib/data";
 import { nextLesson, placedLevel, recommendationBasis } from "@/lib/next-lesson";
+import { nextStep } from "@/lib/next-step";
 import { RoadmapView } from "./roadmap-view";
 
 export const metadata: Metadata = { title: "Roadmap" };
@@ -46,7 +47,7 @@ async function Roadmap({ searchParams }: { searchParams: Search }) {
       level={placements[0]?.level ?? null}
       signedIn={!!user}
       recommended={recommended}
-      grammarComplete={next.kind === "grammar-complete" ? { total: next.total } : undefined}
+      nextStep={nextStep({ next, placement: placed, signedIn: !!user, stages })}
       initialStage={stages.some((s) => s.id === params.stage) ? params.stage! : undefined}
       initialView={params.view === "list" ? "list" : "world"}
       banner={<Banner />}
