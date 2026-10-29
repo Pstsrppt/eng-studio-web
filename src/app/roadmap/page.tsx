@@ -5,7 +5,7 @@ import { AcademicPhoto } from "@/components/academic-photo";
 import { LESSONS } from "@/content";
 import { courseCompletion, stageOfLesson, stageProgress } from "@/content/stages";
 import { getLessonBest, getPlacements, getUser } from "@/lib/data";
-import { nextLesson, placedLevel } from "@/lib/next-lesson";
+import { nextLesson, placedLevel, recommendationBasis } from "@/lib/next-lesson";
 import { RoadmapView } from "./roadmap-view";
 
 export const metadata: Metadata = { title: "Roadmap" };
@@ -34,8 +34,9 @@ async function Roadmap({ searchParams }: { searchParams: Search }) {
   const placed = placedLevel(placements[0]?.level);
   const next = nextLesson(LESSONS, best, placed);
   const recStage = next.kind === "lesson" ? stageOfLesson(next.lesson.id)?.stage.id : undefined;
-  const recommended = next.kind === "lesson" && recStage
-    ? { stage: recStage, lessonId: next.lesson.id, title: next.lesson.title, href: `/grammar/${next.lesson.id}`, placed: placed ?? null }
+  const basis = recommendationBasis(next, placed);
+  const recommended = next.kind === "lesson" && recStage && basis
+    ? { stage: recStage, lessonId: next.lesson.id, title: next.lesson.title, href: `/grammar/${next.lesson.id}`, placed: placed ?? null, basis }
     : undefined;
   return (
     <RoadmapView
