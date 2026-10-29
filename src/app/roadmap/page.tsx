@@ -46,6 +46,7 @@ async function Roadmap({ searchParams }: { searchParams: Search }) {
       level={placements[0]?.level ?? null}
       signedIn={!!user}
       recommended={recommended}
+      grammarComplete={next.kind === "grammar-complete" ? { total: next.total } : undefined}
       initialStage={stages.some((s) => s.id === params.stage) ? params.stage! : undefined}
       initialView={params.view === "list" ? "list" : "world"}
       banner={<Banner />}

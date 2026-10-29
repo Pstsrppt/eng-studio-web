@@ -1,9 +1,9 @@
 "use client";
 
-import { ArrowRightIcon, CheckIcon, CircleDotIcon, ClockIcon, ListIcon, LockIcon, MapIcon, MapPinIcon, SparklesIcon } from "lucide-react";
+import { ArrowRightIcon, AudioLinesIcon, CheckIcon, CircleDotIcon, ClockIcon, ListIcon, LockIcon, MapIcon, MapPinIcon, SparklesIcon } from "lucide-react";
 import Link from "next/link";
 import { useLayoutEffect, useRef, useState } from "react";
-import { REC_LABEL, STAGE_LOOK, START_LABEL } from "@/components/stage-look";
+import { REC_LABEL, soundsOnlyLabel, STAGE_LOOK, START_LABEL } from "@/components/stage-look";
 import type { StageItem, StageProgress } from "@/content/stages";
 import type { RecommendationBasis } from "@/lib/next-lesson";
 
@@ -16,6 +16,8 @@ type Props = {
   initialStage?: string;
   /** The Continue lesson from the shared rule (Home, /today, /study) and its stage. Missing once Grammar is complete. */
   recommended?: { stage: string; lessonId: string; title: string; href: string; placed: string | null; basis: RecommendationBasis };
+  /** Set once every Grammar lesson is passed (same rule as Home, /today and /study). */
+  grammarComplete?: { total: number };
   /** "world" is the path view (kept as the URL value so old links still work). */
   initialView: "world" | "list";
   /** The atmosphere photo strip, rendered on the server. */
@@ -31,7 +33,7 @@ const STATUS: Record<StageProgress["status"], { th: string; tone: string }> = {
 };
 const pad = (n: number) => String(n).padStart(2, "0");
 
-export function RoadmapView({ stages, passed, overall, level, signedIn, initialStage, recommended, initialView, banner }: Props) {
+export function RoadmapView({ stages, passed, overall, level, signedIn, initialStage, recommended, grammarComplete, initialView, banner }: Props) {
   const current = stages.find((s) => s.status === "current") ?? stages[1];
   // The placement test can point past the first stage with lessons left. Both are shown: that first stage keeps
   // its count of unpassed lessons and stays open, and the other is marked as the recommended next step.
@@ -81,6 +83,7 @@ export function RoadmapView({ stages, passed, overall, level, signedIn, initialS
           <>
             <StagePath stages={stages} selected={stage.id} onChoose={choose} marks={marks} />
             {split && recommended && <SplitNote split={split} first={stages[0]} lesson={recommended.title} placed={recommended.placed} onChoose={choose} />}
+            {grammarComplete && <GrammarDoneNote total={grammarComplete.total} />}
             <div className="grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.3fr)_minmax(0,0.9fr)] lg:items-start">
               <StageCard stage={stage} signedIn={signedIn} marks={marks} recommended={recommended?.stage === stage.id ? recommended : undefined} />
               <LessonPreview key={stage.id} stage={stage} done={done} recommendedId={recommended?.lessonId} />
@@ -104,6 +107,8 @@ function chipFor(s: StageProgress, { split, rec }: Marks): { th: string; tone: s
   if (rec?.stage === s.id) return { th: REC_LABEL[rec.basis], tone: "bg-(--ac-gold-soft) text-accent-text", Icon: SparklesIcon };
   if (split?.open.id === s.id) return { th: `${s.done}/${s.total} · เปิดเรียนได้`, tone: STATUS.open.tone, Icon: null };
   if (s.n === 1) return { th: START_LABEL, tone: STATUS.open.tone, Icon: MapPinIcon };
+  const sounds = soundsOnlyLabel(s);
+  if (sounds) return { th: sounds, tone: STATUS.todo.tone, Icon: AudioLinesIcon };
   const Icon = s.status === "current" ? CircleDotIcon : s.status === "soon" ? LockIcon : null;
   return { ...STATUS[s.status], Icon };
 }
@@ -114,6 +119,16 @@ function StatusChip({ stage, marks }: { stage: StageProgress; marks: Marks }) {
     <span className={"inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium whitespace-nowrap " + tone}>
       {Icon && <Icon className="size-3" aria-hidden />}{th}
     </span>
+  );
+}
+
+/** Once Grammar is complete: says so in the same words as /study and /today, and that IELTS preparation goes on. */
+function GrammarDoneNote({ total }: { total: number }) {
+  return (
+    <section aria-label="ผ่าน Grammar ครบ" className="flex flex-col gap-1 rounded-2xl border border-(--ac-line) bg-card px-5 py-4 text-(--ac-body) shadow-(--ac-shadow) lg:px-8">
+      <p className="text-[15px] leading-7"><b className="font-semibold text-(--ac-heading)">ผ่าน Grammar ครบทุกบทแล้ว ({total} บท)</b></p>
+      <p className="text-sm leading-6">ไวยากรณ์เป็นฐานหนึ่งของการเตรียม IELTS ยังมีการทวนคำศัพท์ การออกเสียง และทักษะ 4 ด้านให้ฝึกต่อ เปิดบทเดิมเพื่อทบทวนได้ทุกเมื่อ</p>
+    </section>
   );
 }
 
@@ -219,7 +234,7 @@ function StageCard({ stage, signedIn, marks, recommended }: { stage: StageProgre
           <>
             <Link href={target.href} data-next-lesson={recommended?.lessonId}
               className="od-press inline-flex w-fit items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-5 py-3 text-[15px] font-semibold text-(--ac-dark) hover:bg-accent-on-dark-hover">
-              {stage.done > 0 ? "เรียนต่อ" : recommended ? "เริ่มบทที่แนะนำ" : "Start Stage"} <ArrowRightIcon className="size-4" aria-hidden />
+              {recommended ? (stage.done > 0 ? "เรียนต่อ" : "เริ่มบทที่แนะนำ") : soundsOnlyLabel(stage) ? "ฝึกออกเสียงต่อ" : stage.done > 0 ? "เรียนต่อ" : "Start Stage"} <ArrowRightIcon className="size-4" aria-hidden />
             </Link>
             <span className="text-sm text-on-dark-muted">{recommended ? "แนะนำต่อ" : "Next"}: <span className="text-white">{target.title}</span></span>
           </>

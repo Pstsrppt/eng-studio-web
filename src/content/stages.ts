@@ -90,7 +90,11 @@ export const STAGES: Stage[] = [
 
 export type LessonBest = Record<string, { best: number; passed: boolean }>;
 
-export type StageProgress = Stage & { done: number; total: number; percent: number; next?: StageItem; status: "done" | "current" | "todo" | "open" | "soon" };
+export type StageProgress = Stage & {
+  done: number; total: number; percent: number; next?: StageItem; status: "done" | "current" | "todo" | "open" | "soon";
+  /** Tracked lessons not passed yet, by kind, so labels can say what is left (e.g. only pronunciation). */
+  left: { grammar: number; sounds: number };
+};
 
 /** Progress per stage from passed lesson quizzes. The current stage is the first one with lessons left. */
 export function stageProgress(best: LessonBest): StageProgress[] {
@@ -107,7 +111,9 @@ export function stageProgress(best: LessonBest): StageProgress[] {
     else if (!currentFound) status = "current";
     else status = "todo";
     if (status === "current") currentFound = true;
-    return { ...s, done, total, percent: total ? Math.round((done / total) * 100) : 0, next, status };
+    const open = tracked.filter((i) => !best[i.lessonId!]?.passed);
+    const sounds = open.filter((i) => i.href.startsWith("/sounds/")).length;
+    return { ...s, done, total, percent: total ? Math.round((done / total) * 100) : 0, next, status, left: { grammar: open.length - sounds, sounds } };
   });
 }
 

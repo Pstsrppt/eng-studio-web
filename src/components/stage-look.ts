@@ -17,3 +17,8 @@ export const STAGE_LOOK: Record<string, { Icon: LucideIcon; short: string }> = {
 export const START_LABEL = "จุดเริ่มต้น";
 /** What the recommended stage says, by why it is recommended (see recommendationBasis). Never a passed state. */
 export const REC_LABEL: Record<RecommendationBasis, string> = { placement: "แนะนำตามระดับ", start: "บทแรกที่แนะนำ", progress: "เรียนต่อที่นี่" };
+/** A stage whose only lessons left are pronunciation (Sounds) says so, instead of "in progress", so it never reads
+    as Grammar still to do. Undefined when Grammar lessons are left, nothing is left, or the stage has no lessons. */
+export function soundsOnlyLabel(s: { status: string; left: { grammar: number; sounds: number } }): string | undefined {
+  return (s.status === "current" || s.status === "todo") && s.left.grammar === 0 && s.left.sounds > 0 ? `เหลือบทออกเสียง ${s.left.sounds} บท` : undefined;
+}
