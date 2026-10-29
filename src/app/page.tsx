@@ -133,7 +133,7 @@ function Roadmap({ stages, current }: { stages: StageProgress[]; current: string
                   (active ? "bg-(--ac-navy) text-white shadow-[0_0_0_6px_var(--ac-gold-soft)]" : "bg-sunken text-(--ac-navy) group-hover:bg-(--ac-gold-soft)")}>
                   {active ? <span className="ac-serif text-2xl font-bold">{s.n}</span> : <look.Icon className="size-7" strokeWidth={1.5} aria-hidden />}
                   {done && <span className="absolute -right-1 -bottom-1 grid size-5 place-items-center rounded-full bg-[#2e7d5b] text-white"><CheckIcon className="size-3" aria-label="ผ่านแล้ว" /></span>}
-                  {active && !done && <span className="absolute -right-1 -bottom-1 grid size-5 place-items-center rounded-full bg-(--ac-gold-bright) text-[10px] font-bold text-(--ac-navy)">{s.n}</span>}
+                  {active && !done && <span className="absolute -right-1 -bottom-1 grid size-5 place-items-center rounded-full bg-(--ac-gold-bright) text-[10px] font-bold text-(--ac-dark)">{s.n}</span>}
                 </span>
                 <span className="flex flex-col items-center gap-1.5">
                   <span className="flex min-h-[2.5em] items-start text-[15px] leading-[1.25] font-semibold text-balance text-(--ac-heading)">{s.title}</span>
@@ -166,7 +166,7 @@ function Skills() {
           IELTS (International English Language Testing System) วัดภาษาอังกฤษ 4 ทักษะ ผลออกเป็น Band 0–9
           ใช้ยื่นเรียนต่อ ทำงาน และย้ายถิ่นฐานในหลายประเทศ
         </p>
-        <Link href="/ielts" className="relative inline-flex w-fit items-center gap-2 rounded-md bg-(--ac-gold-bright) px-4 py-2.5 text-sm font-semibold text-(--ac-navy) transition hover:bg-accent-on-dark-hover">
+        <Link href="/ielts" className="relative inline-flex w-fit items-center gap-2 rounded-md bg-(--ac-gold-bright) px-4 py-2.5 text-sm font-semibold text-(--ac-dark) transition hover:bg-accent-on-dark-hover">
           Learn More About IELTS <ArrowRightIcon className="size-4" aria-hidden />
         </Link>
         <ul className="relative mt-auto grid grid-cols-1 gap-4 pt-2 text-[14px] leading-5 text-on-dark sm:grid-cols-3">

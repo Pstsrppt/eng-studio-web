@@ -204,7 +204,7 @@ function StageCard({ stage, signedIn, split, recommended }: { stage: StageProgre
         {target ? (
           <>
             <Link href={target.href} data-next-lesson={recommended?.lessonId}
-              className="od-press inline-flex w-fit items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-5 py-3 text-[15px] font-semibold text-(--ac-navy) hover:bg-accent-on-dark-hover">
+              className="od-press inline-flex w-fit items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-5 py-3 text-[15px] font-semibold text-(--ac-dark) hover:bg-accent-on-dark-hover">
               {stage.done > 0 ? "เรียนต่อ" : recommended ? "เริ่มบทที่แนะนำ" : "Start Stage"} <ArrowRightIcon className="size-4" aria-hidden />
             </Link>
             <span className="text-sm text-on-dark-muted">{recommended ? "แนะนำต่อ" : "Next"}: <span className="text-white">{target.title}</span></span>

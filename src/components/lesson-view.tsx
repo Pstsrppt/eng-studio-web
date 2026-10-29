@@ -40,8 +40,8 @@ export function LessonView({ lesson, words, next, passMark }: Props) {
           <button key={t.id} role="tab" type="button" aria-selected={tab === t.id} aria-controls="lesson-panel" onClick={() => setTab(t.id)}
             className={"flex shrink-0 items-center gap-2 rounded-xl border px-4 py-2.5 text-sm transition " +
               (tab === t.id ? "border-navy bg-navy font-semibold text-white" : "border-line bg-surface text-ink-2 hover:border-navy/40")}>
-            <span className={"font-mono text-xs " + (tab === t.id ? "text-gold" : "text-muted")}>{i + 1}</span>
-            {t.label}<span className={"text-xs " + (tab === t.id ? "text-mist" : "text-muted")}>{t.th}</span>
+            <span className={"font-mono text-xs " + (tab === t.id ? "text-on-dark" : "text-muted")}>{i + 1}</span>
+            {t.label}<span className={"text-xs " + (tab === t.id ? "text-on-dark" : "text-muted")}>{t.th}</span>
           </button>
         ))}
       </div>
@@ -212,7 +212,7 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
           </div>
           <div className="flex flex-wrap gap-2">
             <button type="button" onClick={restart} className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-white/30 px-4 text-sm font-semibold text-white hover:bg-white/10"><RotateCcwIcon className="size-4" aria-hidden /> ฝึกอีกรอบ</button>
-            <button type="button" onClick={onNext} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-4 text-sm font-semibold text-(--ac-navy) hover:bg-accent-on-dark-hover">ไปทำ Quiz <ArrowRightIcon className="size-4" aria-hidden /></button>
+            <button type="button" onClick={onNext} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-(--ac-gold-bright) px-4 text-sm font-semibold text-(--ac-dark) hover:bg-accent-on-dark-hover">ไปทำ Quiz <ArrowRightIcon className="size-4" aria-hidden /></button>
           </div>
         </section>
         <ol className="flex flex-col gap-2.5">

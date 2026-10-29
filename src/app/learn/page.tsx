@@ -215,7 +215,7 @@ function Modes({ data }: { data: LearnOverview | null }) {
       <h2 id="modes" className="text-xl font-bold">โหมดการเรียน</h2>
       <div className="card flex flex-col gap-4 p-5">
         <div className="flex items-start gap-3">
-          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-(--ac-navy) text-(--ac-gold-bright)"><LayersIcon className="size-5" aria-hidden /></span>
+          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-(--ac-dark) text-(--ac-gold-bright)"><LayersIcon className="size-5" aria-hidden /></span>
           <div>
             <h3 className="text-lg font-bold">Smart Flashcard</h3>
             <p className="text-sm text-muted">การ์ดคำพร้อมภาพและเสียง ให้คะแนนความจำ จำไม่ได้ / ยังไม่แม่น / จำได้ แล้วระบบนัดทวนให้</p>
