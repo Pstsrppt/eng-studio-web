@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { LESSONS, SOUNDS } from "./index";
+import { soundsOnlyLabel } from "@/components/stage-look";
 import { courseCompletion, STAGES, stageOfLesson, stageProgress } from "./stages";
 
 describe("stages", () => {
@@ -43,5 +44,24 @@ describe("stages", () => {
     expect(stageOfLesson(LESSONS[0].id)?.stage.n).toBe(2);
     expect(stageOfLesson(SOUNDS[0].id)?.stage.n).toBe(4);
     expect(stageOfLesson("nope")).toBeNull();
+  });
+});
+
+describe("what is left in a stage: Grammar or only pronunciation", () => {
+  const passAll = (ids: string[]) => Object.fromEntries(ids.map((id) => [id, { best: 90, passed: true }]));
+  it("every Grammar lesson passed: Stage 4 has only Sounds left and says so, never in progress", () => {
+    const s = stageProgress(passAll(LESSONS.map((l) => l.id))).find((x) => x.id === "skills")!;
+    expect(s.left).toEqual({ grammar: 0, sounds: SOUNDS.length });
+    expect(soundsOnlyLabel(s)).toBe(`เหลือบทออกเสียง ${SOUNDS.length} บท`);
+  });
+  it("Grammar lessons still open: no pronunciation-only label", () => {
+    const s = stageProgress({}).find((x) => x.id === "skills")!;
+    expect(s.left.grammar).toBeGreaterThan(0);
+    expect(soundsOnlyLabel(s)).toBeUndefined();
+  });
+  it("everything passed: nothing left, no label", () => {
+    const s = stageProgress(passAll([...LESSONS, ...SOUNDS].map((l) => l.id))).find((x) => x.id === "skills")!;
+    expect(s.status).toBe("done");
+    expect(soundsOnlyLabel(s)).toBeUndefined();
   });
 });

@@ -103,7 +103,7 @@ async function RoadmapWithProgress() {
   // Mark the stage of the lesson the Continue rule recommends, and say why. Stage statuses (done, todo) are unchanged:
   // a recommendation past Stage 1 or 2 never marks those stages as passed.
   const placed = placedLevel(placements[0]?.level);
-  return <RoadmapStrip stages={stages} recommended={homeRecommendation(stages, nextLesson(LESSONS, best, placed), placed)} />;
+  return <RoadmapStrip stages={stages} recommended={homeRecommendation(nextLesson(LESSONS, best, placed), placed)} signedIn />;
 }
 
 const SKILL_CARDS: { name: string; Icon: LucideIcon; photo: string; alt: string; photoIcon: LucideIcon; text: string }[] = [
