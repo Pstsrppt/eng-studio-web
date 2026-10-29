@@ -82,7 +82,7 @@ async function Study() {
               </div>
               <div className="flex flex-wrap items-center gap-2.5 md:flex-col md:items-stretch">
                 <Link href="/placement"
-                  className="od-press inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-(--ac-gold-bright) px-6 text-[15px] font-semibold text-(--ac-navy) hover:bg-(--ac-gold-hover)">
+                  className="od-press inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-(--ac-gold-bright) px-6 text-[15px] font-semibold text-(--ac-dark) hover:bg-(--ac-gold-hover)">
                   สอบวัดระดับ <ArrowRightIcon className="size-4" aria-hidden />
                 </Link>
                 <Link href={`/grammar/${next.lesson.id}`} data-next-lesson={next.lesson.id}
@@ -108,7 +108,7 @@ async function Study() {
                 </div>
               </div>
               <Link href={`/grammar/${next.lesson.id}`} data-next-lesson={next.lesson.id}
-                className="od-press inline-flex min-h-12 w-fit items-center justify-center gap-2 rounded-lg bg-(--ac-gold-bright) px-6 text-[15px] font-semibold text-(--ac-navy) hover:bg-(--ac-gold-hover) md:w-auto">
+                className="od-press inline-flex min-h-12 w-fit items-center justify-center gap-2 rounded-lg bg-(--ac-gold-bright) px-6 text-[15px] font-semibold text-(--ac-dark) hover:bg-(--ac-gold-hover) md:w-auto">
                 <PlayIcon className="size-4" aria-hidden />{best[next.lesson.id] ? "เรียนต่อ" : "เริ่มบทนี้"}
               </Link>
             </section>

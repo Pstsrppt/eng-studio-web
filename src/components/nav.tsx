@@ -7,9 +7,9 @@ import { useEffect, useId, useRef, useState } from "react";
 import { STUDY_HOME, STUDY_LINKS, STUDY_MENU, TOOL_LINKS, ariaCurrent, navGroup, studyPage, type NavGroup, type NavLink } from "./nav-groups";
 
 const ITEM = "od-press relative inline-flex items-center gap-1 rounded-lg px-3 py-2 text-[15px] whitespace-nowrap";
-const itemTone = (on: boolean) => (on ? "font-semibold text-primary" : "text-body hover:bg-accent-soft hover:text-primary");
+const itemTone = (on: boolean) => (on ? "font-semibold text-primary" : "text-body hover:bg-tint hover:text-primary");
 /** The current item: a sky-blue bar under it plus porcelain navy, bold text, so it never relies on colour alone. */
-const Bar = () => <span className="od-grow absolute inset-x-3 -bottom-[17px] h-[3px] rounded-full bg-accent" aria-hidden />;
+const Bar = () => <span className="od-grow absolute inset-x-3 -bottom-[17px] h-[3px] rounded-full bg-primary" aria-hidden />;
 
 /** Top bar on computers: หน้าแรก · เรียน ▾ · Roadmap · IELTS · เครื่องมือ ▾. */
 export function TopNav() {
@@ -76,7 +76,7 @@ function Disclosure({ label, links, active, open, pathname, onToggle, onClose }:
             return (
               <li key={l.href}>
                 <Link href={l.href} aria-current={on ? "page" : undefined} onClick={onClose}
-                  className={"od-press flex flex-col rounded-xl px-3 py-2.5 " + (on ? "bg-accent-soft" : "hover:bg-sunken")}>
+                  className={"od-press flex flex-col rounded-xl px-3 py-2.5 " + (on ? "bg-tint" : "hover:bg-sunken")}>
                   <span className={"text-[15px] " + (on ? "font-semibold text-primary" : "font-medium text-heading")}>{l.label}</span>
                   <span className="text-xs text-muted">{l.sub}</span>
                 </Link>
@@ -108,7 +108,7 @@ export function TabBar() {
         return (
           <Link key={href} href={href} aria-current={ariaCurrent(pathname, href, on)}
             className={"od-press relative flex min-h-12 flex-col items-center justify-center gap-1 text-[11px] " + (on ? "font-semibold text-primary" : "text-muted hover:text-primary")}>
-            {on && <span className="od-grow absolute -top-1.5 h-[3px] w-8 rounded-full bg-accent" aria-hidden />}
+            {on && <span className="od-grow absolute -top-1.5 h-[3px] w-8 rounded-full bg-primary" aria-hidden />}
             <Icon className="size-5" strokeWidth={on ? 2.2 : 1.8} aria-hidden />
             {label}
           </Link>
@@ -134,7 +134,7 @@ export function StudyNav() {
           return (
             <Link key={l.href} href={l.href} aria-current={on ? "page" : undefined}
               className={"od-press inline-flex min-h-10 shrink-0 items-center rounded-full px-4 text-sm whitespace-nowrap " +
-                (on ? "bg-primary font-semibold text-white" : "text-body hover:bg-accent-soft hover:text-primary")}>
+                (on ? "bg-primary font-semibold text-white" : "text-body hover:bg-tint hover:text-primary")}>
               {l.label}
             </Link>
           );

@@ -18,7 +18,7 @@ export function BandExplorer() {
           {BANDS.map((b) => (
             <button key={b.band} type="button" role="radio" aria-checked={band === b.band} onClick={() => setBand(b.band)}
               className={"rounded-lg border px-2 py-2.5 font-mono text-[15px] transition " +
-                (band === b.band ? "border-(--ac-gold-bright) bg-(--ac-gold-bright) font-semibold text-(--ac-navy)" : "border-white/20 text-white hover:border-white/50")}>
+                (band === b.band ? "border-(--ac-gold-bright) bg-(--ac-gold-bright) font-semibold text-(--ac-dark)" : "border-white/20 text-white hover:border-white/50")}>
               {b.band}
             </button>
           ))}
