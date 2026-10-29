@@ -2,11 +2,12 @@
 
 import { ArrowRightIcon, AudioLinesIcon, CheckIcon, CircleDotIcon, ClockIcon, ListIcon, LockIcon, MapIcon, MapPinIcon, SparklesIcon } from "lucide-react";
 import Link from "next/link";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { REC_LABEL, soundsOnlyLabel, STAGE_LOOK, START_LABEL } from "@/components/stage-look";
 import type { StageItem, StageProgress } from "@/content/stages";
 import type { RecommendationBasis } from "@/lib/next-lesson";
 import type { NextStep } from "@/lib/next-step";
+import { jumpScroll, withStage } from "./stage-jump";
 
 type Props = {
   stages: StageProgress[];
@@ -44,16 +45,23 @@ export function RoadmapView({ stages, passed, overall, level, signedIn, initialS
   const marks: Marks = { split, rec: recommended && { stage: recommended.stage, basis: recommended.basis } };
   const [selected, setSelected] = useState(initialStage ?? recStage?.id ?? current.id);
   const [view, setView] = useState(initialView);
+  // Counts clicks on "ดู Stage …" in the Next Step card. Only those scroll the page; loading it never does.
+  const [jumps, setJumps] = useState(0);
   const stage = stages.find((s) => s.id === selected) ?? current;
   const done = new Set(passed);
 
   function choose(id: string) {
     setSelected(id);
     // Keep the choice in the address, so reload and "back" return to the same station.
-    const url = new URL(window.location.href);
-    url.searchParams.set("stage", id);
-    window.history.replaceState(null, "", url);
+    window.history.replaceState(null, "", withStage(window.location.href, id));
   }
+
+  // After the click has switched to Stage Path and selected the stage: bring the path into view. The row itself
+  // scrolls sideways to the station on phones (StagePath), so only the page moves here.
+  useEffect(() => {
+    if (!jumps) return;
+    document.getElementById("stage-path")?.scrollIntoView(jumpScroll(window.matchMedia("(prefers-reduced-motion: reduce)").matches));
+  }, [jumps]);
 
   return (
     <div className="flex flex-col">
@@ -80,7 +88,7 @@ export function RoadmapView({ stages, passed, overall, level, signedIn, initialS
       </header>
 
       <div className="mx-auto flex w-full max-w-[1520px] flex-col gap-6 px-4 pb-32 sm:px-6 lg:px-10 lg:pb-16 2xl:px-12">
-        <NextStepCard step={nextStep} lessonId={recommended?.lessonId} onChoose={(id) => { setView("world"); choose(id); }} />
+        <NextStepCard step={nextStep} lessonId={recommended?.lessonId} onChoose={(id) => { setView("world"); choose(id); setJumps((n) => n + 1); }} />
         {view === "world" ? (
           <>
             <StagePath stages={stages} selected={stage.id} onChoose={choose} marks={marks} />
@@ -157,6 +165,12 @@ function NextStepCard({ step, lessonId, onChoose }: { step: NextStep; lessonId?:
         )}
       </div>
       {/* Below the button, so on phones the way in stays near the top of the card. */}
+      {step.intro && (
+        <p className="border-t border-(--ac-line) pt-4 text-sm leading-6 text-(--ac-body) md:col-span-2">
+          {step.intro.text}{" "}
+          <Link href={step.intro.link.href} className={"inline-flex min-h-11 items-center " + link}>{step.intro.link.label}</Link>
+        </p>
+      )}
       {step.earlier && (
         <p className="border-t border-(--ac-line) pt-4 text-sm leading-6 text-(--ac-body) md:col-span-2">
           {step.earlier.text}{" "}
@@ -187,7 +201,7 @@ function StagePath({ stages, selected, onChoose, marks }: { stages: StageProgres
     ol.scrollTo({ left: Math.max(0, Math.min(left, ol.scrollWidth - ol.clientWidth)), behavior: smooth ? "smooth" : "instant" });
   }, [selected]);
   return (
-    <section aria-label="7 สถานีการเรียน" className="rounded-2xl border border-(--ac-line) bg-card p-5 shadow-(--ac-shadow) lg:px-8 lg:py-8">
+    <section id="stage-path" aria-label="7 สถานีการเรียน" className="scroll-mt-24 rounded-2xl border border-(--ac-line) bg-card p-5 shadow-(--ac-shadow) lg:px-8 lg:py-8">
       <ol ref={row} className="-mx-1 flex snap-x gap-2 overflow-x-auto px-1 pb-1 lg:mx-0 lg:grid lg:grid-cols-7 lg:gap-0 lg:overflow-visible lg:px-0 lg:pb-0">
         {stages.map((s, i) => {
           const look = STAGE_LOOK[s.id];

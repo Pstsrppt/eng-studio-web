@@ -20,6 +20,8 @@ export type NextStep = {
   secondary?: Link;
   /** When the recommendation is past a stage that still has lessons: those stages stay open. */
   earlier?: { text: string; stages: { id: string; label: string }[] };
+  /** Starting out: Stage 01 is where the whole IELTS roadmap begins, the first Grammar lesson is in a later stage. */
+  intro?: { text: string; link: Link };
 };
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -87,6 +89,7 @@ export function nextStep({ next, placement, signedIn, stages }: {
       facts: passedFact,
       cta: { href, label: "เริ่มบทแรก" },
       secondary: { href: "/placement", label: "สอบวัดระดับก่อน" },
+      intro: startIntro(stages, where?.n),
     };
   }
   return {
@@ -96,6 +99,17 @@ export function nextStep({ next, placement, signedIn, stages }: {
     reasons: ["บทถัดไปตามลำดับ ต่อจากบทที่ผ่านล่าสุด"],
     facts: passedFact,
     cta: { href, label: "เรียนต่อ" },
+  };
+}
+
+/** Stage 01 (its name and page come from the stage data) and the stage the first Grammar lesson is in. */
+function startIntro(stages: StageProgress[], lessonStage?: number): NextStep["intro"] {
+  const first = stages[0];
+  if (!first || !lessonStage || lessonStage === first.n) return undefined;
+  const page = first.items.find((i) => i.kind === "page")?.href ?? "/ielts";
+  return {
+    text: `Stage ${pad(first.n)} “${first.th}” คือจุดเริ่มต้นของเส้นทาง IELTS ทั้งหมด: ข้อสอบมีอะไรและคะแนน Band คิดอย่างไร ส่วนบท Grammar บทแรกเริ่มที่ Stage ${pad(lessonStage)}`,
+    link: { href: page, label: `อ่าน Stage ${pad(first.n)}: ${first.th}` },
   };
 }
 

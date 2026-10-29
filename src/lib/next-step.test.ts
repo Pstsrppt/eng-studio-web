@@ -90,3 +90,33 @@ describe("nextStep: the Roadmap's personalised next step", () => {
     expect(s.facts.some((f) => f.includes("ออกเสียง"))).toBe(false);
   });
 });
+
+describe("nextStep: Stage 01 and pronunciation follow-ups", () => {
+  it("guest and new learner: Stage 01 is named as the start of the roadmap, with a link to its page; Grammar CTA unchanged", () => {
+    for (const signedIn of [false, true]) {
+      const { next, s } = step({}, undefined, signedIn);
+      expect(s.cta.href).toBe(next.kind === "lesson" ? `/grammar/${next.lesson.id}` : "");
+      expect(s.secondary?.href).toBe("/placement");
+      expect(s.intro?.link.href).toBe("/ielts");
+      expect(s.intro?.text).toContain("Stage 01 “รู้จัก IELTS” คือจุดเริ่มต้น");
+      expect(s.intro?.text).toContain("Stage 02");
+    }
+  });
+  it("Stage 01 is never marked passed: it has no tracked lessons", () => {
+    expect(stageProgress(pass(LESSONS.map((l) => l.id)))[0].status).not.toBe("done");
+  });
+  it("no intro once the learner has a placement result or progress", () => {
+    expect(step({}, "A1").s.intro).toBeUndefined();
+    expect(step(pass(ids(0, 3)), undefined).s.intro).toBeUndefined();
+  });
+  it("all Grammar and some pronunciation passed: the CTA points at the first pronunciation lesson not yet passed", () => {
+    const grammar = LESSONS.map((l) => l.id);
+    const a = step(pass([...grammar, SOUNDS[0].id]), undefined).s;
+    expect(a.cta).toEqual({ href: `/sounds/${SOUNDS[1].id}`, label: "ฝึกออกเสียงต่อ" });
+    expect(a.facts).toContain(`เหลือบทออกเสียง ${SOUNDS.length - 1} บท`);
+    // Passed out of order: still the first one left, not the one after the last passed.
+    const b = step(pass([...grammar, SOUNDS[0].id, SOUNDS[2].id]), undefined).s;
+    expect(b.cta.href).toBe(`/sounds/${SOUNDS[1].id}`);
+    expect(b.facts).toContain(`เหลือบทออกเสียง ${SOUNDS.length - 2} บท`);
+  });
+});
