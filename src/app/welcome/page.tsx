@@ -1,37 +1,35 @@
-import { BookOpenIcon, CheckIcon, LayersIcon } from "lucide-react";
+import { ArrowRightIcon, BookOpenIcon, CheckIcon, LayersIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { AcademicPage } from "@/components/academic-page";
+import { AuthShell } from "@/components/auth/auth-shell";
 import { getUser } from "@/lib/data";
 
 export const metadata: Metadata = { title: "ยืนยันอีเมลสำเร็จ" };
 
+const WELCOME = { eyebrow: "WELCOME TO ODYSSEY", lead: "บัญชีพร้อมแล้ว เลือกเริ่มจากบทเรียนหรือคำศัพท์ก็ได้ ความคืบหน้าจะถูกบันทึกให้ทุกเครื่อง" };
+
 /** Where the sign-up confirmation link lands, so the learner sees it worked. */
 export default function WelcomePage() {
   return (
-    <AcademicPage className="mx-auto flex max-w-lg flex-col items-center gap-6 pt-6 text-center lg:pt-14">
-      <span className="learn-in grid size-20 place-items-center rounded-full bg-[#2e7d5b] text-white shadow-[0_14px_30px_-14px_rgba(46,125,91,0.6)]">
-        <CheckIcon className="size-10" strokeWidth={2.5} aria-hidden />
+    <AuthShell title="ยืนยันอีเมลสำเร็จ" editorial={WELCOME}
+      lead={<Suspense fallback={<span>บัญชีของคุณพร้อมใช้งานแล้ว</span>}><Who /></Suspense>}>
+      <span className="grid size-14 place-items-center rounded-full bg-[#2e7d5b] text-white" aria-hidden>
+        <CheckIcon className="size-7" strokeWidth={2.5} />
       </span>
-      <header>
-        <p className="eyebrow">ODYSSEY · IELTS</p>
-        <h1 className="mt-2 text-[30px] leading-[1.15] font-bold sm:text-[38px]">ยืนยันอีเมลสำเร็จ</h1>
-        <Suspense fallback={<p className="mt-2 text-muted">บัญชีของคุณพร้อมใช้งานแล้ว</p>}>
-          <Who />
-        </Suspense>
-      </header>
-      <div className="grid w-full gap-3 text-left sm:grid-cols-2">
-        <Link href="/roadmap" className="card flex items-start gap-3 p-4 transition hover:border-brand">
-          <BookOpenIcon className="mt-0.5 size-5 shrink-0 text-brand" aria-hidden />
-          <span><b className="block font-semibold">เริ่มบทเรียนแรก</b><span className="text-sm text-muted">ไวยากรณ์ทีละบท พร้อมแบบฝึกหัด</span></span>
+      <div className="flex flex-col gap-3">
+        <Link href="/roadmap" className="flex min-h-16 items-center gap-3 rounded-xl border border-(--ac-line) bg-card px-4 py-3 transition hover:border-(--ac-navy)/50">
+          <BookOpenIcon className="size-5 shrink-0 text-(--ac-navy)" aria-hidden />
+          <span className="min-w-0 flex-1"><b className="block font-semibold text-(--ac-heading)">เริ่มบทเรียนแรก</b><span className="text-sm text-(--ac-muted)">ไวยากรณ์ทีละบท พร้อมแบบฝึกหัด</span></span>
+          <ArrowRightIcon className="size-4 shrink-0 text-(--ac-muted)" aria-hidden />
         </Link>
-        <Link href="/learn" className="card flex items-start gap-3 p-4 transition hover:border-brand">
-          <LayersIcon className="mt-0.5 size-5 shrink-0 text-brand" aria-hidden />
-          <span><b className="block font-semibold">ฝึกคำศัพท์</b><span className="text-sm text-muted">การ์ดคำพร้อมภาพ เสียง และ Daily Quest</span></span>
+        <Link href="/learn" className="flex min-h-16 items-center gap-3 rounded-xl border border-(--ac-line) bg-card px-4 py-3 transition hover:border-(--ac-navy)/50">
+          <LayersIcon className="size-5 shrink-0 text-(--ac-navy)" aria-hidden />
+          <span className="min-w-0 flex-1"><b className="block font-semibold text-(--ac-heading)">ฝึกคำศัพท์</b><span className="text-sm text-(--ac-muted)">การ์ดคำพร้อมภาพ เสียง และ Daily Quest</span></span>
+          <ArrowRightIcon className="size-4 shrink-0 text-(--ac-muted)" aria-hidden />
         </Link>
       </div>
-    </AcademicPage>
+    </AuthShell>
   );
 }
 
@@ -39,11 +37,7 @@ async function Who() {
   const user = await getUser();
   if (!user) {
     // Confirmed in another browser: the account is verified, this browser just isn't signed in.
-    return (
-      <p className="mt-2 text-muted">
-        บัญชียืนยันแล้ว <Link href="/login" className="font-semibold text-brand underline">เข้าสู่ระบบ</Link> ด้วยอีเมลและรหัสผ่านเพื่อเริ่มใช้งาน
-      </p>
-    );
+    return <>บัญชียืนยันแล้ว <Link href="/login" className="font-semibold text-(--ac-navy) underline">เข้าสู่ระบบ</Link> ด้วยอีเมลและรหัสผ่านเพื่อเริ่มใช้งาน</>;
   }
-  return <p className="mt-2 text-muted">เข้าสู่ระบบแล้วในชื่อ <b className="text-ink">{user.email}</b> ความคืบหน้าจะถูกบันทึกทุกเครื่อง</p>;
+  return <>เข้าสู่ระบบแล้วในชื่อ <b className="text-(--ac-ink)">{user.email}</b> ความคืบหน้าจะถูกบันทึกทุกเครื่อง</>;
 }

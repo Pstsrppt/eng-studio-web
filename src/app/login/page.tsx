@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { AcademicPage, PageHeader } from "@/components/academic-page";
+import { AuthShell } from "@/components/auth/auth-shell";
 import { LoginForm } from "@/components/login-form";
 import { hasGoogle, hasSupabase } from "@/lib/supabase/env";
 
@@ -8,9 +8,7 @@ export const metadata: Metadata = { title: "เข้าสู่ระบบ" }
 
 export default function LoginPage({ searchParams }: { searchParams: Promise<{ error?: string; signedout?: string }> }) {
   return (
-    <AcademicPage className="mx-auto flex max-w-md flex-col gap-5 pt-2 lg:pt-10">
-      <PageHeader eyebrow="ACCOUNT · บัญชีผู้เรียน" title="เข้าสู่ระบบ"
-        lead="เข้าสู่ระบบแล้วเว็บจะจำบทที่ผ่าน คำที่ต้องทวน และข้อที่ผิดบ่อยไว้ให้ ใช้ได้ทุกเครื่อง" />
+    <AuthShell tabs="login" title="ยินดีต้อนรับกลับ" lead="เข้าสู่ระบบเพื่อเรียนต่อจากบทล่าสุด">
       {!hasSupabase && (
         <p className="rounded-xl border border-[#f3c3bd] bg-bad-bg px-4 py-3 text-sm text-bad">
           ยังไม่ได้ใส่ค่า Supabase ในไฟล์ .env.local ดูขั้นตอนใน README.md ระหว่างนี้เรียนได้ทุกหน้า แต่จะยังไม่บันทึกความคืบหน้า
@@ -20,7 +18,7 @@ export default function LoginPage({ searchParams }: { searchParams: Promise<{ er
         <LinkNotice searchParams={searchParams} />
       </Suspense>
       <LoginForm configured={hasSupabase} google={hasGoogle} />
-    </AcademicPage>
+    </AuthShell>
   );
 }
 

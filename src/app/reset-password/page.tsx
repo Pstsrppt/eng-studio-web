@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { AcademicPage, PageHeader } from "@/components/academic-page";
+import { AuthShell } from "@/components/auth/auth-shell";
 import { ResetForm } from "@/components/password-forms";
 import { getUser } from "@/lib/data";
 
 export const metadata: Metadata = { title: "ตั้งรหัสผ่านใหม่" };
 
+const RECOVERY = { photo: null, eyebrow: "ACCOUNT RECOVERY", lead: "ตั้งรหัสผ่านใหม่ได้จากลิงก์ในอีเมล คะแนนและการ์ดที่สะสมไว้ยังอยู่ครบ" };
+
 export default function ResetPasswordPage() {
   return (
-    <AcademicPage className="mx-auto flex max-w-md flex-col gap-5 pt-2 lg:pt-10">
-      <PageHeader eyebrow="ACCOUNT · บัญชีผู้เรียน" title="ตั้งรหัสผ่านใหม่" />
-      <Suspense fallback={<div className="card h-56 animate-pulse" />}>
+    <AuthShell title="ตั้งรหัสผ่านใหม่" editorial={RECOVERY}>
+      <Suspense fallback={<div className="h-56 animate-pulse rounded-xl bg-sunken motion-reduce:animate-none" />}>
         <ResetOrExpired />
       </Suspense>
-    </AcademicPage>
+    </AuthShell>
   );
 }
 
@@ -23,15 +24,16 @@ async function ResetOrExpired() {
   const user = await getUser();
   if (!user) {
     return (
-      <div className="card flex flex-col items-start gap-3 p-6 text-sm leading-6">
+      <div className="flex flex-col items-start gap-4 text-[15px] leading-7 text-(--ac-body)">
         <p>ลิงก์นี้หมดอายุหรือใช้ไปแล้ว หรือเปิดคนละเบราว์เซอร์กับที่กดขอลิงก์</p>
-        <Link href="/forgot-password" className="btn">ขอลิงก์ใหม่</Link>
+        <Link href="/forgot-password" className="btn min-h-12 w-full">ขอลิงก์ใหม่</Link>
+        <Link href="/login" className="self-center text-[15px] font-semibold text-(--ac-navy) underline underline-offset-2">กลับไปเข้าสู่ระบบ</Link>
       </div>
     );
   }
   return (
     <>
-      <p className="-mt-2 text-sm text-muted">สำหรับบัญชี {user.email}</p>
+      <p className="-mt-2 text-sm text-(--ac-muted)">สำหรับบัญชี {user.email}</p>
       <ResetForm />
     </>
   );
