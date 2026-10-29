@@ -8,7 +8,7 @@ import { STUDY_HOME, STUDY_LINKS, STUDY_MENU, TOOL_LINKS, ariaCurrent, navGroup,
 
 const ITEM = "od-press relative inline-flex items-center gap-1 rounded-lg px-3 py-2 text-[15px] whitespace-nowrap";
 const itemTone = (on: boolean) => (on ? "font-semibold text-primary" : "text-body hover:bg-accent-soft hover:text-primary");
-/** The current item: a copper bar under it plus aubergine, bold text, so it never relies on colour alone. */
+/** The current item: a sky-blue bar under it plus porcelain navy, bold text, so it never relies on colour alone. */
 const Bar = () => <span className="od-grow absolute inset-x-3 -bottom-[17px] h-[3px] rounded-full bg-accent" aria-hidden />;
 
 /** Top bar on computers: หน้าแรก · เรียน ▾ · Roadmap · IELTS · เครื่องมือ ▾. */

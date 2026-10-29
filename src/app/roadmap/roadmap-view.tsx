@@ -181,7 +181,7 @@ function StageCard({ stage, signedIn, split, recommended }: { stage: StageProgre
   // In the recommended stage, Continue goes to the same lesson as Home, /today and /study.
   const target = recommended ? { href: recommended.href, title: recommended.title } : stage.next;
   return (
-    <section key={stage.id} aria-labelledby="stage-title" className="learn-in relative flex flex-col gap-4 overflow-hidden rounded-2xl bg-(--ac-dark) p-6 text-white lg:p-7">
+    <section key={stage.id} aria-labelledby="stage-title" className="on-dark learn-in relative flex flex-col gap-4 overflow-hidden rounded-2xl bg-(--ac-dark) p-6 text-white lg:p-7">
       <look.Icon className="absolute -right-6 -bottom-6 size-40 text-white/5" strokeWidth={1} aria-hidden />
       <div className="relative flex flex-wrap items-center gap-2">
         <span className="font-mono text-xs tracking-[0.18em] text-(--ac-gold-bright)">STAGE {pad(stage.n)} / 07</span>

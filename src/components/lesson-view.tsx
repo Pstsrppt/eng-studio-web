@@ -204,7 +204,7 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
     return (
       <div className="flex flex-col gap-5">
         <ModeHeader kind="practice" />
-        <section aria-labelledby="practice-summary" className="flex flex-wrap items-center gap-5 rounded-2xl bg-(--ac-dark) p-6 text-white">
+        <section aria-labelledby="practice-summary" className="on-dark flex flex-wrap items-center gap-5 rounded-2xl bg-(--ac-dark) p-6 text-white">
           <p className="ac-serif text-5xl font-bold text-(--ac-gold-bright) tabular">{right}/{total}</p>
           <div className="min-w-0 flex-1">
             <h3 id="practice-summary" className="text-lg font-semibold">ถูกตั้งแต่ครั้งแรก {right} จาก {total} ข้อ</h3>

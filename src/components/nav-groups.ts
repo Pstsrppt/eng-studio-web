@@ -43,7 +43,7 @@ export function navGroup(pathname: string): NavGroup | null {
 /**
  * aria-current for a primary link. "page" only when the link goes to the page being shown; "true" when the page
  * belongs to the link's group (e.g. /grammar under the เรียน tab, which links to /today), so a screen reader hears
- * the selected item without being told that /today is the current page. The copper bar shows the group either way.
+ * the selected item without being told that /today is the current page. The sky-blue bar shows the group either way.
  */
 export function ariaCurrent(pathname: string, href: string, groupActive: boolean): "page" | "true" | undefined {
   if (pathname === href) return "page";
