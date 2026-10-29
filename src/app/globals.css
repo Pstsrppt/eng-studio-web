@@ -31,7 +31,7 @@
   --od-tint: #e9f0f8;            /* primary tint for selected rows and examples; muted on it 4.6:1 */
   --od-tint-strong: #dde8f3;
   --od-on-dark: #e6edf5;         /* running text on dark: 10.4:1 */
-  --od-on-dark-muted: #b4c4d6;   /* secondary text on dark: 6.9:1 */
+  --od-on-dark-muted: #bfcddc;   /* secondary text on dark: 7.6:1; on primary (selected lesson tab) 4.7:1 */
   --od-mark: #d6e5f4;            /* highlighter behind words */
   --od-shadow-rgb: 36 54 76;
   /* Motion: short and quiet. Press feedback is fast, hover and state changes a little slower. */
