@@ -16,7 +16,7 @@ describe("navGroup", () => {
     expect(navGroup("/")).toBe("home");
     expect(navGroup("/roadmap")).toBe("roadmap");
     expect(navGroup("/ielts")).toBe("ielts");
-    for (const p of ["/account", "/login", "/welcome", "/forgot-password", "/reset-password"]) expect(navGroup(p), p).toBe("account");
+    for (const p of ["/account", "/login", "/signup", "/welcome", "/forgot-password", "/reset-password"]) expect(navGroup(p), p).toBe("account");
     expect(navGroup("/placement")).toBeNull();
   });
 
