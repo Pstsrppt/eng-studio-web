@@ -2,10 +2,12 @@
 
 import { ArrowRightIcon, AudioLinesIcon, CheckIcon, CircleDotIcon, ClockIcon, ListIcon, LockIcon, MapIcon, MapPinIcon, SparklesIcon } from "lucide-react";
 import Link from "next/link";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { REC_LABEL, soundsOnlyLabel, STAGE_LOOK, START_LABEL } from "@/components/stage-look";
 import type { StageItem, StageProgress } from "@/content/stages";
 import type { RecommendationBasis } from "@/lib/next-lesson";
+import type { NextStep } from "@/lib/next-step";
+import { jumpScroll, withStage } from "./stage-jump";
 
 type Props = {
   stages: StageProgress[];
@@ -16,8 +18,8 @@ type Props = {
   initialStage?: string;
   /** The Continue lesson from the shared rule (Home, /today, /study) and its stage. Missing once Grammar is complete. */
   recommended?: { stage: string; lessonId: string; title: string; href: string; placed: string | null; basis: RecommendationBasis };
-  /** Set once every Grammar lesson is passed (same rule as Home, /today and /study). */
-  grammarComplete?: { total: number };
+  /** "ก้าวต่อไปของคุณ": the recommended next step and why, from lib/next-step.ts (same lesson as Home, /today, /study). */
+  nextStep: NextStep;
   /** "world" is the path view (kept as the URL value so old links still work). */
   initialView: "world" | "list";
   /** The atmosphere photo strip, rendered on the server. */
@@ -33,7 +35,7 @@ const STATUS: Record<StageProgress["status"], { th: string; tone: string }> = {
 };
 const pad = (n: number) => String(n).padStart(2, "0");
 
-export function RoadmapView({ stages, passed, overall, level, signedIn, initialStage, recommended, grammarComplete, initialView, banner }: Props) {
+export function RoadmapView({ stages, passed, overall, level, signedIn, initialStage, recommended, nextStep, initialView, banner }: Props) {
   const current = stages.find((s) => s.status === "current") ?? stages[1];
   // The placement test can point past the first stage with lessons left. Both are shown: that first stage keeps
   // its count of unpassed lessons and stays open, and the other is marked as the recommended next step.
@@ -43,16 +45,23 @@ export function RoadmapView({ stages, passed, overall, level, signedIn, initialS
   const marks: Marks = { split, rec: recommended && { stage: recommended.stage, basis: recommended.basis } };
   const [selected, setSelected] = useState(initialStage ?? recStage?.id ?? current.id);
   const [view, setView] = useState(initialView);
+  // Counts clicks on "ดู Stage …" in the Next Step card. Only those scroll the page; loading it never does.
+  const [jumps, setJumps] = useState(0);
   const stage = stages.find((s) => s.id === selected) ?? current;
   const done = new Set(passed);
 
   function choose(id: string) {
     setSelected(id);
     // Keep the choice in the address, so reload and "back" return to the same station.
-    const url = new URL(window.location.href);
-    url.searchParams.set("stage", id);
-    window.history.replaceState(null, "", url);
+    window.history.replaceState(null, "", withStage(window.location.href, id));
   }
+
+  // After the click has switched to Stage Path and selected the stage: bring the path into view. The row itself
+  // scrolls sideways to the station on phones (StagePath), so only the page moves here.
+  useEffect(() => {
+    if (!jumps) return;
+    document.getElementById("stage-path")?.scrollIntoView(jumpScroll(window.matchMedia("(prefers-reduced-motion: reduce)").matches));
+  }, [jumps]);
 
   return (
     <div className="flex flex-col">
@@ -79,11 +88,10 @@ export function RoadmapView({ stages, passed, overall, level, signedIn, initialS
       </header>
 
       <div className="mx-auto flex w-full max-w-[1520px] flex-col gap-6 px-4 pb-32 sm:px-6 lg:px-10 lg:pb-16 2xl:px-12">
+        <NextStepCard step={nextStep} lessonId={recommended?.lessonId} onChoose={(id) => { setView("world"); choose(id); setJumps((n) => n + 1); }} />
         {view === "world" ? (
           <>
             <StagePath stages={stages} selected={stage.id} onChoose={choose} marks={marks} />
-            {split && recommended && <SplitNote split={split} first={stages[0]} lesson={recommended.title} placed={recommended.placed} onChoose={choose} />}
-            {grammarComplete && <GrammarDoneNote total={grammarComplete.total} />}
             <div className="grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.3fr)_minmax(0,0.9fr)] lg:items-start">
               <StageCard stage={stage} signedIn={signedIn} marks={marks} recommended={recommended?.stage === stage.id ? recommended : undefined} />
               <LessonPreview key={stage.id} stage={stage} done={done} recommendedId={recommended?.lessonId} />
@@ -122,36 +130,53 @@ function StatusChip({ stage, marks }: { stage: StageProgress; marks: Marks }) {
   );
 }
 
-/** Once Grammar is complete: says so in the same words as /study and /today, and that IELTS preparation goes on. */
-function GrammarDoneNote({ total }: { total: number }) {
-  return (
-    <section aria-label="ผ่าน Grammar ครบ" className="flex flex-col gap-1 rounded-2xl border border-(--ac-line) bg-card px-5 py-4 text-(--ac-body) shadow-(--ac-shadow) lg:px-8">
-      <p className="text-[15px] leading-7"><b className="font-semibold text-(--ac-heading)">ผ่าน Grammar ครบทุกบทแล้ว ({total} บท)</b></p>
-      <p className="text-sm leading-6">ไวยากรณ์เป็นฐานหนึ่งของการเตรียม IELTS ยังมีการทวนคำศัพท์ การออกเสียง และทักษะ 4 ด้านให้ฝึกต่อ เปิดบทเดิมเพื่อทบทวนได้ทุกเมื่อ</p>
-    </section>
-  );
-}
-
-/** Explains, in Thai, why the recommended stage is not the first stage with lessons left. Shown only when the
-    learner's own data (placement result or saved progress) puts the recommendation past that stage. */
-function SplitNote({ split: { rec, open, basis }, first, lesson, placed, onChoose }: { split: Split; first: StageProgress; lesson: string; placed: string | null; onChoose: (id: string) => void }) {
+/** "ก้าวต่อไปของคุณ": one recommended step, why it is recommended, real figures and the way in. The wording and the
+    figures come from lib/next-step.ts; this only lays them out. */
+function NextStepCard({ step, lessonId, onChoose }: { step: NextStep; lessonId?: string; onChoose: (id: string) => void }) {
   const link = "font-semibold text-(--ac-navy) underline decoration-(--ac-line) underline-offset-4 transition-colors hover:decoration-current";
-  // The stages before the recommendation, which stay open: Stage 01 (the start) up to the first with lessons left.
-  const earlier = open.n - first.n === 1 ? `Stage ${pad(first.n)} และ Stage ${pad(open.n)}` : `Stage ${pad(first.n)}–${pad(open.n)}`;
   return (
-    <section aria-label="สถานีที่แนะนำ" className="flex flex-col gap-1 rounded-2xl border border-(--ac-line) bg-card px-5 py-4 text-(--ac-body) shadow-(--ac-shadow) lg:px-8">
-      <p className="text-[15px] leading-7">
-        {basis === "placement" && placed ? (
-          <><b className="font-semibold text-(--ac-heading)">ระบบแนะนำให้เริ่มเรียนที่ Stage {pad(rec.n)} ตามผลสอบวัดระดับ ({placed === "pre-A1" ? "ก่อน A1" : placed})</b> แต่คุณยังกลับไปเรียน {earlier} ได้</>
-        ) : (
-          <><b className="font-semibold text-(--ac-heading)">แนะนำต่อที่ Stage {pad(rec.n)}</b> ตามลำดับบท Grammar ที่ผ่านแล้ว แต่คุณยังกลับไปเรียน {earlier} ได้</>
+    <section aria-labelledby="next-step-title" data-next-step={step.state}
+      className="grid gap-5 rounded-2xl border border-(--ac-line) bg-card p-5 shadow-(--ac-shadow) md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:gap-8 lg:px-8 lg:py-7">
+      <div className="flex min-w-0 flex-col gap-2.5">
+        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5">
+          <h2 id="next-step-title" className="text-[15px] font-semibold text-(--ac-heading)">ก้าวต่อไปของคุณ</h2>
+          <span className="inline-flex items-center gap-1 rounded-full bg-(--ac-gold-soft) px-2 py-0.5 text-xs font-medium text-accent-text">
+            <SparklesIcon className="size-3" aria-hidden />{step.eyebrow}
+          </span>
+          {step.stage && <span className="text-sm text-(--ac-muted)">{step.stage}</span>}
+        </div>
+        <p className="text-[22px] leading-snug font-bold text-balance text-(--ac-heading) sm:text-[24px]">{step.title}</p>
+        {step.reasons.map((r) => <p key={r} className="max-w-[68ch] text-[15px] leading-7 text-(--ac-body)">{r}</p>)}
+        {step.facts.length > 0 && (
+          <ul className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-(--ac-muted)">
+            {step.facts.map((f) => <li key={f} className="flex items-center gap-2"><span className="size-1.5 shrink-0 rounded-full bg-(--ac-gold)" aria-hidden />{f}</li>)}
+          </ul>
         )}
-      </p>
-      <p className="text-sm leading-6">
-        บทที่แนะนำ: {lesson} · Stage {pad(open.n)} ยังมีอีก {open.total - open.done} บทที่ยังไม่ผ่าน ไม่ต้องทำให้ครบก่อน บทที่ข้ามไปจะยังไม่นับว่าผ่าน{" "}
-        <button type="button" onClick={() => onChoose(first.id)} className={link}>ดู Stage {pad(first.n)}</button>{" · "}
-        <button type="button" onClick={() => onChoose(open.id)} className={link}>ดู Stage {pad(open.n)}</button>
-      </p>
+      </div>
+      <div className="flex flex-col gap-2 sm:flex-row md:flex-col md:items-stretch">
+        <Link href={step.cta.href} data-next-lesson={lessonId}
+          className="od-press inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-(--ac-navy) px-6 text-[15px] font-semibold text-white hover:bg-(--ac-navy-2)">
+          {step.cta.label} <ArrowRightIcon className="size-4" aria-hidden />
+        </Link>
+        {step.secondary && (
+          <Link href={step.secondary.href} className="inline-flex min-h-12 items-center justify-center rounded-lg border border-(--ac-line) bg-card px-6 text-[15px] font-semibold text-(--ac-navy) hover:border-(--ac-navy)/40">
+            {step.secondary.label}
+          </Link>
+        )}
+      </div>
+      {/* Below the button, so on phones the way in stays near the top of the card. */}
+      {step.intro && (
+        <p className="border-t border-(--ac-line) pt-4 text-sm leading-6 text-(--ac-body) md:col-span-2">
+          {step.intro.text}{" "}
+          <Link href={step.intro.link.href} className={"inline-flex min-h-11 items-center " + link}>{step.intro.link.label}</Link>
+        </p>
+      )}
+      {step.earlier && (
+        <p className="border-t border-(--ac-line) pt-4 text-sm leading-6 text-(--ac-body) md:col-span-2">
+          {step.earlier.text}{" "}
+          {step.earlier.stages.map((s, i) => <span key={s.id}>{i > 0 && " · "}<button type="button" onClick={() => onChoose(s.id)} className={"inline-flex min-h-11 items-center " + link}>{s.label}</button></span>)}
+        </p>
+      )}
     </section>
   );
 }
@@ -176,7 +201,7 @@ function StagePath({ stages, selected, onChoose, marks }: { stages: StageProgres
     ol.scrollTo({ left: Math.max(0, Math.min(left, ol.scrollWidth - ol.clientWidth)), behavior: smooth ? "smooth" : "instant" });
   }, [selected]);
   return (
-    <section aria-label="7 สถานีการเรียน" className="rounded-2xl border border-(--ac-line) bg-card p-5 shadow-(--ac-shadow) lg:px-8 lg:py-8">
+    <section id="stage-path" aria-label="7 สถานีการเรียน" className="scroll-mt-24 rounded-2xl border border-(--ac-line) bg-card p-5 shadow-(--ac-shadow) lg:px-8 lg:py-8">
       <ol ref={row} className="-mx-1 flex snap-x gap-2 overflow-x-auto px-1 pb-1 lg:mx-0 lg:grid lg:grid-cols-7 lg:gap-0 lg:overflow-visible lg:px-0 lg:pb-0">
         {stages.map((s, i) => {
           const look = STAGE_LOOK[s.id];
