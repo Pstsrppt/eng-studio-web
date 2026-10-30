@@ -10,6 +10,7 @@ import { stageOfLesson, type Stage, type StageItem } from "@/content/stages";
 import { getLessonBest } from "@/lib/data";
 import { AcademicPhoto } from "./academic-photo";
 import { LessonView } from "./lesson-view";
+import { Meaning } from "./meaning";
 import { SpeakButton } from "./speak-button";
 import { STAGE_LOOK } from "./stage-look";
 
@@ -116,7 +117,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
                   <li key={word.id} className="flex items-center gap-3 py-2.5">
                     <span className="min-w-0 flex-1">
                       <b className="block font-semibold text-(--ac-heading)">{word.en}</b>
-                      <span className="block truncate text-sm text-(--ac-muted)">{word.th}</span>
+                      <Meaning th={word.th} en={word.en} className="block truncate text-sm text-(--ac-muted)" />
                     </span>
                     <SpeakButton text={word.en} />
                   </li>

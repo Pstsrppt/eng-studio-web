@@ -7,6 +7,7 @@ import type { Verb, VerbGroup } from "@/content";
 import { verbFormOk } from "@/content/lookup";
 import type { CardMap } from "@/lib/data";
 import { buildQueue } from "@/lib/queue";
+import { Meaning } from "./meaning";
 import { speak } from "./speak";
 import { type Cover, PhotoWordCard } from "./photo-word-card";
 import { SpeakButton } from "./speak-button";
@@ -128,7 +129,7 @@ function VerbTable({ verbs, cards }: { verbs: Verb[]; cards: CardMap }) {
                     </td>
                     <td className="px-4 py-2.5 font-display text-verb">{v.v2}</td>
                     <td className="px-4 py-2.5 font-display text-obj">{v.v3}</td>
-                    <td className="px-4 py-2.5 text-sm text-muted">{v.th}</td>
+                    <td className="px-4 py-2.5 text-sm text-muted"><Meaning th={v.th} en={v.v1} /></td>
                     <td className="px-4 py-2.5">
                       <div className="flex items-center justify-end gap-1.5">
                         <SpeakButton text={`${v.v1}, ${v.v2.replace("/", ", ")}, ${v.v3}`} />

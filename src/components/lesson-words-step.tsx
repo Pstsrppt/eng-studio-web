@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { LessonWord, LessonWords } from "@/content/lesson-words";
+import { Meaning } from "./meaning";
 import { PhotoWordCard } from "./photo-word-card";
 import { Sentence } from "./sentence";
 import { speak } from "./speak";
@@ -128,7 +129,7 @@ function WordCard({ item, learned = false }: { item: LessonWord; learned?: boole
           {w.level && <span className="font-mono text-[10px] text-muted">{w.level}</span>}
           {learned && <span className="rounded-full bg-sunken px-2 py-0.5 text-[11px] text-muted">เรียนแล้ว</span>}
         </div>
-        <p className="text-[15px]">{w.th}</p>
+        <p className="text-[15px]"><Meaning th={w.th} en={w.en} /></p>
         {item.ex && (
           <div className={"mt-2 rounded-lg px-3 py-2 " + tone.chip}>
             <Sentence en={item.ex} th={item.exTh} />

@@ -14,6 +14,8 @@ import { boxFor } from "@/lib/learning/srs";
 import { buildQueue } from "@/lib/queue";
 import { speak } from "./speak";
 import { useStudy } from "./study-context";
+import { TAP_44 } from "./meaning";
+import { meaningShown } from "./meaning-pref";
 import { PhotoWordCard, type Cover } from "./photo-word-card";
 import { POS_STYLE, PosBadge, WordIcon } from "./word-bits";
 
@@ -215,7 +217,7 @@ function Review({ pool, allWords, mode, cards, today, round, signedIn, onRestart
         <span>{mode === "recall" ? "จำได้" : "ถูก"} {stats.right}/{stats.done}</span>
       </div>
 
-      <PhotoWordCard key={word.id} word={word} photo={word.photo} diagram={word.diagram} cover={cover} hint={hint} bookmark={false}
+      <PhotoWordCard key={word.id} word={word} photo={word.photo} diagram={word.diagram} cover={cover} hint={hint} revealed={answered} bookmark={false}
         examples={word.ex ? [{ en: word.ex, th: word.exTh }] : []} />
 
       <div className="flex flex-col gap-3">
@@ -356,6 +358,8 @@ function WordTable({ words, mine, decks, cards, signedIn }: TableProps) {
   }
 
   const hidden = (id: string, col: Hide) => hide === col && !revealed.has(id);
+  // With the header's Thai toggle off, meanings start covered too; "แตะเพื่อดู" opens one row as before.
+  const thHidden = (id: string) => hidden(id, "th") || !meaningShown({ revealed: revealed.has(id), showThai });
   const gridCols = signedIn
     ? "md:grid-cols-[2.5rem_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.5fr)_7.5rem_1.5rem]"
     : "md:grid-cols-[2.5rem_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.5fr)_1.5rem]";
@@ -486,13 +490,13 @@ function WordTable({ words, mine, decks, cards, signedIn }: TableProps) {
                           {w.level && <span className="font-mono text-[10px] text-muted">{w.level}</span>}
                         </div>
                         {/* On phones the meaning sits under the word. */}
-                        <div className="mt-0.5 truncate text-sm text-ink-2 md:hidden">
-                          {hidden(w.id, "th") ? <Cover onClick={() => reveal(w.id)} /> : w.th}
+                        <div className={"mt-0.5 text-sm text-ink-2 md:hidden " + (thHidden(w.id) ? "" : "truncate")}>
+                          {thHidden(w.id) ? <Cover onClick={() => reveal(w.id)} /> : w.th}
                         </div>
                       </div>
 
-                      <div className="hidden min-w-0 truncate text-[15px] md:block">
-                        {hidden(w.id, "th") ? <Cover onClick={() => reveal(w.id)} /> : w.th}
+                      <div className={"hidden min-w-0 text-[15px] md:block " + (thHidden(w.id) ? "" : "truncate")}>
+                        {thHidden(w.id) ? <Cover onClick={() => reveal(w.id)} /> : w.th}
                       </div>
 
                       <div className="hidden min-w-0 md:block">
@@ -578,7 +582,8 @@ function Marked({ text, word, className }: { text: string; word: string; classNa
 
 function Cover({ onClick }: { onClick: () => void }) {
   return (
-    <button type="button" onClick={onClick} className="h-6 w-24 rounded-md bg-sunken text-xs text-muted hover:bg-line">
+    // Truncation is off around it (overflow would clip the tap area) so the ::after can make it 44px tall.
+    <button type="button" onClick={onClick} className={"relative h-6 w-24 rounded-md bg-sunken text-xs text-muted hover:bg-line " + TAP_44}>
       แตะเพื่อดู
     </button>
   );
