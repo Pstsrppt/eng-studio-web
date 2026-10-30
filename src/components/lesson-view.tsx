@@ -7,35 +7,35 @@ import { addLessonCards, saveAttempt } from "@/app/actions";
 import type { Lesson, PracticeItem, QuizItem } from "@/content";
 import type { LessonWords } from "@/content/lesson-words";
 import { normalize } from "@/content/lookup";
+import { jumpScroll } from "@/app/roadmap/stage-jump";
+import { FocusBar } from "./lesson-focus";
+import { TABS, sectionLabel, type Tab } from "./lesson-tabs";
 import { LessonWordsStep } from "./lesson-words-step";
 import { Meaning } from "./meaning";
 import { PlayableProse } from "./playable-prose";
 import { Sentence } from "./sentence";
 import { SpeakingDrill } from "./speaking-drill";
 
-const TABS = [
-  { id: "learn", label: "Learn", th: "เรียน" },
-  { id: "practice", label: "Practice", th: "ฝึก" },
-  { id: "quiz", label: "Quiz", th: "ทดสอบ" },
-  { id: "real", label: "Real-life", th: "ใช้จริง" },
-  { id: "summary", label: "Summary", th: "สรุป" },
-] as const;
-type Tab = (typeof TABS)[number]["id"];
+/** Back to the top of the lesson card, without animation when the learner asks for less motion. */
+function toLessonTop() {
+  document.getElementById("lesson-content")?.scrollIntoView(jumpScroll(window.matchMedia("(prefers-reduced-motion: reduce)").matches));
+}
 
-type Props = { lesson: Lesson; words: LessonWords; next?: { href: string; title: string }; passMark: number };
+type Props = { lesson: Lesson; words: LessonWords; next?: { href: string; title: string }; passMark: number; focusable?: boolean };
 
-export function LessonView({ lesson, words, next, passMark }: Props) {
+export function LessonView({ lesson, words, next, passMark, focusable = false }: Props) {
   const [tab, setTab] = useState<Tab>("learn");
   const hasWords = words.fresh.length + words.review.length > 0;
   // Learn starts with the lesson's new words, then the theory (the order the course has always used).
   const [step, setStep] = useState<"words" | "theory">(hasWords ? "words" : "theory");
   const go = (t: Tab) => {
     setTab(t);
-    document.getElementById("lesson-content")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    toLessonTop();
   };
 
   return (
     <div className="flex flex-col gap-5">
+      {focusable && <FocusBar title={lesson.title} level={lesson.level} section={sectionLabel(tab)} />}
       <div role="tablist" aria-label="ส่วนของบทเรียน" className="-mx-1 flex gap-1 overflow-x-auto px-1 pb-1">
         {TABS.map((t, i) => (
           <button key={t.id} role="tab" type="button" aria-selected={tab === t.id} aria-controls="lesson-panel" onClick={() => setTab(t.id)}
@@ -547,7 +547,7 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
         setDone({ score, saved: false, added: 0 });
         setError(true);
       }
-      document.getElementById("lesson-content")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      toLessonTop();
     });
   }
 

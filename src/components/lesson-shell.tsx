@@ -9,6 +9,7 @@ import { lessonWords } from "@/content/lesson-words";
 import { stageOfLesson, type Stage, type StageItem } from "@/content/stages";
 import { getLessonBest } from "@/lib/data";
 import { AcademicPhoto } from "./academic-photo";
+import { LessonFocus } from "./lesson-focus";
 import { LessonView } from "./lesson-view";
 import { Meaning } from "./meaning";
 import { SpeakButton } from "./speak-button";
@@ -18,6 +19,8 @@ type Props = { lesson: Lesson; kind: "grammar" | "sounds"; passMark: number; nex
 const pad = (n: number) => String(n).padStart(2, "0");
 const LEVEL_TH: Record<string, string> = { A1: "Beginner", A2: "Elementary", B1: "Intermediate", B2: "Upper-intermediate" };
 const card = "rounded-2xl border border-(--ac-line) bg-card shadow-(--ac-shadow)";
+// Hidden in focus mode (see LessonFocus): only CSS changes, so the lesson keeps its state.
+const FOCUS_HIDE = "group-data-[focus=on]/lesson:hidden";
 
 export function LessonShell({ lesson, kind, passMark, next }: Props) {
   const found = stageOfLesson(lesson.id);
@@ -38,14 +41,15 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
   const StageIcon = stage ? STAGE_LOOK[stage.id].Icon : BookOpenIcon;
 
   return (
-    <div className="theme-academic page-bleed bg-(--ac-bg) text-(--ac-ink)">
-      <div className="mx-auto grid max-w-[1520px] gap-6 px-4 pt-6 pb-32 sm:px-6 lg:pb-16 xl:grid-cols-[260px_minmax(0,1fr)_290px] xl:px-10 2xl:px-12">
-        <aside className="xl:sticky xl:top-[86px] xl:max-h-[calc(100dvh-102px)] xl:self-start xl:overflow-y-auto" aria-label="บทเรียนในสถานีนี้">
+    <LessonFocus className="theme-academic page-bleed bg-(--ac-bg) text-(--ac-ink)">
+      {/* Focus mode: one centred column about 860px wide for reading. */}
+      <div className="mx-auto grid max-w-[1520px] gap-6 px-4 pt-6 pb-32 sm:px-6 lg:pb-16 xl:grid-cols-[260px_minmax(0,1fr)_290px] xl:px-10 2xl:px-12 group-data-[focus=on]/lesson:max-w-[908px] group-data-[focus=on]/lesson:xl:grid-cols-1 group-data-[focus=on]/lesson:xl:px-6">
+        <aside className={`${FOCUS_HIDE} xl:sticky xl:top-[86px] xl:max-h-[calc(100dvh-102px)] xl:self-start xl:overflow-y-auto`} aria-label="บทเรียนในสถานีนี้">
           <StageNav stage={stage} items={items} current={lesson.id} />
         </aside>
 
         <div className="flex min-w-0 flex-col gap-6">
-          <section className={"relative isolate overflow-hidden " + card} aria-labelledby="lesson-title">
+          <section className={`relative isolate overflow-hidden ${card} ${FOCUS_HIDE}`} aria-labelledby="lesson-title">
             <div className="absolute inset-y-0 right-0 -z-10 hidden w-[52%] md:block">
               <AcademicPhoto name="lesson-banner" fallback="skill-reading" alt="" icon={BookOpenIcon} className="size-full object-[50%_45%]" />
               <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--ac-surface)_0%,color-mix(in_srgb,var(--ac-surface)_75%,transparent)_30%,transparent_70%)]" aria-hidden />
@@ -66,7 +70,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
             </div>
           </section>
 
-          <section aria-labelledby="objectives" className="rounded-2xl border border-(--ac-line) bg-card/70 px-6 py-5">
+          <section aria-labelledby="objectives" className={`rounded-2xl border border-(--ac-line) bg-card/70 px-6 py-5 ${FOCUS_HIDE}`}>
             <h2 id="objectives" className="text-sm font-semibold text-(--ac-heading)">ในบทนี้คุณจะได้</h2>
             <ul className="mt-2 grid gap-x-6 gap-y-1.5 text-[15px] leading-6 text-(--ac-body) sm:grid-cols-2">
               {objectives.map((o) => (
@@ -76,12 +80,12 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
           </section>
 
           <div id="lesson-content" className={"scroll-mt-24 p-4 sm:p-6 " + card}>
-            <LessonView key={lesson.id} lesson={lesson} words={words} passMark={passMark} next={next} />
+            <LessonView key={lesson.id} lesson={lesson} words={words} passMark={passMark} next={next} focusable={kind === "grammar"} />
           </div>
         </div>
 
         {/* Supporting material: quieter than the lesson (smaller headings, muted cards); below 1280px it follows the lesson. */}
-        <aside className="grid gap-5 md:grid-cols-2 xl:sticky xl:top-[86px] xl:flex xl:flex-col xl:self-start" aria-label="ข้อมูลประกอบบทเรียน">
+        <aside className={`grid gap-5 md:grid-cols-2 xl:sticky xl:top-[86px] xl:flex xl:flex-col xl:self-start ${FOCUS_HIDE}`} aria-label="ข้อมูลประกอบบทเรียน">
           {later.length > 0 && (
             <section className={"p-5 " + card} aria-labelledby="up-next">
               <h2 id="up-next" className="ac-serif text-[17px] font-bold text-(--ac-heading)">Lessons in This Stage</h2>
@@ -145,7 +149,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
           )}
         </aside>
       </div>
-    </div>
+    </LessonFocus>
   );
 }
 
