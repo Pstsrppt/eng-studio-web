@@ -43,7 +43,8 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
   return (
     <LessonFocus className="theme-academic page-bleed bg-(--ac-bg) text-(--ac-ink)">
       {/* Focus mode: one centred column about 860px wide for reading. */}
-      <div className="mx-auto grid max-w-[1520px] gap-6 px-4 pt-6 pb-32 sm:px-6 lg:pb-16 xl:grid-cols-[260px_minmax(0,1fr)_290px] xl:px-10 2xl:px-12 group-data-[focus=on]/lesson:max-w-[908px] group-data-[focus=on]/lesson:xl:grid-cols-1 group-data-[focus=on]/lesson:xl:px-6">
+      {/* grid-cols-1 here and on the supporting panel: columns may shrink below their content, so a long title can't widen the page. */}
+      <div className="mx-auto grid max-w-[1520px] grid-cols-1 gap-6 px-4 pt-6 pb-32 sm:px-6 lg:pb-16 xl:grid-cols-[260px_minmax(0,1fr)_290px] xl:px-10 2xl:px-12 group-data-[focus=on]/lesson:max-w-[908px] group-data-[focus=on]/lesson:xl:grid-cols-1 group-data-[focus=on]/lesson:xl:px-6">
         <aside className={`${FOCUS_HIDE} xl:sticky xl:top-[86px] xl:max-h-[calc(100dvh-102px)] xl:self-start xl:overflow-y-auto`} aria-label="บทเรียนในสถานีนี้">
           <StageNav stage={stage} items={items} current={lesson.id} />
         </aside>
@@ -85,7 +86,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
         </div>
 
         {/* Supporting material: quieter than the lesson (smaller headings, muted cards); below 1280px it follows the lesson. */}
-        <aside className={`grid gap-5 md:grid-cols-2 xl:sticky xl:top-[86px] xl:flex xl:flex-col xl:self-start ${FOCUS_HIDE}`} aria-label="ข้อมูลประกอบบทเรียน">
+        <aside className={`grid grid-cols-1 gap-5 md:grid-cols-2 xl:sticky xl:top-[86px] xl:flex xl:flex-col xl:self-start ${FOCUS_HIDE}`} aria-label="ข้อมูลประกอบบทเรียน">
           {later.length > 0 && (
             <section className={"p-5 " + card} aria-labelledby="up-next">
               <h2 id="up-next" className="ac-serif text-[17px] font-bold text-(--ac-heading)">Lessons in This Stage</h2>
@@ -96,7 +97,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
                     <Link href={item.href} className="flex items-center gap-3 rounded-xl border border-(--ac-line) p-2.5 transition hover:border-(--ac-navy)/30 hover:bg-(--ac-bg)">
                       <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-sunken text-(--ac-navy)"><StageIcon className="size-5" strokeWidth={1.6} aria-hidden /></span>
                       <span className="min-w-0 flex-1">
-                        <span className="block truncate text-sm font-medium text-(--ac-ink)">{item.title}</span>
+                        <span className="block truncate text-sm font-medium text-(--ac-ink) max-xl:whitespace-normal">{item.title}</span>
                         <span className="text-xs text-(--ac-muted)">{item.minutes} นาที</span>
                       </span>
                     </Link>
@@ -121,7 +122,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
                   <li key={word.id} className="flex items-center gap-3 py-2.5">
                     <span className="min-w-0 flex-1">
                       <b className="block font-semibold text-(--ac-heading)">{word.en}</b>
-                      <Meaning th={word.th} en={word.en} className="block truncate text-sm text-(--ac-muted)" />
+                      <Meaning th={word.th} en={word.en} className="block truncate text-sm text-(--ac-muted) max-xl:whitespace-normal" />
                     </span>
                     <SpeakButton text={word.en} />
                   </li>
