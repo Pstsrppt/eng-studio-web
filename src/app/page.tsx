@@ -75,13 +75,14 @@ function Hero() {
           Build the English foundation your IELTS preparation needs.
         </p>
                 <div className="flex flex-wrap gap-3">
-          <Link href="/placement" className="inline-flex items-center gap-2 rounded-lg bg-(--ac-navy) px-6 py-3.5 text-[15px] font-semibold text-white shadow-(--ac-shadow) transition hover:bg-(--ac-navy-2)">
-            Start Placement Test <ArrowRightIcon className="size-4" aria-hidden />
+          <Link href="/grammar/1-1" className="inline-flex items-center gap-2 rounded-lg bg-(--ac-navy) px-6 py-3.5 text-[15px] font-semibold text-white shadow-(--ac-shadow) transition hover:bg-(--ac-navy-2)">
+            Start Learning Free <ArrowRightIcon className="size-4" aria-hidden />
           </Link>
           <Link href="/roadmap" className="inline-flex items-center gap-2 rounded-lg border-[1.5px] border-(--ac-navy) bg-card px-6 py-3.5 text-[15px] font-semibold text-(--ac-navy) transition hover:bg-(--ac-gold-soft)">
-            See Your Roadmap
+            Explore Roadmap
           </Link>
         </div>
+        <p className="-mt-2 text-[14px] leading-6 text-(--ac-body)">ทดลองเรียนได้โดยไม่ต้องเข้าสู่ระบบ สมัครฟรีเมื่ออยากบันทึกความคืบหน้า</p>
         <ul className="grid grid-cols-1 gap-2.5 pt-3 min-[420px]:grid-cols-2 lg:grid-cols-4 lg:gap-3">
           {HIGHLIGHTS.map(({ Icon, text }) => (
             <li key={text} className="flex items-center gap-3 rounded-full bg-card/85 py-1.5 pr-4 pl-1.5 shadow-[0_6px_18px_-12px_rgb(var(--od-shadow-rgb)/0.45)] ring-1 ring-(--ac-line)/70 backdrop-blur-sm">
@@ -267,11 +268,11 @@ function FinalCta() {
           <Thai className="mt-1 text-[15px] text-(--ac-muted)">สร้างทักษะให้แข็งแรง เข้าใจความคืบหน้าของตัวเอง และก้าวต่อไปสู่เป้าหมาย IELTS</Thai>
         </p>
         <div className="flex flex-wrap justify-center gap-3 pt-2">
-          <Link href="/placement" className="inline-flex items-center gap-2 rounded-lg bg-(--ac-navy) px-6 py-3.5 text-[15px] font-semibold text-white transition hover:bg-(--ac-navy-2)">
-            Start Placement Test <ArrowRightIcon className="size-4" aria-hidden />
+          <Link href="/grammar/1-1" className="inline-flex items-center gap-2 rounded-lg bg-(--ac-navy) px-6 py-3.5 text-[15px] font-semibold text-white transition hover:bg-(--ac-navy-2)">
+            Start Learning Free <ArrowRightIcon className="size-4" aria-hidden />
           </Link>
           <Link href="/roadmap" className="inline-flex items-center gap-2 rounded-lg border-[1.5px] border-(--ac-navy) bg-card px-6 py-3.5 text-[15px] font-semibold text-(--ac-navy) transition hover:bg-(--ac-gold-soft)">
-            Explore Your Roadmap
+            Explore Roadmap
           </Link>
         </div>
       </div>
