@@ -117,7 +117,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
                   <li key={word.id} className="flex items-center gap-3 py-2.5">
                     <span className="min-w-0 flex-1">
                       <b className="block font-semibold text-(--ac-heading)">{word.en}</b>
-                      <span className="block truncate text-sm text-(--ac-muted)"><Meaning th={word.th} en={word.en} /></span>
+                      <Meaning th={word.th} en={word.en} className="block truncate text-sm text-(--ac-muted)" />
                     </span>
                     <SpeakButton text={word.en} />
                   </li>

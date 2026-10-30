@@ -14,6 +14,7 @@ import { boxFor } from "@/lib/learning/srs";
 import { buildQueue } from "@/lib/queue";
 import { speak } from "./speak";
 import { useStudy } from "./study-context";
+import { TAP_44 } from "./meaning";
 import { meaningShown } from "./meaning-pref";
 import { PhotoWordCard, type Cover } from "./photo-word-card";
 import { POS_STYLE, PosBadge, WordIcon } from "./word-bits";
@@ -489,12 +490,12 @@ function WordTable({ words, mine, decks, cards, signedIn }: TableProps) {
                           {w.level && <span className="font-mono text-[10px] text-muted">{w.level}</span>}
                         </div>
                         {/* On phones the meaning sits under the word. */}
-                        <div className="mt-0.5 truncate text-sm text-ink-2 md:hidden">
+                        <div className={"mt-0.5 text-sm text-ink-2 md:hidden " + (thHidden(w.id) ? "" : "truncate")}>
                           {thHidden(w.id) ? <Cover onClick={() => reveal(w.id)} /> : w.th}
                         </div>
                       </div>
 
-                      <div className="hidden min-w-0 truncate text-[15px] md:block">
+                      <div className={"hidden min-w-0 text-[15px] md:block " + (thHidden(w.id) ? "" : "truncate")}>
                         {thHidden(w.id) ? <Cover onClick={() => reveal(w.id)} /> : w.th}
                       </div>
 
@@ -581,7 +582,8 @@ function Marked({ text, word, className }: { text: string; word: string; classNa
 
 function Cover({ onClick }: { onClick: () => void }) {
   return (
-    <button type="button" onClick={onClick} className="h-6 w-24 rounded-md bg-sunken text-xs text-muted hover:bg-line">
+    // Truncation is off around it (overflow would clip the tap area) so the ::after can make it 44px tall.
+    <button type="button" onClick={onClick} className={"relative h-6 w-24 rounded-md bg-sunken text-xs text-muted hover:bg-line " + TAP_44}>
       แตะเพื่อดู
     </button>
   );

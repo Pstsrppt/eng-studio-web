@@ -163,9 +163,9 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
           ) : meaningShown({ revealed: revealed || peeked === word.id, showThai }) ? (
             <p className="text-2xl text-ink">{word.th}</p>
           ) : (
-            // Same height as the meaning line, so the card does not jump when it opens.
+            // Same height as the meaning line, so the card does not jump when it opens; ::after makes the tap area 44px.
             <button type="button" onClick={() => setPeeked(word.id)} aria-label={`ดูความหมายของ ${word.en}`}
-              className="inline-flex min-h-8 items-center self-start rounded-lg bg-sunken px-3 text-sm font-semibold text-ink-2 hover:bg-line">
+              className="relative inline-flex min-h-8 items-center self-start rounded-lg bg-sunken px-3 text-sm font-semibold text-ink-2 hover:bg-line after:absolute after:inset-x-0 after:-inset-y-1.5 after:content-['']">
               ดูความหมาย
             </button>
           )}
