@@ -7,8 +7,10 @@ import { addCard } from "@/app/actions";
 import type { Photo, Word } from "@/content";
 import type { Diagram, VerbForms } from "@/content/diagram";
 import { POS_LABEL } from "@/content/pos";
+import { meaningShown } from "./meaning-pref";
 import { Sentence } from "./sentence";
 import { speak } from "./speak";
+import { useStudy } from "./study-context";
 import { WordDiagram } from "./word-diagram";
 import { POS_STYLE, WordIcon } from "./word-bits";
 
@@ -31,6 +33,8 @@ type Props = {
   bookmark?: { kind: "word" | "verb" } | false;
   /** Shown when the meaning is covered. */
   hint?: string;
+  /** The learner has just answered or opened the answer, so the meaning shows even with the header's Thai toggle off. */
+  revealed?: boolean;
   /** Drawn instead of a photo for words like "although", or offered next to one (V1–V2–V3). */
   diagram?: Diagram;
   verb?: VerbForms;
@@ -41,8 +45,11 @@ type Props = {
  * and a photo of the example's scene. Without a photo the word's icon stands in.
  * Flashcards and drills cover parts of it until the learner answers.
  */
-export function PhotoWordCard({ word, photo, examples, index, forms, cover = {}, bookmark = { kind: "word" }, hint, diagram, verb }: Props) {
+export function PhotoWordCard({ word, photo, examples, index, forms, cover = {}, bookmark = { kind: "word" }, hint, revealed = false, diagram, verb }: Props) {
+  const { showThai } = useStudy();
   const [shown, setShown] = useState(0);
+  // The word whose meaning the learner opened with Thai off; a new word starts hidden again.
+  const [peeked, setPeeked] = useState<string | null>(null);
   const [view, setView] = useState<"photo" | "diagram">(photo ? "photo" : "diagram");
   const [saved, setSaved] = useState<"idle" | "added" | "signed-out">("idle");
   const [, start] = useTransition();
@@ -153,8 +160,14 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
           )}
           {cover.th ? (
             <p className="text-lg text-muted">{hint ?? "นึกความหมายในใจก่อน"}</p>
-          ) : (
+          ) : meaningShown({ revealed: revealed || peeked === word.id, showThai }) ? (
             <p className="text-2xl text-ink">{word.th}</p>
+          ) : (
+            // Same height as the meaning line, so the card does not jump when it opens.
+            <button type="button" onClick={() => setPeeked(word.id)} aria-label={`ดูความหมายของ ${word.en}`}
+              className="inline-flex min-h-8 items-center self-start rounded-lg bg-sunken px-3 text-sm font-semibold text-ink-2 hover:bg-line">
+              ดูความหมาย
+            </button>
           )}
           {saved === "signed-out" && (
             <p className="text-xs text-muted"><Link href="/login" className="font-semibold text-brand underline">เข้าสู่ระบบ</Link> เพื่อเก็บคำไว้ทวน</p>

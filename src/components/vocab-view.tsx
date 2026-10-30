@@ -14,6 +14,7 @@ import { boxFor } from "@/lib/learning/srs";
 import { buildQueue } from "@/lib/queue";
 import { speak } from "./speak";
 import { useStudy } from "./study-context";
+import { meaningShown } from "./meaning-pref";
 import { PhotoWordCard, type Cover } from "./photo-word-card";
 import { POS_STYLE, PosBadge, WordIcon } from "./word-bits";
 
@@ -215,7 +216,7 @@ function Review({ pool, allWords, mode, cards, today, round, signedIn, onRestart
         <span>{mode === "recall" ? "จำได้" : "ถูก"} {stats.right}/{stats.done}</span>
       </div>
 
-      <PhotoWordCard key={word.id} word={word} photo={word.photo} diagram={word.diagram} cover={cover} hint={hint} bookmark={false}
+      <PhotoWordCard key={word.id} word={word} photo={word.photo} diagram={word.diagram} cover={cover} hint={hint} revealed={answered} bookmark={false}
         examples={word.ex ? [{ en: word.ex, th: word.exTh }] : []} />
 
       <div className="flex flex-col gap-3">
@@ -356,6 +357,8 @@ function WordTable({ words, mine, decks, cards, signedIn }: TableProps) {
   }
 
   const hidden = (id: string, col: Hide) => hide === col && !revealed.has(id);
+  // With the header's Thai toggle off, meanings start covered too; "แตะเพื่อดู" opens one row as before.
+  const thHidden = (id: string) => hidden(id, "th") || !meaningShown({ revealed: revealed.has(id), showThai });
   const gridCols = signedIn
     ? "md:grid-cols-[2.5rem_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.5fr)_7.5rem_1.5rem]"
     : "md:grid-cols-[2.5rem_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.5fr)_1.5rem]";
@@ -487,12 +490,12 @@ function WordTable({ words, mine, decks, cards, signedIn }: TableProps) {
                         </div>
                         {/* On phones the meaning sits under the word. */}
                         <div className="mt-0.5 truncate text-sm text-ink-2 md:hidden">
-                          {hidden(w.id, "th") ? <Cover onClick={() => reveal(w.id)} /> : w.th}
+                          {thHidden(w.id) ? <Cover onClick={() => reveal(w.id)} /> : w.th}
                         </div>
                       </div>
 
                       <div className="hidden min-w-0 truncate text-[15px] md:block">
-                        {hidden(w.id, "th") ? <Cover onClick={() => reveal(w.id)} /> : w.th}
+                        {thHidden(w.id) ? <Cover onClick={() => reveal(w.id)} /> : w.th}
                       </div>
 
                       <div className="hidden min-w-0 md:block">

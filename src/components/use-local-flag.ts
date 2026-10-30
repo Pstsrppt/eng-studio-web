@@ -21,10 +21,15 @@ function subscribe(onChange: () => void) {
   };
 }
 
+/** The stored "1"/"0" as a yes/no; nothing stored yet means `fallback`. */
+export function flagValue(raw: string | null, fallback: boolean): boolean {
+  return raw === null ? fallback : raw === "1";
+}
+
 /** A yes/no setting kept in this browser. The server render always uses `fallback`. */
 export function useLocalFlag(key: string, fallback: boolean): [boolean, (value: boolean) => void] {
   const raw = useSyncExternalStore(subscribe, () => read(key), () => null);
-  const value = raw === null ? fallback : raw === "1";
+  const value = flagValue(raw, fallback);
   const set = useCallback(
     (next: boolean) => {
       try {

@@ -8,6 +8,7 @@ import type { Lesson, PracticeItem, QuizItem } from "@/content";
 import type { LessonWords } from "@/content/lesson-words";
 import { normalize } from "@/content/lookup";
 import { LessonWordsStep } from "./lesson-words-step";
+import { Meaning } from "./meaning";
 import { PlayableProse } from "./playable-prose";
 import { Sentence } from "./sentence";
 import { SpeakingDrill } from "./speaking-drill";
@@ -497,7 +498,7 @@ function Summary({ lesson, words, next, onQuiz }: { lesson: Lesson; words: Lesso
           <p className="eyebrow">คำศัพท์ของบท ({words.fresh.length})</p>
           <ul className="flex flex-wrap gap-1.5">
             {words.fresh.map(({ word }) => (
-              <li key={word.id} className="rounded-full border border-line bg-paper px-3 py-1 text-sm"><b className="font-semibold">{word.en}</b> <span className="text-muted">{word.th}</span></li>
+              <li key={word.id} className="rounded-full border border-line bg-paper px-3 py-1 text-sm"><b className="font-semibold">{word.en}</b> <Meaning th={word.th} en={word.en} className="text-muted" /></li>
             ))}
           </ul>
         </section>
