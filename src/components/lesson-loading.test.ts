@@ -79,6 +79,17 @@ describe("waiting for a lesson", () => {
   });
 });
 
+describe("waiting for the Roadmap", () => {
+  it("uses the same visible state, under its own name", () => {
+    expect(source("src/app/roadmap/page.tsx")).toContain('<Suspense fallback={<LessonLoading label="กำลังเปิด Roadmap" />}>');
+    expect(source("src/app/roadmap/page.tsx")).not.toContain("animate-pulse bg-(--ac-bg)");
+    const div = document.createElement("div");
+    div.innerHTML = renderToStaticMarkup(createElement(LessonLoading, { label: "กำลังเปิด Roadmap" }));
+    expect(div.querySelector('[role="status"]')?.getAttribute("aria-label")).toBe("กำลังเปิด Roadmap");
+    expect(div.textContent).toContain("กำลังเปิด Roadmap");
+  });
+});
+
 describe("a lesson that fails", () => {
   it("says so instead of waiting, and retries when asked", async () => {
     const retry = vi.fn();
@@ -169,6 +180,13 @@ describe("names match what is on screen", () => {
 });
 
 describe("touch targets", () => {
+  it("moves the speak buttons below the sentence when there is no room beside it, so they don't cover its words", () => {
+    expect(source("src/components/sentence.tsx")).toContain("justify-between gap-3 cramped:flex-wrap");
+    expect(source("src/components/sentence.tsx")).toContain('"min-w-0 cramped:basis-full"');
+    expect(source("src/components/photo-word-card.tsx")).toContain("ring-line cramped:flex-wrap");
+    expect(source("src/components/photo-word-card.tsx")).toContain('"min-w-0 flex-1 cramped:basis-full"');
+  });
+
   it("gives every word at least a 24px wide box, as separate buttons with text between them", async () => {
     await render(createElement(StudyProvider, null, createElement(Sentence, { en: "I am a user." })));
     const words = [...host.querySelectorAll("p button")];

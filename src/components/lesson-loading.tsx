@@ -1,13 +1,13 @@
 /**
- * What shows while a lesson streams in. A quick navigation never sees it: it stays transparent for its first moments
+ * What shows while a lesson or the Roadmap streams in. A quick navigation never sees it: it stays transparent for its first moments
  * (.lesson-loading in globals.css). The link appears only if the wait runs long, because a response that never
  * arrives raises no error and would otherwise leave the learner here for good.
  */
-export function LessonLoading() {
+export function LessonLoading({ label = "กำลังเปิดบทเรียน" }: { label?: string }) {
   return (
-    <div role="status" aria-label="กำลังเปิดบทเรียน" className="lesson-loading page-bleed min-h-[70vh] bg-page">
+    <div role="status" aria-label={label} className="lesson-loading page-bleed min-h-[70vh] bg-page">
       <div className="mx-auto flex max-w-[908px] flex-col gap-5 px-4 pt-6 cramped:px-2 sm:px-6">
-        <p className="text-sm font-semibold text-heading">กำลังเปิดบทเรียน…</p>
+        <p className="text-sm font-semibold text-heading">{label}…</p>
         <div className="flex animate-pulse flex-col gap-5" aria-hidden>
           <div className="h-7 w-2/3 rounded-lg bg-sunken" />
           <div className="flex gap-2 overflow-hidden">

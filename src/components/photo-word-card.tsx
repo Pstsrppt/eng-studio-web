@@ -204,8 +204,8 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
         <hr className="border-line" />
 
         {example && !cover.examples && (
-          <div className="flex items-center gap-3 rounded-2xl bg-paper/70 p-4 ring-1 ring-line">
-            <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-3 rounded-2xl bg-paper/70 p-4 ring-1 ring-line cramped:flex-wrap">
+            <div className="min-w-0 flex-1 cramped:basis-full">
               {example.label && <span className="mb-1 inline-block rounded bg-surface px-1.5 py-0.5 font-mono text-[11px] text-muted ring-1 ring-line">{example.label}</span>}
               {/* While the meaning is covered, the Thai line would give it away. */}
               <Sentence en={example.en} th={cover.th ? undefined : example.th} />

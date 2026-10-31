@@ -53,6 +53,23 @@ const openTheory = (page) => page.evaluate(() => [...document.querySelectorAll("
   await page.browserContext().close();
 }
 
+// The Roadmap has its own waiting state: tap the real tab, with the response held.
+{
+  const page = await open(390, 844);
+  await page.goto(`${BASE}/grammar/1-1`, { waitUntil: "networkidle0" });
+  await wait(500);
+  await page.setRequestInterception(true);
+  page.on("request", (r) => {
+    if (r.headers().rsc !== undefined && !r.headers()["next-router-prefetch"] && new URL(r.url()).pathname === "/roadmap") return;
+    r.continue().catch(() => {});
+  });
+  await (await page.evaluateHandle(() => [...document.querySelectorAll('nav[aria-label="เมนูหลัก"] a[href="/roadmap"]')].find((a) => a.getClientRects().length))).tap();
+  await wait(900);
+  const name = await page.evaluate(() => [...document.querySelectorAll('main [role="status"]')].find((e) => e.getClientRects().length)?.getAttribute("aria-label"));
+  check("Roadmap shows and names its waiting state", name === "กำลังเปิด Roadmap", String(name));
+  await page.browserContext().close();
+}
+
 // Contrast of the grade buttons, from the colours the browser actually paints.
 for (const width of [390, 1440]) {
   const page = await open(width, 900);

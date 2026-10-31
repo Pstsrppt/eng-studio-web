@@ -2,6 +2,7 @@ import { LibraryBigIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { AcademicPhoto } from "@/components/academic-photo";
+import { LessonLoading } from "@/components/lesson-loading";
 import { LESSONS } from "@/content";
 import { courseCompletion, stageOfLesson, stageProgress } from "@/content/stages";
 import { getLessonBest, getPlacements, getUser } from "@/lib/data";
@@ -21,7 +22,7 @@ function Banner() {
 export default function RoadmapPage({ searchParams }: { searchParams: Search }) {
   return (
     <div className="theme-academic page-bleed min-h-[calc(100dvh-62px)] bg-(--ac-bg) text-(--ac-ink)">
-      <Suspense fallback={<div className="h-[640px] animate-pulse bg-(--ac-bg)" aria-busy="true" aria-label="กำลังโหลด" />}>
+      <Suspense fallback={<LessonLoading label="กำลังเปิด Roadmap" />}>
         <Roadmap searchParams={searchParams} />
       </Suspense>
     </div>

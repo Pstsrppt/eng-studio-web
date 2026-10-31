@@ -17,6 +17,7 @@ Chrome is found at the Windows default path. Elsewhere, set `CHROME_PATH`.
 
 - A lesson navigation stays out of sight for a quick response, then shows "กำลังเปิดบทเรียน".
 - If no response comes, a reload link appears.
+- The Roadmap shows its own named waiting state.
 - The text on the Flashcard grade buttons passes contrast at 390 and 1440px.
 - axe finds no `label-content-name-mismatch` or `target-size` failures on Home or lesson theory at 320, 390 and 1440px.
 - Those pages fit the screen.

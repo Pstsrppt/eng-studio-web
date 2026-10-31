@@ -9,8 +9,8 @@ export function Sentence({ en, th, size = "md" }: { en: string; th?: string; siz
   const { showThai, openWord } = useStudy();
   const parts = en.split(/(\s+)/);
   return (
-    <div className="flex items-start justify-between gap-3">
-      <div className="min-w-0">
+    <div className="flex items-start justify-between gap-3 cramped:flex-wrap">
+      <div className="min-w-0 cramped:basis-full">
         <p className={size === "lg" ? "font-display text-lg leading-relaxed" : "font-display text-[17px] leading-relaxed"}>
           {parts.map((p, i) =>
             /^\s+$/.test(p) || !/[a-z]/i.test(p) ? (
