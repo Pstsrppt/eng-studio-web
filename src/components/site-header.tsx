@@ -1,14 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { useRef } from "react";
 import { TopNav } from "./nav";
 import { OdysseyMark } from "./odyssey-mark";
+import { usePinnedHeight } from "./pinned-bar";
 import { ThaiToggle } from "./thai-toggle";
 
 /** The site header, light on every page. `account` is rendered on the server (it reads the session) and passed in. */
 export function SiteHeader({ account }: { account: React.ReactNode }) {
+  const bar = useRef<HTMLElement>(null);
+  usePinnedHeight(bar, "--header-h");
   return (
-    <header className="theme-academic sticky top-0 z-30 border-b border-rule bg-card/95 text-primary backdrop-blur-md">
+    <header ref={bar} className="theme-academic sticky top-0 z-30 border-b border-rule bg-card/95 text-primary backdrop-blur-md">
       <div className="mx-auto flex h-[62px] max-w-[1520px] items-center justify-between gap-4 px-4 sm:px-6 lg:h-[70px] lg:px-10 2xl:px-12">
         <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label="Odyssey หน้าแรก">
           <OdysseyMark className="size-8" />

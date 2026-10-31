@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { STUDY_HOME, STUDY_LINKS, STUDY_MENU, TOOL_LINKS, ariaCurrent, navGroup, studyPage, type NavGroup, type NavLink } from "./nav-groups";
+import { usePinnedHeight } from "./pinned-bar";
 
 const ITEM = "od-press relative inline-flex items-center gap-1 rounded-lg px-3 py-2 text-[15px] whitespace-nowrap";
 const itemTone = (on: boolean) => (on ? "font-semibold text-primary" : "text-body hover:bg-tint hover:text-primary");
@@ -100,8 +101,10 @@ const TABS = [
 export function TabBar() {
   const pathname = usePathname();
   const group = navGroup(pathname);
+  const bar = useRef<HTMLElement>(null);
+  usePinnedHeight(bar, "--tabbar-h");
   return (
-    <nav aria-label="เมนูหลัก"
+    <nav ref={bar} aria-label="เมนูหลัก"
       className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-rule bg-card/95 pt-1.5 pb-[calc(0.6rem+env(safe-area-inset-bottom))] shadow-[0_-8px_24px_-18px_rgb(var(--od-shadow-rgb)/0.35)] backdrop-blur-md lg:hidden">
       {TABS.map(({ href, label, Icon, group: g }) => {
         const on = group === g;

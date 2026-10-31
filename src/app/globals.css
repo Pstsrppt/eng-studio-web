@@ -41,6 +41,19 @@
   --od-slow: 220ms;
 }
 
+/* Pinned bars, replaced by their measured heights once the page runs (see pinned-bar.tsx). */
+:root {
+  --header-h: 62px;
+  --tabbar-h: calc(4.04rem + env(safe-area-inset-bottom));
+  --action-panel-h: 0px;
+}
+@media (min-width: 64rem) {
+  :root { --header-h: 70px; --tabbar-h: 0px; }
+}
+/* Phones on their side, zoomed pages and large browser text: too little height to keep an action panel pinned as well.
+   In rem so a larger browser font size counts as less height. */
+@custom-variant short (@media (max-height: 30rem) and (width < 64rem));
+
 @theme {
   --color-page: var(--od-page);
   --color-page-alt: var(--od-page-alt);
@@ -98,7 +111,8 @@
 }
 
 @layer base {
-  html { background: var(--color-paper); color: var(--color-ink); }
+  /* Keyboard focus and "nearest" scrolling stop above the tab bar and action panel. */
+  html { background: var(--color-paper); color: var(--color-ink); scroll-padding-bottom: calc(var(--tabbar-h) + var(--action-panel-h) + 0.5rem); }
   /* overflow-x: clip keeps edge-to-edge scenes (100vw) from adding a sideways scrollbar. */
   body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; overflow-x: clip; }
   h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; }

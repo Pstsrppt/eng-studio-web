@@ -62,10 +62,11 @@ beforeEach(async () => {
   root = createRoot(host);
   Element.prototype.scrollIntoView = vi.fn();
   window.scrollBy = vi.fn() as typeof window.scrollBy;
-  window.matchMedia = vi.fn(() => ({ matches: true })) as unknown as typeof window.matchMedia;
+  window.matchMedia = vi.fn((query: string) => ({ matches: query.includes("reduced-motion") })) as unknown as typeof window.matchMedia;
   vi.stubGlobal("speechSynthesis", { cancel: vi.fn(), speak: vi.fn() });
   vi.stubGlobal("SpeechSynthesisUtterance", class { lang = ""; rate = 1; constructor(public text: string) {} });
   vi.stubGlobal("IS_REACT_ACT_ENVIRONMENT", true);
+  vi.stubGlobal("ResizeObserver", class { observe() {} disconnect() {} });
   actions.saveAttempt.mockReset().mockResolvedValue(false);
   actions.addLessonCards.mockClear();
   await show(lessonA);
@@ -157,12 +158,56 @@ describe("switching tabs keeps the lesson's work", () => {
     expect(actions.saveAttempt).toHaveBeenCalledTimes(1);
   });
 
-  it("brings the result into view when the quiz is still on show", async () => {
+  const scrolled = () => vi.mocked(Element.prototype.scrollIntoView);
+  const result = () => panel().querySelector<HTMLElement>("section[tabindex]");
+
+  it("brings the result into view and to assistive tech when the quiz is on show", async () => {
     await tab("Quiz");
     await answerAll();
-    vi.mocked(Element.prototype.scrollIntoView).mockClear();
+    scrolled().mockClear();
     await click(byText(/^ส่งคำตอบ/));
-    expect(Element.prototype.scrollIntoView).toHaveBeenCalledTimes(1);
+    expect(scrolled()).toHaveBeenCalledTimes(1);
+    expect(scrolled().mock.contexts[0]).toBe(result());
+    expect(scrolled().mock.calls[0][0]).toMatchObject({ block: "start" });
+    expect(document.activeElement).toBe(result());
+  });
+
+  it("keeps the desktop scroll to the lesson's top in a roomy window", async () => {
+    window.matchMedia = vi.fn(() => ({ matches: true })) as unknown as typeof window.matchMedia;
+    await tab("Quiz");
+    await answerAll();
+    scrolled().mockClear();
+    await click(byText(/^ส่งคำตอบ/));
+    expect(scrolled()).toHaveBeenCalledTimes(1);
+    expect(scrolled().mock.contexts[0]).toBe(host.querySelector("#lesson-content"));
+    expect(document.activeElement).toBe(result());
+  });
+
+  it("names the result by its score and verdict, and announces it only by focus", async () => {
+    await tab("Quiz");
+    await answerAll();
+    await click(byText(/^ส่งคำตอบ/));
+    const name = result()!.getAttribute("aria-labelledby")!.split(" ").map((id) => document.getElementById(id)?.textContent).join(" ");
+    expect(name).toMatch(/^\d+% (ผ่านแล้ว|ยังไม่ผ่าน)/);
+    expect(result()!.closest("[aria-live]")).toBeNull();
+    expect(result()!.querySelector("[aria-live]")).toBeNull();
+  });
+
+  it("presents the result only once, and again after a retake", async () => {
+    await tab("Quiz");
+    await answerAll();
+    await click(byText(/^ส่งคำตอบ/));
+    scrolled().mockClear();
+    await tab("Summary");
+    const summaryTab = document.activeElement;
+    await tab("Quiz");
+    expect(scrolled()).not.toHaveBeenCalled();
+    expect(document.activeElement).toBe(summaryTab);
+    await click(byText(/ทำใหม่/));
+    await answerAll();
+    await click(byText(/^ส่งคำตอบ/));
+    expect(scrolled()).toHaveBeenCalledTimes(1);
+    expect(document.activeElement).toBe(result());
   });
 
   it("does not claim a guest's score was saved", async () => {
@@ -182,12 +227,29 @@ describe("switching tabs keeps the lesson's work", () => {
     // Two clicks before React can disable the button, which is what the guard is for.
     await act(async () => { submit.click(); submit.click(); });
     await tab("Summary");
+    const here = document.createElement("button");
+    host.append(here);
+    here.focus();
     vi.mocked(Element.prototype.scrollIntoView).mockClear();
     await act(async () => finish(false));
     expect(Element.prototype.scrollIntoView).not.toHaveBeenCalled();
+    expect(document.activeElement).toBe(here);
     await tab("Quiz");
     expect(panel().textContent).toMatch(/ถูก \d+ จาก \d+ ข้อ/);
     expect(actions.saveAttempt).toHaveBeenCalledTimes(1);
+    // First sight of the result, so this is when it is shown and announced.
+    expect(Element.prototype.scrollIntoView).toHaveBeenCalledTimes(1);
+    expect(document.activeElement).toBe(panel().querySelector("section[tabindex]"));
+  });
+
+  it("removes the submit panel's height while its tab is hidden", async () => {
+    const height = () => document.documentElement.style.getPropertyValue("--action-panel-h");
+    await tab("Quiz");
+    expect(height()).toBe("0px");
+    await tab("Learn");
+    expect(height()).toBe("");
+    await tab("Quiz");
+    expect(height()).not.toBe("");
   });
 
   it("keeps everything when Focus Mode is switched on and off", async () => {

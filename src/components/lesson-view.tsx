@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowLeftIcon, ArrowRightIcon, CheckCircle2Icon, CheckIcon, ClipboardCheckIcon, KeyboardIcon, LightbulbIcon, PencilLineIcon, RotateCcwIcon, XCircleIcon, XIcon } from "lucide-react";
-import { Activity, type KeyboardEvent as ReactKeyboardEvent, type ReactNode, useEffect, useId, useRef, useState, useTransition } from "react";
+import { Activity, type KeyboardEvent as ReactKeyboardEvent, type ReactNode, useEffect, useId, useLayoutEffect, useRef, useState, useTransition } from "react";
 import { addLessonCards, saveAttempt } from "@/app/actions";
 import type { Lesson, PracticeItem, QuizItem } from "@/content";
 import type { LessonWords } from "@/content/lesson-words";
@@ -12,6 +12,7 @@ import { FocusBar } from "./lesson-focus";
 import { TABS, panelId, sectionLabel, tabId, type Tab } from "./lesson-tabs";
 import { LessonWordsStep } from "./lesson-words-step";
 import { Meaning } from "./meaning";
+import { ActionPanel } from "./pinned-bar";
 import { PlayableProse } from "./playable-prose";
 import { Sentence } from "./sentence";
 import { stopSpeaking } from "./speak";
@@ -536,14 +537,18 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
   const [pending, start] = useTransition();
   // Set before the first await, so a double click can't save the same attempt twice.
   const submitting = useRef(false);
-  // False while this tab is hidden: a result that arrives then must not move the page the learner is on.
-  const onScreen = useRef(false);
-  useEffect(() => {
-    onScreen.current = true;
-    return () => {
-      onScreen.current = false;
-    };
-  }, []);
+  const result = useRef<HTMLElement>(null);
+  const presented = useRef(false);
+  // Activity runs this only while Quiz is on show, so a result that arrives behind another tab waits for the learner
+  // to come back instead of moving the page they are on. Focus is how it gets announced, once, so the result isn't a live region.
+  useLayoutEffect(() => {
+    if (!done || presented.current) return;
+    presented.current = true;
+    result.current?.focus({ preventScroll: true });
+    // A roomy desktop window fits the lesson's top and the result together. Elsewhere the tabs and heading would push it off screen.
+    if (window.matchMedia("(min-width: 64rem) and (min-height: 40rem)").matches) toLessonTop();
+    else result.current?.scrollIntoView(jumpScroll(window.matchMedia("(prefers-reduced-motion: reduce)").matches));
+  }, [done]);
   const answered = answers.filter((a) => a !== null).length;
   const allAnswered = answered === quiz.length;
 
@@ -568,7 +573,6 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
         setDone({ score, saved: false, added: 0 });
         setError(true);
       }
-      if (onScreen.current) toLessonTop();
     });
   }
 
@@ -577,6 +581,7 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
     setAnswers(lesson.quiz.map(() => null));
     setDone(null);
     submitting.current = false;
+    presented.current = false;
   }
 
   const passed = done && done.score >= passMark;
@@ -586,11 +591,12 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
     <div className="flex flex-col gap-5">
       <ModeHeader kind="quiz" count={quiz.length} passMark={passMark} />
 
-      <div aria-live="polite">
+      <div>
         {done && (
-          <section aria-labelledby={`${uid}-result`} className={"flex flex-wrap items-center gap-5 rounded-2xl border-2 p-6 " + (passed ? "border-[#2e7d5b] bg-[#eef7f1]" : "border-[#d9776a] bg-[#fdf1ef]")}>
-            <p className="ac-serif text-5xl font-bold text-(--ac-navy) tabular">{done.score}%</p>
-            <div className="min-w-0 flex-1 text-[15px] leading-6">
+          <section ref={result} tabIndex={-1} aria-labelledby={`${uid}-score ${uid}-result`} className={"flex scroll-mt-[calc(var(--header-h)+0.5rem)] flex-wrap items-center gap-5 rounded-2xl border-2 p-6 " + (passed ? "border-[#2e7d5b] bg-[#eef7f1]" : "border-[#d9776a] bg-[#fdf1ef]")}>
+            <p id={`${uid}-score`} className="ac-serif text-5xl font-bold text-(--ac-navy) tabular">{done.score}%</p>
+            {/* The basis wraps the buttons to their own line on phones and tablets, rather than squeezing this text to a sliver. */}
+            <div className="min-w-0 flex-1 text-[15px] leading-6 max-lg:basis-56">
               <h3 id={`${uid}-result`} className={"flex items-center gap-1.5 text-lg font-semibold " + (passed ? "text-[#22694b]" : "text-bad")}>
                 {passed ? <CheckCircle2Icon className="size-5" aria-hidden /> : <XCircleIcon className="size-5" aria-hidden />}
                 {passed ? "ผ่านแล้ว" : `ยังไม่ผ่าน ต้องได้ ${passMark}% ขึ้นไป`}
@@ -645,7 +651,7 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
 
       {!done && (
         // Stays in view while scrolling; sits above the phone tab bar.
-        <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-10 flex flex-wrap items-center gap-4 rounded-2xl border border-(--ac-line) bg-card/95 p-4 shadow-(--ac-shadow) backdrop-blur lg:bottom-4">
+        <ActionPanel className="sticky bottom-[calc(var(--tabbar-h)+0.5rem)] z-10 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-2xl border border-(--ac-line) bg-card/95 p-3 shadow-(--ac-shadow) backdrop-blur short:static lg:bottom-4 lg:gap-4 lg:p-4">
           <div className="min-w-0 flex-1">
             <p className="text-sm font-semibold text-(--ac-heading)">ตอบแล้ว {answered} จาก {quiz.length} ข้อ</p>
             <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-page-alt" role="progressbar" aria-label="ตอบแล้ว" aria-valuemin={0} aria-valuemax={quiz.length} aria-valuenow={answered}>
@@ -656,7 +662,7 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
             className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-(--ac-navy) px-6 text-[15px] font-semibold text-white transition hover:bg-(--ac-navy-2) disabled:cursor-not-allowed disabled:opacity-40">
             {pending ? "กำลังตรวจ…" : allAnswered ? "ส่งคำตอบ" : "ตอบให้ครบก่อนส่ง"}
           </button>
-        </div>
+        </ActionPanel>
       )}
     </div>
   );
