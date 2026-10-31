@@ -2,9 +2,10 @@
 
 import { ArrowLeftIcon, CheckIcon, EyeIcon, EyeOffIcon, RotateCcwIcon, SparklesIcon } from "lucide-react";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react";
 import type { Word } from "@/content";
 import { PhotoWordCard } from "@/components/photo-word-card";
+import { ActionPanel } from "@/components/pinned-bar";
 import { gradeCard, resumeSession, startSession, type GradeResult } from "../actions";
 import { dayOf } from "@/lib/learning/day";
 import type { LearnMode } from "@/lib/learning/queue";
@@ -54,6 +55,8 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
   const [storageOff, setStorageOff] = useState(false);
   const busy = useRef(false);
   const shownAt = useRef(0);
+  const answer = useRef<HTMLDivElement>(null);
+  const wasRevealed = useRef(false);
   const storedHide = useSyncExternalStore(subscribe, readHide, () => true);
   const [hideOverride, setHideOverride] = useState<boolean | null>(null);
   const hidePicture = hideOverride ?? storedHide;
@@ -168,6 +171,14 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
 
   const current = session && phase === "card" ? words[session.queue[session.pos]] : undefined;
 
+  // A new card or an opened answer: the word and meaning must clear the bars. Moves only as far as that takes, or not at all.
+  // Revealing or grading removes the button the learner just pressed, so focus goes to what replaced it; the first card leaves focus alone.
+  useLayoutEffect(() => {
+    if (revealed || wasRevealed.current) answer.current?.focus({ preventScroll: true });
+    wasRevealed.current = revealed;
+    answer.current?.scrollIntoView({ block: "nearest", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }, [phase, revealed]);
+
   const grade = useCallback((g: Grade) => {
     if (!session || !current || !revealed || busy.current) return;
     busy.current = true; // set before any await, so a double click can't send twice
@@ -217,9 +228,9 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
   const preview = (g: Grade) => schedule(schedules[current?.id ?? ""] ?? NEW_CARD, g).intervalDays;
 
   return (
-    <div className="flex flex-col gap-4 pb-40 lg:pb-8">
+    <div className="flex flex-col gap-4 pb-[calc(var(--action-panel-h)+1rem)] lg:pb-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <Link href="/learn" className="inline-flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-sm text-muted hover:bg-paper hover:text-ink">
+        <Link href="/learn" className="inline-flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-sm text-muted hover:bg-paper hover:text-ink max-lg:min-h-11">
           <ArrowLeftIcon className="size-4" /> พักไว้ก่อน
         </Link>
         <span className="font-mono text-xs text-muted">{MODE_LABEL[session.mode]}</span>
@@ -228,7 +239,7 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
           setHideOverride(next);
           try { localStorage.setItem(HIDE_KEY, next ? "1" : "0"); } catch {}
         }} aria-pressed={hidePicture}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-line px-2.5 py-1.5 text-xs text-muted hover:text-ink">
+          className="inline-flex items-center gap-1.5 rounded-lg border border-line px-2.5 py-1.5 text-xs text-muted hover:text-ink max-lg:min-h-11">
           {hidePicture ? <EyeOffIcon className="size-4" /> : <EyeIcon className="size-4" />} ซ่อนภาพก่อนเฉลย
         </button>
       </div>
@@ -253,7 +264,7 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
 
       {current && (
         <div key={`${session.pos}-${revealed}`} className="learn-in">
-          <PhotoWordCard word={current} photo={current.photo} diagram={current.diagram}
+          <PhotoWordCard word={current} photo={current.photo} diagram={current.diagram} answerRef={answer}
             examples={current.ex ? [{ en: current.ex, th: current.exTh }] : []}
             cover={revealed ? {} : { th: true, examples: true, photo: hidePicture }} revealed={revealed}
             hint="นึกความหมายในใจก่อน แล้วกดเปิดเฉลย" />
@@ -264,19 +275,19 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
       )}
 
       {/* Sits above the phone tab bar so the buttons are always in reach of a thumb. */}
-      <div className="fixed inset-x-0 bottom-[calc(4.25rem+env(safe-area-inset-bottom))] z-30 border-t border-line bg-card/95 px-4 py-3 backdrop-blur lg:static lg:border-0 lg:bg-transparent lg:p-0">
+      <ActionPanel className="fixed inset-x-0 bottom-(--tabbar-h) z-30 border-t border-line bg-card/95 px-4 py-2 backdrop-blur short:static short:border-0 short:bg-transparent short:p-0 lg:static lg:border-0 lg:bg-transparent lg:p-0">
         {error && <p role="alert" className="mb-2 text-sm text-bad">{error}</p>}
         {!revealed ? (
-          <button type="button" className="btn od-press w-full py-3.5 text-base" onClick={() => setRevealed(true)}>เปิดเฉลย <kbd className="hidden rounded bg-white/20 px-1.5 font-mono text-xs lg:inline">Space</kbd></button>
+          <button type="button" className="btn od-press w-full py-3 text-base lg:py-3.5" onClick={() => setRevealed(true)}>เปิดเฉลย <kbd className="hidden rounded bg-white/20 px-1.5 font-mono text-xs lg:inline">Space</kbd></button>
         ) : error && session.pending ? (
-          <button type="button" className="btn w-full py-3.5" disabled={saving} onClick={() => { busy.current = true; send(session, session.pending!); }}>
+          <button type="button" className="btn w-full py-3 lg:py-3.5" disabled={saving} onClick={() => { busy.current = true; send(session, session.pending!); }}>
             <RotateCcwIcon className="size-4" /> ลองบันทึกอีกครั้ง
           </button>
         ) : (
           <div className="od-pop grid grid-cols-3 gap-2" role="group" aria-label="ให้คะแนนความจำ">
             {(["again", "hard", "good"] as const).map((g) => (
               <button key={g} type="button" disabled={saving} onClick={() => grade(g)}
-                className={"od-press flex flex-col items-center gap-0.5 rounded-xl border-[1.5px] px-2 py-2.5 disabled:opacity-50 " + GRADE_UI[g].tone}>
+                className={"od-press flex min-h-11 flex-col items-center gap-0.5 rounded-xl border-[1.5px] px-1.5 py-1.5 disabled:opacity-50 lg:px-2 lg:py-2.5 " + GRADE_UI[g].tone}>
                 <span className="text-[15px] font-semibold">{GRADE_UI[g].label}</span>
                 <span className="text-[11px] opacity-80">{g === "again" ? "ทวนอีกครั้งรอบนี้" : `ทวน${whenLabel(preview(g))}`}</span>
                 <kbd className="hidden font-mono text-[10.5px] opacity-60 lg:block">{GRADE_UI[g].key}</kbd>
@@ -284,7 +295,7 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
             ))}
           </div>
         )}
-      </div>
+      </ActionPanel>
     </div>
   );
 }

@@ -44,7 +44,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
     <LessonFocus className="theme-academic page-bleed bg-(--ac-bg) text-(--ac-ink)">
       {/* Focus mode: one centred column about 860px wide for reading. */}
       {/* grid-cols-1 here and on the supporting panel: columns may shrink below their content, so a long title can't widen the page. */}
-      <div className="mx-auto grid max-w-[1520px] grid-cols-1 gap-6 px-4 pt-6 pb-32 sm:px-6 lg:pb-16 xl:grid-cols-[260px_minmax(0,1fr)_290px] xl:px-10 2xl:px-12 group-data-[focus=on]/lesson:max-w-[908px] group-data-[focus=on]/lesson:xl:grid-cols-1 group-data-[focus=on]/lesson:xl:px-6">
+      <div className="mx-auto grid max-w-[1520px] grid-cols-1 gap-6 px-4 pt-6 pb-32 cramped:px-2 sm:px-6 lg:pb-16 xl:grid-cols-[260px_minmax(0,1fr)_290px] xl:px-10 2xl:px-12 group-data-[focus=on]/lesson:max-w-[908px] group-data-[focus=on]/lesson:xl:grid-cols-1 group-data-[focus=on]/lesson:xl:px-6">
         <aside className={`${FOCUS_HIDE} xl:sticky xl:top-[86px] xl:max-h-[calc(100dvh-102px)] xl:self-start xl:overflow-y-auto`} aria-label="บทเรียนในสถานีนี้">
           <StageNav stage={stage} items={items} current={lesson.id} />
         </aside>
@@ -80,7 +80,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
             </ul>
           </section>
 
-          <div id="lesson-content" className={"scroll-mt-24 p-4 sm:p-6 " + card}>
+          <div id="lesson-content" className={"scroll-mt-24 p-4 cramped:p-2 sm:p-6 " + card}>
             <LessonView key={lesson.id} lesson={lesson} words={words} passMark={passMark} next={next} focusable={kind === "grammar"} />
           </div>
         </div>

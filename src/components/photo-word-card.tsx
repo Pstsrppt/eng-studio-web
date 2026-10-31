@@ -2,7 +2,7 @@
 
 import { BookmarkCheckIcon, BookmarkIcon, ChevronRightIcon, Volume2Icon } from "lucide-react";
 import Link from "next/link";
-import { useState, useTransition } from "react";
+import { type Ref, useState, useTransition } from "react";
 import { addCard } from "@/app/actions";
 import type { Photo, Word } from "@/content";
 import type { Diagram, VerbForms } from "@/content/diagram";
@@ -38,6 +38,8 @@ type Props = {
   /** Drawn instead of a photo for words like "although", or offered next to one (V1–V2–V3). */
   diagram?: Diagram;
   verb?: VerbForms;
+  /** The word and its meaning, for flashcards to keep in view. */
+  answerRef?: Ref<HTMLDivElement>;
 };
 
 /**
@@ -45,7 +47,7 @@ type Props = {
  * and a photo of the example's scene. Without a photo the word's icon stands in.
  * Flashcards and drills cover parts of it until the learner answers.
  */
-export function PhotoWordCard({ word, photo, examples, index, forms, cover = {}, bookmark = { kind: "word" }, hint, revealed = false, diagram, verb }: Props) {
+export function PhotoWordCard({ word, photo, examples, index, forms, cover = {}, bookmark = { kind: "word" }, hint, revealed = false, diagram, verb, answerRef }: Props) {
   const { showThai } = useStudy();
   const [shown, setShown] = useState(0);
   // The word whose meaning the learner opened with Thai off; a new word starts hidden again.
@@ -134,45 +136,49 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
         })()}
       </div>
 
-      <div className="flex min-w-0 flex-col gap-4 p-6 sm:p-8">
-        <div className="flex flex-wrap items-center gap-3">
-          {cover.en ? (
-            <span className="h-12 w-48 rounded-xl bg-paper ring-1 ring-line sm:h-14" aria-label="ซ่อนคำภาษาอังกฤษ" />
-          ) : (
-            <h3 className="font-serif text-5xl leading-none font-semibold tracking-tight break-words text-ink sm:text-6xl">{word.en}</h3>
-          )}
-          {word.pos && (
-            <span className={"rounded-lg px-2.5 py-1 font-mono text-sm " + tone.tile} title={POS_LABEL[word.pos].th}>
-              {POS_LABEL[word.pos].abbr}
-            </span>
-          )}
-        </div>
+      <div className="flex min-w-0 flex-col gap-4 p-6 cramped:p-3 sm:p-8">
+        <div ref={answerRef} className="flex scroll-mt-[calc(var(--header-h)+0.5rem)] flex-col gap-4"
+          {...(answerRef ? { role: "group", tabIndex: -1, "aria-label": revealed ? `เฉลย: ${word.en} แปลว่า ${word.th}` : word.en } : {})}>
+          <div className="flex flex-wrap items-center gap-3">
+            {cover.en ? (
+              <span className="h-12 w-48 rounded-xl bg-paper ring-1 ring-line sm:h-14" aria-label="ซ่อนคำภาษาอังกฤษ" />
+            ) : (
+              // Long words and phrases take a smaller size on phones, so the meaning still fits on screen beside them.
+              <h3 className={"max-w-full font-serif font-semibold tracking-tight break-words text-ink sm:text-6xl sm:leading-none " + (word.en.length > 10 ? "text-3xl leading-tight" : "text-5xl leading-none cramped:text-3xl cramped:leading-tight")}>{word.en}</h3>
+            )}
+            {word.pos && (
+              <span className={"rounded-lg px-2.5 py-1 font-mono text-sm " + tone.tile} title={POS_LABEL[word.pos].th}>
+                {POS_LABEL[word.pos].abbr}
+              </span>
+            )}
+          </div>
 
-        <div className="flex flex-col gap-1">
-          {!cover.en && (
-            <div className="flex items-center gap-3">
-              {word.ipa && <span className="ipa text-xl text-ink-2">{word.ipa}</span>}
-              <button type="button" onClick={() => speak(word.en)} aria-label={`ฟังเสียง ${word.en}`}
-                className="grid size-9 place-items-center rounded-full text-ink transition hover:bg-paper">
-                <Volume2Icon className="size-6" />
+          <div className="flex flex-col gap-1">
+            {!cover.en && (
+              <div className="flex items-center gap-3">
+                {word.ipa && <span className="ipa text-xl text-ink-2">{word.ipa}</span>}
+                <button type="button" onClick={() => speak(word.en)} aria-label={`ฟังเสียง ${word.en}`}
+                  className="relative grid size-9 place-items-center rounded-full text-ink transition hover:bg-paper after:absolute after:-inset-1 after:content-['']">
+                  <Volume2Icon className="size-6" />
+                </button>
+              </div>
+            )}
+            {cover.th ? (
+              <p className="text-lg text-muted">{hint ?? "นึกความหมายในใจก่อน"}</p>
+            ) : meaningShown({ revealed: revealed || peeked === word.id, showThai }) ? (
+              <p className="text-2xl text-ink">{word.th}</p>
+            ) : (
+              // Same height as the meaning line, so the card does not jump when it opens; ::after makes the tap area 44px.
+              <button type="button" onClick={() => setPeeked(word.id)} aria-label={`ดูความหมายของ ${word.en}`}
+                className="relative inline-flex min-h-8 items-center self-start rounded-lg bg-sunken px-3 text-sm font-semibold text-ink-2 hover:bg-line after:absolute after:inset-x-0 after:-inset-y-1.5 after:content-['']">
+                ดูความหมาย
               </button>
-            </div>
-          )}
-          {cover.th ? (
-            <p className="text-lg text-muted">{hint ?? "นึกความหมายในใจก่อน"}</p>
-          ) : meaningShown({ revealed: revealed || peeked === word.id, showThai }) ? (
-            <p className="text-2xl text-ink">{word.th}</p>
-          ) : (
-            // Same height as the meaning line, so the card does not jump when it opens; ::after makes the tap area 44px.
-            <button type="button" onClick={() => setPeeked(word.id)} aria-label={`ดูความหมายของ ${word.en}`}
-              className="relative inline-flex min-h-8 items-center self-start rounded-lg bg-sunken px-3 text-sm font-semibold text-ink-2 hover:bg-line after:absolute after:inset-x-0 after:-inset-y-1.5 after:content-['']">
-              ดูความหมาย
-            </button>
-          )}
-          {saved === "signed-out" && (
-            <p className="text-xs text-muted"><Link href="/login" className="font-semibold text-brand underline">เข้าสู่ระบบ</Link> เพื่อเก็บคำไว้ทวน</p>
-          )}
-          {saved === "added" && <p className="text-xs text-obj">เพิ่มในการ์ดทวนแล้ว</p>}
+            )}
+            {saved === "signed-out" && (
+              <p className="text-xs text-muted"><Link href="/login" className="font-semibold text-brand underline">เข้าสู่ระบบ</Link> เพื่อเก็บคำไว้ทวน</p>
+            )}
+            {saved === "added" && <p className="text-xs text-obj">เพิ่มในการ์ดทวนแล้ว</p>}
+          </div>
         </div>
 
         {forms && forms.length > 0 && (
@@ -215,7 +221,7 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
           <p className="rounded-2xl bg-paper/70 p-4 text-sm text-muted ring-1 ring-line">ประโยคตัวอย่างจะขึ้นหลังตอบ</p>
         )}
 
-        <div className="mt-auto flex items-center gap-4">
+        <div className="mt-auto flex items-center gap-4 cramped:flex-wrap">
           <span className="font-serif text-5xl leading-none font-semibold text-line tabular" aria-hidden>
             {String((index ?? shown) + 1).padStart(2, "0")}
           </span>

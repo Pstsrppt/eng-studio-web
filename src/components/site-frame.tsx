@@ -16,7 +16,7 @@ export function SiteFrame({ header, nav, footer, tabbar, children }: {
     <>
       {header}
       {nav}
-      <main className="mx-auto w-full max-w-6xl px-4 pt-6 pb-28 sm:px-6 lg:px-10 lg:pt-9 lg:pb-12">{children}</main>
+      <main className="mx-auto w-full max-w-6xl px-4 pt-6 cramped:px-2 pb-28 sm:px-6 lg:px-10 lg:pt-9 lg:pb-12">{children}</main>
       {footer}
       {tabbar}
     </>

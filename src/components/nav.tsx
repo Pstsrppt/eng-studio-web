@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { STUDY_HOME, STUDY_LINKS, STUDY_MENU, TOOL_LINKS, ariaCurrent, navGroup, studyPage, type NavGroup, type NavLink } from "./nav-groups";
+import { usePinnedHeight } from "./pinned-bar";
 
 const ITEM = "od-press relative inline-flex items-center gap-1 rounded-lg px-3 py-2 text-[15px] whitespace-nowrap";
 const itemTone = (on: boolean) => (on ? "font-semibold text-primary" : "text-body hover:bg-tint hover:text-primary");
@@ -97,19 +98,22 @@ const TABS = [
   { href: "/account", label: "บัญชี", Icon: UserRoundIcon, group: "account" },
 ] as const;
 
+/** With large browser text its spacing holds at the normal 65px, so it doesn't take a quarter of the screen. Its 48px tap targets stay. */
 export function TabBar() {
   const pathname = usePathname();
   const group = navGroup(pathname);
+  const bar = useRef<HTMLElement>(null);
+  usePinnedHeight(bar, "--tabbar-h");
   return (
-    <nav aria-label="เมนูหลัก"
-      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-rule bg-card/95 pt-1.5 pb-[calc(0.6rem+env(safe-area-inset-bottom))] shadow-[0_-8px_24px_-18px_rgb(var(--od-shadow-rgb)/0.35)] backdrop-blur-md lg:hidden">
+    <nav ref={bar} aria-label="เมนูหลัก"
+      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-rule bg-card/95 pt-1.5 pb-[calc(0.6rem+env(safe-area-inset-bottom))] cramped:pt-[6px] cramped:pb-[calc(10px+env(safe-area-inset-bottom))] shadow-[0_-8px_24px_-18px_rgb(var(--od-shadow-rgb)/0.35)] backdrop-blur-md lg:hidden">
       {TABS.map(({ href, label, Icon, group: g }) => {
         const on = group === g;
         return (
           <Link key={href} href={href} aria-current={ariaCurrent(pathname, href, on)}
-            className={"od-press relative flex min-h-12 flex-col items-center justify-center gap-1 text-[11px] " + (on ? "font-semibold text-primary" : "text-muted hover:text-primary")}>
-            {on && <span className="od-grow absolute -top-1.5 h-[3px] w-8 rounded-full bg-primary" aria-hidden />}
-            <Icon className="size-5" strokeWidth={on ? 2.2 : 1.8} aria-hidden />
+            className={"od-press relative flex min-h-12 flex-col items-center justify-center gap-1 text-[11px] cramped:min-h-[48px] cramped:gap-[4px] " + (on ? "font-semibold text-primary" : "text-muted hover:text-primary")}>
+            {on && <span className="od-grow absolute -top-1.5 h-[3px] w-8 rounded-full bg-primary cramped:-top-[6px]" aria-hidden />}
+            <Icon className="size-5 cramped:size-[20px]" strokeWidth={on ? 2.2 : 1.8} aria-hidden />
             {label}
           </Link>
         );

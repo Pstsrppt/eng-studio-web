@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowLeftIcon, ArrowRightIcon, CheckCircle2Icon, CheckIcon, ClipboardCheckIcon, KeyboardIcon, LightbulbIcon, PencilLineIcon, RotateCcwIcon, XCircleIcon, XIcon } from "lucide-react";
-import { Activity, type KeyboardEvent as ReactKeyboardEvent, type ReactNode, useEffect, useId, useRef, useState, useTransition } from "react";
+import { Activity, type KeyboardEvent as ReactKeyboardEvent, type ReactNode, useEffect, useId, useLayoutEffect, useRef, useState, useTransition } from "react";
 import { addLessonCards, saveAttempt } from "@/app/actions";
 import type { Lesson, PracticeItem, QuizItem } from "@/content";
 import type { LessonWords } from "@/content/lesson-words";
@@ -12,6 +12,7 @@ import { FocusBar } from "./lesson-focus";
 import { TABS, panelId, sectionLabel, tabId, type Tab } from "./lesson-tabs";
 import { LessonWordsStep } from "./lesson-words-step";
 import { Meaning } from "./meaning";
+import { ActionPanel } from "./pinned-bar";
 import { PlayableProse } from "./playable-prose";
 import { Sentence } from "./sentence";
 import { stopSpeaking } from "./speak";
@@ -42,7 +43,7 @@ export function LessonView({ lesson, words, next, passMark, focusable = false }:
     learn: (
       <div className="flex flex-col gap-4">
         {hasWords && (
-          <div className="flex w-fit rounded-xl bg-page-alt p-1 text-sm" role="group" aria-label="ขั้นตอนใน Learn">
+          <div className="flex w-fit rounded-xl cramped:max-w-full cramped:flex-wrap bg-page-alt p-1 text-sm" role="group" aria-label="ขั้นตอนใน Learn">
             {([["words", "1 · คำศัพท์ของบท"], ["theory", "2 · ทฤษฎีและตัวอย่าง"]] as const).map(([id, label]) => (
               <button key={id} type="button" aria-pressed={step === id} onClick={() => setStep(id)}
                 className={"rounded-lg px-3 py-1.5 transition " + (step === id ? "bg-surface font-semibold shadow-sm" : "text-muted hover:text-ink")}>{label}</button>
@@ -96,7 +97,7 @@ function Theory({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
         </p>
       </section>
 
-      <div className="flex flex-col gap-5">
+      <div className="flex min-w-0 flex-col gap-5">
         <section className="card p-5">
           <p className="eyebrow mb-3">ตัวอย่าง · แตะคำเพื่อดูความหมาย</p>
           <div className="flex flex-col divide-y divide-line">
@@ -112,7 +113,7 @@ function Theory({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
           <p className="eyebrow mb-3">ผิดบ่อย</p>
           <ul className="flex flex-col gap-3">
             {lesson.mistakes.map(([wrong, right, note]) => (
-              <li key={wrong} className="text-sm leading-6">
+              <li key={wrong} className="text-sm leading-6 break-words">
                 <s className="text-bad decoration-[1.5px]">{wrong}</s>
                 <span className="mx-2 text-muted">→</span>
                 <b className="font-semibold text-obj">{right}</b>
@@ -342,7 +343,7 @@ function ModeHeader({ kind, count, passMark }: { kind: "practice" | "quiz"; coun
       <span className={"grid size-11 shrink-0 place-items-center rounded-xl " + (practice ? "bg-(--ac-gold-soft) text-accent-text" : "bg-(--ac-navy) text-white")}>
         {practice ? <PencilLineIcon className="size-5" aria-hidden /> : <ClipboardCheckIcon className="size-5" aria-hidden />}
       </span>
-      <div className="min-w-0 flex-1">
+      <div className="min-w-0 flex-1 cramped:basis-full">
         <p className="ac-serif text-xl font-bold text-(--ac-heading)">{practice ? "Practice · ฝึกจากข้อผิดพลาด" : "Quiz · วัดความเข้าใจ"}</p>
         <p className="mt-0.5 text-sm leading-6 text-(--ac-body)">
           {practice
@@ -375,7 +376,7 @@ function ExerciseBody({ qId, item, st, update, onSubmit }: { qId: string; item: 
     return (
       <>
         <p id={qId} className={questionText}>{item.q}</p>
-        <div className="grid gap-3 sm:grid-cols-2" role="radiogroup" aria-labelledby={qId}>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2" role="radiogroup" aria-labelledby={qId}>
           {item.o.map((o, i) => (
             <OptionButton key={o} letter={LETTERS[i]} text={o} chosen={st.choice === i} disabled={locked}
               state={locked && i === item.a ? "correct" : st.checked === "no" && st.choice === i ? "wrong" : null}
@@ -426,10 +427,10 @@ function OptionButton({ letter, text, chosen, disabled, state, onPick }: { lette
     : "border-(--ac-line) bg-card hover:border-(--ac-navy)/40 hover:bg-(--ac-bg)";
   return (
     <button type="button" role="radio" aria-checked={chosen} disabled={disabled} onClick={onPick}
-      className={"flex min-h-14 items-center gap-3.5 rounded-xl border-2 px-4 py-3 text-left text-[17px] text-(--ac-ink) transition disabled:cursor-default " + tone}>
+      className={"flex min-h-14 items-center gap-3.5 rounded-xl border-2 px-4 py-3 text-left text-[17px] cramped:flex-wrap text-(--ac-ink) transition disabled:cursor-default " + tone}>
       <span className={"grid size-8 shrink-0 place-items-center rounded-lg font-mono text-sm font-semibold " +
         (state === "correct" ? "bg-[#2e7d5b] text-white" : state === "wrong" ? "bg-[#c4483a] text-white" : chosen ? "bg-(--ac-navy) text-white" : "bg-sunken text-(--ac-muted)")}>{letter}</span>
-      <span className="min-w-0 flex-1">{text}</span>
+      <span className="min-w-0 flex-1 cramped:basis-1/2">{text}</span>
       {state === "correct" && <span className="flex items-center gap-1 text-sm font-semibold text-[#22694b]"><CheckCircle2Icon className="size-5" aria-hidden />ถูก</span>}
       {state === "wrong" && <span className="flex items-center gap-1 text-sm font-semibold text-bad"><XCircleIcon className="size-5" aria-hidden />ไม่ใช่</span>}
       {chosen && !state && <span className="sr-only">(เลือกแล้ว)</span>}
@@ -484,8 +485,8 @@ function RealLife({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
 
 function Summary({ lesson, words, next, onQuiz }: { lesson: Lesson; words: LessonWords; next?: { href: string; title: string }; onQuiz: () => void }) {
   return (
-    <div className="grid gap-4 lg:grid-cols-2">
-      <section className="card flex flex-col gap-3 p-5">
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+      <section className="card flex min-w-0 flex-col gap-3 p-5">
         <p className="eyebrow">สูตรของบทนี้</p>
         <p className="rounded-lg border border-line bg-tint px-3 py-2.5 font-mono text-[14px] text-heading">{lesson.formula}</p>
         <p className="text-sm leading-6 text-ink-2">{lesson.why}</p>
@@ -536,14 +537,27 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
   const [pending, start] = useTransition();
   // Set before the first await, so a double click can't save the same attempt twice.
   const submitting = useRef(false);
-  // False while this tab is hidden: a result that arrives then must not move the page the learner is on.
-  const onScreen = useRef(false);
-  useEffect(() => {
-    onScreen.current = true;
-    return () => {
-      onScreen.current = false;
-    };
-  }, []);
+  const result = useRef<HTMLElement>(null);
+  const presented = useRef(false);
+  const firstQuestion = useRef<HTMLParagraphElement>(null);
+  const retaken = useRef(false);
+  // Activity runs this only while Quiz is on show, so a result that arrives behind another tab waits for the learner
+  // to come back instead of moving the page they are on. Focus is how it gets announced, once, so the result isn't a live region.
+  useLayoutEffect(() => {
+    if (!done || presented.current) return;
+    presented.current = true;
+    result.current?.focus({ preventScroll: true });
+    // A roomy desktop window fits the lesson's top and the result together. Elsewhere the tabs and heading would push it off screen.
+    if (window.matchMedia("(min-width: 64rem) and (min-height: 40rem)").matches) toLessonTop();
+    else result.current?.scrollIntoView(jumpScroll(window.matchMedia("(prefers-reduced-motion: reduce)").matches));
+  }, [done]);
+  // A retake removes the button that was pressed, so focus goes to the first of the reshuffled questions.
+  useLayoutEffect(() => {
+    if (!retaken.current) return;
+    retaken.current = false;
+    firstQuestion.current?.focus({ preventScroll: true });
+    firstQuestion.current?.scrollIntoView({ block: "nearest", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }, [quiz]);
   const answered = answers.filter((a) => a !== null).length;
   const allAnswered = answered === quiz.length;
 
@@ -568,7 +582,6 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
         setDone({ score, saved: false, added: 0 });
         setError(true);
       }
-      if (onScreen.current) toLessonTop();
     });
   }
 
@@ -577,6 +590,8 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
     setAnswers(lesson.quiz.map(() => null));
     setDone(null);
     submitting.current = false;
+    presented.current = false;
+    retaken.current = true;
   }
 
   const passed = done && done.score >= passMark;
@@ -586,11 +601,12 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
     <div className="flex flex-col gap-5">
       <ModeHeader kind="quiz" count={quiz.length} passMark={passMark} />
 
-      <div aria-live="polite">
+      <div>
         {done && (
-          <section aria-labelledby={`${uid}-result`} className={"flex flex-wrap items-center gap-5 rounded-2xl border-2 p-6 " + (passed ? "border-[#2e7d5b] bg-[#eef7f1]" : "border-[#d9776a] bg-[#fdf1ef]")}>
-            <p className="ac-serif text-5xl font-bold text-(--ac-navy) tabular">{done.score}%</p>
-            <div className="min-w-0 flex-1 text-[15px] leading-6">
+          <section ref={result} tabIndex={-1} aria-labelledby={`${uid}-score ${uid}-result`} className={"flex scroll-mt-[calc(var(--header-h)+0.5rem)] flex-wrap items-center gap-5 rounded-2xl border-2 p-6 " + (passed ? "border-[#2e7d5b] bg-[#eef7f1]" : "border-[#d9776a] bg-[#fdf1ef]")}>
+            <p id={`${uid}-score`} className="ac-serif text-5xl font-bold text-(--ac-navy) tabular">{done.score}%</p>
+            {/* The basis wraps the buttons to their own line on phones and tablets, rather than squeezing this text to a sliver. */}
+            <div className="min-w-0 flex-1 text-[15px] leading-6 max-lg:basis-56">
               <h3 id={`${uid}-result`} className={"flex items-center gap-1.5 text-lg font-semibold " + (passed ? "text-[#22694b]" : "text-bad")}>
                 {passed ? <CheckCircle2Icon className="size-5" aria-hidden /> : <XCircleIcon className="size-5" aria-hidden />}
                 {passed ? "ผ่านแล้ว" : `ยังไม่ผ่าน ต้องได้ ${passMark}% ขึ้นไป`}
@@ -627,8 +643,8 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
                   </span>
                 )}
               </div>
-              <p id={`${uid}-q-${i}`} className="text-[19px] leading-[1.5] font-semibold text-(--ac-heading) sm:text-[21px]">{q.q}</p>
-              <RadioGroup labelledBy={`${uid}-q-${i}`} className="mt-4 grid gap-2.5 sm:grid-cols-2">
+              <p id={`${uid}-q-${i}`} role="heading" aria-level={3} {...(i === 0 ? { ref: firstQuestion, tabIndex: -1 } : {})} className="scroll-mt-[calc(var(--header-h)+0.5rem)] text-[19px] leading-[1.5] font-semibold text-(--ac-heading) sm:text-[21px]">{q.q}</p>
+              <RadioGroup labelledBy={`${uid}-q-${i}`} className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 {q.o.map((o, j) => (
                   <OptionButton key={j} letter={LETTERS[j]} text={o} chosen={answers[i] === j} disabled={reveal}
                     state={reveal && j === q.a ? "correct" : reveal && answers[i] === j ? "wrong" : null}
@@ -645,7 +661,7 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
 
       {!done && (
         // Stays in view while scrolling; sits above the phone tab bar.
-        <div className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-10 flex flex-wrap items-center gap-4 rounded-2xl border border-(--ac-line) bg-card/95 p-4 shadow-(--ac-shadow) backdrop-blur lg:bottom-4">
+        <ActionPanel className="sticky bottom-[calc(var(--tabbar-h)+0.5rem)] z-10 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-2xl border border-(--ac-line) bg-card/95 p-3 shadow-(--ac-shadow) backdrop-blur short:static lg:bottom-4 lg:gap-4 lg:p-4">
           <div className="min-w-0 flex-1">
             <p className="text-sm font-semibold text-(--ac-heading)">ตอบแล้ว {answered} จาก {quiz.length} ข้อ</p>
             <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-page-alt" role="progressbar" aria-label="ตอบแล้ว" aria-valuemin={0} aria-valuemax={quiz.length} aria-valuenow={answered}>
@@ -656,7 +672,7 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
             className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-(--ac-navy) px-6 text-[15px] font-semibold text-white transition hover:bg-(--ac-navy-2) disabled:cursor-not-allowed disabled:opacity-40">
             {pending ? "กำลังตรวจ…" : allAnswered ? "ส่งคำตอบ" : "ตอบให้ครบก่อนส่ง"}
           </button>
-        </div>
+        </ActionPanel>
       )}
     </div>
   );
