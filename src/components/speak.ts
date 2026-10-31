@@ -1,3 +1,8 @@
+/** Stops whatever is being read aloud. */
+export function stopSpeaking() {
+  if (typeof window !== "undefined" && "speechSynthesis" in window) window.speechSynthesis.cancel();
+}
+
 /** Reads English aloud with the browser's built-in voice. */
 export function speak(text: string) {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;

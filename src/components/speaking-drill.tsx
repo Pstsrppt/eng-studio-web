@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import type { SpeakItem } from "@/content";
 import { speak } from "./speak";
 
@@ -56,6 +56,13 @@ export function SpeakingDrill({ items }: { items: SpeakItem[] }) {
   const [score, setScore] = useState({ done: 0, right: 0 });
   const rec = useRef<Recognition | null>(null);
   const item = items[index];
+  const titleId = useId();
+
+  // Leaving the tab hides this drill without unmounting it, and the microphone must not stay open behind it.
+  useEffect(() => () => {
+    rec.current?.abort();
+    setListening(false);
+  }, []);
 
   function listen() {
     const Ctor = recognitionCtor();
@@ -91,9 +98,9 @@ export function SpeakingDrill({ items }: { items: SpeakItem[] }) {
   }
 
   return (
-    <section className="card flex flex-col gap-4 p-5" aria-labelledby="speak-title">
+    <section className="card flex flex-col gap-4 p-5" aria-labelledby={titleId}>
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 id="speak-title" className="font-sans text-[15px] font-semibold">ฝึกพูด: ให้ระบบฟังเสียงคุณ</h3>
+        <h3 id={titleId} className="font-sans text-[15px] font-semibold">ฝึกพูด: ให้ระบบฟังเสียงคุณ</h3>
         <span className="font-mono text-xs text-muted tabular">คำที่ {index + 1}/{items.length} · ผ่าน {score.right}/{score.done}</span>
       </div>
 
