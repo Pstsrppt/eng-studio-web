@@ -285,6 +285,114 @@ describe("hidden tabs stay out of the way", () => {
   });
 });
 
+describe("the speaking drill's microphone", () => {
+  type Handlers = Pick<FakeRecognition, "onresult" | "onerror" | "onend">;
+  // Keeps the handlers it had when it started, the way an event already on its way would still reach them.
+  class FakeRecognition {
+    static made: FakeRecognition[] = [];
+    onresult: ((e: { results: { transcript: string }[][] }) => void) | null = null;
+    onerror: ((e: { error: string }) => void) | null = null;
+    onend: (() => void) | null = null;
+    late: Handlers = this;
+    start = vi.fn(() => { this.late = { onresult: this.onresult, onerror: this.onerror, onend: this.onend }; });
+    abort = vi.fn();
+    constructor() { FakeRecognition.made.push(this); }
+  }
+  const deliver = (fn: () => void) => act(async () => fn());
+  const hears = (r: FakeRecognition, transcript: string) => deliver(() => r.late.onresult?.({ results: [[{ transcript }]] }));
+  const fails = (r: FakeRecognition, error: string) => deliver(() => r.late.onerror?.({ error }));
+  const ends = (r: FakeRecognition) => deliver(() => r.late.onend?.());
+
+  const mic = () => panel().querySelector<HTMLButtonElement>('button[aria-label^="กดแล้วพูด"]')!;
+  const drill = () => mic().closest("section")!.textContent;
+  const listening = () => mic().disabled && drill()!.includes("กำลังฟัง");
+  const word = (i: number) => withDrill.speak![i].say;
+
+  beforeEach(async () => {
+    FakeRecognition.made = [];
+    vi.stubGlobal("SpeechRecognition", FakeRecognition);
+    await show(withDrill, false);
+    await tab("Practice");
+  });
+
+  it("ignores a closed session's late callbacks once a new session is listening", async () => {
+    await click(mic());
+    const [a] = FakeRecognition.made;
+    await tab("Learn");
+    expect(a.abort).toHaveBeenCalledTimes(1);
+    await tab("Practice");
+    await click(mic());
+    const b = FakeRecognition.made[1];
+    expect(b.start).toHaveBeenCalledTimes(1);
+
+    await ends(a);
+    expect(listening()).toBe(true);
+
+    await fails(a, "network");
+    await hears(a, word(0));
+    expect(listening()).toBe(true);
+    expect(drill()).toContain("ผ่าน 0/0");
+    expect(drill()).not.toContain("เชื่อมต่อบริการแปลงเสียงไม่ได้");
+    expect(drill()).not.toContain("ระบบได้ยินเป็น");
+
+    await hears(b, word(0));
+    expect(drill()).toContain("ผ่าน 1/1");
+    await ends(b);
+    expect(listening()).toBe(false);
+    expect(mic().disabled).toBe(false);
+  });
+
+  it("stops listening when hidden and does not start again on return", async () => {
+    await click(mic());
+    const [a] = FakeRecognition.made;
+    await tab("Learn");
+    expect(a.abort).toHaveBeenCalledTimes(1);
+    // A browser reports its own abort as an error, then ends. Neither is the learner's problem.
+    await fails(a, "aborted");
+    await ends(a);
+    await tab("Practice");
+    expect(FakeRecognition.made).toHaveLength(1);
+    expect(a.start).toHaveBeenCalledTimes(1);
+    expect(listening()).toBe(false);
+    expect(mic().disabled).toBe(false);
+    expect(drill()).not.toContain("ฟังเสียงไม่สำเร็จ");
+  });
+
+  it("does not score a late result against the next word", async () => {
+    await click(mic());
+    const [a] = FakeRecognition.made;
+    await click(byText(/^คำต่อไป/));
+    expect(a.abort).toHaveBeenCalledTimes(1);
+    expect(listening()).toBe(false);
+    await hears(a, word(0));
+    expect(drill()).toContain("คำที่ 2/");
+    expect(drill()).toContain("ผ่าน 0/0");
+  });
+
+  it("still reports a live session's error, then lets the learner try again", async () => {
+    await click(mic());
+    const [a] = FakeRecognition.made;
+    await fails(a, "not-allowed");
+    await ends(a);
+    expect(drill()).toContain("เบราว์เซอร์ไม่ได้รับอนุญาตให้ใช้ไมโครโฟน");
+    expect(listening()).toBe(false);
+    await click(mic());
+    expect(listening()).toBe(true);
+    expect(drill()).not.toContain("เบราว์เซอร์ไม่ได้รับอนุญาตให้ใช้ไมโครโฟน");
+  });
+
+  it("still scores a live session and ends it without aborting", async () => {
+    await click(mic());
+    const [a] = FakeRecognition.made;
+    await hears(a, "not the word");
+    await ends(a);
+    expect(drill()).toContain("ผ่าน 0/1");
+    expect(drill()).toContain("not the word");
+    await tab("Learn");
+    expect(a.abort).not.toHaveBeenCalled();
+  });
+});
+
 describe("another lesson", () => {
   it("shares no ids with a lesson Next keeps hidden in the page", async () => {
     await act(async () => root.render(createElement("div", null, tree(lessonA), tree(lessonB))));

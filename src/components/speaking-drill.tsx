@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import type { SpeakItem } from "@/content";
 import { speak } from "./speak";
 
@@ -58,11 +58,16 @@ export function SpeakingDrill({ items }: { items: SpeakItem[] }) {
   const item = items[index];
   const titleId = useId();
 
-  // Leaving the tab hides this drill without unmounting it, and the microphone must not stay open behind it.
-  useEffect(() => () => {
-    rec.current?.abort();
+  // Forgets the session before aborting it: its callbacks can arrive later, and they only count while it is rec.current.
+  const stop = useCallback(() => {
+    const r = rec.current;
+    rec.current = null;
+    r?.abort();
     setListening(false);
   }, []);
+
+  // Leaving the tab hides this drill without unmounting it, and the microphone must not stay open behind it.
+  useEffect(() => stop, [stop]);
 
   function listen() {
     const Ctor = recognitionCtor();
@@ -70,19 +75,27 @@ export function SpeakingDrill({ items }: { items: SpeakItem[] }) {
       setError("เบราว์เซอร์นี้ยังฟังเสียงพูดไม่ได้ ลองเปิดด้วย Chrome หรือ Edge");
       return;
     }
-    rec.current?.abort();
+    stop();
     const r = new Ctor();
     r.lang = "en-US";
     r.interimResults = false;
     r.maxAlternatives = 5;
     r.onresult = (e) => {
+      if (rec.current !== r) return;
       const guesses = Array.from(e.results[0] ?? []).map((a) => clean(a.transcript));
       const v = judge(item, guesses);
       setVerdict(v);
       setScore((s) => ({ done: s.done + 1, right: s.right + (v.ok ? 1 : 0) }));
     };
-    r.onerror = (e) => setError(ERRORS[e.error] ?? "ฟังเสียงไม่สำเร็จ ลองอีกครั้ง");
-    r.onend = () => setListening(false);
+    r.onerror = (e) => {
+      if (rec.current !== r) return;
+      setError(ERRORS[e.error] ?? "ฟังเสียงไม่สำเร็จ ลองอีกครั้ง");
+    };
+    r.onend = () => {
+      if (rec.current !== r) return;
+      rec.current = null;
+      setListening(false);
+    };
     setError(null);
     setVerdict(null);
     setListening(true);
@@ -91,7 +104,7 @@ export function SpeakingDrill({ items }: { items: SpeakItem[] }) {
   }
 
   function next() {
-    rec.current?.abort();
+    stop();
     setIndex((i) => (i + 1) % items.length);
     setVerdict(null);
     setError(null);
