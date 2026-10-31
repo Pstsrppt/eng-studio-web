@@ -136,14 +136,15 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
         })()}
       </div>
 
-      <div className="flex min-w-0 flex-col gap-4 p-6 sm:p-8">
-        <div ref={answerRef} className="flex scroll-mt-[calc(var(--header-h)+0.5rem)] flex-col gap-4">
+      <div className="flex min-w-0 flex-col gap-4 p-6 cramped:p-3 sm:p-8">
+        <div ref={answerRef} className="flex scroll-mt-[calc(var(--header-h)+0.5rem)] flex-col gap-4"
+          {...(answerRef ? { role: "group", tabIndex: -1, "aria-label": revealed ? `เฉลย: ${word.en} แปลว่า ${word.th}` : word.en } : {})}>
           <div className="flex flex-wrap items-center gap-3">
             {cover.en ? (
               <span className="h-12 w-48 rounded-xl bg-paper ring-1 ring-line sm:h-14" aria-label="ซ่อนคำภาษาอังกฤษ" />
             ) : (
               // Long words and phrases take a smaller size on phones, so the meaning still fits on screen beside them.
-              <h3 className={"font-serif font-semibold tracking-tight break-words text-ink sm:text-6xl sm:leading-none " + (word.en.length > 10 ? "text-3xl leading-tight" : "text-5xl leading-none")}>{word.en}</h3>
+              <h3 className={"max-w-full font-serif font-semibold tracking-tight break-words text-ink sm:text-6xl sm:leading-none " + (word.en.length > 10 ? "text-3xl leading-tight" : "text-5xl leading-none cramped:text-3xl cramped:leading-tight")}>{word.en}</h3>
             )}
             {word.pos && (
               <span className={"rounded-lg px-2.5 py-1 font-mono text-sm " + tone.tile} title={POS_LABEL[word.pos].th}>
@@ -220,7 +221,7 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
           <p className="rounded-2xl bg-paper/70 p-4 text-sm text-muted ring-1 ring-line">ประโยคตัวอย่างจะขึ้นหลังตอบ</p>
         )}
 
-        <div className="mt-auto flex items-center gap-4">
+        <div className="mt-auto flex items-center gap-4 cramped:flex-wrap">
           <span className="font-serif text-5xl leading-none font-semibold text-line tabular" aria-hidden>
             {String((index ?? shown) + 1).padStart(2, "0")}
           </span>

@@ -56,6 +56,7 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
   const busy = useRef(false);
   const shownAt = useRef(0);
   const answer = useRef<HTMLDivElement>(null);
+  const wasRevealed = useRef(false);
   const storedHide = useSyncExternalStore(subscribe, readHide, () => true);
   const [hideOverride, setHideOverride] = useState<boolean | null>(null);
   const hidePicture = hideOverride ?? storedHide;
@@ -171,7 +172,10 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
   const current = session && phase === "card" ? words[session.queue[session.pos]] : undefined;
 
   // A new card or an opened answer: the word and meaning must clear the bars. Moves only as far as that takes, or not at all.
+  // Revealing or grading removes the button the learner just pressed, so focus goes to what replaced it; the first card leaves focus alone.
   useLayoutEffect(() => {
+    if (revealed || wasRevealed.current) answer.current?.focus({ preventScroll: true });
+    wasRevealed.current = revealed;
     answer.current?.scrollIntoView({ block: "nearest", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   }, [phase, revealed]);
 

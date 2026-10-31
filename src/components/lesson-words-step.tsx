@@ -100,7 +100,7 @@ export function LessonWordsStep({ words, onNext }: { words: LessonWords; onNext:
           )}
           <div className="card flex flex-wrap items-center justify-between gap-3 p-4">
             <p className="text-sm">ลองเช็คตัวเองสั้น ๆ {Math.min(CHECK_SIZE, all.length)} ข้อ ฟังเสียงแล้วเลือกความหมาย</p>
-            <div className="flex gap-2">
+            <div className="flex gap-2 cramped:flex-wrap">
               {all.length >= 2 && first && (
                 <button type="button" className="btn-ghost py-2" onClick={() => { setChecking(true); speak(first.word.en); }}>เช็คตัวเอง</button>
               )}
@@ -153,7 +153,7 @@ function QuickCheck({ words, pool, onDone, onBack }: { words: LessonWord[]; pool
       <div className="card flex flex-col items-start gap-3 p-5">
         <p className="font-display text-2xl font-bold">ถูก {right} จาก {items.length}</p>
         <p className="text-sm text-muted">{right === items.length ? "พร้อมแล้ว ไปอ่านทฤษฎีกัน" : "คำที่ยังจำไม่ได้ไม่เป็นไร จะเจออีกในทฤษฎีและแบบฝึก"}</p>
-        <div className="flex gap-2">
+        <div className="flex gap-2 cramped:flex-wrap">
           <button type="button" className="btn-ghost py-2" onClick={onBack}>ดูคำอีกครั้ง</button>
           <button type="button" className="btn" onClick={onDone}>ไปทฤษฎี →</button>
         </div>

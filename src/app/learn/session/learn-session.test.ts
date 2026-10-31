@@ -90,6 +90,84 @@ describe("flashcard answer", () => {
   });
 });
 
+describe("keyboard and screen-reader focus", () => {
+  const press = (key: string, target: EventTarget = document.body) => act(async () => { target.dispatchEvent(new KeyboardEvent("keydown", { key, bubbles: true })); });
+
+  it("leaves focus alone when the first card opens, and names only the word", () => {
+    expect(document.activeElement).toBe(document.body);
+    expect(answerBlock().getAttribute("role")).toBe("group");
+    expect(answerBlock().getAttribute("aria-label")).toBe(LONG.en);
+  });
+
+  it("moves focus to the answer on reveal, named by both the word and its meaning", async () => {
+    await click(button(/^เปิดเฉลย/));
+    expect(document.activeElement).toBe(answerBlock());
+    expect(answerBlock().getAttribute("aria-label")).toContain(LONG.en);
+    expect(answerBlock().getAttribute("aria-label")).toContain(LONG.th);
+    expect(answerBlock().closest("[aria-live]")).toBeNull();
+  });
+
+  it("lets the scroll decide how far the page moves, and only once", async () => {
+    const focus = vi.spyOn(HTMLElement.prototype, "focus");
+    scrolled().mockClear();
+    await click(button(/^เปิดเฉลย/));
+    expect(focus).toHaveBeenCalledWith({ preventScroll: true });
+    expect(scrolled()).toHaveBeenCalledTimes(1);
+    focus.mockRestore();
+  });
+
+  it("moves focus to the next word after grading, without giving its meaning away", async () => {
+    await click(button(/^เปิดเฉลย/));
+    await click(button(/^จำได้/));
+    expect(document.activeElement).toBe(answerBlock());
+    expect(answerBlock().getAttribute("aria-label")).toBe(NEXT.en);
+    expect(answerBlock().getAttribute("aria-label")).not.toContain(NEXT.th);
+  });
+
+  it("works from the keyboard alone: Space opens the answer from the word, a number grades it", async () => {
+    await press(" ");
+    expect(document.activeElement).toBe(answerBlock());
+    expect(answerBlock().getAttribute("aria-label")).toContain(LONG.th);
+    await press("3", document.activeElement!);
+    expect(host.querySelector("article h3")?.textContent).toBe(NEXT.en);
+    await press(" ", document.activeElement!);
+    expect(answerBlock().getAttribute("aria-label")).toContain(NEXT.th);
+  });
+});
+
+describe("large browser text", () => {
+  const source = (f: string) => readFileSync(f, "utf8");
+
+  it("switches layout by rem width, which a 320px phone at normal text does not reach", () => {
+    expect(source("src/app/globals.css")).toContain("@custom-variant cramped (@media (width < 20rem));");
+  });
+
+  it("drops the header's wordmark and keeps its name and the tab bar's 48px targets", () => {
+    const header = source("src/components/site-header.tsx");
+    expect(header).toContain('leading-none cramped:hidden');
+    expect(header).toContain('aria-label="Odyssey หน้าแรก"');
+    expect(source("src/components/nav.tsx")).toContain("cramped:min-h-[48px]");
+  });
+
+  it("wraps a graded quiz choice instead of pushing the page wider", () => {
+    const view = source("src/components/lesson-view.tsx");
+    expect(view).toContain("cramped:flex-wrap");
+    expect(view).toContain("min-w-0 flex-1 cramped:basis-1/2");
+    expect(view).toContain("mt-4 grid grid-cols-1");
+  });
+
+  it("wraps rows only in the narrow layout, so normal text keeps its one-line rows", () => {
+    expect(source("src/components/photo-word-card.tsx")).toContain("mt-auto flex items-center gap-4 cramped:flex-wrap");
+    expect(source("src/components/lesson-view.tsx")).toContain("flex w-fit rounded-xl cramped:max-w-full cramped:flex-wrap");
+    expect(source("src/components/lesson-words-step.tsx")).toContain("flex gap-2 cramped:flex-wrap");
+  });
+
+  it("gives a short word the smaller display size too, and lets any word wrap inside the card", () => {
+    expect(host.querySelector("article h3")?.className).toContain("max-w-full");
+    expect(source("src/components/photo-word-card.tsx")).toContain("text-5xl leading-none cramped:text-3xl");
+  });
+});
+
 describe("long answers", () => {
   it("gives a long word a smaller size on phones and leaves a short one alone", async () => {
     expect(host.querySelector("article h3")?.className).toContain("text-3xl");

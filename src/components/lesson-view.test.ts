@@ -205,9 +205,38 @@ describe("switching tabs keeps the lesson's work", () => {
     expect(document.activeElement).toBe(summaryTab);
     await click(byText(/ทำใหม่/));
     await answerAll();
+    scrolled().mockClear();
     await click(byText(/^ส่งคำตอบ/));
     expect(scrolled()).toHaveBeenCalledTimes(1);
     expect(document.activeElement).toBe(result());
+  });
+
+  it("moves focus to the first new question after a retake, without saving or grading anything", async () => {
+    await tab("Quiz");
+    await answerAll();
+    await click(byText(/^ส่งคำตอบ/));
+    actions.saveAttempt.mockClear();
+    scrolled().mockClear();
+    await click(byText(/ทำใหม่/));
+    const heading = panel().querySelector("li [role='heading']");
+    expect(document.activeElement).toBe(heading);
+    expect(heading?.getAttribute("aria-level")).toBe("3");
+    expect(heading?.id).toBe(groups()[0].getAttribute("aria-labelledby"));
+    expect(scrolled().mock.contexts[0]).toBe(heading);
+    expect(scrolled().mock.calls[0][0]).toMatchObject({ block: "nearest", behavior: "auto" });
+    expect(result()).toBeNull();
+    expect(chosen()).toBe(0);
+    expect(actions.saveAttempt).not.toHaveBeenCalled();
+    expect(panel().textContent).not.toMatch(/ถูก d+ จาก d+ ข้อ/);
+  });
+
+  it("leaves focus alone when the quiz first opens or is come back to", async () => {
+    const start = document.activeElement;
+    await tab("Quiz");
+    expect(document.activeElement).toBe(start);
+    await tab("Learn");
+    await tab("Quiz");
+    expect(document.activeElement).toBe(start);
   });
 
   it("does not claim a guest's score was saved", async () => {
