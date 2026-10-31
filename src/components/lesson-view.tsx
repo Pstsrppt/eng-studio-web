@@ -2,18 +2,19 @@
 
 import Link from "next/link";
 import { ArrowLeftIcon, ArrowRightIcon, CheckCircle2Icon, CheckIcon, ClipboardCheckIcon, KeyboardIcon, LightbulbIcon, PencilLineIcon, RotateCcwIcon, XCircleIcon, XIcon } from "lucide-react";
-import { type KeyboardEvent as ReactKeyboardEvent, type ReactNode, useEffect, useRef, useState, useTransition } from "react";
+import { Activity, type KeyboardEvent as ReactKeyboardEvent, type ReactNode, useEffect, useId, useRef, useState, useTransition } from "react";
 import { addLessonCards, saveAttempt } from "@/app/actions";
 import type { Lesson, PracticeItem, QuizItem } from "@/content";
 import type { LessonWords } from "@/content/lesson-words";
 import { normalize } from "@/content/lookup";
 import { jumpScroll } from "@/app/roadmap/stage-jump";
 import { FocusBar } from "./lesson-focus";
-import { TABS, sectionLabel, type Tab } from "./lesson-tabs";
+import { TABS, panelId, sectionLabel, tabId, type Tab } from "./lesson-tabs";
 import { LessonWordsStep } from "./lesson-words-step";
 import { Meaning } from "./meaning";
 import { PlayableProse } from "./playable-prose";
 import { Sentence } from "./sentence";
+import { stopSpeaking } from "./speak";
 import { SpeakingDrill } from "./speaking-drill";
 
 /** Back to the top of the lesson card, without animation when the learner asks for less motion. */
@@ -25,12 +26,37 @@ type Props = { lesson: Lesson; words: LessonWords; next?: { href: string; title:
 
 export function LessonView({ lesson, words, next, passMark, focusable = false }: Props) {
   const [tab, setTab] = useState<Tab>("learn");
+  const uid = useId();
   const hasWords = words.fresh.length + words.review.length > 0;
   // Learn starts with the lesson's new words, then the theory (the order the course has always used).
   const [step, setStep] = useState<"words" | "theory">(hasWords ? "words" : "theory");
-  const go = (t: Tab) => {
+  const open = (t: Tab) => {
     setTab(t);
+    stopSpeaking();
+  };
+  const go = (t: Tab) => {
+    open(t);
     toLessonTop();
+  };
+  const panels: Record<Tab, ReactNode> = {
+    learn: (
+      <div className="flex flex-col gap-4">
+        {hasWords && (
+          <div className="flex w-fit rounded-xl bg-page-alt p-1 text-sm" role="group" aria-label="ขั้นตอนใน Learn">
+            {([["words", "1 · คำศัพท์ของบท"], ["theory", "2 · ทฤษฎีและตัวอย่าง"]] as const).map(([id, label]) => (
+              <button key={id} type="button" aria-pressed={step === id} onClick={() => setStep(id)}
+                className={"rounded-lg px-3 py-1.5 transition " + (step === id ? "bg-surface font-semibold shadow-sm" : "text-muted hover:text-ink")}>{label}</button>
+            ))}
+          </div>
+        )}
+        {hasWords && <Activity mode={step === "words" ? "visible" : "hidden"}><LessonWordsStep words={words} onNext={() => setStep("theory")} /></Activity>}
+        <Activity mode={step === "theory" ? "visible" : "hidden"}><Theory lesson={lesson} onNext={() => go("practice")} /></Activity>
+      </div>
+    ),
+    practice: <Practice lesson={lesson} onNext={() => go("quiz")} />,
+    quiz: <Quiz lesson={lesson} next={next} passMark={passMark} newWordIds={words.fresh.map((x) => x.word.id)} />,
+    real: <RealLife lesson={lesson} onNext={() => go("summary")} />,
+    summary: <Summary lesson={lesson} words={words} next={next} onQuiz={() => go("quiz")} />,
   };
 
   return (
@@ -38,7 +64,7 @@ export function LessonView({ lesson, words, next, passMark, focusable = false }:
       {focusable && <FocusBar title={lesson.title} level={lesson.level} section={sectionLabel(tab)} />}
       <div role="tablist" aria-label="ส่วนของบทเรียน" className="-mx-1 flex gap-1 overflow-x-auto px-1 pb-1">
         {TABS.map((t, i) => (
-          <button key={t.id} role="tab" type="button" aria-selected={tab === t.id} aria-controls="lesson-panel" onClick={() => setTab(t.id)}
+          <button key={t.id} id={tabId(uid, t.id)} role="tab" type="button" aria-selected={tab === t.id} aria-controls={panelId(uid, t.id)} onClick={() => open(t.id)}
             className={"flex shrink-0 items-center gap-2 rounded-xl border px-4 py-2.5 text-sm transition " +
               (tab === t.id ? "border-navy bg-navy font-semibold text-white" : "border-line bg-surface text-ink-2 hover:border-navy/40")}>
             <span className={"font-mono text-xs " + (tab === t.id ? "text-on-dark" : "text-muted")}>{i + 1}</span>
@@ -47,27 +73,12 @@ export function LessonView({ lesson, words, next, passMark, focusable = false }:
         ))}
       </div>
 
-      <div id="lesson-panel" role="tabpanel" key={tab} className="learn-in">
-        {tab === "learn" && (
-          <div className="flex flex-col gap-4">
-            {hasWords && (
-              <div className="flex w-fit rounded-xl bg-page-alt p-1 text-sm" role="group" aria-label="ขั้นตอนใน Learn">
-                {([["words", "1 · คำศัพท์ของบท"], ["theory", "2 · ทฤษฎีและตัวอย่าง"]] as const).map(([id, label]) => (
-                  <button key={id} type="button" aria-pressed={step === id} onClick={() => setStep(id)}
-                    className={"rounded-lg px-3 py-1.5 transition " + (step === id ? "bg-surface font-semibold shadow-sm" : "text-muted hover:text-ink")}>{label}</button>
-                ))}
-              </div>
-            )}
-            {step === "words" && hasWords
-              ? <LessonWordsStep words={words} onNext={() => setStep("theory")} />
-              : <Theory lesson={lesson} onNext={() => go("practice")} />}
-          </div>
-        )}
-        {tab === "practice" && <Practice lesson={lesson} onNext={() => go("quiz")} />}
-        {tab === "quiz" && <Quiz lesson={lesson} next={next} passMark={passMark} newWordIds={words.fresh.map((x) => x.word.id)} />}
-        {tab === "real" && <RealLife lesson={lesson} onNext={() => go("summary")} />}
-        {tab === "summary" && <Summary lesson={lesson} words={words} next={next} onQuiz={() => go("quiz")} />}
-      </div>
+      {/* Each tab stays mounted while the lesson is open, so leaving it keeps its answers. Activity hides it and removes its effects. */}
+      {TABS.map((t) => (
+        <div key={t.id} id={panelId(uid, t.id)} role="tabpanel" aria-labelledby={tabId(uid, t.id)} hidden={tab !== t.id} className="learn-in">
+          <Activity mode={tab === t.id ? "visible" : "hidden"}>{panels[t.id]}</Activity>
+        </div>
+      ))}
     </div>
   );
 }
@@ -147,6 +158,7 @@ function isRight(item: PracticeItem, st: ItemState) {
  * always available, and wrong answers can be tried again. Practice isn't scored or saved; the quiz is.
  */
 function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
+  const qId = useId();
   const [items, setItems] = useState(lesson.practice);
   const [states, setStates] = useState<ItemState[]>(() => lesson.practice.map(() => EMPTY));
   const [at, setAt] = useState(0);
@@ -205,10 +217,10 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
     return (
       <div className="flex flex-col gap-5">
         <ModeHeader kind="practice" />
-        <section aria-labelledby="practice-summary" className="on-dark flex flex-wrap items-center gap-5 rounded-2xl bg-(--ac-dark) p-6 text-white">
+        <section aria-labelledby={`${qId}-summary`} className="on-dark flex flex-wrap items-center gap-5 rounded-2xl bg-(--ac-dark) p-6 text-white">
           <p className="ac-serif text-5xl font-bold text-(--ac-gold-bright) tabular">{right}/{total}</p>
           <div className="min-w-0 flex-1">
-            <h3 id="practice-summary" className="text-lg font-semibold">ถูกตั้งแต่ครั้งแรก {right} จาก {total} ข้อ</h3>
+            <h3 id={`${qId}-summary`} className="text-lg font-semibold">ถูกตั้งแต่ครั้งแรก {right} จาก {total} ข้อ</h3>
             <p className="text-sm text-on-dark-muted">แบบฝึกไม่นับคะแนน ใช้ดูว่าพร้อมทำ Quiz หรือยัง</p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -250,7 +262,7 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
         </div>
       </div>
 
-      <section key={at} aria-labelledby="ex-q" className="overflow-hidden rounded-2xl border border-(--ac-line) bg-card shadow-(--ac-shadow)">
+      <section key={at} aria-labelledby={qId} className="overflow-hidden rounded-2xl border border-(--ac-line) bg-card shadow-(--ac-shadow)">
         <div className="flex flex-col gap-6 p-5 sm:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="flex items-center gap-3">
@@ -260,7 +272,7 @@ function Practice({ lesson, onNext }: { lesson: Lesson; onNext: () => void }) {
             {item.t === "pick" && <p className="hidden items-center gap-1.5 text-xs text-(--ac-muted) sm:flex"><KeyboardIcon className="size-4" aria-hidden /> A–D เลือก · Enter ตรวจ · ← → เปลี่ยนข้อ</p>}
           </div>
 
-          <ExerciseBody item={item} st={st} update={update} onSubmit={check} />
+          <ExerciseBody qId={qId} item={item} st={st} update={update} onSubmit={check} />
 
           {st.hint && !locked && (
             <p className="flex gap-2.5 rounded-xl bg-accent-wash px-4 py-3 text-[15px] leading-6 text-(--ac-ink)">
@@ -357,13 +369,13 @@ function hintOf(item: PracticeItem) {
 
 const questionText = "text-[22px] leading-[1.45] font-semibold text-(--ac-heading) sm:text-[26px]";
 
-function ExerciseBody({ item, st, update, onSubmit }: { item: PracticeItem; st: ItemState; update: (p: Partial<ItemState>) => void; onSubmit: () => void }) {
+function ExerciseBody({ qId, item, st, update, onSubmit }: { qId: string; item: PracticeItem; st: ItemState; update: (p: Partial<ItemState>) => void; onSubmit: () => void }) {
   const locked = st.checked === "ok" || st.shown;
   if (item.t === "pick") {
     return (
       <>
-        <p id="ex-q" className={questionText}>{item.q}</p>
-        <div className="grid gap-3 sm:grid-cols-2" role="radiogroup" aria-labelledby="ex-q">
+        <p id={qId} className={questionText}>{item.q}</p>
+        <div className="grid gap-3 sm:grid-cols-2" role="radiogroup" aria-labelledby={qId}>
           {item.o.map((o, i) => (
             <OptionButton key={o} letter={LETTERS[i]} text={o} chosen={st.choice === i} disabled={locked}
               state={locked && i === item.a ? "correct" : st.checked === "no" && st.choice === i ? "wrong" : null}
@@ -376,7 +388,7 @@ function ExerciseBody({ item, st, update, onSubmit }: { item: PracticeItem; st: 
   if (item.t === "order") {
     return (
       <>
-        <p id="ex-q" className="text-[17px] leading-7 text-(--ac-ink)">เรียงคำให้ได้ความหมาย: <b className="text-(--ac-heading)">{item.th}</b></p>
+        <p id={qId} className="text-[17px] leading-7 text-(--ac-ink)">เรียงคำให้ได้ความหมาย: <b className="text-(--ac-heading)">{item.th}</b></p>
         <div className="flex min-h-16 flex-wrap items-center gap-2 rounded-xl border-2 border-dashed border-(--ac-line) bg-(--ac-bg) p-3" aria-label="ประโยคที่เรียงแล้ว">
           {st.picked.length === 0 && <span className="text-sm text-(--ac-muted)">แตะคำด้านล่างเพื่อเรียงประโยค</span>}
           {st.picked.map((idx, i) => (
@@ -397,9 +409,9 @@ function ExerciseBody({ item, st, update, onSubmit }: { item: PracticeItem; st: 
   }
   return (
     <form className="flex flex-col gap-3" onSubmit={(e) => { e.preventDefault(); if (ready(item, st)) onSubmit(); }}>
-      <p id="ex-q" className={questionText}>{item.t === "fix" ? <><span className="block text-base font-normal text-(--ac-muted)">แก้ประโยคนี้ให้ถูก</span>{item.q}</> : item.q}</p>
+      <p id={qId} className={questionText}>{item.t === "fix" ? <><span className="block text-base font-normal text-(--ac-muted)">แก้ประโยคนี้ให้ถูก</span>{item.q}</> : item.q}</p>
       <input value={st.value} readOnly={locked} onChange={(e) => update({ value: e.target.value, checked: null })}
-        placeholder={item.t === "fix" ? "พิมพ์ประโยคที่ถูก แล้วกด Enter" : "พิมพ์คำที่หายไป แล้วกด Enter"} autoCapitalize="off" autoComplete="off" spellCheck={false} aria-labelledby="ex-q"
+        placeholder={item.t === "fix" ? "พิมพ์ประโยคที่ถูก แล้วกด Enter" : "พิมพ์คำที่หายไป แล้วกด Enter"} autoCapitalize="off" autoComplete="off" spellCheck={false} aria-labelledby={qId}
         className={"min-h-13 w-full rounded-xl border-2 bg-card px-4 text-lg outline-none transition focus:border-(--ac-navy) focus:ring-4 focus:ring-(--ac-gold-soft) " +
           (st.checked === "ok" ? "border-[#2e7d5b]" : st.checked === "no" ? "border-[#e0a49a]" : "border-(--ac-line)")} />
     </form>
@@ -515,6 +527,7 @@ function Summary({ lesson, words, next, onQuiz }: { lesson: Lesson; words: Lesso
 type QuizProps = { lesson: Lesson; next?: { href: string; title: string }; passMark: number; newWordIds: string[] };
 
 function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
+  const uid = useId();
   // Retakes reshuffle the questions and options, so the answers can't be learned by position.
   const [quiz, setQuiz] = useState(lesson.quiz);
   const [answers, setAnswers] = useState<(number | null)[]>(() => lesson.quiz.map(() => null));
@@ -523,6 +536,14 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
   const [pending, start] = useTransition();
   // Set before the first await, so a double click can't save the same attempt twice.
   const submitting = useRef(false);
+  // False while this tab is hidden: a result that arrives then must not move the page the learner is on.
+  const onScreen = useRef(false);
+  useEffect(() => {
+    onScreen.current = true;
+    return () => {
+      onScreen.current = false;
+    };
+  }, []);
   const answered = answers.filter((a) => a !== null).length;
   const allAnswered = answered === quiz.length;
 
@@ -547,7 +568,7 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
         setDone({ score, saved: false, added: 0 });
         setError(true);
       }
-      toLessonTop();
+      if (onScreen.current) toLessonTop();
     });
   }
 
@@ -567,10 +588,10 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
 
       <div aria-live="polite">
         {done && (
-          <section aria-labelledby="quiz-result" className={"flex flex-wrap items-center gap-5 rounded-2xl border-2 p-6 " + (passed ? "border-[#2e7d5b] bg-[#eef7f1]" : "border-[#d9776a] bg-[#fdf1ef]")}>
+          <section aria-labelledby={`${uid}-result`} className={"flex flex-wrap items-center gap-5 rounded-2xl border-2 p-6 " + (passed ? "border-[#2e7d5b] bg-[#eef7f1]" : "border-[#d9776a] bg-[#fdf1ef]")}>
             <p className="ac-serif text-5xl font-bold text-(--ac-navy) tabular">{done.score}%</p>
             <div className="min-w-0 flex-1 text-[15px] leading-6">
-              <h3 id="quiz-result" className={"flex items-center gap-1.5 text-lg font-semibold " + (passed ? "text-[#22694b]" : "text-bad")}>
+              <h3 id={`${uid}-result`} className={"flex items-center gap-1.5 text-lg font-semibold " + (passed ? "text-[#22694b]" : "text-bad")}>
                 {passed ? <CheckCircle2Icon className="size-5" aria-hidden /> : <XCircleIcon className="size-5" aria-hidden />}
                 {passed ? "ผ่านแล้ว" : `ยังไม่ผ่าน ต้องได้ ${passMark}% ขึ้นไป`}
               </h3>
@@ -606,8 +627,8 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
                   </span>
                 )}
               </div>
-              <p id={`quiz-q-${i}`} className="text-[19px] leading-[1.5] font-semibold text-(--ac-heading) sm:text-[21px]">{q.q}</p>
-              <RadioGroup labelledBy={`quiz-q-${i}`} className="mt-4 grid gap-2.5 sm:grid-cols-2">
+              <p id={`${uid}-q-${i}`} className="text-[19px] leading-[1.5] font-semibold text-(--ac-heading) sm:text-[21px]">{q.q}</p>
+              <RadioGroup labelledBy={`${uid}-q-${i}`} className="mt-4 grid gap-2.5 sm:grid-cols-2">
                 {q.o.map((o, j) => (
                   <OptionButton key={j} letter={LETTERS[j]} text={o} chosen={answers[i] === j} disabled={reveal}
                     state={reveal && j === q.a ? "correct" : reveal && answers[i] === j ? "wrong" : null}

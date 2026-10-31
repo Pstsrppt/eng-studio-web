@@ -10,6 +10,10 @@ export const TABS = [
 
 export type Tab = (typeof TABS)[number]["id"];
 
+/** Each tab and the panel it opens point at each other through these ids. `base` keeps them apart from a lesson Next still holds hidden. */
+export const tabId = (base: string, tab: Tab) => `${base}-tab-${tab}`;
+export const panelId = (base: string, tab: Tab) => `${base}-panel-${tab}`;
+
 /** The name of the section being shown, as on its tab. */
 export function sectionLabel(tab: Tab): string {
   return TABS.find((t) => t.id === tab)?.label ?? "";
