@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import { LessonLoading } from "@/components/lesson-loading";
 import { LessonShell } from "@/components/lesson-shell";
 import { PASS_MARK, SOUNDS, getSound, nextLesson } from "@/content";
 
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function SoundPage({ params }: Props) {
   // Reading params suspends on client navigation, so the lesson streams in behind a boundary.
   return (
-    <Suspense fallback={<div className="page-bleed h-[70vh] animate-pulse bg-page" />}>
+    <Suspense fallback={<LessonLoading />}>
       <Sound params={params} />
     </Suspense>
   );

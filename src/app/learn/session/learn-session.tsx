@@ -18,7 +18,7 @@ type Phase = "loading" | "empty" | "card" | "summary" | "error";
 const GRADE_UI: Record<Grade, { label: string; key: string; tone: string }> = {
   again: { label: "จำไม่ได้", key: "1", tone: "border-[#f3c3bd] bg-bad-bg text-bad hover:bg-[#fbdcd7]" },
   hard: { label: "ยังไม่แม่น", key: "2", tone: "border-[#efd9a3] bg-[#fbf0d9] text-[#8a5a00] hover:bg-[#f7e6c0]" },
-  good: { label: "จำได้", key: "3", tone: "border-[#9ccdb8] bg-obj-bg text-obj hover:bg-[#cbe9dc]" },
+  good: { label: "จำได้", key: "3", tone: "border-[#9ccdb8] bg-obj-bg text-[#0b6b4c] hover:bg-[#cbe9dc]" },
 };
 const MODE_LABEL: Record<LearnMode, string> = { all: "เรียนทั้งหมด", due: "ทวนที่ถึงกำหนด", new: "คำใหม่", bookmarks: "บุ๊กมาร์ก", deck: "ตามหมวด" };
 
@@ -289,8 +289,8 @@ export function LearnSession({ mode, deck, userKey, explicit }: Props) {
               <button key={g} type="button" disabled={saving} onClick={() => grade(g)}
                 className={"od-press flex min-h-11 flex-col items-center gap-0.5 rounded-xl border-[1.5px] px-1.5 py-1.5 disabled:opacity-50 lg:px-2 lg:py-2.5 " + GRADE_UI[g].tone}>
                 <span className="text-[15px] font-semibold">{GRADE_UI[g].label}</span>
-                <span className="text-[11px] opacity-80">{g === "again" ? "ทวนอีกครั้งรอบนี้" : `ทวน${whenLabel(preview(g))}`}</span>
-                <kbd className="hidden font-mono text-[10.5px] opacity-60 lg:block">{GRADE_UI[g].key}</kbd>
+                <span className="text-[11px]">{g === "again" ? "ทวนอีกครั้งรอบนี้" : `ทวน${whenLabel(preview(g))}`}</span>
+                <kbd className="hidden font-mono text-[10.5px] lg:block">{GRADE_UI[g].key}</kbd>
               </button>
             ))}
           </div>

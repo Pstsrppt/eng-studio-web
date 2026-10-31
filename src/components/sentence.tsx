@@ -21,7 +21,9 @@ export function Sentence({ en, th, size = "md" }: { en: string; th?: string; siz
                 type="button"
                 onClick={() => openWord(p, en)}
                 className={
-                  "rounded-sm hover:bg-brand-soft " +
+                  // Short words like "I" and "a" would otherwise be a few pixels wide; the space between words keeps boxes apart.
+                  // In px like the text beside it. A one-letter first word moves back so the sentence still starts at the margin.
+                  "min-w-[24px] rounded-sm hover:bg-brand-soft " + (i === 0 && p.length === 1 ? "-ml-[8px] " : "") +
                   (isGlossed(p) ? "underline decoration-accent decoration-dotted underline-offset-4" : "")
                 }
               >

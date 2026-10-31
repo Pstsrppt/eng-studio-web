@@ -8,7 +8,7 @@ export function SpeakButton({ text, label = "ฟังเสียง" }: { text
       type="button"
       onClick={() => speak(text)}
       aria-label={`${label}: ${text}`}
-      className="grid size-8 shrink-0 place-items-center rounded-full border border-line text-muted transition hover:border-brand hover:text-brand"
+      className="relative grid size-8 shrink-0 place-items-center rounded-full border border-line text-muted transition after:absolute after:-inset-[7px] after:content-[''] hover:border-brand hover:text-brand"
     >
       <svg viewBox="0 0 16 16" className="size-3.5" aria-hidden="true">
         <path d="M2 6h3l4-3v10L5 10H2z" fill="currentColor" />
