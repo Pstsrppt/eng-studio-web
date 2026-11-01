@@ -234,6 +234,13 @@
 }
 .learn-in { animation: learn-in var(--od-slow) var(--od-ease) both; }
 
+/* A lesson on its way: invisible for a quick navigation, and the reload link only after a long wait. These delays
+   decide when the waiting state appears and never hold back the lesson. */
+@keyframes od-appear { from { opacity: 0; } }
+@keyframes od-late { from { visibility: hidden; } to { visibility: visible; } }
+.lesson-loading { animation: od-appear var(--od-base) var(--od-ease) 180ms both; }
+.lesson-loading-hint { animation: od-late 0s linear 8s both; }
+
 /* Microinteractions (all removed under prefers-reduced-motion, below).
    .od-lift: cards that open a page rise 2px on hover and settle on press.
    .od-press: buttons and chips dip slightly on press. Hover lift only where a pointer can hover. */
@@ -271,4 +278,7 @@
   * { transition: none !important; animation: none !important; }
   /* No movement at all: hover and press keep their colour change but not the lift or dip. */
   .od-lift:hover, .od-lift:active, .od-press:active { transform: none !important; }
+  /* These two only time when something appears, with no movement, so they stay; the fade-in goes. */
+  .lesson-loading { animation: od-appear 0s linear 180ms both !important; }
+  .lesson-loading-hint { animation: od-late 0s linear 8s both !important; }
 }

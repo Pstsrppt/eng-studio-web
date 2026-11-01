@@ -46,7 +46,9 @@ export function PlayableProse({ html, className = "" }: { html: string; classNam
       el.setAttribute("role", "button");
       el.setAttribute("tabindex", "0");
       el.setAttribute("data-say", spoken(text));
-      el.setAttribute("aria-label", `ฟังเสียง: ${text.trim()}`);
+      // The name includes everything on screen, Thai line too, so voice control can match what the learner reads.
+      const visible = ((el as HTMLElement).innerText ?? el.textContent ?? "").replace(/\s+/g, " ").trim();
+      el.setAttribute("aria-label", `ฟังเสียง: ${visible}`);
     };
     root.querySelectorAll(".ex").forEach((el) => {
       const text = exampleText(el);

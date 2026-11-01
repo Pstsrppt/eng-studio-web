@@ -122,7 +122,7 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
           <div role="group" aria-label="มุมมองภาพ" className="absolute top-3 left-3 flex rounded-full bg-black/35 p-0.5 text-xs text-white backdrop-blur md:left-[24%]">
             {(["photo", "diagram"] as const).map((v) => (
               <button key={v} type="button" aria-pressed={view === v} onClick={() => setView(v)}
-                className={"rounded-full px-3 py-1.5 transition " + (view === v ? "bg-card font-semibold text-ink" : "hover:bg-white/15")}>
+                className={"relative rounded-full px-3 py-1.5 transition after:absolute after:inset-x-0 after:-inset-y-2 after:content-[''] " + (view === v ? "bg-card font-semibold text-ink" : "hover:bg-white/15")}>
                 {v === "photo" ? "ภาพ" : diagram.type === "verb" ? "ไทม์ไลน์" : "ไดอะแกรม"}
               </button>
             ))}
@@ -131,7 +131,7 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
         {showPhoto && (() => {
           // Stock photos link to their page; pictures made for the app (no url) just say where they came from.
           const credit = `ภาพ: ${photo.by ? `${photo.by} / ` : ""}${photo.site}`;
-          const cls = "absolute right-3 bottom-2 rounded bg-black/35 px-1.5 py-0.5 text-[10px] text-white/90 backdrop-blur";
+          const cls = "absolute right-3 bottom-2 rounded bg-black/35 px-1.5 py-0.5 text-[10px] text-white/90 backdrop-blur after:absolute after:inset-x-0 after:-inset-y-1 after:content-['']";
           return photo.url ? <a href={photo.url} target="_blank" rel="noreferrer" className={cls + " hover:text-white"}>{credit}</a> : <span className={cls}>{credit}</span>;
         })()}
       </div>
@@ -204,8 +204,8 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
         <hr className="border-line" />
 
         {example && !cover.examples && (
-          <div className="flex items-center gap-3 rounded-2xl bg-paper/70 p-4 ring-1 ring-line">
-            <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-3 rounded-2xl bg-paper/70 p-4 ring-1 ring-line cramped:flex-wrap">
+            <div className="min-w-0 flex-1 cramped:basis-full">
               {example.label && <span className="mb-1 inline-block rounded bg-surface px-1.5 py-0.5 font-mono text-[11px] text-muted ring-1 ring-line">{example.label}</span>}
               {/* While the meaning is covered, the Thai line would give it away. */}
               <Sentence en={example.en} th={cover.th ? undefined : example.th} />

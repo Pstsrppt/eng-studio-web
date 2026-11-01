@@ -142,10 +142,9 @@ describe("large browser text", () => {
     expect(source("src/app/globals.css")).toContain("@custom-variant cramped (@media (width < 20rem));");
   });
 
-  it("drops the header's wordmark and keeps its name and the tab bar's 48px targets", () => {
+  it("hides the header's wordmark from sight but not from its name, and keeps the tab bar's 48px targets", () => {
     const header = source("src/components/site-header.tsx");
-    expect(header).toContain('leading-none cramped:hidden');
-    expect(header).toContain('aria-label="Odyssey หน้าแรก"');
+    expect(header).toContain("leading-none cramped:sr-only");
     expect(source("src/components/nav.tsx")).toContain("cramped:min-h-[48px]");
   });
 
