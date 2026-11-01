@@ -123,7 +123,16 @@ describe("corrected practice content", () => {
     expect(theory).not.toContain("send, open, need");
     expect(theory).toContain("<b>I open the door.</b>");
     expect(theory).toContain("<b>The office opens at 8.</b>");
-    expect(theory).toContain("I sent it.");
+    expect(theory).toContain("<b>I sent it.</b>");
+  });
+
+  it("1-1 describes send and need in this lesson without calling it a rule for every sentence", () => {
+    const theory = lesson("1-1").theory;
+    expect(theory).not.toContain("send และ need ต้องบอก");
+    expect(theory).not.toContain("<s>I sent.</s>");
+    expect(theory).toContain("ในบทนี้ send ใช้บอกว่าส่งอะไร และ need ใช้บอกว่าต้องการอะไร");
+    expect(theory).toContain("<b>I need help.</b>");
+    expect(theory).toContain("แต่กริยาภาษาอังกฤษอาจมีโครงสร้างต่างกันตามบริบท");
   });
 });
 
