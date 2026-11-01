@@ -210,7 +210,7 @@ function Drill({ pool, cards, today, groups, signedIn, round, onRestart, onRevie
   function check(e: React.FormEvent) {
     e.preventDefault();
     if (result !== null) return next();
-    const ok = verbFormOk(v2, verb.v2) && verbFormOk(v3, verb.v3);
+    const ok = verbFormOk(v2, verb.v2, "v2") && verbFormOk(v3, verb.v3, "v3");
     setResult(ok);
     setStats((s) => ({ done: s.done + 1, right: s.right + (ok ? 1 : 0) }));
     if (ok) speak(`${verb.v1}, ${verb.v2.replace("/", ", ")}, ${verb.v3}`);
@@ -261,7 +261,7 @@ function Drill({ pool, cards, today, groups, signedIn, round, onRestart, onRevie
             <small className="block font-mono text-[10.5px] text-muted">V1</small>
             <b className="block font-display text-lg font-medium">{verb.v1}</b>
           </div>
-          {([["V2", v2, setV2, verbFormOk(v2, verb.v2)], ["V3", v3, setV3, verbFormOk(v3, verb.v3)]] as const).map(([label, value, set, ok], i) => (
+          {([["V2", v2, setV2, verbFormOk(v2, verb.v2, "v2")], ["V3", v3, setV3, verbFormOk(v3, verb.v3, "v3")]] as const).map(([label, value, set, ok], i) => (
             <label key={label} className={"rounded-[10px] border-[1.5px] px-3 py-2.5 focus-within:border-brand " + slot(result === null ? null : ok ? "ok" : "no")}>
               <small className="block font-mono text-[10.5px] text-muted">{label}</small>
               <input
