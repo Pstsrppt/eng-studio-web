@@ -147,10 +147,10 @@ function answerOf(item: PracticeItem) {
   return item.a[0];
 }
 
-function isRight(item: PracticeItem, st: ItemState) {
+export function isRight(item: PracticeItem, st: Pick<ItemState, "choice" | "picked" | "value">) {
   if (item.t === "pick") return st.choice === item.a;
   const given = item.t === "order" ? st.picked.map((i) => item.w[i]).join(" ") : st.value;
-  const accepted = item.t === "order" ? [item.a] : item.a;
+  const accepted = item.t === "order" ? [item.a, ...(item.alt ?? [])] : item.a;
   return accepted.some((a) => normalize(a) === normalize(given));
 }
 

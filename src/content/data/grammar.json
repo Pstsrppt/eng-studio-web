@@ -5,7 +5,7 @@
     "title": "โครงประโยค: ประธาน + กริยา + กรรม",
     "why": "ทุกประโยคต้องมีโครงนี้ ถ้าวางถูก คนฟังเข้าใจแม้ศัพท์ยังน้อย",
     "formula": "ใคร + ทำ + อะไร + ที่ไหน + เมื่อไร",
-    "theory": "<h4>หลักคิด</h4><p>ภาษาอังกฤษบอกว่า <b>ใครทำ</b> และ <b>ใครถูกทำ</b> ด้วย <b>ตำแหน่งของคำ</b> เหมือนภาษาไทย (\"หมากัดแมว\" กับ \"แมวกัดหมา\" ความหมายตรงข้ามกัน) ถ้าสลับที่ ความหมายก็เปลี่ยน</p><div class=\"ex\">The customer called <b>the driver</b>.<div class=\"th\">ลูกค้าโทรหาคนขับ</div></div><div class=\"ex\">The driver called <b>the customer</b>.<div class=\"th\">คนขับโทรหาลูกค้า (คำเดิม แต่คนละความหมาย)</div></div><h4>วิธีสร้าง</h4><div class=\"scroll\"><table><tr><th>ใคร (ประธาน)</th><th>ทำ (กริยา)</th><th>อะไร (กรรม)</th><th>ที่ไหน</th><th>เมื่อไร</th></tr><tr><td>I</td><td>check</td><td>the shipments</td><td>at the port</td><td>every Monday.</td></tr><tr><td>She</td><td>writes</td><td>a short report</td><td>-</td><td>every Friday.</td></tr><tr><td>The truck</td><td>arrived</td><td>-</td><td>at the warehouse</td><td>at 8 am.</td></tr></table></div><p>ไม่ใช่ทุกกริยาต้องมีกรรม: <b>The truck arrived.</b> ครบแล้ว (arrive ไม่ต้องบอกว่า \"มาถึงอะไร\") แต่ send, open, need ต้องมีกรรมเสมอ: <s>I sent.</s> → <b>I sent it.</b></p><h4>3 จุดที่ต่างจากภาษาไทย</h4><p><b>1. ต้องมีประธานทุกประโยค</b><br>ภาษาไทยละประธานได้เพราะผู้ฟังเดาจากบริบท (\"ส่งแล้ว\" \"ช้ามาก\") แต่ภาษาอังกฤษไม่ละ ถ้าไม่มีใครเป็นคนทำจริง ๆ ก็ใช้ <b>it</b> เป็นประธานแทน</p><div class=\"ex\"><s>Is very slow.</s> → <b>It</b> is very slow.<div class=\"th\">ช้ามาก</div></div><div class=\"ex\"><b>It</b> is 5 pm. <b>It</b> is raining.<div class=\"th\">5 โมงเย็นแล้ว · ฝนกำลังตก (ใช้ it กับเวลาและอากาศ)</div></div><p><b>2. คำขยายวางหน้าคำนาม (คำหลักอยู่ท้าย)</b><br>ภาษาไทยวางคำหลักก่อนแล้วค่อยขยาย (ไฟล์<u>ใหม่</u>, ข้อมูล<u>ลูกค้า</u>) ภาษาอังกฤษกลับกัน วางคำขยายก่อน แล้วคำหลักไว้ท้ายสุด</p><div class=\"scroll\"><table><tr><th>ภาษาไทย</th><th>ภาษาอังกฤษ</th><th>คำหลัก</th></tr><tr><td>ไฟล์ใหม่</td><td>a <b>new</b> file</td><td>file</td></tr><tr><td>ข้อมูลลูกค้า</td><td><b>customer</b> data</td><td>data</td></tr><tr><td>ค่าขนส่ง</td><td><b>shipping</b> cost</td><td>cost</td></tr><tr><td>ระบบติดตามสินค้าใหม่</td><td>the <b>new tracking</b> system</td><td>system</td></tr></table></div><p><b>3. ที่ไหนมาก่อน เมื่อไรไว้ท้ายสุด</b><br>เวลาวางท้ายประโยค (หรือต้นประโยคถ้าอยากเน้น) ไม่วางแทรกระหว่างประธานกับกริยา</p><div class=\"ex\">I meet the team <b>at the office</b> <b>on Monday</b>.<div class=\"th\">ฉันเจอทีมที่ออฟฟิศวันจันทร์</div></div><div class=\"ex\"><b>Every morning</b>, I check email.<div class=\"th\">ทุกเช้าฉันเช็กอีเมล (ย้ายไปต้นประโยคได้ แต่ห้ามวางกลาง: <s>I every morning check email.</s>)</div></div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>หาว่า <b>ใครทำ</b> → เป็นประธาน (ถ้าไม่มีใคร ใช้ <b>it</b>)</li><li>หาว่า <b>ทำอะไร</b> → วางกริยาต่อจากประธานทันที</li><li>ทำ <b>กับอะไร</b> → วางกรรม ถ้ามีคำขยาย ให้คำขยายมาก่อนและคำหลักไว้ท้าย</li><li>เติม <b>ที่ไหน</b> แล้วค่อย <b>เมื่อไร</b> ไว้ท้ายสุด</li></ol></div>",
+    "theory": "<h4>หลักคิด</h4><p>ภาษาอังกฤษบอกว่า <b>ใครทำ</b> และ <b>ใครถูกทำ</b> ด้วย <b>ตำแหน่งของคำ</b> เหมือนภาษาไทย (\"หมากัดแมว\" กับ \"แมวกัดหมา\" ความหมายตรงข้ามกัน) ถ้าสลับที่ ความหมายก็เปลี่ยน</p><div class=\"ex\">The customer called <b>the driver</b>.<div class=\"th\">ลูกค้าโทรหาคนขับ</div></div><div class=\"ex\">The driver called <b>the customer</b>.<div class=\"th\">คนขับโทรหาลูกค้า (คำเดิม แต่คนละความหมาย)</div></div><h4>วิธีสร้าง</h4><div class=\"scroll\"><table><tr><th>ใคร (ประธาน)</th><th>ทำ (กริยา)</th><th>อะไร (กรรม)</th><th>ที่ไหน</th><th>เมื่อไร</th></tr><tr><td>I</td><td>check</td><td>the shipments</td><td>at the port</td><td>every Monday.</td></tr><tr><td>She</td><td>writes</td><td>a short report</td><td>-</td><td>every Friday.</td></tr><tr><td>The truck</td><td>arrived</td><td>-</td><td>at the warehouse</td><td>at 8 am.</td></tr></table></div><p>ไม่ใช่ทุกกริยาต้องมีกรรม: <b>The truck arrived.</b> ครบแล้ว (arrive ไม่ต้องบอกว่า \"มาถึงอะไร\") แต่ send และ need ต้องบอกว่าส่งอะไร ต้องการอะไร: <s>I sent.</s> → <b>I sent it.</b></p><p>บางคำใช้ได้ทั้งสองแบบ เช่น <b>open</b>: <b>I open the door.</b> (ฉันเปิดประตู บอกว่าเปิดอะไร) · <b>The office opens at 8.</b> (ออฟฟิศเปิดตอน 8 โมง ไม่ต้องบอกว่าเปิดอะไร)</p><h4>3 จุดที่ต่างจากภาษาไทย</h4><p><b>1. ต้องมีประธานทุกประโยค</b><br>ภาษาไทยละประธานได้เพราะผู้ฟังเดาจากบริบท (\"ส่งแล้ว\" \"ช้ามาก\") แต่ภาษาอังกฤษไม่ละ ถ้าไม่มีใครเป็นคนทำจริง ๆ ก็ใช้ <b>it</b> เป็นประธานแทน</p><div class=\"ex\"><s>Is very slow.</s> → <b>It</b> is very slow.<div class=\"th\">ช้ามาก</div></div><div class=\"ex\"><b>It</b> is 5 pm. <b>It</b> is raining.<div class=\"th\">5 โมงเย็นแล้ว · ฝนกำลังตก (ใช้ it กับเวลาและอากาศ)</div></div><p><b>2. คำขยายวางหน้าคำนาม (คำหลักอยู่ท้าย)</b><br>ภาษาไทยวางคำหลักก่อนแล้วค่อยขยาย (ไฟล์<u>ใหม่</u>, ข้อมูล<u>ลูกค้า</u>) ภาษาอังกฤษกลับกัน วางคำขยายก่อน แล้วคำหลักไว้ท้ายสุด</p><div class=\"scroll\"><table><tr><th>ภาษาไทย</th><th>ภาษาอังกฤษ</th><th>คำหลัก</th></tr><tr><td>ไฟล์ใหม่</td><td>a <b>new</b> file</td><td>file</td></tr><tr><td>ข้อมูลลูกค้า</td><td><b>customer</b> data</td><td>data</td></tr><tr><td>ค่าขนส่ง</td><td><b>shipping</b> cost</td><td>cost</td></tr><tr><td>ระบบติดตามสินค้าใหม่</td><td>the <b>new tracking</b> system</td><td>system</td></tr></table></div><p><b>3. ที่ไหนมาก่อน เมื่อไรไว้ท้ายสุด</b><br>เวลาวางท้ายประโยค (หรือต้นประโยคถ้าอยากเน้น) ไม่วางแทรกระหว่างประธานกับกริยา</p><div class=\"ex\">I meet the team <b>at the office</b> <b>on Monday</b>.<div class=\"th\">ฉันเจอทีมที่ออฟฟิศวันจันทร์</div></div><div class=\"ex\"><b>Every morning</b>, I check email.<div class=\"th\">ทุกเช้าฉันเช็กอีเมล (ย้ายไปต้นประโยคได้ แต่ห้ามวางกลาง: <s>I every morning check email.</s>)</div></div><div class=\"steps\"><b>ก่อนไปฝึก: คิดตามลำดับนี้</b><ol><li>หาว่า <b>ใครทำ</b> → เป็นประธาน (ถ้าไม่มีใคร ใช้ <b>it</b>)</li><li>หาว่า <b>ทำอะไร</b> → วางกริยาต่อจากประธานทันที</li><li>ทำ <b>กับอะไร</b> → วางกรรม ถ้ามีคำขยาย ให้คำขยายมาก่อนและคำหลักไว้ท้าย</li><li>เติม <b>ที่ไหน</b> แล้วค่อย <b>เมื่อไร</b> ไว้ท้ายสุด</li></ol></div>",
     "examples": [
       [
         "I check the shipments at the port every Monday.",
@@ -64,6 +64,9 @@
           "check"
         ],
         "a": "I check email every day.",
+        "alt": [
+          "Every day I check email."
+        ],
         "th": "ฉันเช็กอีเมลทุกวัน"
       },
       {
@@ -1321,6 +1324,9 @@
           "please"
         ],
         "a": "Could you help me, please?",
+        "alt": [
+          "Could you please help me?"
+        ],
         "th": "ช่วยฉันหน่อยได้ไหม"
       },
       {
@@ -2003,7 +2009,8 @@
         "t": "fix",
         "q": "I didn't went to work.",
         "a": [
-          "I didn't go to work."
+          "I didn't go to work.",
+          "I did not go to work."
         ],
         "th": "หลัง didn't ใช้ V1"
       },
@@ -2642,7 +2649,7 @@
       },
       {
         "t": "fill",
-        "q": "We don't have ___ time.",
+        "q": "We don't have ___ time. (มีเวลาไม่มาก)",
         "a": [
           "much"
         ],
@@ -2808,6 +2815,9 @@
           "start"
         ],
         "a": "I usually start at 9.",
+        "alt": [
+          "Usually I start at 9."
+        ],
         "th": "ปกติฉันเริ่มงาน 9 โมง"
       },
       {
@@ -3359,6 +3369,9 @@
           "I'm"
         ],
         "a": "I'll call you if I'm late.",
+        "alt": [
+          "If I'm late, I'll call you."
+        ],
         "th": "ผมจะโทรหาคุณถ้ามาสาย"
       },
       {
@@ -4135,14 +4148,14 @@
         "why": "สิ่งของใช้ which"
       },
       {
-        "q": "คำไหนใช้ได้ทั้งคนและสิ่งของ",
+        "q": "คำไหนเติมได้ทั้งสองประโยค: The man ___ works here is kind. · The file ___ I sent is big.",
         "o": [
           "that",
           "whose",
           "which"
         ],
         "a": 0,
-        "why": "that ใช้ได้ทั้งสองแบบ"
+        "why": "that ใช้แทน who หรือ which ได้ · whose ต้องมีคำนามตาม · which ไม่ใช้กับคน"
       },
       {
         "q": "ข้อใดถูก",
@@ -4469,13 +4482,13 @@
     ],
     "quiz": [
       {
-        "q": "\"I can help.\" → She said she ___ help.",
+        "q": "\"I can help.\" → She said she ___ help. (เล่าแบบถอย tense)",
         "o": [
           "can",
           "could"
         ],
         "a": 1,
-        "why": "can → could"
+        "why": "โจทย์ให้ถอย tense จึงเป็น can → could · ถ้าคำพูดยังจริงอยู่ตอนนี้ ใช้ can ได้"
       },
       {
         "q": "\"Are you ready?\" → He asked ___ I was ready.",
@@ -4951,12 +4964,12 @@
       },
       {
         "t": "fill",
-        "q": "The lights are off. Nobody ___ be home. (แน่ใจว่าไม่มี)",
+        "q": "The lights are off. They ___ be home. (แน่ใจว่าไม่อยู่)",
         "a": [
           "can't",
           "cannot"
         ],
-        "th": "แน่ใจว่าไม่ใช่"
+        "th": "ไฟปิดหมด พวกเขาไม่น่าจะอยู่บ้าน"
       },
       {
         "t": "fill",

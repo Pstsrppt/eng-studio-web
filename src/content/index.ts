@@ -14,7 +14,7 @@ export type Level = "A1" | "A2" | "B1" | "B2";
 export type PracticeItem =
   | { t: "fill"; q: string; a: string[]; th?: string }
   | { t: "fix"; q: string; a: string[]; th?: string }
-  | { t: "order"; w: string[]; a: string; th?: string }
+  | { t: "order"; w: string[]; a: string; alt?: string[]; th?: string }
   | { t: "pick"; q: string; o: string[]; a: number; th?: string };
 
 export type QuizItem = { q: string; o: string[]; a: number; why?: string };

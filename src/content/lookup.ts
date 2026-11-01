@@ -45,11 +45,11 @@ export function normalize(s: string) {
   return s.toLowerCase().replace(/[’']/g, "'").replace(/[.,!?]/g, "").replace(/\s+/g, " ").trim();
 }
 
-/** Accepts "was/were", "was or were", or either form alone. */
-export function verbFormOk(input: string, answer: string) {
+/** Accepts "was/were", "was or were", or either form alone. "gotten" is a V3 only: the V2 of get is always "got". */
+export function verbFormOk(input: string, answer: string, form: "v2" | "v3") {
   const v = normalize(input).replace(/\s*\/\s*/g, "/").replace(/ or /g, "/");
   if (!v) return false;
   if (v === answer) return true;
   if (answer.split("/").includes(v)) return true;
-  return answer === "got" && v === "gotten";
+  return form === "v3" && answer === "got" && v === "gotten";
 }
