@@ -201,12 +201,13 @@ function Review({ pool, allWords, mode, cards, today, round, signedIn, onRestart
   const answered = mode === "recall" ? shown : answer !== null;
   const options = mode === "listen" ? meaningOptions(word, allWords) : [];
   // Until the learner answers, the card hides whatever would give the answer away.
+  // Typing: pictures, their alt and credit, and diagram labels can all hold the English word, so they wait too.
   const cover: Cover = answered
     ? {}
     : mode === "recall"
       ? { th: true }
       : mode === "type"
-        ? { en: true, examples: true }
+        ? { en: true, examples: true, photo: true }
         : { en: true, th: true, examples: true, photo: true };
   const hint = MODE_HINT[mode];
 

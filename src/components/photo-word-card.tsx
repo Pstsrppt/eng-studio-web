@@ -169,7 +169,8 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
               <p className="text-2xl text-ink">{word.th}</p>
             ) : (
               // Same height as the meaning line, so the card does not jump when it opens; ::after makes the tap area 44px.
-              <button type="button" onClick={() => setPeeked(word.id)} aria-label={`ดูความหมายของ ${word.en}`}
+              // While the English word is the answer, the button goes by its visible label alone.
+              <button type="button" onClick={() => setPeeked(word.id)} aria-label={cover.en ? undefined : `ดูความหมายของ ${word.en}`}
                 className="relative inline-flex min-h-8 items-center self-start rounded-lg bg-sunken px-3 text-sm font-semibold text-ink-2 hover:bg-line after:absolute after:inset-x-0 after:-inset-y-1.5 after:content-['']">
                 ดูความหมาย
               </button>
@@ -225,7 +226,8 @@ export function PhotoWordCard({ word, photo, examples, index, forms, cover = {},
           <span className="font-serif text-5xl leading-none font-semibold text-line tabular" aria-hidden>
             {String((index ?? shown) + 1).padStart(2, "0")}
           </span>
-          <span className="font-mono text-xs tracking-[0.2em] text-muted">{index === undefined ? "EXAMPLE" : "WORD"}</span>
+          {/* The word "example" is itself an answer in the course. */}
+          {!cover.en && <span className="font-mono text-xs tracking-[0.2em] text-muted">{index === undefined ? "EXAMPLE" : "WORD"}</span>}
           <span className="h-px flex-1 bg-line" />
           {examples.length > 1 && !cover.examples && <span className="font-mono text-xs text-muted">ตัวอย่าง {shown + 1}/{examples.length}</span>}
         </div>
