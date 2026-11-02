@@ -5,7 +5,9 @@ import { act, createElement, type ComponentType, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { LESSONS, PHOTOS, SOUNDS, VERBS, VERB_GROUPS, WORDS, withImages, type Lesson, type Verb, type Word } from "@/content";
+import { verbFormOk } from "@/content/lookup";
 import { LearnSession } from "@/app/learn/session/learn-session";
+import VerbsPage from "@/app/verbs/page";
 import { LessonShell } from "./lesson-shell";
 import { LessonFocus } from "./lesson-focus";
 import { LessonView } from "./lesson-view";
@@ -28,7 +30,8 @@ const learn = vi.hoisted(() => ({
 vi.mock("@/app/actions", () => actions);
 vi.mock("@/app/learn/actions", () => learn);
 vi.mock("server-only", () => ({}));
-vi.mock("@/lib/data", () => ({ getLessonBest: vi.fn(async () => ({})), bangkokToday: () => "2026-11-02" }));
+vi.mock("@/lib/data", () => ({ getLessonBest: vi.fn(async () => ({})), bangkokToday: () => "2026-11-02", getUser: async () => null, getCards: async () => ({}) }));
+vi.mock("next/server", () => ({ connection: async () => {} }));
 vi.mock("next/link", () => ({ default: ({ href, children, ...rest }: { href: string; children: ReactNode }) => createElement("a", { href, ...rest }, children) }));
 vi.mock("next/image", () => ({ default: ({ alt, src }: { alt: string; src: string }) => createElement("img", { alt, src }) }));
 
@@ -509,5 +512,55 @@ describe("quiz: L-06 Learning Tips", () => {
     await tabTo("Quiz");
     const panel = host.querySelector('[role="tabpanel"]:not([hidden])')!;
     for (const q of lesson.quiz) if (q.why) expect(panel.textContent).not.toContain(q.why);
+  });
+});
+
+describe("/verbs page around an active drill: L-05 and D4", () => {
+  /** Every word outside the drill's own card and form, as text or as an accessible name, that the checker would accept as some verb's V2 or V3. */
+  function acceptedAnswersAround(scope: Element) {
+    const copy = scope.cloneNode(true) as Element;
+    copy.querySelectorAll("article, form").forEach((e) => e.remove());
+    const parts = [copy.textContent ?? ""];
+    for (const el of copy.querySelectorAll("*")) for (const a of ["aria-label", "aria-description", "title", "alt"]) if (el.hasAttribute(a)) parts.push(el.getAttribute(a)!);
+    const words = new Set(parts.join(" ").toLowerCase().match(/[a-z]+/g) ?? []);
+    const found: string[] = [];
+    for (const v of VERBS) for (const w of words) {
+      // A form spelled like the verb's own V1 (cut, run) tells nothing the drill does not show anyway.
+      if (w === v.v1) continue;
+      if (verbFormOk(w, v.v2, "v2")) found.push(`${v.id} V2 ${w}`);
+      if (verbFormOk(w, v.v3, "v3")) found.push(`${v.id} V3 ${w}`);
+    }
+    return [...new Set(found)];
+  }
+  const showPage = async () => {
+    await render(createElement(VerbsPage));
+    await act(async () => { await new Promise((r) => setTimeout(r, 0)); });
+    expect(host.querySelector("form input[aria-label^='V2']")).not.toBeNull();
+  };
+
+  it("the header, introduction and controls hold no accepted V2 or V3 while drilling", async () => {
+    await showPage();
+    expect(acceptedAnswersAround(host)).toEqual([]);
+  });
+
+  it("the same holds with each group chosen", async () => {
+    await showPage();
+    for (const g of ["-ed", "AAA", "ABB", "ABC", "ABA"]) {
+      await click(buttons().find((b) => b.getAttribute("aria-pressed") !== null && b.querySelector("b")?.textContent === g));
+      expect(acceptedAnswersAround(host)).toEqual([]);
+    }
+  });
+
+  it("the introduction still teaches V2 and V3 with an example", async () => {
+    await showPage();
+    const intro = host.querySelector("header")?.textContent ?? host.textContent ?? "";
+    expect(intro).toContain("V2 ใช้เล่าเรื่องที่จบแล้ว");
+    expect(intro).toMatch(/I have \w+ it\./);
+  });
+
+  it("the table, which is for learning, still shows the forms", async () => {
+    await showPage();
+    await click([...host.querySelectorAll('[role="tab"]')].find((t) => t.textContent === "ตาราง"));
+    expect(host.textContent).toContain("go went gone");
   });
 });
