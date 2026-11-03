@@ -93,6 +93,9 @@ const answerDrill = async (v2: string, v3: string) => {
   await click(byText(/^ตรวจ$/));
 };
 const formsOf = (v: Verb) => [...new Set([v.v2, v.v3].flatMap((f) => f.split("/").map((x) => x.trim())))];
+/** Every word reachable in scope that the checker would accept as this verb's V2 or V3, e.g. "gotten" for get. */
+const acceptedShown = (scope: Element, v: Verb) =>
+  [...new Set(exposed(scope).match(/[a-z]+/g) ?? [])].filter((w) => w !== v.v1 && (verbFormOk(w, v.v2, "v2") || verbFormOk(w, v.v3, "v3")));
 
 beforeEach(() => {
   host = document.createElement("div");
@@ -355,8 +358,10 @@ describe("/verbs drill: L-05 groups", () => {
       const pool = [{ ...v, level: "A1" as const }, ...all.filter((x) => x.id !== v.id).map((x) => ({ ...x, level: "B2" as const }))];
       await render(createElement("div", { key: v.id }, verbsView(...pool)));
       for (const f of formsOf(v)) if (f !== v.v1 && shows(host, f)) leaks.push(`all ${v.id}: ${f}`);
+      for (const w of acceptedShown(host, v)) leaks.push(`all ${v.id}: accepted ${w}`);
       await click(buttons().find((b) => b.getAttribute("aria-pressed") !== null && b.querySelector("b")?.textContent === (v.g === "REG" ? "-ed" : v.g)));
       for (const f of formsOf(v)) if (f !== v.v1 && shows(host, f)) leaks.push(`group ${v.id}: ${f}`);
+      for (const w of acceptedShown(host, v)) leaks.push(`group ${v.id}: accepted ${w}`);
     }
     expect(leaks).toEqual([]);
   }, 180_000);
@@ -562,5 +567,62 @@ describe("/verbs page around an active drill: L-05 and D4", () => {
     await showPage();
     await click([...host.querySelectorAll('[role="tab"]')].find((t) => t.textContent === "ตาราง"));
     expect(host.textContent).toContain("go went gone");
+  });
+});
+
+describe("/verbs drill: a note that names a form waits for the answer (vb-get, vb-read)", () => {
+  it("vb-get before checking: the meaning is shown, gotten is nowhere", async () => {
+    await render(verbsView(verb("vb-get")));
+    expect(card().textContent).toContain("ได้รับ");
+    expect(acceptedShown(host, verb("vb-get"))).toEqual([]);
+  });
+
+  it("vb-get with Thai off: opening the meaning shows the meaning, still without gotten", async () => {
+    localStorage.setItem("es-show-thai", "0");
+    await render(verbsView(verb("vb-get")));
+    expect(byText(/^ดูความหมาย$/, card())?.getAttribute("aria-label")).toBe("ดูความหมายของ get");
+    await click(byText(/^ดูความหมาย$/, card()));
+    expect(card().textContent).toContain("ได้รับ");
+    expect(acceptedShown(host, verb("vb-get"))).toEqual([]);
+  });
+
+  it.each([["got", "got", true], ["got", "gotten", true], ["gotten", "gotten", false], ["got", "getted", false]])(
+    "vb-get: V2 %s and V3 %s are marked %s, as before",
+    async (v2, v3, ok) => {
+      await render(verbsView(verb("vb-get")));
+      await answerDrill(v2, v3);
+      expect(host.textContent).toContain(ok ? "✓ ถูกต้อง" : "✗ ยังไม่ใช่");
+    },
+  );
+
+  it("vb-get after checking, right or wrong: the note joins the meaning", async () => {
+    await render(verbsView(verb("vb-get")));
+    await answerDrill("zzz", "zzz");
+    expect(card().textContent).toContain("ได้รับ (US: V3 = gotten)");
+  });
+
+  it("vb-read: the pronunciation note waits for the answer, then shows", async () => {
+    await render(verbsView(verb("vb-read")));
+    expect(card().textContent).toContain("อ่าน");
+    expect(card().textContent).not.toContain("เร็ด");
+    await answerDrill("read", "read");
+    expect(host.textContent).toContain("✓ ถูกต้อง");
+    expect(card().textContent).toContain("อ่าน (V2/V3 อ่านว่า เร็ด)");
+  });
+
+  it("the table, which shows every form, keeps the notes", async () => {
+    await render(verbsView(verb("vb-get"), verb("vb-read")));
+    await click([...host.querySelectorAll('[role="tab"]')].find((t) => t.textContent === "ตาราง"));
+    expect(host.textContent).toContain("ได้รับ (US: V3 = gotten)");
+    expect(host.textContent).toContain("อ่าน (V2/V3 อ่านว่า เร็ด)");
+  });
+
+  it("verbs without a note show exactly their meaning, before and after checking", async () => {
+    const v = verb("vb-go");
+    await render(verbsView(v));
+    expect(card().textContent).toContain(v.th);
+    await answerDrill("went", "gone");
+    expect(card().textContent).toContain(v.th);
+    expect(card().textContent).not.toContain(`${v.th} (`);
   });
 });

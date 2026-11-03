@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import verbs from "./data/verbs.json";
-import { normalize, verbFormOk } from "./lookup";
+import { lookup, normalize, verbFormOk, verbMeaning } from "./lookup";
 
 describe("verbFormOk", () => {
   it("get: V2 is got, V3 is got or gotten", () => {
@@ -61,5 +61,25 @@ describe("normalize", () => {
 
   it("keeps the apostrophe that separates its from it's", () => {
     expect(normalize("its")).not.toBe(normalize("it's"));
+  });
+});
+
+describe("verb meanings and notes", () => {
+  // The drill shows th before the answer, so th must never hold a V2 or V3 the checker accepts; such text goes in note.
+  it("no verb's meaning names one of its own accepted V2 or V3 forms", () => {
+    const named = verbs.flatMap((v) => (v.th.toLowerCase().match(/[a-z]+/g) ?? [])
+      .filter((w) => w !== v.v1 && (verbFormOk(w, v.v2, "v2") || verbFormOk(w, v.v3, "v3")))
+      .map((w) => `${v.id}: ${w}`));
+    expect(named).toEqual([]);
+  });
+
+  it("verbMeaning adds the note in brackets, and leaves verbs without one alone", () => {
+    expect(verbMeaning({ th: "ได้รับ", note: "US: V3 = gotten" })).toBe("ได้รับ (US: V3 = gotten)");
+    expect(verbMeaning({ th: "ไป" })).toBe("ไป");
+  });
+
+  it("tapping a form in a sentence still shows the note next to the forms", () => {
+    expect(lookup("got")).toMatchObject({ th: "ได้รับ (US: V3 = gotten)", note: "get – got – got" });
+    expect(lookup("read")).toMatchObject({ th: "อ่าน (V2/V3 อ่านว่า เร็ด)" });
   });
 });

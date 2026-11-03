@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Fragment, useRef, useState, useTransition } from "react";
 import { reviewCard } from "@/app/actions";
 import type { Verb, VerbGroup } from "@/content";
-import { verbFormOk } from "@/content/lookup";
+import { verbFormOk, verbMeaning } from "@/content/lookup";
 import type { CardMap } from "@/lib/data";
 import { buildQueue } from "@/lib/queue";
 import { Meaning } from "./meaning";
@@ -131,7 +131,7 @@ function VerbTable({ verbs, cards }: { verbs: Verb[]; cards: CardMap }) {
                     </td>
                     <td className="px-4 py-2.5 font-display text-verb">{v.v2}</td>
                     <td className="px-4 py-2.5 font-display text-obj">{v.v3}</td>
-                    <td className="px-4 py-2.5 text-sm text-muted"><Meaning th={v.th} en={v.v1} /></td>
+                    <td className="px-4 py-2.5 text-sm text-muted"><Meaning th={verbMeaning(v)} en={v.v1} /></td>
                     <td className="px-4 py-2.5">
                       <div className="flex items-center justify-end gap-1.5">
                         <SpeakButton text={`${v.v1}, ${v.v2.replace("/", ", ")}, ${v.v3}`} />
@@ -168,7 +168,8 @@ function VerbTable({ verbs, cards }: { verbs: Verb[]; cards: CardMap }) {
 
 /** A verb as a photo card: V1 as the word, V2 and V3 as its forms, one real sentence for each. */
 function VerbCard({ verb, cover }: { verb: Verb; cover?: Cover }) {
-  const word = { id: verb.id, en: verb.v1, th: verb.th, pos: "v" as const, ipa: verb.ipa?.v1, icon: verb.icon, level: verb.level };
+  // A note can name a form ("US: V3 = gotten"), so it joins the meaning only once the forms are shown.
+  const word = { id: verb.id, en: verb.v1, th: cover?.forms ? verb.th : verbMeaning(verb), pos: "v" as const, ipa: verb.ipa?.v1, icon: verb.icon, level: verb.level };
   const examples = ([["V2", verb.ex2, verb.ex2Th], ["V3", verb.ex3, verb.ex3Th]] as const).flatMap(([label, en, th]) => (en ? [{ label, en, th }] : []));
   // A photo's alt and credit can hold V2 or V3, so the drill shows the timeline, which has none, until the answer is checked.
   return (
