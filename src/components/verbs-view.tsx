@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Fragment, useRef, useState, useTransition } from "react";
 import { reviewCard } from "@/app/actions";
 import type { Verb, VerbGroup } from "@/content";
-import { verbFormOk } from "@/content/lookup";
+import { verbFormOk, verbMeaning } from "@/content/lookup";
 import type { CardMap } from "@/lib/data";
 import { buildQueue } from "@/lib/queue";
 import { Meaning } from "./meaning";
@@ -36,13 +36,15 @@ export function VerbsView({ verbs, groups, cards: initialCards, signedIn, today 
       <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
         <GroupButton on={group === "ALL"} onClick={() => setGroup("ALL")} title="ทั้งหมด" sub={`${verbs.length} คำ`} />
         {ORDER.map((g) => (
-          <GroupButton key={g} on={group === g} onClick={() => setGroup(g)} title={g === "REG" ? "-ed" : g} sub={SAMPLE[g]} />
+          // The samples and tips spell out V2 and V3, so they stay in the table, away from the drill.
+          <GroupButton key={g} on={group === g} onClick={() => setGroup(g)} title={g === "REG" ? "-ed" : g}
+            sub={mode === "table" ? SAMPLE[g] : `${verbs.filter((v) => v.g === g).length} คำ`} />
         ))}
       </div>
 
       {group !== "ALL" && (
         <p className="rounded-xl border border-(--ac-line) bg-card px-4 py-3 text-sm leading-6">
-          <b className="font-semibold">{groups[group].name}</b> · {groups[group].tip}
+          <b className="font-semibold">{groups[group].name}</b>{mode === "table" && <> · {groups[group].tip}</>}
         </p>
       )}
 
@@ -63,7 +65,7 @@ export function VerbsView({ verbs, groups, cards: initialCards, signedIn, today 
       ) : (
         <Drill key={`${group}-${round}`} round={round} onRestart={() => setRound((r) => r + 1)}
           onReviewed={(id, card) => setCards((c) => ({ ...c, [id]: { custom_en: null, custom_th: null, ...card } }))}
-          pool={pool} cards={cards} today={today} groups={groups} signedIn={signedIn} />
+          pool={pool} cards={cards} today={today} groups={groups} signedIn={signedIn} chosenGroup={group !== "ALL"} />
       )}
     </div>
   );
@@ -129,7 +131,7 @@ function VerbTable({ verbs, cards }: { verbs: Verb[]; cards: CardMap }) {
                     </td>
                     <td className="px-4 py-2.5 font-display text-verb">{v.v2}</td>
                     <td className="px-4 py-2.5 font-display text-obj">{v.v3}</td>
-                    <td className="px-4 py-2.5 text-sm text-muted"><Meaning th={v.th} en={v.v1} /></td>
+                    <td className="px-4 py-2.5 text-sm text-muted"><Meaning th={verbMeaning(v)} en={v.v1} /></td>
                     <td className="px-4 py-2.5">
                       <div className="flex items-center justify-end gap-1.5">
                         <SpeakButton text={`${v.v1}, ${v.v2.replace("/", ", ")}, ${v.v3}`} />
@@ -166,10 +168,12 @@ function VerbTable({ verbs, cards }: { verbs: Verb[]; cards: CardMap }) {
 
 /** A verb as a photo card: V1 as the word, V2 and V3 as its forms, one real sentence for each. */
 function VerbCard({ verb, cover }: { verb: Verb; cover?: Cover }) {
-  const word = { id: verb.id, en: verb.v1, th: verb.th, pos: "v" as const, ipa: verb.ipa?.v1, icon: verb.icon, level: verb.level };
+  // A note can name a form ("US: V3 = gotten"), so it joins the meaning only once the forms are shown.
+  const word = { id: verb.id, en: verb.v1, th: cover?.forms ? verb.th : verbMeaning(verb), pos: "v" as const, ipa: verb.ipa?.v1, icon: verb.icon, level: verb.level };
   const examples = ([["V2", verb.ex2, verb.ex2Th], ["V3", verb.ex3, verb.ex3Th]] as const).flatMap(([label, en, th]) => (en ? [{ label, en, th }] : []));
+  // A photo's alt and credit can hold V2 or V3, so the drill shows the timeline, which has none, until the answer is checked.
   return (
-    <PhotoWordCard key={verb.id} word={word} photo={verb.photo} cover={cover} bookmark={{ kind: "verb" }} examples={examples}
+    <PhotoWordCard key={verb.id} word={word} photo={cover?.forms ? undefined : verb.photo} cover={cover} bookmark={{ kind: "verb" }} examples={examples}
       diagram={{ type: "verb" }} verb={verb}
       forms={[{ label: "V2", text: verb.v2, ipa: verb.ipa?.v2 }, { label: "V3", text: verb.v3, ipa: verb.ipa?.v3 }]} />
   );
@@ -179,10 +183,10 @@ function elapsedSince(start: number) {
   return start ? Date.now() - start : undefined;
 }
 
-type DrillProps = { pool: Verb[]; cards: CardMap; today: string; groups: Groups; signedIn: boolean; round: number; onRestart: () => void;
+type DrillProps = { pool: Verb[]; cards: CardMap; today: string; groups: Groups; signedIn: boolean; chosenGroup: boolean; round: number; onRestart: () => void;
   onReviewed: (id: string, card: { box: number; due_on: string }) => void };
 
-function Drill({ pool, cards, today, groups, signedIn, round, onRestart, onReviewed }: DrillProps) {
+function Drill({ pool, cards, today, groups, signedIn, chosenGroup, round, onRestart, onReviewed }: DrillProps) {
   const [queue, setQueue] = useState(() => buildQueue(pool, cards, today, round));
   const [stats, setStats] = useState({ done: 0, right: 0 });
   const [v2, setV2] = useState("");
@@ -248,7 +252,8 @@ function Drill({ pool, cards, today, groups, signedIn, round, onRestart, onRevie
   return (
     <form onSubmit={check} className="flex flex-col gap-4">
       <div className="flex justify-between font-mono text-xs text-muted tabular">
-        <span>{groups[verb.g].name} · เหลือ {queue.length}</span>
+        {/* A group's name tells how its forms are built ("V1 = V3"), so in the mixed list it waits for the answer. */}
+        <span>{(chosenGroup || result !== null) && `${groups[verb.g].name} · `}เหลือ {queue.length}</span>
         <span>ถูก {stats.right}/{stats.done}</span>
       </div>
       {/* V2, V3 and their sentences stay covered until the answer is checked. */}

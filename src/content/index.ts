@@ -46,6 +46,8 @@ export type Verb = {
   v2: string;
   v3: string;
   th: string;
+  /** A note that names or hints at V2/V3 (e.g. "US: V3 = gotten"), so it is shown only where the forms are visible. */
+  note?: string;
   g: VerbGroup;
   level?: Level;
   /** Example sentences using V2 and V3, with Thai. */

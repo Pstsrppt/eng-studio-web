@@ -8,7 +8,7 @@ import type { Lesson, PracticeItem, QuizItem } from "@/content";
 import type { LessonWords } from "@/content/lesson-words";
 import { normalize } from "@/content/lookup";
 import { jumpScroll } from "@/app/roadmap/stage-jump";
-import { FocusBar } from "./lesson-focus";
+import { FocusBar, useReportQuizOpen } from "./lesson-focus";
 import { TABS, panelId, sectionLabel, tabId, type Tab } from "./lesson-tabs";
 import { LessonWordsStep } from "./lesson-words-step";
 import { Meaning } from "./meaning";
@@ -27,6 +27,8 @@ type Props = { lesson: Lesson; words: LessonWords; next?: { href: string; title:
 
 export function LessonView({ lesson, words, next, passMark, focusable = false }: Props) {
   const [tab, setTab] = useState<Tab>("learn");
+  const [quizSubmitted, setQuizSubmitted] = useState(false);
+  useReportQuizOpen(tab === "quiz" && !quizSubmitted);
   const uid = useId();
   const hasWords = words.fresh.length + words.review.length > 0;
   // Learn starts with the lesson's new words, then the theory (the order the course has always used).
@@ -55,7 +57,7 @@ export function LessonView({ lesson, words, next, passMark, focusable = false }:
       </div>
     ),
     practice: <Practice lesson={lesson} onNext={() => go("quiz")} />,
-    quiz: <Quiz lesson={lesson} next={next} passMark={passMark} newWordIds={words.fresh.map((x) => x.word.id)} />,
+    quiz: <Quiz lesson={lesson} next={next} passMark={passMark} newWordIds={words.fresh.map((x) => x.word.id)} onSubmitted={setQuizSubmitted} />,
     real: <RealLife lesson={lesson} onNext={() => go("summary")} />,
     summary: <Summary lesson={lesson} words={words} next={next} onQuiz={() => go("quiz")} />,
   };
@@ -525,9 +527,9 @@ function Summary({ lesson, words, next, onQuiz }: { lesson: Lesson; words: Lesso
   );
 }
 
-type QuizProps = { lesson: Lesson; next?: { href: string; title: string }; passMark: number; newWordIds: string[] };
+type QuizProps = { lesson: Lesson; next?: { href: string; title: string }; passMark: number; newWordIds: string[]; onSubmitted: (submitted: boolean) => void };
 
-function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
+function Quiz({ lesson, next, passMark, newWordIds, onSubmitted }: QuizProps) {
   const uid = useId();
   // Retakes reshuffle the questions and options, so the answers can't be learned by position.
   const [quiz, setQuiz] = useState(lesson.quiz);
@@ -551,6 +553,7 @@ function Quiz({ lesson, next, passMark, newWordIds }: QuizProps) {
     if (window.matchMedia("(min-width: 64rem) and (min-height: 40rem)").matches) toLessonTop();
     else result.current?.scrollIntoView(jumpScroll(window.matchMedia("(prefers-reduced-motion: reduce)").matches));
   }, [done]);
+  useLayoutEffect(() => onSubmitted(done !== null), [done, onSubmitted]);
   // A retake removes the button that was pressed, so focus goes to the first of the reshuffled questions.
   useLayoutEffect(() => {
     if (!retaken.current) return;

@@ -3,7 +3,7 @@
 import { FocusIcon, Minimize2Icon } from "lucide-react";
 import { createContext, use, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 
-type Ctx = { on: boolean; toggle: (from: HTMLElement) => void };
+type Ctx = { on: boolean; toggle: (from: HTMLElement) => void; quizOpen: boolean; setQuizOpen: (open: boolean) => void };
 const FocusContext = createContext<Ctx | null>(null);
 
 /**
@@ -13,6 +13,7 @@ const FocusContext = createContext<Ctx | null>(null);
  */
 export function LessonFocus({ className, children }: { className: string; children: ReactNode }) {
   const [on, setOn] = useState(false);
+  const [quizOpen, setQuizOpen] = useState(false);
   const pending = useRef<{ el: HTMLElement; top: number } | null>(null);
   const toggle = (from: HTMLElement) => {
     pending.current = { el: from, top: from.getBoundingClientRect().top };
@@ -32,10 +33,24 @@ export function LessonFocus({ className, children }: { className: string; childr
   }, [on]);
 
   return (
-    <FocusContext value={{ on, toggle }}>
+    <FocusContext value={{ on, toggle, quizOpen, setQuizOpen }}>
       <div data-focus={on ? "on" : "off"} className={"group/lesson " + className}>{children}</div>
     </FocusContext>
   );
+}
+
+/** Tells the page whether a quiz is on screen and not yet submitted. Runs before paint, so nothing flashes. */
+export function useReportQuizOpen(open: boolean) {
+  const setQuizOpen = use(FocusContext)?.setQuizOpen;
+  useLayoutEffect(() => {
+    setQuizOpen?.(open);
+    return () => setQuizOpen?.(false);
+  }, [setQuizOpen, open]);
+}
+
+/** Supporting material that can hold a quiz's answers: left out of the page while the quiz is being answered. */
+export function HiddenDuringQuiz({ children }: { children: ReactNode }) {
+  return use(FocusContext)?.quizOpen ? null : children;
 }
 
 /**

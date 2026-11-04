@@ -13,8 +13,9 @@ export default function VerbsPage() {
   return (
     <AcademicPage className="flex flex-col gap-6">
       <PageHeader eyebrow={`VERBS · กริยา ${VERBS.length} คำ · 5 รูปแบบ`} title="V1-V2-V3" lead={<>
-          V2 ใช้เล่าเรื่องที่จบแล้ว (I <b className="text-ink">sent</b> it.) ส่วน V3 ใช้กับ have และประโยค passive
-          (I have <b className="text-ink">sent</b> it. / It was <b className="text-ink">sent</b>.) จำเป็นกลุ่มจะง่ายกว่าจำทีละคำ
+          {/* The example verb is not one the drill asks for, so the introduction cannot answer a question. */}
+          V2 ใช้เล่าเรื่องที่จบแล้ว (I <b className="text-ink">opened</b> it.) ส่วน V3 ใช้กับ have และประโยค passive
+          (I have <b className="text-ink">opened</b> it. / The door is <b className="text-ink">opened</b> every morning.) จำเป็นกลุ่มจะง่ายกว่าจำทีละคำ
       </>} />
       <Suspense fallback={<PracticeSkeleton />}>
         <VerbsWithCards />

@@ -31,9 +31,14 @@ export function lookup(raw: string): Gloss | undefined {
   }
   const verb = VERB_BY_FORM.get(w);
   if (verb) {
-    return { word: verb.v1, th: verb.th, note: `${verb.v1} – ${verb.v2} – ${verb.v3}`, itemId: verb.id };
+    return { word: verb.v1, th: verbMeaning(verb), note: `${verb.v1} – ${verb.v2} – ${verb.v3}`, itemId: verb.id };
   }
   return undefined;
+}
+
+/** A verb's meaning with its note, for places that already show V2 and V3. */
+export function verbMeaning(verb: Pick<Verb, "th" | "note">) {
+  return verb.note ? `${verb.th} (${verb.note})` : verb.th;
 }
 
 /** True when tapping the word will show a meaning, so the UI can underline it. */

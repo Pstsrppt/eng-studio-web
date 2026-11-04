@@ -9,7 +9,7 @@ import { lessonWords } from "@/content/lesson-words";
 import { stageOfLesson, type Stage, type StageItem } from "@/content/stages";
 import { getLessonBest } from "@/lib/data";
 import { AcademicPhoto } from "./academic-photo";
-import { LessonFocus } from "./lesson-focus";
+import { HiddenDuringQuiz, LessonFocus } from "./lesson-focus";
 import { LessonView } from "./lesson-view";
 import { Meaning } from "./meaning";
 import { SpeakButton } from "./speak-button";
@@ -131,7 +131,8 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
               <p className="mt-2 text-xs text-(--ac-muted)">บทนี้มีคำใหม่ {words.fresh.length} คำ ดูทั้งหมดได้ในแท็บ Learn</p>
             </section>
           )}
-          {tips.length > 0 && (
+          {/* Tips show a mistake with its correction, which can be a quiz question's answer. */}
+          {tips.length > 0 && <HiddenDuringQuiz>
             <section className="rounded-2xl border border-(--ac-gold-bright)/40 bg-(--ac-gold-soft)/50 p-5" aria-labelledby="coach-tip">
               <h2 id="coach-tip" className="mb-2 flex items-center gap-2 text-sm font-semibold text-(--ac-heading)">
                 <LightbulbIcon className="size-4 text-(--ac-gold)" aria-hidden /> Learning Tips
@@ -147,7 +148,7 @@ export function LessonShell({ lesson, kind, passMark, next }: Props) {
               </ul>
               <Link href="/guide" className="mt-3 inline-flex text-sm font-semibold text-(--ac-navy) hover:text-(--ac-gold-ink)">คู่มือศัพท์ไวยากรณ์ →</Link>
             </section>
-          )}
+          </HiddenDuringQuiz>}
         </aside>
       </div>
     </LessonFocus>
