@@ -505,3 +505,171 @@ describe("another lesson", () => {
     expect(practiceInput()?.value ?? "").toBe("");
   });
 });
+
+describe("a submitted quiz shows the answers that were scored", () => {
+  // The save is held open with a promise these tests settle themselves, so "while saving" is exact.
+  let finish: (saved: boolean) => void = () => {};
+  let fail: (error: Error) => void = () => {};
+  const holdSave = () => actions.saveAttempt.mockImplementation(() => new Promise<boolean>((resolve, reject) => { finish = resolve; fail = reject; }));
+  const radios = (i: number) => [...groups()[i].querySelectorAll<HTMLButtonElement>('[role="radio"]')];
+  const optionText = (b: Element) => b.querySelector("span.flex-1")?.textContent?.trim() ?? "";
+  // Questions and options are shuffled on a retake, so each group is matched to its question by its options.
+  const itemFor = (i: number) => {
+    const opts = radios(i).map(optionText);
+    return lessonA.quiz.find((q) => q.o.length === opts.length && q.o.every((o) => opts.includes(o)))!;
+  };
+  const pick = (i: number, right: boolean) => {
+    const q = itemFor(i);
+    const want = right ? q.o[q.a] : q.o.find((_, k) => k !== q.a)!;
+    return click(radios(i).find((b) => optionText(b) === want));
+  };
+  const answerAs = async (right: (i: number) => boolean) => { for (let i = 0; i < groups().length; i++) await pick(i, right(i)); };
+  const submitButton = () => buttons().find((b) => /ส่งคำตอบ|กำลังตรวจ|ตอบให้ครบ/.test(b.textContent ?? "")) as HTMLButtonElement;
+  const result = () => panel().querySelector<HTMLElement>("section[tabindex]");
+  const shownCount = () => Number(panel().textContent?.match(/ถูก (\d+) จาก \d+ ข้อ/)?.[1]);
+  const headline = () => result()?.querySelector("p")?.textContent;
+  const marks = () => [...panel().querySelectorAll("li")].map((li) => [...li.querySelectorAll("span")].map((s) => s.textContent).find((t) => t === "ถูก" || t === "ผิด"));
+  const retakeButton = () => byText(/ทำใหม่/);
+
+  afterEach(async () => {
+    // A held async transition would keep React's shared pending state on for the next test.
+    await act(async () => { finish(false); });
+  });
+
+  it("answers changed while saving do not change the result", async () => {
+    await tab("Quiz");
+    await answerAs(() => true);
+    holdSave();
+    await click(submitButton());
+    for (const i of [0, 2, 4]) await pick(i, false);
+    await act(async () => finish(false));
+    expect(headline()).toBe("100%");
+    expect(shownCount()).toBe(6);
+    expect(marks().every((m) => m === "ถูก")).toBe(true);
+  });
+
+  it("the options are disabled for the mouse while saving", async () => {
+    await tab("Quiz");
+    await answerAs(() => true);
+    holdSave();
+    await click(submitButton());
+    expect(groups().every((_, i) => radios(i).every((b) => b.disabled))).toBe(true);
+    const before = radios(0).map((b) => b.getAttribute("aria-checked")).join();
+    await pick(0, false);
+    expect(radios(0).map((b) => b.getAttribute("aria-checked")).join()).toBe(before);
+  });
+
+  it("arrow keys cannot move or pick an answer while saving", async () => {
+    await tab("Quiz");
+    await answerAs(() => true);
+    holdSave();
+    await click(submitButton());
+    const picked = radios(1).find((b) => b.getAttribute("aria-checked") === "true")!;
+    picked.focus();
+    await act(async () => { picked.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true })); });
+    expect(radios(1).find((b) => b.getAttribute("aria-checked") === "true")).toBe(picked);
+  });
+
+  it("saves once, however often Submit is pressed", async () => {
+    await tab("Quiz");
+    await answerAs(() => true);
+    holdSave();
+    const button = submitButton();
+    await act(async () => { button.click(); button.click(); });
+    await click(submitButton());
+    await act(async () => finish(false));
+    expect(actions.saveAttempt).toHaveBeenCalledTimes(1);
+  });
+
+  it("score and wrong answers sent match the result shown", async () => {
+    await tab("Quiz");
+    await answerAs((i) => i !== 2);
+    holdSave();
+    await click(submitButton());
+    await pick(2, true); // trying to fix the wrong answer after pressing Submit
+    await act(async () => finish(false));
+    const [id, score, passed, wrongs] = actions.saveAttempt.mock.calls[0] as unknown as [string, number, boolean, unknown[]];
+    expect([id, score, passed, wrongs.length]).toEqual(["1-1", 83, true, 1]);
+    expect(headline()).toBe("83%");
+    expect(shownCount()).toBe(5);
+    expect(marks().filter((m) => m === "ผิด")).toHaveLength(1);
+  });
+
+  it("a failed save says so, keeps the submitted answers, and a retake can save again", async () => {
+    await tab("Quiz");
+    await answerAs(() => true);
+    holdSave();
+    await click(submitButton());
+    await pick(3, false);
+    await act(async () => fail(new Error("offline")));
+    expect(panel().textContent).toContain("บันทึกคะแนนไม่สำเร็จ");
+    expect(headline()).toBe("100%");
+    expect(shownCount()).toBe(6);
+    await click(retakeButton());
+    actions.saveAttempt.mockReset().mockResolvedValue(false);
+    await answerAs(() => true);
+    await click(submitButton());
+    expect(actions.saveAttempt).toHaveBeenCalledTimes(1);
+    expect(panel().textContent).not.toContain("บันทึกคะแนนไม่สำเร็จ");
+    expect(panel().textContent).toContain("คะแนนนี้จึงไม่ถูกบันทึก");
+  });
+
+  it("a retake starts unlocked and empty, and its own result counts its own answers", async () => {
+    await tab("Quiz");
+    await answerAs(() => true);
+    await click(submitButton());
+    await click(retakeButton());
+    expect(groups().every((g) => !g.querySelector('[aria-checked="true"]'))).toBe(true);
+    expect(groups().every((_, i) => radios(i).every((b) => !b.disabled))).toBe(true);
+    await answerAs((i) => i !== 0);
+    await click(submitButton());
+    expect(actions.saveAttempt).toHaveBeenCalledTimes(2);
+    expect(actions.saveAttempt.mock.calls[1].slice(0, 3)).toEqual(["1-1", 83, true]);
+    expect(shownCount()).toBe(5);
+  });
+
+  it("a guest's submission stays unsaved and adds no cards", async () => {
+    await tab("Quiz");
+    await answerAs(() => true);
+    await click(submitButton());
+    expect(panel().textContent).toContain("ยังไม่ได้เข้าสู่ระบบ คะแนนนี้จึงไม่ถูกบันทึก");
+    expect(actions.addLessonCards).not.toHaveBeenCalled();
+  });
+
+  it("while saving, the controls say they are unavailable; after, focus goes to the result", async () => {
+    await tab("Quiz");
+    await answerAs(() => true);
+    holdSave();
+    await click(submitButton());
+    expect(submitButton().disabled).toBe(true);
+    expect(submitButton().textContent).toContain("กำลังตรวจ");
+    expect(radios(0).every((b) => b.disabled && b.getAttribute("role") === "radio")).toBe(true);
+    await act(async () => finish(false));
+    expect(document.activeElement).toBe(result());
+  });
+
+  it("another lesson's save still in flight does not make this quiz look busy", async () => {
+    // React keeps one pending flag for all async transitions; a quiz must not borrow another quiz's.
+    const other = document.createElement("div");
+    document.body.append(other);
+    const otherRoot = createRoot(other);
+    try {
+      await act(async () => otherRoot.render(tree(lessonB)));
+      await click([...other.querySelectorAll('[role="tab"]')].find((t) => t.textContent?.includes("Quiz")));
+      for (const g of other.querySelectorAll('[role="tabpanel"]:not([hidden]) [role="radiogroup"]')) await click(g.querySelector('[role="radio"]'));
+      holdSave();
+      await click([...other.querySelectorAll('[role="tabpanel"]:not([hidden]) button')].find((b) => /ส่งคำตอบ/.test(b.textContent ?? "")));
+      await act(async () => otherRoot.unmount()); // the learner left that lesson while it was saving
+      actions.saveAttempt.mockReset().mockResolvedValue(false);
+      await tab("Quiz");
+      await answerAs(() => true);
+      expect(submitButton().disabled).toBe(false);
+      expect(submitButton().textContent).toContain("ส่งคำตอบ");
+      await click(submitButton());
+      expect(actions.saveAttempt).toHaveBeenCalledTimes(1);
+    } finally {
+      await act(async () => { finish(false); });
+      other.remove();
+    }
+  });
+});

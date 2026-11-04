@@ -536,7 +536,13 @@ function Quiz({ lesson, next, passMark, newWordIds, onSubmitted }: QuizProps) {
   const [answers, setAnswers] = useState<(number | null)[]>(() => lesson.quiz.map(() => null));
   const [done, setDone] = useState<{ score: number; saved: boolean; added: number } | null>(null);
   const [error, setError] = useState(false);
-  const [pending, start] = useTransition();
+  const [, start] = useTransition();
+  // The answers as submitted. Set in the click, so the options lock at once and the result shows the answers
+  // that were scored and saved, not ones changed while saving. React's pending flag is shared by every async
+  // transition, so the lock is this component's own state.
+  const [sent, setSent] = useState<(number | null)[] | null>(null);
+  const locked = sent !== null;
+  const shown = sent ?? answers;
   // Set before the first await, so a double click can't save the same attempt twice.
   const submitting = useRef(false);
   const result = useRef<HTMLElement>(null);
@@ -567,10 +573,12 @@ function Quiz({ lesson, next, passMark, newWordIds, onSubmitted }: QuizProps) {
   function submit() {
     if (submitting.current || done) return;
     submitting.current = true;
-    const right = quiz.filter((q, i) => answers[i] === q.a).length;
+    const snapshot = answers;
+    setSent(snapshot);
+    const right = quiz.filter((q, i) => snapshot[i] === q.a).length;
     const score = Math.round((right / quiz.length) * 100);
     const wrongs = quiz
-      .map((q, i) => ({ q, a: answers[i] }))
+      .map((q, i) => ({ q, a: snapshot[i] }))
       .filter(({ q, a }) => a !== q.a)
       .map(({ q, a }) => ({ wrong: q.o[a ?? 0], correct: q.o[q.a], note: q.why }));
     start(async () => {
@@ -591,6 +599,7 @@ function Quiz({ lesson, next, passMark, newWordIds, onSubmitted }: QuizProps) {
   function retake() {
     setQuiz(shuffleQuiz(lesson.quiz));
     setAnswers(lesson.quiz.map(() => null));
+    setSent(null);
     setDone(null);
     submitting.current = false;
     presented.current = false;
@@ -598,7 +607,7 @@ function Quiz({ lesson, next, passMark, newWordIds, onSubmitted }: QuizProps) {
   }
 
   const passed = done && done.score >= passMark;
-  const rightCount = done ? quiz.filter((q, i) => answers[i] === q.a).length : 0;
+  const rightCount = done ? quiz.filter((q, i) => shown[i] === q.a).length : 0;
 
   return (
     <div className="flex flex-col gap-5">
@@ -632,7 +641,7 @@ function Quiz({ lesson, next, passMark, newWordIds, onSubmitted }: QuizProps) {
       <ol className="flex flex-col gap-4">
         {quiz.map((q, i) => {
           const reveal = done !== null;
-          const ok = reveal && answers[i] === q.a;
+          const ok = reveal && shown[i] === q.a;
           return (
             <li key={`${i}-${q.q}`} className="rounded-2xl border border-(--ac-line) bg-card p-5 shadow-(--ac-shadow) sm:p-7">
               <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
@@ -649,9 +658,9 @@ function Quiz({ lesson, next, passMark, newWordIds, onSubmitted }: QuizProps) {
               <p id={`${uid}-q-${i}`} role="heading" aria-level={3} {...(i === 0 ? { ref: firstQuestion, tabIndex: -1 } : {})} className="scroll-mt-[calc(var(--header-h)+0.5rem)] text-[19px] leading-[1.5] font-semibold text-(--ac-heading) sm:text-[21px]">{q.q}</p>
               <RadioGroup labelledBy={`${uid}-q-${i}`} className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 {q.o.map((o, j) => (
-                  <OptionButton key={j} letter={LETTERS[j]} text={o} chosen={answers[i] === j} disabled={reveal}
-                    state={reveal && j === q.a ? "correct" : reveal && answers[i] === j ? "wrong" : null}
-                    onPick={() => setAnswers(answers.map((a, k) => (k === i ? j : a)))} />
+                  <OptionButton key={j} letter={LETTERS[j]} text={o} chosen={shown[i] === j} disabled={locked}
+                    state={reveal && j === q.a ? "correct" : reveal && shown[i] === j ? "wrong" : null}
+                    onPick={() => { if (!locked) setAnswers(answers.map((a, k) => (k === i ? j : a))); }} />
                 ))}
               </RadioGroup>
               {reveal && q.why && (
@@ -671,9 +680,9 @@ function Quiz({ lesson, next, passMark, newWordIds, onSubmitted }: QuizProps) {
               <div className="h-full rounded-full bg-(--ac-gold) transition-[width] duration-300" style={{ width: `${(answered / quiz.length) * 100}%` }} />
             </div>
           </div>
-          <button type="button" disabled={!allAnswered || pending} onClick={submit}
+          <button type="button" disabled={!allAnswered || locked} onClick={submit}
             className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-(--ac-navy) px-6 text-[15px] font-semibold text-white transition hover:bg-(--ac-navy-2) disabled:cursor-not-allowed disabled:opacity-40">
-            {pending ? "กำลังตรวจ…" : allAnswered ? "ส่งคำตอบ" : "ตอบให้ครบก่อนส่ง"}
+            {locked ? "กำลังตรวจ…" : allAnswered ? "ส่งคำตอบ" : "ตอบให้ครบก่อนส่ง"}
           </button>
         </ActionPanel>
       )}
