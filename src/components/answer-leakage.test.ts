@@ -518,6 +518,22 @@ describe("quiz: L-06 Learning Tips", () => {
     const panel = host.querySelector('[role="tabpanel"]:not([hidden])')!;
     for (const q of lesson.quiz) if (q.why) expect(panel.textContent).not.toContain(q.why);
   });
+
+  it("tips stay away while the score is being saved, and come back with the result", async () => {
+    let finish: (saved: boolean) => void = () => {};
+    actions.saveAttempt.mockImplementation(() => new Promise<boolean>((resolve) => { finish = resolve; }));
+    try {
+      await render(shell(lesson));
+      await tabTo("Quiz");
+      await answerAll();
+      await submit();
+      expect(tips()).toBeNull();
+      await act(async () => finish(false));
+      expect(tips()).not.toBeNull();
+    } finally {
+      await act(async () => { finish(false); });
+    }
+  });
 });
 
 describe("/verbs page around an active drill: L-05 and D4", () => {
